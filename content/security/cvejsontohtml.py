@@ -113,7 +113,7 @@ for sectioncves in sections:
         for ti in e['timetable']:
             html+= "<tr><td class=\"cve-header\">"+ti[0]+"</td><td class=\"cve-value\">"+ti[1]+"</td></tr>\n"
         html+= "</table></dd>"
-        print (html.encode("utf-8"))
+        print (html)
     print ("</dl></br/>")
 
 
