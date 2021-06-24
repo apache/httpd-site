@@ -46,7 +46,7 @@ The following example, with <font color="green">user input in green</font>,
 shows the output of gdb run on a server executable (httpd) in the current
 working directory and using the server root of `/usr/local/apache` :
 
-```
+<pre>
     % <font color="green">gdb httpd</font>
     GDB is free software and you are welcome to distribute copies of it
      under certain conditions; type "show copying" to see the conditions.
@@ -123,7 +123,7 @@ working directory and using the server root of `/usr/local/apache` :
     (gdb) <font color="green">p status</font>
     $1 = 403
     (gdb) 
-```
+</pre>
 
 There are a few things to note about the above example:
 
