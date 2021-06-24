@@ -1,0 +1,82 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+
+
+- ---------------------------------------------------------------
+THIS DOCUMENT IS SUPERSEDED BY ASF BULLETIN 20020620
+See http://httpd.apache.org/info/security_bulletin_20020620.txt
+- ---------------------------------------------------------------
+
+Date: June 17, 2002
+Last Updated: June 18, 2002, 14:21 (-0400)
+Product: Apache Web Server
+Versions: Apache 1.3 all versions including 1.3.24, Apache 2 all versions
+up to 2.0.36, Apache 1.2 all versions 1.2.2 onwards.
+
+Introduction:
+
+While testing for Oracle vulnerabilities, Mark Litchfield discovered a
+denial of service attack for Apache on Windows.  Investigation by the
+Apache Software Foundation showed that this issue has a wider scope, which
+on some platforms results in a denial of service vulnerability, while on
+some other platforms presents a potential a remote exploit vulnerability.  
+
+We were also notified today by ISS that they had published the same issue
+which has forced the early release of this advisory.
+
+The Common Vulnerabilities and Exposures project (cve.mitre.org) has
+assigned the name CVE-2002-0392 to this issue.
+
+Description:
+
+Versions of the Apache web server up to and including 1.3.24 and 2.0 up to
+and including 2.0.36 contain a bug in the routines which deal with invalid
+requests which are encoded using chunked encoding.  This bug can be triggered
+remotely by sending a carefully crafted invalid request. This functionality
+is enabled by default.
+
+In most cases the outcome of the invalid request is that the child process
+dealing with the request will terminate.  At the least, this could help a
+remote attacker launch a denial of service attack as the parent process
+will eventually have to replace the terminated child process and starting
+new children uses non-trivial amounts of resources.
+
+On the Windows and Netware platforms, Apache runs one multithreaded child
+process to service requests.  The teardown and subsequent setup time to
+replace the lost child process presents a significant interruption of
+service.  As the Windows and Netware ports create a new process and reread
+the configuration, rather than fork a child process, this delay is much
+more pronounced than on other platforms.
+
+In Apache 2.0 the error condition is correctly detected, so it will not
+allow an attacker to execute arbitrary code on the server. However
+platforms could be using a multithreaded model of multiple concurrent
+requests per child process (although the default preference remains
+multiple processes with a single thread and request per process, and most
+multithreaded models continue to create multiple child processes).  Using
+any multithreaded model, all concurrent requests currently served by the
+affected child process will be lost.
+
+In Apache 1.3 the issue causes a stack overflow.  Due to the nature of the
+overflow on 32-bit Unix platforms this will cause a segmentation violation
+and the child will terminate.  However on 64-bit platforms the overflow
+can be controlled and so for platforms that store return addresses on the
+stack it is likely that it is further exploitable. This could allow
+arbitrary code to be run on the server as the user the Apache children are
+set to run as.  We have been made aware that Apache 1.3 on Windows is
+exploitable in a similar way as well.
+
+Users of Apache 1.3 should upgrade to 1.3.26, and users of Apache 2.0
+should upgrade to 2.0.39, which contain a fix for this issue.
+
+
+-----BEGIN PGP SIGNATURE-----
+Version: PGP 6.5.8
+
+iQEVAwUBPRK9xtc6kLhrup1dAQGwMgf+I6+RMNXdjO1fQWT5nui4NhWcjZ4jPSwJ
+D4/geaY0EvffTw4FENogKVNimeqMeEKWVnLrMlqRyDmokVliszhva9Mbjy0PWgZ2
+YNjFUEzHckGB49Ex3KRnSwg6A0ife5OWKTEdyRBCfP7PPowsa53OTbz6wxMA8+dK
+5l5zr/XNOoPFtaEB8/dGqaYDrpkcjrcJAUYhGfRm2vB8UJXpilxYq5ATtSLaTKGS
+JRlfObSdMlfCeWZk2dk7j6bpczulVriE6xvUHUiMxSCy+XbOcgZyNeSUmqYEpvZm
+/tmsCQ9RAA72w+lIZQ0JIr1p7spaNOSPdIwM4iHcbEcubLdDEmH/xg==
+=H4Cy
+-----END PGP SIGNATURE-----

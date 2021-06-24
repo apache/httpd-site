@@ -1,0 +1,131 @@
+Title: Available Translations - Documentation Project
+license: https://www.apache.org/licenses/LICENSE-2.0
+
+# Available Translations of the Documentation #
+
+The following modules have already been translated. If you are able to
+provide translations into any of these languages (or any others) please let
+us know. ( [Back to translations page](translations.html) )
+
+| Document | German | Spanish | French | Japanese | Korean | Turkish | Simplified Chinese |
+|----------|--------|---------|--------|----------|--------|---------|--------------------|
+| allmodules.xml | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| core.xml | ✔ | ✔ | ✔ | ✔ | - | ✔ | - |
+| directive-dict.xml | - | - | - | ✔ | ✔ | ✔ | - |
+| directives.xml | ✔ | ✔ | - | ✔ | ✔ | ✔ | ✔ |
+| event.xml | - | - | ✔ | - | - | - | - |
+| index.xml | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ | ✔ |
+| mod_access_compat.xml | - | - | ✔ | ✔ | - | - | - |
+| mod_actions.xml | ✔ | - | ✔ | ✔ | ✔ | - | - |
+| mod_alias.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_allowmethods.xml | - | - | - | - | - | - | - |
+| mod_asis.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_auth_basic.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_auth_digest.xml | - | - | ✔ | - | ✔ | - | - |
+| mod_auth_form.xml | - | - | - | - | - | - | - |
+| mod_authn_anon.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_authn_core.xml | - | - | ✔ | - | - | - | - |
+| mod_authn_dbd.xml | - | - | - | - | - | - | - |
+| mod_authn_dbm.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_authn_file.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_authn_socache.xml | - | - | - | - | - | - | - |
+| mod_authnz_ldap.xml | - | - | ✔ | - | - | - | - |
+| mod_authz_core.xml | - | - | - | - | - | - | - |
+| mod_authz_dbd.xml | - | - | - | - | - | - | - |
+| mod_authz_dbm.xml | - | - | - | - | ✔ | - | - |
+| mod_authz_groupfile.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_authz_host.xml | - | - | ✔ | - | - | - | - |
+| mod_authz_owner.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_authz_user.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_autoindex.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_buffer.xml | - | - | ✔ | - | - | - | - |
+| mod_cache.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_cache_disk.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_cern_meta.xml | - | - | - | - | ✔ | - | - |
+| mod_cgi.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_cgid.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_charset_lite.xml | - | - | - | - | ✔ | - | - |
+| mod_data.xml | - | - | - | - | - | - | - |
+| mod_dav.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_dav_fs.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_dav_lock.xml | - | - | - | ✔ | - | - | - |
+| mod_dbd.xml | - | - | - | - | - | - | - |
+| mod_deflate.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_dialup.xml | - | - | - | - | - | - | - |
+| mod_dir.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_dumpio.xml | - | - | - | ✔ | - | - | - |
+| mod_echo.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_env.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_example.xml | - | - | - | - | ✔ | - | - |
+| mod_expires.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_ext_filter.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_file_cache.xml | - | - | - | - | ✔ | - | - |
+| mod_filter.xml | - | - | - | - | - | - | - |
+| mod_headers.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_heartbeat.xml | - | - | - | - | - | - | - |
+| mod_heartmonitor.xml | - | - | - | - | - | - | - |
+| mod_ident.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_imagemap.xml | - | - | - | - | ✔ | - | - |
+| mod_include.xml | - | - | - | ✔ | - | - | - |
+| mod_info.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_isapi.xml | - | - | - | - | ✔ | - | - |
+| mod_lbmethod_bybusyness.xml | - | - | - | - | - | - | - |
+| mod_lbmethod_byrequests.xml | - | - | - | - | - | - | - |
+| mod_lbmethod_bytraffic.xml | - | - | - | - | - | - | - |
+| mod_lbmethod_heartbeat.xml | - | - | - | - | - | - | - |
+| mod_ldap.xml | - | - | ✔ | - | - | - | - |
+| mod_log_config.xml | - | - | - | ✔ | ✔ | ✔ | - |
+| mod_log_debug.xml | - | - | - | - | - | - | - |
+| mod_log_forensic.xml | - | - | - | ✔ | - | ✔ | - |
+| mod_logio.xml | - | - | - | ✔ | ✔ | ✔ | - |
+| mod_lua.xml | - | - | - | - | - | - | - |
+| mod_mime.xml | - | - | - | ✔ | - | - | - |
+| mod_mime_magic.xml | - | - | - | - | - | - | - |
+| mod_negotiation.xml | - | - | ✔ | ✔ | - | - | - |
+| mod_nw_ssl.xml | - | - | - | - | - | - | - |
+| mod_privileges.xml | - | - | - | - | - | - | - |
+| mod_proxy.xml | - | - | ✔ | ✔ | - | - | - |
+| mod_proxy_ajp.xml | - | - | - | ✔ | - | - | - |
+| mod_proxy_balancer.xml | - | - | - | ✔ | - | - | - |
+| mod_proxy_connect.xml | - | - | - | ✔ | - | - | - |
+| mod_proxy_express.xml | - | - | - | - | - | - | - |
+| mod_proxy_fcgi.xml | - | - | - | - | - | - | - |
+| mod_proxy_fdpass.xml | - | - | - | - | - | - | - |
+| mod_proxy_ftp.xml | - | - | - | - | - | - | - |
+| mod_proxy_http.xml | - | - | ✔ | - | - | - | - |
+| mod_proxy_scgi.xml | - | - | - | - | - | - | - |
+| mod_ratelimit.xml | - | - | - | - | - | - | - |
+| mod_reflector.xml | - | - | - | - | - | - | - |
+| mod_remoteip.xml | - | - | ✔ | - | - | - | - |
+| mod_reqtimeout.xml | - | - | - | - | - | - | - |
+| mod_request.xml | - | - | - | - | - | ✔ | - |
+| mod_rewrite.xml | - | - | ✔ | - | - | - | - |
+| mod_sed.xml | - | - | ✔ | - | - | - | - |
+| mod_session.xml | - | - | - | - | - | - | - |
+| mod_session_cookie.xml | - | - | - | - | - | - | - |
+| mod_session_crypto.xml | - | - | - | - | - | - | - |
+| mod_session_dbd.xml | - | - | - | - | - | - | - |
+| mod_setenvif.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_slotmem_plain.xml | - | - | - | - | - | - | - |
+| mod_slotmem_shm.xml | - | - | - | - | - | - | - |
+| mod_so.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_speling.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_ssl.xml | - | - | - | - | - | - | - |
+| mod_status.xml | - | - | ✔ | ✔ | ✔ | ✔ | - |
+| mod_substitute.xml | - | - | - | - | - | - | - |
+| mod_suexec.xml | - | - | - | ✔ | ✔ | ✔ | - |
+| mod_unique_id.xml | - | - | ✔ | ✔ | ✔ | - | - |
+| mod_unixd.xml | - | - | - | - | - | ✔ | - |
+| mod_userdir.xml | - | - | - | ✔ | ✔ | ✔ | - |
+| mod_usertrack.xml | - | - | - | - | - | - | - |
+| mod_version.xml | - | - | - | ✔ | ✔ | - | - |
+| mod_vhost_alias.xml | - | - | - | - | - | ✔ | - |
+| module-dict.xml | - | - | - | ✔ | ✔ | ✔ | - |
+| mpm_common.xml | ✔ | - | - | ✔ | - | ✔ | - |
+| mpm_netware.xml | - | - | - | - | - | - | - |
+| mpm_winnt.xml | ✔ | - | - | ✔ | - | - | - |
+| mpmt_os2.xml | - | - | - | - | - | - | - |
+| prefork.xml | ✔ | - | - | ✔ | - | ✔ | - |
+| quickreference.xml | ✔ | ✔ | - | ✔ | ✔ | ✔ | ✔ |
+| worker.xml | ✔ | - | - | ✔ | - | ✔ | - |
+

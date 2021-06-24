@@ -1,0 +1,7 @@
+{% extends "core.html" %}
+{% block title %} Flood {% endblock %}
+{% block navigation %}
+    {% filter markdown %}
+        {% include "nav_flood.mdtext" %}
+    {% endfilter %}
+{% endblock %}

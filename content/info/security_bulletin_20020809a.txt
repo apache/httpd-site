@@ -1,0 +1,67 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+
+For Immediate Disclosure
+
+=============== SUMMARY ================
+
+        Title: Apache 2.0 vulnerability affects non-Unix platforms
+         Date: 9th August 2002
+     Revision: 2
+ Product Name: Apache HTTP server 2.0
+  OS/Platform: Windows, OS2, Netware
+Permanent URL: http://httpd.apache.org/info/security_bulletin_20020809a.txt
+  Vendor Name: Apache Software Foundation
+   Vendor URL: http://httpd.apache.org/
+      Affects: All Released versions of 2.0 through 2.0.39
+     Fixed in: 2.0.40
+  Identifiers: CVE-2002-0661
+
+=============== DESCRIPTION ================
+
+Apache is a powerful, full-featured, efficient, and freely-available Web
+server.  On the 7th August 2002, The Apache Software Foundation was
+notified of the discovery of a significant vulnerability, identified by
+Auriemma Luigi <bugtest@sitoverde.com>.
+
+This vulnerability has the potential to allow an attacker to inflict
+serious damage to a server, and reveal sensitive data.  This vulnerability
+affects default installations of the Apache web server.
+
+Unix and other variant platforms appear unaffected.  Cygwin users are
+likely to be affected.
+
+=============== SOLUTION ================
+
+A simple one line workaround in the httpd.conf file will close the
+vulnerability.  Prior to the first 'Alias' or 'Redirect' directive, add
+the following directive to the global server configuration:
+
+   RedirectMatch 400 "\\\.\."
+
+Fixes for this vulnerability are also included in Apache HTTP server
+version 2.0.40.  The 2.0.40 release also contains fixes for two minor
+path-revealing exposures.  This release of Apache is available at
+http://downloads.apache.org/httpd/
+
+More information will be made available by the Apache Software
+Foundation and Auriemma Luigi <bugtest@sitoverde.com> in the
+coming weeks.
+
+=============== REFERENCES ================
+
+The Common Vulnerabilities and Exposures project (cve.mitre.org) has
+assigned the name CVE-2002-0661 to this issue.
+
+http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2002-0661
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.0.6 (GNU/Linux)
+Comment: For info see http://www.gnupg.org
+
+iQCVAwUBPVQro+6tTP1JpWPZAQEyNgP/Z/b97smPeXO5cpHtvj4cJc4PFWCZwrmI
+3A+Pevcj12KUAbBqUhtt72bV12xrnJ1dVe6q2EEmGq5HAlC76IZTww+XPgYPjwD6
+Du9CPZ9PYFo3IguPYEVSpB6dIOhgsJQ3OswsJ8KLqdyl2EpqG4BXX3/L4DklMaza
+XmziDuXjoZc=
+=4WPC
+-----END PGP SIGNATURE-----
+
+

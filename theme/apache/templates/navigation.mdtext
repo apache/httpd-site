@@ -1,0 +1,51 @@
+<script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+
+<p style="margin-top: -10px;">
+    <!-- Apachecon! -->
+    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+</p>
+
+# Essentials
+- [Download!](/download.cgi)
+- [About](/ABOUT_APACHE.html)
+- [License](https://www.apache.org/licenses/)
+- [FAQ](https://wiki.apache.org/httpd/FAQ)
+- [Security Reports](/security_report.html)
+
+# Source Repositories
+- [General Information](/dev/devnotes.html)
+- [Trunk](https://svn.apache.org/viewvc/httpd/httpd/trunk/)
+- [2.4](https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/)
+
+# [Documentation](/docs/)
+- [Version 2.4](/docs/2.4/)
+- [Trunk (dev)](/docs/trunk/)
+- [Wiki](https://wiki.apache.org/httpd/)
+
+# [Get Involved](/contribute/)
+- [Mailing Lists](/lists.html)
+- [Bug Reports](/bug_report.html)
+- [Developer Info](/dev/)
+- [User Support](/support.html)
+
+# Subprojects
+- [Docs](/docs-project/)
+- [Test](/test/)
+- [Flood](/test/flood/)
+- [libapreq](/apreq/)
+- [Modules](/modules)
+- [mod_fcgid](/mod_fcgid/)
+- [mod_ftp](/mod_ftp/)
+
+# Related Projects
+- [Apache Traffic Server](https://trafficserver.apache.org/)
+- [Apache Traffic Control](https://trafficcontrol.apache.org/)
+- [Tomcat](https://tomcat.apache.org/)
+- [APR](https://apr.apache.org/)
+- [mod_perl](http://perl.apache.org/)
+
+# [Miscellaneous](/info/)
+- [Contributors](/contributors/)
+- [Thanks!](https://www.apache.org/foundation/thanks.html)
+- [Sponsorship](https://www.apache.org/foundation/sponsorship.html)
+
