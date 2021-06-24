@@ -40,39 +40,39 @@ that aren't part of the distribution, are now maintained in an
 changes are applied:
 
 1. Developer checks out a copy of the files on which they want to work (in
-this case, the trunk), into a private working directory
-called <samp>httpd-trunk</samp>:
+   this case, the trunk), into a private working directory
+   called <samp>httpd-trunk</samp>:
 
-     <samp>% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk
-     httpd-trunk</samp>
+   <samp>% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk
+   httpd-trunk</samp>
 
-This step only needs to be performed once (unless the private working
-directory is tainted or deleted). Committers should use a URL prefix
-of <samp>https</samp> on the checkout, to save themselves headaches later.
+   This step only needs to be performed once (unless the private working
+   directory is tainted or deleted). Committers should use a URL prefix
+   of <samp>https</samp> on the checkout, to save themselves headaches later.
 
 1. Developer keeps their working directory synchronised with changes made to
-the repository:
+   the repository:
 
-     <samp>% svn update httpd-trunk</samp>
+   <samp>% svn update httpd-trunk</samp>
 
-This should probably be done daily or even more frequently during periods
-of high activity.
+   This should probably be done daily or even more frequently during periods
+   of high activity.
 
 1. Developer makes changes to their working copies, makes sure they work, and
-generates a patch so others can apply the changes to test them:
+   generates a patch so others can apply the changes to test them:
 
-     <samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
-     /tmp/foo</samp>
+   <samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
+   /tmp/foo</samp>
 
-The <samp>/tmp/foo</samp> file is mailed to the [developers
-list](http://httpd.apache.org/lists.html#http-dev) so they can consider the
-value/validity of the patch. It is worth making sure your code follows the
-Apache style, as described in the [style guide](styleguide.html).
+   The <samp>/tmp/foo</samp> file is mailed to the [developers
+   list](http://httpd.apache.org/lists.html#http-dev) so they can consider the
+   value/validity of the patch. It is worth making sure your code follows the
+   Apache style, as described in the [style guide](styleguide.html).
 
 1. Once other developers have agreed that the change is a Good Thing, the
-developer checks the changes into the repository:
+   developer checks the changes into the repository:
 
-     <samp>% svn commit httpd-trunk/modules/http/mod_mime.c</samp>
+   <samp>% svn commit httpd-trunk/modules/http/mod_mime.c</samp>
 
 # SVN Subtrees #
 
@@ -102,6 +102,9 @@ it <samp>httpd-trunk</samp>, checkout as follows:
 
 ## httpd-site ##
 
+> httpd-site is no longer in the Apache CMS system. It has moved to `https://github.com/apache/httpd-site/`.
+> The following paragraphs are obsolete.
+
 This subtree contains the files that live
 at <samp>http://httpd.apache.org/</samp>. The directory on the host that
 maps to that URL is actually a set of checked-out working copies of the SVN
@@ -118,8 +121,8 @@ The CMS system allows you to edit, commit, preview in staging, then push to prod
 
 
 The SVN URL
-is <samp>https://svn.apache.org/repos/asf/httpd/site/trunk/docs</samp>.<make_note>
-It is important that the files on the Web host not be modified
+is <samp>https://svn.apache.org/repos/asf/httpd/site/trunk/docs</samp>.
+<make_note> It is important that the files on the Web host not be modified
 directly. If you want or need to change one, check it out into a private
 working copy, modify **that** , commit the change into SVN, and then
 perform a <samp>svn update</samp> to bring the host directory into sync with

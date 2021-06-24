@@ -89,7 +89,7 @@ management of original and modified files:
 
 If your source tree was checked out of subversion:
 
-    svn diff
+        svn diff
 
 will create the patch in the correct format.
 
