@@ -71,7 +71,7 @@ Some of the participants are:
 
 - Yoshiki Hayashi
 
--  [Astrid Keﬂler](http://www.kess-net.de/) 
+-  [Astrid Ke&#223;ler](http://www.kess-net.de/) 
 
 -  [Jason Lingohr](http://geeklog.lucid.net.au/) 
 
