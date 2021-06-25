@@ -1,0 +1,1907 @@
+==== ./content/mod_ftp/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+30c15
+< [your local mirror](http://httpd.apache.org/download.cgi#mod_ftp).
+---
+> [your local mirror](https://httpd.apache.org/download.cgi#mod_ftp).
+==== ./content/ABOUT_APACHE.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # What is the Apache HTTP Server Project? # {#What}
+---
+> # What is the Apache HTTP Server Project?  {#What}
+32c17
+< # How Apache Came to Be # {#How}
+---
+> # How Apache Came to Be  {#How}
+97c82
+< # Getting Involved # {#Involved}
+---
+> # Getting Involved  {#Involved}
+101c86
+< <http://httpd.apache.org/bug_report.html> &gt;. You can also subscribe to
+---
+> http://httpd.apache.org/bug_report.html &gt;. You can also subscribe to
+106c91
+< <http://httpd.apache.org/dev/> &gt;.
+---
+> http://httpd.apache.org/dev/ &gt;.
+117c102
+< # Development # {#Development}
+---
+> # Development  {#Development}
+163c148
+< # Why Apache Software is Free # {#why-free}
+---
+> # Why Apache Software is Free  {#why-free}
+==== ./content/mod_smtpd/install.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/mod_smtpd/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/test/flood/faq.md
+1,17c1,3
+< Title: FAQ
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> Title: Flood
+> flood: nav
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c5
+< # Frequently Asked Questions # {#Questions}
+---
+> # Frequently Asked Questions  {#Questions}
+31c17
+< # What is Flood? # {#WhatIsFlood}
+---
+> # What is Flood?  {#WhatIsFlood}
+38c24
+< # What are some of the features of Flood? # {#FloodFeatures}
+---
+> # What are some of the features of Flood?  {#FloodFeatures}
+48c34
+< # How does Flood retrieve variables from pages? # {#FloodRegex}
+---
+> # How does Flood retrieve variables from pages?  {#FloodRegex}
+66c52
+< # Can I use Flood with SSL sites? # {#FloodSSL}
+---
+> # Can I use Flood with SSL sites?  {#FloodSSL}
+72c58
+< # Flood seems like it is stalling. # {#TCPFIN}
+---
+> # Flood seems like it is stalling.  {#TCPFIN}
+==== ./content/test/flood/index.md
+2,17c2,3
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> flood: nav
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c5
+< # Flood - a profile-driven HTTP load tester # {#Welcome}
+---
+> # Flood - a profile-driven HTTP load tester  {#Welcome}
+26c12
+< # Getting and using flood # {#Getting}
+---
+> # Getting and using flood  {#Getting}
+31c17
+< # Example profiles # {#Examples}
+---
+> # Example profiles  {#Examples}
+57c43
+< # Subversion Access # {#SVN}
+---
+> # Subversion Access  {#SVN}
+68c54
+< # Mailing Lists # {#Mail}
+---
+> # Mailing Lists  {#Mail}
+103c89
+< # License # {#License}
+---
+> # License  {#License}
+108c94,95
+< # Search Site # {#Search}
+---
+> # Search Site  {#Search}
+> 
+114a102
+> 
+==== ./content/test/flood/building.md
+1,17c1,3
+< Title: Compiling and running Flood
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> Title: Flood
+> flood: nav
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c5
+< # Overview # {#Overview}
+---
+> # Overview  {#Overview}
+33c19
+< # Checking out flood # {#Checkout}
+---
+> # Checking out flood  {#Checkout}
+51c37
+< # Configuring flood and its dependencies # {#Configuring}
+---
+> # Configuring flood and its dependencies  {#Configuring}
+83c69
+< # Compiling flood and its dependencies # {#Compiling}
+---
+> # Compiling flood and its dependencies  {#Compiling}
+90c76
+< # Running flood # {#Running}
+---
+> # Running flood  {#Running}
+98c84
+< # Analyzing flood output # {#Analysis}
+---
+> # Analyzing flood output  {#Analysis}
+107c93
+< # Questions # {#Questions}
+---
+> # Questions  {#Questions}
+==== ./content/test/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Welcome to the Apache HTTP Test Project # {#Welcome}
+---
+> # Welcome to the Apache HTTP Test Project  {#Welcome}
+36c21
+< # Mailing Lists # {#Mail}
+---
+> # Mailing Lists  {#Mail}
+73c58
+< # SVN access # {#SVN}
+---
+> # SVN access  {#SVN}
+==== ./content/docs-project/contribute.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+89c74
+< -  [Astrid Keßler](http://www.kess-net.de/) 
+---
+> -  [Astrid Ke&#223;ler](http://www.kess-net.de/) 
+93c78
+< - André L. Malo
+---
+> - Andr&#233; L. Malo
+136c121
+< - Thomas Sjögren (Swedish)
+---
+> - Thomas Sj&#246;gren (Swedish)
+==== ./content/docs-project/avail_translations.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/docs-project/docsformat.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+44d28
+< 
+==== ./content/docs-project/svn.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+47a33
+> 
+58a45
+> 
+68a56
+> 
+==== ./content/docs-project/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+39c24
+< # Reporting a problem # {#report}
+---
+> # Reporting a problem  {#report}
+48c33
+< # Making a suggestion # {#suggestion}
+---
+> # Making a suggestion  {#suggestion}
+65c50
+< # SVN information # {#svn}
+---
+> # SVN information  {#svn}
+73c58
+< # Building the docs # {#build}
+---
+> # Building the docs  {#build}
+80c65
+< # The docs mailing list # {#ml}
+---
+> # The docs mailing list  {#ml}
+93c78
+< # Translations # {#translate}
+---
+> # Translations  {#translate}
+104c89
+< # Where are the docs? # {#docs}
+---
+> # Where are the docs?  {#docs}
+==== ./content/docs-project/contributors.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/docs-project/translations.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/docs-project/goingfurther.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+55c40
+< <b>Note:</b> SVN is a powerful program; see more [here](svn.html) and of course
+---
+>   **Note:** SVN is a powerful program; see more [here](svn.html) and of course
+==== ./content/security/vulnerabilities_13.md
+==== ./content/security/vulnerabilities_22.md
+==== ./content/security/vulnerabilities_24.md
+==== ./content/security/vulnerabilities_20.md
+==== ./content/security/impact_levels.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Summary of security impact levels for Apache httpd # {#top}
+---
+> # Summary of security impact levels for Apache httpd  {#top}
+37c22
+< # Critical # {#Critical}
+---
+> # Critical  {#Critical}
+44c29
+< # Important # {#Important}
+---
+> # Important  {#Important}
+53c38
+< # Moderate # {#Moderate}
+---
+> # Moderate  {#Moderate}
+63c48
+< # Low # {#Low}
+---
+> # Low  {#Low}
+==== ./content/bug_report.md
+23c23
+< -  [All bugs fixed in the last 60 days](https://bz.apache.org/bugzilla/buglist.cgi?chfield=resolution&amp;chfieldfrom=-60d&amp;chfieldto=Now&amp;product=Apache%20httpd-2&amp;resolution=FIXED) 
+---
+> 1. [All bugs fixed in the last 60 days](https://bz.apache.org/bugzilla/buglist.cgi?chfield=resolution&amp;chfieldfrom=-60d&amp;chfieldto=Now&amp;product=Apache%20httpd-2&amp;resolution=FIXED) 
+25c25
+< -  [Frequently reported bugs](http://issues.apache.org/bugzilla/buglist.cgi?product=Apache+httpd-2&amp;long_desc=duplicate+of+this+bug.&amp;long_desc_type=allwordssubstr&amp;chfieldfrom=-30d&amp;chfieldto=Now&amp;) (bugs with duplicates changed in the last 30 days)
+---
+> 1. [Frequently reported bugs](http://issues.apache.org/bugzilla/buglist.cgi?product=Apache+httpd-2&amp;long_desc=duplicate+of+this+bug.&amp;long_desc_type=allwordssubstr&amp;chfieldfrom=-30d&amp;chfieldto=Now&amp;) (bugs with duplicates changed in the last 30 days)
+27c27
+< -  [All bugs changed in the last 10 days](http://issues.apache.org/bugzilla/buglist.cgi?chfieldfrom=-10d&amp;chfieldto=Now&amp;product=Apache+httpd-2) 
+---
+> 1. [All bugs changed in the last 10 days](http://issues.apache.org/bugzilla/buglist.cgi?chfieldfrom=-10d&amp;chfieldto=Now&amp;product=Apache+httpd-2) 
+==== ./content/mod_mbox/ref.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+28c13
+< <pre>
+---
+> 
+30c15
+< </pre>
+---
+> 
+40c25
+< <pre>
+---
+> 
+42c27
+< </pre>
+---
+> 
+51c36
+< <pre>
+---
+> 
+53c38
+< </pre>
+---
+> 
+64c49
+< <pre>
+---
+> 
+66c51
+< </pre>
+---
+> 
+75c60
+< <pre>
+---
+> 
+77c62
+< </pre>
+---
+> 
+86c71
+< <pre>
+---
+> 
+88c73
+< </pre>
+---
+> 
+==== ./content/mod_mbox/install.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+37c22
+< <pre>
+---
+> 
+40c25
+< </pre>
+---
+> 
+42c27
+< <pre>
+---
+> 
+47c32
+< </pre>
+---
+> 
+57c42
+< <pre>
+---
+> 
+59d43
+< </pre>
+72c56
+< <pre>
+---
+> 
+74c58
+< </pre>
+---
+> 
+81c65
+< <pre>
+---
+> 
+86c70
+< </pre>
+---
+> 
+95,97c79,80
+< to read a `.mbox` file. The following configuration snippet is a good start
+< :
+< <pre>
+---
+> to read a `.mbox` file. The following configuration snippet is a good start:
+> 
+99c82
+<     &lt;LocationMatch /archives/([^/]+)&gt;
+---
+>     <LocationMatch /archives/([^/]+)>
+106,107c89,90
+<     &lt;/LocationMatch&gt;
+< </pre>
+---
+>     </LocationMatch>
+> 
+==== ./content/mod_mbox/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+61c46
+< <pre>
+---
+> 
+64d48
+< </pre>
+==== ./content/docs/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Apache HTTP Server Documentation # {#Welcome}
+---
+> # Apache HTTP Server Documentation  {#Welcome}
+24c9
+< mirrors](http://www.apache.org/dyn/closer.lua/httpd/docs/). Online
+---
+> mirrors](https://www.apache.org/dyn/closer.lua/httpd/docs/). Online
+==== ./content/mod_fcgid/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+36c21
+< mirror](http://httpd.apache.org/download.cgi#mod_fcgid) 
+---
+> mirror](/download.cgi#mod_fcgid) 
+==== ./content/contributors/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Current Apache HTTP Server Project Members # {#Welcome}
+---
+> # Current Apache HTTP Server Project Members  {#Welcome}
+128a114
+> 
+129a116
+> 
+734a722
+> 
+735a724
+> 
+==== ./content/info/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Project Library # {#library}
+---
+> # Project Library  {#library}
+24c9
+< # Cross Site Scripting security problem # {#css-security}
+---
+> # Cross Site Scripting security problem  {#css-security}
+29c14
+< # Apache HTTP Server Development Site # {#dev}
+---
+> # Apache HTTP Server Development Site  {#dev}
+35c20
+< # Apache HTTP Server Books # {#books}
+---
+> # Apache HTTP Server Books  {#books}
+40c25
+< # How to mirror # {#mirror}
+---
+> # How to mirror  {#mirror}
+==== ./content/apreq/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+32c17
+< [http://httpd.apache.org/apreq/docs/libapreq2](docs/libapreq2).
+---
+> [https://httpd.apache.org/apreq/docs/libapreq2](docs/libapreq2).
+76c61
+< -  [ASF mirror](http://httpd.apache.org/apreq/download.cgi) 
+---
+> -  [ASF mirror](/apreq/download.cgi) 
+104c89
+< <pre>
+---
+> 
+107c92
+< </pre>
+---
+> 
+==== ./content/apreq/download.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Downloading libapreq # {#Download}
+---
+> # Downloading libapreq  {#Download}
+29c14
+< # Mirror # {#mirror}
+---
+> # Mirror  {#mirror}
+34a20
+> 
+42c28
+< # Apache HTTP Request Library 2.16 is now available # {#v2_16}
+---
+> # Apache HTTP Request Library 2.16 is now available  {#v2_16}
+51c37
+< # Apache HTTP Request Library 1.34 is now available # {#v1_03}
+---
+> # Apache HTTP Request Library 1.34 is now available  {#v1_03}
+60c46
+< # Verify the integrity of the files # {#verify}
+---
+> # Verify the integrity of the files  {#verify}
+==== ./content/support.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+24c9
+< [The documentation](http://httpd.apache.org/docs/current) is the definitive
+---
+> [The documentation](/docs/current) is the definitive
+==== ./content/lists.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+52c37
+< # Apache Server Announcements # {#http-announce}
+---
+> # Apache Server Announcements  {#http-announce}
+66c51
+< # User Support and Discussion # {#http-users}
+---
+> # User Support and Discussion  {#http-users}
+113c98
+< # Apache HTTP Server Development Main Discussion List # {#http-dev}
+---
+> # Apache HTTP Server Development Main Discussion List  {#http-dev}
+136c121
+< # Apache HTTP Server Bug Reports List # {#http-bugdb}
+---
+> # Apache HTTP Server Bug Reports List  {#http-bugdb}
+155c140
+< # Source Change Reports # {#http-cvs}
+---
+> # Source Change Reports  {#http-cvs}
+170c155
+< # Apache HTTP Server Documentation Project # {#http-docs}
+---
+> # Apache HTTP Server Documentation Project  {#http-docs}
+184c169
+< # Third-Party Module Authors' List # {#modules-dev}
+---
+> # Third-Party Module Authors' List  {#modules-dev}
+201c186
+< # Proxy Module Rework Discussion List # {#http-proxydev}
+---
+> # Proxy Module Rework Discussion List  {#http-proxydev}
+==== ./content/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+47c32
+< 2.4](docs/trunk/new_features_2_4.html)  # {.centered}
+---
+> 2.4](docs/trunk/new_features_2_4.html)  {.centered}
+==== ./content/userslist.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Users Mailing List # {#Welcome}
+---
+> # Users Mailing List  {#Welcome}
+26c11
+< # List Policies # {#policies}
+---
+> # List Policies  {#policies}
+37c22
+< # Subscribe # {#subscribe}
+---
+> # Subscribe  {#subscribe}
+50c35
+< # Un-Subscribe # {#unsubscribe}
+---
+> # Un-Subscribe  {#unsubscribe}
+64c49
+< # Archives # {#archives}
+---
+> # Archives  {#archives}
+81c66
+< # Guidelines # {#guidelines}
+---
+> # Guidelines  {#guidelines}
+==== ./content/contribute/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              https://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+32,33c17
+< The documentation source is in each version's source tree, under
+< <samp>docs/manual/</samp>
+---
+> The documentation source is in each version's source tree, under <samp>docs/manual/</samp>
+==== ./content/usersdelist.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+27,29c12,14
+< :    This mailing list is for users to help other users. If you want
+<      professional support, we suggest you contact a
+<      [professional](http://www.apache.org/info/support.cgi).
+---
+> >    This mailing list is for users to help other users. If you want
+> >    professional support, we suggest you contact a
+> >    [professional](http://www.apache.org/info/support.cgi).
+32,35c17,20
+< :    Eric Raymond and Rick Moen have written a very useful guide to [Asking
+<      Questions the Smart
+<      Way](http://www.catb.org/~esr/faqs/smart-questions.html). **Do not**
+<      send Apache questions to Eric or Rick!
+---
+> >    Eric Raymond and Rick Moen have written a very useful guide to [Asking
+> >    Questions the Smart
+> >    Way](http://www.catb.org/~esr/faqs/smart-questions.html). **Do not**
+> >    send Apache questions to Eric or Rick!
+38,40c23,25
+< :    Many email programs including Microsoft Outlook default to sending
+<      HTML or other *styled* email. Please configure your email client to
+<      send plain text so that everyone will be able to read your message.
+---
+> >    Many email programs including Microsoft Outlook default to sending
+> >    HTML or other *styled* email. Please configure your email client to
+> >    send plain text so that everyone will be able to read your message.
+43,45c28,30
+< :    The users-de list is a German-language mailing list. English mails
+<      should be directed to our [English-language mailing
+<      list](userslist.html).
+---
+> >    The users-de list is a German-language mailing list. English mails
+> >    should be directed to our [English-language mailing
+> >    list](userslist.html).
+48,49c33,34
+< :    Be sure to read the [FAQ](http://wiki.apache.org/httpd/FAQ) and search
+<      the [archives](#archives) before you post.
+---
+> >    Be sure to read the [FAQ](http://wiki.apache.org/httpd/FAQ) and search
+> >    the [archives](#archives) before you post.
+52,59c37,44
+< :    Although we welcome discussion of anything related to the Apache HTTP
+<      Server, you will have the most luck in getting problems solved if you
+<      ask your questions in the group most targeted to your problem. For
+<      example, if you have a problem with a module that is not distributed
+<      as part of the standard Apache HTTP Server, you will probably find a
+<      more knowledgable group by sending to a mailing list devoted to that
+<      module. In general, mails to these groups should be sent in English.
+<      Some examples:
+---
+> >    Although we welcome discussion of anything related to the Apache HTTP
+> >    Server, you will have the most luck in getting problems solved if you
+> >    ask your questions in the group most targeted to your problem. For
+> >    example, if you have a problem with a module that is not distributed
+> >    as part of the standard Apache HTTP Server, you will probably find a
+> >    more knowledgable group by sending to a mailing list devoted to that
+> >    module. In general, mails to these groups should be sent in English.
+> >    Some examples:
+==== ./content/security_report.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Security Updates # {#discovering}
+---
+> # Security Updates  {#discovering}
+28c13
+< list](http://httpd.apache.org/lists.html#http-announce) 
+---
+> list](/lists.html#http-announce) 
+30c15
+< # Reporting New Security Problems with the Apache HTTP Server # {#reporting}
+---
+> # Reporting New Security Problems with the Apache HTTP Server  {#reporting}
+41c26
+< Team](http://www.apache.org/security/) for further information and contact
+---
+> Team](https://www.apache.org/security/) for further information and contact
+60c45
+< tips](http://httpd.apache.org/docs/trunk/misc/security_tips.html) 
+---
+> tips](/docs/trunk/misc/security_tips.html) 
+62c47
+< # Security Standards # {#standards}
+---
+> # Security Standards  {#standards}
+68c53
+< # Historical Releases # {#historical}
+---
+> # Historical Releases  {#historical}
+==== ./content/dev/devnotes.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+45c30
+< version control FAQ](http://www.apache.org/dev/version-control.html).
+---
+> version control FAQ](https://www.apache.org/dev/version-control.html).
+61c46
+< :    <samp>% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk
+---
+>    <samp>% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk
+71c56
+< :    <samp>% svn update httpd-trunk</samp>
+---
+>    <samp>% svn update httpd-trunk</samp>
+79c64
+< :    <samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
+---
+>    <samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
+90c75
+< :    <samp>% svn commit httpd-trunk/modules/http/mod_mime.c</samp>
+---
+>    <samp>% svn commit httpd-trunk/modules/http/mod_mime.c</samp>
+105c90
+< <pre>
+---
+> 
+108d92
+< </pre>
+115c99
+< <pre>
+---
+> 
+118d101
+< </pre>
+121a105,107
+> > httpd-site is no longer in the Apache CMS system. It has moved to `https://github.com/apache/httpd-site/`.
+> > The following paragraphs are obsolete.
+> 
+==== ./content/dev/patches.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+55c40
+< [http://httpd.apache.org/docs-project/docsformat.html](http://httpd.apache.org/docs-project/docsformat.html)
+---
+> [http://httpd.apache.org/docs-project/docsformat.html](/docs-project/docsformat.html)
+71c56
+< Development Notes](http://httpd.apache.org/dev/devnotes.html) 
+---
+> Development Notes](/dev/devnotes.html) 
+75a61
+> 
+76a63
+> 
+78a66
+> 
+80c68,69
+< where<CODE>file.c</CODE>is the file affected. We should be able to feed the
+---
+> 
+> where `file.c` is the file affected. We should be able to feed the
+89c78
+< 1. <BLOCKQUOTE><CODE>cd /sources</CODE></BLOCKQUOTE>
+---
+> 1. `cd /sources`
+91c80
+< 1. <BLOCKQUOTE><CODE>tar xvzf httpd-2.4.x.tar.gz</CODE></BLOCKQUOTE>
+---
+> 1. `tar xvzf httpd-2.4.x.tar.gz`
+93c82
+< 1. <BLOCKQUOTE><CODE>cp -ax httpd-2.4.x httpd-2.4.x.new</CODE></BLOCKQUOTE>
+---
+> 1. `cp -ax httpd-2.4.x httpd-2.4.x.new`
+97c86,90
+< 1. <BLOCKQUOTE><CODE>cd /sources</CODE></BLOCKQUOTE>
+---
+> 1. `cd /sources<`
+> 
+> 1. `diff -ru httpd-2.4.x httpd-2.4.x.new &gt; my_unified_diff.patch`
+> 
+> If your source tree was checked out of subversion:
+99,100c92
+< 1. <BLOCKQUOTE><CODE>diff -ru httpd-2.4.x httpd-2.4.x.new
+< &gt; my_unified_diff.patch</CODE></BLOCKQUOTE>
+---
+>         svn diff
+102,103c94
+< If your source tree was checked out of subversion: <BLOCKQUOTE><CODE>svn
+< diff</CODE></BLOCKQUOTE>will create the patch in the correct format.
+---
+> will create the patch in the correct format.
+138c129
+< # What if my patch gets ignored? # {#ignored}
+---
+> # What if my patch gets ignored?  {#ignored}
+==== ./content/dev/guidelines.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+22c7
+< Project](http://httpd.apache.org/). It includes definitions of how conflict
+---
+> Project](/). It includes definitions of how conflict
+==== ./content/dev/verification.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+32c17
+< # Checking Signatures # {#Checking}
+---
+> # Checking Signatures  {#Checking}
+99c84
+< # Validating Authenticity of a Key # {#Validating}
+---
+> # Validating Authenticity of a Key  {#Validating}
+==== ./content/dev/release.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/dev/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+23c8
+< included with the [documentation](http://httpd.apache.org/docs-project/).
+---
+> included with the [documentation](/docs-project/).
+==== ./content/dev/debugging.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+43c28
+< # Using gdb # {#gdb}
+---
+> # Using gdb  {#gdb}
+62a48
+> 
+75c61
+< &nbsp;
+---
+> 
+77c63
+< &nbsp;
+---
+> 
+114c100
+< &nbsp;
+---
+> 
+140a127
+> 
+177c164,165
+< <pre>
+---
+> 
+> ```
+179c167,169
+<     (gdb) where</pre>
+---
+>     (gdb) where
+> ```
+> 
+183c173
+< # Getting a live backtrace on unix # {#backtrace}
+---
+> # Getting a live backtrace on unix  {#backtrace}
+191c181,182
+< <pre>
+---
+> 
+> ```
+200c191,192
+< </pre>
+---
+> ```
+> 
+203c195,196
+< <pre>
+---
+> 
+> ```
+231c224
+< </pre>
+---
+> ```
+233c226
+< # Getting a live backtrace on Windows # {#backtrace-win}
+---
+> # Getting a live backtrace on Windows  {#backtrace-win}
+286c279
+< # Debugging intermittent crashes # {#crashes}
+---
+> # Debugging intermittent crashes  {#crashes}
+296c289
+< `
+---
+> ```
+298c291
+< ` 
+---
+> ```
+301c294
+< `
+---
+> ```
+304c297
+< ` 
+---
+> ```
+311c304
+< > `
+---
+> ```
+314c307
+< ` 
+---
+> ``` 
+323c316,317
+< <pre>
+---
+> 
+> ```
+329c323
+< </pre>
+---
+> ```
+331c325
+< # Using 'truss/trace/strace' to trace system calls and signals # {#truss}
+---
+> # Using 'truss/trace/strace' to trace system calls and signals  {#truss}
+342,344c336,341
+< <pre>
+<     % truss -f httpd -d /usr/local/apache &gt;&amp; outfile</pre><pre>
+<     % egrep '^10698:' outfile</pre>
+---
+> 
+> ```
+>     % truss -f httpd -d /usr/local/apache &gt;&amp; outfile
+>     % egrep '^10698:' outfile
+> ```
+> 
+350,351c347,351
+< <pre>
+<     % egrep '^10698/1:' outfile</pre>
+---
+> 
+> ```
+>     % egrep '^10698/1:' outfile
+> ```
+> 
+362c362
+< # Getting the server to dump core # {#gcore}
+---
+> # Getting the server to dump core  {#gcore}
+375c375,376
+< <pre>
+---
+> 
+> ```
+381c382,383
+< </pre>
+---
+> ```
+> 
+386,387c388,392
+< <pre>
+<     # gcore PID</pre>
+---
+> 
+> ```
+>     # gcore PID
+> ```
+> 
+390c395
+< # Solaris and coredumps # {#sol27}
+---
+> # Solaris and coredumps  {#sol27}
+398,400c403,404
+< directive had been set to an appropriate and writable directory and **
+< `ulimit -c` ** has a sufficient size. See also [Debugging intermittent
+< crashes](#crashes) above.
+---
+> directive had been set to an appropriate and writable directory and **`ulimit -c`** has a sufficient size.
+> See also [Debugging intermittent crashes](#crashes) above.
+403c407,408
+< <pre>
+---
+> 
+> ```
+414c419
+< </pre>
+---
+> ```
+416c421
+< # Getting and analyzing a TCP packet trace # {#tcpdump}
+---
+> # Getting and analyzing a TCP packet trace  {#tcpdump}
+==== ./content/dev/styleguide.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+==== ./content/modules/index.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+26c11
+< # mod_fcgid # {#mod_fcgid}
+---
+> # mod_fcgid  {#mod_fcgid}
+37,38c22
+< - Website:
+< [http://httpd.apache.org/mod_fcgid/](http://httpd.apache.org/mod_fcgid/) 
+---
+> - Website: [https://httpd.apache.org/mod_fcgid/](/mod_fcgid/) 
+40,41c24
+< - Download: [mod_fcgid current
+< release](http://httpd.apache.org/download.html#mod_fcgid) 
+---
+> - Download: [mod_fcgid current release](/download.html#mod_fcgid) 
+43,44c26
+< - Source code: [mod_fcgid subversion
+< trunk](http://svn.apache.org/viewcvs.cgi/httpd/mod_fcgid/trunk/) 
+---
+> - Source code: [mod_fcgid subversion trunk](https://svn.apache.org/viewcvs.cgi/httpd/mod_fcgid/trunk/) 
+46,47c28
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+49c30
+< # mod_ftp # {#mod_ftp}
+---
+> # mod_ftp  {#mod_ftp}
+57,58c38
+< - Website:
+< [http://httpd.apache.org/mod_ftp/](http://httpd.apache.org/mod_ftp/) 
+---
+> - Website: [https://httpd.apache.org/mod_ftp/](/mod_ftp/) 
+60,61c40
+< - Download: [mod_ftp current
+< release](http://httpd.apache.org/download.html#mod_ftp) 
+---
+> - Download: [mod_ftp current release](/download.html#mod_ftp) 
+63,64c42
+< - Source code: [mod_ftp subversion
+< trunk](http://svn.apache.org/viewcvs.cgi/httpd/mod_ftp/trunk/) 
+---
+> - Source code: [mod_ftp subversion trunk](https://svn.apache.org/viewcvs.cgi/httpd/mod_ftp/trunk/) 
+66,67c44
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+69c46
+< # mod_domain # {#mod_domain}
+---
+> # mod_domain  {#mod_domain}
+78,79c55
+< - Source: [mod_domain
+< trunk](https://svn.apache.org/repos/asf/httpd/sandbox/mod_domain/trunk/) 
+---
+> - Source: [mod_domain trunk](https://svn.apache.org/repos/asf/httpd/sandbox/mod_domain/trunk/) 
+81,82c57
+< - ViewVC:
+< [mod_domain](http://svn.apache.org/viewvc/httpd/sandbox/mod_domain/trunk/) 
+---
+> - ViewVC: [mod_domain](https://svn.apache.org/viewvc/httpd/sandbox/mod_domain/trunk/) 
+84,85c59
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+87c61
+< # mod_mbox # {#mod_mbox}
+---
+> # mod_mbox  {#mod_mbox}
+94,95c68
+< ASF to provide our [email archives
+< browser.](http://mail-archives.apache.org/mod_mbox/) 
+---
+> ASF to provide our [email archives browser.](http://mail-archives.apache.org/mod_mbox/) 
+97c70
+< -  [Website](http://httpd.apache.org/mod_mbox/) 
+---
+> -  [Website](/mod_mbox/) 
+99,100c72
+< - Source: [mod_mbox
+< trunk](https://svn.apache.org/repos/asf/httpd/mod_mbox/trunk/) 
+---
+> - Source: [mod_mbox trunk](https://svn.apache.org/repos/asf/httpd/mod_mbox/trunk/) 
+102c74
+< - ViewVC: [mod_mbox](http://svn.apache.org/viewvc/httpd/mod_mbox/trunk/) 
+---
+> - ViewVC: [mod_mbox](https://svn.apache.org/viewvc/httpd/mod_mbox/trunk/) 
+104,105c76
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+107c78
+< # mod_pop3 # {#mod_pop3}
+---
+> # mod_pop3  {#mod_pop3}
+115,116c86
+< - Source:
+< [mod_pop3](http://svn.apache.org/repos/asf/httpd/sandbox/mod_pop3/) 
+---
+> - Source: [mod_pop3](https://svn.apache.org/repos/asf/httpd/sandbox/mod_pop3/) 
+118c88
+< - ViewVC: [mod_pop3](http://svn.apache.org/viewvc/httpd/sandbox/mod_pop3/) 
+---
+> - ViewVC: [mod_pop3](https://svn.apache.org/viewvc/httpd/sandbox/mod_pop3/) 
+120,121c90
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+123c92
+< # mod_arm4 # {#mod_arm4}
+---
+> # mod_arm4  {#mod_arm4}
+131,132c100
+< - Source:
+< [mod_arm4](http://svn.apache.org/repos/asf/httpd/sandbox/mod_arm4/) 
+---
+> - Source: [mod_arm4](https://svn.apache.org/repos/asf/httpd/sandbox/mod_arm4/) 
+134c102
+< - ViewVC: [mod_arm4](http://svn.apache.org/viewvc/httpd/sandbox/mod_arm4/) 
+---
+> - ViewVC: [mod_arm4](https://svn.apache.org/viewvc/httpd/sandbox/mod_arm4/) 
+136,137c104
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+139c106
+< # mod_smtpd # {#mod_smtpd}
+---
+> # mod_smtpd  {#mod_smtpd}
+146c113
+< -  [Website](http://httpd.apache.org/mod_smtpd/) 
+---
+> -  [Website](/mod_smtpd/) 
+148,149c115
+< - Source:
+< [mod_smtpd](http://svn.apache.org/repos/asf/httpd/sandbox/mod_smtpd/) 
+---
+> - Source: [mod_smtpd](https://svn.apache.org/repos/asf/httpd/sandbox/mod_smtpd/) 
+151,152c117
+< - ViewVC:
+< [mod_smtpd](http://svn.apache.org/viewvc/httpd/sandbox/mod_smtpd/) 
+---
+> - ViewVC: [mod_smtpd](https://svn.apache.org/viewvc/httpd/sandbox/mod_smtpd/) 
+154,155c119
+< - Mailing list:
+< [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+---
+> - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
+157c121
+< # Sandbox # {#sandbox}
+---
+> # Sandbox  {#sandbox}
+164c128
+< - Source: [Sandbox](http://svn.apache.org/repos/asf/httpd/sandbox/) 
+---
+> - Source: [Sandbox](https://svn.apache.org/repos/asf/httpd/sandbox/) 
+166c130
+< - ViewVC: [Sandbox](http://svn.apache.org/viewvc/httpd/sandbox/) 
+---
+> - ViewVC: [Sandbox](https://svn.apache.org/viewvc/httpd/sandbox/) 
+168c132
+< # mod_aspdotnet (retired from the ASF) # {#mod_aspdotnet}
+---
+> # mod_aspdotnet (retired from the ASF)  {#mod_aspdotnet}
+179c143
+< # mod_python (retired to the attic) # {#mod_python}
+---
+> # mod_python (retired to the attic)  {#mod_python}
+187c151
+< Placeholder](http://attic.apache.org/projects/quetzalcoatl.html) 
+---
+> Placeholder](https://attic.apache.org/projects/quetzalcoatl.html) 
+==== ./content/download.md
+2,17c2
+< Notice:    Licensed to the Apache Software Foundation (ASF) under one
+<            or more contributor license agreements.  See the NOTICE file
+<            distributed with this work for additional information
+<            regarding copyright ownership.  The ASF licenses this file
+<            to you under the Apache License, Version 2.0 (the
+<            "License"); you may not use this file except in compliance
+<            with the License.  You may obtain a copy of the License at
+<            .
+<              http://www.apache.org/licenses/LICENSE-2.0
+<            .
+<            Unless required by applicable law or agreed to in writing,
+<            software distributed under the License is distributed on an
+<            "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+<            KIND, either express or implied.  See the License for the
+<            specific language governing permissions and limitations
+<            under the License.
+---
+> license: https://www.apache.org/licenses/LICENSE-2.0
+19c4
+< # Downloading the Apache HTTP Server # {#download}
+---
+> # Downloading the Apache HTTP Server  {#download}
+42c27
+< # Mirror # {#mirror}
+---
+> # Mirror  {#mirror}
+47a33
+> 
+53a40
+> 
+57c44
+< # Apache HTTP Server 2.4.48 (httpd): 2.4.48 is the latest available version <span>2021-06-01</span># {#apache24}
+---
+> # Apache HTTP Server 2.4.48 (httpd): 2.4.48 is the latest available version <span>2021-06-01</span>  {#apache24}
+89c76
+< # Apache mod_fcgid FastCGI module for Apache HTTP Server released as 2.3.9 <span>2013-10-08</span> # {#mod_fcgid}
+---
+> # Apache mod_fcgid FastCGI module for Apache HTTP Server released as 2.3.9 <span>2013-10-08</span>  {#mod_fcgid}
+129c116
+< # Apache FTP module for Apache HTTP Server released as 0.9.6-beta <span>2008-10-08</span> # {#mod_ftp}
+---
+> # Apache FTP module for Apache HTTP Server released as 0.9.6-beta <span>2008-10-08</span>  {#mod_ftp}
+168c155
+< # Verify the integrity of the files # {#verify}
+---
+> # Verify the integrity of the files  {#verify}
+==== ./README.md
+==== ./theme/apache/templates/README.md
