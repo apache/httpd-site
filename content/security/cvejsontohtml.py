@@ -89,7 +89,9 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
 
 # Everything is sorted and pretty, this should be some python template thing
 
+# We are generating html in markdown. Add the metadata first.
 print ("Title: "+productname+" "+filterversion+" vulnerabilities")
+print ("asf_headings: False")
 print ("")
 print ("<h1>"+productname+" "+filterversion+" vulnerabilities</h1>")
 print ("<p>This page lists all security vulnerabilities fixed in released versions of "+productname+" "+filterversion+". Each vulnerability is given a security <a href=\"/security/impact_levels.html\">impact rating</a> by the Apache security team - please note that this rating may well vary from platform to platform.  We also list the versions the flaw is known to affect, and where a flaw has not been verified list the version with a question mark.</p>")
