@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Flood - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/test/flood/building.html">Building</a></li>
+	    <li><a href="/test/flood/faq.html">FAQ</a></li>
+	  </ul>
+	  <h1 id="download">Download!<a class="headerlink" href="#download" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="http://www.apache.org/dyn/closer.lua/httpd/flood/">From a Mirror</a></li>
+	    <li><a href="http://downloads.apache.org/httpd/">From Here</a></li>
+	  </ul>
+	  <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/DESIGN">Design</a></li>
+	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/CONFIG">Configuration</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="Overview">Overview<a class="headerlink" href="#Overview" title="Permalink">&para;</a></h1>
+<p>This document explains how to compile and run flood.</p>
+<p>Flood is built around <a href="http://apr.apache.org/">Apache Portable Runtime</a> -
+specifically apr and apr-util.</p>
+<p>Flood has been primarily developed on Linux and Solaris. FreeBSD is also
+known to work. Since flood is built around APR, any APR-supported platform
+should work without too much hassle. We expect Win32 would work with some
+additional magic provided someone has the time and inclination to do so.
+APR has completed most of the dirty work, but none of the current flood
+developers use Win32.</p>
+<h1 id="Checkout">Checking out flood<a class="headerlink" href="#Checkout" title="Permalink">&para;</a></h1>
+<p>The current copy of flood is available via Subversion. Flood also depends
+on the apr and apr-util packages available from the same Subversion
+repository.</p>
+<p><strong><font color="red">Note:</font></strong> Flood will automatically detect and
+configure APR and APR-util if they are in the appropriate subdirectories.
+If you have an already installed copy of APR and APR-util (such as the ones
+that come with httpd-2.0 or Subversion), you may specify --with-apr and
+--with-apr-util at configure-time.</p>
+<pre><code>% svn co http://svn.apache.org/repos/asf/httpd/flood/trunk flood
+% cd flood
+% svn co http://svn.apache.org/repos/asf/apr/apr/trunk apr
+% svn co http://svn.apache.org/repos/asf/apr/apr-util/trunk apr-util
+</code></pre>
+<h1 id="Configuring">Configuring flood and its dependencies<a class="headerlink" href="#Configuring" title="Permalink">&para;</a></h1>
+<p>Now that you have all of the required modules checked out, you now need to
+generate the configure scripts and execute them for your platform.</p>
+<h3 id="flood-and-ssl-support">Flood and SSL support<a class="headerlink" href="#flood-and-ssl-support" title="Permalink">&para;</a></h3>
+<p><strong><font color="red">Note:</font></strong> SSL support is <strong>not</strong> enabled by
+default in flood. If you wish to enable SSL support, you must specify
+<code>--enable-ssl</code> when configuring flood.</p>
+<p>If you attempt to run flood against a https URL without SSL support
+compiled-in, you will receive an error similar to the following:</p>
+<pre><code>%./flood examples/round-robin-ssl.xml
+open request failed (https://www.modssl.org/example/test.phtml).
+Error running farmer 'Joe': This function has not been implemented on this
+platform
+</code></pre>
+<p>The <code>--enable-ssl</code> option enables detection of the OpenSSL libraries. If
+flood can not automatically detect OpenSSL, you will need to specify
+<code>--with-openssl</code> to point at the appropriate installed version of OpenSSL.
+The <code>--with-capath</code> option points at a directory that contains the
+Certificate Authorities ( <strong>CA</strong> s) for OpenSSL. The default capath is in
+<code>$openssl_prefix/certs</code>.</p>
+<h3 id="running-configure-from-the-flood-directory">Running configure from the flood directory<a class="headerlink" href="#running-configure-from-the-flood-directory" title="Permalink">&para;</a></h3>
+<pre><code>%./buildconf
+%./configure --disable-shared
+</code></pre>
+<h1 id="Compiling">Compiling flood and its dependencies<a class="headerlink" href="#Compiling" title="Permalink">&para;</a></h1>
+<p>In this example, APR and apr-util will automatically be built with flood.
+So, you only need to issue a make in the flood directory.</p>
+<pre><code>% make all
+</code></pre>
+<h1 id="Running">Running flood<a class="headerlink" href="#Running" title="Permalink">&para;</a></h1>
+<p>By default, flood is a static executable, so the executable is relocatable.
+There are some example flood profiles in the examples/ directory from CVS.</p>
+<pre><code>%./flood examples/round-robin.xml &gt; foo.out
+</code></pre>
+<h1 id="Analysis">Analyzing flood output<a class="headerlink" href="#Analysis" title="Permalink">&para;</a></h1>
+<p>The foo.out file generated above is in a simple easy-to-parse format. There
+are some included shell and awk scripts in the examples directory that
+provide some easy mechanisms to extract info from the flood output files.</p>
+<pre><code>%./examples/analyze-relative foo.out
+</code></pre>
+<h1 id="Questions">Questions<a class="headerlink" href="#Questions" title="Permalink">&para;</a></h1>
+<p>This should provide a quick and easy way to jumpstart your flood
+installation. If you have any questions, please email the
+<a href="mailto:dev@httpd.apache.org">dev@httpd.apache.org</a> mailing list.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

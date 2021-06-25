@@ -1,0 +1,250 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>How to Contribute Patches to Apache - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="how-to-contribute-patches-to-apache">How to Contribute Patches to Apache<a class="headerlink" href="#how-to-contribute-patches-to-apache" title="Permalink">&para;</a></h1>
+<p>Third-party patches are essential to the success of Apache - the "core"
+developers don't have access to all platforms, and we certainly aren't
+using Apache in all the different ways it can be used. To that end, we try
+to make it as easy as possible to contribute code. However, we do have some
+expectations of contributors, and a process to all this, simply to help us
+manage the flood of contributions we could get. This page describes that
+process.</p>
+<h1 id="code-style">Code Style<a class="headerlink" href="#code-style" title="Permalink">&para;</a></h1>
+<p>We have a fairly firmly-set code format we use in our code; it was one we
+arrived at through no small amount of debate. The format is described in
+our official <a href="styleguide.html">style guide</a>. While there is some code in
+the project that does not follow the style guide, it is generally safe to
+assume that your code is wrong if it is not formatted like the other code
+in the file.</p>
+<p>We also have very high expectations for code quality; and to us this means
+the avoidance of excessive static buffers, using the memory pool mechanism
+(which ensures proper cleanup), and otherwise writing thread-safe code. We
+also expect one or two levels of optimizations to be applied, too - is a
+bitmask faster for this? Is a strchr() faster than an index()? Etc. Of
+course it'd be nice if we had a real document describing this all, but we
+don't yet.</p>
+<h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permalink">&para;</a></h1>
+<p>The Apache documentation needs to be updated for some patches, most often
+for enhancements. You may wish to see if your patch is considered generally
+acceptable before updating the documentation. Patches for the documentation
+are submitted with any code changes in the same patch format.</p>
+<p>Please note that for Apache 2.0 and above, most of the documentation is
+generated from XML. Your changes need to be made to the XML version. See
+<a href="/docs-project/docsformat.html">http://httpd.apache.org/docs-project/docsformat.html</a>
+for more information.</p>
+<h1 id="choosing-a-level-of-apache-code-for-comparison">Choosing a level of Apache code for comparison<a class="headerlink" href="#choosing-a-level-of-apache-code-for-comparison" title="Permalink">&para;</a></h1>
+<p>Currently, there are two active Apache httpd source trees:</p>
+<ol>
+<li>
+<p>Apache httpd 2.4.x (current release, GA)</p>
+</li>
+<li>
+<p>Apache httpd 2.5.x (development/beta version)</p>
+</li>
+</ol>
+<p>A patch should be created against the last public release or, if practical,
+the latest code in subversion for the relevant source tree. Patches created
+against older releases may not apply to current sources.</p>
+<p>Instructions for obtaining a source tree from subversion are at <a href="/dev/devnotes.html">Apache
+Development Notes</a></p>
+<h1 id="patch-format">Patch Format<a class="headerlink" href="#patch-format" title="Permalink">&para;</a></h1>
+<p>We prefer that patches be submitted in unified diff format:</p>
+<blockquote><code>diff -u file-old.c file.c</code></blockquote>
+<p>but that isn't available on all platforms. If your platform doesn't support
+unified diffs, please use a context diff instead:</p>
+<blockquote><code>diff -C3 file-old.c file.c</code></blockquote>
+<p>where <code>file.c</code> is the file affected. We should be able to feed the
+patch directly into the "patch" program and have it update the file or set
+of files. The <code>-C3</code> is very important - line numbers can change on a daily
+basis in some code files, so having context is crucial to knowing where it
+all really goes.</p>
+<p>If multiple files are modified, the following setup can simplify the
+management of original and modified files:</p>
+<ol>
+<li>
+<p><code>cd /sources</code></p>
+</li>
+<li>
+<p><code>tar xvzf httpd-2.4.x.tar.gz</code></p>
+</li>
+<li>
+<p><code>cp -ax httpd-2.4.x httpd-2.4.x.new</code></p>
+</li>
+<li>
+<p>edit files in httpd-2.4.x.new and build/test</p>
+</li>
+<li>
+<p><code>cd /sources&lt;</code></p>
+</li>
+<li>
+<p><code>diff -ru httpd-2.4.x httpd-2.4.x.new &amp;gt; my_unified_diff.patch</code></p>
+</li>
+</ol>
+<p>If your source tree was checked out of subversion:</p>
+<pre><code>    svn diff
+</code></pre>
+<p>will create the patch in the correct format.</p>
+<h1 id="submitting-your-patch">Submitting your Patch<a class="headerlink" href="#submitting-your-patch" title="Permalink">&para;</a></h1>
+<p>Traditionally, patches have been submitted on the developer's mailing list
+as well as through the bug database. Unfortunately, this has made it hard
+to easily track the patches. And without being able to easily track them,
+too many of them have been ignored.</p>
+<p>Patches must now be submitted through the bug database, at
+<a href="http://bz.apache.org/bugzilla/">http://bz.apache.org/bugzilla/</a>.
+You'll need to create a Bugzilla account there if you don't already have
+one. Submit the patch by first entering a new bug report. Be sure to
+specify APR for the product if the patch is for a file in srclib/apr or
+srclib/apr-util. The following information is very helpful, when it is
+available:</p>
+<ol>
+<li>explain how to reproduce the problem and how the patch has been tested</li>
+</ol>
+<p>After the bug report has been created, edit it again and specify
+<strong>PatchAvailable</strong> as a keyword and then add your patch as a new
+attachment.</p>
+<p>If you wish to discuss the patch on the developer's mailing list, prefix
+your subject line with "[PATCH &lt;PR-number&gt;]" to reference your patch
+submission.</p>
+<p>Be aware that the core developers tend to be very conservative about what
+makes it into the core of Apache. Apache has a very flexible API, and any
+advanced functionality is likely to be pushed to be a third-party module.
+Portability fixes are the most important; protocol correctness is also
+critical for us; and we're sure there's more dumb mistakes in the code than
+we could shake a stick at. Those will get priority; new functionality may
+not.</p>
+<h1 id="ignored">What if my patch gets ignored?<a class="headerlink" href="#ignored" title="Permalink">&para;</a></h1>
+<p>Because Apache has only a small number of volunteer developers, and these
+developers are often very busy, it is possible that your patch will not
+receive any immediate feedback. Developers must prioritize their time,
+dealing first with serious bugs and with parts of the code in which they
+have interest and knowledge. Here are some suggestions on what you can do
+to encourage action on your patch:</p>
+<ol>
+<li>
+<p>Be persistent but polite. Post to the developers list pointing out your
+patch and why you feel it is important. Feel free to do this about once a
+week and continue until you get a response. Just be sure to be polite about
+it, since the developers are unlikely to respond to rude messages.</p>
+</li>
+<li>
+<p>Encourage other Apache users to review and test your patch, and then
+append a note to the bug report with the details. Developers are much more
+likely to review and commit a patch if they see that it has been widely
+tested.</p>
+</li>
+<li>
+<p>Make sure your patch is easy to read and apply. Follow all the style
+suggestions in the above sections and include any necessary documentation
+changes.</p>
+</li>
+<li>
+<p>Review the bugs database for similar errors. If there are duplicates,
+close them as duplicates of the initial report (this cross references the
+two bugs to each other.) Add an extra note when closing well documented
+dups if the particular bug report contains useful unique details. If there
+is a report that isn't identical, but might be helped by your patch, mark
+it as 'depends on' the bug report containing your patch. Finally mark the
+original incident as 'depends on' your bug report, with patch.</p>
+</li>
+<li>
+<p>Earn "brownie points" by dealing with other bug reports that you can
+politely and correctly address. As ugly as this job is -- sort of like the
+poop crew following a parade -- it leaves the principal committers with
+time to address the real bugs and their solutions instead of sweeping up
+the droppings.</p>
+</li>
+</ol>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

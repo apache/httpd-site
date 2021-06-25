@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Apache HTTP Server Developer Information - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="developer-resources">Developer Resources<a class="headerlink" href="#developer-resources" title="Permalink">&para;</a></h1>
+<p>This section includes many of the reference materials used by the Apache
+HTTP Server Project. Be sure to also check the developer information
+included with the <a href="/docs-project/">documentation</a>.</p>
+<p>Some information about source code hosting and continuous integration (CI)
+can also be found on <a href="devnotes.html">Apache Development Notes</a>.</p>
+<h1 id="feedback-and-contributions">Feedback and contributions<a class="headerlink" href="#feedback-and-contributions" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p>Contributing <a href="/bug_report.html">bug reports</a></p>
+</li>
+<li>
+<p>Contributing <a href="patches.html">code patches</a></p>
+</li>
+<li>
+<p>Contributing to the <a href="/docs-project/">documentation</a></p>
+</li>
+<li>
+<p>Tips to <a href="debugging.html">debug</a> your server</p>
+</li>
+</ul>
+<h1 id="general-guidelines-for-the-apache-http-server-project">General guidelines for the Apache HTTP Server Project<a class="headerlink" href="#general-guidelines-for-the-apache-http-server-project" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p><a href="guidelines.html">Project guidelines</a></p>
+</li>
+<li>
+<p><a href="release.html">Release guidelines</a></p>
+</li>
+<li>
+<p><a href="styleguide.html">Style guide</a></p>
+</li>
+</ul>
+<h1 id="source-repository-information">Source Repository Information<a class="headerlink" href="#source-repository-information" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p><a href="devnotes.html">Apache Development Notes</a> about using SVN and
+maintaining the Apache site</p>
+</li>
+<li>
+<p>A web-based view of the <a href="http://svn.apache.org/viewvc/httpd/">SVN
+history</a> of the httpd development
+effort</p>
+</li>
+</ul>
+<h1 id="release-instructions">Release Instructions<a class="headerlink" href="#release-instructions" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p><a href="release.html">Release guidelines</a></p>
+</li>
+<li>
+<p><a href="http://svn.apache.org/repos/asf/httpd/site/trunk/tools">Tools</a> to
+roll/release tarballs</p>
+</li>
+<li>
+<p><a href="verification.html">Verifying Apache HTTP Server releases</a></p>
+</li>
+</ul>
+<h1 id="api-documentation">API Documentation<a class="headerlink" href="#api-documentation" title="Permalink">&para;</a></h1>
+<ul>
+<li>A Doxygen <a href="http://ci.apache.org/projects/httpd/trunk/doxygen/">reference dictionary</a> for the Apache HTTP Server
+API</li>
+</ul>
+<h1 id="historical-documents">Historical Documents<a class="headerlink" href="#historical-documents" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p>An extremely obselete draft of the <a href="project-plan.html">project plan</a></p>
+</li>
+<li>
+<p>notes on <a href="API.html">the 1.3 API</a></p>
+</li>
+<li>
+<p>The old <a href="todo.html">to-do list</a> of the Apache developers</p>
+</li>
+<li>
+<p><a href="voting.html">Old voting guidelines</a></p>
+</li>
+</ul>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

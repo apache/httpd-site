@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Module Format and Transformation - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="module-format-and-transformation">Module Format and Transformation<a class="headerlink" href="#module-format-and-transformation" title="Permalink">&para;</a></h1>
+<p>This document describes the format of the Apache HTTP Server documentation
+xml source files and the technique used to transform them to html.</p>
+<h1 id="format">Format<a class="headerlink" href="#format" title="Permalink">&para;</a></h1>
+<p>A DTD is located in the <a href="http://httpd.apache.org/docs/current/style/">style
+directory</a> of the manual. An
+example of the format with extensive comments is also available in
+<a href="mod_template.txt">mod_template.txt</a>. Obviously, the file extension should
+be <code>xml</code>. It was changed to make online viewing simpler.</p>
+<p>To ensure that your documentation follows the defined format, you should
+parse it using the DTD. Some help using Emacs with XML files is available
+from <a href="https://www.ibm.com/developerworks/xml/library/x-emacs/">IBM
+developerWorks</a>.</p>
+<p>Various formatting syntax can be used such as:</p>
+<table border="1" class="table">
+<tr><th>Keyword</th><th>Purpose</th></tr>
+<tr><td>&lt;example&gt; ... &lt;/example&gt;</td><td>Format an example as monospaced font</td></tr>
+<tr><td>&lt;highlight language="config"&gt; ... &lt;/highlight&gt;</td>
+<td>A configuration example, syntax highlighted. Can also use language="perl", "lua", or "C"</td></tr>
+</table>
+<h1 id="transformation">Transformation<a class="headerlink" href="#transformation" title="Permalink">&para;</a></h1>
+<p>The easiest way to view the transformed docs is to simply open the xml file
+directly in a recent verions of MSIE, Netscape, or Mozilla. (MSIE 6 seems
+to work consistently. The Gecko/Mozilla based browsers, however, do not
+incorporate the referenced DTDs, so they have problems with documents
+containing character entities). These browsers will read the xsl file and
+perform the transformation for you automatically, so that you can see what
+the final output will look like. This means that you can work on the docs
+and check your work without any special transformation setup.</p>
+<p>For the final presentation, it is still necessary to transform to html to
+accomodate older browsers. Although any standards-compliant xslt engine
+should do, changing engines can lead to massive diffs on the transformed
+files. Therefore, we have chosen a single recommended transformation system
+based on Xalan+Xerces Java and Ant. These are all Apache projects
+distributed under the Apache license.</p>
+<p>The only prerequisite for the transformation is a Java 8 or greater JVM.
+Assuming you already have
+<a href="http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs/">httpd/httpd/branches/2.4.x/docs/</a>
+(or the equivalent from another branch) checked out from SVN, here is what
+you need to do to build: (If you need instructions on setting up SVN, see
+<a href="http://www.apache.org/dev/version-control.html">this page</a>.)</p>
+<blockquote>
+<p><code>$ cd docs/manual<br/>$ svn co
+<a href="https://svn.apache.org/repos/asf/httpd/docs-build/trunk">https://svn.apache.org/repos/asf/httpd/docs-build/trunk</a> build<br/>$ cd
+build<br/>$./build.sh all</code></p>
+</blockquote>
+<p>If you are running under win32, the <code>build.sh</code> script will work if cygwin is
+installed. Alternatively, on Win32, you should be able to run the
+<code>build.bat</code> script.</p>
+<p>If you don't want to get the build files from SVN, you can download a
+pkzipped version of the current build tools from our <a href="http://www.apache.org/dyn/closer.lua/httpd/docs/">distribution
+directory</a>.</p>
+<p>The default target builds only the english-language docs. To build other
+docs, you should specify the language-code (ja, de, etc) as an argument, or
+use the <code>all</code> target. To find the available languages, please see our
+<a href="translations.html">translations page</a>.</p>
+<p>You can get an overview of all possible build targets by typing:</p>
+<blockquote>
+<p><code>./build.sh -projecthelp</code></p>
+</blockquote>
+<h1 id="validating-changes">Validating changes<a class="headerlink" href="#validating-changes" title="Permalink">&para;</a></h1>
+<p>Before submitting or committing changes, you should check that the XML is
+correct, and the generated HTML:</p>
+<blockquote>
+<p><code>./build.sh validate-xml<br/>./build.sh validate-xhtml</code></p>
+</blockquote>
+<h1 id="special-files">Special Files<a class="headerlink" href="#special-files" title="Permalink">&para;</a></h1>
+<p>When adding a new module, the transformation process tries to generate an
+appropriate entry within <code>mod/allmodules.xml</code> and to create an accompanying
+metafile ( <code>newfilename.xml.meta</code> ). Since these tasks are written in
+<a href="http://www.perl.org/">perl</a> , you'll need a working perl installation for
+this. If not, you should take these steps manually, or just leave a note on
+the project mailing list so that someone else can do it.</p>
+<h1 id="generating-a-pdf-version">Generating a PDF version<a class="headerlink" href="#generating-a-pdf-version" title="Permalink">&para;</a></h1>
+<p>The PDF version of the docs is generated by transforming the xml files to
+LaTeX using the "latex-en" Ant target. The XSLT style files for the
+transformation are under <code>style/latex/</code>. Once you have the <code>.tex</code>
+equivalent of each <code>.xml</code> file, you can use <code>pdflatex</code> to convert this into
+a pdf file. Recommended versions of pdflatex can be obtained as part of
+TeTeX (unix) or MikTeX (win32), but any version of TeX should be fine, as
+long as it is sufficiently complete and modern. To generate the PDF, you
+should process the <code>sitemap.tex</code> file, which contains the main LaTeX
+document code and will include all the other files. The outputed PDF will
+then be called <code>sitemap.pdf</code> , which you can rename how you choose.</p>
+<p>Some notes about the XML to LaTeX conversion are necessary. Although HTML
+and LaTeX have many similarities, there are enough differences between the
+two to make targetting both outputs a difficult task. In particular, the
+methods for handling tables are very different. To aid in the conversion to
+LaTeX of tables designed for HTML, a <code>&amp;lt;columnspec&amp;gt;</code> section should be
+added to each table. Inside the <code>&amp;lt;columnspec&amp;gt;</code> , place a <code>&amp;lt;column width=".xx"/&amp;gt;</code> for each column in the table, where <code>xx</code> is the
+percentage of the line-width devoted to that column. This will assist in
+the conversion of basic tables. More complex stuff (like spanning rows or
+columns) is not currently convertible.</p>
+<p>Further, <code>pdflatex</code> cannot incorporate GIF files in a generated PDF, so any
+graphics must be available in PNG format.</p>
+<p>There are various other restrictive assumptions embedded in the XSLT that
+work for the current docs, but may need to be modified in the future. For
+example, the code that transforms HTML-style links to LaTeX
+cross-references will only work within the main directory and one level of
+subdirectory. Also, <code>&amp;lt;pre&amp;gt;</code> sections rarely work well in LaTeX
+because of differences in escaping and formatting rules in <code>verbatim</code>
+sections.</p>
+<p>Finally, there are various differences in escaping rules between XML/HTML
+and LaTeX. Some characters need to be backslash-escaped in LaTeX, and all
+XML entitites (&amp;whatever;) must be converted to LaTeX equivalents. This
+is currently handled for a limited set of characters using a big, ugly
+search-replace in the XSLT. This may need to be modified in the future,
+especially to handle translations. Pre-processing with a perl script and a
+substitution table may be a better solution.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

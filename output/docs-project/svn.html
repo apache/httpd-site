@@ -1,0 +1,154 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Documentation Project: Subversion - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="documentation-project-subversion">Documentation Project: Subversion<a class="headerlink" href="#documentation-project-subversion" title="Permalink">&para;</a></h1>
+<p>The documentation of the Apache HTTP Server is in the same Subversion
+revision control repository as the code. If you wish to work on the
+documentation, you can check out the entire source code repository, or just
+the documentation.</p>
+<p>To check out the entire repository, you'll do the following:</p>
+<pre><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
+</code></pre>
+<p>By checking out both trunk and 2.4, you'll be able to submit patches
+against both the development version, and the current latest released
+version.</p>
+<p>To check out just the documentation portion of the repository, append '
+<code>/docs</code> ' to the end of the checkout URLs shown above. This will give you a
+much smaller checkout, but perhaps you'll lack some of the resources you
+might need to verify your documentation changes.</p>
+<h1 id="creating-a-patch">Creating a patch<a class="headerlink" href="#creating-a-patch" title="Permalink">&para;</a></h1>
+<p>Once you have a checkout, creating a patch takes four steps.</p>
+<ol>
+<li></li>
+</ol>
+<p>Update your checkout, to be sure that you have the latest changes in the
+repository, in case someone else has changed something since the last time
+you worked on the docs:</p>
+<div class="example"><pre>
+svn update
+</pre></div>
+<ol>
+<li></li>
+</ol>
+<p>Edit the file that you wish to modify. Make the desired changes, and then
+save your changes. Documentation files are in the <code>/docs/manual</code> subdirectory
+of your checkout.</p>
+<ol>
+<li></li>
+</ol>
+<p>At the command line, type the following to create a patch file:</p>
+<div class="example"><pre>
+svn diff &gt; patch.txt
+</pre></div>
+<ol>
+<li></li>
+</ol>
+<p>Send email to the <code>docs@httpd.apache.org</code> mailing list and attach
+<code>patch.txt</code>.</p>
+<p>If you have more than one changed file, you can supply the file name on the
+<code>svn diff</code> command line, in order to just record the changes in one file.</p>
+<div class="example"><pre>
+svn diff mod_rewrite.xml &gt; mod_rewrite_patch.txt
+</pre></div>
+<h1 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permalink">&para;</a></h1>
+<p>See also the document on <a href="docsformat.html">documentation format and
+transformation</a> for details about verifying that your
+changes are compliant with our documentation format and standards. In your
+email message, indicate what branch of the code the patch is against
+(trunk, 2.4, 2.2, etc.) what file(s) are affected, and what change you are
+making. If it's in reference to a specific bug ticket, mention that, too.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

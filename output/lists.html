@@ -1,0 +1,406 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Apache HTTP Server Mailing Lists - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="apache-http-server-mailing-lists">Apache HTTP Server Mailing Lists<a class="headerlink" href="#apache-http-server-mailing-lists" title="Permalink">&para;</a></h1>
+<p>The following mailing lists relate to the Apache HTTP Server project. Users
+should consider subscribing to the <a href="#http-announce">Announcements</a> or <a href="#http-users">User
+Support</a> mailing lists. Other lists are for people interested
+in helping with the development and debugging of the server.</p>
+<p>Formatted archives are available in several places including <a href="http://mail-archives.apache.org/mod_mbox/">the Apache
+Mail Archives</a> ,
+<a href="http://httpd.markmail.org/">MarkMail</a> , and
+<a href="http://marc.info/">MARC</a>. Raw mbox archives for most lists are
+available at
+<a href="http://httpd.apache.org/mail/">http://httpd.apache.org/mail/</a>. You can
+also use the mail-to-news <a href="nntp://news.gmane.org/">gateway</a> offered by
+<a href="http://news.gmane.org/index.php?match=gmane.comp.apache">GMANE</a> to access
+most of the lists with a news reader.</p>
+<ul>
+<li>
+<p><a href="#http-announce">Apache Server Announcements</a></p>
+</li>
+<li>
+<p><a href="#http-users">User Support and Discussion</a></p>
+</li>
+<li>
+<p><a href="#http-dev">Apache HTTP Server Development Main Discussion List</a></p>
+</li>
+<li>
+<p><a href="#http-bugdb">Apache HTTP Server Bug Reports List</a></p>
+</li>
+<li>
+<p><a href="#http-cvs">Source Change Reports</a></p>
+</li>
+<li>
+<p><a href="#http-docs">Apache HTTP Server Documentation Project</a></p>
+</li>
+<li>
+<p><a href="#modules-dev">Third-Party Module Authors' List</a></p>
+</li>
+<li>
+<p><a href="#http-proxydev">Proxy Module Rework Discussion List</a></p>
+</li>
+</ul>
+<h1 id="http-announce">Apache Server Announcements<a class="headerlink" href="#http-announce" title="Permalink">&para;</a></h1>
+<p>The <code>announce@httpd.apache.org</code> mailing list is used to announce major
+releases and other important information about the Apache HTTP Server
+project. Messages are posted only by the Foundation; there is no
+discussion.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Volume:</th>
+<th>Very low (<a href="https://lists.apache.org/trends.html?announce@httpd.apache.org">Statistics</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscription address:</td>
+<td><a href="mailto:announce-subscribe@httpd.apache.org">announce-subscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Unsubscription address:</td>
+<td><a href="mailto:announce-unsubscribe@httpd.apache.org">announce-unsubscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Getting help with the list:</td>
+<td><a href="mailto:announce-help@httpd.apache.org">announce-help@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Archives:</td>
+<td><a href="https://lists.apache.org/list.html?announce@httpd.apache.org">ASF archives</a>, <a href="http://httpd.apache.org/mail/announce/">mbox files</a></td>
+</tr></tbody></table>
+<h1 id="http-users">User Support and Discussion<a class="headerlink" href="#http-users" title="Permalink">&para;</a></h1>
+<p>The lists and discussion groups listed here are the <strong>only</strong> place that
+configuration and how-to questions belong, ever. Every day, users become
+frustrated, not with Apache, but with how nobody will help them understand
+how to get started. 95% of the time, it's not for lack of helpers, but for
+lack of effort and well stated questions.</p>
+<p>Before you go further, please read Eric S. Raymond and Rick Moen's
+explanation of <a href="http://www.catb.org/%7Eesr/faqs/smart-questions.html">"How To Ask Questions The Smart
+Way"</a>. If you follow
+their advice, you will discover that these forums have dozens of helpers
+ready to provide you with guidance on using the Apache HTTP Server! <strong>Note:
+Do not send your Apache questions to Eric or Rick!</strong></p>
+<p>There are now a few <strong>Apache HTTP Server Users Mailing Lists</strong> available in
+different languages.</p>
+<p>They are described on separate pages:</p>
+<ul>
+<li>
+<p><a href="userslist.html">English list</a></p>
+</li>
+<li>
+<p><a href="usersdelist.html">German list</a></p>
+</li>
+</ul>
+<p>In addition, there are a few usenet discussion groups in which discussions
+about the server can be found. These include:</p>
+<ul>
+<li>
+<p>comp.infosystems.www.servers.unix [
+<a href="nntp://comp.infosystems.www.servers.unix">nntp</a> ] [
+<a href="https://groups.google.com/forum/#!forum/comp.infosystems.www.servers.unix">google</a>
+]</p>
+</li>
+<li>
+<p>comp.infosystems.www.servers.ms-windows [
+<a href="nntp://comp.infosystems.www.servers.ms-windows">nntp</a> ] [
+<a href="https://groups.google.com/forum/#!forum/comp.infosystems.www.servers.ms-windows">google</a>
+]</p>
+</li>
+<li>
+<p>comp.infosystems.www.authoring.cgi [
+<a href="nntp://comp.infosystems.www.authoring.cgi">nntp</a> ] [
+<a href="https://groups.google.com/forum/#!forum/comp.infosystems.www.authoring.cgi">google</a>
+]</p>
+</li>
+<li>
+<p>de.comm.software.webserver<small>( <em>german</em> )</small>[
+<a href="nntp://de.comm.software.webserver">nntp</a> ] [
+<a href="https://groups.google.com/forum/#!forum/de.comm.software.webserver">google</a>
+]</p>
+</li>
+</ul>
+<h1 id="http-dev">Apache HTTP Server Development Main Discussion List<a class="headerlink" href="#http-dev" title="Permalink">&para;</a></h1>
+<p>The <code>dev@httpd.apache.org</code> mailing list is used for discussions about the
+actual development of the server. All httpd candidates for release are
+announced to this list prior to acceptance. Subscribers to this list are
+encouraged to 'test-drive' these candidates just before they're generally
+released, and provide their feedback in a [vote] thread. Note these
+candidates are <strong>NOT</strong> yet released, and should not be carried on
+announcement channels, until the testing is complete and they have been
+voted as released on the dev@ list.
+Configuration and support questions should be addressed to a <a href="#http-users">user support
+group</a>. This list is only for discussion of changes to the
+source code and related issues. Other questions are likely to be ignored.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Volume:</th>
+<th>Moderate to High (<a href="https://lists.apache.org/trends.html?dev@httpd.apache.org">Statistics</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscription address:</td>
+<td><a href="mailto:dev-subscribe@httpd.apache.org">dev-subscribe@httpd.apache.org</a> ( <strong>Not a user support list!</strong> )</td>
+</tr>
+<tr>
+<td>Digest subscription address:</td>
+<td><a href="mailto:dev-digest-subscribe@httpd.apache.org">dev-digest-subscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Unsubscription address:</td>
+<td><a href="mailto:dev-unsubscribe@httpd.apache.org">dev-unsubscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Getting help with the list:</td>
+<td><a href="mailto:dev-help@httpd.apache.org">dev-help@httpd.apache.org</a> , <a href="mailto:dev-digest-help@httpd.apache.org">dev-digest-help@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Searchable Archives:</td>
+<td><a href="https://lists.apache.org/list.html?dev@httpd.apache.org">ASF browseable</a>, <a href="http://httpd.apache.org/mail/dev/">ASF raw</a>, <a href="http://marc.info/?l=apache-new-httpd">MARC archives</a>, <a href="http://www.mail-archive.com/dev%40httpd.apache.org/">Mail-Archive.Com</a></td>
+</tr>
+<tr>
+<td>Mail-To-News gateway:</td>
+<td><a href="nntp://news.gmane.org/gmane.comp.apache.devel">gmane.comp.apache.devel</a></td>
+</tr></tbody></table>
+<h1 id="http-bugdb">Apache HTTP Server Bug Reports List<a class="headerlink" href="#http-bugdb" title="Permalink">&para;</a></h1>
+<p>This is the mailing list to which all activity in the <a href="http://issues.apache.org/bugzilla/">problem report
+database</a> is logged. If you are a
+member of this list, you will receive a message each time a report is added
+or modified.</p>
+<p>If you take ownership of bug by assigning it to yourself, please remember
+to add this mailing list to the cc: list so that the list continues to
+receive updates.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Volume:</th>
+<th>Medium (<a href="https://lists.apache.org/trends.html?bugs@httpd.apache.org">Statistics</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscription address:</td>
+<td><a href="mailto:bugs-subscribe@httpd.apache.org">bugs-subscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Unsubscription addresses:</td>
+<td><a href="mailto:bugs-unsubscribe@httpd.apache.org">bugs-unsubscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Getting help with the list:</td>
+<td><a href="mailto:bugs-help@httpd.apache.org">bugs-help@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Searchable Archives:</td>
+<td><a href="https://lists.apache.org/list.html?bugs@httpd.apache.org">ASF Archives</a>, <a href="http://httpd.apache.org/mail/bugs/">mbox files</a>, <a href="http://marc.info/?l=apache-httpd-bugs">MARC Archives</a></td>
+</tr>
+<tr>
+<td>Mail-To-News gateway:</td>
+<td><a href="nntp://news.gmane.org/gmane.comp.apache.bugs">gmane.comp.apache.bugs</a></td>
+</tr></tbody></table>
+<h1 id="http-cvs">Source Change Reports<a class="headerlink" href="#http-cvs" title="Permalink">&para;</a></h1>
+<p>This mailing list is used to notify developers and other interested parties
+of changes applied to the master Subversion repository. As changes are
+applied, Subversion log messages are sent to all subscribers. (The list
+name is an artifact of the fact that we used to use CVS.)</p>
+<table class="table">
+<thead>
+<tr>
+<th>Volume:</th>
+<th>Low to moderate (<a href="https://lists.apache.org/trends.html?cvs@httpd.apache.org">Statistics</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscription address:</td>
+<td><a href="mailto:cvs-subscribe@httpd.apache.org">cvs-subscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Unsubscription addresses:</td>
+<td><a href="mailto:cvs-unsubscribe@httpd.apache.org">cvs-unsubscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Getting help with the list:</td>
+<td><a href="mailto:cvs-help@httpd.apache.org">cvs-help@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Searchable Archives:</td>
+<td><a href="https://lists.apache.org/list.html?cvs@httpd.apache.org">ASF Archives</a>, <a href="http://httpd.apache.org/mail/cvs/">mbox files</a>, <a href="http://marc.info/?l=apache-cvs">MARC Archives</a></td>
+</tr>
+<tr>
+<td>Mail-To-News gateway:</td>
+<td><a href="nntp://news.gmane.org/gmane.comp.apache.cvs">gmane.comp.apache.cvs</a></td>
+</tr></tbody></table>
+<h1 id="http-docs">Apache HTTP Server Documentation Project<a class="headerlink" href="#http-docs" title="Permalink">&para;</a></h1>
+<p>This mailing list is used by the people working on improving and
+translating the documentation of the Apache HTTP server. It is primarily
+used for discussion of changes to the documentation.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Volume:</th>
+<th>Low to moderate (<a href="https://lists.apache.org/trends.html?docs@httpd.apache.org">Statistics</a>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscription address:</td>
+<td><a href="mailto:docs-subscribe@httpd.apache.org">docs-subscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Unsubscription addresses:</td>
+<td><a href="mailto:docs-unsubscribe@httpd.apache.org">docs-unsubscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Getting help with the list:</td>
+<td><a href="mailto:docs-help@httpd.apache.org">docs-help@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Searchable Archives:</td>
+<td><a href="https://lists.apache.org/list.html?docs@httpd.apache.org">ASF Archives</a>, <a href="http://httpd.apache.org/mail/docs/">mbox files</a>, <a href="http://marc.info/?l=apache-docs">MARC Archives</a></td>
+</tr>
+<tr>
+<td>Mail-To-News gateway:</td>
+<td><a href="nntp://news.gmane.org/gmane.comp.apache.documentation">gmane.comp.apache.documentation</a></td>
+</tr></tbody></table>
+<h1 id="modules-dev">Third-Party Module Authors' List<a class="headerlink" href="#modules-dev" title="Permalink">&para;</a></h1>
+<p>This mailing list is for people who are actually involved in writing
+third-party or private modules for the Apache HTTP server. It is a peer
+support list for programmers to discuss issues surrounding the development
+of web server modules using the Apache HTTP Server module and APR APIs. It
+was historically hosted at <a href="mailto:apache-modules@covalent.net">apache-modules@covalent.net</a>, now closed, but
+still archived on MARC (see Archives, below).</p>
+<table class="table">
+<thead>
+<tr>
+<th>Volume:</th>
+<th>Low to moderate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Subscription address:</td>
+<td><a href="mailto:modules-dev-subscribe@httpd.apache.org">modules-dev-subscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Unsubscription addresses:</td>
+<td><a href="mailto:modules-dev-unsubscribe@httpd.apache.org">modules-dev-unsubscribe@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Getting help with the list:</td>
+<td><a href="mailto:modules-dev-help@httpd.apache.org">modules-dev-help@httpd.apache.org</a></td>
+</tr>
+<tr>
+<td>Searchable Archive:</td>
+<td><a href="http://mail-archives.apache.org/mod_mbox/httpd-modules-dev/">Browse httpd-modules-dev</a></td>
+</tr>
+<tr>
+<td>Raw Archive Files:</td>
+<td><a href="http://httpd.apache.org/mail/modules-dev/">Download raw mbox .gz files</a></td>
+</tr></tbody></table>
+<h1 id="http-proxydev">Proxy Module Rework Discussion List<a class="headerlink" href="#http-proxydev" title="Permalink">&para;</a></h1>
+<p>This list is closed. Proxy development discussion should take place on the
+main dev list. Archives are still available for research. Direct all
+development questions to the <a href="#http-dev">Main Development Discussion List</a>.</p>
+<p>Archives:</p>
+<ul>
+<li>Searchable: <a href="http://marc.info/?l=apache-modproxy-dev">MARC Archives</a></li>
+<li>mbox files: <a href="http://www.apache.org/mail/modproxy-dev/">ASF</a></li>
+</ul>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

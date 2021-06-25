@@ -1,0 +1,139 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>mod_smtpd - Modular SMTP Server for Apache 2.2 Installation - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="installation-instructions">Installation instructions<a class="headerlink" href="#installation-instructions" title="Permalink">&para;</a></h1>
+<p><code>mod_smtpd</code> is very easy to install and setup. First, we need to build the
+module and make the Apache HTTPd webserver load it. Then, we'll setup our
+archives repository and complete Apache's configuration.</p>
+<p><code>mod_smtpd</code> has, of course, some requirements :</p>
+<ul>
+<li>
+<p>Apache HTTPd &gt;= 2.2 ( <code>mod_smtpd</code> has been tested succesfully with
+Apache 2.2.0 and 2.3.0-dev)</p>
+</li>
+<li>
+<p>APR and APR-Util &gt;= 0.9</p>
+</li>
+<li>
+<p>libapreq2</p>
+</li>
+</ul>
+<h1 id="download-and-build">Download and build<a class="headerlink" href="#download-and-build" title="Permalink">&para;</a></h1>
+<p>Checkout sources via Subversion :
+<code>svn checkout https://svn.apache.org/repos/asf/httpd/mod_smtpd/trunk mod_smtpd</code>
+Then, build <code>mod_smtpd</code> :
+<code>./autogen.sh<br/>./configure<br/>make clean all<br/>su -c
+'make install'</code>
+Refer to the configure help ( <code>./configure --help</code> ) if you need a to
+specify an installation prefix ( <code>--prefix=...</code> ) or any other specific
+setup.</p>
+<h1 id="preliminary-apache-setup">Preliminary Apache setup<a class="headerlink" href="#preliminary-apache-setup" title="Permalink">&para;</a></h1>
+<p>The next step is to make Apache HTTPd load the <code>mod_smtpd</code> module at
+runtime. Edit your Apache configuration file, and add the following to the
+rest of the <code>LoadModule</code> lines :
+<code>LoadModule smtpd_module /usr/lib/apache2/modules/mod_smtpd.so</code>
+Or replace that directory with your default Apache 2.2 install directory.</p>
+<h1 id="mod_smtpd-configuration">mod_smtpd configuration<a class="headerlink" href="#mod_smtpd-configuration" title="Permalink">&para;</a></h1>
+<p>You now need to configure Apache to run mod_smtpd whenever a network
+connection comes in. We recommend this virtual host setup:
+<code>NameVirtualHost *:80<br/>NameVirtualHost
+*:25<br/><br/>&lt;VirtualHost *:80&gt;<br/># your webserver
+configuration here<br/>&lt;/VirtualHost
+&gt;<br/><br/>&lt;VirtualHost *:25&gt;<br/>ServerName localhost</code></p>
+<h1 id="or-whatever-desiredsmtpprotocol-on-addition-mod_smtpd">or whatever desired<br/>SmtpProtocol On<br/># addition mod_smtpd<a class="headerlink" href="#or-whatever-desiredsmtpprotocol-on-addition-mod_smtpd" title="Permalink">&para;</a></h1>
+<p>or associated plugin configuration here<br/>&lt;/VirtualHost
+&gt;<br/></p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

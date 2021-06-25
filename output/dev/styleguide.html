@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Apache Developers' C Language Style Guide - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="apache-developers-c-language-style-guide">Apache Developers' C Language Style Guide<a class="headerlink" href="#apache-developers-c-language-style-guide" title="Permalink">&para;</a></h1>
+<p>**Compiled by Paul Sutton <a href="mailto:paul@awe.com">paul@awe.com</a> **. Based on
+a vote taken in November, 1996.<br/>Further refinements voted upon in
+July 1997.</p>
+<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permalink">&para;</a></h1>
+<p>[This bit could state that code should be laid out to be clear to someone
+else familiar with Apache. Functions should be short and easily understood.
+Comments should be provided to explain the rationale for code which is not
+obvious, and to document behavior of functions. The guidelines can be
+broken if necessary to achieve a clearer layout]</p>
+<p>This style can be generated with the following arguments to GNU indent:</p>
+<pre><code>-i4 -npsl -di0 -br -nce -d0 -cli0 -npcs -nfc1 -nut
+</code></pre>
+<h1 id="the-guidelines">The Guidelines<a class="headerlink" href="#the-guidelines" title="Permalink">&para;</a></h1>
+<ul>
+<li>Opening braces are given on the same lines as statements, or on the
+following line at the start of a function definition.</li>
+<li>Code inside a block (whether surrounded by braces or not) is indented by
+four space characters. Tab characters are not used. Comments are indented to
+the same level as the surrounding code.</li>
+<li>Closing braces are always on a separate line from surrounding code, and are
+indented to line up with the start of the text on the line containing the
+corresponding opening brace.</li>
+<li>Functions are declared with ANSI-style arguments.</li>
+<li>There is no space between the function name and the opening bracket of the
+arguments to the function. There is a single space following commas in
+argument lists and the semi-colons in for statements.</li>
+<li>Inside a <code>switch()</code> statement, the <code>case</code> keywords are indented to the same
+level as the <code>switch</code> line.</li>
+<li>Operators in expressions should be surrounded by a single space before and
+after, except for unary increment (++), decrement (--), and negation (!) operators.</li>
+<li>There is no whitespace between a cast and the item modified (<em>e.g.</em>,
+"<samp>(int)j</samp>" and not "<samp>(int) j</samp>").</li>
+<li>If a cast is to a pointer type, there is a space between the type and
+the <code>*</code> character (<em>e.g.</em>, "<code>(char *)i</code>" instead of "<code>(char*)i</code>")</li>
+</ul>
+<h1 id="details-and-examples">Details and Examples<a class="headerlink" href="#details-and-examples" title="Permalink">&para;</a></h1>
+<h2 id="indentation-general-style"><strong>Indentation, General Style</strong><a class="headerlink" href="#indentation-general-style" title="Permalink">&para;</a></h2>
+<p>Each level of indentation of code is four spaces. Tab characters should
+never be used. Specific indentation rules for function declarations and
+control-flow keywords are given below.</p>
+<p>Example:</p>
+<pre><code>main(int argc, char **argc)
+{
+if (argc != 0)  {
+    fprintf(stderr, "No arguments allowed\n");
+    exit(1);
+}
+exit(0);
+}
+</code></pre>
+<p><a name="long-exps">If an expression</a> (or a routine declaration or
+invocation) would extend past column 80, the terms or arguments are wrapped
+at a convenient spot and the wrapped portion is indented under the first
+term in the expression (or the first argument to the function). Conditional
+expressions should be wrapped to keep single or parenthesized terms as
+atomic as possible, and place Boolean operators at either the start
+(preferable) or end of the line.</p>
+<p>Example:</p>
+<pre><code> static const char *really_long_name(int i, int j,
+                                     const char *args, void *foo,
+                                     int k)
+
+ if (cond1 &amp;&amp; (item2 || item3) &amp;&amp; (!item4)
+     &amp;&amp; (item5 || item6) &amp;&amp; item7)  {
+     do_a_thing();
+ }
+</code></pre>
+<h2 id="comments"><strong>Comments</strong><a class="headerlink" href="#comments" title="Permalink">&para;</a></h2>
+<p>Provide comments which explain the function of code where it is not clear
+from the code itself. Provide rationale where necessary for particular bits
+of code.</p>
+<p>Comments should be indented to same level as the surrounding text.</p>
+<p>Example:</p>
+<pre><code>code;
+/* comment */
+code;
+</code></pre>
+<h2 id="function-declaration-and-layout"><strong>Function Declaration and Layout</strong><a class="headerlink" href="#function-declaration-and-layout" title="Permalink">&para;</a></h2>
+<p>Functions are laid out as follows:</p>
+<p>Example:</p>
+<pre><code>int main(int argc, char **argv)
+{
+    code;
+}
+</code></pre>
+<p>The return type is placed on the same line as the function. Arguments (if
+any) are given in ANSI style. If no arguments, declare function as <code>void</code>.
+No space between function name and opening bracket, single space after
+comma separating each argument. The opening brace is placed on the line
+after the definition, indented to line up with the start of the return type
+text. The code is indented with four spaces, and the closing brace is
+indented to line up with the opening brace. <strong>Also see the section on
+indenting <a href="#long-exps">long declarations and invocations</a>.</strong></p>
+<h2 id="function-calls"><strong>Function Calls</strong><a class="headerlink" href="#function-calls" title="Permalink">&para;</a></h2>
+<p>Space after commas in function calls. No space between function name and
+opening bracket.</p>
+<p>Example:</p>
+<pre><code>f(a, b);
+</code></pre>
+<p><strong>Also see the section on indenting <a href="#long-exps">long declarations
+and invocations</a>.</strong></p>
+<h2 id="flow-control-layout"><strong>Flow-Control Layout</strong><a class="headerlink" href="#flow-control-layout" title="Permalink">&para;</a></h2>
+<p>Flow-control statements (<code>if</code>, <code>while</code>, <code>for</code>, <em>etc.</em>) are laid out as in this</p>
+<p>Example:</p>
+<pre><code>if (expr)  {
+    code;
+}
+else  {
+    code;
+}
+</code></pre>
+<p>There is a space between the keyword and the opening bracket. Opening brace
+placed on same line as the flow keyword. The code itself is indented by four
+spaces. The closing brace is indented to line up with the opening brace. If
+an <code>else</code> clause is used, the <code>else</code> keyword is placed on the line following
+the closing brace and is indented to line up with the corresponding <code>if</code>.
+<strong>Also see the section on indenting <a href="#long-exps">long
+expressions</a>.</strong></p>
+<h2 id="for-layout"><strong><code>for</code> Layout</strong><a class="headerlink" href="#for-layout" title="Permalink">&para;</a></h2>
+<p>Space after the semi-colons.</p>
+<p>Example:</p>
+<pre><code>for (a; b; c)
+</code></pre>
+<h2 id="switch-layout"><strong><code>switch</code> Layout</strong><a class="headerlink" href="#switch-layout" title="Permalink">&para;</a></h2>
+<p><code>case</code> lines within a <code>switch()</code> are indented to same level as the switch
+statement itself. The code for each case is indented by four spaces.
+Braces are laid out as for other control-flow keywords.</p>
+<p>Example:</p>
+<pre><code>switch (x)  {
+case a:
+    code;
+case b:
+    code;
+}
+</code></pre>
+<h2 id="expressions"><strong>Expressions</strong><a class="headerlink" href="#expressions" title="Permalink">&para;</a></h2>
+<p>Space before and after assignment and other and operators. No space between
+unary operators (increment, decrement, and negation) and the lvalue.</p>
+<p>Examples:</p>
+<pre><code>a = b
+a + b
+a &lt; b
+a = -b
+a = !b
+++a
+</code></pre>
+<h2 id="capitalisation-of-enums"><strong>Capitalisation of Enums</strong><a class="headerlink" href="#capitalisation-of-enums" title="Permalink">&para;</a></h2>
+<p>No rule.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2021 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

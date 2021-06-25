@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+<HEAD>
+<TITLE>Apache Server Project Plan</TITLE>
+</HEAD>
+<!-- Background white, links blue (unvisited), navy (visited), red (active) -->
+<BODY
+BGCOLOR="#FFFFFF"
+TEXT="#000000"
+LINK="#0000FF"
+VLINK="#000080"
+ALINK="#FF0000"
+>
+
+<H1>Apache Server Project Plan</H1>
+<hr>
+<p><strong>THIS DOCUMENT IS CURRENTLY BEING UPDATED. PLANS POST 2.0 ARE STILL FUZZY! </strong>
+<p><hr>
+
+<p>
+
+This document aims to encapsulate our plans for world domination, uh,
+I mean, further work on the Apache web server.  This is simply a
+statement of goals, is always subject to change, and should not be
+relied upon for business or mission-critical purposes.  Nothing is
+guaranteed.
+
+<P>
+
+Last modified: <!--#echo var="LAST_MODIFIED" -->
+
+<H2>2.0</H2>
+
+<UL>
+ <LI>Multithreaded/Multiprocess hybrid
+ <LI>An Apache runtime library
+ <LI>Shared memory pools
+ <LI>Absolute Enforcement of an "Apache Style" for code.
+ <LI>Updated Configure/build/make process (autoconf?)
+ <LI>Configuration API, so that different configuration loaders can be written (Perl, Java, etc.)
+ <LI>More API hooks:
+  <UL>
+	<LI>Post config-read; so we can check consistency between
+          directives and abort the startup
+       	
+	<LI>Per child init
+        
+	<LI>Per child die
+        
+	<LI>Pre-handler; which asks round what could *potentially* be served on a URI;
+          gets back a list of possible internal redirects with the mime-type/lang/charset
+          and quality values.
+        
+	<LI>Up to 4 placeholders for future use ?
+  </UL>
+ <LI>Logging enhancements
+  <UL>
+   <LI>Separate logs for stderr and server error messages
+   <LI>Enable all virtual hosts to error-log to the same log, in ways 
+	which distinguish entries.
+   <LI>Syslog, with different debugging levels, a la named or sendmail
+  </UL>
+ <LI>Fully 1.1 compliant proxy module.
+ <LI>Protocol abstraction layer, so that different protocol implementations can be distributed as a module.
+</UL>
+
+<H2>2.1</H2>
+<UL>
+<LI>Check returns from all system calls: read, write, etc. 
+<LI>Nicer Access Control (allow "OneOf","AND","OR" ala NCSA)
+<LI>Named Access Methods
+<LI>Implementation of the "LINK" Method 
+<LI>Authentication API, to make authentication type and database 
+type orthogonal
+<LI>Next-generation content negotiation support
+<LI>Data store abstraction API?  So we're not always presuming we sit on top of a filesystem.
+<LI>Enable logging of all "POST"ed data - for commercial-database-like
+backups and replay ability. 
+<LI>Support for CERN-style imagemaps?  http://www.w3.org/pub/WWW/Daemon/User/CGI/HTImageDoc.html#config.
+<LI>give an "Option", like "IncludesNoExec", except allow for CGI includes,
+not CMD includes.
+<LI>Serious dynamic loading support, so that binary distributions can have all
+ modules compiled and can be used even by folks without compilers of their own.
+<LI>Standardized PUT support, at least a perl script included with the distribution.
+</UL>
+
+<H2>3.0</H2>
+<UL>
+ <LI>HTTP-NG
+</UL>
+
+<HR>
+
+Last Modified <!--#echo var="LAST_MODIFIED" -->
