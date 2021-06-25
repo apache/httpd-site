@@ -75,7 +75,7 @@ Some of the participants are:
 
 -  [Jason Lingohr](http://geeklog.lucid.net.au/) 
 
-- André L. Malo
+- Andr&#233; L. Malo
 
 -  [Chris Pepper](http://www.reppep.com/~pepper/) 
 
@@ -118,7 +118,7 @@ Server were contributed by
 
 - Karla Quintero (Spanish)
 
-- Thomas Sjögren (Swedish)
+- Thomas Sj&#246;gren (Swedish)
 
 - Emre Sokullu (Turkish)
 
