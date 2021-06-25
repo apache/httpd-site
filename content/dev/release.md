@@ -350,8 +350,8 @@ next release or a patch can be made available. No changes can be made
 between alpha, beta, and GA status. The only difference is the file name
 that is downloaded by the users. If an alpha tarball is created, but there
 was an error that can be resolved by re-rolling the tarball, it may be
-permissible to re-roll the release. But, the code itself may<font
-color="red">not</font>change from designation to designation.
+permissible to re-roll the release. But, the code itself may <font
+color="red">not</font> change from designation to designation.
 
 There are two courses of action:
 

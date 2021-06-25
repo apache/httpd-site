@@ -79,14 +79,14 @@ running is to configure Apache so that it will call `mod_mbox` when trying
 to read a `.mbox` file. The following configuration snippet is a good start:
 
     AddHandler mbox-handler.mbox
-    &lt;LocationMatch /archives/([^/]+)&gt;
+    <LocationMatch /archives/([^/]+)>
 	MboxIndex On
 	MboxRootPath "/archives/"
 	MboxStyle "/archives/style.css"
 	MboxScript "/archives/archives.js"
 	MboxHideEmpty On
 	MboxAntispam On
-    &lt;/LocationMatch&gt;
+    </LocationMatch>
 
 Please refer to the configuration directives [reference](ref.html) for more
 information on these directives.

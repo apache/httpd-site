@@ -8,91 +8,91 @@ individuals in the Apache HTTP Server Project.
 
 | Contributor | Activities |
 |-------------|------------|
-|  ** [Erik Abele](#erikabele) **  | Mostly documentation, various tweaks here and there |
-|  ** [Aaron Bannert](#aaron) **  | Some MPM work, recent APR contributions, "that API guy". |
-|  ** [Brian Behlendorf](#behlendorf) **  | Various, focusing on infrastructure for development. |
-|  ** [Rich Bowen](#rbowen) **  | Documentation, Concom. |
-|  ** [Ken Coar](#coar) **  | HTML pedant, FAQ editor, UI perfectionist, bugdb script hacker |
-|  ** [Eric Covener](#covener) **  | Bug fixes, LDAP, Documentation, IRC and ML support |
-|  ** [Davi Arnaut](#darnaut) **  | Bug fixes and others things |
-|  ** [Mark Cox](#cox) **  | Cookie module, Status module, DBM code. |
-|  ** [Chris Darroch](#chrisd) **  |  |
-|  ** [Lars Eilebrecht](#lars) **  | Bug hunter |
-|  ** [Stefan Eissing](#icing) **  | mod_h2 |
-|  ** [Ralf S. Engelschall](#rse) **  | Dr. Cosmetics, mod_rewrite, DSO support, Configure, APACI, apxs, etc. |
-|  ** [Justin Erenkrantz](#jerenkrantz) **  |  |
-|  ** [Roy T. Fielding](#fielding) **  | Standards Cop. |
-|  ** [Tony Finch](#fanf) **  | Mass virtual hosting |
-|  ** [Stefan Fritsch](#sf) **  | Bug fixes |
-|  ** [Daniel Gruno](#humbedooh) **  | Documentation, bug fixes, syntax highlighting |
-|  ** [Rob Hartill](#hartill) **  | general trouble maker, comments to offend all. |
-|  ** [Brian Havard](#bjh) **  | OS/2 porting. |
-|  ** [Yoshiki Hayashi](#yoshiki) **  | Documentation. |
-|  ** [Ian Holsman](#ianh) **  | Performance &amp; Scalability |
-|  ** [Rian Hunter](#rhunter) **  | mod_smtpd!!! |
-|  ** [Ben Hyde](#bhyde) **  |  |
-|  ** [Jim Jagielski](#jagielski) **  | Porter and general hacks. |
-|  ** [Rainer Jung](#rjung) **  |  |
-|  ** [Manoj Kasichainula](#kasichainula) **  |  |
-|  ** [Nick Kew](#niq) **  | Applications Support (Filtering, DBD) |
-|  ** [Alexei Kosut](#kosut) **  |  |
-|  ** [Martin Kraemer](#kraemer) **  | EBCDIC Port to BS2000 mainframes. |
-|  ** [Ben Laurie](#laurie) **  | SCO and QNX porting, Apache-SSL author, pedant. |
-|  ** [Graham Leggett](#minfrin) **  | mod_cache, mod_proxy, mod_ldap, mod_headers |
-|  ** [Rasmus Lerdorf](#lerdorf) **  | mod_info, mod_php, mod_php3 |
-|  ** [Jason Lingohr](#jsl) **  | Documentation. |
-|  ** [Colm MacCárthaigh](#colm) **  | graceful-stop, IPv6 oddities, scalability insanity, trunk testing |
-|  ** [Doug MacEachern](#dougm) **  |  |
-|  ** [André L. Malo](#nd) **  | jack of all trades |
-|  ** [Astrid Malo](#kess) **  | Documentation |
-|  ** [Madhusudan Mathihalli](#madhum) **  |  |
-|  ** [Brian McCallister](#brianm) **  | mod_lua |
-|  ** [Aram W. Mirzadeh](#mirzadeh) **  | Linux &amp; SCO porting. |
-|  ** [Thom May](#thommay) **  | Bug fixes and minor stuff |
-|  ** [Chuck Murcko](#murcko) **  | mod_proxy, porting to various OS |
-|  ** [Brad Nicholes](#bnicholes) **  | Apache and APR for NetWare |
-|  ** [Victor J. Orlikowski](#orlikowski) **  |  |
-|  ** [Sameer Parekh](#sameer) **  |  |
-|  ** [Rüdiger Plüm](#pluem) **  | Bug fixes |
-|  ** [Noirin Plunkett](#noirin) **  | Documentation |
-|  ** [Dan Poirier](#poirier) **  | Bug fixes, doc |
-|  ** [Paul Querna](#querna) **  |  |
-|  ** [Paul J. Reder](#reder) **  |  |
-|  ** [David Reid](#reid) **  | BeOS MPM and APR code, party animal |
-|  ** [Daniel López Ridruejo](#ridruejo) **  |  |
-|  ** [William A. Rowe, Jr.](#wrowe) **  | WinNT porting and support |
-|  ** [Wilfredo Sánchez](#wsanchez) **  | Mac OS porting |
-|  ** [Takashi Sato](#takashi) **  | Documentation, Japanese translation and bug fixes |
-|  ** [Joe Schaefer](#joes) **   | apreq, site |
-|  ** [Cliff Skolnick](#skolnick) **  | Solaris porting. |
-|  ** [Marc Slemko](#slemko) **  | Security, networking issues |
-|  ** [Joshua Slive](#slive) **  | Documentation |
-|  ** [Greg Stein](#stein) **  | For now: general pest. Future: WebDAV integration. |
-|  ** [Tony Stevenson](#pctony) **  | Documentation |
-|  ** [Bill Stoddard](#stoddard) **  |  |
-|  ** [Sander Striker](#striker) **  | Memory management, enforcing Apache code style |
-|  ** [Paul Sutton](#sutton) **  | Documentation writing, code hacking, bug fixing |
-|  ** [Randy Terbush](#terbush) **  | Board member, Treasurer, Fund Raiser |
-|  ** [Jeff Trawick](#trawick) **  | Bug fixing |
-|  ** [Dirk van Gulik](#vangulik) **  |  |
-|  ** [Cliff Woolley](#jwoolley) **  |  |
+| **[Erik Abele](#erikabele)** | Mostly documentation, various tweaks here and there |
+| **[Aaron Bannert](#aaron)** | Some MPM work, recent APR contributions, "that API guy". |
+| **[Brian Behlendorf](#behlendorf)** | Various, focusing on infrastructure for development. |
+| **[Rich Bowen](#rbowen)** | Documentation, Concom. |
+| **[Ken Coar](#coar)** | HTML pedant, FAQ editor, UI perfectionist, bugdb script hacker |
+| **[Eric Covener](#covener)** | Bug fixes, LDAP, Documentation, IRC and ML support |
+| **[Davi Arnaut](#darnaut)** | Bug fixes and others things |
+| **[Mark Cox](#cox)** | Cookie module, Status module, DBM code. |
+| **[Chris Darroch](#chrisd)** |  |
+| **[Lars Eilebrecht](#lars)** | Bug hunter |
+| **[Stefan Eissing](#icing)** | mod_h2 |
+| **[Ralf S. Engelschall](#rse)** | Dr. Cosmetics, mod_rewrite, DSO support, Configure, APACI, apxs, etc. |
+| **[Justin Erenkrantz](#jerenkrantz)** |  |
+| **[Roy T. Fielding](#fielding)** | Standards Cop. |
+| **[Tony Finch](#fanf)** | Mass virtual hosting |
+| **[Stefan Fritsch](#sf)** | Bug fixes |
+| **[Daniel Gruno](#humbedooh)** | Documentation, bug fixes, syntax highlighting |
+| **[Rob Hartill](#hartill)** | general trouble maker, comments to offend all. |
+| **[Brian Havard](#bjh)** | OS/2 porting. |
+| **[Yoshiki Hayashi](#yoshiki)** | Documentation. |
+| **[Ian Holsman](#ianh)** | Performance &amp; Scalability |
+| **[Rian Hunter](#rhunter)** | mod_smtpd!!! |
+| **[Ben Hyde](#bhyde)** |  |
+| **[Jim Jagielski](#jagielski)** | Porter and general hacks. |
+| **[Rainer Jung](#rjung)** |  |
+| **[Manoj Kasichainula](#kasichainula)** |  |
+| **[Nick Kew](#niq)** | Applications Support (Filtering, DBD) |
+| **[Alexei Kosut](#kosut)** |  |
+| **[Martin Kraemer](#kraemer)** | EBCDIC Port to BS2000 mainframes. |
+| **[Ben Laurie](#laurie)** | SCO and QNX porting, Apache-SSL author, pedant. |
+| **[Graham Leggett](#minfrin)** | mod_cache, mod_proxy, mod_ldap, mod_headers |
+| **[Rasmus Lerdorf](#lerdorf)** | mod_info, mod_php, mod_php3 |
+| **[Jason Lingohr](#jsl)** | Documentation. |
+| **[Colm MacCárthaigh](#colm)** | graceful-stop, IPv6 oddities, scalability insanity, trunk testing |
+| **[Doug MacEachern](#dougm)** |  |
+| **[André L. Malo](#nd)** | jack of all trades |
+| **[Astrid Malo](#kess)** | Documentation |
+| **[Madhusudan Mathihalli](#madhum)** |  |
+| **[Brian McCallister](#brianm)** | mod_lua |
+| **[Aram W. Mirzadeh](#mirzadeh)** | Linux &amp; SCO porting. |
+| **[Thom May](#thommay)** | Bug fixes and minor stuff |
+| **[Chuck Murcko](#murcko)** | mod_proxy, porting to various OS |
+| **[Brad Nicholes](#bnicholes)** | Apache and APR for NetWare |
+| **[Victor J. Orlikowski](#orlikowski)** |  |
+| **[Sameer Parekh](#sameer)** |  |
+| **[Rüdiger Plüm](#pluem)** | Bug fixes |
+| **[Noirin Plunkett](#noirin)** | Documentation |
+| **[Dan Poirier](#poirier)** | Bug fixes, doc |
+| **[Paul Querna](#querna)** |  |
+| **[Paul J. Reder](#reder)** |  |
+| **[David Reid](#reid)** | BeOS MPM and APR code, party animal |
+| **[Daniel López Ridruejo](#ridruejo)** |  |
+| **[William A. Rowe, Jr.](#wrowe)** | WinNT porting and support |
+| **[Wilfredo Sánchez](#wsanchez)** | Mac OS porting |
+| **[Takashi Sato](#takashi)** | Documentation, Japanese translation and bug fixes |
+| **[Joe Schaefer](#joes)**  | apreq, site |
+| **[Cliff Skolnick](#skolnick)** | Solaris porting. |
+| **[Marc Slemko](#slemko)** | Security, networking issues |
+| **[Joshua Slive](#slive)** | Documentation |
+| **[Greg Stein](#stein)** | For now: general pest. Future: WebDAV integration. |
+| **[Tony Stevenson](#pctony)** | Documentation |
+| **[Bill Stoddard](#stoddard)** |  |
+| **[Sander Striker](#striker)** | Memory management, enforcing Apache code style |
+| **[Paul Sutton](#sutton)** | Documentation writing, code hacking, bug fixing |
+| **[Randy Terbush](#terbush)** | Board member, Treasurer, Fund Raiser |
+| **[Jeff Trawick](#trawick)** | Bug fixing |
+| **[Dirk van Gulik](#vangulik)** |  |
+| **[Cliff Woolley](#jwoolley)** |  |
 
 # Apache Emeritae (old group members now off doing other things) #
 
 | Contributor | Activities |
 |-------------|------------|
-|  ** [Ryan Bloom](#bloom) **  | APR and initial work to hybridize Apache. Numerous bug fixes and enhancements in the 2.0.x series. Created the Perchild MPM, a lot of work on the filter architecture. |
-|  ** [Dean Gaudet](#dgaudet) **  | Performance freak. Numerous bug fixes, and stability enhancements in the 1.x series. Created the MPM architecture. |
-|  ** [Brian Pane](#brianp) **  | Performance and scalability |
-|  ** [David Robinson](#robinson) **  | Patch database, documentation. |
-|  ** [Robert Thau](#thau) **  | Designed and implemented module API, did server core overhaul, process pool model, content negotiation, lots and lots of other stuff. |
-|  ** [Andrew Wilson](#wilson) **  |  |
+| **[Ryan Bloom](#bloom)** | APR and initial work to hybridize Apache. Numerous bug fixes and enhancements in the 2.0.x series. Created the Perchild MPM, a lot of work on the filter architecture. |
+| **[Dean Gaudet](#dgaudet)** | Performance freak. Numerous bug fixes, and stability enhancements in the 1.x series. Created the MPM architecture. |
+| **[Brian Pane](#brianp)** | Performance and scalability |
+| **[David Robinson](#robinson)** | Patch database, documentation. |
+| **[Robert Thau](#thau)** | Designed and implemented module API, did server core overhaul, process pool model, content negotiation, lots and lots of other stuff. |
+| **[Andrew Wilson](#wilson)** |  |
 
 # Other major contributors #
 
 | Contributor | Activities |
 |-------------|------------|
-|  ** [Howard Fear](#fear) **  | SSI extensions. |
+| **[Howard Fear](#fear)** | SSI extensions. |
 |  **Florent Guillaume**  | Language Negotiation |
 |  **Koen Holtman**  | Rewrite of mod_negotiation |
 |  **Kevin Hughes**  | Creator of all those nifty icons |
@@ -100,7 +100,7 @@ individuals in the Apache HTTP Server Project.
 |  **Ambarish Malpani**  | Beginning of the NT port |
 |  **Rob McCool**  | Original author of NCSA httpd 1.3 |
 |  **Paul Richards**  | Convinced the group to use remote CVS after 1.0 |
-|  ** [Garey Smiley](#smiley) **  | OS/2 port. |
+| **[Garey Smiley](#smiley)** | OS/2 port. |
 |  **Henry Spencer**  | Author of the regex library |
 
 Hundreds of people have made individual contributions to the Apache
