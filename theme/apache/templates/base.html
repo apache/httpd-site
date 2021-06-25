@@ -18,7 +18,6 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 	</style>
     </head>
     <body>
-        {% block logo %}
         <div id="page-header">
             <p class="menu">&nbsp;</p>
             <p class="apache">&nbsp;</p>
@@ -29,16 +28,29 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
                 <img src="https://www.apache.org/images/SupportApache-small.png">
             </a>
         </div>
-        {% endblock %}
- 
         <div id="apmenu">
 	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
-
 	  <p style="margin-top: -10px;">
 	    <!-- Apachecon! -->
 	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
 	  </p>
-
+	  {% if defined page.metadata.flood %}
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/test/flood/building.html">Building</a></li>
+	    <li><a href="/test/flood/faq.html">FAQ</a></li>
+	  </ul>
+	  <h1 id="download">Download!<a class="headerlink" href="#download" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="http://www.apache.org/dyn/closer.lua/httpd/flood/">From a Mirror</a></li>
+	    <li><a href="http://downloads.apache.org/httpd/">From Here</a></li>
+	  </ul>
+	  <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/DESIGN">Design</a></li>
+	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/CONFIG">Configuration</a></li>
+	  </ul>
+	  {% else %}
 	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
 	  <ul>
 	    <li><a href="/download.cgi">Download!</a></li>
@@ -90,13 +102,12 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
 	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
 	  </ul>
+	  {% endif %}
         </div>
-
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
             {% block content %}
             {% endblock %}
-
             <!-- FOOTER -->
             <div id="footer">
 	      <p>Copyright &copy; 1997-{{ CURRENTYEAR }} The Apache Software Foundation.<br />
