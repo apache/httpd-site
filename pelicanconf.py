@@ -94,7 +94,7 @@ PLUGIN_PATHS = ['./theme/plugins']
 # With pelican-sitemap
 # PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader', 'sitemap']
 # With data and ezt templates
-PLUGINS = ['asfgenid', 'pelican-gfm']
+PLUGINS = ['asfgenid', 'asfshell', 'pelican-gfm']
 # With asfgenid
 # PLUGINS = ['asfgenid', 'pelican-gfm']
 
@@ -135,6 +135,11 @@ ASF_GENID = {
     'tables': True,
     'debug': False
 }
+
+# COnfigure the shell commands for the asfshell plugin to run during initialization
+ASF_SHELL = [
+    './content/security/vulnerabilities.sh'
+]
 
 # Unused links
 LINKS = ( )

@@ -1,4 +1,8 @@
 __pycache__
 *.pyc
 *.swp
-
+content/security/vulnerabilities_24.md
+content/security/vulnerabilities_22.md
+content/security/vulnerabilities_20.md
+content/security/vulnerabilities_13.md
+content/security/vulnerabilities-httpd.json
