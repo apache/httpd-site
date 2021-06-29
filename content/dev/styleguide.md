@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 # Apache Developers' C Language Style Guide
 
-**Compiled by Paul Sutton [paul@awe.com](mailto:paul@awe.com) **. Based on
+**Compiled by Paul Sutton [paul@awe.com](mailto:paul@awe.com)**. Based on
 a vote taken in November, 1996.<br></br>Further refinements voted upon in
 July 1997.
 
