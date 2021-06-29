@@ -723,6 +723,4 @@ Graduate Student<br></br> **Location:** Charlottesville, VA<br></br>
 </div>
 
 ----------
-<H3>And a special thanks to [Rob McCool](http://www.robm.com/) and the team
-at NCSA for the original httpd source code, which provided a solid base for
-Apache's development.</H3>
+### And a special thanks to [Rob McCool](http://www.robm.com/) and the team at NCSA for the original httpd source code, which provided a solid base for Apache's development.
