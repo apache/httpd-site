@@ -403,9 +403,10 @@ command is called <code>truss</code> on most SVR4-based systems and either <code
 (often also works with <code>strace</code> ); it tells truss to follow and continue
 tracing any child processes forked by the main process. The easiest way to
 get a full trace of a server is to do something like:</p>
-<pre><code>    % truss -f httpd -d /usr/local/apache &amp;gt;&amp;amp; outfile
+<pre>
+    % truss -f httpd -d /usr/local/apache &gt;&amp; outfile
     % egrep '^10698:' outfile
-</code></pre>
+</pre>
 <p>to view just the trace of the process id 10698.</p>
 <p>If attempting to truss a threaded server, for example when using the
 <code>worker</code> MPM, the <code>truss</code> option <code>-l</code> is very useful as it prints also the
@@ -436,12 +437,13 @@ memory.</p>
 Solaris, without knowing which httpd child might be the one to die [note:
 it is probably easier to use the MaxClients trick in the first section
 above].</p>
-<pre><code>    # for pid in `ps -eaf | fgrep httpd | cut -d' ' -f4`
+<pre>
+    # for pid in `ps -eaf | fgrep httpd | cut -d' ' -f4`
     do
-      truss -f -l -t\!all -S SIGSEGV -p $pid 2&amp;gt;&amp;amp;1 | egrep SIGSEGV
-      &amp;amp;
+      truss -f -l -t\!all -S SIGSEGV -p $pid 2&gt;&amp;1 | egrep SIGSEGV
+      &amp;
     done
-</code></pre>
+</pre>
 <p>The <a href="http://www.dejanews.com/=zzz_maf/getdoc.xp?AN=352257973">undocumented '-S'
 flag</a> to truss
 will halt the process in place upon receipt of a given signal (SIGSEGV in
