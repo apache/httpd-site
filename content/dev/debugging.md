@@ -334,10 +334,10 @@ A useful tip for using the `truss` command on Solaris is the `-f` option
 tracing any child processes forked by the main process. The easiest way to
 get a full trace of a server is to do something like:
 
-```
+<pre>
     % truss -f httpd -d /usr/local/apache &gt;&amp; outfile
     % egrep '^10698:' outfile
-```
+</pre>
 
 to view just the trace of the process id 10698.
 
@@ -373,13 +373,13 @@ Solaris, without knowing which httpd child might be the one to die [note:
 it is probably easier to use the MaxClients trick in the first section
 above].
 
-```
+<pre>
     # for pid in `ps -eaf | fgrep httpd | cut -d' ' -f4`
     do
       truss -f -l -t\!all -S SIGSEGV -p $pid 2&gt;&amp;1 | egrep SIGSEGV
       &amp;
     done
-```
+</pre>
 
 The [undocumented '-S'
 flag](http://www.dejanews.com/=zzz_maf/getdoc.xp?AN=352257973) to truss
