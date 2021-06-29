@@ -217,7 +217,7 @@ The automated workflow is:
     The computed digests of the tarball up for vote are:
     `grep '^' httpd-$TAG.tar.gz.sha* | sed -e 's/.*.tar.gz.//g' -e 's/:/: /g'`
 
-    The SVN tag is '$TAG' at r`svn info "https://svn.apache.org/repos/asf/httpd/httpd/tags/$TAG" | grep 'Revision' | awk '  {print $2}'`.
+    The SVN tag is '$TAG' at r`svn info "https://svn.apache.org/repos/asf/httpd/httpd/tags/$TAG" | grep 'Revision' | awk '{print $2}'`.
     " > mail_$TAG.txt
     
     # Wait for vote
