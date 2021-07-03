@@ -15,8 +15,12 @@ plugins:
     - gfm
 
 setup:
-  sh:
+  run:
     - ./content/security/vulnerabilities.sh
+  ignore:
+    - README.md
+    - '*.sh'
+    - '*.py'
 
 genid:
   unsafe: yes
@@ -25,7 +29,3 @@ genid:
   permalinks: yes
   tables: yes
 
-ignore:
-  - README.md
-  - '*.sh'
-  - '*.py'
