@@ -27,5 +27,5 @@ genid:
 
 ignore:
   - README.md
-  - *.sh
-  - *.py
+  - '*.sh'
+  - '*.py'
