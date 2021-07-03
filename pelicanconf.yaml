@@ -1,0 +1,26 @@
+site:
+  name: Apache HTTP Server Project
+  description: The official website of the Apache HTTP Server Project
+  domain: httpd.apache.org
+  logo: images/httpd_logo_wide_new.png
+  repository: https://github.com/apache/httpd-site/blob/main/content/
+  trademarks: Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache SOftware Foundation.
+
+theme: theme/apache
+
+plugins:
+  paths:
+    - theme/plugins
+  use:
+    - gfm
+
+setup:
+  sh:
+    - ./content/security/vulnerabilities.sh
+
+genid:
+  unsafe: yes
+  elements: yes
+  headings_depth: 4
+  permalinks: yes
+  tables: yes
