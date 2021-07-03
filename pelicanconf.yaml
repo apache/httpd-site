@@ -24,3 +24,8 @@ genid:
   headings_depth: 4
   permalinks: yes
   tables: yes
+
+ignore:
+  - README.md
+  - *.sh
+  - *.py
