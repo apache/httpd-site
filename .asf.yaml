@@ -19,3 +19,8 @@ staging:
   profile: ~
   whoami: asf-site
   autostage: preview/*
+  
+publish:
+  profile: ~
+  whoami: asf-site
+  
