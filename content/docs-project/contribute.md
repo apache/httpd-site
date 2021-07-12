@@ -25,7 +25,7 @@ You can:
 list](mailto:docs-subscribe@httpd.apache.org) and tell us something that
 could be improved.
 
-- Join #httpd on irc.freenode.net and tell us there.
+- Join #httpd on irc.libera.chat and tell us there.
 
 - Submit a ticket to the [bug database](../bug_report.html).
 
