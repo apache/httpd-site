@@ -4,10 +4,6 @@ See [ASF-Pelican](https://infra.apache.org/asf-pelican.html)
 
 See [migration notes](migration/README.md)
 
-## Tools folder
-
-The Tools folder from ASF CMS is copied to [tools](tools). These need to be adapted to Git based processes. See [migration notes](migration/README.md).
-
 ## Security content
 
 The pelican build first runs a shell script [`content/security/vulnerabilities.sh`](content/security/vulnerabilities.sh) to run the other shell scripts.
