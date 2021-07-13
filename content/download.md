@@ -55,7 +55,7 @@ Announcement](//downloads.apache.org/httpd/Announcement2.4.html) and
 the [CHANGES_2.4]([preferred]/httpd/CHANGES_2.4) and
 [CHANGES_2.4.48]([preferred]/httpd/CHANGES_2.4.48) lists.
 
-- Source: [httpd-2.4.48.tar.bz2]([preferred]/httpd/httpd-2.4.48.tar.bz2)
+- Source: [httpd-2.4.48.tar.bz2](\[preferred\]/httpd/httpd-2.4.48.tar.bz2)
 [ [PGP](https://downloads.apache.org/httpd/httpd-2.4.48.tar.bz2.asc) ] [
 [SHA256](https://downloads.apache.org/httpd/httpd-2.4.48.tar.bz2.sha256) ] [
 [SHA512](https://downloads.apache.org/httpd/httpd-2.4.48.tar.bz2.sha512) ]
