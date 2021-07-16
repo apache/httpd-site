@@ -7,7 +7,7 @@ The following page highlights some modules that the Apache HTTP Server
 Project maintains that are not included in the core distribution.
 
 The listing of all modules included in the core distribution can be found in
-the online [documentation](docs/current/mod/).
+the online [documentation](../docs/current/mod/).
 
 Finally, we do not maintain any detailed listing of third-party modules. You
 should use your favorite search engine, or have a look at code source
