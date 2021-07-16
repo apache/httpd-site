@@ -52,9 +52,9 @@ Let Apache serve your DNS for you based on your httpd.conf! Try out
 This experimental code has **not** been released, but is available to you
 from the subversion development repository.
 
-- Source: [mod_domain trunk](https://svn.apache.org/repos/asf/httpd/sandbox/mod_domain/trunk/) 
+- Source: [mod_domain](https://svn.apache.org/repos/asf/httpd/sandbox/mod_domain/) 
 
-- ViewVC: [mod_domain](https://svn.apache.org/viewvc/httpd/sandbox/mod_domain/trunk/) 
+- ViewVC: [mod_domain](https://svn.apache.org/viewvc/httpd/sandbox/mod_domain/) 
 
 - Mailing list: [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) 
 
