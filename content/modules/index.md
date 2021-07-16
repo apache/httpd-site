@@ -19,7 +19,7 @@ for you!
 later which routes requests to FastCGI application processes which it
 manages.
 
-- Website: [https://httpd.apache.org/mod_fcgid/](/mod_fcgid/) 
+- [Website](/mod_fcgid/) 
 
 - Download: [mod_fcgid current release](/download.html#mod_fcgid) 
 
@@ -35,7 +35,7 @@ web content, via an ftp: protocol request!
 This code is currently released as a beta. Volunteers are especially sought
 to test out the IPv6 functionality (EPRT and EPSV support).
 
-- Website: [https://httpd.apache.org/mod_ftp/](/mod_ftp/) 
+- [Website](/mod_ftp/) 
 
 - Download: [mod_ftp current release](/download.html#mod_ftp) 
 
@@ -67,7 +67,7 @@ This experimental code has **not** been released, but is available to you
 from the subversion development repository. It is currently in-use by the
 ASF to provide our [email archives browser.](http://mail-archives.apache.org/mod_mbox/) 
 
--  [Website](/mod_mbox/) 
+- [Website](/mod_mbox/) 
 
 - Source: [mod_mbox trunk](https://svn.apache.org/repos/asf/httpd/mod_mbox/trunk/) 
 
