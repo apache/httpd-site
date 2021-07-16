@@ -159,7 +159,7 @@ transformations are up to date.
 
 1. Note the tag date in the STATUS file.
 
-1. Run the `svn.apache.org/repos/asf/httpd/site/trunk/tools/release.sh` script.
+1. Run the `svn.apache.org/repos/asf/httpd/dev-tools/release.sh` script.
 
 1. Generate a proposed release announcement and CHANGES entry.
 
@@ -187,7 +187,7 @@ The automated workflow is:
     ASF_ID='asfid'
     
     # Get the tooling
-    svn co https://svn.apache.org/repos/asf/httpd/site/trunk/tools tools
+    svn co https://svn.apache.org/repos/asf/httpd/dev-tools tools
     cd tools
     
     # Tag a specific version in the 2.4.x branch
