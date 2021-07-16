@@ -10,3 +10,4 @@ The pelican build first runs a shell script [`content/security/vulnerabilities.s
 These generate html into md files along with the full json. See [.gitignore](.gitignore) for the list of files.
 
 Shell and python script files are otherwise ignored by the build.
+
