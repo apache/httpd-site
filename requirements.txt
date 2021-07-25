@@ -1,4 +1,0 @@
-pelican
-BeautifulSoup4
-PyYAML
-requests
