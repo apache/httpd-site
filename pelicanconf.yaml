@@ -8,12 +8,6 @@ site:
 
 theme: theme/apache
 
-plugins:
-  paths:
-    - theme/plugins
-  use:
-    - gfm
-
 setup:
   run:
     - ./content/security/vulnerabilities.sh
@@ -28,4 +22,3 @@ genid:
   headings_depth: 4
   permalinks: yes
   tables: yes
-
