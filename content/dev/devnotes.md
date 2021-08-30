@@ -176,7 +176,7 @@ An example revision that closes a pull request is <http://svn.apache.org/viewvc?
 
 # Continuous integration (CI) #
 
-[Travis](https://travis-ci.org/) CI services are used.
+[Travis](https://travis-ci.com/) CI services are used.
 
 This service allows us to automatically build httpd on different processors, OS,
 with different gcc vesions, with different library versions and with different
@@ -193,4 +193,4 @@ Should a committer want to commit something, without triggering the whole proces
 keyword as part of the commit message.
 
 
-Here are the [latest built results](https://travis-ci.org/github/apache/httpd).
+Here are the [latest built results](https://travis-ci.com/github/apache/httpd).
