@@ -223,13 +223,13 @@ Germany<br></br> **Contributions:** Bugs, bug fixes, documentation, etc.
 [http://www.engelschall.com/](http://www.engelschall.com/) <br></br>
 **Organization:** Private<br></br> **Occupation:** Cable &amp; Wireless
 Deutschland GmbH<br></br> **Location:** Munich, Germany<br></br>
-**Contributions:** Contributor of the<EM>URL Rewriting
-Module</EM>(mod_rewrite), the<EM>Dynamic Shared Object</EM>(DSO) support,
-the<EM>Apache Autoconf-style Interface</EM>(APACI), the overhauling of the
+**Contributions:** Contributor of the <EM>URL Rewriting
+Module</EM> (mod_rewrite), the <EM>Dynamic Shared Object</EM> (DSO) support,
+the <EM>Apache Autoconf-style Interface</EM> (APACI), the overhauling of the
 Configure script and Makefile templates and various bugfixes and minor
-features:<EM>Line Continuation</EM>for config files, programs for
-the<EM>Big Symbol Renaming</EM>in April 1998 (foo -&gt; ap_foo), Reverse
-Proxy support, etc. In general Ralf is<EM>Dr. Cosmetics</EM>at the Apache
+features: <EM>Line Continuation</EM> for config files, programs for
+the <EM>Big Symbol Renaming</EM> in April 1998 (foo -&gt; ap_foo), Reverse
+Proxy support, etc. In general Ralf is <EM>Dr. Cosmetics</EM> at the Apache
 Group because his opinion is that every type of hacking is some sort of art
 and hence needs to be maximum clean and perfect.
 
