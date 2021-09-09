@@ -138,39 +138,33 @@ scripts and comments within for a complete understandig of the process.
 
 Key points the automation handles:
 
-1. Ensure the Copyright date reflects the current year in the NOTICE
+1. It creates a candidate branch as ^/httpd/httpd/tags/candidate-$FULL_VERSION from the
+   branch and revision you have checked out locally.
+
+1. In candidate: Ensure the Copyright date reflects the current year in the NOTICE
 and `docs/manual/style/xsl/common.xsl` files.
  
-1. Execute `./build.sh all convmap` to ensure that the documentation
+1. In candidate: Commit the change of `AP_SERVER_DEVBUILD_BOOLEAN` to `0` in `include/ap_release.h`.
+
+1. In candidate: Bump `ENTITY httpd.patch` in `docs/manual/style/version.ent`.
+
+1. In candidate: Execute `./build.sh all convmap` to ensure that the documentation
 transformations are up to date.
 
-1. Ensure that the RM's PGP/GPG key is in the `httpd-dist/KEYS` file.
+1. Build tarballs from export of candidate. Plus checksum files.
 
-1. Commit the change of `AP_SERVER_DEVBUILD_BOOLEAN` to `0` in `include/ap_release.h`.
-
-1. Create an official X.Y.Z tag based on the candidate tree.
-
-1. Revert the change to `include/ap_release.h` setting 
-`AP_SERVER_DEVBUILD_BOOLEAN` back to `1`, and bump `AP_SERVER_PATCHLEVEL_NUMBER`.
-
-1. Bump `ENTITY httpd.patch` in `docs/manual/style/version.ent`.
-
-1. Add the corresponding version placeholder in CHANGES.
-
-1. Note the tag date in the STATUS file.
-
-1. Run the `svn.apache.org/repos/asf/httpd/dev-tools/release.sh` script.
+1. Signs tarballs with your gpg key (you may specify the signing id to use).
 
 1. Generate a proposed release announcement and CHANGES entry.
 
-1. Commit the generated release tarballs, signatures and proposed announcements
+1. Commit the generated tarballs, signatures and proposed announcements
  to the subversion.
 `https://dist.apache.org/repos/dist/dev/httpd/` repository.
 
-1. Email dev@httpd.apache.org with a [VOTE] Release X.Y.Z to call for
-testing and votes on this candidate.
+1. Pepares and email with a [VOTE] Release X.Y.Z to call for
+testing and votes on this candidate. Send this to dev@httpd.apache.org.
 
-1. When the vote has concluded, the tarballs and signatures can be pushed
+1. When the vote has concluded, the tarballs and signatures can be moved
 to the release distribution mirror.
 
 1. Add the new version and the new modules, if any, in bugzilla (or ask infra to do so).
@@ -178,60 +172,64 @@ to the release distribution mirror.
 1. After a 24 to 48 hour delay for the mirrors to replicate the data, the
 release can be announced with any pending security announcements as well.
 
+1. local checkout: increment the patch number for work on the next release.
+
+1. local checkout: Add the corresponding version placeholder in CHANGES.
+
+1. local checkout: Note the tag date in the STATUS file.
+
 
 The automated workflow is:
 
-    TAG="2.4.33"
-    ME="Release Manager"
-    KEY_EMAIL='my_personal@address.com'
-    ASF_ID='asfid'
-    
     # Get the tooling
     svn co https://svn.apache.org/repos/asf/httpd/dev-tools tools
-    cd tools
+    # Get the branch to release, e.g.
+    svn co https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x 2.4.x
+    cd 2.4.x
     
-    # Tag a specific version in the 2.4.x branch
-    ./tag.sh 2.4.x $TAG /tmp/foo
+    # Start a candidate 'rc1'
+    ../tools/release/r0-make-candidate.sh rc1
     
-    # Generate a release tarball (including dependencies for testing)
-    # signed with the signer email address. This will be placed in
-    # your current directory
-    ./release.sh --latestapxxx --tag $TAG '' httpd-2.4 $TAG "$KEY_EMAIL"
+    # Generate tarballs, checksums and signatures,
+    ../tools/release/r1-make-tars.sh -s <gpg key id>
     
-    # Send the proposed release in $CWD off to the dev dist location
-    ./push.sh . $TAG dev
+    # Create the Announcement* and CHANGES* files. Put these and 
+    # the tarballs onto https://dist.apache.org/repos/dist/dev/httpd
+    # Create a mail proposal in ./dist/mail-vote-$FULL_VERSION.txt
+    ../tools/release/r2-prep-vote.sh
     
-    # Generate a vote thread email to send to dev@. 
-    echo "
-    Subject: [VOTE] Release httpd-$TAG
-    
-    Hi, all;
-       Please find below the proposed release tarball and signatures:
-    https://dist.apache.org/repos/dist/dev/httpd/
-    
-    I would like to call a VOTE over the next few days to release this candidate tarball as $TAG:
-    [ ] +1: It's not just good, it's good enough!
-    [ ] +0: Let's have a talk.
-    [ ] -1: There's trouble in paradise. Here's what's wrong.
-    
-    The computed digests of the tarball up for vote are:
-    `grep '^' httpd-$TAG.tar.gz.sha* | sed -e 's/.*.tar.gz.//g' -e 's/:/: /g'`
+    # declare the vote by sending the mail to the dev list
+    # wait for the results on this
 
-    The SVN tag is '$TAG' at r`svn info "https://svn.apache.org/repos/asf/httpd/httpd/tags/$TAG" | grep 'Revision' | awk '{print $2}'`.
-    " > mail_$TAG.txt
+    # Should the vote fail, cancel the release candiate with
+    ../tools/release/reset-candidate.sh
+
+    # Start again, use 'rc2', 'rc3'...
+    # Until the vote passes...
     
-    # Wait for vote
+    # Push the tarballs, CHANGES* etc. to 
+    # https://dist.apache.org/repos/dist/release/httpd
+    # this will use the version without any rc1 suffix
+    ../tools/release/r3-push-release-tars.sh
+    # wait for them to reach the mirrors
     
-    # Successful vote: Push to the mirrors for distribution
-    ./push.sh . $TAG dist
+    # add CVE related information and prepare changes to the
+    # dist release, website, pmc repository and local checkout
+    # all these changes are local only
+    ../tools/release/r4-stage-release.sh
     
+    # NOTE: this is the point of no return
+    
+    # Commit all staged changes into the repositories
+    ../tools/release/r5-commit-staged-release.sh
     # Update Bugzilla (new version and new modules, if any)
     
-    # Wait for mirrors. Verify no mangling of CHANGES/announcement happened
-    # with the scripts (they use the files in the dist repo for sending)
+    # Get instructions on announcement emails and CVEs
+    # that need to progress to READY in the ASF cveprocess
+    ../tools/release/r6-announce.sh
     
-    # Generate and send release and security announcements
-    ./announce.sh $TAG "$ASF_ID" "$ME"
+    # you are done.
+    
 
 # What can I call this release? #
 
@@ -344,26 +342,40 @@ endings required for that platform. More information can be found
 
 # Oops. We found a problem. #
 
-At this point, the release has been created. No code changes can be made in
-this release. If a problem is found, it will have to be addressed in the
-next release or a patch can be made available. No changes can be made
-between alpha, beta, and GA status. The only difference is the file name
-that is downloaded by the users. If an alpha tarball is created, but there
-was an error that can be resolved by re-rolling the tarball, it may be
-permissible to re-roll the release. But, the code itself may <font
-color="red">not</font> change from designation to designation.
+Up until you pushed the staged release into the different repositories,
+everything is reversible. As listed above, you may run
 
-There are two courses of action:
+    ../tools/release/reset-candidate.sh
 
-Revoke the release and immediately create another one that has a fix to
-this problem. You can take the old release, apply the single patch, and
-start the voting process again. This is only recommended for critical
-problems found early on in the release cycle.
+in your checkout. You can give the candidate version as an argument, should
+the script not detect the version correctly. It will tell you what it
+finds and removes.
 
-If the problem is less severe, place the patch to the problem in the
-/dist/httpd/patches/apply_to_X.Y.Z directory. A link to this directory
-should be included in the release notes with descriptions as to what
-problem each patch addresses.
+Then you can start again. No release relevant changes have been 
+committed to the branch itself by you. If you used a 'rcN' suffix
+when creating the candidate (as you should), just increment that 
+number on your next attempt and there will be no confusion.
+
+An example of this is:
+
+1. vote on 2.4.60-rc1
+1. someone finds a bug, a fix is committed
+1. use `reset-candidate.sh` to revert all changes
+2. update your local checkout (thus get the fix)
+3. make candidate 2.4.60-rc2
+4. call a vote on rc2
+5. if all is well, release 2.4.60-rc2  as 2.4.60
+
+If the release has been made public, there are two courses of action:
+
+ 1. Revoke the release and immediately create another one that has a fix to
+ this problem. On publishing, the patch number should have been incremented
+ already in your branch (if this failed, you will need to do this manually). 
+ 
+ 1. If the problem is less severe, place the patch to the problem in the
+ /dist/httpd/patches/apply_to_X.Y.Z directory. A link to this directory
+ should be included in the release notes with descriptions as to what
+ problem each patch addresses.
 
 # Suggestions? #
 
