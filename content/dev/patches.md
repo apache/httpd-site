@@ -85,7 +85,7 @@ management of original and modified files:
 
 1. `cd /sources<`
 
-1. `diff -ru httpd-2.4.x httpd-2.4.x.new &gt; my_unified_diff.patch`
+1. `diff -ru httpd-2.4.x httpd-2.4.x.new > my_unified_diff.patch`
 
 If your source tree was checked out of subversion:
 
