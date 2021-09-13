@@ -83,7 +83,7 @@ management of original and modified files:
 
 1. edit files in httpd-2.4.x.new and build/test
 
-1. `cd /sources<`
+1. `cd /sources`
 
 1. `diff -ru httpd-2.4.x httpd-2.4.x.new > my_unified_diff.patch`
 
