@@ -8,3 +8,4 @@ content/security/vulnerabilities_13.md
 content/security/vulnerabilities-httpd.json
 pelican.auto.py
 site-generated
+.idea
