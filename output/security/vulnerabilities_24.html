@@ -91,6 +91,46 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.49">Fixed in Apache HTTP Server 2.4.49</h1><dl>
+<dt><h3 id="CVE-2021-33193">moderate: <name name="CVE-2021-33193">Request splitting via HTTP/2 method injection and mod_proxy</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-33193">CVE-2021-33193</a>)</h3></dt>
+<dd><p>A crafted method sent through HTTP/2 will bypass validation and be forwarded by mod_proxy, which can lead to request splitting or cache poisoning.</p><p></p><p>This issue affects Apache HTTP Server 2.4.17 to 2.4.48.</p>
+<p>Acknowledgements: Reported by James Kettle of PortSwigger</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-05-11</td></tr>
+<tr><td class="cve-header">Issue public</td><td class="cve-value">2021-08-06</td></tr>
+<tr><td class="cve-header">Update 2.4.49 released</td><td class="cve-value">2021-09-16</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&gt;=2.4.17</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2021-34798">moderate: <name name="CVE-2021-34798">NULL pointer dereference in httpd core</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-34798">CVE-2021-34798</a>)</h3></dt>
+<dd><p>Malformed requests may cause the server to dereference a NULL pointer.</p><p></p><p></p><p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
+<p>Acknowledgements: The issue was discovered by the Apache HTTP security team</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.49 released</td><td class="cve-value">2021-09-16</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.48</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2021-36160">moderate: <name name="CVE-2021-36160">mod_proxy_uwsgi out of bound read</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36160">CVE-2021-36160</a>)</h3></dt>
+<dd><p>A carefully crafted request uri-path can cause mod_proxy_uwsgi to read above the allocated memory and crash (DoS).</p><p></p><p>This issue affects Apache HTTP Server versions 2.4.30 to 2.4.48 (inclusive).</p>
+<p>Acknowledgements: LI ZHI XIN from NSFocus Security Team</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-04-26</td></tr>
+<tr><td class="cve-header">Update 2.4.49 release</td><td class="cve-value">2021-09-16</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.48, !&lt;2.4.30</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2021-39275">low: <name name="CVE-2021-39275">ap_escape_quotes buffer overflow</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-39275">CVE-2021-39275</a>)</h3></dt>
+<dd><p>ap_escape_quotes() may write beyond the end of a buffer when given malicious input.  </p><p>No included modules pass untrusted data to these functions, but third-party / external modules may.</p><p></p><p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
+<p>Acknowledgements: ClusterFuzz</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.49 released</td><td class="cve-value">2021-09-16</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.48</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2021-40438">high: <name name="CVE-2021-40438">mod_proxy SSRF</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-40438">CVE-2021-40438</a>)</h3></dt>
+<dd><p>A crafted request uri-path can cause mod_proxy to forward the request to an origin server choosen by the remote user.</p><p></p><p>This issue affects Apache HTTP Server 2.4.48 and earlier.</p>
+<p>Acknowledgements: The issue was discovered by the Apache HTTP security team while analysing CVE-2021-36160</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.49 released</td><td class="cve-value">2021-09-16</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.48</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.48">Fixed in Apache HTTP Server 2.4.48</h1><dl>
 <dt><h3 id="CVE-2019-17567">moderate: <name name="CVE-2019-17567">mod_proxy_wstunnel tunneling of non Upgraded connections</name>
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-17567">CVE-2019-17567</a>)</h3></dt>
