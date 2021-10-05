@@ -19,7 +19,7 @@ Apache httpd for Microsoft Windows is available from
 
 Stable Release - Latest Version:
 
--  [2.4.49](#apache24) (released 2021-09-16)
+-  [2.4.50](#apache24) (released 2021-10-04)
 
 If you are downloading the Win32 distribution, please read these [important
 notes]([preferred]/httpd/binaries/win32/README.html).
@@ -41,11 +41,11 @@ type="submit" value="Change"></input></form>
 You may also consult the [complete list of
 mirrors](//www.apache.org/mirrors/).
 
-# Apache HTTP Server 2.4.49 (httpd): 2.4.49 is the latest available version <span>2021-09-16</span>  {#apache24}
+# Apache HTTP Server 2.4.50 (httpd): 2.4.50 is the latest available version <span>2021-10-04</span>  {#apache24}
 
 The Apache HTTP Server Project is pleased to
 [announce](//downloads.apache.org/httpd/Announcement2.4.txt) the
-release of version 2.4.49 of the Apache HTTP Server ("Apache" and "httpd").
+release of version 2.4.50 of the Apache HTTP Server ("Apache" and "httpd").
 This version of Apache is our latest GA release of the new generation 2.4.x
 branch of Apache HTTPD and represents fifteen years of innovation by the
 project, and is recommended over all previous releases!
@@ -53,17 +53,17 @@ project, and is recommended over all previous releases!
 For details, see the [Official
 Announcement](//downloads.apache.org/httpd/Announcement2.4.html) and
 the [CHANGES_2.4]([preferred]/httpd/CHANGES_2.4) and
-[CHANGES_2.4.49]([preferred]/httpd/CHANGES_2.4.49) lists.
+[CHANGES_2.4.50]([preferred]/httpd/CHANGES_2.4.50) lists.
 
-- Source: [httpd-2.4.49.tar.bz2]([preferred]/httpd/httpd-2.4.49.tar.bz2)
-[ [PGP](https://downloads.apache.org/httpd/httpd-2.4.49.tar.bz2.asc) ] [
-[SHA256](https://downloads.apache.org/httpd/httpd-2.4.49.tar.bz2.sha256) ] [
-[SHA512](https://downloads.apache.org/httpd/httpd-2.4.49.tar.bz2.sha512) ]
+- Source: [httpd-2.4.50.tar.bz2]([preferred]/httpd/httpd-2.4.50.tar.bz2)
+[ [PGP](https://downloads.apache.org/httpd/httpd-2.4.50.tar.bz2.asc) ] [
+[SHA256](https://downloads.apache.org/httpd/httpd-2.4.50.tar.bz2.sha256) ] [
+[SHA512](https://downloads.apache.org/httpd/httpd-2.4.50.tar.bz2.sha512) ]
 
-- Source: [httpd-2.4.49.tar.gz]([preferred]/httpd/httpd-2.4.49.tar.gz) [
-[PGP](https://downloads.apache.org/httpd/httpd-2.4.49.tar.gz.asc) ] [
-[SHA256](https://downloads.apache.org/httpd/httpd-2.4.49.tar.gz.sha256) ] [
-[SHA512](https://downloads.apache.org/httpd/httpd-2.4.49.tar.gz.sha512) ]
+- Source: [httpd-2.4.50.tar.gz]([preferred]/httpd/httpd-2.4.50.tar.gz) [
+[PGP](https://downloads.apache.org/httpd/httpd-2.4.50.tar.gz.asc) ] [
+[SHA256](https://downloads.apache.org/httpd/httpd-2.4.50.tar.gz.sha256) ] [
+[SHA512](https://downloads.apache.org/httpd/httpd-2.4.50.tar.gz.sha512) ]
 
 - [Binaries]([preferred]/httpd/binaries/) 
 
