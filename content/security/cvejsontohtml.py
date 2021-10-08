@@ -113,11 +113,11 @@ for sectioncves in sections:
         if (e['credit']):
             html += "<p>Acknowledgements:"
             if len(e['credit']) == 1:
-                html += " "+saxutils.escape(e['credit'][0])+"</p>\n"
+                html += " " + saxutils.escape(e['credit'][0]) + "</p>\n"
             else:
                 html += "</p>\n<ul>\n"
                 for credit in e['credit']:
-                    html += "<li>"saxutils.escape(credit) + "</li>\n"
+                    html += "<li>" + saxutils.escape(credit) + "</li>\n"
                 html += "</ul>\n"
         html += "<table class=\"cve\">"
         e['timetable'].append(["Affects",e['affects']]);
