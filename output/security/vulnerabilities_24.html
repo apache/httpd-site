@@ -95,7 +95,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dt><h3 id="CVE-2021-42013">critical: <name name="CVE-2021-42013">Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)</name>
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42013">CVE-2021-42013</a>)</h3></dt>
 <dd><p>It was found that the fix for CVE-2021-41773 in Apache HTTP Server 2.4.50 was insufficient.  An attacker could use a path traversal attack to map URLs to files outside the directories configured by Alias-like directives.  </p><p></p><p>If files outside of these directories are not protected by the usual default configuration "require all denied", these requests can succeed. If CGI scripts are also enabled for these aliased pathes, this could allow for remote code execution.</p><p></p><p>This issue only affects Apache 2.4.49 and Apache 2.4.50 and not earlier versions.</p>
-<p>Acknowledgements: Reported by Juan Escobar from Dreamlab Technologies, Fernando Mu&ntilde;oz from NULL Life CTF Team, and Shungo Kumasaka</p>
+<p>Acknowledgements: Reported by Juan Escobar from Dreamlab Technologies</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-10-06</td></tr>
 <tr><td class="cve-header">Update 2.4.51 released</td><td class="cve-value">2021-10-07</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">2.4.50, 2.4.49</td></tr>

@@ -5367,7 +5367,19 @@
         "credit": [
             {
                 "lang": "eng",
-                "value": "Reported by Juan Escobar from Dreamlab Technologies, Fernando Mu\u00f1oz from NULL Life CTF Team, and Shungo Kumasaka"
+                "value": "Reported by Juan Escobar from Dreamlab Technologies"
+            },
+            {
+                "lang": "eng",
+                "value": "Reported by Fernando Mu\u00f1oz from NULL Life CTF Team"
+            },
+            {
+                "lang": "eng",
+                "value": "Reported by Shungo Kumasaka"
+            },
+            {
+                "lang": "eng",
+                "value": "Reported by Nattapon Jongcharoen"
             }
         ],
         "data_format": "MITRE",
