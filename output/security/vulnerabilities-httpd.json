@@ -5418,6 +5418,11 @@
                 "value": "reported"
             },
             {
+                "time": "2021-10-07",
+                "lang": "eng",
+                "value": "fixed by r1893977, r1893980, r1893982 in 2.4.x"
+            },
+            {
                 "lang": "eng",
                 "time": "2021-10-07",
                 "value": "2.4.51 released"
