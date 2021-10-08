@@ -56,9 +56,10 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
         e['impact'] = cve["impact"][0]["other"]
         e['title'] = cve["CVE_data_meta"]["TITLE"]
         e['desc'] = cve["description"]["description_data"][0]["value"]
-        e['credit'] = ""
+        e['credit'] = []
         if ("credit" in cve):
-            e['credit'] = cve["credit"][0]["value"]
+            for credit in cve["credit"]:
+                e['credit'].append(credit["value"])
         affects = []
         product = cve["affects"]["vendor"]["vendor_data"][0]["product"]["product_data"][0]
         productname = product['product_name']
@@ -109,7 +110,15 @@ for sectioncves in sections:
         desc = saxutils.escape(e['desc'])
         desc = re.sub(r'\n','</p><p>', desc)
         html += "<dd><p>"+desc+"</p>\n"
-        if (e['credit'] != ""): html += "<p>Acknowledgements: "+saxutils.escape(e['credit'])+"</p>\n"
+        if (e['credit']):
+            html += "<p>Acknowledgements:"
+            if len(e['credit']) == 1:
+                html += " "+saxutils.escape(e['credit'][0])+"</p>\n"
+            else:
+                html += "</p>\n<ul>\n"
+                for credit in e['credit']:
+                    html += "<li>"saxutils.escape(credit) + "</li>\n"
+                html += "</ul>\n"
         html += "<table class=\"cve\">"
         e['timetable'].append(["Affects",e['affects']]);
         for ti in e['timetable']:
