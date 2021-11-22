@@ -191,7 +191,13 @@ to display a a live backtrace. For example, on Solaris it looks like
 ```
 
 Another technique is to use gdb to attach to the running process and then
-using "where" to print the backtrace, as in
+using "thread apply all bt" to print the backtrace, as in:
+
+```
+sudo gdb /path/to/bin/httpd 10623 --batch --eval-command "where" --eval-command "thread apply all bt" --eval-command "detach"  --eval-command "quit" | tee gdb-output.txt
+```
+
+Or interactively:
 
 ```
     % gdb httpd 10623
@@ -205,14 +211,7 @@ using "where" to print the backtrace, as in
     /usr/local/apache/src/10623: No such file or directory.
     Attaching to program `/usr/local/apache/src/httpd', process 10623
     Reading symbols from /usr/lib/libsocket.so.1...done.
-    Reading symbols from /usr/lib/libnsl.so.1...done.
-    Reading symbols from /usr/lib/libc.so.1...done.
-    Reading symbols from /usr/lib/libdl.so.1...done.
-    Reading symbols from /usr/lib/libintl.so.1...done.
-    Reading symbols from /usr/lib/libmp.so.1...done.
-    Reading symbols from /usr/lib/libw.so.1...done.
-    Reading symbols from
-    /usr/platform/SUNW,Ultra-1/lib/libc_psr.so.1...done.
+    ...
     0xef5b68d8 in   ()
     (gdb) where
     #0	0xef5b68d8 in	()
@@ -220,7 +219,9 @@ using "where" to print the backtrace, as in
     #2	0x4257c in wait_or_timeout (status=0x0) at http_main.c:2357
     #3	0x44318 in standalone_main (argc=392552, argv=0x75800) at...
     #4	0x449fc in main (argc=3, argv=0xefffeee4) at http_main.c:4534
-    (gdb) 
+    (gdb) thread apply all bt
+    (gdb) detach
+    (gdb> quit
 ```
 
 # Getting a live backtrace on Windows  {#backtrace-win}
@@ -231,12 +232,16 @@ usually found.) These.pdb files should unpack alongside the.exe,.dll,.so
 binary files they represent, e.g., mod_usertrack.pdb will unpack alongside
 mod_usertrack.so.
 
+1. Optional: Obtain `procdump` from Sysinternals.
+
 1. Invoke `drwtsn32` and ensure you are creating a crash dump file, you are
 dumping all thread contexts, your log and crash dump paths make sense, and
 (depending on the nature of the bug) you pick an appropriate crash dump
 type. (Full is quite large, but necessary sometimes for a programmer-type
 to load your crash dump into a debugger and begin unwinding exactly what
 has happened. Mini is sufficient for your first pass through the process.)
+
+   You can use `procdump` or `procdump -ma` at this stage instead.
 
 1. Note that if you previously installed and then uninstalled other
 debugging software, you may need to invoke `drwtsn32 -i` in order to make
@@ -262,6 +267,9 @@ the ThreadsPerChild directive.) The process name is Apache (for 1.3 and
 
 1. Using the  {pid} number you noted above, invoke the command
 > `drwtsn32 -p  {pid}` 
+or
+> `procdump {pid}`
+
 
 Voila, you will find in your 'log file path' a `drwtsn32.log` file, and if
 you choose to 'append to existing log file', jump through the 'App:'
