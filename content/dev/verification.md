@@ -49,10 +49,9 @@ In this example, you have now received two public keys for entities known
 as 'Jim Jagielski &lt;jim@apache.org&gt;' However, you have no way of
 verifying whether these keys were created by the person known as Jim
 Jagielski whose email address is claimed.  In fact, one of them is
-an imposter: see <https://evil32.org/> for the story
-(and this could change again at any time).  This doesn't mean that PGP
-is broken, just that you need to look at the full 40-character key
-fingerprint rather than the vulnerable 8-character ID.
+an imposter.  This doesn't mean that PGP is broken, just that you need to
+look at the full 40-character key fingerprint rather than the vulnerable
+8-character ID.
 
 Anyway, let's try to verify the release signature again:
 
