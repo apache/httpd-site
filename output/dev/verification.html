@@ -126,10 +126,9 @@ gpg:               imported: 2  (RSA: 2)
 as 'Jim Jagielski &lt;<a href="mailto:jim@apache.org">jim@apache.org</a>&gt;' However, you have no way of
 verifying whether these keys were created by the person known as Jim
 Jagielski whose email address is claimed.  In fact, one of them is
-an imposter: see <a href="https://evil32.org/">https://evil32.org/</a> for the story
-(and this could change again at any time).  This doesn't mean that PGP
-is broken, just that you need to look at the full 40-character key
-fingerprint rather than the vulnerable 8-character ID.</p>
+an imposter.  This doesn't mean that PGP is broken, just that you need to
+look at the full 40-character key fingerprint rather than the vulnerable
+8-character ID.</p>
 <p>Anyway, let's try to verify the release signature again:</p>
 <pre><code>% gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
 gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
