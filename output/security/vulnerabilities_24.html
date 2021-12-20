@@ -91,6 +91,30 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.52">Fixed in Apache HTTP Server 2.4.52</h1><dl>
+<dt><h3 id="CVE-2021-44224">moderate: <name name="CVE-2021-44224">Possible NULL dereference or SSRF in forward proxy configurations in Apache HTTP Server 2.4.51 and earlier</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44224">CVE-2021-44224</a>)</h3></dt>
+<dd><p>A crafted URI sent to httpd configured as a forward proxy (ProxyRequests on) can cause a crash (NULL pointer dereference) or, for configurations mixing forward and reverse proxy declarations, can allow for requests to be directed to a declared Unix Domain Socket endpoint (Server Side Request Forgery).</p><p></p><p>This issue affects Apache HTTP Server 2.4.7 up to 2.4.51 (included).</p>
+<p>Acknowledgements:</p>
+<ul>
+<li>漂亮鼠</li>
+<li>TengMA(@Te3t123)</li>
+</ul>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-11-18</td></tr>
+<tr><td class="cve-header">fixed by r1895955+r1896044 in 2.4.x</td><td class="cve-value">2021-12-14</td></tr>
+<tr><td class="cve-header">Update 2.4.52 released</td><td class="cve-value">2021-12-20</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&gt;=2.4.7, &lt;=2.4.51</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2021-44790">high: <name name="CVE-2021-44790">Possible buffer overflow when parsing multipart content in mod_lua of Apache HTTP Server 2.4.51 and earlier</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44790">CVE-2021-44790</a>)</h3></dt>
+<dd><p>A carefully crafted request body can cause a buffer overflow in the mod_lua multipart parser (r:parsebody() called from Lua scripts).</p><p>The Apache httpd team is not aware of an exploit for the vulnerabilty though it might be possible to craft one.</p><p></p><p>This issue affects Apache HTTP Server 2.4.51 and earlier.</p>
+<p>Acknowledgements: Chamal</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-12-07</td></tr>
+<tr><td class="cve-header">Fixed by r1896039 in 2.4.x</td><td class="cve-value">2021-12-16</td></tr>
+<tr><td class="cve-header">Update 2.4.52 released</td><td class="cve-value">2021-12-20</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.51</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.51">Fixed in Apache HTTP Server 2.4.51</h1><dl>
 <dt><h3 id="CVE-2021-42013">critical: <name name="CVE-2021-42013">Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773)</name>
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42013">CVE-2021-42013</a>)</h3></dt>
