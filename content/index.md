@@ -14,11 +14,11 @@ April 1996. It has celebrated its 25th birthday as a project in February 2020.
 The Apache HTTP Server is a project of [The Apache Software
 Foundation](http://www.apache.org/).
 
-# Apache httpd 2.4.51 Released <span>2021-10-07</span>
+# Apache httpd 2.4.52 Released <span>2021-12-20</span>
 The Apache Software Foundation and the Apache HTTP Server Project are
 pleased to
 [announce](http://downloads.apache.org/httpd/Announcement2.4.html) the
-release of version 2.4.51 of the Apache HTTP Server ("httpd").
+release of version 2.4.52 of the Apache HTTP Server ("httpd").
 
 This latest release from the 2.4.x stable branch represents the best available
 version of Apache HTTP Server.
@@ -27,7 +27,7 @@ version of Apache HTTP Server.
 Apache HTTP Server version 2.<span>4</span>.43 or newer is required in order to operate a TLS 1.3 web server with OpenSSL 1.1.1.
 
 [Download](download.cgi#apache24) | [ChangeLog for
-2.4.51](http://downloads.apache.org/httpd/CHANGES_2.4.51) | [Complete ChangeLog for
+2.4.52](http://downloads.apache.org/httpd/CHANGES_2.4.52) | [Complete ChangeLog for
 2.4](http://downloads.apache.org/httpd/CHANGES_2.4) | [New Features in httpd
 2.4](docs/trunk/new_features_2_4.html)  {.centered}
 
