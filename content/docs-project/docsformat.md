@@ -12,7 +12,7 @@ A DTD is located in the [style
 directory](http://httpd.apache.org/docs/current/style/) of the manual. An
 example of the format with extensive comments is also available in
 [mod_template.txt](mod_template.txt). (Ordinarily, the file extension
-will be `xml`. It is changed here to make online viewing simpler.
+will be `xml`. It is changed here to make online viewing simpler.)
 
 Various formatting syntax can be used such as:
 
