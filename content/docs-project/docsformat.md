@@ -11,13 +11,8 @@ xml source files and the technique used to transform them to html.
 A DTD is located in the [style
 directory](http://httpd.apache.org/docs/current/style/) of the manual. An
 example of the format with extensive comments is also available in
-[mod_template.txt](mod_template.txt). Obviously, the file extension should
-be `xml`. It was changed to make online viewing simpler.
-
-To ensure that your documentation follows the defined format, you should
-parse it using the DTD. Some help using Emacs with XML files is available
-from [IBM
-developerWorks](https://www.ibm.com/developerworks/xml/library/x-emacs/).
+[mod_template.txt](mod_template.txt). (Ordinarily, the file extension
+will be `xml`. It is changed here to make online viewing simpler.)
 
 Various formatting syntax can be used such as:
 
