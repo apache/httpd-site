@@ -15,8 +15,6 @@ browsable documentation is also available:
 
 -  [Version 2.0](2.0/) (Historical)
 
--  [Version 1.3](1.3/) (Historical)
-
 -  [Trunk](trunk/) (Development / Draft)
 
 
