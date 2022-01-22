@@ -3,14 +3,14 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 # Downloading the Apache HTTP Server  {#download}
 
-Use the links below to download the Apache HTTP Server from one of our
-mirrors. You **must**  [verify the integrity](#verify) of the downloaded
+Use the links below to download the Apache HTTP Server from our download servers.
+You **must**  [verify the integrity](#verify) of the downloaded
 files using signatures downloaded from our main distribution directory.
 The signatures can be verified with our
 [KEYS](https://downloads.apache.org/httpd/KEYS) file.
 
 Only current recommended releases are available on the main distribution
-site and its mirrors. Historical releases, including the 1.3, 2.0 and 2.2
+site. Historical releases, including the 1.3, 2.0 and 2.2
 families of releases, are available from the 
 [archive download site](//archive.apache.org/dist/httpd/).
 
@@ -23,23 +23,6 @@ Stable Release - Latest Version:
 
 If you are downloading the Win32 distribution, please read these [important
 notes]([preferred]/httpd/binaries/win32/README.html).
-
-# Mirror  {#mirror}
-
-[if-any logo] []([link]) [end] The currently selected mirror is
-**[preferred]**. If you encounter a problem with this mirror, please select
-another mirror. If all mirrors are failing, there are *backup* mirrors (at
-the end of the mirrors list) that should be available.
-
-<form action="[location]" method="get" id="SelectMirror">Other
-mirrors:<select name="Preferred">[if-any http] [for http]<option
-value="[http]">[http]</option>[end] [end] [if-any ftp] [for ftp]<option
-value="[ftp]">[ftp]</option>[end] [end] [if-any backup] [for backup]<option
-value="[backup]">[backup] (backup)</option>[end] [end]</select><input
-type="submit" value="Change"></input></form>
-
-You may also consult the [complete list of
-mirrors](//www.apache.org/mirrors/).
 
 # Apache HTTP Server 2.4.52 (httpd): 2.4.52 is the latest available version <span>2021-12-20</span>  {#apache24}
 
