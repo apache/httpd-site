@@ -22659,7 +22659,7 @@
         },
         "impact": [
             {
-                "other": "high"
+                "other": "important"
             }
         ],
         "problemtype": {
@@ -32239,7 +32239,7 @@
         },
         "impact": [
             {
-                "other": "high"
+                "other": "important"
             }
         ],
         "problemtype": {
