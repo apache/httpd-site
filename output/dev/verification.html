@@ -113,7 +113,9 @@ gpg: Can't check signature: public key not found
 system. You now need to retrieve the public key from a key server. One
 popular server is <code>pgpkeys.mit.edu</code> (which has a <a href="http://pgp.mit.edu/">web
 interface</a> ). The public key servers are linked
-together, so you should be able to connect to any key server.</p>
+together, so you should be able to connect to any key server. You can
+also obtain the keys of the httpd release managers at
+<a href="https://downloads.apache.org/httpd/KEYS">https://downloads.apache.org/httpd/KEYS</a>.</p>
 <pre><code>% gpg --keyserver pgpkeys.mit.edu --recv-key 791485A8
 gpg: requesting key 791485A8 from HKP keyserver pgpkeys.mit.edu
 gpg: trustdb created
@@ -164,7 +166,7 @@ However, if you are new to PGP, this takes some time and effort.
 A shortcut to a reasonable level of security is to check Jim's
 fingerprint (always using https, not http) against the database
 maintained by the Apache foundation of Apache developers' fingerprints
-at <a href="https://people.apache.org/keys/committer/">https://people.apache.org/keys/committer/</a>.
+at <a href="https://downloads.apache.org/httpd/KEYS">https://downloads.apache.org/httpd/KEYS</a>.
 Note that this shortcut fails catastrophically if the Apache website is
 ever compromised, or if an imposter breaks HTTPS security by obtaining
 a fake certificate and impersonates the site.  Be sure to keep an eye
