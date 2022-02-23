@@ -35,7 +35,9 @@ We don't have the release manager's public key ( `791485A8` ) in our local
 system. You now need to retrieve the public key from a key server. One
 popular server is `pgpkeys.mit.edu` (which has a [web
 interface](http://pgp.mit.edu/) ). The public key servers are linked
-together, so you should be able to connect to any key server.
+together, so you should be able to connect to any key server. You can
+also obtain the keys of the httpd release managers at
+<https://downloads.apache.org/httpd/KEYS>.
 
     % gpg --keyserver pgpkeys.mit.edu --recv-key 791485A8
     gpg: requesting key 791485A8 from HKP keyserver pgpkeys.mit.edu
@@ -93,7 +95,7 @@ However, if you are new to PGP, this takes some time and effort.
 A shortcut to a reasonable level of security is to check Jim's
 fingerprint (always using https, not http) against the database
 maintained by the Apache foundation of Apache developers' fingerprints
-at <https://people.apache.org/keys/committer/>.
+at <https://downloads.apache.org/httpd/KEYS>.
 Note that this shortcut fails catastrophically if the Apache website is
 ever compromised, or if an imposter breaks HTTPS security by obtaining
 a fake certificate and impersonates the site.  Be sure to keep an eye
