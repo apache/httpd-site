@@ -22,7 +22,7 @@ Stable Release - Latest Version:
 -  [2.4.53](#apache24) (released 2022-03-14)
 
 If you are downloading the Win32 distribution, please read these [important
-notes]([preferred]/httpd/binaries/win32/README.html).
+notes]([preferred]httpd/binaries/win32/README.html).
 
 # Apache HTTP Server 2.4.53 (httpd): 2.4.53 is the latest available version <span>2022-03-14</span>  {#apache24}
 
@@ -35,24 +35,24 @@ project, and is recommended over all previous releases!
 
 For details, see the [Official
 Announcement](//downloads.apache.org/httpd/Announcement2.4.html) and
-the [CHANGES_2.4]([preferred]/httpd/CHANGES_2.4) and
-[CHANGES_2.4.53]([preferred]/httpd/CHANGES_2.4.53) lists.
+the [CHANGES_2.4]([preferred]httpd/CHANGES_2.4) and
+[CHANGES_2.4.53]([preferred]httpd/CHANGES_2.4.53) lists.
 
-- Source: [httpd-2.4.53.tar.bz2]([preferred]/httpd/httpd-2.4.53.tar.bz2)
+- Source: [httpd-2.4.53.tar.bz2]([preferred]httpd/httpd-2.4.53.tar.bz2)
 [ [PGP](https://downloads.apache.org/httpd/httpd-2.4.53.tar.bz2.asc) ] [
 [SHA256](https://downloads.apache.org/httpd/httpd-2.4.53.tar.bz2.sha256) ] [
 [SHA512](https://downloads.apache.org/httpd/httpd-2.4.53.tar.bz2.sha512) ]
 
-- Source: [httpd-2.4.53.tar.gz]([preferred]/httpd/httpd-2.4.53.tar.gz) [
+- Source: [httpd-2.4.53.tar.gz]([preferred]httpd/httpd-2.4.53.tar.gz) [
 [PGP](https://downloads.apache.org/httpd/httpd-2.4.53.tar.gz.asc) ] [
 [SHA256](https://downloads.apache.org/httpd/httpd-2.4.53.tar.gz.sha256) ] [
 [SHA512](https://downloads.apache.org/httpd/httpd-2.4.53.tar.gz.sha512) ]
 
-- [Binaries]([preferred]/httpd/binaries/) 
+- [Binaries]([preferred]httpd/binaries/) 
 
--  [Security and official patches]([preferred]/httpd/patches/) 
+-  [Security and official patches]([preferred]httpd/patches/) 
 
--  [Other files]([preferred]/httpd/)
+-  [Other files]([preferred]httpd/)
 
 -  [Files for Microsoft Windows](//httpd.apache.org/docs/current/platform/windows.html#down)
 
@@ -67,7 +67,7 @@ For information about this module subproject, see the [mod_fcgid module
 project page](//httpd.apache.org/mod_fcgid/).
 
 - Source as gzip with LF line endings:
-[mod_fcgid-2.3.9.tar.gz]([preferred]/httpd/mod_fcgid/mod_fcgid-2.3.9.tar.gz)
+[mod_fcgid-2.3.9.tar.gz]([preferred]httpd/mod_fcgid/mod_fcgid-2.3.9.tar.gz)
 [
 [PGP](https://downloads.apache.org/httpd/mod_fcgid/mod_fcgid-2.3.9.tar.gz.asc)
 ] [
@@ -77,7 +77,7 @@ project page](//httpd.apache.org/mod_fcgid/).
 ]
 
 - Source as bz2 with LF line endings:
-[mod_fcgid-2.3.9.tar.bz2]([preferred]/httpd/mod_fcgid/mod_fcgid-2.3.9.tar.bz2)
+[mod_fcgid-2.3.9.tar.bz2]([preferred]httpd/mod_fcgid/mod_fcgid-2.3.9.tar.bz2)
 [
 [PGP](https://downloads.apache.org/httpd/mod_fcgid/mod_fcgid-2.3.9.tar.bz2.asc)
 ] [
@@ -87,7 +87,7 @@ project page](//httpd.apache.org/mod_fcgid/).
 ]
 
 - Win32, Netware or OS/2 Source with CR/LF line endings:
-[mod_fcgid-2.3.9-crlf.zip]([preferred]/httpd/mod_fcgid/mod_fcgid-2.3.9-crlf.zip)
+[mod_fcgid-2.3.9-crlf.zip]([preferred]httpd/mod_fcgid/mod_fcgid-2.3.9-crlf.zip)
 [
 [PGP](https://downloads.apache.org/httpd/mod_fcgid/mod_fcgid-2.3.9-crlf.zip.asc)
 ] [
@@ -106,7 +106,7 @@ information about this module subproject, see the [mod_ftp module project
 page](//httpd.apache.org/mod_ftp/).
 
 - Source with LF line endings (bzip2 compressed):
-[mod_ftp-0.9.6-beta.tar.bz2]([preferred]/httpd/mod_ftp/mod_ftp-0.9.6-beta.tar.bz2)
+[mod_ftp-0.9.6-beta.tar.bz2]([preferred]httpd/mod_ftp/mod_ftp-0.9.6-beta.tar.bz2)
 [
 [PGP](https://downloads.apache.org/httpd/mod_ftp/mod_ftp-0.9.6-beta.tar.bz2.asc)
 ] [
@@ -116,7 +116,7 @@ page](//httpd.apache.org/mod_ftp/).
 ]
 
 - Source with LF line endings (gzip compressed):
-[mod_ftp-0.9.6-beta.tar.gz]([preferred]/httpd/mod_ftp/mod_ftp-0.9.6-beta.tar.gz)
+[mod_ftp-0.9.6-beta.tar.gz]([preferred]httpd/mod_ftp/mod_ftp-0.9.6-beta.tar.gz)
 [
 [PGP](https://downloads.apache.org/httpd/mod_ftp/mod_ftp-0.9.6-beta.tar.gz.asc)
 ] [
@@ -126,7 +126,7 @@ page](//httpd.apache.org/mod_ftp/).
 ]
 
 - Win32, Netware or OS/2 Source with CR/LF line endings:
-[mod_ftp-0.9.6-beta-crlf.zip]([preferred]/httpd/mod_ftp/mod_ftp-0.9.6-beta-crlf.zip)
+[mod_ftp-0.9.6-beta-crlf.zip]([preferred]httpd/mod_ftp/mod_ftp-0.9.6-beta-crlf.zip)
 [
 [PGP](https://downloads.apache.org/httpd/mod_ftp/mod_ftp-0.9.6-beta-crlf.zip.asc)
 ] [
