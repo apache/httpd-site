@@ -91,6 +91,39 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.53">Fixed in Apache HTTP Server 2.4.53</h1><dl>
+<dt><h3 id="CVE-2022-22719">moderate: <name name="CVE-2022-22719">mod_lua Use of uninitialized value of in r:parsebody</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719">CVE-2022-22719</a>)</h3></dt>
+<dd><p>A carefully crafted request body can cause a read to a random memory area which could cause the process to crash.</p><p></p><p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
+<p>Acknowledgements: Chamal De Silva</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-12-18</td></tr>
+<tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-22720">important: <name name="CVE-2022-22720">HTTP request smuggling vulnerability in Apache HTTP Server 2.4.52 and earlier</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720">CVE-2022-22720</a>)</h3></dt>
+<dd><p>Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when errors are encountered discarding the request body, exposing the server to HTTP Request Smuggling</p>
+<p>Acknowledgements: James Kettle &lt;james.kettle portswigger.net&gt;</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-22721">low: <name name="CVE-2022-22721">core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22721">CVE-2022-22721</a>)</h3></dt>
+<dd><p>If LimitXMLRequestBody is set to allow request bodies larger than 350MB (defaults to 1M) on 32 bit systems an integer overflow happens which later causes out of bounds writes.</p><p></p><p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
+<p>Acknowledgements: Anonymous working with Trend Micro Zero Day Initiative</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-12-16</td></tr>
+<tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-23943">important: <name name="CVE-2022-23943">mod_sed: Read/write beyond bounds</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-23943">CVE-2022-23943</a>)</h3></dt>
+<dd><p>Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server allows an attacker to overwrite heap memory with possibly attacker provided data.</p><p></p><p>This issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions.</p>
+<p>Acknowledgements: Ronald Crane (Zippenhop LLC)</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2022-01-13</td></tr>
+<tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.52">Fixed in Apache HTTP Server 2.4.52</h1><dl>
 <dt><h3 id="CVE-2021-44224">moderate: <name name="CVE-2021-44224">Possible NULL dereference or SSRF in forward proxy configurations in Apache HTTP Server 2.4.51 and earlier</name>
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44224">CVE-2021-44224</a>)</h3></dt>

@@ -5549,6 +5549,93 @@
         }
     },
     {
+        "CVE_data_meta": {
+            "ASSIGNER": "security@apache.org",
+            "ID": "CVE-2022-22720",
+            "STATE": "REVIEW",
+            "TITLE": "HTTP request smuggling vulnerability in Apache HTTP Server 2.4.52 and earlier"
+        },
+        "affects": {
+            "vendor": {
+                "vendor_data": [
+                    {
+                        "product": {
+                            "product_data": [
+                                {
+                                    "product_name": "Apache HTTP Server",
+                                    "version": {
+                                        "version_data": [
+                                            {
+                                                "version_affected": "<=",
+                                                "version_name": "Apache HTTP Server 2.4",
+                                                "version_value": "2.4.52"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "vendor_name": "Apache Software Foundation"
+                    }
+                ]
+            }
+        },
+        "credit": [
+            {
+                "lang": "eng",
+                "value": "James Kettle <james.kettle portswigger.net>"
+            }
+        ],
+        "data_format": "MITRE",
+        "data_type": "CVE",
+        "data_version": "4.0",
+        "description": {
+            "description_data": [
+                {
+                    "lang": "eng",
+                    "value": "Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when errors are encountered discarding the request body, exposing the server to HTTP Request Smuggling"
+                }
+            ]
+        },
+        "generator": {
+            "engine": "Vulnogram 0.0.9"
+        },
+        "impact": [
+            {
+                "other": "important"
+            }
+        ],
+        "problemtype": {
+            "problemtype_data": [
+                {
+                    "description": [
+                        {
+                            "lang": "eng",
+                            "value": "CWE-444 Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling')"
+                        }
+                    ]
+                }
+            ]
+        },
+        "references": {
+            "reference_data": [
+                {
+                    "refsource": "CONFIRM"
+                }
+            ]
+        },
+        "source": {
+            "discovery": "UNKNOWN"
+        },
+        "timeline": [
+            {
+                "lang": "eng",
+                "time": "2022-03-14",
+                "value": "2.4.53 released"
+            }
+        ]
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -9469,6 +9556,98 @@
         }
     },
     {
+        "CVE_data_meta": {
+            "ASSIGNER": "security@apache.org",
+            "ID": "CVE-2022-22721",
+            "STATE": "REVIEW",
+            "TITLE": "core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody"
+        },
+        "affects": {
+            "vendor": {
+                "vendor_data": [
+                    {
+                        "product": {
+                            "product_data": [
+                                {
+                                    "product_name": "Apache HTTP Server",
+                                    "version": {
+                                        "version_data": [
+                                            {
+                                                "version_affected": "<=",
+                                                "version_name": "Apache HTTP Server 2.4",
+                                                "version_value": "2.4.52"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "vendor_name": "Apache Software Foundation"
+                    }
+                ]
+            }
+        },
+        "credit": [
+            {
+                "lang": "eng",
+                "value": "Anonymous working with Trend Micro Zero Day Initiative"
+            }
+        ],
+        "data_format": "MITRE",
+        "data_type": "CVE",
+        "data_version": "4.0",
+        "description": {
+            "description_data": [
+                {
+                    "lang": "eng",
+                    "value": "If LimitXMLRequestBody is set to allow request bodies larger than 350MB (defaults to 1M) on 32 bit systems an integer overflow happens which later causes out of bounds writes.\n\nThis issue affects Apache HTTP Server 2.4.52 and earlier."
+                }
+            ]
+        },
+        "generator": {
+            "engine": "Vulnogram 0.0.9"
+        },
+        "impact": [
+            {
+                "other": "low"
+            }
+        ],
+        "problemtype": {
+            "problemtype_data": [
+                {
+                    "description": [
+                        {
+                            "lang": "eng",
+                            "value": "CWE-190 Integer Overflow or Wraparound"
+                        }
+                    ]
+                }
+            ]
+        },
+        "references": {
+            "reference_data": [
+                {
+                    "refsource": "CONFIRM"
+                }
+            ]
+        },
+        "source": {
+            "discovery": "UNKNOWN"
+        },
+        "timeline": [
+            {
+                "lang": "eng",
+                "time": "2021-12-16",
+                "value": "Reported to security team"
+            },
+            {
+                "lang": "eng",
+                "time": "2022-03-14",
+                "value": "2.4.53 released"
+            }
+        ]
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -10678,6 +10857,98 @@
                 ]
             }
         }
+    },
+    {
+        "CVE_data_meta": {
+            "ASSIGNER": "security@apache.org",
+            "ID": "CVE-2022-22719",
+            "STATE": "REVIEW",
+            "TITLE": "mod_lua Use of uninitialized value of in r:parsebody"
+        },
+        "affects": {
+            "vendor": {
+                "vendor_data": [
+                    {
+                        "product": {
+                            "product_data": [
+                                {
+                                    "product_name": "Apache HTTP Server",
+                                    "version": {
+                                        "version_data": [
+                                            {
+                                                "version_affected": "<=",
+                                                "version_name": "Apache HTTP Server 2.4",
+                                                "version_value": "2.4.52"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "vendor_name": "Apache Software Foundation"
+                    }
+                ]
+            }
+        },
+        "credit": [
+            {
+                "lang": "eng",
+                "value": "Chamal De Silva"
+            }
+        ],
+        "data_format": "MITRE",
+        "data_type": "CVE",
+        "data_version": "4.0",
+        "description": {
+            "description_data": [
+                {
+                    "lang": "eng",
+                    "value": "A carefully crafted request body can cause a read to a random memory area which could cause the process to crash.\n\nThis issue affects Apache HTTP Server 2.4.52 and earlier."
+                }
+            ]
+        },
+        "generator": {
+            "engine": "Vulnogram 0.0.9"
+        },
+        "impact": [
+            {
+                "other": "moderate"
+            }
+        ],
+        "problemtype": {
+            "problemtype_data": [
+                {
+                    "description": [
+                        {
+                            "lang": "eng",
+                            "value": "CWE-665 Improper Initialization"
+                        }
+                    ]
+                }
+            ]
+        },
+        "references": {
+            "reference_data": [
+                {
+                    "refsource": "CONFIRM"
+                }
+            ]
+        },
+        "source": {
+            "discovery": "UNKNOWN"
+        },
+        "timeline": [
+            {
+                "lang": "eng",
+                "time": "2021-12-18",
+                "value": "Reported to security team"
+            },
+            {
+                "lang": "eng",
+                "time": "2022-03-14",
+                "value": "2.4.53 released"
+            }
+        ]
     },
     {
         "data_type": "CVE",
@@ -20076,6 +20347,106 @@
                 ]
             }
         }
+    },
+    {
+        "CVE_data_meta": {
+            "ASSIGNER": "security@apache.org",
+            "ID": "CVE-2022-23943",
+            "STATE": "REVIEW",
+            "TITLE": "mod_sed: Read/write beyond bounds"
+        },
+        "affects": {
+            "vendor": {
+                "vendor_data": [
+                    {
+                        "product": {
+                            "product_data": [
+                                {
+                                    "product_name": "Apache HTTP Server",
+                                    "version": {
+                                        "version_data": [
+                                            {
+                                                "version_affected": "<=",
+                                                "version_name": "2.4",
+                                                "version_value": "2.4.52"
+                                            }
+                                        ]
+                                    }
+                                }
+                            ]
+                        },
+                        "vendor_name": "Apache Software Foundation"
+                    }
+                ]
+            }
+        },
+        "credit": [
+            {
+                "lang": "eng",
+                "value": "Ronald Crane (Zippenhop LLC)"
+            }
+        ],
+        "data_format": "MITRE",
+        "data_type": "CVE",
+        "data_version": "4.0",
+        "description": {
+            "description_data": [
+                {
+                    "lang": "eng",
+                    "value": "Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server allows an attacker to overwrite heap memory with possibly attacker provided data.\n\nThis issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions."
+                }
+            ]
+        },
+        "generator": {
+            "engine": "Vulnogram 0.0.9"
+        },
+        "impact": [
+            {
+                "other": "important"
+            }
+        ],
+        "problemtype": {
+            "problemtype_data": [
+                {
+                    "description": [
+                        {
+                            "lang": "eng",
+                            "value": "CWE-787 Out-of-bounds Write"
+                        }
+                    ]
+                },
+                {
+                    "description": [
+                        {
+                            "lang": "eng",
+                            "value": "CWE-190 Integer Overflow or Wraparound"
+                        }
+                    ]
+                }
+            ]
+        },
+        "references": {
+            "reference_data": [
+                {
+                    "refsource": "CONFIRM"
+                }
+            ]
+        },
+        "source": {
+            "discovery": "UNKNOWN"
+        },
+        "timeline": [
+            {
+                "lang": "eng",
+                "time": "2022-01-13",
+                "value": "Reported to security team"
+            },
+            {
+                "lang": "eng",
+                "time": "2022-03-14",
+                "value": "2.4.53 released"
+            }
+        ]
     },
     {
         "data_type": "CVE",
