@@ -5630,6 +5630,16 @@
         "timeline": [
             {
                 "lang": "eng",
+                "time": "2021-12-17",
+                "value": "Reported to security team"
+            },
+            {
+                "lang": "eng",
+                "time": "2022-03-07",
+                "value": "fixed by r1898692 in 2.4.x"
+            },
+            {
+                "lang": "eng",
                 "time": "2022-03-14",
                 "value": "2.4.53 released"
             }
@@ -9642,6 +9652,11 @@
             },
             {
                 "lang": "eng",
+                "time": "2022-03-07",
+                "value": "fixed by r1898693 in 2.4.x"
+            },
+            {
+                "lang": "eng",
                 "time": "2022-03-14",
                 "value": "2.4.53 released"
             }
@@ -10942,6 +10957,11 @@
                 "lang": "eng",
                 "time": "2021-12-18",
                 "value": "Reported to security team"
+            },
+            {
+                "lang": "eng",
+                "time": "2022-03-07",
+                "value": "fixed by r1898694 in 2.4.x"
             },
             {
                 "lang": "eng",
@@ -13728,7 +13748,7 @@
             {
                 "lang": "eng",
                 "time": "2021-12-14",
-                "value": "fixed by r1895955+r1896044 in 2.4.x"
+                "value": "fixed by r1895955, r1896044 in 2.4.x"
             },
             {
                 "lang": "eng",
@@ -20440,6 +20460,11 @@
                 "lang": "eng",
                 "time": "2022-01-13",
                 "value": "Reported to security team"
+            },
+            {
+                "lang": "eng",
+                "time": "2022-03-09",
+                "value": "fixed by r1898695, r1898772 in 2.4.x"
             },
             {
                 "lang": "eng",

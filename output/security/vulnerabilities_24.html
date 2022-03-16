@@ -97,6 +97,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>A carefully crafted request body can cause a read to a random memory area which could cause the process to crash.</p><p></p><p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
 <p>Acknowledgements: Chamal De Silva</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-12-18</td></tr>
+<tr><td class="cve-header">fixed by r1898694 in 2.4.x</td><td class="cve-value">2022-03-07</td></tr>
 <tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
 </table></dd>
@@ -104,7 +105,9 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22720">CVE-2022-22720</a>)</h3></dt>
 <dd><p>Apache HTTP Server 2.4.52 and earlier fails to close inbound connection when errors are encountered discarding the request body, exposing the server to HTTP Request Smuggling</p>
 <p>Acknowledgements: James Kettle &lt;james.kettle portswigger.net&gt;</p>
-<table class="table"><tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-12-17</td></tr>
+<tr><td class="cve-header">fixed by r1898692 in 2.4.x</td><td class="cve-value">2022-03-07</td></tr>
+<tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
 </table></dd>
 <dt><h3 id="CVE-2022-22721">low: <name name="CVE-2022-22721">core: Possible buffer overflow with very large or unlimited LimitXMLRequestBody</name>
@@ -112,6 +115,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>If LimitXMLRequestBody is set to allow request bodies larger than 350MB (defaults to 1M) on 32 bit systems an integer overflow happens which later causes out of bounds writes.</p><p></p><p>This issue affects Apache HTTP Server 2.4.52 and earlier.</p>
 <p>Acknowledgements: Anonymous working with Trend Micro Zero Day Initiative</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-12-16</td></tr>
+<tr><td class="cve-header">fixed by r1898693 in 2.4.x</td><td class="cve-value">2022-03-07</td></tr>
 <tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
 </table></dd>
@@ -120,6 +124,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Out-of-bounds Write vulnerability in mod_sed of Apache HTTP Server allows an attacker to overwrite heap memory with possibly attacker provided data.</p><p></p><p>This issue affects Apache HTTP Server 2.4 version 2.4.52 and prior versions.</p>
 <p>Acknowledgements: Ronald Crane (Zippenhop LLC)</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2022-01-13</td></tr>
+<tr><td class="cve-header">fixed by r1898695, r1898772 in 2.4.x</td><td class="cve-value">2022-03-09</td></tr>
 <tr><td class="cve-header">Update 2.4.53 released</td><td class="cve-value">2022-03-14</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.52</td></tr>
 </table></dd>
@@ -134,7 +139,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <li>TengMA(@Te3t123)</li>
 </ul>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2021-11-18</td></tr>
-<tr><td class="cve-header">fixed by r1895955+r1896044 in 2.4.x</td><td class="cve-value">2021-12-14</td></tr>
+<tr><td class="cve-header">fixed by r1895955, r1896044 in 2.4.x</td><td class="cve-value">2021-12-14</td></tr>
 <tr><td class="cve-header">Update 2.4.52 released</td><td class="cve-value">2021-12-20</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&gt;=2.4.7, &lt;=2.4.51</td></tr>
 </table></dd>
