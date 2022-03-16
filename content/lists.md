@@ -46,7 +46,7 @@ discussion.
 | Subscription address: |  [announce-subscribe@httpd.apache.org](mailto:announce-subscribe@httpd.apache.org)  |
 | Unsubscription address: |  [announce-unsubscribe@httpd.apache.org](mailto:announce-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [announce-help@httpd.apache.org](mailto:announce-help@httpd.apache.org)  |
-| Archives: | [ASF archives](https://lists.apache.org/list.html?announce@httpd.apache.org), [mbox files](http://httpd.apache.org/mail/announce/) |
+| Archives: | [ASF archives](https://lists.apache.org/list.html?announce@httpd.apache.org) |
 
 # User Support and Discussion  {#http-users}
 
@@ -115,7 +115,7 @@ source code and related issues. Other questions are likely to be ignored.
 | Digest subscription address: |  [dev-digest-subscribe@httpd.apache.org](mailto:dev-digest-subscribe@httpd.apache.org)  |
 | Unsubscription address: |  [dev-unsubscribe@httpd.apache.org](mailto:dev-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [dev-help@httpd.apache.org](mailto:dev-help@httpd.apache.org) , [dev-digest-help@httpd.apache.org](mailto:dev-digest-help@httpd.apache.org)  |
-| Searchable Archives: | [ASF browseable](https://lists.apache.org/list.html?dev@httpd.apache.org), [ASF raw](http://httpd.apache.org/mail/dev/), [MARC archives](http://marc.info/?l=apache-new-httpd), [Mail-Archive.Com](http://www.mail-archive.com/dev%40httpd.apache.org/) 
+| Searchable Archives: | [ASF browseable](https://lists.apache.org/list.html?dev@httpd.apache.org), [MARC archives](http://marc.info/?l=apache-new-httpd), [Mail-Archive.Com](http://www.mail-archive.com/dev%40httpd.apache.org/) 
 | Mail-To-News gateway: |  [gmane.comp.apache.devel](nntp://news.gmane.org/gmane.comp.apache.devel)  |
 
 # Apache HTTP Server Bug Reports List  {#http-bugdb}
@@ -134,7 +134,7 @@ receive updates.
 | Subscription address: |  [bugs-subscribe@httpd.apache.org](mailto:bugs-subscribe@httpd.apache.org)  |
 | Unsubscription addresses: |  [bugs-unsubscribe@httpd.apache.org](mailto:bugs-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [bugs-help@httpd.apache.org](mailto:bugs-help@httpd.apache.org)  |
-| Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?bugs@httpd.apache.org), [mbox files](http://httpd.apache.org/mail/bugs/), [MARC Archives](http://marc.info/?l=apache-httpd-bugs) | 
+| Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?bugs@httpd.apache.org), [MARC Archives](http://marc.info/?l=apache-httpd-bugs) | 
 | Mail-To-News gateway: |  [gmane.comp.apache.bugs](nntp://news.gmane.org/gmane.comp.apache.bugs)  |
 
 # Source Change Reports  {#http-cvs}
@@ -149,7 +149,7 @@ name is an artifact of the fact that we used to use CVS.)
 | Subscription address: |  [cvs-subscribe@httpd.apache.org](mailto:cvs-subscribe@httpd.apache.org)  |
 | Unsubscription addresses: |  [cvs-unsubscribe@httpd.apache.org](mailto:cvs-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [cvs-help@httpd.apache.org](mailto:cvs-help@httpd.apache.org)  |
-| Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?cvs@httpd.apache.org), [mbox files](http://httpd.apache.org/mail/cvs/), [MARC Archives](http://marc.info/?l=apache-cvs)| 
+| Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?cvs@httpd.apache.org), [MARC Archives](http://marc.info/?l=apache-cvs)| 
 | Mail-To-News gateway: |  [gmane.comp.apache.cvs](nntp://news.gmane.org/gmane.comp.apache.cvs)  |
 
 # Apache HTTP Server Documentation Project  {#http-docs}
@@ -163,7 +163,7 @@ used for discussion of changes to the documentation.
 | Subscription address: |  [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org)  |
 | Unsubscription addresses: |  [docs-unsubscribe@httpd.apache.org](mailto:docs-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [docs-help@httpd.apache.org](mailto:docs-help@httpd.apache.org)  |
-| Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?docs@httpd.apache.org), [mbox files](http://httpd.apache.org/mail/docs/), [MARC Archives](http://marc.info/?l=apache-docs)| 
+| Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?docs@httpd.apache.org), [MARC Archives](http://marc.info/?l=apache-docs)| 
 | Mail-To-News gateway: |  [gmane.comp.apache.documentation](nntp://news.gmane.org/gmane.comp.apache.documentation)  |
 
 # Third-Party Module Authors' List  {#modules-dev}
@@ -180,8 +180,7 @@ still archived on MARC (see Archives, below).
 | Subscription address: |  [modules-dev-subscribe@httpd.apache.org](mailto:modules-dev-subscribe@httpd.apache.org)  |
 | Unsubscription addresses: |  [modules-dev-unsubscribe@httpd.apache.org](mailto:modules-dev-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [modules-dev-help@httpd.apache.org](mailto:modules-dev-help@httpd.apache.org)  |
-| Searchable Archive: |  [Browse httpd-modules-dev](http://mail-archives.apache.org/mod_mbox/httpd-modules-dev/)  |
-| Raw Archive Files: |  [Download raw mbox .gz files](http://httpd.apache.org/mail/modules-dev/)  |
+| Searchable Archive: |  [Browse httpd-modules-dev](https://lists.apache.org/list.html?modules-dev@httpd.apache.org)  |
 
 # Proxy Module Rework Discussion List  {#http-proxydev}
 
@@ -192,4 +191,3 @@ development questions to the [Main Development Discussion List](#http-dev).
 Archives: 
 
 * Searchable: [MARC Archives](http://marc.info/?l=apache-modproxy-dev)
-* mbox files: [ASF](http://www.apache.org/mail/modproxy-dev/)
