@@ -91,6 +91,65 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.54">Fixed in Apache HTTP Server 2.4.54</h1><dl>
+<dt><h3 id="CVE-2022-26377">moderate: <name name="CVE-2022-26377">mod_proxy_ajp: Possible request smuggling</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26377">CVE-2022-26377</a>)</h3></dt>
+<dd><p>Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to.  This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.53 and prior versions.</p>
+<p>Acknowledgements: Ricter Z @ 360 Noah Lab</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2022-03-02</td></tr>
+<tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-28330">low: <name name="CVE-2022-28330">read beyond bounds in mod_isapi</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28330">CVE-2022-28330</a>)</h3></dt>
+<dd><p>Apache HTTP Server 2.4.53 and earlier on Windows may read beyond bounds when configured to process requests with the mod_isapi module. </p>
+<p>Acknowledgements: The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-28614">low: <name name="CVE-2022-28614">read beyond bounds via ap_rwrite() </name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28614">CVE-2022-28614</a>)</h3></dt>
+<dd><p>The ap_rwrite() function in Apache HTTP Server 2.4.53 and earlier may read unintended memory if an attacker can cause the server to reflect very large input using ap_rwrite() or ap_rputs(), such as with mod_luas r:puts() function.</p>
+<p>Acknowledgements: The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-28615">low: <name name="CVE-2022-28615">Read beyond bounds in ap_strcmp_match()</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28615">CVE-2022-28615</a>)</h3></dt>
+<dd><p>Apache HTTP Server 2.4.53 and earlier may crash or disclose information due to a read beyond bounds in ap_strcmp_match() when provided with an extremely large input buffer.  While no code distributed with the server can be coerced into such a call, third-party modules or lua scripts that use ap_strcmp_match() may hypothetically be affected.</p>
+<p>Acknowledgements: The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-29404">low: <name name="CVE-2022-29404">Denial of service in mod_lua r:parsebody</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-29404">CVE-2022-29404</a>)</h3></dt>
+<dd><p>In Apache HTTP Server 2.4.53 and earlier, a malicious request to a lua script that calls r:parsebody(0) may cause a denial of service due to no default limit on possible input size.</p>
+<p>Acknowledgements: The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-30522">low: <name name="CVE-2022-30522">mod_sed denial of service</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-30522">CVE-2022-30522</a>)</h3></dt>
+<dd><p>If Apache HTTP Server 2.4.53 is configured to do transformations with mod_sed in contexts where the input to mod_sed may be very large, mod_sed may make excessively large memory allocations and trigger an abort.</p>
+<p>Acknowledgements: This issue was found by Brian Moussalli from the JFrog Security Research team</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-30556">low: <name name="CVE-2022-30556">Information Disclosure in mod_lua with websockets</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-30556">CVE-2022-30556</a>)</h3></dt>
+<dd><p>Apache HTTP Server 2.4.53 and earlier may return lengths to applications calling r:wsread() that point past the end of the storage allocated for the buffer.</p>
+<p>Acknowledgements: The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-31813">low: <name name="CVE-2022-31813">mod_proxy X-Forwarded-For dropped by hop-by-hop mechanism</name>
+(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-31813">CVE-2022-31813</a>)</h3></dt>
+<dd><p>Apache HTTP Server 2.4.53 and earlier may not send the X-Forwarded-* headers to the origin server based on client side Connection header hop-by-hop mechanism.</p><p>This may be used to bypass IP based authentication on the origin server/application.</p>
+<p>Acknowledgements: The Apache HTTP Server project would like to thank Gaetan Ferry (Synacktiv) for reporting this issue</p>
+<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.53">Fixed in Apache HTTP Server 2.4.53</h1><dl>
 <dt><h3 id="CVE-2022-22719">moderate: <name name="CVE-2022-22719">mod_lua Use of uninitialized value of in r:parsebody</name>
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-22719">CVE-2022-22719</a>)</h3></dt>
