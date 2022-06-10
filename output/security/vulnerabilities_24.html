@@ -107,13 +107,6 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
 </table></dd>
-<dt><h3 id="CVE-2022-28614">low: <name name="CVE-2022-28614">read beyond bounds via ap_rwrite() </name>
-(<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28614">CVE-2022-28614</a>)</h3></dt>
-<dd><p>The ap_rwrite() function in Apache HTTP Server 2.4.53 and earlier may read unintended memory if an attacker can cause the server to reflect very large input using ap_rwrite() or ap_rputs(), such as with mod_luas r:puts() function.</p>
-<p>Acknowledgements: The Apache HTTP Server project would like to thank Ronald Crane (Zippenhop LLC) for reporting this issue</p>
-<table class="table"><tr><td class="cve-header">Update 2.4.54 released</td><td class="cve-value">2022-06-08</td></tr>
-<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.53</td></tr>
-</table></dd>
 <dt><h3 id="CVE-2022-28615">low: <name name="CVE-2022-28615">Read beyond bounds in ap_strcmp_match()</name>
 (<a href="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-28615">CVE-2022-28615</a>)</h3></dt>
 <dd><p>Apache HTTP Server 2.4.53 and earlier may crash or disclose information due to a read beyond bounds in ap_strcmp_match() when provided with an extremely large input buffer.  While no code distributed with the server can be coerced into such a call, third-party modules or lua scripts that use ap_strcmp_match() may hypothetically be affected.</p>
