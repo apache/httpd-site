@@ -10,6 +10,7 @@ parser.add_option("-e","--extratext",help="extra text to add to description",des
 parser.add_option("-i","--inputdirectory",help="directory of json files",dest="directory")
 (options,args) = parser.parse_args()
 
+re_fixedin = re.compile('(released in )?(?P<released>\\d\\.\\d\\.\\d+(-\S+)?)( released)?');
 
 def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
     return [int(text) if text.isdigit() else text.lower()
@@ -33,8 +34,9 @@ for x in os.listdir(options.directory or "./"):
 for cve in cves:
     for time in cve["timeline"]:
         timed = time["value"]
-        if ("release" in timed and timed.startswith(filterversion)):
-            fixedin = timed.split(" ")[0]
+        matcher = re_fixedin.match(timed);
+        if (matcher and matcher.group('released').startswith(filterversion)):
+            fixedin = matcher.group('released')
             if (not fixedin in entries):
                 entries[fixedin] = []
             entries[fixedin].append(cve)
