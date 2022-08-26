@@ -54,7 +54,7 @@ The PGP signatures can be verified using PGP or GPG. First download the
 signature file for the particular distribution. Make sure you get these
 files from the [main distribution
 directory](http://downloads.apache.org/httpd/) , rather than from a mirror.
-Then verify the signatures using
+Then verify the signatures using:
 
 <code>% pgpk -a KEYS<br></br>% pgpv
 libapreq2-2.17.tar.gz.asc<br></br></code> *or* <br></br><code>% pgp -ka
