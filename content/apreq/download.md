@@ -19,7 +19,7 @@ there are *backup* mirrors (at the end of the mirrors list) that should be
 available.
 
 <form action="[location]" method="get" id="SelectMirror">Other
-mirrors:<select name="Preferred">[if-any http] [for http]<option
+mirrors: <select name="Preferred">[if-any http] [for http]<option
 value="[http]">[http]</option>[end] [end] [if-any ftp] [for ftp]<option
 value="[ftp]">[ftp]</option>[end] [end] [if-any backup] [for backup]<option
 value="[backup]">[backup] (backup)</option>[end] [end]</select><input
@@ -32,16 +32,17 @@ version will not work with older 1.3.X releases of the Apache HTTP Server,
 and is not tested against (unsupported) 2.0 or 2.2 releases.
 
 [libapreq2-2.17]([preferred]/httpd/libapreq/libapreq2-2.17.tar.gz) 
-[PGP](http://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.asc) 
+[ [PGP](http://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.asc) ]
 
 # Apache HTTP Request Library 1.34 is now available  {#v1_03}
 
 This release works with Apache HTTP Server 1.3. Please note that this
 version will not work with newer 2.X releases of the Apache HTTP Server.
 Please use [libapreq2-2.17](#v2_17) for use with Apache HTTP Server 2.4.
+
 [libapreq-1.34]([preferred]/httpd/libapreq/libapreq-1.34.tar.gz) 
-[PGP](http://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.asc) 
-[MD5](http://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.md5) 
+[ [PGP](http://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.asc) ] 
+[ [MD5](http://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.md5) ]
 
 # Verify the integrity of the files  {#verify}
 
