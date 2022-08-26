@@ -18,6 +18,8 @@ Documentation for the latest release of libapreq2 is located at
 
 # News #
 
+**August 25, 2022** - libapreq2-2.17 was released.
+
 **March 19, 2021** - libapreq2-2.16 was released.
 
 **November 13, 2020** - libapreq2-2.15 was released.
