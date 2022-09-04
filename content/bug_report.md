@@ -16,7 +16,7 @@ Before you do that, though, <font color="red">make **sure** you have done **all*
 
 1. Looked at the error log. Please include any related messages in your report, or state that there are none.
 
-1. Checked the [FAQ](http://wiki.apache.org/httpd/FAQ) .
+1. Checked the [FAQ](http://wiki.apache.org/httpd/FAQ).
 
 1. Searched the [bug report](http://bz.apache.org/bugzilla/) database. When you are doing this, you should be sure to search closed problem reports in addition to open ones. The search form on the main bugzilla page by default applies only to open reports; to search all bug reports, begin the search with the keyword "ALL". For example, the following search will find all reported proxy bugs in Apache 2.4: "ALL httpd-2.4 mod_proxy". Some helpful queries:
 
