@@ -32,7 +32,13 @@ for x in os.listdir(options.directory or "./"):
 
 # Filter on version and store by release(s) that fixed it
 for cve in cves:
-    for time in cve["timeline"]:
+    if "timeline" in cve:
+        timearray = cve["timeline"]
+        cve["id"] = cve["CVE_data_meta"]["ID"]
+    else:
+        timearray = cve["containers"]["cna"]["timeline"]
+        cve["id"] = cve["cveMetadata"]["cveId"]
+    for time in timearray:
         timed = time["value"]
         matcher = re_fixedin.match(timed);
         if (matcher and matcher.group('released').startswith(filterversion)):
@@ -52,42 +58,73 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
     fixedv = k.split(",")[0]
 
     sectioncves = []
-    for cve in sorted(v, key=lambda s: [int(u) if u.isdigit() else u for u in s["CVE_data_meta"]["ID"].split('-')]):
+    for cve in sorted(v, key=lambda s: [int(u) if u.isdigit() else u for u in s["id"].split('-')]):
         e = {}
-        e['cveid'] = cve["CVE_data_meta"]["ID"]
-        e['impact'] = cve["impact"][0]["other"]
-        e['title'] = cve["CVE_data_meta"]["TITLE"]
-        e['desc'] = cve["description"]["description_data"][0]["value"]
-        e['credit'] = []
-        if ("credit" in cve):
-            for credit in cve["credit"]:
-                e['credit'].append(credit["value"])
-        affects = []
-        product = cve["affects"]["vendor"]["vendor_data"][0]["product"]["product_data"][0]
-        productname = product['product_name']
-        for ver in product["version"]["version_data"]:
-            if (ver["version_affected"]  == "="):
-                affects.append(ver["version_value"])
-            elif (ver["version_affected"]  == "?="):
-                # We did ?= for "maybe affects" because no one checked
-                affects.append(ver["version_value"]+"?")
-            else:
-                # Otherwise maybe we started doing things like "<2.7.8"
-                affects.append(ver["version_affected"]+ver["version_value"])
-        # Make a natural order sort
-        affects.sort(reverse=True, key=natural_sort_key)
-        e['affects'] = ", ".join(affects)
-        e['timetable'] = [];
-        for time in cve["timeline"]:
-            timed = time["value"]
-            if ("reported" in timed):
-                timed = "Reported to security team"
-            elif ("public" in timed):
-                timed = "Issue public"
-            elif ("release" in timed):
-                timed = "Update "+timed
-            e['timetable'].append([timed,time["time"]])
-        sectioncves.append(e)
+        e['cveid'] = cve["id"]
+        if ("cveMetadata" in cve):  # v5
+            e['impact'] = cve["containers"]["cna"]["metrics"][0]["other"]["content"]["text"]
+            e['title'] = cve["containers"]["cna"]["title"]
+            e['desc'] = cve["containers"]["cna"]["descriptions"][0]["value"]
+            e['credit'] = []
+            if ("credits" in cve["containers"]["cna"]):
+                for credit in cve["containers"]["cna"]["credits"]:
+                    e['credit'].append(credit["type"]+": "+credit["value"])
+            affects = []
+            product = cve["containers"]["cna"]["affected"][0]
+            productname = product['product']
+            for ver in product["versions"]:
+                if ("lessThanOrEqual" in ver):
+                    affects.append("<="+ver["lessThanOrEqual"])
+                if ("lessThan" in ver):
+                    affects.append("<"+ver["lessThan"])
+            # Make a natural order sort
+            affects.sort(reverse=True, key=natural_sort_key)
+            e['affects'] = ", ".join(affects)
+            e['timetable'] = [];
+            for time in cve["containers"]["cna"]["timeline"]:
+                timed = time["value"]
+                if ("reported" in timed):
+                    timed = "Reported to security team"
+                elif ("public" in timed):
+                    timed = "Issue public"
+                elif ("release" in timed):
+                    timed = "Update "+timed
+                e['timetable'].append([timed,time["time"].split('T')[0]])
+            sectioncves.append(e)            
+        else:
+            e['impact'] = cve["impact"][0]["other"]
+            e['title'] = cve["CVE_data_meta"]["TITLE"]
+            e['desc'] = cve["description"]["description_data"][0]["value"]
+            e['credit'] = []
+            if ("credit" in cve):
+                for credit in cve["credit"]:
+                    e['credit'].append(credit["value"])
+            affects = []
+            product = cve["affects"]["vendor"]["vendor_data"][0]["product"]["product_data"][0]
+            productname = product['product_name']
+            for ver in product["version"]["version_data"]:
+                if (ver["version_affected"]  == "="):
+                    affects.append(ver["version_value"])
+                elif (ver["version_affected"]  == "?="):
+                    # We did ?= for "maybe affects" because no one checked
+                    affects.append(ver["version_value"]+"?")
+                else:
+                    # Otherwise maybe we started doing things like "<2.7.8"
+                    affects.append(ver["version_affected"]+ver["version_value"])
+            # Make a natural order sort
+            affects.sort(reverse=True, key=natural_sort_key)
+            e['affects'] = ", ".join(affects)
+            e['timetable'] = [];
+            for time in cve["timeline"]:
+                timed = time["value"]
+                if ("reported" in timed):
+                    timed = "Reported to security team"
+                elif ("public" in timed):
+                    timed = "Issue public"
+                elif ("release" in timed):
+                    timed = "Update "+timed
+                e['timetable'].append([timed,time["time"]])
+            sectioncves.append(e)
     sections.append({"cves":sectioncves,"fixed":fixedv,"product":productname})
 
 # Everything is sorted and pretty, this should be some python template thing
@@ -108,7 +145,7 @@ for sectioncves in sections:
     print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]+"</h1><dl>\n")
     for e in sectioncves["cves"]:
         html = "<dt><h3 id=\""+e['cveid']+"\">"+e['impact']+": <name name=\""+e['cveid']+"\">"+saxutils.escape(e['title'])+"</name>\n";
-        html += "(<a href=\"https://cve.mitre.org/cgi-bin/cvename.cgi?name="+e['cveid']+"\">"+e['cveid']+"</a>)</h3></dt>\n";
+        html += "(<a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a>)</h3></dt>\n";
         desc = saxutils.escape(e['desc'])
         desc = re.sub(r'\n','</p><p>', desc)
         html += "<dd><p>"+desc+"</p>\n"
