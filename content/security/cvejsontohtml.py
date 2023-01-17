@@ -41,9 +41,11 @@ for cve in cves:
      
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         cve["id"] = cve["CVE_data_meta"]["ID"]
+        timearray = cve["timeline"]
     elif data_version == "5.0":  # Newer style JSON
         cve["id"] = cve["cveMetadata"]["cveId"]
-    for time in cve["timeline"]:
+        timearray = cve["containers"]["cna"]["timeline"]
+    for time in timearray:
         timed = time["value"]
         matcher = re_fixedin.match(timed);
         if (matcher and matcher.group('released').startswith(filterversion)):
