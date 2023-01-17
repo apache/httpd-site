@@ -19,6 +19,7 @@ def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
 filterversion = options.filterversion or ""
 cves = []
 entries = {}
+DEFAULT_CVE_DATA_VERSION = "4.0"  # Default (old) CVE data version
 
 for x in os.listdir(options.directory or "./"):
     if x.endswith(".json"):
@@ -32,10 +33,15 @@ for x in os.listdir(options.directory or "./"):
 
 # Filter on version and store by release(s) that fixed it
 for cve in cves:
-    if "CVE_data_meta" in cve:  # Old style JSON
+    # Establish which version of CVE JSON we are dealing with
+    data_version = DEFAULT_CVE_DATA_VERSION
+    if cve.get("dataType") == "CVE":
+        data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
+     
+    if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         timearray = cve["timeline"]
         cve["id"] = cve["CVE_data_meta"]["ID"]
-    else:  # Newer style JSON
+    elif data_version == "5.0":  # Newer style JSON
         timearray = cve["containers"]["cna"]["timeline"]
         cve["id"] = cve["cveMetadata"]["cveId"]
     for time in timearray:
