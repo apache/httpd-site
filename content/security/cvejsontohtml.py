@@ -37,13 +37,16 @@ for x in os.listdir(options.directory or "./"):
 for cve in cves:
     # Establish which version of CVE JSON we are dealing with
     data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
-    print("%s: v%s" % (cve["_filename"], data_version), file=sys.stderr)
+    #print("%s: v%s" % (cve["_filename"], data_version), file=sys.stderr)
      
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         timearray = cve["timeline"]
         cve["id"] = cve["CVE_data_meta"]["ID"]
     elif data_version == "5.0":  # Newer style JSON
-        timearray = cve["containers"]["cna"]["timeline"]
+        if "timeline" in cve["containers"]["cna"]:
+            timearray = cve["containers"]["cna"]["timeline"]
+        else:
+            timearray = cve["timeline"]  # This should be in cna, but...meh
         cve["id"] = cve["cveMetadata"]["cveId"]
     for time in timearray:
         timed = time["value"]
