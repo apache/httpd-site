@@ -92,7 +92,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             affects.sort(reverse=True, key=natural_sort_key)
             e['affects'] = ", ".join(affects)
             e['timetable'] = [];
-            for time in cve["containers"]["cna"]["timeline"]:
+            for time in cve["containers"]["cna"].get("timeline", []):  # Timeline may not be present in the JSON!
                 timed = time["value"]
                 if ("reported" in timed):
                     timed = "Reported to security team"
@@ -126,7 +126,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             affects.sort(reverse=True, key=natural_sort_key)
             e['affects'] = ", ".join(affects)
             e['timetable'] = [];
-            for time in cve["timeline"]:
+            for time in cve.get("timeline", []):
                 timed = time["value"]
                 if ("reported" in timed):
                     timed = "Reported to security team"
