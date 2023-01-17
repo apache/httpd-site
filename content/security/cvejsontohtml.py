@@ -32,10 +32,10 @@ for x in os.listdir(options.directory or "./"):
 
 # Filter on version and store by release(s) that fixed it
 for cve in cves:
-    if "timeline" in cve:
+    if "CVE_data_meta" in cve:  # Old style JSON
         timearray = cve["timeline"]
         cve["id"] = cve["CVE_data_meta"]["ID"]
-    else:
+    else:  # Newer style JSON
         timearray = cve["containers"]["cna"]["timeline"]
         cve["id"] = cve["cveMetadata"]["cveId"]
     for time in timearray:
