@@ -71,7 +71,8 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
     for cve in sorted(v, key=lambda s: [int(u) if u.isdigit() else u for u in s["id"].split('-')]):
         e = {}
         e['cveid'] = cve["id"]
-        if ("cveMetadata" in cve):  # v5
+        data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
+        if data_version == "5.0":
             e['impact'] = cve["containers"]["cna"]["metrics"][0]["other"]["content"]["text"]
             e['title'] = cve["containers"]["cna"]["title"]
             e['desc'] = cve["containers"]["cna"]["descriptions"][0]["value"]
