@@ -26,6 +26,7 @@ for x in os.listdir(options.directory or "./"):
         try:
             fd = open(options.directory+x)
             cve = json.load(fd)
+            cve["_filename"] = x
             cves.append(cve)
         except:
             print ("Ignoring due to error parsing: "+x)
@@ -35,6 +36,7 @@ for x in os.listdir(options.directory or "./"):
 for cve in cves:
     # Establish which version of CVE JSON we are dealing with
     data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
+    print("%s: v%s" % (cve["_filename"], data_version))
      
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         timearray = cve["timeline"]
