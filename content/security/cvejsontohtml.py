@@ -35,7 +35,7 @@ for x in os.listdir(options.directory or "./"):
 for cve in cves:
     # Establish which version of CVE JSON we are dealing with
     data_version = DEFAULT_CVE_DATA_VERSION
-    if cve.get("dataType") == "CVE":
+    if cve.get("dataType") == "CVE_RECORD":
         data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
      
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
