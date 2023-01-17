@@ -92,6 +92,20 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
 <h1 id="2.4.55">Fixed in Apache HTTP Server 2.4.55</h1><dl>
+<dt><h3 id="CVE-2006-20001">moderate: <name name="CVE-2006-20001">mod_dav out of  bounds read, or write of zero byte</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2006-20001">CVE-2006-20001</a>)</h3></dt>
+<dd><p>A carefully crafted If: request header can cause a memory read, or write of a single zero byte, in a pool (heap) memory location beyond the header value sent. This could cause the process to crash.</p><p></p><p>This issue affects Apache HTTP Server 2.4.54 and earlier.</p><p></p>
+<table class="table"><tr><td class="cve-header">Described in first edition of "The Art of Software Security Assessment"</td><td class="cve-value">2006-10-31</td></tr>
+<tr><td class="cve-header">Reported to security team</td><td class="cve-value">2022-08-10</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.54</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2022-36760">moderate: <name name="CVE-2022-36760">Apache HTTP Server: mod_proxy_ajp Possible request smuggling</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2022-36760">CVE-2022-36760</a>)</h3></dt>
+<dd><p>Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to.  This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.54 and prior versions.</p>
+<p>Acknowledgements: finder: ZeddYu_Lu from Qi'anxin Research Institute of Legendsec at Qi'anxin Group</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2022-07-12</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.54</td></tr>
+</table></dd>
 <dt><h3 id="CVE-2022-37436">moderate: <name name="CVE-2022-37436">Apache HTTP Server: mod_proxy prior to 2.4.55 allows a backend to trigger HTTP response splitting</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2022-37436">CVE-2022-37436</a>)</h3></dt>
 <dd><p>Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response headers to be truncated early, resulting in some headers being incorporated into the response body. If the later headers have any security purpose, they will not be interpreted by the client.</p>
