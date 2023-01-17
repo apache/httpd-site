@@ -34,9 +34,7 @@ for x in os.listdir(options.directory or "./"):
 # Filter on version and store by release(s) that fixed it
 for cve in cves:
     # Establish which version of CVE JSON we are dealing with
-    data_version = DEFAULT_CVE_DATA_VERSION
-    if cve.get("dataType") == "CVE_RECORD":
-        data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
+    data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
      
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         timearray = cve["timeline"]
