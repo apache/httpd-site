@@ -2,6 +2,7 @@ import json
 import os
 import re
 import xml.sax.saxutils as saxutils 
+import sys
 from optparse import OptionParser
 parser = OptionParser()
  
@@ -36,7 +37,7 @@ for x in os.listdir(options.directory or "./"):
 for cve in cves:
     # Establish which version of CVE JSON we are dealing with
     data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
-    print("%s: v%s" % (cve["_filename"], data_version))
+    print("%s: v%s" % (cve["_filename"], data_version), file=sys.stderr)
      
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         timearray = cve["timeline"]
