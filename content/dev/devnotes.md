@@ -102,11 +102,12 @@ it <samp>httpd-trunk</samp>, checkout as follows:
 
 ## httpd-site ##
 
-The website pages use the Markdown syntax and are hosted on GitHub at
-https://github.com/apache/httpd-site/.
+The website **used** to be hosted at https://svn.apache.org/repos/asf/httpd/site/.
 
-When a change is commited in this repository, the corresponding HTML files are
-automatically generated and copied on https://httpd.apache.org/.
+It is **now** hosted on GitHub at https://github.com/apache/httpd-site/.
+
+The website pages use the Markdown syntax and when a change is commited in this repository,
+the corresponding HTML files are automatically generated and copied on https://httpd.apache.org/.
 
 ## httpd-dist ##
 
