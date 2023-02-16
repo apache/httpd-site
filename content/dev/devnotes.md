@@ -102,36 +102,11 @@ it <samp>httpd-trunk</samp>, checkout as follows:
 
 ## httpd-site ##
 
-> httpd-site is no longer in the Apache CMS system. It has moved to `https://github.com/apache/httpd-site/`.
-> The following paragraphs are obsolete.
+The website pages use the Markdown syntax and are hosted on GitHub at
+https://github.com/apache/httpd-site/.
 
-This subtree contains the files that live
-at <samp>https://httpd.apache.org/</samp>. The directory on the host that
-maps to that URL is actually a set of checked-out working copies of the SVN
-files.
-
-Basic changes can be made to this website in your browser by using the ASF CMS system. 
-
-First, add this as a bookmark: 
-
-&nbsp; &nbsp; javascript:void(location.href='https://cms.apache.org/redirect?uri='+escape(location.href))
-
-Then browse to the page you'd like to edit, and  click the CMS bookmark.
-The CMS system allows you to edit, commit, preview in staging, then push to production from a browser interface.  
-
-
-The SVN URL
-is <samp>https://svn.apache.org/repos/asf/httpd/site/trunk/docs</samp>.
-<make_note> It is important that the files on the Web host not be modified
-directly. If you want or need to change one, check it out into a private
-working copy, modify **that** , commit the change into SVN, and then
-perform a <samp>svn update</samp> to bring the host directory into sync with
-the SVN sources.</make_note>
-The Web site *directories* (as opposed to files) are not maintained in
-synch with the SVN files automatically. They are manually updated from SVN
-by various people as they consider appropriate. This is usually not an
-issue, unless a group of files are being updated according to an ongoing
-group discussion.
+When a change is commited in this repository, the corresponding HTML files are
+automatically generated and copied on https://httpd.apache.org/.
 
 ## httpd-dist ##
 
