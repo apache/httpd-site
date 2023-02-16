@@ -91,15 +91,15 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 nits and the maintenance of the developer site.</p>
 <h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permalink">&para;</a></h1>
 <p>The Apache HTTP Server Project uses
-<a href="http://subversion.apache.org/">Subversion</a> for hosting its source code.</p>
+<a href="https://subversion.apache.org/">Subversion</a> for hosting its source code.</p>
 <p>To check out the 2.4.x branch:</p>
 <blockquote>
-<p><code>svn checkout http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4.x</code></p>
+<p><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4.x</code></p>
 </blockquote>
 <p>To check out the current development version (as of this writing, 2.5.x),
 use:</p>
 <blockquote>
-<p><code>svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk</code></p>
+<p><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk</code></p>
 </blockquote>
 <p>Committers should check out via https instead of http (so that they can
 commit their changes). For more info about Subversion, please read <a href="https://www.apache.org/dev/version-control.html">the ASF
@@ -109,14 +109,14 @@ version control FAQ</a>.</p>
 <h1 id="maintaining-the-sources">Maintaining the Sources<a class="headerlink" href="#maintaining-the-sources" title="Permalink">&para;</a></h1>
 <p>Almost all files relating to Apache, both the actual sources and the files
 that aren't part of the distribution, are now maintained in an
-<a href="http://subversion.apache.org/">SVN</a> repository. Here is the way in which
+<a href="https://subversion.apache.org/">SVN</a> repository. Here is the way in which
 changes are applied:</p>
 <ol>
 <li>
 <p>Developer checks out a copy of the files on which they want to work (in
 this case, the trunk), into a private working directory
 called <samp>httpd-trunk</samp>:</p>
-<p><samp>% svn checkout <a href="http://svn.apache.org/repos/asf/httpd/httpd/trunk">http://svn.apache.org/repos/asf/httpd/httpd/trunk</a>
+<p><samp>% svn checkout <a href="https://svn.apache.org/repos/asf/httpd/httpd/trunk">https://svn.apache.org/repos/asf/httpd/httpd/trunk</a>
 httpd-trunk</samp></p>
 <p>This step only needs to be performed once (unless the private working
 directory is tainted or deleted). Committers should use a URL prefix
@@ -134,7 +134,7 @@ of high activity.</p>
 generates a patch so others can apply the changes to test them:</p>
 <p><samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
 /tmp/foo</samp></p>
-<p>The <samp>/tmp/foo</samp> file is mailed to the <a href="http://httpd.apache.org/lists.html#http-dev">developers
+<p>The <samp>/tmp/foo</samp> file is mailed to the <a href="https://httpd.apache.org/lists.html#http-dev">developers
 list</a> so they can consider the
 value/validity of the patch. It is worth making sure your code follows the
 Apache style, as described in the <a href="styleguide.html">style guide</a>.</p>
@@ -148,7 +148,7 @@ developer checks the changes into the repository:</p>
 <h1 id="svn-subtrees">SVN Subtrees<a class="headerlink" href="#svn-subtrees" title="Permalink">&para;</a></h1>
 <p>There are several different branches under the <samp>httpd</samp> subtree in
 the Apache SVN repository that pertain to the different releases. The top
-level can be perused with the <a href="http://svn.apache.org/viewcvs.cgi/">SVN
+level can be perused with the <a href="https://svn.apache.org/viewcvs.cgi/">SVN
 ViewCVS</a> pages. The main subtrees
 pertaining to the <samp>httpd</samp> server source are:</p>
 <h2 id="httpd-24">httpd-2.4<a class="headerlink" href="#httpd-24" title="Permalink">&para;</a></h2>
@@ -156,14 +156,14 @@ pertaining to the <samp>httpd</samp> server source are:</p>
 it <samp>httpd-2.4</samp>, change your current directory to the <em>parent</em> of
 the tree and then check the 2.4 sources out as follows:</p>
 <pre><code>% cd /usr/local/apache
-% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
+% svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
 </code></pre>
 <h2 id="httpd-25">httpd-2.5<a class="headerlink" href="#httpd-25" title="Permalink">&para;</a></h2>
 <p>If you want to check out the bleeding edge of development, the httpd-2.5
 development tree (slated for a release 2.6), and call
 it <samp>httpd-trunk</samp>, checkout as follows:</p>
 <pre><code>% cd /usr/local/apache
-% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+% svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
 </code></pre>
 <h2 id="httpd-site">httpd-site<a class="headerlink" href="#httpd-site" title="Permalink">&para;</a></h2>
 <blockquote>
@@ -171,7 +171,7 @@ it <samp>httpd-trunk</samp>, checkout as follows:</p>
 The following paragraphs are obsolete.</p>
 </blockquote>
 <p>This subtree contains the files that live
-at <samp><a href="http://httpd.apache.org/">http://httpd.apache.org/</a></samp>. The directory on the host that
+at <samp><a href="https://httpd.apache.org/">https://httpd.apache.org/</a></samp>. The directory on the host that
 maps to that URL is actually a set of checked-out working copies of the SVN
 files.</p>
 <p>Basic changes can be made to this website in your browser by using the ASF CMS system.</p>
@@ -194,7 +194,7 @@ group discussion.</p>
 <h2 id="httpd-dist">httpd-dist<a class="headerlink" href="#httpd-dist" title="Permalink">&para;</a></h2>
 <p>Like the <samp>httpd-site</samp> subtree, this one is used to maintain the
 files that comprise a website - in this
-case, <samp><a href="http://downloads.apache.org/httpd/">http://downloads.apache.org/httpd/</a></samp>. Also like the previous
+case, <samp><a href="https://downloads.apache.org/httpd/">https://downloads.apache.org/httpd/</a></samp>. Also like the previous
 subtree, the directory on the server is a checked-out working copy of this
 subtree. However, since this is a distribution directory, we only have the
 surrounding documentation and control files checked into this subtree --
@@ -210,7 +210,7 @@ and procedures relating to rolling releases can be found on the <a href="release
 Guidelines</a> page.</p>
 <h1 id="setting-up-remote-svn">Setting Up Remote SVN<a class="headerlink" href="#setting-up-remote-svn" title="Permalink">&para;</a></h1>
 <p>A brief overview of getting started with SVN committer access can be found
-<a href="http://www.apache.org/dev/version-control.html#https-svn">here</a>. One key
+<a href="https://www.apache.org/dev/version-control.html#https-svn">here</a>. One key
 change to note is that SSH is not used anymore for committer access, due to
 the functional differences with SVN.</p>
 <h1 id="working-with-git-github">Working with git / GitHub<a class="headerlink" href="#working-with-git-github" title="Permalink">&para;</a></h1>
@@ -223,20 +223,20 @@ pull request number which will be prominent in the interface.</p>
 <li><a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a></li>
 <li><a href="https://github.com/apache/httpd/pulls">https://github.com/apache/httpd/pulls</a></li>
 </ul>
-<p>An example revision that closes a pull request is <a href="http://svn.apache.org/viewvc?view=revision&amp;revision=1780308">http://svn.apache.org/viewvc?view=revision&amp;revision=1780308</a></p>
+<p>An example revision that closes a pull request is <a href="https://svn.apache.org/viewvc?view=revision&amp;revision=1780308">https://svn.apache.org/viewvc?view=revision&amp;revision=1780308</a></p>
 <h1 id="continuous-integration-ci">Continuous integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Permalink">&para;</a></h1>
-<p><a href="https://travis-ci.com/">Travis</a> CI services are used.</p>
+<p><a href="https://github.com/apache/httpd/actions">GitHub Actions</a> CI services are used.</p>
 <p>This service allows us to automatically build httpd on different processors, OS,
 with different gcc vesions, with different library versions and with different
 configurations.
-On successul built, our <a href="http://svn.apache.org/viewvc/httpd/test/framework/trunk/">Perl test framework</a>
+On successul built, our <a href="https://svn.apache.org/viewvc/httpd/test/framework/trunk/">Perl test framework</a>
 is also automatically executed.</p>
 <p>All this is executed for each commit.</p>
 <p>The goal is to spot early new build issues and regression.</p>
 <p>Should a committer want to commit something, without triggering the whole process
 (doc change or STATUS update for example), he can add the magic "[skip ci]"
 keyword as part of the commit message.</p>
-<p>Here are the <a href="https://travis-ci.com/github/apache/httpd">latest built results</a>.</p>
+<p>Here are the <a href="https://github.com/apache/httpd/actions">latest built results</a>.</p>
 
             <!-- FOOTER -->
             <div id="footer">
