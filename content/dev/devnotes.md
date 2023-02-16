@@ -9,12 +9,12 @@ nits and the maintenance of the developer site.
 # Overview #
 
 The Apache HTTP Server Project uses
-[Subversion](http://subversion.apache.org/) for hosting its source code.
+[Subversion](https://subversion.apache.org/) for hosting its source code.
 
 To check out the 2.4.x branch:
 
 > `
-svn checkout http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x
 httpd-2.4.x
 ` 
 
@@ -22,7 +22,7 @@ To check out the current development version (as of this writing, 2.5.x),
 use:
 
 > `
-svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
 ` 
 
 Committers should check out via https instead of http (so that they can
@@ -36,14 +36,14 @@ The developers continue to seek to maintain module compatibility between
 
 Almost all files relating to Apache, both the actual sources and the files
 that aren't part of the distribution, are now maintained in an
-[SVN](http://subversion.apache.org/) repository. Here is the way in which
+[SVN](https://subversion.apache.org/) repository. Here is the way in which
 changes are applied:
 
 1. Developer checks out a copy of the files on which they want to work (in
    this case, the trunk), into a private working directory
    called <samp>httpd-trunk</samp>:
 
-   <samp>% svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk
+   <samp>% svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk
    httpd-trunk</samp>
 
    This step only needs to be performed once (unless the private working
@@ -65,7 +65,7 @@ changes are applied:
    /tmp/foo</samp>
 
    The <samp>/tmp/foo</samp> file is mailed to the [developers
-   list](http://httpd.apache.org/lists.html#http-dev) so they can consider the
+   list](https://httpd.apache.org/lists.html#http-dev) so they can consider the
    value/validity of the patch. It is worth making sure your code follows the
    Apache style, as described in the [style guide](styleguide.html).
 
@@ -79,7 +79,7 @@ changes are applied:
 There are several different branches under the <samp>httpd</samp> subtree in
 the Apache SVN repository that pertain to the different releases. The top
 level can be perused with the [SVN
-ViewCVS](http://svn.apache.org/viewcvs.cgi/) pages. The main subtrees
+ViewCVS](https://svn.apache.org/viewcvs.cgi/) pages. The main subtrees
 pertaining to the <samp>httpd</samp> server source are:
 
 ## httpd-2.4 ##
@@ -89,7 +89,7 @@ it <samp>httpd-2.4</samp>, change your current directory to the *parent* of
 the tree and then check the 2.4 sources out as follows:
 
     % cd /usr/local/apache
-    % svn checkout http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
+    % svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
 
 ## httpd-2.5 ##
 
@@ -98,7 +98,7 @@ development tree (slated for a release 2.6), and call
 it <samp>httpd-trunk</samp>, checkout as follows:
 
     % cd /usr/local/apache
-    % svn checkout http://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+    % svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
 
 ## httpd-site ##
 
@@ -106,7 +106,7 @@ it <samp>httpd-trunk</samp>, checkout as follows:
 > The following paragraphs are obsolete.
 
 This subtree contains the files that live
-at <samp>http://httpd.apache.org/</samp>. The directory on the host that
+at <samp>https://httpd.apache.org/</samp>. The directory on the host that
 maps to that URL is actually a set of checked-out working copies of the SVN
 files.
 
@@ -137,7 +137,7 @@ group discussion.
 
 Like the <samp>httpd-site</samp> subtree, this one is used to maintain the
 files that comprise a website - in this
-case, <samp>http://downloads.apache.org/httpd/</samp>. Also like the previous
+case, <samp>https://downloads.apache.org/httpd/</samp>. Also like the previous
 subtree, the directory on the server is a checked-out working copy of this
 subtree. However, since this is a distribution directory, we only have the
 surrounding documentation and control files checked into this subtree --
@@ -157,7 +157,7 @@ Guidelines](release.html) page.
 # Setting Up Remote SVN #
 
 A brief overview of getting started with SVN committer access can be found
-[here](http://www.apache.org/dev/version-control.html#https-svn). One key
+[here](https://www.apache.org/dev/version-control.html#https-svn). One key
 change to note is that SSH is not used anymore for committer access, due to
 the functional differences with SVN.
 
@@ -172,16 +172,16 @@ pull request number which will be prominent in the interface.
   - <https://github.com/apache/httpd>
   - <https://github.com/apache/httpd/pulls>
 
-An example revision that closes a pull request is <http://svn.apache.org/viewvc?view=revision&revision=1780308>
+An example revision that closes a pull request is <https://svn.apache.org/viewvc?view=revision&revision=1780308>
 
 # Continuous integration (CI) #
 
-[Travis](https://travis-ci.com/) CI services are used.
+[GitHub Actions](https://github.com/apache/httpd/actions) CI services are used.
 
 This service allows us to automatically build httpd on different processors, OS,
 with different gcc vesions, with different library versions and with different
 configurations.
-On successul built, our [Perl test framework](http://svn.apache.org/viewvc/httpd/test/framework/trunk/)
+On successul built, our [Perl test framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/)
 is also automatically executed.
 
 All this is executed for each commit.
@@ -193,4 +193,4 @@ Should a committer want to commit something, without triggering the whole proces
 keyword as part of the commit message.
 
 
-Here are the [latest built results](https://travis-ci.com/github/apache/httpd).
+Here are the [latest built results](https://github.com/apache/httpd/actions).
