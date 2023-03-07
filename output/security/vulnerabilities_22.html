@@ -147,7 +147,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dt><h3 id="CVE-2017-9788">important: <name name="CVE-2017-9788">Uninitialized memory reflection in mod_auth_digest</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2017-9788">CVE-2017-9788</a>)</h3></dt>
 <dd><p>The value placeholder in [Proxy-]Authorization headers of type 'Digest' was not initialized or reset before or between successive key=value assignments. by mod_auth_digest. Providing an initial key with no '=' assignment could reflect the stale value of uninitialized pool memory used by the prior request, leading to leakage of potentially confidential information, and a segfault.</p>
-<p>Acknowledgements: We would like to thank Robert &Sacute;wi&eogon;cki for reporting this issue.</p>
+<p>Acknowledgements: We would like to thank Robert Święcki for reporting this issue.</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2017-06-28</td></tr>
 <tr><td class="cve-header">Issue public</td><td class="cve-value">2017-07-11</td></tr>
 <tr><td class="cve-header">Update 2.4.27 released</td><td class="cve-value">2017-07-11</td></tr>

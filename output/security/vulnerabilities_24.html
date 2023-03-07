@@ -94,7 +94,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <h1 id="2.4.56">Fixed in Apache HTTP Server 2.4.56</h1><dl>
 <dt><h3 id="CVE-2023-25690">important: <name name="CVE-2023-25690">HTTP request splitting with mod_rewrite and mod_proxy</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2023-25690">CVE-2023-25690</a>)</h3></dt>
-<dd><p>Some mod_proxy configurations on Apache HTTP Server versions 2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack.</p><p></p><p></p><p></p><p></p><p>Configurations are affected when mod_proxy is enabled along with some form of RewriteRule</p><p> or ProxyPassMatch in which a non-specific pattern matches</p><p> some portion of the user-supplied request-target (URL) data and is then</p><p> re-inserted into the proxied request-target using variable </p><p>substitution. For example, something like:</p><p></p><p></p><p></p><p></p><p>RewriteEngine on</p><p>RewriteRule "^/here/(.*)" " http://example.com:8080/elsewhere?$1" http://example.com:8080/elsewhere ; [P]</p><p>ProxyPassReverse /here/  http://example.com:8080/ http://example.com:8080/ </p><p></p><p></p><p>Request splitting/smuggling could result in bypass of access controls in the proxy server, proxying unintended URLs to existing origin servers, and cache poisoning.</p><p></p><p></p><p></p><p></p>
+<dd><p>Some mod_proxy configurations on Apache HTTP Server versions 2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack.</p><p></p><p></p><p></p><p></p><p>Configurations are affected when mod_proxy is enabled along with some form of RewriteRule or ProxyPassMatch in which a non-specific pattern matches some portion of the user-supplied request-target (URL) data and is then re-inserted into the proxied request-target using variable substitution.</p><p></p><p> For example, something like:</p><p></p><p></p><p></p><p></p><p>RewriteEngine on</p><p>RewriteRule "^/here/(.*)" " http://example.com:8080/elsewhere?$1" http://example.com:8080/elsewhere ; [P]</p><p>ProxyPassReverse /here/  http://example.com:8080/ http://example.com:8080/ </p><p></p><p></p><p>Request splitting/smuggling could result in bypass of access controls in the proxy server, proxying unintended URLs to existing origin servers, and cache poisoning.</p><p></p><p></p><p></p><p></p>
 <p>Acknowledgements: finder: Lars Krapf of Adobe</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2023-02-02</td></tr>
 <tr><td class="cve-header">Update 2.4.56 released</td><td class="cve-value">2023-03-07</td></tr>
@@ -709,7 +709,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dt><h3 id="CVE-2017-9788">important: <name name="CVE-2017-9788">Uninitialized memory reflection in mod_auth_digest</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2017-9788">CVE-2017-9788</a>)</h3></dt>
 <dd><p>The value placeholder in [Proxy-]Authorization headers of type 'Digest' was not initialized or reset before or between successive key=value assignments. by mod_auth_digest. Providing an initial key with no '=' assignment could reflect the stale value of uninitialized pool memory used by the prior request, leading to leakage of potentially confidential information, and a segfault.</p>
-<p>Acknowledgements: We would like to thank Robert &Sacute;wi&eogon;cki for reporting this issue.</p>
+<p>Acknowledgements: We would like to thank Robert Święcki for reporting this issue.</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2017-06-28</td></tr>
 <tr><td class="cve-header">Issue public</td><td class="cve-value">2017-07-11</td></tr>
 <tr><td class="cve-header">Update 2.4.27 released</td><td class="cve-value">2017-07-11</td></tr>
@@ -719,7 +719,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dt><h3 id="CVE-2017-9789">important: <name name="CVE-2017-9789">Read after free in mod_http2</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2017-9789">CVE-2017-9789</a>)</h3></dt>
 <dd><p>When under stress, closing many connections, the HTTP/2 handling code would sometimes access memory after it has been freed, resulting in potentially erratic behaviour.</p>
-<p>Acknowledgements: We would like to thank Robert &Sacute;wi&eogon;cki for reporting this issue.</p>
+<p>Acknowledgements: We would like to thank Robert Święcki for reporting this issue.</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2017-06-30</td></tr>
 <tr><td class="cve-header">Issue public</td><td class="cve-value">2017-07-11</td></tr>
 <tr><td class="cve-header">Update 2.4.27 released</td><td class="cve-value">2017-07-11</td></tr>
@@ -750,7 +750,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dt><h3 id="CVE-2017-7659">important: <name name="CVE-2017-7659">mod_http2 Null Pointer Dereference</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2017-7659">CVE-2017-7659</a>)</h3></dt>
 <dd><p>A maliciously constructed HTTP/2 request could cause mod_http2 to dereference a NULL pointer and crash the server process.</p>
-<p>Acknowledgements: We would like to thank Robert &Sacute;wi&eogon;cki for reporting this issue.</p>
+<p>Acknowledgements: We would like to thank Robert Święcki for reporting this issue.</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2016-11-18</td></tr>
 <tr><td class="cve-header">Issue public</td><td class="cve-value">2017-06-19</td></tr>
 <tr><td class="cve-header">Update 2.4.26 released</td><td class="cve-value">2017-06-19</td></tr>
