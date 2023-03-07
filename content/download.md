@@ -48,8 +48,6 @@ the [CHANGES_2.4]([preferred]httpd/CHANGES_2.4) and
 [SHA256](https://downloads.apache.org/httpd/httpd-2.4.56.tar.gz.sha256) ] [
 [SHA512](https://downloads.apache.org/httpd/httpd-2.4.56.tar.gz.sha512) ]
 
-- [Binaries]([preferred]httpd/binaries/) 
-
 -  [Security and official patches]([preferred]httpd/patches/) 
 
 -  [Other files]([preferred]httpd/)
