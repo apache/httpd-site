@@ -91,6 +91,24 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.56">Fixed in Apache HTTP Server 2.4.56</h1><dl>
+<dt><h3 id="CVE-2023-25690">important: <name name="CVE-2023-25690">HTTP request splitting with mod_rewrite and mod_proxy</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2023-25690">CVE-2023-25690</a>)</h3></dt>
+<dd><p>Some mod_proxy configurations on Apache HTTP Server versions 2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack.</p><p></p><p></p><p></p><p></p><p>Configurations are affected when mod_proxy is enabled along with some form of RewriteRule</p><p> or ProxyPassMatch in which a non-specific pattern matches</p><p> some portion of the user-supplied request-target (URL) data and is then</p><p> re-inserted into the proxied request-target using variable </p><p>substitution. For example, something like:</p><p></p><p></p><p></p><p></p><p>RewriteEngine on</p><p>RewriteRule "^/here/(.*)" " http://example.com:8080/elsewhere?$1" http://example.com:8080/elsewhere ; [P]</p><p>ProxyPassReverse /here/  http://example.com:8080/ http://example.com:8080/ </p><p></p><p></p><p>Request splitting/smuggling could result in bypass of access controls in the proxy server, proxying unintended URLs to existing origin servers, and cache poisoning.</p><p></p><p></p><p></p><p></p>
+<p>Acknowledgements: finder: Lars Krapf of Adobe</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2023-02-02</td></tr>
+<tr><td class="cve-header">Update 2.4.56 released</td><td class="cve-value">2023-03-07</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.55</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2023-27522">moderate: <name name="CVE-2023-27522">Apache HTTP Server: mod_proxy_uwsgi HTTP response splitting</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2023-27522">CVE-2023-27522</a>)</h3></dt>
+<dd><p>HTTP Response Smuggling vulnerability in Apache HTTP Server via mod_proxy_uwsgi. This issue affects Apache HTTP Server: from 2.4.30 through 2.4.55.</p><p></p><p>Special characters in the origin response header can truncate/split the response forwarded to the client.</p><p></p><p></p><p></p>
+<p>Acknowledgements: finder: Dimas Fariski Setyawan Putra (nyxsorcerer)</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2023-01-29</td></tr>
+<tr><td class="cve-header">Update 2.4.56 released</td><td class="cve-value">2023-03-07</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.55</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.55">Fixed in Apache HTTP Server 2.4.55</h1><dl>
 <dt><h3 id="CVE-2006-20001">moderate: <name name="CVE-2006-20001">mod_dav out of  bounds read, or write of zero byte</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2006-20001">CVE-2006-20001</a>)</h3></dt>
