@@ -521,10 +521,10 @@ builds as needed<br></br>
 
 **Name:** <a name="pluem">Rüdiger Plüm</a><br></br> **Email:** 
 [rpluem@apache.org](mailto:rpluem@apache.org) <br></br> **Organization:** 
-[Vodafone](http://www.vodafone.com/) <br></br> **Occupation:** Web System
-Engineer<br></br> **Location:** Ratingen, Germany<br></br> **Comments:** Is it
-a bug or a feature?<br></br> **Contributions:** Bug fixes<br></br> **OS
-Expertise:** Linux, Solaris<br></br>
+[Vodafone](https://www.vodafone.com/) <br></br> **Occupation:** IT Cloud
+Infrastructure Engineer<br></br> **Location:** Ratingen, Germany<br></br>
+**Comments:** Is it a bug or a feature?<br></br>
+**Contributions:** Bug fixes<br></br> **OS Expertise:** Linux<br></br>
 
 ![Noirin Plunkett](../images/noirin.jpg "")  **Name:** <a
 name="noirin">Noirin Plunkett</a><br></br> **Email:** 
