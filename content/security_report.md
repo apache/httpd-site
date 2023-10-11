@@ -50,6 +50,25 @@ Apache HTTP Server vulnerabilities are labelled with
 [CVE](http://cve.mitre.org) (Common Vulnerabilities and Exposures)
 identifiers.
 
+# Impact of third-party issues {#thirdparty}
+
+This section describes issues that are not directly present in
+Apache HTTP Server.
+
+## CVE-2023-44487 HTTP/2 'Rapid Reset' {#CVE-2023-44487}
+
+Apache HTTP Server is not impacted by the problem described in
+[CVE-2023-44487](https://www.cve.org/CVERecord?id=CVE-2023-44487):
+the long-standing measures we have in place to limit excessive load
+from clients are effective in this scenario. The attack described
+will cause extra CPU usage on your Apache HTTP Server process, but
+not impact any backends.
+
+As an extra mitigation, if you upgrade the [libnghttp2](http://nghttp2.org/)
+dependency of `mod_http2` to [at least version 1.57.0](https://github.com/nghttp2/nghttp2/releases/tag/v1.57.0)
+this will completely remove the impact from Rapid Reset exploits.
+
+
 # Historical Releases  {#historical}
 
 Earlier versions of Apache HTTP Server are no longer receiving security
