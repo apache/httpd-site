@@ -3798,6 +3798,114 @@
         }
     },
     {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.57",
+                                "status": "affected",
+                                "version": "2.4.55",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Prof. Sven Dietrich (City University of New York)"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Isa Jafarov (City University of New York)"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Prof. Heejo Lee (Korea University)"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Choongin Lee (Korea University)"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known \"slow loris\" attack pattern.<br><p>This has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.</p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.</p><p>Users are recommended to upgrade to version 2.4.58, which fixes the issue.</p>"
+                            }
+                        ],
+                        "value": "An attacker, opening a HTTP/2 connection with an initial window size of 0, was able to block handling of that connection indefinitely in Apache HTTP Server. This could be used to exhaust worker resources in the server, similar to the well known \"slow loris\" attack pattern.\nThis has been fixed in version 2.4.58, so that such connection are terminated properly after the configured connection timeout.\n\nThis issue affects Apache HTTP Server: from 2.4.55 through 2.4.57.\n\nUsers are recommended to upgrade to version 2.4.58, which fixes the issue.\n\n"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-400",
+                                "description": "CWE-400 Uncontrolled Resource Consumption",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "EXTERNAL"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2023-09-15T09:51:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2023-10-19",
+                        "value": "2.4.58 released"
+                    }
+                ],
+                "title": "Apache HTTP Server: DoS in HTTP/2 with initial windows size 0",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2023-43622",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -33035,6 +33143,104 @@
         }
     },
     {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.57",
+                                "status": "affected",
+                                "version": "2.4.17",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Will Dormann of Vul Labs"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "David Warren of Vul Labs"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "When a HTTP/2 stream was reset (RST frame) by a client, there was a time window were the request's memory resources were not reclaimed immediately. Instead, de-allocation was deferred to connection close. A client could send new requests and resets, keeping the connection busy and open and causing the memory footprint to keep on growing. On connection close, all resources were reclaimed, but the process might run out of memory before that.<br><br>This was found by the reporter during testing of&nbsp;CVE-2023-44487 (HTTP/2 Rapid Reset Exploit) with their own test client. During \"normal\" HTTP/2 use, the probability to hit this bug is very low. The kept memory would not become noticeable before the connection closes or times out.<br><br>Users are recommended to upgrade to version 2.4.58, which fixes the issue.<br>"
+                            }
+                        ],
+                        "value": "When a HTTP/2 stream was reset (RST frame) by a client, there was a time window were the request's memory resources were not reclaimed immediately. Instead, de-allocation was deferred to connection close. A client could send new requests and resets, keeping the connection busy and open and causing the memory footprint to keep on growing. On connection close, all resources were reclaimed, but the process might run out of memory before that.\n\nThis was found by the reporter during testing of CVE-2023-44487 (HTTP/2 Rapid Reset Exploit) with their own test client. During \"normal\" HTTP/2 use, the probability to hit this bug is very low. The kept memory would not become noticeable before the connection closes or times out.\n\nUsers are recommended to upgrade to version 2.4.58, which fixes the issue.\n"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-400",
+                                "description": "CWE-400 Uncontrolled Resource Consumption",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "EXTERNAL"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2023-10-12T11:47:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2023-10-19",
+                        "value": "2.4.58 released"
+                    }
+                ],
+                "title": "Apache HTTP Server: HTTP/2 stream memory not reclaimed right away on RST",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2023-45802",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -36639,6 +36845,104 @@
                 ]
             }
         }
+    },
+    {
+        "cveMetadata": {
+            "cveId": "CVE-2023-31122",
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "CNA_private": {
+            "emailed": null,
+            "projecturl": null,
+            "owner": "httpd",
+            "userslist": "users@httpd.apache.org",
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure"
+        },
+        "containers": {
+            "cna": {
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "title": "mod_macro buffer over-read",
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "description": "CWE-125 Out-of-bounds Read",
+                                "lang": "en",
+                                "cweId": "CWE-125",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "affected": [
+                    {
+                        "vendor": "Apache Software Foundation",
+                        "product": "Apache HTTP Server",
+                        "versions": [
+                            {
+                                "status": "affected",
+                                "version": "0",
+                                "lessThanOrEqual": "2.4.57",
+                                "versionType": "semver"
+                            }
+                        ],
+                        "defaultStatus": "unaffected"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "value": "Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.This issue affects Apache HTTP Server: through 2.4.57.\n\n",
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "type": "text/html",
+                                "base64": false,
+                                "value": "Out-of-bounds Read vulnerability in mod_macro of Apache HTTP Server.<p>This issue affects Apache HTTP Server: through 2.4.57.</p>"
+                            }
+                        ]
+                    }
+                ],
+                "references": [],
+                "metrics": [
+                    {
+                        "other": {
+                            "type": "Textual description of severity",
+                            "content": {
+                                "text": "low"
+                            }
+                        }
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "value": "David Shoon (github/davidshoon)",
+                        "type": "finder"
+                    }
+                ],
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                },
+                "timeline": [
+                    {
+                        "lang": "eng",
+                        "time": "2023-10-19",
+                        "value": "2.4.58 released"
+                    }
+                ]
+            }
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
     },
     {
         "data_type": "CVE",
