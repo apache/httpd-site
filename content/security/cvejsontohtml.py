@@ -81,10 +81,13 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             product = cve["containers"]["cna"]["affected"][0]
             productname = product['product']
             for ver in product["versions"]:
-                if ("lessThanOrEqual" in ver):
-                    affects.append("<="+ver["lessThanOrEqual"])
-                if ("lessThan" in ver):
-                    affects.append("<"+ver["lessThan"])
+                base = ""
+                if ver.get("version", "0") != "0":
+                    base = ver["version"]
+                if "lessThanOrEqual" in ver:
+                    affects.append(f"{base} through {ver['lessThanOrEqual']}")
+                if "lessThan" in ver:
+                    affects.append(f"{base} before {ver['lessThan']}")
             # Make a natural order sort
             affects.sort(reverse=True, key=natural_sort_key)
             e['affects'] = ", ".join(affects)
