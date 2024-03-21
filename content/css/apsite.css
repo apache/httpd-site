@@ -18,16 +18,15 @@ body {
 #apcontents, #apmenu {
     /* scrollable */
     overflow-y: auto;
-    max-height: calc(100vh - (35px * 3));
+    max-height: calc(100vh - (40px * 3));
 }
 
 /* Page Header Styles */
 #page-header {
-    background-color: #fff;
+    background-color: #036 !important;
     padding: 20px;
     border-bottom: 2px solid #eee;
     text-align: center;
-    height: 35px;
 }
 
 #page-header .apache-logo {
