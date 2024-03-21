@@ -1,108 +1,94 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
-        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
-	{% block head %}
-        <title>{{ page.title }} - The Apache HTTP Server Project</title>
-	{% endblock %}
-	<style>
-.headerlink {
-  visibility: hidden;
-}
-h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
-  visibility: visible
-}
-	</style>
-    </head>
-    <body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ page.title }} - The Apache HTTP Server Project{% endblock %}</title>
+    <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
+</head>
+
+<body>
+    <div class="container">
         <div id="page-header">
-            <p class="menu">&nbsp;</p>
-            <p class="apache">&nbsp;</p>
             <a href="/">
-            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
-            </a>
-            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
-                <img src="https://www.apache.org/images/SupportApache-small.png">
+                <img alt="" src="/images/httpd_logo_wide_new.png" class="apache-logo">
             </a>
         </div>
         <div id="apmenu">
-	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
-	  <p style="margin-top: -10px;">
-	    <!-- Apachecon! -->
-	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
-	  </p>
-	  {% if page.metadata.flood is defined %}
-	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/test/flood/building.html">Building</a></li>
-	    <li><a href="/test/flood/faq.html">FAQ</a></li>
-	  </ul>
-	  <h1 id="download">Download!<a class="headerlink" href="#download" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="http://www.apache.org/dyn/closer.lua/httpd/flood/">From a Mirror</a></li>
-	    <li><a href="http://downloads.apache.org/httpd/">From Here</a></li>
-	  </ul>
-	  <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/DESIGN">Design</a></li>
-	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/CONFIG">Configuration</a></li>
-	  </ul>
-	  {% else %}
-	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/download.cgi">Download!</a></li>
-	    <li><a href="/ABOUT_APACHE.html">About</a></li>
-	    <li><a href="https://www.apache.org/licenses/">License</a></li>
-	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
-	    <li><a href="/security_report.html">Security Reports</a></li>
-	  </ul>
-	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/dev/devnotes.html">General Information</a></li>
-	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
-	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
-	  </ul>
-	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/docs/2.4/">Version 2.4</a></li>
-	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
-	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
-	  </ul>
-	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/lists.html">Mailing Lists</a></li>
-	    <li><a href="/bug_report.html">Bug Reports</a></li>
-	    <li><a href="/dev/">Developer Info</a></li>
-	    <li><a href="/support.html">User Support</a></li>
-	  </ul>
-	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/docs-project/">Docs</a></li>
-	    <li><a href="/test/">Test</a></li>
-	    <li><a href="/test/flood/">Flood</a></li>
-	    <li><a href="/apreq/">libapreq</a></li>
-	    <li><a href="/modules">Modules</a></li>
-	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
-	    <li><a href="/mod_ftp/">mod_ftp</a></li>
-	  </ul>
-	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
-	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
-	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
-	    <li><a href="https://apr.apache.org/">APR</a></li>
-	    <li><a href="http://perl.apache.org/">mod_perl</a></li>
-	  </ul>
-	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
-	  <ul>
-	    <li><a href="/contributors/">Contributors</a></li>
-	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
-	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
-	  </ul>
-	  {% endif %}
+            <!-- Navigation -->
+            {% if page.metadata.flood is defined %}
+            {% set sections = [
+            ('Essentials', [
+            ('/test/flood/building.html', 'Building'),
+            ('/test/flood/faq.html', 'FAQ')
+            ]),
+            ('Download!', [
+            ('http://www.apache.org/dyn/closer.lua/httpd/flood/', 'From a Mirror'),
+            ('http://downloads.apache.org/httpd/', 'From Here')
+            ]),
+            ('Documentation', [
+            ('http://svn.apache.org/repos/asf/httpd/flood/trunk/DESIGN', 'Design'),
+            ('http://svn.apache.org/repos/asf/httpd/flood/trunk/CONFIG', 'Configuration')
+            ])
+            ] %}
+            {% else %}
+            {% set sections = [
+            ('Essentials', [
+            ('/download.cgi', 'Download!'),
+            ('/ABOUT_APACHE.html', 'About'),
+            ('https://www.apache.org/licenses/', 'License'),
+            ('https://wiki.apache.org/httpd/FAQ', 'FAQ'),
+            ('/security_report.html', 'Security Reports')
+            ]),
+            ('Source Repositories', [
+            ('/dev/devnotes.html', 'General Information'),
+            ('https://svn.apache.org/viewvc/httpd/httpd/trunk/', 'Trunk'),
+            ('https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/', '2.4')
+            ]),
+            ('Documentation', [
+            ('/docs/2.4/', 'Version 2.4'),
+            ('/docs/trunk/', 'Trunk (dev)'),
+            ('https://wiki.apache.org/httpd/', 'Wiki')
+            ]),
+            ('Get Involved', [
+            ('/lists.html', 'Mailing Lists'),
+            ('/bug_report.html', 'Bug Reports'),
+            ('/dev/', 'Developer Info'),
+            ('/support.html', 'User Support')
+            ]),
+            ('Subprojects', [
+            ('/docs-project/', 'Docs'),
+            ('/test/', 'Test'),
+            ('/test/flood/', 'Flood'),
+            ('/apreq/', 'libapreq'),
+            ('/modules', 'Modules'),
+            ('/mod_fcgid/', 'mod_fcgid'),
+            ('/mod_ftp/', 'mod_ftp')
+            ]),
+            ('Related Projects', [
+            ('https://trafficserver.apache.org/', 'Apache Traffic Server'),
+            ('https://trafficcontrol.apache.org/', 'Apache Traffic Control'),
+            ('https://tomcat.apache.org/', 'Tomcat'),
+            ('https://apr.apache.org/', 'APR'),
+            ('http://perl.apache.org/', 'mod_perl')
+            ]),
+            ('Miscellaneous', [
+            ('/info/', 'Contributors'),
+            ('https://www.apache.org/foundation/thanks.html', 'Thanks!'),
+            ('https://www.apache.org/foundation/sponsorship.html', 'Sponsorship')
+            ])
+            ] %}
+            {% endif %}
+            {% for section, links in sections %}
+            <h2 id="{{ section|lower|replace(' ', '-') }}"><a class="headerlink"
+                    href="#{{ section|lower|replace(' ', '-') }}" title="Permanent link">{{ section }}</a></h2>
+            <ul>
+                {% for link, text in links %}
+                <li><a href="{{ link }}">{{ text }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
         </div>
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
@@ -110,9 +96,19 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
             {% endblock %}
             <!-- FOOTER -->
             <div id="footer">
-	      <p>Copyright &copy; 1997-{{ CURRENTYEAR }} The Apache Software Foundation.<br />
-		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+                <p>Copyright &copy; 1997-{{ CURRENTYEAR }} The Apache Software Foundation.<br>
+                    Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software
+                    Foundation.</p>
             </div>
         </div>
-    </body>
+    </div>
+    <!-- Support Apache Image -->
+    <div id="support-apache">
+        <a href="https://www.apache.org/foundation/contributing.html">
+            <img src="https://www.apache.org/images/SupportApache-small.png" alt="Support Apache" width="100"
+                height="100">
+        </a>
+    </div>
+</body>
+
 </html>
