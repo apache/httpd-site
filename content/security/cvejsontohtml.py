@@ -3,6 +3,7 @@ import os
 import re
 import xml.sax.saxutils as saxutils 
 import sys
+import traceback
 from optparse import OptionParser
 parser = OptionParser()
  
@@ -70,13 +71,16 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
         e['cveid'] = cve["id"]
         data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
         if data_version == "5.0":
-            e['impact'] = cve["containers"]["cna"]["metrics"][0]["other"]["content"]["text"]
-            e['title'] = cve["containers"]["cna"]["title"]
-            e['desc'] = cve["containers"]["cna"]["descriptions"][0]["value"]
-            e['credit'] = []
-            if ("credits" in cve["containers"]["cna"]):
-                for credit in cve["containers"]["cna"]["credits"]:
-                    e['credit'].append(credit["type"]+": "+credit["value"])
+            try:
+                e['impact'] = cve["containers"]["cna"]["metrics"][0]["other"]["content"]["text"]
+                e['title'] = cve["containers"]["cna"]["title"]
+                e['desc'] = cve["containers"]["cna"]["descriptions"][0]["value"]
+                e['credit'] = []
+                if ("credits" in cve["containers"]["cna"]):
+                    for credit in cve["containers"]["cna"]["credits"]:
+                        e['credit'].append(credit["type"]+": "+credit["value"])
+            except Exception as err:
+                sys.stderr.write("Missing data in " + cve["_filename"] + ": " + traceback.format_exc().replace('\n','\n    '))
             affects = []
             product = cve["containers"]["cna"]["affected"][0]
             productname = product['product']
