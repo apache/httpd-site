@@ -1,4 +1,6 @@
 #!/bin/sh
+
+set -e 
 ./content/security/vulnerabilities_24.sh
 ./content/security/vulnerabilities_22.sh
 ./content/security/vulnerabilities_20.sh

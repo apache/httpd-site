@@ -81,6 +81,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
                         e['credit'].append(credit["type"]+": "+credit["value"])
             except Exception as err:
                 sys.stderr.write("Missing data in " + cve["_filename"] + ": " + traceback.format_exc().replace('\n','\n    '))
+                sys.exit(1);
             affects = []
             product = cve["containers"]["cna"]["affected"][0]
             productname = product['product']
