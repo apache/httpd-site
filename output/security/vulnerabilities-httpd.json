@@ -4720,6 +4720,99 @@
         }
     },
     {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.58",
+                                "status": "affected",
+                                "version": "2.4.17",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Bartek Nowotarski (https://nowotarski.info/) "
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion."
+                            }
+                        ],
+                        "value": "HTTP/2 incoming headers exceeding the limit are temporarily buffered in nghttp2 in order to generate an informative HTTP 413 response. If a client does not stop sending headers, this leads to memory exhaustion."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-400",
+                                "description": "CWE-400 Uncontrolled Resource Consumption",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "EXTERNAL"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2024-02-22T15:29:00.000Z",
+                        "value": "Reported to security team"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2024-04-04",
+                        "value": "2.4.59 released"
+                    }
+                ],
+                "title": "Apache HTTP Server: HTTP/2 DoS by memory exhaustion on endless continuation frames",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2024-27316",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -5067,6 +5160,107 @@
                 ]
             }
         }
+    },
+    {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.58",
+                                "status": "affected",
+                                "version": "0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Orange Tsai (@orange_8361) from DEVCORE"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.<br><br>This issue affects Apache HTTP Server: through 2.4.58.<br>"
+                            }
+                        ],
+                        "value": "Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.\n\nThis issue affects Apache HTTP Server: through 2.4.58.\n"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "cvssV3_1": {
+                            "attackComplexity": "HIGH",
+                            "attackVector": "NETWORK",
+                            "availabilityImpact": "NONE",
+                            "baseScore": 6.8,
+                            "baseSeverity": "MEDIUM",
+                            "confidentialityImpact": "HIGH",
+                            "integrityImpact": "NONE",
+                            "privilegesRequired": "NONE",
+                            "scope": "CHANGED",
+                            "userInteraction": "NONE",
+                            "vectorString": "CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:N/A:N",
+                            "version": "3.1"
+                        },
+                        "format": "CVSS",
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "description": "HTTP response splitting",
+                                "lang": "en"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "EXTERNAL"
+                },
+                "title": "Apache HTTP Server: HTTP response splitting",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                },
+                "timeline": [
+                    {
+                        "lang": "eng",
+                        "time": "2024-04-04",
+                        "value": "2.4.59 released"
+                    }
+                ]
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2023-38709",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
     },
     {
         "data_type": "CVE",
@@ -16774,6 +16968,102 @@
                 ]
             }
         }
+    },
+    {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.58",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Keran Mu, Tsinghua University and Zhongguancun Laboratory."
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Jianjun Chen, Tsinghua University and Zhongguancun Laboratory."
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.<br><br>Users are recommended to upgrade to version 2.4.59, which fixes this issue."
+                            }
+                        ],
+                        "value": "HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.\n\nUsers are recommended to upgrade to version 2.4.59, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "description": "HTTP response splitting",
+                                "lang": "en"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2023-09-06T11:37:00.000Z",
+                        "value": "Reported to security team"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2024-04-04",
+                        "value": "2.4.59 released"
+                    }
+                ],
+                "title": "Apache HTTP Server: HTTP Response Splitting in multiple modules",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2024-24795",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
     },
     {
         "data_type": "CVE",
