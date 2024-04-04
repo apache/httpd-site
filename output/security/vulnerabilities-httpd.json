@@ -5238,6 +5238,11 @@
                         "lang": "en",
                         "time": "2023-06-26T00:00:00.000Z",
                         "value": "reported"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2024-04-04",
+                        "value": "2.4.59 released"
                     }
                 ],
                 "title": "Apache HTTP Server: HTTP response splitting",

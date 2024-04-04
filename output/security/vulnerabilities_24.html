@@ -92,6 +92,14 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
 <h1 id="2.4.59">Fixed in Apache HTTP Server 2.4.59</h1><dl>
+<dt><h3 id="CVE-2023-38709">moderate: <name name="CVE-2023-38709">Apache HTTP Server: HTTP response splitting</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2023-38709">CVE-2023-38709</a>)</h3></dt>
+<dd><p>Faulty input validation in the core of Apache allows malicious or exploitable backend/content generators to split HTTP responses.</p><p></p><p>This issue affects Apache HTTP Server: through 2.4.58.</p><p></p>
+<p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2023-06-26</td></tr>
+<tr><td class="cve-header">Update 2.4.59 released</td><td class="cve-value">2024-04-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.58</td></tr>
+</table></dd>
 <dt><h3 id="CVE-2024-24795">low: <name name="CVE-2024-24795">Apache HTTP Server: HTTP Response Splitting in multiple modules</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2024-24795">CVE-2024-24795</a>)</h3></dt>
 <dd><p>HTTP Response splitting in multiple modules in Apache HTTP Server allows an attacker that can inject malicious response headers into backend applications to cause an HTTP desynchronization attack.</p><p></p><p>Users are recommended to upgrade to version 2.4.59, which fixes this issue.</p>
