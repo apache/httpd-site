@@ -12,7 +12,7 @@ parser.add_option("-e","--extratext",help="extra text to add to description",des
 parser.add_option("-i","--inputdirectory",help="directory of json files",dest="directory")
 (options,args) = parser.parse_args()
 
-re_fixedin = re.compile('(released in )?(?P<released>\\d\\.\\d\\.\\d+(-\S+)?)( released)?');
+re_fixedin = re.compile('(released in )?(?P<released>\\d\\.\\d\\.\\d+(-\\S+)?)( released)?');
 
 def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
     return [int(text) if text.isdigit() else text.lower()
