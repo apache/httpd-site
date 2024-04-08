@@ -47,7 +47,7 @@ tips](/docs/trunk/misc/security_tips.html)
 # Security Standards  {#standards}
 
 Apache HTTP Server vulnerabilities are labelled with
-[CVE](http://cve.mitre.org) (Common Vulnerabilities and Exposures)
+[CVE](https://cve.mitre.org) (Common Vulnerabilities and Exposures)
 identifiers.
 
 # Historical Releases  {#historical}
