@@ -124,7 +124,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker to execute scripts in</p><p>directories permitted by the configuration but not directly reachable by any URL or source disclosure of scripts meant to only to be executed as CGI.</p><p></p><p>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p><p></p><p>Some RewriteRules that capture and substitute unsafely will now fail unless rewrite flag "UnsafeAllow3F" is specified.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
-<tr><td class="cve-header">fixed by r1918561 in 2.4.x</td><td class="cve-value">2023-07-01</td></tr>
+<tr><td class="cve-header">fixed by r1918561 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
@@ -133,7 +133,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are permitted to be served by the server but are not intentionally/directly reachable by any URL, resulting in code execution or source code disclosure. </p><p></p><p>Substitutions in server context that use a backreferences or variables as the first segment of the substitution are affected.  Some unsafe RewiteRules will be broken by this change and the rewrite flag "UnsafePrefixStat" can be used to opt back in once ensuring the substitution is appropriately constrained.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
-<tr><td class="cve-header">fixed by r1918561 in 2.4.x</td><td class="cve-value">2023-07-01</td></tr>
+<tr><td class="cve-header">fixed by r1918561 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
