@@ -4982,7 +4982,7 @@
         "credit": [
             {
                 "lang": "eng",
-                "value": "Reported by Marc Stern (<marc.stern approach.be>)"
+                "value": "Reported by Marc Stern (<marc.stern@approach-cyber.com>)"
             }
         ],
         "description": {
@@ -16809,7 +16809,7 @@
                     {
                         "lang": "en",
                         "type": "finder",
-                        "value": "Marc Stern (<marc.stern approach.be>)"
+                        "value": "Marc Stern (<marc.stern@approach-cyber.com>)"
                     }
                 ],
                 "descriptions": [
