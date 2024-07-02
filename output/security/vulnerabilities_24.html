@@ -97,6 +97,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Serving WebSocket protocol upgrades over a HTTP/2 connection could result in a Null Pointer dereference, leading to a crash of the server process, degrading performance.</p>
 <p>Acknowledgements: finder: Marc Stern (&lt;marc.stern approach.be&gt;)</p>
 <table class="table"><tr><td class="cve-header">fixed in r1918003 in trunk</td><td class="cve-value">2024-05-27</td></tr>
+<tr><td class="cve-header">fixed by r1918557 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
@@ -105,6 +106,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and malicious requests or content </p><p>Users are recommended to upgrade to version 2.4.60 which fixes this issue.  Note: Existing configurations that access UNC paths will have to configure new directive "UNCList" to allow access during request processing.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
+<tr><td class="cve-header">fixed by r1918558 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
@@ -113,6 +115,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests.</p><p>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
+<tr><td class="cve-header">fixed by r1918559, r1918600 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
@@ -121,6 +124,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Substitution encoding issue in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows attacker to execute scripts in</p><p>directories permitted by the configuration but not directly reachable by any URL or source disclosure of scripts meant to only to be executed as CGI.</p><p></p><p>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p><p></p><p>Some RewriteRules that capture and substitute unsafely will now fail unless rewrite flag "UnsafeAllow3F" is specified.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
+<tr><td class="cve-header">fixed by r1918561 in 2.4.x</td><td class="cve-value">2023-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
@@ -129,6 +133,16 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>Improper escaping of output in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to map URLs to filesystem locations that are permitted to be served by the server but are not intentionally/directly reachable by any URL, resulting in code execution or source code disclosure. </p><p></p><p>Substitutions in server context that use a backreferences or variables as the first segment of the substitution are affected.  Some unsafe RewiteRules will be broken by this change and the rewrite flag "UnsafePrefixStat" can be used to opt back in once ensuring the substitution is appropriately constrained.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
+<tr><td class="cve-header">fixed by r1918561 in 2.4.x</td><td class="cve-value">2023-07-01</td></tr>
+<tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2024-38476">important: <name name="CVE-2024-38476">Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2024-38476">CVE-2024-38476</a>)</h3></dt>
+<dd><p>Vulnerability in core of Apache HTTP Server 2.4.59 and earlier are vulnerably to information disclosure, SSRF or local script execution via backend applications whose response headers are malicious or exploitable.</p><p></p><p>Note: Some legacy uses of the 'AddType' directive to connect a request to a handler must be ported to 'SetHandler' after this fix.</p><p></p><p>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
+<p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
+<tr><td class="cve-header">fixed by r1918560 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>
@@ -137,6 +151,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <dd><p>null pointer dereference in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows an attacker to crash the server via a malicious request.</p><p>Users are recommended to upgrade to version 2.4.60, which fixes this issue.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported</td><td class="cve-value">2024-04-01</td></tr>
+<tr><td class="cve-header">fixed by r1918607 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Update 2.4.60 released</td><td class="cve-value">2024-07-01</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">&lt;=2.4.59</td></tr>
 </table></dd>

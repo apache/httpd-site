@@ -12832,6 +12832,11 @@
                         "value": "Reported"
                     },
                     {
+                        "time": "2024-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918607 in 2.4.x"
+                    },
+                    {
                         "lang": "eng",
                         "time": "2024-07-01",
                         "value": "2.4.60 released"
@@ -15167,6 +15172,16 @@
                         "lang": "en",
                         "time": "2024-04-01T12:00:00.000Z",
                         "value": "reported"
+                    },
+                    {
+                        "time": "2024-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918560 in 2.4.x"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2024-07-01",
+                        "value": "2.4.60 released"
                     }
                 ],
                 "title": "Apache HTTP Server may use exploitable/malicious backend application output to run local handlers via internal redirect",
@@ -16843,6 +16858,11 @@
                         "lang": "en",
                         "time": "2024-05-27T13:23:00.000Z",
                         "value": "fixed in r1918003 in trunk"
+                    },
+                    {
+                        "time": "2024-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918557 in 2.4.x"
                     },
                     {
                         "lang": "eng",
@@ -19693,6 +19713,11 @@
                         "value": "reported"
                     },
                     {
+                        "time": "2024-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918558 in 2.4.x"
+                    },
+                    {
                         "lang": "eng",
                         "time": "2024-07-01",
                         "value": "2.4.60 released"
@@ -20292,6 +20317,11 @@
                         "lang": "en",
                         "time": "2024-04-01T12:00:00.000Z",
                         "value": "reported"
+                    },
+                    {
+                        "time": "2023-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918561 in 2.4.x"
                     },
                     {
                         "lang": "eng",
@@ -30945,6 +30975,11 @@
                         "value": "reported"
                     },
                     {
+                        "time": "2023-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918561 in 2.4.x"
+                    },
+                    {
                         "lang": "eng",
                         "time": "2024-07-01",
                         "value": "2.4.60 released"
@@ -31908,6 +31943,11 @@
                         "lang": "en",
                         "time": "2024-04-01T12:00:00.000Z",
                         "value": "reported"
+                    },
+                    {
+                        "time": "2024-07-01",
+                        "lang": "en",
+                        "value": "fixed by r1918559, r1918600 in 2.4.x"
                     },
                     {
                         "lang": "eng",
