@@ -3867,6 +3867,11 @@
                         "value": "reported"
                     },
                     {
+                        "time": "2024-07-03",
+                        "lang": "en",
+                        "value": "fixed by r1918839 in 2.4.x"
+                    },
+                    {
                         "lang": "eng",
                         "time": "2024-07-03",
                         "value": "2.4.61 released"
