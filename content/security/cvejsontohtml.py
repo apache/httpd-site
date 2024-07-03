@@ -93,6 +93,8 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
                     affects.append(f"{base} through {ver['lessThanOrEqual']}")
                 if "lessThan" in ver:
                     affects.append(f"{base} before {ver['lessThan']}")
+                if not "versionType" in ver:
+                    affects.append(base)
             # Make a natural order sort
             affects.sort(reverse=True, key=natural_sort_key)
             e['affects'] = ", ".join(affects)
