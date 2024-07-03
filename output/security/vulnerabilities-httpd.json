@@ -31904,10 +31904,10 @@
                             {
                                 "base64": false,
                                 "type": "text/html",
-                                "value": "Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests.<br>Users are recommended to upgrade to version 2.4.60, which fixes this issue."
+                                "value": "Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the 'P' flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via&nbsp;CVE-2024-39573.&nbsp; Note that these alternate mechanisms may be used within .htaccess.<br><br>Users are recommended to upgrade to version 2.4.60, which fixes this issue."
                             }
                         ],
-                        "value": "Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests.\nUsers are recommended to upgrade to version 2.4.60, which fixes this issue."
+                        "value": "Encoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the 'P' flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via CVE-2024-39573.  Note that these alternate mechanisms may be used within .htaccess.\n\nUsers are recommended to upgrade to version 2.4.60, which fixes this issue."
                     }
                 ],
                 "metrics": [
