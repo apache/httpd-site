@@ -11362,6 +11362,99 @@
         }
     },
     {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.61",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Smi1e (DBAPPSecurity Ltd.)"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTML hashes to a malicious server via SSRF and <span style=\"background-color: rgb(255, 255, 255);\">malicious requests.<br></span><br>Users are recommended to upgrade to version 2.4.62 which fixes this issue.&nbsp;"
+                            }
+                        ],
+                        "value": "SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTML hashes to a malicious server via SSRF and malicious requests.\n\nUsers are recommended to upgrade to version 2.4.62 which fixes this issue. "
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "important"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-918",
+                                "description": "CWE-918 Server-Side Request Forgery (SSRF)",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2024-07-12T00:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2024-07-17",
+                        "value": "2.4.62 released"
+                    }
+                ],
+                "title": "Apache HTTP Server: SSRF with mod_rewrite in server/vhost context on Windows",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2024-40898",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -17454,6 +17547,92 @@
         "cveMetadata": {
             "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
             "cveId": "CVE-2024-24795",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.61",
+                                "status": "affected",
+                                "version": "2.4.60",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>A partial fix for&nbsp; CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. \"AddType\" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.</p><p></p><p>Users are recommended to upgrade to version 2.4.62, which fixes this issue.</p><br><br>"
+                            }
+                        ],
+                        "value": "A partial fix for  CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. \"AddType\" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.\n\nUsers are recommended to upgrade to version 2.4.62, which fixes this issue.\n\n"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "important"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-668",
+                                "description": "CWE-668 Exposure of Resource to Wrong Sphere",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2024-07-09T09:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2024-07-17",
+                        "value": "2.4.62 released"
+                    }
+                ],
+                "title": "Apache HTTP Server: source code disclosure with handlers configured via AddType",
+                "x_generator": {
+                    "engine": "Vulnogram 0.1.0-dev"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2024-40725",
             "serial": 1,
             "state": "PUBLISHED"
         },

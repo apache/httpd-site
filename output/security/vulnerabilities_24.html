@@ -91,6 +91,23 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.62">Fixed in Apache HTTP Server 2.4.62</h1><dl>
+<dt><h3 id="CVE-2024-40725">important: <name name="CVE-2024-40725">Apache HTTP Server: source code disclosure with handlers configured via AddType</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2024-40725">CVE-2024-40725</a>)</h3></dt>
+<dd><p>A partial fix for  CVE-2024-39884 in the core of Apache HTTP Server 2.4.61 ignores some use of the legacy content-type based configuration of handlers. "AddType" and similar configuration, under some circumstances where files are requested indirectly, result in source code disclosure of local content. For example, PHP scripts may be served instead of interpreted.</p><p></p><p>Users are recommended to upgrade to version 2.4.62, which fixes this issue.</p><p></p><p></p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-07-09</td></tr>
+<tr><td class="cve-header">Update 2.4.62 released</td><td class="cve-value">2024-07-17</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.60 through 2.4.61</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2024-40898">important: <name name="CVE-2024-40898">Apache HTTP Server: SSRF with mod_rewrite in server/vhost context on Windows</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2024-40898">CVE-2024-40898</a>)</h3></dt>
+<dd><p>SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTML hashes to a malicious server via SSRF and malicious requests.</p><p></p><p>Users are recommended to upgrade to version 2.4.62 which fixes this issue. </p>
+<p>Acknowledgements: finder: Smi1e (DBAPPSecurity Ltd.)</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-07-12</td></tr>
+<tr><td class="cve-header">Update 2.4.62 released</td><td class="cve-value">2024-07-17</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.0 through 2.4.61</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.61">Fixed in Apache HTTP Server 2.4.61</h1><dl>
 <dt><h3 id="CVE-2024-39884">important: <name name="CVE-2024-39884">Apache HTTP Server: source code disclosure with handlers configured via AddType</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2024-39884">CVE-2024-39884</a>)</h3></dt>
