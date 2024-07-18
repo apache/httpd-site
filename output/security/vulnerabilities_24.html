@@ -101,7 +101,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 </table></dd>
 <dt><h3 id="CVE-2024-40898">important: <name name="CVE-2024-40898">Apache HTTP Server: SSRF with mod_rewrite in server/vhost context on Windows</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2024-40898">CVE-2024-40898</a>)</h3></dt>
-<dd><p>SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTML hashes to a malicious server via SSRF and malicious requests.</p><p></p><p>Users are recommended to upgrade to version 2.4.62 which fixes this issue. </p>
+<dd><p>SSRF in Apache HTTP Server on Windows with mod_rewrite in server/vhost context, allows to potentially leak NTLM hashes to a malicious server via SSRF and malicious requests.</p><p></p><p>Users are recommended to upgrade to version 2.4.62 which fixes this issue. </p>
 <p>Acknowledgements:</p>
 <ul>
 <li>finder: Smi1e (DBAPPSecurity Ltd.)</li>
@@ -134,7 +134,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 </table></dd>
 <dt><h3 id="CVE-2024-38472">important: <name name="CVE-2024-38472">Apache HTTP Server on WIndows UNC SSRF</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2024-38472">CVE-2024-38472</a>)</h3></dt>
-<dd><p>SSRF in Apache HTTP Server on Windows allows to potentially leak NTML hashes to a malicious server via SSRF and malicious requests or content </p><p>Users are recommended to upgrade to version 2.4.60 which fixes this issue.  Note: Existing configurations that access UNC paths will have to configure new directive "UNCList" to allow access during request processing.</p>
+<dd><p>SSRF in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via SSRF and malicious requests or content </p><p>Users are recommended to upgrade to version 2.4.60 which fixes this issue.  Note: Existing configurations that access UNC paths will have to configure new directive "UNCList" to allow access during request processing.</p>
 <p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-04-01</td></tr>
 <tr><td class="cve-header">fixed by r1918558 in 2.4.x</td><td class="cve-value">2024-07-01</td></tr>
