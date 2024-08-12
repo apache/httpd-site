@@ -11439,6 +11439,11 @@
                         "value": "reported"
                     },
                     {
+                        "time": "2024-07-15",
+                        "lang": "en",
+                        "value": "fixed by r1919248 in 2.4.x"
+                    },
+                    {
                         "lang": "eng",
                         "time": "2024-07-17",
                         "value": "2.4.62 released"
@@ -17622,6 +17627,11 @@
                         "lang": "en",
                         "time": "2024-07-09T09:00:00.000Z",
                         "value": "reported"
+                    },
+                    {
+                        "time": "2024-07-15",
+                        "lang": "en",
+                        "value": "fixed by r1919249 in 2.4.x"
                     },
                     {
                         "lang": "eng",
