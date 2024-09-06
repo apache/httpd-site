@@ -1,0 +1,60 @@
+<HTML>
+<HEAD>
+<TITLE>Configuring linux to run Apache 0.8 +</TITLE>
+</HEAD>
+<!-- Background white, links blue (unvisited), navy (visited), red (active) -->
+<BODY
+ BGCOLOR="#FFFFFF"
+ TEXT="#000000"
+ LINK="#0000FF"
+ VLINK="#000080"
+ ALINK="#FF0000"
+>
+<DIV ALIGN="CENTER">
+<IMG
+ SRC="../images/apache_sub.gif"
+ ALT="[APACHE DOCUMENTATION]"
+>
+</DIV>
+
+<H3>Warning: this document has been unmaintained for a very long time.</H3>
+<P>
+<H1 ALIGN="CENTER">Configuring linux to run Apache 0.8 + with virtual hosts</H1>
+
+<P>Some advice on configuring Linux so that it can run <A HREF="/">Apache</A>
+and <A HREF="../docs/vhosts/">virtual hosts</A></P>
+
+<OL>
+  <LI>You'll need linux kernel <STRONG>1.2.x</STRONG> ( &gt;=5 recommended) and compile with the following options:
+  <PRE>
+	  CONFIG_MODVERSIONS=y
+	  CONFIG_NETDEVICES=y
+	  # CONFIG_DUMMY is not set          ( say no when configuring )</PRE>
+<BR><BR></LI>
+
+  <LI>make dep ; make zImage ; make modules ; make modules_install<BR><BR></LI>
+
+  <LI>cp /usr/src/linux/arch/i386/boot/zImage /vmlinuz<BR><BR></LI>
+
+  <LI>rdev -R /vmlinuz 1  ; lilo<BR><BR></LI>
+  <LI>reboot system <BR><BR></LI>
+  <LI>insmod -o dummy0 /lib/modules/1.2.x/net/dummy.o<BR><BR></LI>
+  <LI>ifconfig dummy0 200.200.200.50 up<BR>
+   NOTE: Make sure the IP address you choice is a valid one,
+   and not being used.
+  <BR><BR></LI>
+  <LI>arp -s &lt;ethernet address&gt; 200.200.200.50 netmask 255.255.255.255 pub<BR>
+  NOTE: the ethernet address of your ethernet card can be found if you
+  type ifconfig eth0.  First line, there are 6 hex numbers sepearted by 
+  ':'.  Use that.
+  <BR><BR></LI>
+  <LI>route add 200.200.200.50 dummy0<BR><BR></LI>
+  <LI>Add &lt;virtual host 200.200.200.50&gt; ..... &lt; /virtualhost&gt; to your httpd.conf file.<BR><BR></LI>
+  <LI>Add 200.200.200.50 to your /etc/hosts or DNS database files.<BR><BR></LI>
+  <LI>Repeat from <STRONG>Step 1.</STRONG> with dummy1 if so desired.<BR><BR></LI>
+</OL>
+
+<P>Good luck.</P>
+
+</BODY>
+</HTML>

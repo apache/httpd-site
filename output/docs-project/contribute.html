@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Contributing to the Apache HTTP Server Documentation - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="contributing-to-the-apache-http-server-documentation">Contributing to the Apache HTTP Server Documentation<a class="headerlink" href="#contributing-to-the-apache-http-server-documentation" title="Permalink">&para;</a></h1>
+<p>The Documentation Project is an effort to maintain and improve the quality
+of the documentation included with the Apache HTTP Server. Participation is
+open to anyone willing to write documentation, edit for spelling, grammer
+or readability, or <a href="translations.html">translate</a> documentation into
+another language. Some knowledge of the Apache HTTP Server is helpful, but
+not required. No programming knowledge is required, so this is a great way
+for non-programmers to contribute to the success of the Apache HTTP Server
+project, and to have their work read by millions of Apache users.</p>
+<p>This is <strong>not</strong> a mailing list where users should ask questions on how to
+configure Apache. The <a href="../userslist.html">Users List</a> is available for that
+purpose.</p>
+<h1 id="how-to-get-involved">How to get Involved<a class="headerlink" href="#how-to-get-involved" title="Permalink">&para;</a></h1>
+<p>There are several ways that you can contribute to the documentation effort.
+You can:</p>
+<ul>
+<li>
+<p><a href="mailto:docs-subscribe@httpd.apache.org">Subscribe to the docs@httpd.apache.org mailing
+list</a> and tell us something that
+could be improved.</p>
+</li>
+<li>
+<p>Join #httpd on irc.libera.chat and tell us there.</p>
+</li>
+<li>
+<p>Submit a ticket to the <a href="../bug_report.html">bug database</a>.</p>
+</li>
+<li>
+<p>Check out the documentation from svn ( <a href="svn.html">instructions here</a> ),
+and send us a patch.</p>
+</li>
+</ul>
+<p>There are lots of ways to contribute to the documentation project,
+including fixing typos and spelling mistakes, translating the documentation
+into other languages, writing tutorials to help new users, or just
+expressing your opinion about suggested changes.</p>
+<p>For information on our use of XML in the documentation, see our
+<a href="docsformat.html">Documentation Format and Transformation</a> page.</p>
+<p>If you need inspiration for something to work on, look at our
+<a href="https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/STATUS">STATUS</a>
+file for a list of things that we think need doing, and pick something that
+you think you can do. Patches against trunk are greatly appreciated, but
+contributions in any format are helpful.</p>
+<h1 id="translation-projects">Translation Projects<a class="headerlink" href="#translation-projects" title="Permalink">&para;</a></h1>
+<p>Information about translating the documentation into other languages is
+available at the <a href="translations.html">translations page</a>.</p>
+<h1 id="participants">Participants<a class="headerlink" href="#participants" title="Permalink">&para;</a></h1>
+<p>Some of the participants are:</p>
+<ul>
+<li>
+<p><a href="http://www.codefaktor.de/">Erik Abele</a></p>
+</li>
+<li>
+<p><a href="http://rkbloom.net/rbb/">Ryan Bloom</a></p>
+</li>
+<li>
+<p><a href="http://www.rcbowen.com/">Rich Bowen</a></p>
+</li>
+<li>
+<p>Vincent Bray</p>
+</li>
+<li>
+<p><a href="http://Golux.Com/coar/">Ken Coar</a></p>
+</li>
+<li>
+<p><a href="http://www.logilune.com/eric/">Eric Cholet</a></p>
+</li>
+<li>
+<p><a href="http://dotat.at/">Tony Finch</a></p>
+</li>
+<li>
+<p>Yoshiki Hayashi</p>
+</li>
+<li>
+<p><a href="http://www.kess-net.de/">Astrid Ke&szlig;ler</a></p>
+</li>
+<li>
+<p><a href="http://geeklog.lucid.net.au/">Jason Lingohr</a></p>
+</li>
+<li>
+<p>Andr&eacute; L. Malo</p>
+</li>
+<li>
+<p><a href="http://www.reppep.com/%7Epepper/">Chris Pepper</a></p>
+</li>
+<li>
+<p>Dan Poirier</p>
+</li>
+<li>
+<p><a href="http://www.nerdchic.net/">Noirin Plunkett</a></p>
+</li>
+<li>
+<p>William A. Rowe, Jr.</p>
+</li>
+<li>
+<p><a href="http://slive.ca/">Joshua Slive</a></p>
+</li>
+<li>
+<p><a href="http://blog.pc-tony.com/">Tony Stevenson</a></p>
+</li>
+<li>
+<p><a href="http://www.toftum.org/">Mads Toftum</a></p>
+</li>
+</ul>
+<p>The localized custom error messages in the 2.x version of the Apache HTTP
+Server were contributed by</p>
+<ul>
+<li>
+<p>Ricardo Leite (Brazilian)</p>
+</li>
+<li>
+<p>Marcel Kolaja (Czech)</p>
+</li>
+<li>
+<p>Peter Van Biesen (Dutch)</p>
+</li>
+<li>
+<p>Lars Eilebrecht (English and German)</p>
+</li>
+<li>
+<p>Cecile de Crecy (French)</p>
+</li>
+<li>
+<p>Luigi Rosa (Italian)</p>
+</li>
+<li>
+<p>Noirin Plunkett (Irish)</p>
+</li>
+<li>
+<p>Jaeho Shin (Korean)</p>
+</li>
+<li>
+<p>Tomasz Kepczynski (Polish)</p>
+</li>
+<li>
+<p>Andrei Besleaga (Romanian)</p>
+</li>
+<li>
+<p>Nikola Smolenski (Serbian)</p>
+</li>
+<li>
+<p>Karla Quintero (Spanish)</p>
+</li>
+<li>
+<p>Thomas Sj&ouml;gren (Swedish)</p>
+</li>
+<li>
+<p>Emre Sokullu (Turkish)</p>
+</li>
+</ul>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2024 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

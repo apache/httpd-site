@@ -1,0 +1,1002 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Apache Contributors - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="Welcome">Current Apache HTTP Server Project Members<a class="headerlink" href="#Welcome" title="Permalink">&para;</a></h1>
+<p>This page exists to recognize the efforts and contributions of the core
+individuals in the Apache HTTP Server Project.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Contributor</th>
+<th>Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="#erikabele">Erik Abele</a></strong></td>
+<td>Mostly documentation, various tweaks here and there</td>
+</tr>
+<tr>
+<td><strong><a href="#aaron">Aaron Bannert</a></strong></td>
+<td>Some MPM work, recent APR contributions, "that API guy".</td>
+</tr>
+<tr>
+<td><strong><a href="#behlendorf">Brian Behlendorf</a></strong></td>
+<td>Various, focusing on infrastructure for development.</td>
+</tr>
+<tr>
+<td><strong><a href="#rbowen">Rich Bowen</a></strong></td>
+<td>Documentation, Concom.</td>
+</tr>
+<tr>
+<td><strong><a href="#coar">Ken Coar</a></strong></td>
+<td>HTML pedant, FAQ editor, UI perfectionist, bugdb script hacker</td>
+</tr>
+<tr>
+<td><strong><a href="#covener">Eric Covener</a></strong></td>
+<td>Bug fixes, LDAP, Documentation, IRC and ML support</td>
+</tr>
+<tr>
+<td><strong><a href="#darnaut">Davi Arnaut</a></strong></td>
+<td>Bug fixes and others things</td>
+</tr>
+<tr>
+<td><strong><a href="#cox">Mark Cox</a></strong></td>
+<td>Cookie module, Status module, DBM code.</td>
+</tr>
+<tr>
+<td><strong><a href="#chrisd">Chris Darroch</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#lars">Lars Eilebrecht</a></strong></td>
+<td>Bug hunter</td>
+</tr>
+<tr>
+<td><strong><a href="#icing">Stefan Eissing</a></strong></td>
+<td>mod_h2</td>
+</tr>
+<tr>
+<td><strong><a href="#rse">Ralf S. Engelschall</a></strong></td>
+<td>Dr. Cosmetics, mod_rewrite, DSO support, Configure, APACI, apxs, etc.</td>
+</tr>
+<tr>
+<td><strong><a href="#jerenkrantz">Justin Erenkrantz</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#fielding">Roy T. Fielding</a></strong></td>
+<td>Standards Cop.</td>
+</tr>
+<tr>
+<td><strong><a href="#fanf">Tony Finch</a></strong></td>
+<td>Mass virtual hosting</td>
+</tr>
+<tr>
+<td><strong><a href="#sf">Stefan Fritsch</a></strong></td>
+<td>Bug fixes</td>
+</tr>
+<tr>
+<td><strong><a href="#humbedooh">Daniel Gruno</a></strong></td>
+<td>Documentation, bug fixes, syntax highlighting</td>
+</tr>
+<tr>
+<td><strong><a href="#hartill">Rob Hartill</a></strong></td>
+<td>general trouble maker, comments to offend all.</td>
+</tr>
+<tr>
+<td><strong><a href="#bjh">Brian Havard</a></strong></td>
+<td>OS/2 porting.</td>
+</tr>
+<tr>
+<td><strong><a href="#yoshiki">Yoshiki Hayashi</a></strong></td>
+<td>Documentation.</td>
+</tr>
+<tr>
+<td><strong><a href="#ianh">Ian Holsman</a></strong></td>
+<td>Performance &amp; Scalability</td>
+</tr>
+<tr>
+<td><strong><a href="#rhunter">Rian Hunter</a></strong></td>
+<td>mod_smtpd!!!</td>
+</tr>
+<tr>
+<td><strong><a href="#bhyde">Ben Hyde</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#jagielski">Jim Jagielski</a></strong></td>
+<td>Porter and general hacks.</td>
+</tr>
+<tr>
+<td><strong><a href="#rjung">Rainer Jung</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#kasichainula">Manoj Kasichainula</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#niq">Nick Kew</a></strong></td>
+<td>Applications Support (Filtering, DBD)</td>
+</tr>
+<tr>
+<td><strong><a href="#kosut">Alexei Kosut</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#kraemer">Martin Kraemer</a></strong></td>
+<td>EBCDIC Port to BS2000 mainframes.</td>
+</tr>
+<tr>
+<td><strong><a href="#laurie">Ben Laurie</a></strong></td>
+<td>SCO and QNX porting, Apache-SSL author, pedant.</td>
+</tr>
+<tr>
+<td><strong><a href="#minfrin">Graham Leggett</a></strong></td>
+<td>mod_cache, mod_proxy, mod_ldap, mod_headers</td>
+</tr>
+<tr>
+<td><strong><a href="#lerdorf">Rasmus Lerdorf</a></strong></td>
+<td>mod_info, mod_php, mod_php3</td>
+</tr>
+<tr>
+<td><strong><a href="#jsl">Jason Lingohr</a></strong></td>
+<td>Documentation.</td>
+</tr>
+<tr>
+<td><strong><a href="#colm">Colm MacC&aacute;rthaigh</a></strong></td>
+<td>graceful-stop, IPv6 oddities, scalability insanity, trunk testing</td>
+</tr>
+<tr>
+<td><strong><a href="#dougm">Doug MacEachern</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#nd">Andr&eacute; L. Malo</a></strong></td>
+<td>jack of all trades</td>
+</tr>
+<tr>
+<td><strong><a href="#kess">Astrid Malo</a></strong></td>
+<td>Documentation</td>
+</tr>
+<tr>
+<td><strong><a href="#madhum">Madhusudan Mathihalli</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#brianm">Brian McCallister</a></strong></td>
+<td>mod_lua</td>
+</tr>
+<tr>
+<td><strong><a href="#mirzadeh">Aram W. Mirzadeh</a></strong></td>
+<td>Linux &amp; SCO porting.</td>
+</tr>
+<tr>
+<td><strong><a href="#thommay">Thom May</a></strong></td>
+<td>Bug fixes and minor stuff</td>
+</tr>
+<tr>
+<td><strong><a href="#murcko">Chuck Murcko</a></strong></td>
+<td>mod_proxy, porting to various OS</td>
+</tr>
+<tr>
+<td><strong><a href="#bnicholes">Brad Nicholes</a></strong></td>
+<td>Apache and APR for NetWare</td>
+</tr>
+<tr>
+<td><strong><a href="#orlikowski">Victor J. Orlikowski</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#sameer">Sameer Parekh</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#pluem">R&uuml;diger Pl&uuml;m</a></strong></td>
+<td>Bug fixes</td>
+</tr>
+<tr>
+<td><strong><a href="#noirin">Noirin Plunkett</a></strong></td>
+<td>Documentation</td>
+</tr>
+<tr>
+<td><strong><a href="#poirier">Dan Poirier</a></strong></td>
+<td>Bug fixes, doc</td>
+</tr>
+<tr>
+<td><strong><a href="#querna">Paul Querna</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#reder">Paul J. Reder</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#reid">David Reid</a></strong></td>
+<td>BeOS MPM and APR code, party animal</td>
+</tr>
+<tr>
+<td><strong><a href="#ridruejo">Daniel L&oacute;pez Ridruejo</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#wrowe">William A. Rowe, Jr.</a></strong></td>
+<td>WinNT porting and support</td>
+</tr>
+<tr>
+<td><strong><a href="#wsanchez">Wilfredo S&aacute;nchez</a></strong></td>
+<td>Mac OS porting</td>
+</tr>
+<tr>
+<td><strong><a href="#takashi">Takashi Sato</a></strong></td>
+<td>Documentation, Japanese translation and bug fixes</td>
+</tr>
+<tr>
+<td><strong><a href="#joes">Joe Schaefer</a></strong></td>
+<td>apreq, site</td>
+</tr>
+<tr>
+<td><strong><a href="#skolnick">Cliff Skolnick</a></strong></td>
+<td>Solaris porting.</td>
+</tr>
+<tr>
+<td><strong><a href="#slemko">Marc Slemko</a></strong></td>
+<td>Security, networking issues</td>
+</tr>
+<tr>
+<td><strong><a href="#slive">Joshua Slive</a></strong></td>
+<td>Documentation</td>
+</tr>
+<tr>
+<td><strong><a href="#stein">Greg Stein</a></strong></td>
+<td>For now: general pest. Future: WebDAV integration.</td>
+</tr>
+<tr>
+<td><strong><a href="#pctony">Tony Stevenson</a></strong></td>
+<td>Documentation</td>
+</tr>
+<tr>
+<td><strong><a href="#stoddard">Bill Stoddard</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#striker">Sander Striker</a></strong></td>
+<td>Memory management, enforcing Apache code style</td>
+</tr>
+<tr>
+<td><strong><a href="#sutton">Paul Sutton</a></strong></td>
+<td>Documentation writing, code hacking, bug fixing</td>
+</tr>
+<tr>
+<td><strong><a href="#terbush">Randy Terbush</a></strong></td>
+<td>Board member, Treasurer, Fund Raiser</td>
+</tr>
+<tr>
+<td><strong><a href="#trawick">Jeff Trawick</a></strong></td>
+<td>Bug fixing</td>
+</tr>
+<tr>
+<td><strong><a href="#vangulik">Dirk van Gulik</a></strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong><a href="#jwoolley">Cliff Woolley</a></strong></td>
+<td></td>
+</tr></tbody></table>
+<h1 id="apache-emeritae-old-group-members-now-off-doing-other-things">Apache Emeritae (old group members now off doing other things)<a class="headerlink" href="#apache-emeritae-old-group-members-now-off-doing-other-things" title="Permalink">&para;</a></h1>
+<table class="table">
+<thead>
+<tr>
+<th>Contributor</th>
+<th>Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="#bloom">Ryan Bloom</a></strong></td>
+<td>APR and initial work to hybridize Apache. Numerous bug fixes and enhancements in the 2.0.x series. Created the Perchild MPM, a lot of work on the filter architecture.</td>
+</tr>
+<tr>
+<td><strong><a href="#dgaudet">Dean Gaudet</a></strong></td>
+<td>Performance freak. Numerous bug fixes, and stability enhancements in the 1.x series. Created the MPM architecture.</td>
+</tr>
+<tr>
+<td><strong><a href="#brianp">Brian Pane</a></strong></td>
+<td>Performance and scalability</td>
+</tr>
+<tr>
+<td><strong><a href="#robinson">David Robinson</a></strong></td>
+<td>Patch database, documentation.</td>
+</tr>
+<tr>
+<td><strong><a href="#thau">Robert Thau</a></strong></td>
+<td>Designed and implemented module API, did server core overhaul, process pool model, content negotiation, lots and lots of other stuff.</td>
+</tr>
+<tr>
+<td><strong><a href="#wilson">Andrew Wilson</a></strong></td>
+<td></td>
+</tr></tbody></table>
+<h1 id="other-major-contributors">Other major contributors<a class="headerlink" href="#other-major-contributors" title="Permalink">&para;</a></h1>
+<table class="table">
+<thead>
+<tr>
+<th>Contributor</th>
+<th>Activities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong><a href="#fear">Howard Fear</a></strong></td>
+<td>SSI extensions.</td>
+</tr>
+<tr>
+<td><strong>Florent Guillaume</strong></td>
+<td>Language Negotiation</td>
+</tr>
+<tr>
+<td><strong>Koen Holtman</strong></td>
+<td>Rewrite of mod_negotiation</td>
+</tr>
+<tr>
+<td><strong>Kevin Hughes</strong></td>
+<td>Creator of all those nifty icons</td>
+</tr>
+<tr>
+<td><strong>Brandon Long and Beth Frank</strong></td>
+<td>NCSA Server Development Team, post-1.3</td>
+</tr>
+<tr>
+<td><strong>Ambarish Malpani</strong></td>
+<td>Beginning of the NT port</td>
+</tr>
+<tr>
+<td><strong>Rob McCool</strong></td>
+<td>Original author of NCSA httpd 1.3</td>
+</tr>
+<tr>
+<td><strong>Paul Richards</strong></td>
+<td>Convinced the group to use remote CVS after 1.0</td>
+</tr>
+<tr>
+<td><strong><a href="#smiley">Garey Smiley</a></strong></td>
+<td>OS/2 port.</td>
+</tr>
+<tr>
+<td><strong>Henry Spencer</strong></td>
+<td>Author of the regex library</td>
+</tr></tbody></table>
+<p>Hundreds of people have made individual contributions to the Apache
+project. Patch contributors are listed in the src/CHANGES file. Frequent
+contributors have included Petr Lampa, Tom Tromey, James H. Cloos Jr., Ed
+Korthof, Nathan Neulinger, Jason S. Clary, Jason A. Dour, Michael Douglass,
+Brian Havard, Tony Sanders, Brian Tao, Michael Smith, Adam Sussman, Nathan
+Schrenk, Matthew Gray, and John Heidemann.</p>
+<h1 id="descriptions">Descriptions<a class="headerlink" href="#descriptions" title="Permalink">&para;</a></h1>
+<div id="contributors">
+<p><img alt="[photo]" src="../images/erik.jpg"/> <strong>Name:</strong> <a name="erikabele">Erik
+Abele</a><br/> <strong>Email:</strong>
+<a href="mailto:erik@codefaktor.de">erik@codefaktor.de</a> <br/> <strong>URL:</strong>
+<a href="http://www.codefaktor.de/">http://www.codefaktor.de/</a> <br/>
+<strong>Organization:</strong> Independent<br/> <strong>Occupation:</strong> Technology
+Consultant, Web Developer<br/> <strong>Location:</strong> Aalen, Germany<br/>
+<strong>Comments:</strong> Vogon Heavy Industries - coding with impact!<br/> <strong>OS
+Expertise:</strong> Linux, Mac OS X<br/> <strong>Contributions:</strong> Mostly
+documentation, various tweaks here and there</p>
+<p><strong>Name:</strong> <a name="aaron">Aaron Bannert</a><br/> <strong>Email:</strong>
+<a href="mailto:aaron@apache.org">aaron@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.clove.org/%7Eaaron/">http://www.clove.org/~aaron/</a> <br/>
+<strong>Organization:</strong> <a href="http://www.codemass.com/">Codemass, Inc.</a> <br/>
+<strong>Occupation:</strong> Open Source Software Consultant<br/> <strong>Location:</strong> San
+Francisco, CA, USA<br/> <strong>Comments:</strong> Banish all tabs!<br/> <strong>OS
+Expertise:</strong> Linux and Solaris with a dash of Darwin<br/>
+<strong>Contributions:</strong> Flood. Various APIs for APR. Some work on the Worker
+MPM. Threads, mutexes, condition variables, oh my! Interested in various
+forms of IPC. Terrible m4/autoconf/libtool hacks.</p>
+<p><strong>Name:</strong> <a name="behlendorf">Brian Behlendorf</a><br/> <strong>Email:</strong>
+<a href="mailto:brian@behlendorf.com">brian@behlendorf.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.behlendorf.com/">http://www.behlendorf.com</a> <br/>
+<strong>Organization:</strong> <a href="http://www.collab.net/">Collab.Net</a> <br/>
+<strong>Occupation:</strong> CTO<br/> <strong>Location:</strong> San Francisco, CA, USA<br/>
+<strong>Comments:</strong> Infrastructure, baby!<br/> <strong>OS Expertise:</strong>
+FreeBSD<br/> <strong>Contributions:</strong> Various, focusing on assisting the
+development process itself.</p>
+<p><strong>Name:</strong> <a name="bloom">Ryan Bloom</a><br/> <strong>Email:</strong>
+<a href="mailto:rbb@apache.org">rbb@apache.org</a> <br/>
+<strong>Organization:</strong> Independent<br/> <strong>Occupation:</strong> Software
+Engineer<br/> <strong>Location:</strong> Oakland, CA<br/> <strong>OS Expertise:</strong>
+Linux, AIX, Windows<br/> <strong>Contributions:</strong> Apache Portable Run-Time.
+Initial work to make Apache a hybrid model.</p>
+<p><img alt="Rich Bowen" src="../images/rbowen.jpg"/> <strong>Name:</strong> <a name="rbowen">Rich
+Bowen</a><br/> <strong>Email:</strong>
+<a href="mailto:rbowen@rcbowen.com">rbowen@rcbowen.com</a> <br/> <strong>URL:</strong>
+<a href="http://drbacchus.com/">http://drbacchus.com/</a> <br/> <strong>Organization:</strong>
+Red Hat<br/> <strong>Occupation:</strong> Community Manager<br/>
+<strong>Location:</strong> Lexington, KY<br/> <strong>Comments:</strong> The documentation can
+always be made just a little better.<br/>
+<strong>Contributions:</strong> Documentation. IRC tech support.<br/></p>
+<p><img alt="[photo]" src="../images/coar.gif"/> <strong>Name:</strong> <a name="coar">Ken
+Coar</a><br/> <strong>Email:</strong> <a href="mailto:coar@Apache.Org">coar@Apache.Org</a>
+<br/> <strong>URL:</strong>
+<a href="http://Web.Golux.Com/coar/">http://Web.Golux.Com/coar/</a> <br/>
+<strong>Organization:</strong> IBM Corporation<br/> <strong>Occupation:</strong> Software &amp;
+Web development<br/> <strong>Location:</strong> Research Triangle Park, North
+Carolina, USA<br/> <strong>Comments:</strong> HTML pedant, FAQ editor, UI
+perfectionist, bugdb script hacker<br/> <strong>OS Expertise:</strong> Digital UNIX,
+OpenVMS, Linux (RedHat)<br/> <strong>Contributions:</strong> The 1.2 example API
+module, moderately updated FAQ, mod_autoindex and mod_speling enhancements,
+conditional logging, various minor bug fixes and documentation corrections.
+Eminently capable of writing code that will Rule The World by consuming
+resources - but in an elegant way.<br clear="all"/></p>
+<p><strong>Name:</strong> <a name="covener">Eric Covener</a><br/> <strong>Email:</strong>
+<a href="mailto:covener@apache.org">covener@apache.org</a> <br/> <strong>Organization:</strong>
+IBM<br/> <strong>Occupation:</strong> Apache developer<br/> <strong>Location:</strong>
+Research Triangle Park, NC, USA<br/></p>
+<p><strong>Name:</strong> <a name="darnaut">Davi Arnaut</a><br/> <strong>Email:</strong>
+<a href="mailto:davi@apache.org">davi@apache.org</a> <br/> <strong>Organization:</strong>
+<a href="http://www.mysql.com/">MySQL</a> <br/> <strong>Occupation:</strong> Software
+Engineer<br/> <strong>Location:</strong> Curitiba, PR, Brazil<br/> <strong>OS
+Expertise:</strong> Linux, Unix, Windows, others.<br/></p>
+<p><strong>Name:</strong> <a name="cox">Mark Cox</a><br/> <strong>email:</strong>
+<a href="mailto:mark@awe.com">mark@awe.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.awe.com/mark/">http://www.awe.com/mark/</a> <br/>
+<strong>Organization:</strong> Red Hat, Inc.<br/> <strong>Occupation:</strong> Director of
+Engineering<br/> <strong>Location:</strong> England<br/> <strong>Contributions:</strong>
+Various patches, bug fixes, and DBM code alterations bringing Apache in
+line with what we were using on <a href="http://www.telescope.org">www.telescope.org</a>. Cookie module. Server
+Status module. Editor of <a href="http://www.apacheweek.com/">Apache Week</a>
+<br/></p>
+<p><strong>Name:</strong> <a name="chrisd">Chris Darroch</a><br/> <strong>Email:</strong>
+<a href="mailto:chrisd@apache.org">chrisd@apache.org</a><br/> <strong>URL:</strong>
+<a href="http://people.apache.org/%7Echrisd/">http://people.apache.org/~chrisd/</a>
+<br/> <strong>Organization:</strong> Pearson Education Core Technology
+Group<br/> <strong>Occupation:</strong> System Architect<br/> <strong>Location:</strong>
+British Columbia, Canada</p>
+<p><strong>Name:</strong> <a name="lars">Lars Eilebrecht</a><br/> <strong>Email:</strong>
+<a href="mailto:lars@apache.org">lars@apache.org</a><br/> <strong>URL:</strong>
+<a href="http://www.eilebrecht.net/">http://www.eilebrecht.net/</a> <br/>
+<strong>Occupation:</strong> Freelance IT Consultant<br/> <strong>Location:</strong> Munich,
+Germany<br/> <strong>Contributions:</strong> Bugs, bug fixes, documentation, etc.</p>
+<p><img alt="Stefan Eissing" src="../images/icing.png"/>
+<strong>Name:</strong> <a name="icing">Stefan Eissing</a><br/>
+<strong>Email:</strong> <a href="mailto:icing@apache.org">icing@apache.org</a><br/>
+<strong>URL:</strong> <a href="http://eissing.org/">http://eissing.org/</a> <br/>
+<strong>Organization:</strong> greenbytes GmbH<br/>
+<strong>Occupation:</strong> Coder + Founder<br/>
+<strong>Location:</strong> M&uuml;nster, Germany<br/>
+<strong>OS Expertise:</strong> Linux, OS X<br/>
+<strong>Contributions:</strong> mod_h2, some core patches<br/></p>
+<p><strong>Name:</strong> <a name="rse">Ralf S. Engelschall</a><br/> <strong>email:</strong>
+<a href="mailto:rse@engelschall.com">rse@engelschall.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.engelschall.com/">http://www.engelschall.com/</a> <br/>
+<strong>Organization:</strong> Private<br/> <strong>Occupation:</strong> Cable &amp; Wireless
+Deutschland GmbH<br/> <strong>Location:</strong> Munich, Germany<br/>
+<strong>Contributions:</strong> Contributor of the <em>URL Rewriting
+Module</em> (mod_rewrite), the <em>Dynamic Shared Object</em> (DSO) support,
+the <em>Apache Autoconf-style Interface</em> (APACI), the overhauling of the
+Configure script and Makefile templates and various bugfixes and minor
+features: <em>Line Continuation</em> for config files, programs for
+the <em>Big Symbol Renaming</em> in April 1998 (foo -&gt; ap_foo), Reverse
+Proxy support, etc. In general Ralf is <em>Dr. Cosmetics</em> at the Apache
+Group because his opinion is that every type of hacking is some sort of art
+and hence needs to be maximum clean and perfect.</p>
+<p><strong>Name:</strong> <a name="jerenkrantz">Justin Erenkrantz</a><br/> <strong>Email:</strong>
+<a href="mailto:jerenkrantz@apache.org">jerenkrantz@apache.org</a><br/> <strong>URL:</strong>
+<a href="http://www.erenkrantz.com/">http://www.erenkrantz.com/</a> <br/>
+<strong>Organization:</strong> <a href="http://www.ics.uci.edu/">University of California,
+Irvine</a> <br/> <strong>Occupation:</strong> Graduate
+Student<br/> <strong>Location:</strong> Irvine, California<br/>
+<strong>Contributions:</strong> Justin does anything that he thinks needs to be done.
+He's also to blame for httpd-mbox and flood (in httpd-test).</p>
+<p><strong>Name:</strong> <a name="fear">Howard Fear</a><br/> <strong>email:</strong>
+<a href="mailto:hsf@pageplus.com">hsf@pageplus.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.pageplus.com/%7Ehsf/">http://www.pageplus.com/~hsf/</a> <br/>
+<strong>Organization:</strong> NetPlus+, RedCape Policy Software, Inc.<br/>
+<strong>Occupation:</strong> Everything software<br/> <strong>Location:</strong>
+Colorado<br/> <strong>Comments:</strong> The story teller makes no choice. Soon you
+will not hear his voice. His job is to shed light, and not to
+master.<br/> <strong>Contributions:</strong> SSI extensions and occasional bug
+fixes<br/></p>
+<p><strong>Name:</strong> <a name="fielding">Roy T. Fielding</a><br/> <strong>Email:</strong>
+<a href="mailto:fielding@apache.org">fielding@apache.org</a><br/> <strong>URL:</strong>
+<a href="http://roy.gbiv.com/">http://roy.gbiv.com/</a> <br/> <strong>Organization:</strong>
+<a href="http://www.day.com/">Day Software</a> <br/> <strong>Occupation:</strong> Chief
+Scientist<br/> <strong>Location:</strong> Irvine, California<br/>
+<strong>Contributions:</strong> Roy is the standards cop. He keeps the group informed of
+changes to the standards for HTTP, HTML and URI, and makes sure that Apache
+conforms to those worth conforming to. On a good day, he'll even test the
+code, dabble in software engineering practice, submit a few patches, and
+squeeze out an agenda.<br/></p>
+<p><strong>Name:</strong> <a name="fanf">Tony Finch</a><br/> <strong>Email:</strong>
+<a href="mailto:dot@dotat.at">dot@dotat.at</a> <br/> <strong>URL:</strong>
+<a href="http://www.apache.org/%7Efanf/">http://www.apache.org/~fanf/</a> <br/>
+<strong>Organization:</strong> Covalent Technologies<br/> <strong>Occupation:</strong> Software
+Engineer<br/> <strong>Location:</strong> London<br/> <strong>Contributions:</strong>
+Simplified mass virtual hosting<br/></p>
+<p><strong>Name:</strong> <a name="sf">Stefan Fritsch</a><br/> <strong>Email:</strong>
+<a href="mailto:sf@sfritsch.de">sf@sfritsch.de</a> <br/> <strong>Organization:</strong> GeNUA
+mbH<br/> <strong>Occupation:</strong> System Engineer, Developer<br/>
+<strong>Location:</strong> Munich, Germany<br/> <strong>Contributions:</strong> Bug
+fixes<br/></p>
+<p><strong>Name:</strong> <a name="dgaudet">Dean Gaudet</a><br/> <strong>Email:</strong>
+<a href="mailto:dean@apache.org">dean@apache.org</a><br/> <strong>URL:</strong>
+<a href="http://arctic.org/%7Edean/">http://arctic.org/~dean/</a> <br/>
+<strong>Organization:</strong> <a href="http://www.transmeta.com/">Transmeta Corporation</a>
+<br/> <strong>Occupation:</strong> Member of the Technical Staff<br/>
+<strong>Location:</strong> San Francisco, CA, USA<br/> <strong>Comments:</strong> Performance
+freak.<br/> <strong>OS Expertise:</strong> Linux<br/> <strong>Contributions:</strong>
+Performance/reliability coding, and general bug fixes. Believes in the One
+True Tab Width of 8 columns. Known to be a hard-nosed pain in the
+butt.<br/></p>
+<p><strong>Name:</strong> <a name="gray">Matthew Gray</a><br/> <strong>Email:</strong>
+<a href="mailto:mkgray@mit.edu">mkgray@mit.edu</a> <br/> <strong>URL:</strong>
+<a href="http://www.mit.edu/%7Emkgray/">http://www.mit.edu/~mkgray/</a><br/> <strong>Organization:</strong> MIT<br/>
+<strong>Occupation:</strong> Research Assistant<br/> <strong>Location:</strong> Cambridge, MA,
+USA<br/> <strong>Contributions:</strong> NCSA1.4 logging compatibility modules,
+miscellaneous patches<br/></p>
+<p><strong>Name:</strong> <a name="hartill">Rob Hartill</a><br/> <strong>Email:</strong>
+<a href="mailto:robh@imdb.com">robh@imdb.com</a> <br/> <strong>URL:</strong>
+<a href="http://us.imdb.com/">IMDb</a> <br/> <strong>Organization:</strong> Los Alamos National
+Laboratory &amp; Internet Movie Database.<br/> <strong>Occupation:</strong> Post-doc
+PERL guru<br/> <strong>Location:</strong> Los Alamos, New Mexico, Good Old US of
+A<br/> <strong>Comments:</strong> write it in PERL<br/></p>
+<p><strong>Name:</strong> <a name="bjh">Brian Havard</a><br/> <strong>Email:</strong>
+<a href="mailto:bjh@apache.org">bjh@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://silk.apana.org.au">http://silk.apana.org.au</a> <br/>
+<strong>Occupation:</strong> Software Engineer<br/> <strong>OS Expertise:</strong> OS/2<br/>
+<strong>Location:</strong> Melbourne, Australia<br/> <strong>Contributions:</strong> Maintenance
+of <a href="http://silk.apana.org.au/apache/">OS/2 port</a> <br/></p>
+<p><strong>Name:</strong> <a name="yoshiki">Yoshiki Hayashi</a><br/> <strong>Email:</strong>
+<a href="mailto:yoshiki@xemacs.org">yoshiki@xemacs.org</a> <br/> <strong>Organization:</strong>
+University of Tokyo<br/> <strong>Occupation:</strong> Graduate Student<br/> <strong>OS
+Expertise:</strong> Linux<br/> <strong>Location:</strong> Tokyo, Japan<br/>
+<strong>Contributions:</strong> Documentation, Japanese translation.<br/></p>
+<p><strong>Name:</strong> <a name="ianh">Ian Holsman</a><br/> <strong>Email:</strong>
+<a href="mailto:ianh@apache.org">ianh@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.doitwithdata.com.au">http://www.doitwithdata.com.au</a> <br/>
+<strong>Occupation:</strong> Consultant.<br/> <strong>OS Expertise:</strong>
+Solaris/Linux/W2K<br/> <strong>Location:</strong> San Francisco, USA<br/>
+<strong>Contributions:</strong> Atomics, mod_deflate, mod_bucketeer<br/></p>
+<p><strong>Name:</strong> <a name="rhunter">Rian Hunter</a><br/> <strong>Email:</strong>
+soc-rian,apache,org<br/> <strong>URL:</strong>
+<a href="http://rian.thelaststop.net/">http://rian.thelaststop.net/</a> <br/>
+<strong>Occupation:</strong> Student<br/> <strong>OS Expertise:</strong> FreeBSD, Mac OS X,
+Linux<br/> <strong>Location:</strong> Cambridge, Massachusetts<br/>
+<strong>Contributions:</strong> mod_smtpd!!!<br/></p>
+<p><strong>Name:</strong> <a name="bhyde">Ben Hyde</a><br/> <strong>Organization:</strong>
+<a href="http://www.gensym.com">Gensym</a>.<br/> <strong>Occupation:</strong> Principle
+Engineer<br/> <strong>Location:</strong> Cambridge, Massachusetts<br/>
+<strong>Comments:</strong> Beware of antinomian mysticism<br/></p>
+<p><strong>Name:</strong> <a name="jagielski">Jim Jagielski</a><br/> <strong>Email:</strong>
+<a href="mailto:jim@jaguNET.com">jim@jaguNET.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.jaguNET.com/jim.html">http://www.jaguNET.com/jim.html</a>
+<br/> <strong>Organization:</strong> <a href="http://www.jaguNET.com/">jaguNET Access Services,
+LLC</a> <br/> <strong>Occupation:</strong> ISP and Web
+Hosting/Design firm<br/> <strong>Location:</strong> Forest Hill, Maryland,
+USA<br/> <strong>OS Expertise:</strong> MacOS/Darwin, FreeBSD and various SysV
+flavors<br/> <strong>Contributions:</strong> Stuff in 1.3, 2.0 and APR, various
+fixes/hacks and lately coordinating the Releases for 1.3. General porter,
+coder and trouble maker. Plays "devil's advocate" a bit too
+often<tt>:-)</tt><br/></p>
+<p><strong>Name:</strong> <a name="rjung">Rainer Jung</a><br/> <strong>Email:</strong>
+<a href="mailto:rainer.jung@kippdata.de">rainer.jung@kippdata.de</a> <br/>
+<strong>Organization:</strong> <a href="http://www.kippdata.de/">kippdata informationstechnologie
+GmbH</a> <br/> <strong>Occupation:</strong> Web System
+Engineer<br/> <strong>Location:</strong> Bonn, Germany<br/> <strong>OS Expertise:</strong>
+Solaris and Linux<br/> <strong>Contributions:</strong> Fixes and tweaks<br/></p>
+<p><strong>Name:</strong> <a name="kasichainula">Manoj Kasichainula</a><br/> <strong>Email:</strong>
+<a href="mailto:manojk+apachepages@io.com">manojk@io.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.io.com/%7Emanojk/">http://www.io.com/~manojk/</a> <br/>
+<strong>Organization:</strong> Collab.Net<br/> <strong>Occupation:</strong> Senior Software
+Developer<br/> <strong>Location:</strong> San Francisco, CA, USA<br/> <strong>OS
+Expertise:</strong> Linux, various Unixes<br/> <strong>Contributions:</strong> Initial
+pthread hybrid server work, Dexter MPM, 2.0 status API, other 2.0 stuff,
+arguing with Ryan<br/> <strong>Comments:</strong> I am the one responsible for
+killing children with a pipe.<br/></p>
+<p><strong>Name:</strong> <a name="niq">Nick Kew</a><br/> <strong>Email:</strong>
+<a href="mailto:nick@webthing.com">nick@webthing.com</a> <br/> <strong>URL:</strong>
+<a href="http://people.apache.org/%7Eniq/">http://people.apache.org/~niq/</a> <br/>
+<strong>Organization:</strong> <a href="http://www.webthing.com/">Web&THORN;ing</a> <br/>
+<strong>Occupation:</strong> Development, Consultancy<br/> <strong>Location:</strong> L-space. Or
+southwest England.<br/> <strong>OS Expertise:</strong> Unix-family, including
+Linux.<br/> <strong>Contributions:</strong> DBD Architecture; Smart Filtering; Proxy
+hacks; Documentation; modules, applications and tutorials.
+<strong>Name:</strong> <a name="kosut">Alexei Kosut</a><br/> <strong>Email:</strong>
+<a href="mailto:akosut@stanford.edu">akosut@stanford.edu</a> <br/> <strong>URL:</strong>
+<a href="http://www.stanford.edu/%7Eakosut/">http://www.stanford.edu/~akosut/</a>
+<br/> <strong>Organization:</strong> Stanford University<br/> <strong>Occupation:</strong>
+Student<br/> <strong>Location:</strong> Stanford, California<br/>
+<strong>Contributions:</strong> Introduces a lot of bugs someone else has to fix:
+Initial support for keepalive, HTTP/1.1, name-based virtual hosts. Original
+author of mod_actions, mod_digest, mod_isapi, mod_jserv, mod_proxy,
+mod_speling. Partly at fault for the Win32 port. Apparently really likes
+free T-shirts.<br/></p>
+<p><strong>Name:</strong> <a name="kraemer">Martin Kraemer</a><br/> <strong>Email:</strong>
+<a href="mailto:Martin.Kraemer@Fujitsu-Siemens.com">Martin.Kraemer@Fujitsu-Siemens.com</a><br/> <strong>Organization:</strong>
+<a href="http://www.fujitsu-siemens.com/">Fujitsu-Siemens Computers</a> <br/>
+<strong>Occupation:</strong> Software Development Engineer<br/> <strong>Location:</strong>
+Munich, Germany<br/> <strong>Comments:</strong> I like portable code that's easily
+understood.<br/> <strong>Contributions:</strong> Various proxy patches, the BS2000
+EBCDIC port, SVR4 patches<br/></p>
+<p><strong>Name:</strong> <a name="laurie">Ben Laurie</a><br/> <strong>Email:</strong>
+<a href="mailto:ben@algroup.co.uk">ben@algroup.co.uk</a> <br/> <strong>URL:</strong>
+<a href="http://www.algroup.co.uk/">http://www.algroup.co.uk/</a> <br/>
+<strong>Organization:</strong> A.L. Digital Ltd<br/> <strong>Occupation:</strong> Freelance
+Consultant and Technical Director<br/> <strong>Location:</strong> London,
+England<br/> <strong>OS Expertise:</strong> SCO, QNX, SGI, Windows (all flavours),
+DOS<br/> <strong>Contribution:</strong> Apache-SSL, extensive debate on escaping
+characters, and the odd bug fix.<br/> <strong>Comments:</strong> What am I doing
+here?<br/></p>
+<p><strong>Name:</strong> <a name="minfrin">Graham Leggett</a><br/> <strong>Email:</strong>
+<a href="mailto:minfrin@apache.org">minfrin@apache.org</a> <br/> <strong>Occupation:</strong>
+Freelance Consultant / Multiple Hat Wearer<br/> <strong>Location:</strong> London,
+England<br/> <strong>OS Expertise:</strong> Linux, Solaris<br/>
+<strong>Contribution:</strong> Designed mod_cache, hacked and chopped on mod_proxy,
+mod_ldap and mod_headers for v2.0. Designed mod_auth_form and the
+mod_session suite, the BUFFER and DATA filters, and the mod_relector
+mechanism. Bugfixing and HTTP caching protocol compliance.<br/>
+<strong>Comment:</strong> No comment.<br/><br clear="all"/></p>
+<p><strong>Name:</strong> <a name="lerdorf">Rasmus Lerdorf</a><br/> <strong>Email:</strong>
+<a href="mailto:rasmus@apache.org">rasmus@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.lerdorf.on.ca/">http://www.lerdorf.on.ca/</a> <br/>
+<strong>Company:</strong> IBM Corporation<br/> <strong>Occupation:</strong> Senior Software
+Engineer<br/> <strong>Location:</strong> Research Triangle Park, NC<br/> <strong>OS
+Expertise:</strong> Solaris, Linux<br/> <strong>Contribution:</strong> Wrote mod_info
+module included in the distribution, as well as mod_php which is available
+separately from <a href="http://www.php.net">www.php.net</a>.<br/><br clear="all"/></p>
+<p><strong>Name:</strong> <a name="jsl">Jason Lingohr</a><br/> <strong>Email:</strong>
+<a href="mailto:jsl@apache.org">jsl@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://geeklog.lucid.net.au/">http://geeklog.lucid.net.au/</a> <br/>
+<strong>Occupation:</strong> Networks &amp; security Engineer<br/> <strong>Location:</strong>
+Melbourne, Australia<br/> <strong>OS Expertise:</strong> *BSD, Linux, Cisco
+IOS/networking OSs<br/> <strong>Contributions:</strong> Documentation.<br/><br clear="all"/></p>
+<p><strong>Name:</strong> <a name="ridruejo">Daniel L&oacute;pez Ridruejo</a><br/> <strong>email:</strong>
+<a href="mailto:ridruejo@apache.org">ridruejo@apache.org</a><br/> <strong>Location:</strong> San Francisco, CA, USA<br/>
+<strong>Contributions:</strong> <a href="http://comanche.com.dtu.dk/">Comanche</a></p>
+<p><strong>Name:</strong> <a name="colm">Colm MacC&aacute;rthaigh</a><br/> <strong>email:</strong>
+<a href="mailto:colm@stdlib.net">colm@stdlib.net</a><br/> <strong>Organization:</strong> <a href="http://www.heanet.ie/">HEAnet</a>
+<br/> <strong>Occupation:</strong> Senior Network Engineer<br/> <strong>Location:</strong>
+Dublin, Ireland<br/> <strong>Contributions:</strong> Graceful stop, random IPv6
+things, insane scalability experiments</p>
+<p><strong>Name:</strong> <a name="dougm">Doug MacEachern</a><br/> <strong>email:</strong>
+<a href="mailto:dougm@pobox.com">dougm@pobox.com</a><br/> <strong>Organization:</strong> <a href="http://www.itixs.com/">iTixs</a>
+<br/> <strong>Occupation:</strong> Senior Software Engineer<br/> <strong>Location:</strong>
+San Francisco, CA, USA<br/> <strong>Contributions:</strong>
+<a href="http://perl.apache.org/">mod_perl</a> , various API additions</p>
+<p><strong>Name:</strong> <a name="nd">Andr&eacute; L. Malo</a><br/> <strong>Email:</strong>
+<a href="mailto:nd@apache.org">nd@apache.org</a><br/> <strong>Occupation:</strong> Yes.<br/> <strong>Location:</strong>
+Saarbr&uuml;cken, Germany<br/> <strong>Comments:</strong> Always looking for a better
+dictionary.<br/> <strong>Contributions:</strong> Documentation, some modules, hacks here and
+there, code cleanups and bug shaking.<br/></p>
+<p><img alt="[photo]" src="../images/kess.gif"/> <strong>Name:</strong> <a name="kess">Astrid
+Malo</a> (a.k.a. Kess)<br/> <strong>Email:</strong>
+<a href="mailto:kess@apache.org">kess@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.kess-net.de/">http://www.kess-net.de/</a> <br/>
+<strong>Occupation:</strong> Software Developer<br/> <strong>Location:</strong> Saarbr&uuml;cken, Germany<br/> <strong>Comments:</strong> Too much projects, too less
+time.<br/> <strong>Contributions:</strong> Documentation, German translation</p>
+<p><strong>Name:</strong> <a name="madhum">Madhusudan Mathihalli</a><br/> <strong>Email:</strong>
+<a href="mailto:madhum@apache.org">madhum@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.hp.com/go/webserver">http://www.hp.com/go/webserver</a> <br/>
+<strong>Organization:</strong> Hewlett Packard Company<br/> <strong>Occupation:</strong> Software
+Engineer<br/> <strong>Location:</strong> Cupertino, CA<br/></p>
+<p><strong>Name:</strong> <a name="brianm">Brian McCallister</a><br/> <strong>Email:</strong>
+<a href="mailto:brianm@apache.org">brianm@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://skife.org/">http://skife.org/</a> <br/> <strong>Organization:</strong>
+Ning<br/> <strong>Occupation:</strong> Programmery Kind of Person<br/>
+<strong>Location:</strong> Menlo Park, CA<br/></p>
+<p><strong>Name:</strong> <a name="mirzadeh">Aram W. Mirzadeh</a><br/> <strong>email:</strong>
+<a href="mailto:awm@li-fish.net">awm@li-fish.net</a> <br/> <strong>URL:</strong> <br/>
+<strong>Organization:</strong> <br/> <strong>Occupation:</strong> <br/> <strong>Location:</strong>
+<br/> <strong>Comment:</strong> To err is human, to really screw up you need a
+computer.<br/> <strong>OS Expertise:</strong> Linux &amp; SCO<br/></p>
+<p><strong>Name:</strong> <a name="thommay">Thom May</a><br/> <strong>Email:</strong>
+<a href="mailto:thom@planetarytramp.net">thom@planetarytramp.net</a> <br/>
+<strong>URL:</strong> <a href="http://www.planetarytramp.net/">http://www.planetarytramp.net/</a>
+<br/> <strong>Organisation:</strong> <a href="http://www.positive-internet.com/">The Positive Internet Company
+Ltd</a> <br/> <strong>Occupation:</strong> Systems
+Administrator and Programmer<br/> <strong>Location:</strong> London, UK<br/>
+<strong>OS Expertise:</strong> Linux. With some OS X on the side.<br/></p>
+<p><img alt="[photo]" src="../images/chuck.jpg"/> <strong>Name:</strong> <a name="murcko">Chuck
+Murcko</a><br/> <strong>Email:</strong>
+<a href="mailto:chuck@topsail.org">chuck@topsail.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.topsail.org/">http://www.topsail.org/</a> <br/>
+<strong>Organization:</strong> Topsail Group<br/> <strong>Occupation:</strong> Grinder<br/>
+<strong>Location:</strong> Sedona AZ USA<br/> <strong>Comments:</strong> Tinkero ergo
+sum<br/> <strong>OS Expertise:</strong> UnixWare, IRIX (secondarily) FreeBSD, BSDI,
+Solaris<br/></p>
+<p><strong>Name:</strong> <a name="bnicholes">Brad Nicholes</a><br/> <strong>Email:</strong>
+<a href="mailto:bnicholes@apache.org">bnicholes@apache.org</a> <br/>
+<strong>Occupation:</strong> Senior Software Engineer<br/> <strong>Organization:</strong>
+<a href="http://www.novell.com">Novell, Inc.</a> <br/> <strong>OS Expertise:</strong>
+NetWare<br/> <strong>Location:</strong> Provo, Ut. USA<br/> <strong>Contributions:</strong>
+Apache 1.3, 2.0 and APR for NetWare<br/></p>
+<p><strong>Name:</strong> <a name="orlikowski">Victor J. Orlikowski</a><br/> <strong>Email:</strong>
+<a href="mailto:orlikowski@apache.org">orlikowski@apache.org</a> <br/> <strong>URL:</strong>
+<br/> <strong>Organization:</strong> IBM<br/> <strong>Occupation:</strong> DSO wrangling, BSF
+rustling, cat herding<br/> <strong>Location:</strong> Durham, NC USA<br/>
+<strong>Comments:</strong> Script? What script?<br/> <strong>OS Expertise:</strong> Linux,
+AIX<br/></p>
+<p><strong>Name:</strong> <a name="brianp">Brian Pane</a><br/> <strong>Email:</strong>
+<a href="mailto:brianp@brianp.net">brianp@brianp.net</a> <br/> <strong>URL:</strong>
+<a href="http://www.brianp.net/">http://www.brianp.net/</a> <br/> <strong>Location:</strong>
+Seattle, WA, USA<br/> <strong>Contributions:</strong> performance and scalability
+work</p>
+<p><strong>Name:</strong> <a name="sameer">Sameer Parekh</a><br/> <strong>Email:</strong>
+<a href="mailto:sameer@c2.net">sameer@c2.net</a> <br/> <strong>URL:</strong>
+<a href="http://www.c2.net/%7Esameer/">http://www.c2.net/~sameer/</a> <br/>
+<strong>Organization:</strong> C2Net Software, Inc.<br/> <strong>Occupation:</strong> Management
+(whee)<br/> <strong>Location:</strong> Oakland, CA, USA<br/> <strong>Contribution:</strong>
+Bugfixes, documentation, website, administrative/legal, various binary
+builds as needed<br/></p>
+<p><strong>Name:</strong> <a name="pluem">R&uuml;diger Pl&uuml;m</a><br/> <strong>Email:</strong>
+<a href="mailto:rpluem@apache.org">rpluem@apache.org</a> <br/> <strong>Organization:</strong>
+<a href="https://www.vodafone.com/">Vodafone</a> <br/> <strong>Occupation:</strong> IT Cloud
+Infrastructure Engineer<br/> <strong>Location:</strong> Ratingen, Germany<br/>
+<strong>Comments:</strong> Is it a bug or a feature?<br/>
+<strong>Contributions:</strong> Bug fixes<br/> <strong>OS Expertise:</strong> Linux<br/></p>
+<p><img alt="Noirin Plunkett" src="../images/noirin.jpg"/> <strong>Name:</strong> <a name="noirin">Noirin Plunkett</a><br/> <strong>Email:</strong>
+<a href="mailto:noirin@apache.org">noirin@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.nerdchic.net/">http://www.nerdchic.net/</a> <br/>
+<strong>Organization:</strong> Trinity College, Dublin<br/> <strong>Occupation:</strong>
+Student<br/> <strong>Location:</strong> Munich, Germany<br/> <strong>Comments:</strong> "Yes,
+but it's no good if no one can understand it!"<br/> <strong>Contributions:</strong>
+Documentation<br/></p>
+<p><strong>Name:</strong> <a name="poirier">Dan Poirier</a><br/> <strong>Email:</strong>
+<a href="mailto:poirier@pobox.com">poirier@pobox.com</a> <br/> <strong>Organization:</strong>
+<a href="http://www.ibm.com/">IBM</a> <br/> <strong>Occupation:</strong> Programmer<br/>
+<strong>Location:</strong> Research Triangle Park, NC, USA<br/> <strong>OS Expertise:</strong>
+Linux, Mac OS X<br/></p>
+<p><strong>Name:</strong> <a name="querna">Paul Querna</a><br/> <strong>Email:</strong>
+<a href="mailto:pquerna@apache.org">pquerna@apache.org</a> <br/> <strong>Organization:</strong>
+<a href="http://www.rackspace.com/">Rackspace Hosting</a> <br/> <strong>Occupation:</strong>
+Architect<br/> <strong>Location:</strong> San Francisco, CA, USA<br/> <strong>OS
+Expertise:</strong> FreeBSD, Linux<br/></p>
+<p><strong>Name:</strong> <a name="reder">Paul J. Reder</a><br/> <strong>Email:</strong>
+<a href="mailto:rederpj@remulak.net">rederpj@remulak.net</a> <br/>
+<strong>Organization:</strong> IBM Corp.<br/> <strong>Occupation:</strong> Programmer, Software
+Engineer, Coder, hacker, whatever...<br/> <strong>Location:</strong> Research
+Triangle Park, NC, USA<br/> <strong>OS Expertise:</strong> Linux, Unix, OS/2,
+others.<br/></p>
+<p><strong>Name:</strong> <a name="richards">Paul Richards</a><br/> <strong>Email:</strong>
+<a href="mailto:paul@FreeBSD.org">paul@FreeBSD.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.freebsd.org/%7Epaul">http://www.freebsd.org/~paul</a> <br/>
+<strong>Organization:</strong> Bluebird Computer Systems. FreeBSD core team
+member.<br/> <strong>Occupation:</strong> <br/> <strong>Location:</strong> UK<br/>
+<strong>Comments:</strong> <br/> <strong>OS Expertise:</strong> FreeBSD<br/></p>
+<p><strong>Name:</strong> <a name="wrowe">William A. Rowe, Jr. (a.k.a. wrowe,
+OtherBill)</a><br/> <strong>Email:</strong>
+<a href="mailto:wrowe@apache.org">wrowe@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://people.apache.org/%7Ewrowe/">http://people.apache.org/~wrowe/</a>
+<br/> <strong>Organization:</strong> SpringSource Division of VMware<br/>
+<strong>Occupation:</strong> Software Architect; Development and Integration<br/>
+<strong>Location:</strong> Gurnee, IL, US<br/> <strong>Contributions:</strong> Bashing on the
+Win32 Apache kernel for fun and profit.<br/></p>
+<p><strong>Name:</strong> <a name="wsanchez">Wilfredo S&aacute;nchez</a><br/> <strong>Email:</strong>
+<a href="mailto:wsanchez@apache.org">wsanchez@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.mit.edu/people/wsanchez/">http://www.mit.edu/people/wsanchez/</a>
+<br/> <strong>Organization:</strong> Independent<br/> <strong>Occupation:</strong> Software
+Engineer<br/> <strong>Location:</strong> San Jose, CA, USA<br/> <strong>OS
+Expertise:</strong> Mac OS X, *BSD<br/> <strong>Contribution:</strong> Mac OS X port, build
+fixes.<br/></p>
+<p><strong>Name:</strong> <a name="takashi">Takashi Sato</a><br/> <strong>Email:</strong>
+<a href="mailto:takashi@lans-tv.com">takashi@lans-tv.com</a> <br/> <strong>Location:</strong>
+Tokyo, Japan<br/> <strong>Contribution:</strong> Documentation, Japanese translation
+and bug fixes<br/></p>
+<p><strong>Name:</strong> <a name="robinson">David Robinson</a><br/> <strong>Email:</strong>
+<a href="mailto:drtr@ast.cam.ac.uk">drtr@ast.cam.ac.uk</a> <br/> <strong>URL:</strong>
+<br/> <strong>Organization:</strong> University of Cambridge<br/>
+<strong>Occupation:</strong> Astronomer<br/> <strong>Location:</strong> Cambridge, UK<br/>
+<strong>Comments:</strong> <br/></p>
+<p><strong>Name:</strong> <a name="skolnick">Cliff Skolnick</a><br/> <strong>email:</strong>
+<a href="mailto:cliff@steam.com">cliff@steam.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.steam.com/%7Ecliff/">http://www.steam.com/~cliff/</a> <br/>
+<strong>Organization:</strong> steam.com<br/> <strong>Occupation:</strong> Network/Unix
+Consultant<br/> <strong>Location:</strong> San Francisco, CA, USA<br/>
+<strong>Comments:</strong> <br/> <strong>OS Expertise:</strong> Solaris, *BSD<br/></p>
+<p><strong>Name:</strong> <a name="slemko">Marc Slemko</a><br/> <strong>email:</strong>
+<a href="mailto:marcs@znep.com">marcs@znep.com</a><br/> <strong>Occupation:</strong> Software Engineer / General
+Irritant<br/> <strong>Location:</strong> Seattle, WA, USA<br/>
+<strong>Contributions:</strong> Security patches, bug hunting and debugging of
+networking issues.<br/> <strong>OS Expertise:</strong> *BSD, Solaris, Linux<br/></p>
+<p><strong>Name:</strong> <a name="slive">Joshua Slive</a><br/> <strong>email:</strong>
+<a href="mailto:joshua@slive.ca">joshua@slive.ca</a><br/> <strong>URL:</strong> <a href="http://slive.ca/">http://slive.ca/</a>
+<br/> <strong>Location:</strong> Montreal, Quebec, Canada<br/>
+<strong>Contributions:</strong> Documentation</p>
+<p><strong>Name:</strong> <a name="smiley">Garey Smiley</a><br/> <strong>Email:</strong>
+<a href="mailto:garey@slink.com">garey@slink.com</a> <br/> <strong>URL:</strong>
+<a href="http://www.slink.com/">http://www.slink.com/</a> <br/> <strong>Organization:</strong>
+SoftLink Services<br/> <strong>Occupation:</strong> Consultant in cross platform
+applications and web development.<br/> <strong>Location:</strong> Akron, Ohio
+USA<br/> <strong>Comments:</strong> If you can't do UNIX do OS/2.<br/> <strong>OS
+Expertise:</strong> OS/2, Win32s, Windows NT, and UNIX.<br/>
+<strong>Contributions:</strong> OS/2 port of Apache. See the OS/2 specific pages at
+<a href="http://www.slink.com/ApacheOS2/">http://www.slink.com/ApacheOS2/</a>
+<br/></p>
+<p><img alt="[photo]" src="../images/stein.jpg"/> <strong>Name:</strong> <a name="stein">Greg
+Stein</a><br/> <strong>Email:</strong> <a href="mailto:gstein@lyra.org">gstein@lyra.org</a>
+<br/> <strong>URL:</strong> <a href="http://www.lyra.org/">http://www.lyra.org/</a> <br/>
+<strong>Occupation:</strong> Non-employed Open Source Developer<br/> <strong>Location:</strong>
+Palo Alto, CA, USA<br/> <strong>OS Expertise:</strong> Linux<br/> <strong>Comments:</strong>
+<a href="http://www.python.org/">Python</a> rules!<br/> <strong>Contributions:</strong> Minor
+tweaks and fixes. Code review. One day, I'll join the Big Boys.<br/></p>
+<p><img alt="[photo]" src="../images/pctony.jpg"/> <strong>Name:</strong> <a name="pctony">Tony
+Stevesnon</a><br/> <strong>Email:</strong>
+<a href="mailto:pctony@apache.org">pctony@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://blog.pc-tony.com">http://blog.pc-tony.com/</a> <br/>
+<strong>Organization:</strong> ihotdesk Ltd<br/> <strong>Occupation:</strong> Network Security,
+and Messaging Specialist<br/> <strong>Location:</strong> Cambridge, UK<br/> <strong>OS
+Expertise:</strong> Windows<br/> <strong>Comments:</strong>
+<a href="irc://chat.freenode.net/#apache">#Apache</a> is scary sometimes<br/>
+<strong>Contributions:</strong> Documentation and Support.<br/></p>
+<p><strong>Name:</strong> <a name="stoddard">Bill Stoddard</a><br/> <strong>Email:</strong>
+<a href="mailto:bill@wstoddard.com">bill@wstoddard.com</a><br/> <strong>URL:</strong>
+<a href="http://www.software.ibm.com/webservers/">http://www.software.ibm.com/webservers/</a>
+<br/> <strong>Organization:</strong> IBM Corp.<br/> <strong>Occupation:</strong> Software
+Development Engineer<br/> <strong>Location:</strong> Research Triangle Park, NC,
+USA<br/> <strong>OS Expertise:</strong> AIX, Windows NT<br/></p>
+<p><strong>Name:</strong> <a name="striker">Sander Striker</a><br/> <strong>Email:</strong>
+<a href="mailto:striker@apache.org">striker@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.striker.nl/">http://www.striker.nl/</a> <br/> <strong>Occupation:</strong>
+Software Developer<br/> <strong>Location:</strong> Utrecht, The Netherlands<br/>
+<strong>OS Expertise:</strong> Linux, Win32<br/> <strong>Comments:</strong> Code in
+style...<br/> <strong>Contributions:</strong> Work on APR (pools). Code
+review.<br/></p>
+<p><strong>Name:</strong> <a name="sutton">Paul Sutton</a><br/> <strong>Email:</strong>
+<a href="mailto:pcs@apache.org">pcs@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.awe.com/%7Epaul/">http://www.awe.com/~paul/</a> <strong>Location:</strong>
+Seattle, USA<br/> <strong>Comments:</strong> I like documenting things, I really do.
+Why are you wearing white suits?<br/> <strong>Contributions:</strong> Long time
+Apache convert (fixed a bug in version 0.5.2). Actually likes documentation
+and commenting source. Contributions include some content negotiation
+stuff, various bug fixes and testing, mod_headers, multiple log files,
+options +/-. Edited <a href="http://www.apacheweek.com/">Apache Week</a> until 1999.</p>
+<p><strong>Name:</strong> <a name="terbush">Randy Terbush</a><br/> <strong>Email:</strong>
+<a href="mailto:rterbush@tribalknowledgegroup.com">rterbush@tribalknowledgegroup.com</a><br/> <strong>URL:</strong>
+<a href="http://www.tribalknowledgegroup.com/">http://www.tribalknowledgegroup.com/</a>
+<br/> <strong>Organization:</strong> Tribal Knowledge Group<br/> <strong>Occupation:</strong>
+Independent Consultant<br/> <strong>Location:</strong> Alta, WY, USA<br/>
+<strong>Comments:</strong> <br/> <strong>OS Expertise:</strong> UNIX<br/></p>
+<p><strong>Name:</strong> <a name="thau">Robert Thau</a><br/> <strong>Email:</strong>
+<a href="mailto:rst@ai.mit.edu">rst@ai.mit.edu</a> <br/> <strong>URL:</strong>
+<a href="http://www.ai.mit.edu/people/rst/rst.html">http://www.ai.mit.edu/people/rst/rst.html</a>
+<br/> <strong>Organization:</strong> MIT Artificial Intelligence Lab<br/>
+<strong>Occupation:</strong> grad student &amp; random hacker<br/> <strong>Location:</strong>
+Boston, Mass., USA<br/> <strong>Contributions:</strong> Designed the module
+interface, and the internal data structures which support it, and adapted
+the first (and somewhat less than perfect ;-) versions of the modules
+providing functionality equivalent to Apache 0.6, starting from an early
+version of Rob Hartill's 0.7 work. Also designed and wrote large portions
+of the current server core from scratch (alloc.c, http_config.c,
+http_core.c, and portions of other files), again adapting the rest from
+0.7, to produce the first versions of what became Apache 0.8/1.0 (then
+called Shambhala), after further work by the rest of the group. Various
+other contributions include the original Apache 0.6 content negotiation
+code, the SpareServers machinery (for better or worse), the experimental
+(as of 0.8/1.0) dld module and LogFormat support, and the 0.8/1.0
+Configuration script.<br/></p>
+<p><strong>Name:</strong> <a name="trawick">Jeff Trawick</a><br/> <strong>Email:</strong>
+<a href="mailto:trawick@apache.org">trawick@apache.org</a> <br/> <strong>Organization:</strong>
+Emptyhammock<br/> <strong>Occupation:</strong> Software developer<br/>
+<strong>Location:</strong> Raleigh, NC, USA<br/></p>
+<p><strong>Name:</strong> <a name="vangulik">Dirk-Willem van Gulik</a><br/> <strong>Email:</strong>
+<a href="mailto:dirkx@webweaving.org">dirkx@webweaving.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.webweaving.org">http://www.webweaving.org</a> <br/>
+<strong>Organization:</strong> WebWeaving Consultancy<br/> <strong>Occupation:</strong> Internet
+consultant/contractor<br/> <strong>Location:</strong> <a href="http://www.ceo.org/geotool/newserver/centeurmap/centeurdisp.pl?156,242">Sunny
+Italy</a>
+<br/> <strong>Contributions:</strong> Full time web development for various remote
+sensing related projects; playing around with mSQL and Cookies access
+control for apache (and wu-ftpd). Dreamt up the silly anonymous scheme to
+allow user tracking which works with almost any client. Like to play around
+with the language tags.<br/> <strong>Comments:</strong> But still prefer walking and
+sailing in this beautiful part of Europe.<br/></p>
+<p><strong>Name:</strong> <a name="wilson">Andrew Wilson</a><br/> <strong>Email:</strong>
+<a href="mailto:Andrew.Wilson@cm.cf.ac.uk">Andrew.Wilson@cm.cf.ac.uk</a> <br/>
+<strong>URL:</strong>
+<a href="http://www.cm.cf.ac.uk/User/Andrew.Wilson/">http://www.cm.cf.ac.uk/User/Andrew.Wilson/</a>
+<strong>Organization:</strong> REED Elsevier Science<br/> <strong>Occupation:</strong> Internet
+Consultant<br/> <strong>Location:</strong> Oxford, UK<br/> <strong>Comments:</strong> I'm
+really looking forward to this hangover.<br/></p>
+<p><strong>Name:</strong> <a name="jwoolley">Cliff Woolley</a><br/> <strong>Email:</strong>
+<a href="mailto:jwoolley@apache.org">jwoolley@apache.org</a> <br/> <strong>URL:</strong>
+<a href="http://www.cs.virginia.edu/%7Ejcw5q/">http://www.cs.virginia.edu/~jcw5q/</a>
+<br/> <strong>Organization:</strong> University of Virginia<br/> <strong>Occupation:</strong>
+Graduate Student<br/> <strong>Location:</strong> Charlottesville, VA<br/>
+<strong>Contributions:</strong> bugfixes, occasional API work<br/></p>
+</div>
+<hr/>
+<h3 id="and-a-special-thanks-to-rob-mccool-and-the-team-at-ncsa-for-the-original-httpd-source-code-which-provided-a-solid-base-for-apaches-development">And a special thanks to <a href="http://www.robm.com/">Rob McCool</a> and the team at NCSA for the original httpd source code, which provided a solid base for Apache's development.<a class="headerlink" href="#and-a-special-thanks-to-rob-mccool-and-the-team-at-ncsa-for-the-original-httpd-source-code-which-provided-a-solid-base-for-apaches-development" title="Permalink">&para;</a></h3>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2024 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

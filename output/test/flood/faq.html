@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Flood - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/test/flood/building.html">Building</a></li>
+	    <li><a href="/test/flood/faq.html">FAQ</a></li>
+	  </ul>
+	  <h1 id="download">Download!<a class="headerlink" href="#download" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="http://www.apache.org/dyn/closer.lua/httpd/flood/">From a Mirror</a></li>
+	    <li><a href="http://downloads.apache.org/httpd/">From Here</a></li>
+	  </ul>
+	  <h1 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/DESIGN">Design</a></li>
+	    <li><a href="http://svn.apache.org/repos/asf/httpd/flood/trunk/CONFIG">Configuration</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="Questions">Frequently Asked Questions<a class="headerlink" href="#Questions" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p><a href="#WhatIsFlood">What is Flood?</a></p>
+</li>
+<li>
+<p><a href="#FloodFeatures">What are some of the features of Flood?</a></p>
+</li>
+<li>
+<p><a href="#FloodRegex">How does Flood retrieve variables from pages?</a></p>
+</li>
+<li>
+<p><a href="#FloodSSL">Can I use Flood with SSL sites?</a></p>
+</li>
+<li>
+<p><a href="#TCPFIN">Flood seems like it is stalling.</a></p>
+</li>
+</ul>
+<h1 id="WhatIsFlood">What is Flood?<a class="headerlink" href="#WhatIsFlood" title="Permalink">&para;</a></h1>
+<p>Flood is a profile-driven HTTP load tester. In layman's terms, it means
+that flood is capable of generating large amounts of web traffic. Flood's
+flexibility and power arises in its configuration syntax. It is able to
+work well with dynamic content.</p>
+<h1 id="FloodFeatures">What are some of the features of Flood?<a class="headerlink" href="#FloodFeatures" title="Permalink">&para;</a></h1>
+<ul>
+<li>
+<p>XML-based configuration</p>
+</li>
+<li>
+<p>Able to set and retrieve variables from pages</p>
+</li>
+<li>
+<p>Uses threads and processes intelligently to scale</p>
+</li>
+<li>
+<p>Works with SSL</p>
+</li>
+</ul>
+<h1 id="FloodRegex">How does Flood retrieve variables from pages?<a class="headerlink" href="#FloodRegex" title="Permalink">&para;</a></h1>
+<p>Flood's configuration syntax allows for regular expression matching to
+isolate values in a page.</p>
+<p>Consider placing an order on a website. You add the order and you know that
+the order confirmation page has the following format:
+<code>"Order XYZZY placed successfully."</code>
+By using the following semantics, flood can store XYZZY into the OrderID
+variable:
+<code>responsetemplate="Order ([^ ]*) placed successfully" responsename="OrderID"</code>
+In a subsequent request, you can use this OrderID variable in any template
+variable:
+<code>requesttemplate="https://localhost/getOrderStatus?orderId=$ {orderID}"</code>
+This will send the following request:
+<code>https://localhost/getOrderStatus?orderId=XYZZY</code></p>
+<h1 id="FloodSSL">Can I use Flood with SSL sites?<a class="headerlink" href="#FloodSSL" title="Permalink">&para;</a></h1>
+<p>Yes. However, due to export regulations and laws, Flood does not have SSL
+support enabled by default. When configuring flood, you must pass the
+<code>--enable-ssl</code> flag. Flood currently works with OpenSSL.</p>
+<h1 id="TCPFIN">Flood seems like it is stalling.<a class="headerlink" href="#TCPFIN" title="Permalink">&para;</a></h1>
+<p>Your TCP implementation may have run out of ephemeral ports. Please consult
+your operating systems' manuals on how to decrease the FIN timeout.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2024 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

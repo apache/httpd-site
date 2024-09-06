@@ -1,0 +1,264 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Apache httpd Modules - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="apache-httpd-modules">Apache httpd Modules<a class="headerlink" href="#apache-httpd-modules" title="Permalink">&para;</a></h1>
+<p>The following page highlights some modules that the Apache HTTP Server
+Project maintains that are not included in the core distribution.</p>
+<p>The listing of all modules included in the core distribution can be found in
+the online <a href="../docs/current/mod/">documentation</a>.</p>
+<p>Finally, we do not maintain any detailed listing of third-party modules. You
+should use your favorite search engine, or have a look at code source
+repositories such as <a href="https://github.com">GitHub</a>.</p>
+<h1 id="mod_fcgid">mod_fcgid<a class="headerlink" href="#mod_fcgid" title="Permalink">&para;</a></h1>
+<p>Does your CGI performance leave you wanting? Is mod_perl simply too much
+effort for just hosting your CGI scripts? Do you want to run PHP
+applications outside of your web server processes? FastCGI is the solution
+for you!</p>
+<p><code>mod_fcgid</code> is an implementation of FastCGI for Apache HTTP Server 2.0 and
+later which routes requests to FastCGI application processes which it
+manages.</p>
+<ul>
+<li>
+<p><a href="/mod_fcgid/">Website</a></p>
+</li>
+<li>
+<p>Download: <a href="/download.html#mod_fcgid">mod_fcgid current release</a></p>
+</li>
+<li>
+<p>Source code: <a href="https://svn.apache.org/viewcvs.cgi/httpd/mod_fcgid/trunk/">mod_fcgid subversion trunk</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="mod_ftp">mod_ftp<a class="headerlink" href="#mod_ftp" title="Permalink">&para;</a></h1>
+<p>When is Apache HTTP Server not an http: server? When it's serving the same
+web content, via an ftp: protocol request!</p>
+<p>This code is currently released as a beta. Volunteers are especially sought
+to test out the IPv6 functionality (EPRT and EPSV support).</p>
+<ul>
+<li>
+<p><a href="/mod_ftp/">Website</a></p>
+</li>
+<li>
+<p>Download: <a href="/download.html#mod_ftp">mod_ftp current release</a></p>
+</li>
+<li>
+<p>Source code: <a href="https://svn.apache.org/viewcvs.cgi/httpd/mod_ftp/trunk/">mod_ftp subversion trunk</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="mod_domain">mod_domain<a class="headerlink" href="#mod_domain" title="Permalink">&para;</a></h1>
+<p>Sick of keeping your DNS records and Apache config IPs and CNAMEs in sync?
+Let Apache serve your DNS for you based on your httpd.conf! Try out
+<code>mod_domain</code>.</p>
+<p>This experimental code has <strong>not</strong> been released, but is available to you
+from the subversion development repository.</p>
+<ul>
+<li>
+<p>Source: <a href="https://svn.apache.org/repos/asf/httpd/sandbox/mod_domain/">mod_domain</a></p>
+</li>
+<li>
+<p>ViewVC: <a href="https://svn.apache.org/viewvc/httpd/sandbox/mod_domain/">mod_domain</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="mod_mbox">mod_mbox<a class="headerlink" href="#mod_mbox" title="Permalink">&para;</a></h1>
+<p>Do you want to set up mail archives with Apache HTTPd 2.x ? Try out
+<code>mod_mbox</code>.</p>
+<p>This experimental code has <strong>not</strong> been released, but is available to you
+from the subversion development repository. It is currently in-use by the
+ASF to provide our <a href="http://mail-archives.apache.org/mod_mbox/">email archives browser.</a></p>
+<ul>
+<li>
+<p><a href="/mod_mbox/">Website</a></p>
+</li>
+<li>
+<p>Source: <a href="https://svn.apache.org/repos/asf/httpd/mod_mbox/trunk/">mod_mbox trunk</a></p>
+</li>
+<li>
+<p>ViewVC: <a href="https://svn.apache.org/viewvc/httpd/mod_mbox/trunk/">mod_mbox</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="mod_pop3">mod_pop3<a class="headerlink" href="#mod_pop3" title="Permalink">&para;</a></h1>
+<p>Do you want to see how Apache httpd-2.0 can handle different protocols?
+Play with <code>mod_pop3</code>.</p>
+<p>This experimental code has <strong>not</strong> been released, but is available to you
+from the subversion development repository.</p>
+<ul>
+<li>
+<p>Source: <a href="https://svn.apache.org/repos/asf/httpd/sandbox/mod_pop3/">mod_pop3</a></p>
+</li>
+<li>
+<p>ViewVC: <a href="https://svn.apache.org/viewvc/httpd/sandbox/mod_pop3/">mod_pop3</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="mod_arm4">mod_arm4<a class="headerlink" href="#mod_arm4" title="Permalink">&para;</a></h1>
+<p>Instrument the Apache HTTP Server to the <a href="http://www.opengroup.org/tech/management/arm/">ARM4
+API</a></p>
+<p>This experimental code has <strong>not</strong> been released, but is available to you
+from the subversion development repository.</p>
+<ul>
+<li>
+<p>Source: <a href="https://svn.apache.org/repos/asf/httpd/sandbox/mod_arm4/">mod_arm4</a></p>
+</li>
+<li>
+<p>ViewVC: <a href="https://svn.apache.org/viewvc/httpd/sandbox/mod_arm4/">mod_arm4</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="mod_smtpd">mod_smtpd<a class="headerlink" href="#mod_smtpd" title="Permalink">&para;</a></h1>
+<p>This experimental code has <strong>not</strong> been released, but is available to you
+from the subversion development repository.</p>
+<p>Serve SMTP on Apache with <code>mod_smtpd</code>.</p>
+<ul>
+<li>
+<p><a href="/mod_smtpd/">Website</a></p>
+</li>
+<li>
+<p>Source: <a href="https://svn.apache.org/repos/asf/httpd/sandbox/mod_smtpd/">mod_smtpd</a></p>
+</li>
+<li>
+<p>ViewVC: <a href="https://svn.apache.org/viewvc/httpd/sandbox/mod_smtpd/">mod_smtpd</a></p>
+</li>
+<li>
+<p>Mailing list: <a href="mailto:dev-subscribe@httpd.apache.org">dev@httpd.apache.org</a></p>
+</li>
+</ul>
+<h1 id="sandbox">Sandbox<a class="headerlink" href="#sandbox" title="Permalink">&para;</a></h1>
+<p>The sandbox is where unreleased code goes to play. Browse around for some
+goodies that are not part of the normal Apache HTTP Server distribution,
+but may give you an idea about ways you can extend the server. Someone may
+be actively working on these bits, but they may be completely unmaintained!</p>
+<ul>
+<li>
+<p>Source: <a href="https://svn.apache.org/repos/asf/httpd/sandbox/">Sandbox</a></p>
+</li>
+<li>
+<p>ViewVC: <a href="https://svn.apache.org/viewvc/httpd/sandbox/">Sandbox</a></p>
+</li>
+</ul>
+<h1 id="mod_aspdotnet">mod_aspdotnet (retired from the ASF)<a class="headerlink" href="#mod_aspdotnet" title="Permalink">&para;</a></h1>
+<p>The <code>mod_aspdotnet</code> module has been retired by the httpd project. Every ASF
+project requires multiple developers, and this project did not have enough
+developers participating to remain under the ASF umbrella. Development has
+been resumed by the original authors at its new home, the <a href="http://sourceforge.net/projects/mod-aspdotnet">mod-aspdotnet
+SourceForge project</a>. Note
+there is NO further support or effort on this module from the httpd
+project, refer all questions on to the SourceForge project's user and
+development lists.</p>
+<h1 id="mod_python">mod_python (retired to the attic)<a class="headerlink" href="#mod_python" title="Permalink">&para;</a></h1>
+<p>The Quetzalcoatl <code>mod_python</code> project has been retired to the attic. Note
+there is NO further support or effort on this module from the httpd
+project, see the attic information page below for further information. You
+may also wish to research <code>mod_wsgi</code> , another effort outside of the ASF.</p>
+<ul>
+<li>Website: <a href="https://attic.apache.org/projects/quetzalcoatl.html">Attic
+Placeholder</a></li>
+</ul>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2024 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

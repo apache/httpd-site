@@ -1,0 +1,167 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+ <HEAD>
+  <TITLE>Cross Site Scripting Info: Encoding Examples</TITLE>
+ </HEAD>
+
+ <!-- Background white, links blue (unvisited), navy (visited), red (active) -->
+ <BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#000080" 
+       ALINK="#FF0000">
+  <DIV ALIGN="CENTER">
+   <IMG SRC="../../images/apache_sub.gif" ALT="[APACHE DOCUMENTATION]">
+  </DIV>
+  <H1 ALIGN="CENTER">Cross Site Scripting Info: Encoding Examples</H1>
+
+<H2>Introduction:</H2>
+
+<P>We trust you are already familiar with the Cross Site Scripting
+security problem and the concept behind how it works.  If not, see
+the <A HREF="http://www.cert.org/advisories/CA-2000-02.html">CERT
+Advisory CA-2000-02</A> that has been released on this issue for 
+details before continuing.
+
+<P>This document focuses on how you can safely encode data before 
+it is output to the client.  The main method of doing this is through
+entity encoding, as described in the CERT advisory, using entities
+such as "&amp;lt;".
+
+<H2>General Comments on Encoding:</H2>
+
+<P>Note that, in general, many functions that perform entity encoding
+do so in a way which is only suitable for use outside attribute
+values, in normal block level elements such as a paragraph of text.
+Many of the functions referenced below are in this category.  This
+means they may not encode characters such as the double or single
+quote.  If you don't use quotation marks around an attribute value
+supplied from user input, then you need to encode even more
+characters.  Always use quotes and you won't have to worry about
+that particular issue.
+
+<P>Unfortunately, the situation for encoding data within attribute
+values or within the body scripts (eg. within "&lt;SCRIPT&gt;"
+tags) is more complex and less understood.  If you are in this 
+situation, you may be wise to consider filtering special characters
+(as described in the <A
+HREF="http://www.cert.org/tech_tips/malicious_code_mitigation.html">CERT
+Tech Tip</A>) instead of encoding them.  Generally, encoding is 
+recommended because it does not require you to make a decision about
+what characters could legitimately be entered and need to be passed
+through and it has less of an impact on existing functionality.  
+
+<P>The reason why safely encoding data within attribute values is 
+difficult is because some characters that are not considered special
+characters can be arranged to have unexpected effects in certain
+attribute values.  This is very specific to the tag the attribute
+is associated with and to how the client interprets it.  For example,
+if you let the user enter the value for a HREF attribute, and you
+encode it properly, you could end up outputting a tag such as:
+
+<PRE>
+&lt;A HREF="javascript:document.writeln(document.cookie + &amp;quot;&amp;lt;BR&amp;gt;&amp;quot;)"&gt;
+</PRE>
+
+Even though you have properly encoded special characters, many popular
+browsers will interpret a "javascript:" URL as containing JavaScript
+to execute in the context of the current document.
+
+<P>One of the issues that is still unresolved is exactly what HTML 
+tags are "safe" to allow through, and what the algorithm for doing so
+is like.  Many sites wish to allow users to enter a limited subset
+of "safe" HTML.  This is still very much an open issue.  It has been 
+an issue for quite some time, and it is our hope that this Cross Site
+Scripting problem will help prompt more work into addressing it.
+
+<P>If you are encoding user entered data in a URL, then URL encoding (also
+known as percent encoding) is appropriate.  Unfortunately, this can be
+a complex thing to get right because the special characters in "http://",
+for example, must remain unencoded because they are part of the syntax
+of the URL.  Better solutions to deal with this are necessary.
+
+<P>Also note that some URL encoding functions encode a space into a "+" for
+historical reasons.  This will only work in the query string for CGIs, and
+will not properly encode a space in other parts of the URL.
+
+<P>We realize that all these special situations and the lack of a single
+bulletproof set of steps for encoding user data, wherever it may occur on 
+the page, makes the task of fixing this problem quite challenging in some
+cases.  We wish we had a better answer, and are working on filling in the
+fuzzy areas.
+
+<H2>PHP Example:</H2>
+
+<PRE>
+&lt;?
+$Text = "foo&lt;b&gt;bar";
+$URL = "foo&lt;b&gt;bar.html";
+echo HTMLSpecialChars($Text), "&lt;BR&gt;";     
+echo "&lt;A HREF=\"", rawurlencode($URL), "\"&gt;link&lt;/A&gt;";
+?&gt;
+</PRE>
+
+<P>Note that PHP also has a strip_tags() function that will remove all 
+HTML tags from a string.  Using this function in a manner such as:
+
+<PRE>
+	echo strip_tags($Text);
+</PRE>
+
+will strip all HTML from the input.  However, if you use it in the form:
+
+<PRE>
+	echo strip_tags($Text, "&lt;B&gt;");
+</PRE>
+
+which only allows the "&lt;B&gt;" tag through, you are still often
+vulnerable to users inserting script code.  By design, this function
+does not strip attributes from the tags.  This means it is often
+possible to include things such as JavaScript event attributes.
+An example of a tag that would be allowed by the above strip_tags()
+call is:
+
+<PRE>
+	&lt;B onmouseover="document.location='http://www.cert.org/'"&gt;
+</PRE>
+
+<P>Some clients accept such attributes on tags that are otherwise benign.
+
+<H2>Apache Module Example:</H2>
+
+<PRE>
+char *Text = "foo&lt;b&gt;bar";
+char *URL = "foo&lt;b&gt;bar.html";
+ap_rvputs(r, ap_escape_html(r-&gt;pool, Text), "&lt;BR&gt;", NULL);
+ap_rvputs(r, "&lt;A HREF=\"", ap_escape_uri(r-&gt;pool, URL), "\"&gt;link&lt;/A&gt;", NULL);
+</PRE>
+
+<H2>mod_perl Example:</H2>
+
+<PRE>
+$Text = "foo&lt;b&gt;bar";
+$URL = "foo&lt;b&gt;bar.html";
+$r-&gt;print(Apache::Util::escape_html($Text), "&lt;BR&gt;");
+$r-&gt;print("&lt;A HREF=\"", Apache::Util::escape_uri($URL), "\"&gt;link&lt;/A&gt;");
+</PRE>
+
+<P>This uses the same functions as in the Apache Module Example, called
+from Perl instead of directly from C.
+
+<H2>Perl Example:</H2>
+
+<PRE>
+use CGI ();
+$Text = "foo&lt;b&gt;bar";
+$URL = "foo&lt;b&gt;bar.html";
+print CGI::escapeHTML($Text), "&lt;BR&gt;";
+print qq(&lt;A HREF="), CGI::escape($URL), qq("&gt;link&lt;/A&gt;);
+</PRE>
+
+<P>Note that if you use the CGI.pm module in its full intended role,
+instead of just using helper functions from it, it will automatically 
+encode special characters in many places.  Unfortunately, this is yet
+again likely not sufficient in all situations.  See the documentation at 
+<A HREF="http://stein.cshl.org/WWW/software/CGI/">
+http://stein.cshl.org/WWW/software/CGI/</A> for more details on what
+this module can do.
+
+</BODY>
+</HTML>

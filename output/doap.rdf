@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/p2.xsl"?>
+<rdf:RDF xmlns="http://usefulinc.com/ns/doap#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:asfext="http://projects.apache.org/ns/asfext#" xml:lang="en">
+  <Project rdf:about="http://httpd.apache.org/">
+    <name>Apache HTTP Server</name>
+    <homepage rdf:resource="http://httpd.apache.org/"/>
+    <programming-language>C</programming-language>
+    <category rdf:resource="http://projects.apache.org/category/network-server"/>
+    <category rdf:resource="http://projects.apache.org/category/http"/>
+    <category rdf:resource="http://projects.apache.org/category/httpd-module"/>
+    <license rdf:resource="http://usefulinc.com/doap/licenses/asl20"/>
+    <bug-database rdf:resource="http://httpd.apache.org/bug_report.html"/>
+    <download-page rdf:resource="http://httpd.apache.org/download.cgi"/>
+    <asfext:pmc rdf:resource="http://httpd.apache.org/"/>
+
+    <shortdesc xml:lang="en">
+      The Apache HTTP Server application 'httpd'.
+    </shortdesc>
+
+    <description xml:lang="en">
+      The Apache HTTP Server is an open-source HTTP server for modern
+      operating systems including UNIX, Microsoft Windows, Mac OS/X and Netware.
+      The goal of this project is to provide a secure, efficient and
+      extensible server that provides HTTP services observing the current
+      HTTP standards. Apache has been the most popular web server on the
+      Internet since April of 1996.
+    </description>
+
+    <repository>
+      <SVNRepository>
+        <browse rdf:resource="http://svn.apache.org/viewcvs.cgi/httpd/httpd/"/>
+        <location rdf:resource="http://svn.apache.org/repos/asf/httpd/httpd/"/>
+      </SVNRepository>
+    </repository>
+
+    <mailing-list rdf:resource="http://httpd.apache.org/lists.html"/>
+
+    <release>
+      <Version>
+        <name>Recommended current 2.4 release</name>
+        <created>2024-07-17</created>
+        <revision>2.4.62</revision>
+      </Version>
+    </release>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>Hypertext Transfer Protocol -- HTTP/1.1</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 2616</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc2616.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>HTTP Authentication: Basic and Digest Access Authentication</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 2617</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc2617.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>HTTP Extensions for Distributed Authoring -- WEBDAV</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 2518</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc2518.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>Versioning Extensions to WebDAV</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 3253</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc3253.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>Uniform Resource Identifier (URI): Generic Syntax</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 3986</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc3986.txt"/>
+    </asfext:Standard></asfext:implements>
+  </Project>
+</rdf:RDF>

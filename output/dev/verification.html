@@ -1,0 +1,247 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Verifying Apache HTTP Server Releases - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="verifying-apache-http-server-releases">Verifying Apache HTTP Server Releases<a class="headerlink" href="#verifying-apache-http-server-releases" title="Permalink">&para;</a></h1>
+<p>All official releases of code distributed by the Apache HTTP Server Project
+are signed by the release manager for the release. PGP signatures and SHA
+hashes are available along with the distribution.</p>
+<p>You should download the PGP signatures and SHA hashes directly from the
+Apache Software Foundation rather than our mirrors. This is to help ensure
+the integrity of the signature files. However, you are encouraged to
+download the releases from our mirrors. (Our download page points you at
+the mirrors for the release and the official site for the signatures, so
+this happens automatically for you.)</p>
+<h1 id="Checking">Checking Signatures<a class="headerlink" href="#Checking" title="Permalink">&para;</a></h1>
+<p>The following example details how signature interaction works. In this
+example, you are already assumed to have downloaded <code>httpd-2.4.18.tar.gz</code>
+(the release) and <code>httpd-2.4.18.tar.gz.asc</code> (the detached signature).</p>
+<p>This example uses <a href="http://www.gnupg.org/">The GNU Privacy Guard</a>. Any
+<a href="http://www.openpgp.org/">OpenPGP</a> -compliant program should work
+successfully.</p>
+<p>First, we will check the detached signature ( <code>httpd-2.4.18.tar.gz.asc</code> )
+against our release ( <code>httpd-2.4.18.tar.gz</code> ).</p>
+<pre><code>% gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
+gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
+gpg: Can't check signature: public key not found
+</code></pre>
+<p>We don't have the release manager's public key ( <code>791485A8</code> ) in our local
+system. You now need to retrieve the public key from a key server. One
+popular server is <code>pgpkeys.mit.edu</code> (which has a <a href="http://pgp.mit.edu/">web
+interface</a> ). The public key servers are linked
+together, so you should be able to connect to any key server. You can
+also obtain the keys of the httpd release managers at
+<a href="https://downloads.apache.org/httpd/KEYS">https://downloads.apache.org/httpd/KEYS</a>.</p>
+<pre><code>% gpg --keyserver pgpkeys.mit.edu --recv-key 791485A8
+gpg: requesting key 791485A8 from HKP keyserver pgpkeys.mit.edu
+gpg: trustdb created
+gpg: key 791485A8: public key "Jim Jagielski &lt;jim@apache.org&gt;" imported
+gpg: key 791485A8: public key "Jim Jagielski &lt;jim@apache.org&gt;" imported
+gpg: Total number processed: 2
+gpg:               imported: 2  (RSA: 2)
+</code></pre>
+<p>In this example, you have now received two public keys for entities known
+as 'Jim Jagielski &lt;<a href="mailto:jim@apache.org">jim@apache.org</a>&gt;' However, you have no way of
+verifying whether these keys were created by the person known as Jim
+Jagielski whose email address is claimed.  In fact, one of them is
+an imposter.  This doesn't mean that PGP is broken, just that you need to
+look at the full 40-character key fingerprint rather than the vulnerable
+8-character ID.</p>
+<p>Anyway, let's try to verify the release signature again:</p>
+<pre><code>% gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
+gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
+gpg: Good signature from "Jim Jagielski &lt;jim@apache.org&gt;"
+gpg:		     aka "Jim Jagielski &lt;jim@jimjag.com&gt;"
+gpg:             aka "Jim Jagielski &lt;jim@jaguNET.com&gt;"
+gpg:             aka "Jim Jagielski &lt;jimjag@gmail.com&gt;"
+gpg: checking the trustdb
+gpg: no ultimately trusted keys found
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:	      There is no indication that the signature belongs to the
+owner.
+Fingerprint: A93D 62EC C3C8 EA12 DB22  0EC9 34EA 76E6 7914 85A8
+</code></pre>
+<p>At this point, the signature is good, but we don't trust this key. A good
+signature means that the file has not been tampered. However, due to the
+nature of public key cryptography, you need to additionally verify that key
+A93D62ECC3C8EA12DB220EC934EA76E6791485A8 was created by the <strong>real</strong>
+Jim Jagielski.</p>
+<p>Any attacker can create a public key and upload it to the public key
+servers. They can then create a malicious release signed by this fake key.
+Then, if you tried to verify the signature of this corrupt release, it
+would succeed because the key was not the 'real' key. Therefore, you need
+to validate the authenticity of this key.</p>
+<h1 id="Validating">Validating Authenticity of a Key<a class="headerlink" href="#Validating" title="Permalink">&para;</a></h1>
+<p>The crucial step to validation is to confirm the key fingerprint of the
+public key.  We saw the fingerprint when we verified the download: it's
+A93D 62EC C3C8 EA12 DB22  0EC9 34EA 76E6 7914 85A8</p>
+<p>There are two ways to validate Jim's fingerprint.  The really secure way
+(described below) is using the PGP "Web of Trust", which will give
+you a cryptographically-strong chain of trust to Jim's key.
+However, if you are new to PGP, this takes some time and effort.
+A shortcut to a reasonable level of security is to check Jim's
+fingerprint (always using https, not http) against the database
+maintained by the Apache foundation of Apache developers' fingerprints
+at <a href="https://downloads.apache.org/httpd/KEYS">https://downloads.apache.org/httpd/KEYS</a>.
+Note that this shortcut fails catastrophically if the Apache website is
+ever compromised, or if an imposter breaks HTTPS security by obtaining
+a fake certificate and impersonates the site.  Be sure to keep an eye
+on the techie press for news stories of any such event!</p>
+<p>A good start to validating a key is by face-to-face communication with
+multiple government-issued photo identification confirmations. However,
+each person is free to have their own standards for determining the
+authenticity of a key. Some people are satisfied by reading the key
+signature over a telephone (voice verification). For more information on
+determining what level of trust works best for you, please read the GNU
+Privacy Handbook section on <a href="http://www.gnupg.org/gph/en/manual.html#AEN335">Validating other keys on your public
+keyring</a>.</p>
+<p>Most of the Apache HTTP Server developers have attempted to sign each
+others' keys (usually with face-to-face validation). Therefore, in order to
+enter the web of trust, you should only need to validate one person in our
+web of trust. (Hint: all of our developers' keys are in the KEYS file.)</p>
+<p>For example, the following people have signed the public key for Jim Jagielski.
+If you verify any key on this list, you will have a trust path to
+the 791485A8 key. If you verify a key that verifies one of the signatories
+for 791485A8, then you will have a trust path. (So on, and so on.)</p>
+<pre><code>% gpg --list-sigs 
+pub   4096R/791485A8 2010-11-04
+uid                  Jim Jagielski (Release Signing Key) &lt;jim@apache.org&gt;
+sig          88C3A5A5 2010-11-07  Philippe M. Chiasson (Home) &lt;gozer@ectoplasm.org&gt;
+sig          4E24517C 2011-11-10  Hyrum K. Wright (Personal) &lt;hyrum@hyrumwright.org&gt;
+sig          C4FC9A65 2011-11-10  Bernd Bohmann &lt;bommel@apache.org&gt;
+sig          1F27E622 2015-04-16  Konstantin I Boudnik (Cos) &lt;cos@boudnik.org&gt;
+sig          08C975E5 2010-11-04  Jim Jagielski &lt;jim@apache.org&gt;
+sig 2        F2EFD0F0 2011-11-14  Christopher David Schultz (Christopher David Schultz) &lt;chris@christopherschultz.net&gt;
+sig 3        311A3DE5 2010-11-10  Ruediger Pluem &lt;rpluem@apache.org&gt;
+sig          64A6A0BA 2013-02-27  Steven J. Hathaway (Apache PGP) &lt;shathaway@apache.org&gt;
+sig          00A1234F 2015-04-15  Andre Arcilla &lt;arcilla@apache.org&gt;
+sig          9A59B973 2015-04-21  Stefan Sperling &lt;stsp@stsp.name&gt;
+sig          F51BB88A 2010-11-04  Sander Temme &lt;sander@temme.net&gt;
+...more signatures redacted...
+</code></pre>
+<p>Since the developers are usually quite busy, you may not immediately find
+success in someone who is willing to meet face-to-face (they may not even
+respond to your emails because they are so busy!). If you do not have a
+developer nearby or have trouble locating a suitable person, please send an
+email to the address of the key you are attempting to verify. They may be
+able to find someone who will be willing to validate their key or arrange
+alternate mechanisms for validation.</p>
+<p>Once you have entered the web of trust, you should see the following upon
+verifying the signature of a release.</p>
+<pre><code>% gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
+gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
+gpg: Good signature from "Jim Jagielski (Release Signing Key) &lt;jim@apache.org&gt;"
+gpg:                 aka "Jim Jagielski &lt;jim@jimjag.com&gt;"
+gpg:                 aka "Jim Jagielski &lt;jim@jaguNET.com&gt;"
+gpg:                 aka "Jim Jagielski &lt;jimjag@gmail.com&gt;"
+</code></pre>
+<p>In order to check the integrity of the downloaded file, you need to download the source and the related SHA256
+hash. For example, assuming a preference for tar.bz, to verify the 2.4.34 release you should end up with two files on disk:</p>
+<ul>
+<li>httpd-2.4.34.tar.bz2 (source)</li>
+<li>httpd-2.4.34.tar.bz2.sha256 (SHA256 hash)</li>
+</ul>
+<p>On most Unix systems then it is only a matter of executing:</p>
+<pre><code>% shasum -a 256 -c httpd-2.4.34.tar.bz2.sha256
+httpd-2.4.34.tar.bz2: OK
+</code></pre>
+<p>Behind the scenes, the command checks that the SHA hash contained in httpd-2.4.34.tar.bz2.sha256 matches the one
+calculated for the file httpd-2.4.34.tar.bz2. The correct result should be a 'OK' displayed.</p>
+<p>Another way to calculate the SHA256 has for a file is to use openssl:</p>
+<pre><code>% openssl sha256 -r httpd-2.4.34.tar.bz2
+fa53c95631febb08a9de41fd2864cfff815cf62d9306723ab0d4b8d7aa1638f0 *httpd-2.4.34.tar.bz2
+</code></pre>
+<p>And then verify that the content of httpd-2.4.34.tar.bz2.sha256 matches the above result.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2024 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>

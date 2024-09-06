@@ -1,0 +1,227 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Apache Development Notes - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="apache-development-notes">Apache Development Notes<a class="headerlink" href="#apache-development-notes" title="Permalink">&para;</a></h1>
+<p>This page is intended to provide some basic background about development
+nits and the maintenance of the developer site.</p>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permalink">&para;</a></h1>
+<p>The Apache HTTP Server Project uses
+<a href="https://subversion.apache.org/">Subversion</a> for hosting its source code.</p>
+<p>To check out the 2.4.x branch:</p>
+<blockquote>
+<p><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4.x</code></p>
+</blockquote>
+<p>To check out the current development version (as of this writing, 2.5.x),
+use:</p>
+<blockquote>
+<p><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk</code></p>
+</blockquote>
+<p>Committers should check out via https instead of http (so that they can
+commit their changes). For more info about Subversion, please read <a href="https://www.apache.org/dev/version-control.html">the ASF
+version control FAQ</a>.</p>
+<p>The developers continue to seek to maintain module compatibility between
+2.4.1 and future 2.4 releases for administrators and end users.</p>
+<h1 id="maintaining-the-sources">Maintaining the Sources<a class="headerlink" href="#maintaining-the-sources" title="Permalink">&para;</a></h1>
+<p>Almost all files relating to Apache, both the actual sources and the files
+that aren't part of the distribution, are now maintained in an
+<a href="https://subversion.apache.org/">SVN</a> repository. Here is the way in which
+changes are applied:</p>
+<ol>
+<li>
+<p>Developer checks out a copy of the files on which they want to work (in
+this case, the trunk), into a private working directory
+called <samp>httpd-trunk</samp>:</p>
+<p><samp>% svn checkout <a href="https://svn.apache.org/repos/asf/httpd/httpd/trunk">https://svn.apache.org/repos/asf/httpd/httpd/trunk</a>
+httpd-trunk</samp></p>
+<p>This step only needs to be performed once (unless the private working
+directory is tainted or deleted). Committers should use a URL prefix
+of <samp>https</samp> on the checkout, to save themselves headaches later.</p>
+</li>
+<li>
+<p>Developer keeps their working directory synchronised with changes made to
+the repository:</p>
+<p><samp>% svn update httpd-trunk</samp></p>
+<p>This should probably be done daily or even more frequently during periods
+of high activity.</p>
+</li>
+<li>
+<p>Developer makes changes to their working copies, makes sure they work, and
+generates a patch so others can apply the changes to test them:</p>
+<p><samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
+/tmp/foo</samp></p>
+<p>The <samp>/tmp/foo</samp> file is mailed to the <a href="https://httpd.apache.org/lists.html#http-dev">developers
+list</a> so they can consider the
+value/validity of the patch. It is worth making sure your code follows the
+Apache style, as described in the <a href="styleguide.html">style guide</a>.</p>
+</li>
+<li>
+<p>Once other developers have agreed that the change is a Good Thing, the
+developer checks the changes into the repository:</p>
+<p><samp>% svn commit httpd-trunk/modules/http/mod_mime.c</samp></p>
+</li>
+</ol>
+<h1 id="svn-subtrees">SVN Subtrees<a class="headerlink" href="#svn-subtrees" title="Permalink">&para;</a></h1>
+<p>There are several different branches under the <samp>httpd</samp> subtree in
+the Apache SVN repository that pertain to the different releases. The top
+level can be perused with the <a href="https://svn.apache.org/viewcvs.cgi/">SVN
+ViewCVS</a> pages. The main subtrees
+pertaining to the <samp>httpd</samp> server source are:</p>
+<h2 id="httpd-24">httpd-2.4<a class="headerlink" href="#httpd-24" title="Permalink">&para;</a></h2>
+<p>To create a directory tree containing the 2.4 sources, and call
+it <samp>httpd-2.4</samp>, change your current directory to the <em>parent</em> of
+the tree and then check the 2.4 sources out as follows:</p>
+<pre><code>% cd /usr/local/apache
+% svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
+</code></pre>
+<h2 id="httpd-25">httpd-2.5<a class="headerlink" href="#httpd-25" title="Permalink">&para;</a></h2>
+<p>If you want to check out the bleeding edge of development, the httpd-2.5
+development tree (slated for a release 2.6), and call
+it <samp>httpd-trunk</samp>, checkout as follows:</p>
+<pre><code>% cd /usr/local/apache
+% svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+</code></pre>
+<h2 id="httpd-site">httpd-site<a class="headerlink" href="#httpd-site" title="Permalink">&para;</a></h2>
+<p>The website <strong>used</strong> to be hosted at <a href="https://svn.apache.org/repos/asf/httpd/site/">https://svn.apache.org/repos/asf/httpd/site/</a>.</p>
+<p>It is <strong>now</strong> hosted on GitHub at <a href="https://github.com/apache/httpd-site/">https://github.com/apache/httpd-site/</a>.</p>
+<p>The website pages use the Markdown syntax and when a change is commited in this repository,
+the corresponding HTML files are automatically generated and copied on <a href="https://httpd.apache.org/">https://httpd.apache.org/</a>.</p>
+<h2 id="httpd-dist">httpd-dist<a class="headerlink" href="#httpd-dist" title="Permalink">&para;</a></h2>
+<p>Like the <samp>httpd-site</samp> subtree, this one is used to maintain the
+files that comprise a website - in this
+case, <samp><a href="https://downloads.apache.org/httpd/">https://downloads.apache.org/httpd/</a></samp>. Also like the previous
+subtree, the directory on the server is a checked-out working copy of this
+subtree. However, since this is a distribution directory, we only have the
+surrounding documentation and control files checked into this subtree --
+the actual tarballs are simply copied to <a href="http://www.apache.org">www.apache.org</a>.</p>
+<p>The SVN URL
+is <samp><a href="https://svn.apache.org/repos/asf/httpd/httpd/dist">https://svn.apache.org/repos/asf/httpd/httpd/dist</a></samp>.</p>
+<p>Committers will generally deal with this subtree when "rolling" a release.
+This is a series of steps taken to create a complete new release of the
+Apache httpd software. Amongst other things, the key to this subtree is
+the <samp>tools/</samp> directory, which contains
+the <samp>release.sh</samp> shell script. More information on the policies
+and procedures relating to rolling releases can be found on the <a href="release.html">Release
+Guidelines</a> page.</p>
+<h1 id="setting-up-remote-svn">Setting Up Remote SVN<a class="headerlink" href="#setting-up-remote-svn" title="Permalink">&para;</a></h1>
+<p>A brief overview of getting started with SVN committer access can be found
+<a href="https://www.apache.org/dev/version-control.html#https-svn">here</a>. One key
+change to note is that SSH is not used anymore for committer access, due to
+the functional differences with SVN.</p>
+<h1 id="working-with-git-github">Working with git / GitHub<a class="headerlink" href="#working-with-git-github" title="Permalink">&para;</a></h1>
+<p>Our project is read-only mirrored by GitHub, and users contributors
+occasionally open pull requests there.  We cannot directly accept/close
+pull requests, but we can comment/review and then commit the patches. The
+commit message can contain the phrase "this closes #X" where X is the
+pull request number which will be prominent in the interface.</p>
+<ul>
+<li><a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a></li>
+<li><a href="https://github.com/apache/httpd/pulls">https://github.com/apache/httpd/pulls</a></li>
+</ul>
+<p>An example revision that closes a pull request is <a href="https://svn.apache.org/viewvc?view=revision&amp;revision=1780308">https://svn.apache.org/viewvc?view=revision&amp;revision=1780308</a></p>
+<h1 id="continuous-integration-ci">Continuous integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Permalink">&para;</a></h1>
+<p><a href="https://github.com/apache/httpd/actions">GitHub Actions</a> CI services are used.</p>
+<p>This service allows us to automatically build httpd on different processors, OS,
+with different gcc vesions, with different library versions and with different
+configurations.
+On successul built, our <a href="https://svn.apache.org/viewvc/httpd/test/framework/trunk/">Perl test framework</a>
+is also automatically executed.</p>
+<p>All this is executed for each commit.</p>
+<p>The goal is to spot early new build issues and regression.</p>
+<p>Should a committer want to commit something, without triggering the whole process
+(doc change or STATUS update for example), he can add the magic "[skip ci]"
+keyword as part of the commit message.</p>
+<p>Here are the <a href="https://github.com/apache/httpd/actions">latest built results</a>.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2024 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.</p>
+            </div>
+        </div>
+    </body>
+</html>
