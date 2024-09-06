@@ -1,0 +1,25 @@
+github:
+  features:
+    # Enable issue management
+    issues: true
+
+notifications:
+  commits: cvs@httpd.apache.org
+  issues: dev@httpd.apache.org
+  pullrequests: dev@httpd.apache.org
+
+pelican:
+  notify: dev@httpd.apache.org
+  autobuild: preview/*
+  target: asf-site
+  theme: theme/apache
+  whoami: main
+
+staging:
+  profile: ~
+  whoami: asf-site
+  autostage: preview/*
+  
+publish:
+  profile: ~
+  whoami: asf-site
