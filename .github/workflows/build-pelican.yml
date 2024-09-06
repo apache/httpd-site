@@ -17,5 +17,7 @@ jobs:
       - uses: apache/infrastructure-actions/pelican@main
         with:
           # This must be appropriate for the branch being built
-          destination: 'asf-site'
+          # destination: 'asf-site'
+          destination: 'preview/covener-test'
+          publish: true
           gfm: 'true'
