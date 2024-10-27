@@ -47,8 +47,3 @@ better utilize our mirrors. We hope that by making it easier to use our mirrors,
 Please ensure that you [verify](/download.cgi#verify) your downloads using
 PGP or MD5 signatures.
 
-# Want to contribute to the Apache HTTP Server?
-Awesome! Have a look at our current 'Help Wanted' listings then:
-
-<div style="width: 100%; margin-left: 0px; margin-right: 0px;" type="helpwanted" project="httpd"  description="the Apache HTTP Server Project"></div>
-<script src="https://helpwanted.apache.org/widget.js" type="text/javascript"></script>
