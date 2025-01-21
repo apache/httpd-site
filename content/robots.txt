@@ -1,3 +1,6 @@
-User-agent: *
+rastrear número de teléfono celular 
+con el número de celular 
+ubicación presisa
+en tiempo real User-agent: *
 Disallow: /websrc
 
