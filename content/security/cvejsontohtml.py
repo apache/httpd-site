@@ -43,7 +43,7 @@ for cve in cves:
     if data_version == DEFAULT_CVE_DATA_VERSION:  # Old style CVE
         cve["id"] = cve["CVE_data_meta"]["ID"]
         timearray = cve["timeline"]
-    elif data_version == "5.0":  # Newer style JSON
+    elif data_version.startswith("5"):  # Newer style JSON
         cve["id"] = cve["cveMetadata"]["cveId"]
         timearray = cve["containers"]["cna"]["timeline"]
     for time in timearray:
@@ -70,7 +70,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
         e = {}
         e['cveid'] = cve["id"]
         data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
-        if data_version == "5.0":
+        if data_version.startswith("5"):
             try:
                 e['impact'] = cve["containers"]["cna"]["metrics"][0]["other"]["content"]["text"]
                 e['title'] = cve["containers"]["cna"]["title"]
