@@ -40,7 +40,7 @@ releases of the 2.2.x flavor through June of 2017. The final release 2.2.34
 was published in July 2017, and no further evaluation of bug reports or
 security risks will be considered or published for 2.2.x releases.
 
-# Want to try out the Apache HTTP Server? 
+# Want to try out the Apache HTTP Server?
 Great! We have updated our [download page](/download.cgi) in an effort to
 better utilize our mirrors. We hope that by making it easier to use our mirrors, we will be able to provide a better download experience.
 
