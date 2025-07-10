@@ -46,6 +46,9 @@ for cve in cves:
     elif data_version.startswith("5"):  # Newer style JSON
         cve["id"] = cve["cveMetadata"]["cveId"]
         timearray = cve["containers"]["cna"]["timeline"]
+    else:
+        print(f"unknown data version {data_version} in cve {cve['_filename']}", file=sys.stderr)
+        sys.exit(1)
     for time in timearray:
         timed = time["value"]
         matcher = re_fixedin.match(timed);
