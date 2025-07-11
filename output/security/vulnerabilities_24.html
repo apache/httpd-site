@@ -99,6 +99,15 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <tr><td class="cve-header">Update 2.4.64 released</td><td class="cve-value">2025-07-10</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">2.4.0 through 2.4.63</td></tr>
 </table></dd>
+<dt><h3 id="CVE-2024-43204">low: <name name="CVE-2024-43204">Apache HTTP Server: SSRF with mod_headers setting Content-Type header</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2024-43204">CVE-2024-43204</a>)</h3></dt>
+<dd><p>SSRF in Apache HTTP Server with mod_proxy loaded allows an attacker to send outbound proxy requests to a URL controlled by the attacker.  Requires an unlikely configuration where mod_headers is configured to modify the Content-Type request or response header with a value provided in the HTTP request.</p><p></p><p>Users are recommended to upgrade to version 2.4.64 which fixes this issue.</p>
+<p>Acknowledgements: finder: xiaojunjie@安恒信息杭州市滨江区技能大师工作室</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2024-08-07</td></tr>
+<tr><td class="cve-header">2.4.x revision</td><td class="cve-value">2025-07-07</td></tr>
+<tr><td class="cve-header">Update 2.4.64 released</td><td class="cve-value">2025-07-10</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.0 through 2.4.63</td></tr>
+</table></dd>
 <dt><h3 id="CVE-2024-43394">moderate: <name name="CVE-2024-43394">Apache HTTP Server: SSRF on Windows due to UNC paths</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2024-43394">CVE-2024-43394</a>)</h3></dt>
 <dd><p>Server-Side Request Forgery (SSRF) in Apache HTTP Server on Windows allows to potentially leak NTLM hashes to a malicious server via </p><p>mod_rewrite or apache expressions that pass unvalidated request input.</p><p></p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.63.</p><p></p><p>Note:  The Apache HTTP Server Project will be setting a higher bar for accepting vulnerability reports regarding SSRF via UNC paths. </p><p></p><p>The server offers limited protection against administrators directing the server to open UNC paths.</p><p>Windows servers should limit the hosts they will connect over via SMB based on the nature of NTLM authentication.</p>

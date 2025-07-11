@@ -32534,6 +32534,11 @@
                         "lang": "en",
                         "time": "2025-07-07T00:00:00.000Z",
                         "value": "2.4.x revision"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2025-07-10",
+                        "value": "2.4.64 released"
                     }
                 ],
                 "title": "Apache HTTP Server: SSRF with mod_headers setting Content-Type header",
