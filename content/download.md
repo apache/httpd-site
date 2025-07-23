@@ -19,16 +19,16 @@ Apache httpd for Microsoft Windows is available from
 
 Stable Release - Latest Version:
 
--  [2.4.64](#apache24) (released 2025-07-10)
+-  [2.4.65](#apache24) (released 2025-07-23)
 
 If you are downloading the Win32 distribution, please read these [important
 notes]([preferred]httpd/binaries/win32/README.html).
 
-# Apache HTTP Server 2.4.64 (httpd): 2.4.64 is the latest available version <span>2025-07-10</span>  {#apache24}
+# Apache HTTP Server 2.4.65 (httpd): 2.4.65 is the latest available version <span>2025-07-23</span>  {#apache24}
 
 The Apache HTTP Server Project is pleased to
 [announce](//downloads.apache.org/httpd/Announcement2.4.txt) the
-release of version 2.4.64 of the Apache HTTP Server ("Apache" and "httpd").
+release of version 2.4.65 of the Apache HTTP Server ("Apache" and "httpd").
 This version of Apache is our latest GA release of the new generation 2.4.x
 branch of Apache HTTPD and represents fifteen years of innovation by the
 project, and is recommended over all previous releases!
@@ -36,17 +36,17 @@ project, and is recommended over all previous releases!
 For details, see the [Official
 Announcement](//downloads.apache.org/httpd/Announcement2.4.html) and
 the [CHANGES_2.4]([preferred]httpd/CHANGES_2.4) and
-[CHANGES_2.4.64]([preferred]httpd/CHANGES_2.4.64) lists.
+[CHANGES_2.4.65]([preferred]httpd/CHANGES_2.4.65) lists.
 
-- Source: [httpd-2.4.64.tar.bz2]([preferred]httpd/httpd-2.4.64.tar.bz2)
-[ [PGP](https://downloads.apache.org/httpd/httpd-2.4.64.tar.bz2.asc) ] [
-[SHA256](https://downloads.apache.org/httpd/httpd-2.4.64.tar.bz2.sha256) ] [
-[SHA512](https://downloads.apache.org/httpd/httpd-2.4.64.tar.bz2.sha512) ]
+- Source: [httpd-2.4.65.tar.bz2]([preferred]httpd/httpd-2.4.65.tar.bz2)
+[ [PGP](https://downloads.apache.org/httpd/httpd-2.4.65.tar.bz2.asc) ] [
+[SHA256](https://downloads.apache.org/httpd/httpd-2.4.65.tar.bz2.sha256) ] [
+[SHA512](https://downloads.apache.org/httpd/httpd-2.4.65.tar.bz2.sha512) ]
 
-- Source: [httpd-2.4.64.tar.gz]([preferred]httpd/httpd-2.4.64.tar.gz) [
-[PGP](https://downloads.apache.org/httpd/httpd-2.4.64.tar.gz.asc) ] [
-[SHA256](https://downloads.apache.org/httpd/httpd-2.4.64.tar.gz.sha256) ] [
-[SHA512](https://downloads.apache.org/httpd/httpd-2.4.64.tar.gz.sha512) ]
+- Source: [httpd-2.4.65.tar.gz]([preferred]httpd/httpd-2.4.65.tar.gz) [
+[PGP](https://downloads.apache.org/httpd/httpd-2.4.65.tar.gz.asc) ] [
+[SHA256](https://downloads.apache.org/httpd/httpd-2.4.65.tar.gz.sha256) ] [
+[SHA512](https://downloads.apache.org/httpd/httpd-2.4.65.tar.gz.sha512) ]
 
 -  [Security and official patches]([preferred]httpd/patches/) 
 
