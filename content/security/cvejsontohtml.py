@@ -90,13 +90,16 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             productname = product['product']
             for ver in product["versions"]:
                 base = ""
+                appended = False
                 if ver.get("version", "0") != "0":
                     base = ver["version"]
                 if "lessThanOrEqual" in ver:
                     affects.append(f"{base} through {ver['lessThanOrEqual']}")
+                    appended = True
                 if "lessThan" in ver:
                     affects.append(f"{base} before {ver['lessThan']}")
-                if not "versionType" in ver:
+                    appended = True
+                if not appended and base != "":
                     affects.append(base)
             # Make a natural order sort
             affects.sort(reverse=True, key=natural_sort_key)
