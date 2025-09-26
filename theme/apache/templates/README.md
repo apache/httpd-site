@@ -33,6 +33,6 @@ SITEURL = 'https://<pmc>.apache.org'
 SITELOGO = 'https://<pmc>.apache.org/images/logo.png'
 SITEDESC = u'<pmc desc>'
 SITEREPOSITORY = 'https://github.com/apache/<pmc-site>/blob/<branch>/content/'
-TRADEMARKS = u'Apache, the Apache feather logo, and <pmc> are trademarks or registered trademarks'
+TRADEMARKS = u'Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.'
 CURRENTYEAR = date.today().year
 ~~~
