@@ -92,6 +92,48 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please note that if a vulnerability is shown below as being fixed in a "-dev" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
+<h1 id="2.4.66">Fixed in Apache HTTP Server 2.4.66</h1><dl>
+<dt><h3 id="CVE-2025-55753">low: <name name="CVE-2025-55753">Apache HTTP Server: mod_md (ACME), unintended retry intervals</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2025-55753">CVE-2025-55753</a>)</h3></dt>
+<dd><p>An integer overflow in the case of failed ACME certificate renewal leads, after a number of failures (~30 days in default configurations), to the backoff timer becoming 0. Attempts to renew the certificate then are repeated without delays until it succeeds.</p><p></p><p>This issue affects Apache HTTP Server: from 2.4.30 before 2.4.66.</p><p></p><p></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+<p>Acknowledgements: finder: Aisle Research</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2025-08-15</td></tr>
+<tr><td class="cve-header">Update 2.4.66 released</td><td class="cve-value">2025-12-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.30 before 2.4.66</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2025-58098">low: <name name="CVE-2025-58098">Apache HTTP Server: Server Side Includes adds query string to #exec cmd=...</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2025-58098">CVE-2025-58098</a>)</h3></dt>
+<dd><p>Apache HTTP Server 2.4.65 and earlier with Server Side Includes (SSI) enabled and mod_cgid (but not mod_cgi) passes the shell-escaped query string to #exec cmd="..." directives.</p><p></p><p>This issue affects Apache HTTP Server before 2.4.66.</p><p></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+<p>Acknowledgements: finder: Anthony Parfenov (United Rentals, Inc.)</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2025-08-21</td></tr>
+<tr><td class="cve-header">Update 2.4.66 released</td><td class="cve-value">2025-12-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value"> before 2.4.66</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2025-59775">moderate: <name name="CVE-2025-59775">Apache HTTP Server: NTLM Leakage on Windows through UNC SSRF</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2025-59775">CVE-2025-59775</a>)</h3></dt>
+<dd><p>Server-Side Request Forgery (SSRF) vulnerability </p><p></p><p>&nbsp;in Apache HTTP Server on Windows </p><p></p><p>with AllowEncodedSlashes On&nbsp;and MergeSlashes Off&nbsp; allows to potentially leak NTLM </p><p>hashes to a malicious server via SSRF and malicious requests or content</p><p></p><p>Users are recommended to upgrade to version 2.4.66, which fixes the issue.</p>
+<p>Acknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2025-09-10</td></tr>
+<tr><td class="cve-header">Update 2.4.66 released</td><td class="cve-value">2025-12-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value"> through 2.4.65</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2025-65082">low: <name name="CVE-2025-65082">Apache HTTP Server: CGI environment variable override</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2025-65082">CVE-2025-65082</a>)</h3></dt>
+<dd><p>Improper Neutralization of Escape, Meta, or Control Sequences vulnerability in Apache HTTP Server through environment variables set via the Apache configuration unexpectedly superseding variables calculated by the server for CGI programs.</p><p></p><p>This issue affects Apache HTTP Server from 2.4.0 through 2.4.65.</p><p></p><p>Users are recommended to upgrade to version 2.4.66 which fixes the issue.</p>
+<p>Acknowledgements: finder: Mattias &Aring;sander (Ume&aring; University)</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2025-11-14</td></tr>
+<tr><td class="cve-header">Update 2.4.66 released</td><td class="cve-value">2025-12-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.0 through 2.4.65</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2025-66200">moderate: <name name="CVE-2025-66200">Apache HTTP Server: mod_userdir+suexec bypass via AllowOverride FileInfo</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2025-66200">CVE-2025-66200</a>)</h3></dt>
+<dd><p>mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.</p><p></p><p>This issue affects Apache HTTP Server: from 2.4.7 through 2..4.65.</p><p></p><p>Users are recommended to upgrade to version 2.4.65, which fixes the issue.</p>
+<p>Acknowledgements: finder: Mattias &Aring;sander (Ume&aring; University)</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2025-11-19</td></tr>
+<tr><td class="cve-header">Update 2.4.66 released</td><td class="cve-value">2025-12-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.7 through 2..4.65</td></tr>
+</table></dd>
+</dl>
 <h1 id="2.4.65">Fixed in Apache HTTP Server 2.4.65</h1><dl>
 <dt><h3 id="CVE-2025-54090">moderate: <name name="CVE-2025-54090">Apache HTTP Server: 'RewriteCond expr' always evaluates to true in 2.4.64</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2025-54090">CVE-2025-54090</a>)</h3></dt>
