@@ -1,3 +1,4 @@
+Ignoring due to error parsing: CVE-2025-66200.json
 [
     {
         "data_type": "CVE",
@@ -39480,97 +39481,6 @@
                 ]
             }
         }
-    },
-    {
-        "containers": {
-            "cna": {
-                "affected": [
-                    {
-                        "defaultStatus": "unaffected",
-                        "product": "Apache HTTP Server",
-                        "vendor": "Apache Software Foundation",
-                        "versions": [
-                            {
-                                "lessThanOrEqual": "2..4.65",
-                                "status": "affected",
-                                "version": "2.4.7",
-                                "versionType": "semver"
-                            }
-                        ]
-                    }
-                ],
-                "credits": [
-                    {
-                        "lang": "en",
-                        "type": "finder",
-                        "value": "Mattias \u00c5sander (Ume\u00e5 University)"
-                    }
-                ],
-                "descriptions": [
-                    {
-                        "lang": "en",
-                        "supportingMedia": [
-                            {
-                                "base64": false,
-                                "type": "text/html",
-                                "value": "<p>mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.</p><p>This issue affects Apache HTTP Server: from 2.4.7 through 2..4.65.</p><p>Users are recommended to upgrade to version 2.4.65, which fixes the issue.</p>"
-                            }
-                        ],
-                        "value": "mod_userdir+suexec bypass via AllowOverride FileInfo vulnerability in Apache HTTP Server. Users with access to use the RequestHeader directive in htaccess can cause some CGI scripts to run under an unexpected userid.\n\nThis issue affects Apache HTTP Server: from 2.4.7 through 2..4.65.\n\nUsers are recommended to upgrade to version 2.4.65, which fixes the issue."
-                    }
-                ],
-                "metrics": [
-                    {
-                        "other": {
-                            "content": {
-                                "text": "moderate"
-                            },
-                            "type": "Textual description of severity"
-                        }
-                    }
-                ],
-                "problemTypes": [
-                    {
-                        "descriptions": [
-                            {
-                                "description": "mod_userdir+suexec bypass via AllowOverride FileInfo",
-                                "lang": "en"
-                            }
-                        ]
-                    }
-                ],
-                "providerMetadata": {
-                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
-                },
-                "source": {
-                    "discovery": "UNKNOWN"
-                },
-                "timeline": [
-                    {
-                        "lang": "en",
-                        "time": "2025-11-19T12:00:00.000Z",
-                        "value": "reported"
-                    },
-                    {
-                        "lang": "eng",
-                        "time": "2025-12-04",
-                        "value": "2.4.66 released"
-                    }
-                ],
-                "title": "Apache HTTP Server: mod_userdir+suexec bypass via AllowOverride FileInfo",
-                "x_generator": {
-                    "engine": "Vulnogram 0.2.0"
-                }
-            }
-        },
-        "cveMetadata": {
-            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
-            "cveId": "CVE-2025-66200",
-            "serial": 1,
-            "state": "PUBLISHED"
-        },
-        "dataType": "CVE_RECORD",
-        "dataVersion": "5.1"
     },
     {
         "cveMetadata": {
