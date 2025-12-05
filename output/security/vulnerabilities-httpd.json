@@ -19745,7 +19745,7 @@
                     {
                         "other": {
                             "content": {
-                                "text": "low"
+                                "text": "moderate"
                             },
                             "type": "Textual description of severity"
                         }
@@ -19755,8 +19755,8 @@
                     {
                         "descriptions": [
                             {
-                                "cweId": "CWE-235",
-                                "description": "CWE-235 Improper Handling of Extra Parameters",
+                                "cweId": "CWE-201",
+                                "description": "CWE-201 Insertion of Sensitive Information Into Sent Data",
                                 "lang": "en",
                                 "type": "CWE"
                             }
