@@ -1,0 +1,92 @@
+For Release: January 5th, 1998
+
+Contact:
+Jim Jagielski
+The Apache Group
+c/o jaguNET Access Services
++1 410 931 3157
+
+Mike Prettejohn
+Netcraft, Ltd.
++44 1225 447500
+
+Sameer Parekh
+C2Net Software, Inc.
++1 510 986 8770
+
+            APACHE WEBSERVER SERVES OVER HALF THE INTERNET
+
+The Apache Web Server, from the Apache Group (http://www.apache.org/),
+now serves over half the domains on the Internet, according to the
+latest Netcraft Web Server Survey (http://www.netcraft.com/). According
+to the January 1998 survey, the Apache server and its derivatives
+serve 50.24% of the 1,834,710 sites found by Netcraft.
+
+From its humble beginnings in early 1995 as a set of patches to the
+original NCSA Web Server, the Apache Web Server has steadily grown in
+popularity as well as power and capability. The Apache server was one
+of the first Web servers to implement the HTTP/1.1 protocol, for
+example. The Apache server has become established as the dominant Web
+server, far outpacing commercial offerings from the giants Microsoft
+and Netscape.
+
+The key to the success of the Apache Web server is its dedicated
+development team. A core group of developers, known as the Apache
+Group, constantly update, fix, and improve the server in order to
+create the best server available. 
+
+Another key to the Apache server's impressive popularity is that it is
+freely available via the Internet. Webmasters can quickly and easily
+download the entire source code for the server to compile it
+themselves, or they can download various precompiled and "ready to
+run" versions.  Since the source code is freely available, it is easy
+for webmasters to greatly enhance the Apache Web server's capability,
+either by adding numerous "modules" which extend the server's
+functions or by editing the actual server code to suit their needs.
+
+"It really is a labour of love," said Jim Jagielski, member of the
+Apache Group. "Every one of us in the Group are committed to making
+Apache the best it can be. We are all experienced Net citizens
+and therefore have a real feel for what's needed. We also listen
+very intently to what is needed and desired by the Net community, so
+we can implement those features into Apache. And since we don't have
+the huge inertia of a commercial company to worry about, we can do it
+quicker and better than anyone else."
+
+"One of the strengths of the Apache project is that many of the core
+team and key contributors are themeselves running high profile sites,
+and so know what is required from first hand experience," said Mike
+Prettejohn, Director of Netcraft, "in particular, the support for
+virtual domains, and the server's overall stability and resilience has
+made Apache the de facto choice for ISPs and hosting companies
+throughout the world."
+
+"Apache is the ideal platform for building mission-critical web-based
+applications," said Sameer Parekh, President of C2Net Software, Inc.,
+whose Stronghold Web Server is the most widely used commercial
+Apache-based server. "Apache confuses most industry analysts because
+they have forgotten that mission-critical Internet services, from web
+services to domain name services to electronic mail, have been running
+on free software since Day One."
+
+The latest version of the Apache Web server is 1.2.4, which runs on
+most UNIX platforms. The next release of the Apache server, version 1.3,
+currently in beta test, will run on both UNIX and Microsoft Windows NT.
+
+Netcraft (http://www.netcraft.com/) is an networking consultancy based
+in Bath, England and is well known worldwide for its Web Server
+Survey, which is widely considered a primary empirical metric for the
+number of web sites and the relative popularity of web server software
+on the internet.
+
+C2Net Software, Inc. (http://www.c2.net/) is a leading provider of
+uncompromised network security software. Through its international
+offshore development programs, all C2Net products are exempt from
+U.S. government export restrictions, allowing the company to offer
+uncrippled, strong cryptography solutions to customers worldwide.
+
+The Apache Group is a group of individuals who are committed to
+developing the best web server in the world and making it freely
+available.
+
+                                 ###

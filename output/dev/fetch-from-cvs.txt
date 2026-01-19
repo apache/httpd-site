@@ -1,0 +1,42 @@
+#!/usr/bin/perl -w
+#
+# Simple script to fetch the latest tarball in from-cvs/ and unpack it
+# in $dir.
+#
+# Script by Doug MacEachern <dougm@telebusiness.co.nz>
+# minor fix by Magnus Bodin <magnus@bodin.org>
+
+use strict;
+use URI::URL ();
+use HTML::LinkExtor ();
+use LWP::Simple;
+use File::Path;
+
+my $ver = '1.3';
+my $dir = shift || "/tmp/apache_$ver-dev";
+my $cvs = "http://cvs.apache.org/snapshots/apache-$ver/";
+my $filptn = "apache-$ver\_"; 
+
+rmtree $dir;
+mkpath $dir, 0755;
+
+chdir $dir;
+
+my $p = HTML::LinkExtor->new(\&cb, $cvs);
+my $cnt;
+
+sub cb {
+    my($tag, %links) = @_;
+    return unless exists $links{href} and $links{href} =~ /$fileptn/;
+    return unless ++$cnt == 4;
+
+    my $file = URI::URL->new($links{href})->rel($cvs);
+    warn "mirror $links{href} => $file\n";
+
+    mirror $links{href} => $file;
+    system "gunzip < $file | tar -xvf -";
+    unlink $file;
+}
+
+$p->parse(get $cvs);
+

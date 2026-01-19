@@ -1,0 +1,400 @@
+<HTML>
+<HEAD>
+<TITLE>Apache voting rules and guidelines</TITLE>
+</HEAD>
+<!-- Background white, links blue (unvisited), navy (visited), red (active) -->
+ <BODY
+  BGCOLOR="#FFFFFF"
+  TEXT="#000000"
+  LINK="#0000FF"
+  VLINK="#000080"
+  ALINK="#FF0000"
+ >
+
+<H1>This document is now obsolete.  Please refer to <A
+HREF="guidelines.html">the Apache Project guidelines</A> for
+up-to-date info.</H1>
+
+
+<H1 ALIGN=CENTER>
+ <IMG SRC="images/apache_logo.gif" ALT=""><BR>
+ Apache voting rules and guidelines
+</H1>
+
+<P>
+This document defines the rules and guidelines for Apache Group members
+to follow when voting on patches, documentation, or other action items
+to be applied to the Apache HTTP Server.
+</P>
+
+<P>
+The objective here is to avoid unnecessary conflict over changes and
+continue to produce a quality system in a timely manner.  Not all conflict
+can be avoided, but at least we can agree on the procedures for conflict
+to be resolved.
+</P>
+
+<P>
+Some abbreviations used below...
+</P>
+<DL>
+  <DT><STRONG>mailing list</STRONG></DT>
+  <DD>The Apache developers' mailing list.
+      Subscription to the list is by invitation only, and only subscribers
+      can post directly to the list.</DD>
+  <DT><STRONG>CURRENT</STRONG></DT>
+  <DD>The most recent version of the source. Used as
+      the base code into which new patches are to be merged.</DD>
+    
+  <DT><STRONG>C_VERSION</STRONG></DT>
+  <DD>The version number of <STRONG>CURRENT</STRONG>.</DD>
+  
+  <DT><STRONG>NEXT</STRONG></DT>
+  <DD>The next version of the source. The product of
+      applying approved patches to <STRONG>CURRENT</STRONG></DD>
+  
+</DL>
+
+<HR SIZE=6>
+<H2><IMG SRC="images/apache_feather_bullet.gif" ALT="o ">
+Issues and Action Items</H2>
+
+Many issues will be encountered by the project, each resulting in zero
+or more proposed action items.  All action items may be voted on, but not all
+of them will require a formal vote.  Issues should be raised on the
+mailing list as soon as they are identified.  Action items
+<STRONG>must</STRONG> be raised on the mailing list.
+
+
+<H3>Types of Action Items</H3>
+
+<DL>
+  <DT><STRONG>Code Changes</STRONG></DT>
+  <DD>Code changes require peer review and testing over a wide range
+      of server platforms.  Therefore, all code changes must pass through
+      a formal "patch vote", as described <A HREF="#patchvote">below</A>.
+      All those participating in a patch vote must be willing and able
+      to test the patched system.</DD>
+
+  <DT><STRONG>Documentation Changes</STRONG></DT>
+  <DD>Documentation changes are only voted on after (or during) the change.
+      The author of the changes must notify the mailing list, preferably
+      in advance of the work to avoid duplicate efforts, of where the
+      changes are being made.  If the changes are to existing documents,
+      the existing documents should not be replaced until at least
+      24 hours after notifying the list.  Any group member may veto a
+      change, but must then provide real assistance to the author
+      in correcting the problem if it can be corrected, and must rescind
+      the veto once the problem has been corrected (this may be assumed
+      in good faith).</DD>
+
+  <DT><STRONG>Long Term Plans</STRONG></DT>
+  <DD>Long term plans are simply announcements that group members
+      are working on particular issues related to the Apache software.
+      These are not voted on,
+      but group members who do not agree with a particular plan,
+      or think an alternate plan would be better, are obligated to
+      inform the group of their feelings.  In general, it is always
+      better to hear about alternate plans <STRONG>prior</STRONG> to
+      spending time on less adequate solutions.
+</DL>
+
+<H2><IMG SRC="images/apache_feather_bullet.gif" ALT="o ">
+Casting Votes</H2>
+<P>
+Anyone on the mailing list may vote on any issue.  However, the act
+of voting carries certain obligations -- voting members are not only
+stating their opinion, they are agreeing to help do the work of the
+Apache Project.</P>
+
+<P>Each vote can be made in one of three flavors:
+
+<DL COMPACT>
+  <DT><STRONG>+1</STRONG></DT>
+  <DD> Yes, agree, or the action should be performed.  On some issues, this
+       vote must only be given after the voter has tested the action on
+       their own system(s).
+  </DD><P>
+  <DT><STRONG>&#177;0</STRONG></DT>
+  <DD> Abstain, no opinion, or I am happy to let the other group members
+       decide this issue.  An abstention may have detrimental affects if
+       too many people abstain.
+  </DD><P>
+  <DT><STRONG>-1</STRONG></DT>
+  <DD> No, I <STRONG>veto</STRONG> this action.  All vetos must include
+       an explanation of why the veto is appropriate.  A veto with
+       no explanation is void.
+  </DD>
+</DL>
+
+<P>All votes must be sent to the mailing list.
+
+
+<H2><IMG SRC="images/apache_feather_bullet.gif" ALT="o ">
+<A NAME="patchvote">Formal Patch Votes</A></H2>
+<P>
+As mentioned above, changes to the source code require peer review
+and adequate testing across many platforms.  The formal patch vote
+rules are intended to ensure that this happens even when we are all in a
+hurry to see things fixed.  However, also see the section on
+<A
+ HREF="#lazy-voting"
+>lazy voting</A>
+mode.
+</P>
+<P>There are four distinct roles in the patch vote process, each of which
+may be shared by multiple group members: patch provider, vote coordinator,
+voter, and version builder. 
+
+<P>Patch providers include anyone that has an action item to propose.
+Unless it is infeasible to do so, source code changes must be proposed in
+the form of input to the patch command.  Feasibility is defined by each
+voter and the version builder(s), who may veto an action item if the
+action requires effort beyond what they are expected to perform.
+
+<H3>Uploading an Action Item</H3>
+
+<P>Action items (usually patches) are uploaded to hyperreal (apache.org)
+via FTP, either directly into the directory for patches to <STRONG>CURRENT</STRONG> 
+(/httpd/patches/for_Apache_<STRONG>C_VERSION</STRONG>/), or into an incoming
+FTP directory for later transfer into the patch directory.<P>
+   
+<P>Each filename should at least hint at the action objective and
+include reference to:
+  <OL>
+    <LI>(C_VERSION) the version number of <STRONG>CURRENT</STRONG></LI>
+    <LI>(ID) the unique action item numeric ID</LI>
+    <LI>(p) the patch letter, if an alternate patchfile is proposed</LI>
+  </OL>
+
+<P>The syntax for filenames not containing patches is:
+<PRE>    ID.description</PRE>
+e.g.,<BR>
+<PRE>    01.Modula3_rewrite</PRE>
+if the action item is not (yet) in the form of a patch.
+
+<P>The syntax for filenames containing patches is:
+<PRE>    IDp.description.<STRONG>C_VERSION</STRONG>.patch</PRE>
+e.g., <BR>
+<PRE>    01.ScriptAliasKaboom.0.8.11.patch
+    01a.ScriptAliasKaboom.0.8.11.patch
+    01b.ScriptAliasKaboom.0.8.11.patch</PRE>
+
+<P>The ID number should start at 01, and be incremented for each new
+action item uploaded.</P>
+
+<H3>Action Item Format</H3>
+
+<P>An action item should contain a list of header information
+(formatted like e-mail or HTTP headers):
+
+  <DL>
+    <DT><STRONG>From:</STRONG></DT>
+    <DD>A list of patch authors and/or people who identified the problem.
+    <DT><STRONG>Subject:</STRONG></DT>
+    <DD>A description of the problem being addressed.
+    <DT><STRONG>Requires:</STRONG></DT>
+    <DD>A list of other patches that must be applied before this one.
+    <DT><STRONG>Affects:</STRONG></DT>
+    <DD>A list of source file names that this patch affects
+    <DT><STRONG>Changelog:</STRONG></DT>
+    <DD>A couple of lines for use in a future changelog, so that the
+        patch (if accepted) can be recorded.
+    <DT><STRONG>Comments:</STRONG></DT>
+    <DD>Any additional comments about the problem.
+  </DL>
+
+followed by an empty line and then the patch (if any).
+
+<H3>Patch Format</H3>
+
+<P>The patch should be created by using <CODE>diff -u</CODE> on the
+<STRONG>CURRENT</STRONG> source and the modified source. E.g.,</P>
+
+<PRE>    diff -u http_main.c.orig http_main.c</PRE>
+       
+<P>All patches necessary to address an action item must be concatenated
+within a single patchfile.  The source files affected by the patchfile
+should be listed in an Affects header.</P>
+
+<P>The completed patchfile should produce no errors or prompts when the
+command,</P>
+<PRE>    patch -s &lt; patchfile</PRE>
+is issued.
+
+<P>If the patch produces errors or prompts, then it may be rejected by
+others. Problems with patches should be reported to the mailing list
+as soon as they are noticed.  Dependencies between patches must be
+noted with a Requires line in the patchfile headers.</P>
+     
+<H3>Alternate Patches</H3>
+   
+<P>Once uploaded, changes to the contents of a patchfile are limited
+to the header information (i.e., everything other than the patch itself).
+For example, the Changelog entry can be changed, but not the output
+of the <CODE>diff</CODE> command(s).
+
+<P>Should the patch itself need changing, a new patchfile should be created
+with a new patchletter after the ID. Anyone can upload a patch to address
+a single problem, so alternative patches can be offered for the same problem.
+The author of the patch is the only person allowed to (or give permission to)
+have an existing patch removed. Removal of a patch means removal of the
+patchfile.</P>
+
+<P>Each patchfile is voted on independently.  New alternate patches must
+garner their own votes -- they do not automatically inherit the votes
+for patches they replace.</P>
+
+<P>Patches for <STRONG>CURRENT</STRONG> can be uploaded at any time before or
+during a voting session.</P>
+
+<H3>The Voting Session</H3>
+
+<P>A voting session can be initiated by anyone so long as a volunteer
+or volunteers can be found to:
+  <UL>
+    <LI>be the vote coordinator: collect the votes cast by group members</LI>
+    <LI>be the version builder: apply approved patches to create the
+	<STRONG>NEXT</STRONG> version of the system.</LI>
+  </UL>
+
+<P>The person or persons volunteering to perform these tasks agree
+on a timetable and announce it on the mailing list.  The important
+part of the timetable is the vote deadline, which specifies when
+the votes will be tallied and the new version can be built.
+Unless it is an <A HREF="#emergency">emergency</A>, the initial
+deadline should be at least three days after the announcement.</P>
+
+<P>The vote deadline can be moved if, using the same voting rules
+as for patches, there are enough votes and no vetos. The current deadline
+cannot be voted on.</P>
+
+<P>Group members can vote and comment on the patches under consideration
+as often as they want. The final vote (if votes are changed) of a person
+is assumed to invalidate previous votes.</P>
+
+<P>Votes are cast as follows;
+
+  <DL COMPACT>
+    <DT><STRONG>+1</STRONG></DT>
+    <DD> can be given to a patch if the person has,
+      <OL>
+        <LI>read the patch header to see what problem it addresses</LI>
+        <LI>successfully patched it into <STRONG>CURRENT</STRONG></LI>
+        <LI>observed no bad side-effects resulting from the patch.</LI>
+      </OL>
+    </DD><P>
+    <DT><STRONG>-1</STRONG></DT>
+    <DD> is a veto on the patch. All vetos must come
+         with an explanation of why the veto is appropriate. A veto with
+         no explanation is void.
+    </DD>
+  </DL>
+    
+<P>No veto can be overruled. If you disagree with the veto, you
+should lobby the person who cast the veto. Voters intending to veto
+a patch should make their opinions known to the group immediately,
+so that the problem can be remedied prior to the vote deadline, if
+possible.</P>
+
+<H3>Vote Collection</H3>
+
+<P>Votes are tallied by the vote coordinator as soon as the final
+vote deadline has passed.  The results of the vote are then posted
+to the mailing list.</P>
+
+<P><STRONG>In order to be approved, an action item file must receive
+at least 3 positive votes and NO vetos.</STRONG></P>
+
+<P>Late <STRONG>+1</STRONG> votes can be ignored or accepted by the vote coordinator
+at his/her discretion. A late veto has no value: It can only be used
+to try to convince positive voters to rethink. If a positive voter changes
+to a veto, that veto is valid even though it is late.</P>
+
+<H3>Release Build and Announcement</H3>
+
+<P>After the vote coordinator gives the version builder the results,
+<STRONG>NEXT</STRONG> is created by applying the approved patches
+to <STRONG>CURRENT</STRONG>, making the changes called for by other approved 
+(non-patch) action items, adding the approved action item descriptions
+to the changelog, and incrementing the version number.</P>
+
+<P><STRONG>NEXT</STRONG> is then uploaded by the version builder to hyperreal
+and placed in the pre-release directory (/httpd/dist) in compressed
+and gzip'd tar files that name the new version number.  The availability
+of the new version is then announced on the private mailing list.</P>
+
+<P>After the version announcement, accidental mistakes made by the builder
+can be rectified without a vote, but must be announced to the group.</P>
+
+<P>Unless stated otherwise at the start of the vote session, <STRONG>NEXT</STRONG>
+is assumed to be intended for public release.  If an objection to the
+public release is put forward, a majority decision vote will determine
+whether or not the release is made public.  Unlike the other votes,
+a minority opinion cannot stop a public release.</P>
+
+<P>If <STRONG>NEXT</STRONG> is to be released publically, everyone on the mailing
+list should make the effort to download it and try it out. <STRONG>NEXT</STRONG>
+should not be publically released until 24 hours after it has been created
+and announced to the group.</P>
+
+<P>If one of the patches used to create <STRONG>NEXT</STRONG> is subsequently
+found to cause a more serious problem than those it fixed, this problem
+should be reported to the group and any public release postponed until
+a majority decision on how to rectify the problem is obtained.</P>
+
+<H3><A NAME="emergency">Emergency Patch Votes</A></H3>
+
+<P>In the event of an emergency patch/vote session to fix a security
+problem, the group may need to bypass the normal operating procedures
+described above in order to get a fix in place prior to any public
+announcement of the problem.  Any group member may announce an emergency
+on the mailing list and is encouraged to do so immediately if notified
+about a severe problem.  Any group member may veto an emergency in order
+to force it through the normal procedures.</P>
+
+<P>Patches created to solve an emergency problem may be linked directly
+from the Apache home page as soon as the patch has been created and
+tested by its author.  However, this link must be removed or changed
+if the original patch is vetoed.</P>
+
+<P>The availability of an emergency patch may be announced to the public
+after 24hours or three +1 votes are given for the patch, whichever comes
+first.</P>
+
+<H2>
+ <A NAME="lazy-voting">
+  Lazy-Voting Mode
+ </A>
+</H2>
+<P>
+At some times, such as early in the devlopment cycle, it may be
+desirable to operate in what has been called &quot;lazy&quot; voting
+mode.  This is essentially identical to the
+<A
+ HREF="#patchvote"
+>formal voting process</A>,
+except that &quot;silence gives assent&quot; -- if 48 hours pass without
+a veto, a quorum of &quot;aye&quot; votes is assumed even not officially
+collected.
+</P>
+<P>
+Formal and lazy voting environments may co-exist; some topics may
+require formal votes whilst others may not.  Common sense should be
+exercised, and potentially highly-controversial patches shouldn't
+be submitted under the lazy rules.
+</P>
+<P>
+When a patch submitter expects to take advantage of lazy voting mode, it
+<EM>must</EM> be explicitly stated in the patch submission.
+</P>
+<HR SIZE=6>
+<ADDRESS>
+Rob Hartill and Roy Fielding<BR>
+3 September 1995
+</ADDRESS>
+<ADDRESS>
+ Modified 26 August 1997 by Ken Coar
+</ADDRESS>
+</BODY> 
+</HTML>     

@@ -1,0 +1,431 @@
+<html>
+<head>
+<title>Process Model Design</title>
+</head>
+<body bgcolor="#ffffff" text="#000000" link="#0000ff" vlink="#000080" alink="#ff0000">
+
+<h1>Process Model Design</h1>
+
+<hr><br>
+<p>Note:  Dean wrote the initial version of this with input from various other
+folks.  RST has since mailed Dean and convinced Dean that a lot of this is
+way overboard... and some day when Dean has a chance those extra arguments
+will appear here.  But for now, here's a start on this which is way overboard.
+<hr><br>
+
+<p>Start by reading the
+<a href="http://www.cs.wustl.edu/~jxh/research/research.html">JAWS papers</a>.
+They provide a good background for what we need to think about.
+
+<p>Apache's process models are currently implemented by
+<code>http_main.c</code>.  The addition of the WIN32 code has made it almost
+unreadable.  It needs abstraction and cleanup.  Specifically,
+<code>http_main</code> provides the following functionality:
+
+<ul>
+<li>request dispatch
+<li>timers
+<li>mutexes
+<li>shared memory
+<li>process/thread mgmt
+</ul>
+
+Most of the above are not abstracted sufficiently (i.e. timers, mutexes,
+shared memory).  And there are some missing things that will be needed
+for some of the process models.
+
+<p>Note that the beauty of Apache's current design is that outside of
+<code>http_main</code> very little code cares about how requests are
+dispatched.  The module API has also been designed such that essentially
+no synchronization needs to be done between running requests, for
+example there are (almost) no data structures that require mutexes.
+But the latter is not something that we absolutely need to maintain,
+because there are optimizations that set up data structures which require
+some synchronization... and opening up these potentials is one of the
+purposes of this paper.
+
+<h3>Definitions</h3>
+
+<dl>
+<dt>process
+<dd>A process is the "heaviest" unit of kernel scheduling.  Processes
+do not share address spaces or file resources except through explicit
+methods (such as inheriting file handles or share mem segments, or
+mapping the same file in a shared way).  Processes are pre-emptively
+multitasked.
+
+<dt>thread
+<dd>The term thread will refer <b>only to kernel supplied threads</b>.
+A thread is the "lightest" unit of kernel scheduling.  At least one
+thread exists within each process.  If multiple threads can exist
+within each process then they all share the same memory and file
+resources.  Threads are pre-emptively multitasked.
+
+<dt>fiber
+<dd>A fiber is a user-level "thread".  Fibers are <b>co-operatively
+multitasked</b>, with context switching occuring only at I/O points
+or at explicit yield points.  A fiber can be scheduled to run in any
+thread in the same process.  Typically fibers are implemented entirely
+by user-level libraries, under Unix the I/O would be handled by using
+select() multiplexing.  The term is borrowed from WIN32, which actually
+supplies a fiber interface in the API.  Fibers are very similar to
+"co-routines".  SunOS 4.x "light-weight processes" are fibers, but
+SunOS 5.x LWPs are actually threads.
+</dl>
+
+<h3>What process models are interesting?</h3>
+
+<p>The models vary in three dimensions: number of processes, number
+of threads within each process, number of fibers within each thread.
+In all models, a fiber is used to handle each request -- that is, most
+code in the server can treat the fiber as the only unit of execution
+worth worrying about.
+
+<p>I believe the following models are "interesting":
+
+<ul>
+<li>Single process, single thread, single fiber (SSS).  This is
+the current "inetd mode" and "-X" mode.  It should be easy to maintain
+as a special case of other models.
+
+<li>Multiple process, single thread, single fiber (MSS).  This is the
+current Unix model, and needs to be maintained for maximum portability.
+
+<li>Multiple process, single thread, multiple fiber (MSM).  In each
+process a user-level threads package handles context switches according
+to the completion of I/O.  This is typical "select-event threading"
+under Unix.  This is how Zeus and Squid work, and should be portable to
+essentially every Unix, with a performance advantage over MSS.
+In the MSM model there should be enough processes to exploit the available
+parallelism in the hardware.
+
+<li>Single process, multiple thread, single fiber (SMS).  This is probably
+the easiest to implement "multi-threaded" model.  One process has multiple
+kernel threads, each thread runs a single fiber.  This should be
+implementable under WIN32, OS2, and with POSIX threads.
+
+<li>Single process, multiple thread, multiple fiber (SMM).  This is
+probably the highest performing model.  Under WIN32 this can be achieved
+by using completion ports.  In this model the threads are used to
+run fibers whose I/O are ready; and only enough threads to exploit
+parallelism available in the hardware are used.  The JAWS papers show
+how well this model performs under NT.  It appears possible to implement
+this model under POSIX as well using pthreads, and extended signals,
+but the performance benefit is unknown.
+</ul>
+
+<p>Note that any single process model is subject to robustness issues
+depending on whether a single thread is terminated or an entire process
+is terminated when segfaults and such occur.  So the MMS and MMM models
+are also interesting, but shouldn't be much more work than SMS, SMM
+respectively given that we already need to support MSS and MSM.
+
+<h3>How do we implement fibers?</h3>
+
+<p>In order to abstract fibers so that we can implement all of the above
+models easily we need to abstract all I/O.  That is, we cannot allow
+code outside of the process model code itself to make any system calls.
+As mentioned, the majority of the code in the server will only need to
+know that it is running in a fiber, and not worry how that fiber gets
+time on a CPU.  In the multi-fiber models it would be death if one fiber
+was able to block a thread for an indeterminate time due to I/O (fibers
+can be compute intensive and cause problems -- but this is a separate
+issue solved by a yield primitive).  This is why we have to abstract
+I/O -- for example, in the MSM model all I/O will be done using
+non-blocking file descriptors, and the fiber will be suspended until
+a select() mask indicates that the event is ready.
+
+<p>Given the already existing abstractions (BUFF and the rput/rprintf/etc
+calls) this isn't too much different than what we have now.  Some specific
+things that need work:
+
+<ul>
+<li><b>Stack Usage:</b> This is perhaps the worst issue of all.
+Many routines assume they can allocate large amounts of stack space
+as temporary storge.  A fiber library allows systems to be built with
+thousands of fibers (contrast with threads, for which the OS starts to
+chunk after a certain number of threads because the context is still
+too heavy).  Fibers (and kernel threads for that matter) typically have
+a <i>static</i> sized stack.  One solution is to abstract string and
+URL operations a bit more and use pools more liberally.
+
+<li>FILE *, we can't use it.  BUFF is probably the best replacement.
+While things like sfio provide a useable replacement, we've discussed
+them in the past and decided that there are copyright and portability
+issues.
+
+<li>opendir/readdir/closedir.  On systems where it's availble we will
+have to use open()/getdents() to simulate opendir/readdir.  To see
+why consider NFS filesystems.  If a readdir() is performed on an NFS
+filesystem it could block for an indefinate amount of time -- we
+cannot allow that to happen in any multi-fiber model.  So we have
+to use open() and select() it for reading before using getdents().
+If this isn't available then we'll have to live with the blocking
+potential of readdir().  (It is available on BSD 4.4 systems,
+Linux, Solaris, IRIX, i.e. I doubt this is a big problem).
+
+<li>DNS resolver.  This sucks.  It's likely that we can ignore this
+problem for some cases because Solaris provides an asynchronous
+resolver, and so do glibc-2.x systems (i.e. Linux).  For those
+that don't we have the option of doing resolving in an external
+process via a pipe() so that we can select() on it.  Consult
+squid for some example code in this area, squid uses an external
+process in all of its implementations.
+
+<li>chown, chmod, unlink, ...  I'm not aware of any asynchronous
+way to do these, which means trouble on NFS in multi-fiber
+models.  One workaround is to run more threads than otherwise
+would seem necessary.  Another workaround is to maintain a pool
+of threads which only do these otherwise blocking activities.
+Consult squid 1.2 development for some example code in this area.
+
+<li>signals.
+</ul>
+
+<p>We need to specify this abstraction.  It should be as simple as
+saying "use <code>apio_open</code>" instead of "<code>open</code>",
+"<code>apio_read</code>" instead of "<code>read</code>", and so on.
+The <code>apio_*</code> functions have POSIX semantics.  (Note that
+we can't use <code>aio_*</code> because this is the prefix for POSIX
+asynchronous I/O functions.)
+
+<h4>Example: MSS, and MMS</h4>
+
+<p>The MSS and MMS models have the easiest fiber implementation:
+a fiber is the same as a thread.  In both of these models, the entire apio
+abstraction can consist of #define wrappers for the real POSIX
+functions.
+
+<h4>Example: MSM</h4>
+
+<p>In the MSM model we need to build an extensive apio library,
+and a fiber implementation.  This is a well studied problem
+though, "green threads" used by Sun's Java implementation is
+one example.
+
+<p>A fiber's context consists of:  its stack, its current pc (program
+counter), and its signal context (what handlers are registered, blocked
+signals, etc.).  We don't need to worry about what its registers and
+such are because all context switching is done via function calls and
+the C compiler will take care of those details for us.  An easy
+way to implement the pc/stack context is to use setjmp/longjmp.  Where
+available sigaltstack/sigstack provide an interesting method (thanks
+to RST for this one).  setjmp/longjmp actually save more context
+than necessary, but we can provide hand-tuned assembly for specific
+platforms (i.e. i386).
+
+<p>The apio library makes sure that all I/O is done non-blocking.
+When an I/O request is made it is delayed until a particular fd is
+ready for read or write.  The main scheduling loop for fibers
+builds a select() call, and issues it.  Then parses the results
+to figure out which fiber to schedule next.
+
+<h3>How do we initialize all of this?</h3>
+
+<p>The server goes through the following initialization steps:
+
+<dl>
+<dt>read_config
+<dd>The configuration is read, and probably re-read as it currently
+    is.
+<dt>main_process_init
+<dd>This happens before any other processes, threads, or fibers
+    are created.
+<dt>sub_process_init
+<dd>In all models this phase occurs every time a sub-process is
+    created.  In Sxx models this phase will only ever occur once.
+    In Mxx models this will occur many many times.  This phase
+    occurs in the context of the new sub-process; and occurs
+    before any extra threads are created in the new sub-process.
+<dt>thread_init
+<dd>This phase occurs every time a new thread is created.  In
+    xSx models it will only occur once per sub-process.  In xMx
+    models it will occur every time a thread is created.  This
+    phase occurs in the context of the new thread.
+    (Note: we may have special threads for the purpose of implementing
+    the asynchronous apio library, said threads will only ever
+    do I/O and do not go through this initialization phase.  Their
+    existance is abstracted away by the apio library itself.)
+<dt>fiber_init
+<dd>We have two choices for the xxM models.  We can create a fiber for
+    each request, in which case this phase is redundant.  Or we can
+    maintain pools of fibers.  I believe we'll want to maintain pools
+    of fibers.  So in anticipation of that, this phase exists and is
+    called once per new fiber in the context of the new fiber.
+</dl>
+
+<p>Note: There are other API phases that we need to consider in 2.0,
+but I don't think they're related to the process model discussion.
+
+<p>Note: each phase has a pool associated with it.  For example, the
+pool used for sub_process_initialization will be cleaned up when the
+sub-process dies.  In this manner modules can register cleanups
+with the correct scope without us needing to explicitly define
+cleanup phases.
+
+<h3>Shared Memory, Mutexes, Conditional Definitions</h3>
+
+<p>Some code and optimizations require the use of shared memory and
+mutexes.  We already have several methods of doing each in the MSS model,
+they need to be abstracted.  It should be possible to allocate shared
+memory and mutexes in any pool.  However in the MSS and MSM models it's
+imperitive that they occur during main_process_init.  So modules
+written using shared memory or mutexes that expect maximum portability
+will have to allocate during main_process_init.  This is not an absolute
+requirement, modules may only work in certain models, or may only
+have some features in certain models.
+
+<p>To make this possible we will provide compile time macros to determine
+the process model.  That is, even though on some systems we will
+have the option of building multiple process models, we will require the
+model to be a compile time decision, and we will allow modules to be
+dependant on the model they were compiled in.
+
+<p>We define:
+
+<ul>
+<li>APPM_MULTI_PROCESS = 1
+<li>APPM_MULTI_THREAD = 2
+<li>APPM_MULTI_FIBER = 4
+<li>APPM_MODEL = combination of above bits
+</ul>
+
+For example, MSM will have:
+
+<blockquote><pre>
+#define APPM_MODEL (APPM_MULTI_PROCESS | APPM_MULTI_FIBER)
+</pre></blockquote>
+
+And code can conditionally test things:
+
+<blockquote><pre>
+#if APPM_MODEL &amp; APPM_MULTI_PROCESS
+/* do something specific to multi process models */
+#endif
+
+#if APPM_MODEL == (APPM_MULTI_PROCESS|APPM_MULTI_FIBER)
+/* do something specific to MSM */
+#endif
+</pre></blockquote>
+
+<h3>The Main Loop</h3>
+
+<p>Hidden somewhere in the process model is the method by which a
+request is received and then dispatched into a fiber running inside
+some thread inside some process.  There is currently no API to
+tap into this, and because Apache is only an HTTP server it hasn't
+been an issue.  The closest thing to an API to tap into it is the
+<code>STANDALONE_MAIN</code> definition.  But to use that the user
+must supply a complete <code>standalone_main()</code> replacement, and
+use a different <code>child_main</code> (i.e. must supply a complete
+process model replacement).  This won't be feasible after the process
+model has been abstracted because there will be too many models to try
+to re-implement.
+
+<p>Other than the process model itself, standalone_main/child_main
+provide the following services:
+
+<ul>
+<li>open a network socket for listening, accept/dispatch requests
+<li>the scoreboard
+<li>monitor an <code>other_child</code> (the
+    <code>register_other_child</code> API)
+</ul>
+
+<h4>monitoring sockets</h4>
+
+<p>It should be easy to abstract the network functions.  In the Unix
+models it's sufficient to supply a few <code>fd_sets</code> for
+<code>select</code>, a <code>void *</code>, and a callback.  TODO:
+need to figure out the cleanest way to do this so that the WIN32 and
+OS2 models can implement it well.  Oh yeah, consider <code>poll()</code>
+while you're at it, because poll works better on sparse fd_sets.
+
+<h4>The Scoreboard</h4>
+
+<p>The scoreboard is very intimately tied to the process model.
+In theory some models may be able to run without a scoreboard at all.
+For example an all static content site running in MSM or SMM models
+should never need to spawn or destroy any threads/processes.  Such a
+server would spawn enough threads/processes initially to exploit the
+parallelism in the hardware, and no more.  In general there is
+likely to always be a scoreboard, but its use and contents may
+vary widely.
+
+<p>The scoreboard currently provides the following:
+
+<ul>
+<li>status of the server at a glance
+<li>an optimized alarm() implementation
+<li>data for a customized logging module, to log info about how long
+    a request takes for example
+</ul>
+
+<p>I propose that the first function will have to be supplied by a
+module which is process model dependant, and which uses unexported
+interfaces to the scorebard.  The second function is part of
+the process model itself, and is hidden behind the timeout API
+already.
+
+<p>The third function can be provided by an API like this:
+
+<blockquote><pre>
+typedef enum {
+    REQSTAT_MILLISECONDS	/* #msecs request took, unsigned long */
+    /* uhhh what other fields are of use to a module?? */
+} reqstat_t;
+
+/* returns 0, and stores result in *result if successful
+ * returns -1 and sets errno in the event of an error.
+ * possible errno values:  EINVAL -- not supported in this process model
+ */
+extern int get_reqstat(request_rec *r, reqstat_t index, void *result);
+</pre></blockquote>
+
+<h3>More Thoughts</h3>
+
+<p>I think the above is general enough to implement the interesting
+process models, and to implement optimizations that are available only
+in some of the multi-threaded models.  Note that nothing above
+is specific to HTTP, and I believe that we should strive to keep the
+abstraction so that the same libraries can be used to implement other
+types of servers (i.e. FTP, streaming video/audio, corba).
+
+<p>For many systems there will be multiple process model options.
+It's hard to say which one will be "best"... because some modules
+may work out better in different models.  This will complicate binary
+distribution of the server.  The compile time model choice should be
+made in the Configuration file.  If possible we want to avoid code
+duplication, so the os/osname/ directories are probably not where the
+models should be implemented.  We should probably have pm/unix-mss,
+pm/unix-msm, pm/win32-sms, etc.
+
+<p>Ben Hyde adds: "I always end up adding a priority scheme of some sort,
+and I find it is best if the priority is on the transaction and not on
+the thread.  I don't know how many systems I've had to rework that in."
+
+<p>Note that it's possible to implement an MSM model in which fibers
+can migrate from process to process by using a lot of shared memory,
+and file handle passing.  Maybe this is a good thing, maybe not.  I don't
+think anything above makes this impossible... but the MSM notation isn't
+specific enough to distinguish the two different models.
+
+<p>The whole reason to consider process models is for performance, but
+performance has to be balanced with portability.  I'm confident that
+with this design we should be able to implement the highest performing
+models with very little overhead, and not degrade performance on the
+lower models at all.
+
+<p>This design can be fleshed out and implemented somewhat "organically".
+Several people can be working on it at the same time because there are
+many models that need to be implemented.  Hopefully during this process
+we'll be able to hash out the actual API details.  I hope the above
+is enough to get people started.
+
+<h3>Other References</h3>
+
+<p><i>Implementing Lightweight Threads</i>, D. Stein, D. Shah, SunSoft Inc.
+(<a href="http://www.arctic.org/~dgaudet/apache/2.0/impl_threads.ps.gz">postscript</a>).
+
+</body>
+</html>

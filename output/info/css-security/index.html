@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<HTML>
+ <HEAD>
+  <TITLE>Cross Site Scripting Info</TITLE>
+ </HEAD>
+
+ <!-- Background white, links blue (unvisited), navy (visited), red (active) -->
+ <BODY BGCOLOR="#FFFFFF" TEXT="#000000" LINK="#0000FF" VLINK="#000080" 
+       ALINK="#FF0000">
+  <DIV ALIGN="CENTER">
+   <IMG SRC="../../images/apache_sub.gif" ALT="[APACHE DOCUMENTATION]">
+  </DIV>
+  <H1 ALIGN="CENTER">Cross Site Scripting Info</H1>
+<CENTER>Last Modified: <!--#flastmod file="index.html"--></CENTER>
+
+<H2>Introduction:</H2>
+
+<P>This page contains information about the Cross Site Scripting
+security issue, how it impacts Apache itself, and how to properly 
+protect against it when using Apache related technologies.
+
+<P>For an overview of the issue, please see the <A 
+HREF="http://www.cert.org/advisories/CA-2000-02.html">CERT Advisory 
+CA-2000-02</A> that has been released on the issue.  You should 
+also review their related <A 
+HREF="http://www.cert.org/tech_tips/malicious_code_mitigation.html">
+Understanding Malicious Content Mitigation For Web Developers</A> tech
+tips document.  The CERT advisory also contains links to a number of 
+documents that Microsoft has put out on the issue which are also worth
+reviewing if this issue impacts you.  The information contained in 
+these documents will not be repeated here; this information assumes you
+have read these documents and are familiar with the issue.
+
+<P>We would like to emphasize that this is <B>not</B> an attack
+against any specific bug in a specific piece of software.  It is
+not an Apache problem.  It is not a Microsoft problem.  It is not
+a Netscape problem.  In fact, it isn't even a problem that can be
+clearly defined to be a server problem or a client problem.  It is
+an issue that is truly cross platform and is the result of unforeseen
+and unexpected interactions between various components of a set of 
+interconnected complex systems.  
+
+<P>There are specific bugs in a wide range of web server products,
+including Apache, that allow for or contribute to the exploitation
+of this security problem.  These bugs should not be there and
+need to be fixed.  But it is critical to realize that this is only
+a tiny part of the total issue.  The most serious issue is in all
+the site specific code that generates dynamic content.  We are
+bringing you this information to educate you on the issues that
+have been discovered in Apache that are related to this security
+problem but, more importantly, help educate you on how this may
+impact your own local code developed using Apache related technologies
+and how you can fix it.
+
+<P>There is no "golden bullet" patch that server or client vendors
+can release that will magically fix this issue across all web
+servers or clients using that product.
+
+<P>We would also like to point out that it is important to 
+understand that this is not the old, well known issue, that if a site
+allows user A to submit content that is viewed by user B, it has to 
+be properly encoded.  This vulnerability is when the content is both
+submitted and viewed strictly by user A.  Due to the difficulty of 
+properly encoding output in all situations, many sites do not worry
+about encoding data that is only shown to the user that sent the data
+in their request due to the mistaken assumption that this doesn't pose
+a security threat.
+
+<H2>Does this impact my web site?</H2>
+
+<P>This is a serious security issue, with potential implications
+that are only starting to be understood.  However, it is critical
+to realize that this problem does not expose any way to break into
+the server itself.  What it allows is for malicious attackers to
+potentially take control of the interaction between a user and a
+website.  If your website contains entirely static content with
+all information being publicly accessible, an attacker can gain
+very little from taking over this interaction.  It is likely that the
+most serious thing that an attacker can potentially do in this situation
+is change how a page appears to a particular user.
+
+<P>The sites where this poses the most potential danger are sites
+where users have some type of account or login and where they can
+perform actions with real world implications or access data that
+should not be publicly available.  This security problem poses a
+serious threat to such sites; it isn't necessary to break into the
+server to take control of a site if instead you can gain access on
+the user's end of things.
+
+<H2>Ok, where is the Apache related information?</H2>
+
+<P>Right here:
+
+<UL>
+<LI><A HREF="apache_specific.html">Apache HTTP server specific information</A>
+<LI>Apache 1.3.12, which provides some protection against certain instances of
+ this problem.
+<LI>Older <A HREF="apache_1.3.11_css_patch.txt">Apache patch</A> against
+1.3.11 that addressed the known issues in that version of Apache.
+<LI><A HREF="encoding_examples.html">Encoding Examples</A> page, describing
+how to properly encode your output to protect against this problem using
+common Apache related technologies, such as Apache modules, Perl, 
+and PHP.
+</UL>
+
+<H2>The Future</H2>
+
+<P>We do not expect this to be the last word on methods of exploiting
+this problem.  It is likely that there will be more changes to Apache in
+the future to help users deal with this issue, even if no more bugs are
+found in Apache itself.  Although we do provide most of the necessary
+information for sites to protect themselves against this type of attack,
+there are still many open issues associated with this issue.  
+
+<P>We realize that this is a complex issue and expect to update these 
+pages to describe the issues and fixes in more depth as time permits.
+
+<H2>Why the name "Cross Site Scripting"?</H2>
+
+<P>This issue isn't just about scripting, and there isn't necessarily 
+anything cross site about it.  So why the name?  It was coined earlier
+on when the problem was less understood, and it stuck.  Believe me, we
+have had more important things to do than think of a better name.
+&lt;g&gt;.
+
+<H2>Comments and Suggestions</H2>
+
+<P>You can send any comments or suggestions about this set of pages to 
+<A HREF="mailto:marc@apache.org">marc@apache.org</A>.  Note that I
+can not respond to questions or requests for assistance, so if that is
+what you are about to send then please save yourself the effort.
+
+<H2>Change History</H2>
+<UL>
+<LI>Wed Feb  2 01:06:01 MST 2000: initial revision.
+</UL>
+
+<H2>Thanks</H2>
+Thanks to <A HREF="http://www.cert.org/">CERT</A> for contacting the 
+Apache Software Foundation and not only allowing us to participate
+in the evaluation and release of this issue, but actively supporting
+our participation.  We would also like to thank <A
+HREF="http://www.microsoft.com/">Microsoft</A> for their research and
+cooperation in dealing with this issue.
+
+</BODY>
+</HTML>

@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="../xsl/p2.xsl"?>
+<rdf:RDF xmlns="http://usefulinc.com/ns/doap#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:asfext="http://projects.apache.org/ns/asfext#" xml:lang="en">
+  <Project rdf:about="http://httpd.apache.org/mod_ftp/">
+    <name>Apache mod_ftp</name>
+    <homepage rdf:resource="http://httpd.apache.org/mod_ftp/"/>
+    <programming-language>C</programming-language>
+    <category rdf:resource="http://projects.apache.org/category/network-server"/>
+    <category rdf:resource="http://projects.apache.org/category/ftp"/>
+    <category rdf:resource="http://projects.apache.org/category/httpd-module"/>
+    <license rdf:resource="http://usefulinc.com/doap/licenses/asl20"/>
+    <bug-database rdf:resource="http://httpd.apache.org/bug_report.html"/>
+    <download-page rdf:resource="http://httpd.apache.org/download.cgi"/>
+    <asfext:pmc rdf:resource="http://httpd.apache.org/"/>
+
+    <shortdesc xml:lang="en">
+      mod_ftp is an FTP protocol module hosted within Apache HTTP Server.
+    </shortdesc>
+
+    <description xml:lang="en">
+      mod_ftp is an FTP Protocol module to serve httpd content over the FTP
+      protocol (whereever the HTTP protocol could also be used). It provides
+      both RETR/REST retrieval and STOR/APPE upload, using the same user/permissions
+      model as httpd (so it shares the same security considerations as mod_dav
+      plus mod_dav_fs). 
+    </description>
+
+    <repository>
+      <SVNRepository>
+        <browse rdf:resource="http://svn.apache.org/viewcvs.cgi/httpd/mod_ftp/"/>
+        <location rdf:resource="http://svn.apache.org/repos/asf/httpd/mod_ftp/"/>
+      </SVNRepository>
+    </repository>
+
+    <mailing-list rdf:resource="http://httpd.apache.org/lists.html"/>
+   
+    <release>
+      <Version>
+        <name>Current 0.9 release</name>
+        <created>2008-10-08</created>
+        <revision>0.9.6-beta</revision>
+      </Version>
+    </release>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"FILE TRANSFER PROTOCOL (FTP)", Postel, Reynolds</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 959</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc959.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"TELNET PROTOCOL SPECIFICATION", Postel, Reynolds</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 854</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc854.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"Requirements for Internet Hosts -- Application and Support", Braden</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 1123</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc1123.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"FTP Operation Over Big Address Records (FOOBAR)", Piscitello</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 1639</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc1639.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"FTP Security Extensions", Horowitz, Lunt</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 2228</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc2228.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"FTP Extensions for IPv6 and NATs", Allman, Ostermann, Metz</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 2428</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc2428.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"Extensions to FTP", Hethmon</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 3659</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc3659.txt"/>
+    </asfext:Standard></asfext:implements>
+
+    <asfext:implements><asfext:Standard>
+      <asfext:title>"Securing FTP with TLS", Ford-Hutchinson</asfext:title>
+      <asfext:body>IETF</asfext:body>
+      <asfext:id>RFC 4217</asfext:id>
+      <asfext:url rdf:resource="http://www.ietf.org/rfc/rfc4217.txt"/>
+    </asfext:Standard></asfext:implements>
+  </Project>
+</rdf:RDF>

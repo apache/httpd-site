@@ -1,0 +1,39 @@
+#!/bin/bash
+
+# Constantes
+BRANCH_2_2=httpd-2.2/
+BRANCH_2_4=httpd-2.4/
+BRANCH_TRUNK=httpd-trunk/
+MODIFS_2_2_X=modifs-2.2.x.txt
+MODIFS_2_4_X=modifs-2.4.x.txt
+MODIFS_TRUNK=modifs-trunk.txt
+
+# 2.2 update
+svn update $BRANCH_2_2 > $MODIFS_2_2_X
+
+# 2.4 update
+svn update $BRANCH_2_4 > $MODIFS_2_4_X
+
+# trunk update
+svn update $BRANCH_TRUNK > $MODIFS_TRUNK
+
+# Displaying result
+echo "2.2 branch modifications:"
+if [ -f $MODIFS_2_2_X ]
+then
+	grep ".xml" $MODIFS_2_2_X
+fi
+
+echo -e "\n2.4 branch modifications:"
+if [ -f $MODIFS_2_4_X ]
+then
+	grep ".xml" $MODIFS_2_4_X
+fi
+
+echo -e "\ntrunk branch modifications:"
+if [ -f $MODIFS_TRUNK ]
+then
+	grep ".xml" $MODIFS_TRUNK
+fi
+
+
