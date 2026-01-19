@@ -1,3 +1,6 @@
+meta:
+  environments:
+    - citest
 github:
   features:
     # Enable issue management
