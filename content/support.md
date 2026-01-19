@@ -30,5 +30,5 @@ page.](/bug_report.html)
 
 Commercial support for Apache httpd is available from a number of
 third-party companies. We do not maintain a list of these companies,
-however, and we encourage you to use your favorite search engine to find
+however, so we encourage you to use your favorite search engine to find
 one.
