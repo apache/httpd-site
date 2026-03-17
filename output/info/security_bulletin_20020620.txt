@@ -1,7 +1,7 @@
 -----BEGIN PGP SIGNED MESSAGE-----
 
 
-SUPERSEDES: http://httpd.apache.org/info/security_bulletin_20020617.txt
+SUPERSEDES: https://httpd.apache.org/info/security_bulletin_20020617.txt
 
 Date: June 20, 2002
 Product: Apache Web Server

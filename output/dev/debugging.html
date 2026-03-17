@@ -371,7 +371,7 @@ must be configured and started such that it produces core dumps which can
 be analyzed further.</p>
 <p>To ensure that a core dump is written to a directory which is writable by
 the user which child processes run as (such as <code>apache</code> ), the
-<a href="http://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory"></a>
+<a href="https://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory"></a>
 directive must be added to <code>httpd.conf</code> ; for example:</p>
 <pre><code>   CoreDumpDirectory /tmp
 </code></pre>
@@ -462,7 +462,7 @@ make <code>setuid()</code> processes actually dump core. By default a <code>setu
 does not dump core. This is the reason why httpd servers started as root
 with child processes running as a different user (such as <code>apache</code> ) do not
 coredump even when the
-<a href="http://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory">CoreDumpDirectory</a>
+<a href="https://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory">CoreDumpDirectory</a>
 directive had been set to an appropriate and writable directory and <strong><code>ulimit -c</code></strong> has a sufficient size.
 See also <a href="#crashes">Debugging intermittent crashes</a> above.</p>
 <p>Example:</p>
@@ -506,7 +506,7 @@ file analysis tool.</p>
 
             <!-- FOOTER -->
             <div id="footer">
-	      <p>Copyright &copy; 1997-2025 The Apache Software Foundation.<br />
+	      <p>Copyright &copy; 1997-2026 The Apache Software Foundation.<br />
 		Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are
  either registered trademarks or trademarks of The Apache Software Foundation in the United States
  and other countries.</p>

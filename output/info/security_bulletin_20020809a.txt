@@ -9,9 +9,9 @@ For Immediate Disclosure
      Revision: 2
  Product Name: Apache HTTP server 2.0
   OS/Platform: Windows, OS2, Netware
-Permanent URL: http://httpd.apache.org/info/security_bulletin_20020809a.txt
+Permanent URL: https://httpd.apache.org/info/security_bulletin_20020809a.txt
   Vendor Name: Apache Software Foundation
-   Vendor URL: http://httpd.apache.org/
+   Vendor URL: https://httpd.apache.org/
       Affects: All Released versions of 2.0 through 2.0.39
      Fixed in: 2.0.40
   Identifiers: CVE-2002-0661
@@ -41,7 +41,7 @@ the following directive to the global server configuration:
 Fixes for this vulnerability are also included in Apache HTTP server
 version 2.0.40.  The 2.0.40 release also contains fixes for two minor
 path-revealing exposures.  This release of Apache is available at
-http://downloads.apache.org/httpd/
+https://downloads.apache.org/httpd/
 
 More information will be made available by the Apache Software
 Foundation and Auriemma Luigi <bugtest@sitoverde.com> in the
