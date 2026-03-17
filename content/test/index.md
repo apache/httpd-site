@@ -10,7 +10,7 @@ Currently, the following components are available:
 
 -  [Flood](flood/) - a profile-driven HTTP load tester
 
--  [Perl Framework](http://svn.apache.org/viewvc/httpd/test/framework/trunk/) -
+-  [Perl Framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/) -
 a perl-centric HTTP test kit
 
 -  [Apache-Test](http://perl.apache.org/Apache-Test/) - the testing engine
@@ -38,7 +38,7 @@ Archives](http://mail-archives.apache.org/mod_mbox/httpd-dev/)
 -  [cvs@httpd
 Archives](http://mail-archives.apache.org/mod_mbox/httpd-cvs/) 
 
--  [dev@httpd Archives (Raw)](http://httpd.apache.org/mail/dev/) 
+-  [dev@httpd Archives (Raw)](https://httpd.apache.org/mail/dev/) 
 
 On December 22, 2005, test-dev@httpd.apache.org was merged with
 dev@httpd.apache.org. Our old archives are still available.
@@ -51,17 +51,17 @@ Archives](http://mail-archives.apache.org/mod_mbox/httpd-test-cvs/)
 
 -  [Test-dev Archives](http://marc.theaimsgroup.com/?l=apache-test-dev) 
 
--  [Test-dev Archives (Raw)](http://httpd.apache.org/mail/test-dev/) 
+-  [Test-dev Archives (Raw)](https://httpd.apache.org/mail/test-dev/) 
 
--  [Test-cvs Archives (Raw)](http://httpd.apache.org/mail/test-cvs/) 
+-  [Test-cvs Archives (Raw)](https://httpd.apache.org/mail/test-cvs/) 
 
 # SVN access  {#SVN}
 
 You may browse the httpd-test repositories
-[online](http://svn.apache.org/viewcvs.cgi/httpd/test/).
+[online](https://svn.apache.org/viewcvs.cgi/httpd/test/).
 
 Anonymous [Subversion](http://subversion.apache.org/) is available.
 
-    % svn checkout http://svn.apache.org/repos/asf/httpd/test/framework/trunk/ httpd-framework
-    % svn checkout http://svn.apache.org/repos/asf/httpd/flood/trunk/ flood
+    % svn checkout https://svn.apache.org/repos/asf/httpd/test/framework/trunk/ httpd-framework
+    % svn checkout https://svn.apache.org/repos/asf/httpd/flood/trunk/ flood
 

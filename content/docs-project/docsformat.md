@@ -9,7 +9,7 @@ xml source files and the technique used to transform them to html.
 # Format #
 
 A DTD is located in the [style
-directory](http://httpd.apache.org/docs/current/style/) of the manual. An
+directory](https://httpd.apache.org/docs/current/style/) of the manual. An
 example of the format with extensive comments is also available in
 [mod_template.txt](mod_template.txt). (Ordinarily, the file extension
 will be `xml`. It is changed here to make online viewing simpler.)
@@ -43,7 +43,7 @@ distributed under the Apache license.
 
 The only prerequisite for the transformation is a Java 8 or greater JVM.
 Assuming you already have
-[httpd/httpd/branches/2.4.x/docs/](http://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs/)
+[httpd/httpd/branches/2.4.x/docs/](https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs/)
 (or the equivalent from another branch) checked out from SVN, here is what
 you need to do to build: (If you need instructions on setting up SVN, see
 [this page](http://www.apache.org/dev/version-control.html).)

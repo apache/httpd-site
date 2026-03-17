@@ -23,7 +23,7 @@ you'll need to do the following.
   translating the doc into your language. Maybe there's already in place a
   translation team for your language that will help you in your work.
 
-- Let's suppose you look at http://httpd.apache.org/docs/trunk/configuring.html
+- Let's suppose you look at https://httpd.apache.org/docs/trunk/configuring.html
   and see that there's no version of this page in your language.
 
 - Get english version of the source file [here](https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/manual/configuring.xml)
@@ -76,7 +76,7 @@ Please note the following documents. They give you further information which may
 be helpful.
 
 - The [Documentation Format and
-  Transformation](http://httpd.apache.org/docs-project/docsformat.html) page
+  Transformation](https://httpd.apache.org/docs-project/docsformat.html) page
   gives some information about the transformation from xml to html.
   Translations of documentation for Apache version 2.0 and higher should be sent
   as xml file. Committers will take care of generating and committing the

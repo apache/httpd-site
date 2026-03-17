@@ -64,7 +64,7 @@ unsubscribe message from the same email address that you used to subscribe
 to the list.
 
 Archives are available at [ASF Mailing list archives](http://mail-archives.apache.org/mod_mbox/httpd-users-de/)
-or in [raw mbox format](http://httpd.apache.org/mail/users-de/). If you
+or in [raw mbox format](https://httpd.apache.org/mail/users-de/). If you
 can contribute a mirror archive, please let us know.
 
 In addition, you can search the

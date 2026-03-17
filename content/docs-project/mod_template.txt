@@ -45,19 +45,19 @@ does it refer to "this module" -->
 <description>Demonstrates the module documentation format</description>
 
 <!-- From:
-http://httpd.apache.org/docs/2.2/mod/module-dict.html#Status -->
+https://httpd.apache.org/docs/2.2/mod/module-dict.html#Status -->
 <status>experimental</status>
 
 <!-- As in:
-http://httpd.apache.org/docs/2.2/mod/module-dict.html#SourceFile -->
+https://httpd.apache.org/docs/2.2/mod/module-dict.html#SourceFile -->
 <sourcefile>mod_template.c</sourcefile>
 
 <!-- As in:
-http://httpd.apache.org/docs/2.2/mod/module-dict.html#ModuleIdentifier -->
+https://httpd.apache.org/docs/2.2/mod/module-dict.html#ModuleIdentifier -->
 <identifier>template_module</identifier>
 
 <!-- Optional: as in:
-http://httpd.apache.org/docs/2.2/mod/module-dict.html#Compatibility -->
+https://httpd.apache.org/docs/2.2/mod/module-dict.html#Compatibility -->
 <compatibility>Not actually available in any version</compatibility>
 
 
@@ -112,23 +112,23 @@ directive; begins with a capital, but does not end with a period -->
 <description>Changes absolutely nothing</description>
 
 <!-- As in:
-http://httpd.apache.org/docs/2.2/mod/directive-dict.html#Syntax -->
+https://httpd.apache.org/docs/2.2/mod/directive-dict.html#Syntax -->
 <syntax>TemplateDirective One|Two|Thee <em>file-path</em> 
 [<em>env-variable</em>] [<em>env-variable</em>] ...</syntax>
 
 <!-- Optional: Plain text only, exactly as the dirctive would appear in
 the config file, as in:
-http://httpd.apache.org/docs/2.2/mod/directive-dict.html#Default -->
+https://httpd.apache.org/docs/2.2/mod/directive-dict.html#Default -->
 <default>TemplateDirective Two /usr/local/apache</default>
 
 <!-- Each context as in:
-http://httpd.apache.org/docs/2.2/mod/directive-dict.html#Context
+https://httpd.apache.org/docs/2.2/mod/directive-dict.html#Context
 is placed in a separate context tag -->
 <contextlist><context>Directory</context><context>.htaccess</context>
 </contextlist>
 
 <!-- Required if and only if the contextlist includes .htacccess, as in
-http://httpd.apache.org/docs/2.2/mod/directive-dict.html#Override -->
+https://httpd.apache.org/docs/2.2/mod/directive-dict.html#Override -->
 <override>FileInfo</override>
 
 <!-- Used only if the same directive is implemented by multiple modules.
@@ -139,11 +139,11 @@ Otherwise, the module will be automatically be grabbed from above. -->
 
 <!-- Used only if the status for the directive differs from the status
 for the module as a whole.  As in:
-http://httpd.apache.org/docs/2.2/mod/directive-dict.html#Status -->
+https://httpd.apache.org/docs/2.2/mod/directive-dict.html#Status -->
 <status>Experimental</status>
 
 <!-- Optional, as in:
-http://httpd.apache.org/docs/2.2/mod/directive-dict.html#Compatibility -->
+https://httpd.apache.org/docs/2.2/mod/directive-dict.html#Compatibility -->
 <compatibility>Does not really exist</compatibility>
 
 <!-- Detailed description of what the directive does and how to use it -->

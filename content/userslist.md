@@ -53,7 +53,7 @@ Archives](http://mail-archives.apache.org/mod_mbox/httpd-users/) ,
 [MarkMail](http://httpd.markmail.org/) (great for searching),
 [MARC](http://marc.theaimsgroup.com/?l=apache-httpd-users) ,
 [CanSeek.ca](http://mla.canseek.ca/) , or in [raw mbox
-format](http://httpd.apache.org/mail/users/).
+format](https://httpd.apache.org/mail/users/).
 
 
 In addition, you can access this mailing list with the mail-to-news

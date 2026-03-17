@@ -83,12 +83,12 @@ Foundation's umbrella.
 
 If you just want to send in an occasional suggestion/fix, then you can
 simply use the bug reporting form at &lt;
-http://httpd.apache.org/bug_report.html &gt;. You can also subscribe to
+https://httpd.apache.org/bug_report.html &gt;. You can also subscribe to
 the announcements mailing list (`announce@httpd.apache.org`)
 which we use to broadcast information about new releases, bugfixes, and
 upcoming events. There's a lot of information about the development process
 (much of it in serious need of updating) to be found at &lt;
-http://httpd.apache.org/dev/ &gt;.
+https://httpd.apache.org/dev/ &gt;.
 
 > **NOTE:** The developer mailing list is NOT a user support forum; it is
 > for people actively working on development of the server code. There is

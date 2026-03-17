@@ -28,10 +28,10 @@ If you have an already installed copy of APR and APR-util (such as the ones
 that come with httpd-2.0 or Subversion), you may specify --with-apr and
 --with-apr-util at configure-time.
 
-    % svn co http://svn.apache.org/repos/asf/httpd/flood/trunk flood
+    % svn co https://svn.apache.org/repos/asf/httpd/flood/trunk flood
     % cd flood
-    % svn co http://svn.apache.org/repos/asf/apr/apr/trunk apr
-    % svn co http://svn.apache.org/repos/asf/apr/apr-util/trunk apr-util
+    % svn co https://svn.apache.org/repos/asf/apr/apr/trunk apr
+    % svn co https://svn.apache.org/repos/asf/apr/apr-util/trunk apr-util
 
 
 # Configuring flood and its dependencies  {#Configuring}

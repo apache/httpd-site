@@ -292,7 +292,7 @@ be analyzed further.
 
 To ensure that a core dump is written to a directory which is writable by
 the user which child processes run as (such as `apache` ), the
-[](http://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory)
+[](https://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory)
 directive must be added to `httpd.conf` ; for example:
 ```
    CoreDumpDirectory /tmp
@@ -407,7 +407,7 @@ make `setuid()` processes actually dump core. By default a `setuid()` process
 does not dump core. This is the reason why httpd servers started as root
 with child processes running as a different user (such as `apache` ) do not
 coredump even when the
-[CoreDumpDirectory](http://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory)
+[CoreDumpDirectory](https://httpd.apache.org/docs/current/mod/mpm_common.html#coredumpdirectory)
 directive had been set to an appropriate and writable directory and **`ulimit -c`** has a sufficient size.
 See also [Debugging intermittent crashes](#crashes) above.
 

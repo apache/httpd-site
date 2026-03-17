@@ -30,7 +30,7 @@ mod_smtpd can be followed through the
 [Subversion](http://subversion.apache.org/) repositories. For public access
 you can use :
 `
-    % svn checkout http://svn.apache.org/repos/asf/httpd/mod_smtpd/trunk/
+    % svn checkout https://svn.apache.org/repos/asf/httpd/mod_smtpd/trunk/
     mod_smtpd
   ` 
 

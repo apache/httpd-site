@@ -89,9 +89,9 @@ Development of *libapreq* can be followed through the
 [Subversion](http://subversion.apache.org/) repositories. For public access,
 you can use:
 
-    % svn checkout http://svn.apache.org/repos/asf/httpd/apreq/trunk/ httpd-apreq-2
-    % svn checkout http://svn.apache.org/repos/asf/httpd/apreq/branches/1.x/ httpd-apreq
+    % svn checkout https://svn.apache.org/repos/asf/httpd/apreq/trunk/ httpd-apreq-2
+    % svn checkout https://svn.apache.org/repos/asf/httpd/apreq/branches/1.x/ httpd-apreq
 
 You can also browse through the SVN repositories for
-[httpd-apreq](http://svn.apache.org/viewcvs.cgi/httpd/apreq/branches/1.x/)
-and [httpd-apreq-2](http://svn.apache.org/viewcvs.cgi/httpd/apreq/trunk/).
+[httpd-apreq](https://svn.apache.org/viewcvs.cgi/httpd/apreq/branches/1.x/)
+and [httpd-apreq-2](https://svn.apache.org/viewcvs.cgi/httpd/apreq/trunk/).

@@ -8,7 +8,7 @@ Use the links below to download libapreq from one of our mirrors. You
 signatures downloaded from our main distribution directory.
 
 If you do not see the file you need in the links below, please see the
-[master distribution directory](http://downloads.apache.org/httpd/libapreq/)
+[master distribution directory](https://downloads.apache.org/httpd/libapreq/)
 or, preferably, its [mirror]([preferred]/httpd/libapreq/).
 
 # Mirror  {#mirror}
@@ -32,7 +32,7 @@ version will not work with older 1.3.X releases of the Apache HTTP Server,
 and is not tested against (unsupported) 2.0 or 2.2 releases.
 
 [libapreq2-2.17]([preferred]/httpd/libapreq/libapreq2-2.17.tar.gz) 
-[ [PGP](http://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.asc) ] [ [SHA256](http://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.sha256) ] [ [SHA512](http://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.sha512) ]
+[ [PGP](https://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.asc) ] [ [SHA256](https://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.sha256) ] [ [SHA512](https://downloads.apache.org/httpd/libapreq/libapreq2-2.17.tar.gz.sha512) ]
 
 # Apache HTTP Request Library 1.34 is now available  {#v1_03}
 
@@ -41,8 +41,8 @@ version will not work with newer 2.X releases of the Apache HTTP Server.
 Please use [libapreq2-2.17](#v2_17) for use with Apache HTTP Server 2.4.
 
 [libapreq-1.34]([preferred]/httpd/libapreq/libapreq-1.34.tar.gz) 
-[ [PGP](http://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.asc) ] 
-[ [MD5](http://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.md5) ]
+[ [PGP](https://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.asc) ] 
+[ [MD5](https://downloads.apache.org/httpd/libapreq/libapreq-1.34.tar.gz.md5) ]
 
 # Verify the integrity of the files  {#verify}
 
@@ -50,10 +50,10 @@ It is essential that you verify the integrity of the downloaded files using
 the PGP or MD5 signatures.
 
 The PGP signatures can be verified using PGP or GPG. First download the
-[KEYS](http://downloads.apache.org/httpd/KEYS) as well as the `asc`
+[KEYS](https://downloads.apache.org/httpd/KEYS) as well as the `asc`
 signature file for the particular distribution. Make sure you get these
 files from the [main distribution
-directory](http://downloads.apache.org/httpd/) , rather than from a mirror.
+directory](https://downloads.apache.org/httpd/) , rather than from a mirror.
 Then verify the signatures using:
 
 <code>% pgpk -a KEYS<br></br>% pgpv

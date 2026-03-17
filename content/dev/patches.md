@@ -37,7 +37,7 @@ are submitted with any code changes in the same patch format.
 
 Please note that for Apache 2.0 and above, most of the documentation is
 generated from XML. Your changes need to be made to the XML version. See
-[http://httpd.apache.org/docs-project/docsformat.html](/docs-project/docsformat.html)
+[https://httpd.apache.org/docs-project/docsformat.html](/docs-project/docsformat.html)
 for more information.
 
 # Choosing a level of Apache code for comparison #

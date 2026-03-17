@@ -13,7 +13,7 @@ Mail Archives](http://mail-archives.apache.org/mod_mbox/) ,
 [MarkMail](http://httpd.markmail.org/) , and
 [MARC](http://marc.info/). Raw mbox archives for most lists are
 available at
-[http://httpd.apache.org/mail/](http://httpd.apache.org/mail/). You can
+[https://httpd.apache.org/mail/](https://httpd.apache.org/mail/). You can
 also use the mail-to-news [gateway](nntp://news.gmane.org/) offered by
 [GMANE](http://news.gmane.org/index.php?match=gmane.comp.apache) to access
 most of the lists with a news reader.

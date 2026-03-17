@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/xsl" href="../xsl/p2.xsl"?>
 <rdf:RDF xmlns="http://usefulinc.com/ns/doap#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:asfext="http://projects.apache.org/ns/asfext#" xml:lang="en">
-  <Project rdf:about="http://httpd.apache.org/">
+  <Project rdf:about="https://httpd.apache.org/">
     <name>Apache HTTP Server</name>
-    <homepage rdf:resource="http://httpd.apache.org/"/>
+    <homepage rdf:resource="https://httpd.apache.org/"/>
     <programming-language>C</programming-language>
     <category rdf:resource="http://projects.apache.org/category/network-server"/>
     <category rdf:resource="http://projects.apache.org/category/http"/>
     <category rdf:resource="http://projects.apache.org/category/httpd-module"/>
     <license rdf:resource="http://usefulinc.com/doap/licenses/asl20"/>
-    <bug-database rdf:resource="http://httpd.apache.org/bug_report.html"/>
-    <download-page rdf:resource="http://httpd.apache.org/download.cgi"/>
-    <asfext:pmc rdf:resource="http://httpd.apache.org/"/>
+    <bug-database rdf:resource="https://httpd.apache.org/bug_report.html"/>
+    <download-page rdf:resource="https://httpd.apache.org/download.cgi"/>
+    <asfext:pmc rdf:resource="https://httpd.apache.org/"/>
 
     <shortdesc xml:lang="en">
       The Apache HTTP Server application 'httpd'.
@@ -28,12 +28,12 @@
 
     <repository>
       <SVNRepository>
-        <browse rdf:resource="http://svn.apache.org/viewcvs.cgi/httpd/httpd/"/>
-        <location rdf:resource="http://svn.apache.org/repos/asf/httpd/httpd/"/>
+        <browse rdf:resource="https://svn.apache.org/viewcvs.cgi/httpd/httpd/"/>
+        <location rdf:resource="https://svn.apache.org/repos/asf/httpd/httpd/"/>
       </SVNRepository>
     </repository>
 
-    <mailing-list rdf:resource="http://httpd.apache.org/lists.html"/>
+    <mailing-list rdf:resource="https://httpd.apache.org/lists.html"/>
 
     <release>
       <Version>

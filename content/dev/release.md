@@ -338,7 +338,7 @@ distribution and binaries, and other esoteric binaries.
 Note that the typical Win32 source distribution differs from the original
 tarball in that it has generated project files as well as the CRLF line
 endings required for that platform. More information can be found
-[here](http://httpd.apache.org/docs-2.0/platform/win_compiling.html).
+[here](https://httpd.apache.org/docs-2.0/platform/win_compiling.html).
 
 # Oops. We found a problem. #
 

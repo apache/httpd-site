@@ -3,7 +3,7 @@
 
 - ---------------------------------------------------------------
 THIS DOCUMENT IS SUPERSEDED BY ASF BULLETIN 20020620
-See http://httpd.apache.org/info/security_bulletin_20020620.txt
+See https://httpd.apache.org/info/security_bulletin_20020620.txt
 - ---------------------------------------------------------------
 
 Date: June 17, 2002

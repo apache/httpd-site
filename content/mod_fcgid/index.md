@@ -24,14 +24,14 @@ Development of mod_fcgid can be followed through the
 [Subversion](http://subversion.apache.org/) repositories. For public access
 you can use:
 
-    % svn checkout http://svn.apache.org/repos/asf/httpd/mod_fcgid/trunk mod_fcgid
+    % svn checkout https://svn.apache.org/repos/asf/httpd/mod_fcgid/trunk mod_fcgid
 
 # Documentation
 
 The [mod_fcgid reference page](mod/mod_fcgid.html) will get you started.
 
 See the
-[README-FCGID](http://svn.apache.org/repos/asf/httpd/mod_fcgid/trunk/README-FCGID)
+[README-FCGID](https://svn.apache.org/repos/asf/httpd/mod_fcgid/trunk/README-FCGID)
 file distributed with the module's source code for additional build and
 installation notes.
 

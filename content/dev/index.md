@@ -34,14 +34,14 @@ can also be found on [Apache Development Notes](devnotes.html).
 maintaining the Apache site
 
 - A web-based view of the [SVN
-history](http://svn.apache.org/viewvc/httpd/) of the httpd development
+history](https://svn.apache.org/viewvc/httpd/) of the httpd development
 effort
 
 # Release Instructions #
 
 -  [Release guidelines](release.html) 
 
--  [Tools](http://svn.apache.org/repos/asf/httpd/site/trunk/tools) to
+-  [Tools](https://svn.apache.org/repos/asf/httpd/site/trunk/tools) to
 roll/release tarballs
 
 -  [Verifying Apache HTTP Server releases](verification.html) 

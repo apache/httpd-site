@@ -18,7 +18,7 @@ Development of mod_ftp can be followed through the
 [Subversion](http://subversion.apache.org/) repositories. For public access
 you can use :
 
-    % svn checkout http://svn.apache.org/repos/asf/httpd/mod_ftp/trunk/ mod_ftp
+    % svn checkout https://svn.apache.org/repos/asf/httpd/mod_ftp/trunk/ mod_ftp
 
 # Documentation #
 
@@ -26,7 +26,7 @@ The [ftp documentation](ftp/index.html) starting page and the [mod_ftp
 reference page](mod/mod_ftp.html) will get you started.
 
 See the
-[README-FTP](http://svn.apache.org/repos/asf/httpd/mod_ftp/trunk/README-FTP)
+[README-FTP](https://svn.apache.org/repos/asf/httpd/mod_ftp/trunk/README-FTP)
 file distributed with the module's source code for additional build and
 installation notes.
 

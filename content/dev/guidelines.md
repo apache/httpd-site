@@ -72,7 +72,7 @@ Committee.
 All of the Apache products are maintained in shared information
 repositories using [Subversion on](devnotes.html). Only some of the
 Apache developers have write access to these repositories; everyone
-has [read access](http://svn.apache.org/repos/asf/httpd/httpd).
+has [read access](https://svn.apache.org/repos/asf/httpd/httpd).
 
 # STATUS #
 
