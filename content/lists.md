@@ -109,7 +109,7 @@ Configuration and support questions should be addressed to a [user support
 group](#http-users). This list is only for discussion of changes to the
 source code and related issues. Other questions are likely to be ignored.
 
-| Volume: | Moderate to High ([Statistics](https://lists.apache.org/trends.html?dev@httpd.apache.org)) |
+| Volume: | Low ([Statistics](https://lists.apache.org/trends.html?dev@httpd.apache.org)) |
 |---|---|
 | Subscription address: |  [dev-subscribe@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) ( **Not a user support list!** ) |
 | Digest subscription address: |  [dev-digest-subscribe@httpd.apache.org](mailto:dev-digest-subscribe@httpd.apache.org)  |
@@ -175,7 +175,7 @@ of web server modules using the Apache HTTP Server module and APR APIs. It
 was historically hosted at apache-modules@covalent.net, now closed, but
 still archived on MARC (see Archives, below).
 
-| Volume: | Low to moderate |
+| Volume: | Low |
 |---|---|
 | Subscription address: |  [modules-dev-subscribe@httpd.apache.org](mailto:modules-dev-subscribe@httpd.apache.org)  |
 | Unsubscription addresses: |  [modules-dev-unsubscribe@httpd.apache.org](mailto:modules-dev-unsubscribe@httpd.apache.org)  |
