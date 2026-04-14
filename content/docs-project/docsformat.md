@@ -14,6 +14,9 @@ example of the format with extensive comments is also available in
 [mod_template.txt](mod_template.txt). (Ordinarily, the file extension
 will be `xml`. It is changed here to make online viewing simpler.)
 
+For detailed conventions on which markup elements to use and when, see the
+[Documentation Style Guide](style-guide.html).
+
 Various formatting syntax can be used such as:
 
 <table border="1">
