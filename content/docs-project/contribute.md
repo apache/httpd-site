@@ -38,7 +38,9 @@ into other languages, writing tutorials to help new users, or just
 expressing your opinion about suggested changes.
 
 For information on our use of XML in the documentation, see our
-[Documentation Format and Transformation](docsformat.html) page.
+[Documentation Format and Transformation](docsformat.html) page. For
+markup conventions and prose style, see the [Documentation Style
+Guide](style-guide.html).
 
 If you need inspiration for something to work on, look at our
 [STATUS](https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/STATUS)

@@ -15,6 +15,8 @@ love to have your help too.
 
 -  [I'd like to build the manual from local source](#build) 
 
+-  [I want to follow the documentation style conventions](#style) 
+
 -  [I'd like to join the docs team mailing list](#ml) 
 
 -  [I want to help translate the documentation](#translate) 
@@ -61,6 +63,12 @@ Once you have a checkout from SVN, you need to also check out the
 docs-build directory and run the relevant build scripts to produce all of the
 relevant transformations.  Please see [docs build](docsformat.html) for
 more information.
+
+# Style Guide  {#style}
+
+When writing or editing documentation, please follow the conventions in our
+[Documentation Style Guide](style-guide.html). It covers inline markup,
+directive syntax definitions, prose style, and formatting standards.
 
 # The docs mailing list  {#ml}
 
