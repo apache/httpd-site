@@ -1,0 +1,503 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Documentation Style Guide - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+        </div>
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/apreq/">libapreq</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	    <li><a href="/mod_ftp/">mod_ftp</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	    <li><a href="https://www.apache.org/foundation/policies/privacy.html">Privacy</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="apache-http-server-documentation-style-guide">Apache HTTP Server Documentation Style Guide<a class="headerlink" href="#apache-http-server-documentation-style-guide" title="Permalink">&para;</a></h1>
+<p>This guide defines conventions for writing and editing the Apache HTTP
+Server documentation.</p>
+<p>There are two main audiences for this guide:</p>
+<ol>
+<li>Documentation writers &mdash; how to author and mark up content.</li>
+<li>Documentation readers &mdash; how to interpret typographic conventions
+(see the <a href="#readers-guide">Reader's Guide</a> section at the end).</li>
+</ol>
+<h1 id="inline-markup">Inline Markup<a class="headerlink" href="#inline-markup" title="Permalink">&para;</a></h1>
+<h2 id="var-user-supplied-placeholders"><code>&lt;var&gt;</code> &mdash; User-Supplied Placeholders<a class="headerlink" href="#var-user-supplied-placeholders" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;var&gt;</code> for any value the user must replace with their own input.
+This includes placeholders in directive syntax definitions, prose
+descriptions of arguments, and inline references to user-supplied
+values.</p>
+<pre><code>&lt;syntax&gt;Listen &lt;var&gt;port&lt;/var&gt;&lt;/syntax&gt;
+&lt;syntax&gt;AuthUserFile &lt;var&gt;file-path&lt;/var&gt;&lt;/syntax&gt;
+&lt;p&gt;Replace &lt;var&gt;hostname&lt;/var&gt; with your server's FQDN.&lt;/p&gt;
+</code></pre>
+<p>Do <strong>not</strong> use <code>&lt;em&gt;</code> for placeholders. Legacy files use <code>&lt;em&gt;</code> in this role;
+new and updated content should use <code>&lt;var&gt;</code> exclusively.</p>
+<h2 id="em-emphasis"><code>&lt;em&gt;</code> &mdash; Emphasis<a class="headerlink" href="#em-emphasis" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;em&gt;</code> only for rhetorical emphasis &mdash; drawing attention to a word
+or phrase in running prose.</p>
+<pre><code>&lt;p&gt;The directive must appear &lt;em&gt;before&lt;/em&gt; any VirtualHost blocks.&lt;/p&gt;
+&lt;p&gt;This applies to &lt;em&gt;all&lt;/em&gt; requests, not just local ones.&lt;/p&gt;
+</code></pre>
+<p>Common legitimate uses: <em>not</em>, <em>must</em>, <em>only</em>, <em>all</em>, <em>any</em>, <em>before</em>, <em>after</em>,
+<em>e.g.</em>, <em>i.e.</em>, etc.</p>
+<p>Do <strong>not</strong> use <code>&lt;em&gt;</code> for placeholder variables (use <code>&lt;var&gt;</code>), for keywords
+(use <code>&lt;code&gt;</code>), or for strong warnings (use <code>&lt;strong&gt;</code>).</p>
+<h2 id="code-literal-values-and-inline-code"><code>&lt;code&gt;</code> &mdash; Literal Values and Inline Code<a class="headerlink" href="#code-literal-values-and-inline-code" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;code&gt;</code> for any literal string that appears in configuration,
+commands, output, or protocols:</p>
+<ul>
+<li>Filenames and paths: <code>&lt;code&gt;.htaccess&lt;/code&gt;</code>, <code>&lt;code&gt;httpd.conf&lt;/code&gt;</code></li>
+<li>HTTP methods: <code>&lt;code&gt;GET&lt;/code&gt;</code>, <code>&lt;code&gt;POST&lt;/code&gt;</code></li>
+<li>Header names: <code>&lt;code&gt;Content-Type&lt;/code&gt;</code>, <code>&lt;code&gt;ETag&lt;/code&gt;</code></li>
+<li>Configuration keywords: <code>&lt;code&gt;On&lt;/code&gt;</code>, <code>&lt;code&gt;Off&lt;/code&gt;</code>, <code>&lt;code&gt;None&lt;/code&gt;</code></li>
+<li>MIME types: <code>&lt;code&gt;text/html&lt;/code&gt;</code></li>
+<li>Environment variables: <code>&lt;code&gt;PATH_INFO&lt;/code&gt;</code></li>
+<li>CLI flags and arguments: <code>&lt;code&gt;-k&lt;/code&gt;</code>, <code>&lt;code&gt;graceful&lt;/code&gt;</code></li>
+<li>Signal names: <code>&lt;code&gt;TERM&lt;/code&gt;</code>, <code>&lt;code&gt;USR1&lt;/code&gt;</code></li>
+</ul>
+<p>Do <strong>not</strong> nest <code>&lt;strong&gt;</code> inside <code>&lt;code&gt;</code>. If emphasis is needed on a code
+element, restructure the sentence so the emphasis is in the prose.</p>
+<h2 id="strong-strong-emphasis"><code>&lt;strong&gt;</code> &mdash; Strong Emphasis<a class="headerlink" href="#strong-strong-emphasis" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;strong&gt;</code> sparingly, for critical warnings or to highlight a word
+that the reader must not miss:</p>
+<pre><code>&lt;p&gt;You should &lt;strong&gt;not&lt;/strong&gt; use this in production.&lt;/p&gt;
+</code></pre>
+<p>Do <strong>not</strong> use <code>&lt;strong&gt;</code> inside <code>&lt;code&gt;</code> blocks. Do <strong>not</strong> use <code>&lt;strong&gt;</code> where
+<code>&lt;note type="warning"&gt;</code> would be more appropriate.</p>
+<h2 id="program-apache-httpd-programs"><code>&lt;program&gt;</code> &mdash; Apache httpd Programs<a class="headerlink" href="#program-apache-httpd-programs" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;program&gt;</code> for any executable that ships with httpd and has its
+own manual page:</p>
+<pre><code>&lt;program&gt;httpd&lt;/program&gt;
+&lt;program&gt;apachectl&lt;/program&gt;
+&lt;program&gt;htpasswd&lt;/program&gt;
+&lt;program&gt;rotatelogs&lt;/program&gt;
+&lt;program&gt;configure&lt;/program&gt;
+</code></pre>
+<p>This generates a cross-reference link to the program's documentation.
+Do <strong>not</strong> use <code>&lt;code&gt;</code> for httpd program names.</p>
+<h2 id="module-module-names"><code>&lt;module&gt;</code> &mdash; Module Names<a class="headerlink" href="#module-module-names" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;module&gt;</code> for Apache module names. This generates a cross-reference
+link to the module's documentation:</p>
+<pre><code>&lt;module&gt;mod_rewrite&lt;/module&gt;
+&lt;module&gt;mod_ssl&lt;/module&gt;
+&lt;module&gt;core&lt;/module&gt;
+</code></pre>
+<p>Do <strong>not</strong> use <code>&lt;code&gt;</code> for module names.</p>
+<h2 id="directive-directive-names"><code>&lt;directive&gt;</code> &mdash; Directive Names<a class="headerlink" href="#directive-directive-names" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;directive&gt;</code> for Apache directive names. Include the <code>module</code>
+attribute when referencing a directive outside its own module's
+documentation:</p>
+<pre><code>&lt;directive module="core"&gt;ServerRoot&lt;/directive&gt;
+&lt;directive module="mpm_common"&gt;Listen&lt;/directive&gt;
+</code></pre>
+<p>Within a module's own documentation, the module attribute may be
+omitted:</p>
+<pre><code>&lt;directive&gt;Listen&lt;/directive&gt;
+</code></pre>
+<p>For section directives, add <code>type="section"</code>:</p>
+<pre><code>&lt;directive module="core" type="section"&gt;VirtualHost&lt;/directive&gt;
+</code></pre>
+<h2 id="glossary-glossary-terms"><code>&lt;glossary&gt;</code> &mdash; Glossary Terms<a class="headerlink" href="#glossary-glossary-terms" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;glossary&gt;</code> for terms defined in the project glossary. Use the
+<code>ref</code> attribute when the link target differs from the display text:</p>
+<pre><code>&lt;glossary&gt;APR&lt;/glossary&gt;
+&lt;glossary ref="regex"&gt;regular expression&lt;/glossary&gt;
+&lt;glossary&gt;MIME-type&lt;/glossary&gt;
+</code></pre>
+<h1 id="directive-syntax-definitions">Directive Syntax Definitions<a class="headerlink" href="#directive-syntax-definitions" title="Permalink">&para;</a></h1>
+<h2 id="placeholder-arguments">Placeholder Arguments<a class="headerlink" href="#placeholder-arguments" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;var&gt;</code> for all user-supplied arguments in <code>&lt;syntax&gt;</code> blocks:</p>
+<pre><code>&lt;syntax&gt;ServerRoot &lt;var&gt;directory-path&lt;/var&gt;&lt;/syntax&gt;
+&lt;syntax&gt;Timeout &lt;var&gt;time-interval&lt;/var&gt;[s]&lt;/syntax&gt;
+</code></pre>
+<h2 id="keyword-arguments">Keyword Arguments<a class="headerlink" href="#keyword-arguments" title="Permalink">&para;</a></h2>
+<p>Literal keyword choices appear untagged, separated by <code>|</code>:</p>
+<pre><code>&lt;syntax&gt;AllowOverride All|None|&lt;var&gt;directive-type&lt;/var&gt;
+[&lt;var&gt;directive-type&lt;/var&gt;] ...&lt;/syntax&gt;
+
+&lt;syntax&gt;EnableSendfile On|Off&lt;/syntax&gt;
+</code></pre>
+<h2 id="standard-argument-type-names">Standard Argument-Type Names<a class="headerlink" href="#standard-argument-type-names" title="Permalink">&para;</a></h2>
+<p>Use these lowercase hyphenated names consistently in <code>&lt;var&gt;</code> tags:</p>
+<table class="table">
+<thead>
+<tr>
+<th>Name</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>file-path</code></td>
+<td>Filesystem path (ServerRoot-relative if not absolute)</td>
+</tr>
+<tr>
+<td><code>directory-path</code></td>
+<td>Filesystem directory path</td>
+</tr>
+<tr>
+<td><code>URL-path</code></td>
+<td>URL path component (e.g. /images/)</td>
+</tr>
+<tr>
+<td><code>url</code></td>
+<td>Full URL</td>
+</tr>
+<tr>
+<td><code>filename</code></td>
+<td>Bare filename without directory</td>
+</tr>
+<tr>
+<td><code>extension</code></td>
+<td>File extension (e.g. .html)</td>
+</tr>
+<tr>
+<td><code>regex</code></td>
+<td>Regular expression</td>
+</tr>
+<tr>
+<td><code>expression</code></td>
+<td>ap_expr expression</td>
+</tr>
+<tr>
+<td><code>number</code></td>
+<td>Integer</td>
+</tr>
+<tr>
+<td><code>bytes</code></td>
+<td>Size in bytes</td>
+</tr>
+<tr>
+<td><code>seconds</code></td>
+<td>Time in seconds</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td>Time interval (may include unit suffix)</td>
+</tr>
+<tr>
+<td><code>hostname</code></td>
+<td>DNS hostname</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td>Generic identifier</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td>Generic value</td>
+</tr>
+<tr>
+<td><code>provider-name</code></td>
+<td>Authentication/authorization provider name</td>
+</tr>
+<tr>
+<td><code>env-variable</code></td>
+<td>Environment variable name</td>
+</tr>
+<tr>
+<td><code>MIME-type</code></td>
+<td>Media type (e.g. text/html)</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>HTTP method</td>
+</tr></tbody></table>
+<h2 id="quoting-in-configuration-examples">Quoting in Configuration Examples<a class="headerlink" href="#quoting-in-configuration-examples" title="Permalink">&para;</a></h2>
+<p>In <code>&lt;highlight language="config"&gt;</code> blocks, quote these argument types:</p>
+<ul>
+<li>Filesystem paths: <code>ServerRoot "/usr/local/apache2"</code></li>
+<li>URLs: <code>Redirect "/" "https://example.com/"</code></li>
+<li>AuthName values: <code>AuthName "Restricted Area"</code></li>
+<li>Regex patterns: <code>RewriteRule "^/old(.*)" "/new$1"</code></li>
+</ul>
+<p>Do <strong>not</strong> quote bare keywords:</p>
+<ul>
+<li><code>AllowOverride None</code></li>
+<li><code>Options FollowSymLinks</code></li>
+<li><code>Require all granted</code></li>
+</ul>
+<h1 id="block-level-elements">Block-Level Elements<a class="headerlink" href="#block-level-elements" title="Permalink">&para;</a></h1>
+<h2 id="code-examples">Code Examples<a class="headerlink" href="#code-examples" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;example&gt;</code> with a nested <code>&lt;highlight language="..."&gt;</code> block:</p>
+<pre><code>&lt;example&gt;
+&lt;highlight language="config"&gt;
+Listen 80
+Listen 8000
+&lt;/highlight&gt;
+&lt;/example&gt;
+</code></pre>
+<p>Valid language values: <code>config</code> (most common), <code>lua</code>, <code>c</code>, <code>perl</code>, <code>sh</code>, <code>html</code>.</p>
+<p>Do <strong>not</strong> use bare <code>&lt;example&gt;</code> with <code>&lt;br /&gt;</code> for line breaks. This is a
+legacy pattern. Convert to <code>&lt;highlight&gt;</code> when editing such files.</p>
+<p>If an example needs a title, use <code>&lt;example&gt;&lt;title&gt;</code>:</p>
+<pre><code>&lt;example&gt;
+  &lt;title&gt;2.4 configuration:&lt;/title&gt;
+  &lt;highlight language="config"&gt;
+Require all granted
+  &lt;/highlight&gt;
+&lt;/example&gt;
+</code></pre>
+<h2 id="notes-and-warnings">Notes and Warnings<a class="headerlink" href="#notes-and-warnings" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;note&gt;</code> for informational callouts:</p>
+<pre><code>&lt;note&gt;
+&lt;p&gt;When you issue a restart, a syntax check is run first.&lt;/p&gt;
+&lt;/note&gt;
+</code></pre>
+<p>Use <code>&lt;note type="warning"&gt;</code> for critical warnings:</p>
+<pre><code>&lt;note type="warning"&gt;
+&lt;p&gt;Overlapping Listen directives will cause a fatal error.&lt;/p&gt;
+&lt;/note&gt;
+</code></pre>
+<p>A <code>&lt;note&gt;</code> may contain a <code>&lt;title&gt;</code> for labeled callouts:</p>
+<pre><code>&lt;note&gt;&lt;title&gt;Mixing old and new directives&lt;/title&gt;
+&lt;p&gt;...&lt;/p&gt;
+&lt;/note&gt;
+</code></pre>
+<p>Do <strong>not</strong> use <code>&lt;strong&gt;Note:&lt;/strong&gt;</code> in prose as a substitute for <code>&lt;note&gt;</code>.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permalink">&para;</a></h2>
+<p>Place <code>&lt;seealso&gt;</code> elements after <code>&lt;summary&gt;</code> and before the first
+<code>&lt;section&gt;</code>:</p>
+<pre><code>&lt;seealso&gt;&lt;a href="vhosts/"&gt;Virtual Hosts&lt;/a&gt;&lt;/seealso&gt;
+&lt;seealso&gt;&lt;program&gt;httpd&lt;/program&gt;&lt;/seealso&gt;
+&lt;seealso&gt;&lt;module&gt;mod_ssl&lt;/module&gt;&lt;/seealso&gt;
+</code></pre>
+<h1 id="prose-style">Prose Style<a class="headerlink" href="#prose-style" title="Permalink">&para;</a></h1>
+<h2 id="voice-and-person">Voice and Person<a class="headerlink" href="#voice-and-person" title="Permalink">&para;</a></h2>
+<p>Address the reader directly in second person:</p>
+<blockquote>
+<p>"You should review your configuration before upgrading."
+"If you want httpd to handle IPv4 connections only..."</p>
+</blockquote>
+<p>Use "we" occasionally when speaking as the project:</p>
+<blockquote>
+<p>"We recommend using the apachectl control script."</p>
+</blockquote>
+<p>Avoid impersonal third-person constructions when second person is
+natural:</p>
+<ul>
+<li><strong>Avoid:</strong> "The administrator should configure..."</li>
+<li><strong>Prefer:</strong> "You should configure..."</li>
+</ul>
+<h2 id="contractions">Contractions<a class="headerlink" href="#contractions" title="Permalink">&para;</a></h2>
+<p>Contractions are acceptable and widely used throughout the
+documentation. Use them naturally:</p>
+<blockquote>
+<p>"If it doesn't exist..."
+"...they won't be lost..."
+"...you can't use apachectl..."</p>
+</blockquote>
+<h2 id="spelling">Spelling<a class="headerlink" href="#spelling" title="Permalink">&para;</a></h2>
+<p>Use American English spelling:</p>
+<ul>
+<li>behavior (not behaviour)</li>
+<li>customize (not customise)</li>
+<li>recognize (not recognise)</li>
+<li>authorize (not authorise)</li>
+<li>color (not colour)</li>
+</ul>
+<h2 id="product-name">Product Name<a class="headerlink" href="#product-name" title="Permalink">&para;</a></h2>
+<p>Use these forms in these contexts:</p>
+<ul>
+<li>First reference in a page: "Apache HTTP Server" or "Apache httpd"</li>
+<li>Subsequent references: "httpd" (wrapped in <code>&lt;program&gt;</code> when
+referring to the executable, or bare when referring to the server generally)</li>
+<li>In <code>&lt;program&gt;</code> tags: <code>&lt;program&gt;httpd&lt;/program&gt;</code></li>
+</ul>
+<p>Do <strong>not</strong> use bare "Apache" to refer to the server. "Apache" is the
+foundation; "httpd" is the server.</p>
+<h2 id="oxford-comma">Oxford Comma<a class="headerlink" href="#oxford-comma" title="Permalink">&para;</a></h2>
+<p>Use the Oxford (serial) comma:</p>
+<blockquote>
+<p>"...addresses, hostnames, and ports."
+"...stop, restart, and graceful-stop."</p>
+</blockquote>
+<h2 id="sentence-structure">Sentence Structure<a class="headerlink" href="#sentence-structure" title="Permalink">&para;</a></h2>
+<p>Prefer active voice over passive:</p>
+<ul>
+<li><strong>Avoid:</strong> "The directive is used to configure..."</li>
+<li><strong>Prefer:</strong> "Use this directive to configure..."</li>
+</ul>
+<p>Keep sentences concise. Break complex instructions into numbered
+steps or bullet lists.</p>
+<h1 id="formatting-and-structure">Formatting and Structure<a class="headerlink" href="#formatting-and-structure" title="Permalink">&para;</a></h1>
+<h2 id="indentation">Indentation<a class="headerlink" href="#indentation" title="Permalink">&para;</a></h2>
+<p>Use spaces, not tabs. Indent consistently within each file (2 or 4
+spaces are both acceptable, but do not mix within a single file).</p>
+<p>Content inside <code>&lt;highlight&gt;</code> blocks should be left-aligned (no leading
+indentation) for config examples, since the whitespace is preserved
+in output:</p>
+<pre><code>&lt;highlight language="config"&gt;
+Listen 80
+Listen 8000
+&lt;/highlight&gt;
+</code></pre>
+<h2 id="file-structure">File Structure<a class="headerlink" href="#file-structure" title="Permalink">&para;</a></h2>
+<p>Every manual page follows this structure:</p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE manualpage SYSTEM "./style/manualpage.dtd"&gt;
+&lt;?xml-stylesheet type="text/xsl" href="./style/manual.en.xsl"?&gt;
+&lt;!-- $LastChangedRevision: NNNNNNN $ --&gt;
+&lt;!-- License block --&gt;
+
+&lt;manualpage metafile="BASENAME.xml.meta"&gt;
+  &lt;title&gt;Page Title&lt;/title&gt;
+  &lt;summary&gt;...&lt;/summary&gt;
+  &lt;seealso&gt;...&lt;/seealso&gt;
+  &lt;section id="unique-id"&gt;
+    &lt;title&gt;Section Title&lt;/title&gt;
+    ...
+  &lt;/section&gt;
+&lt;/manualpage&gt;
+</code></pre>
+<h2 id="section-ids">Section IDs<a class="headerlink" href="#section-ids" title="Permalink">&para;</a></h2>
+<p>Section <code>id</code> values should be short, lowercase, hyphenated English
+identifiers:</p>
+<pre><code>&lt;section id="compile-time"&gt;
+&lt;section id="access"&gt;
+&lt;section id="commonproblems"&gt;
+</code></pre>
+<p>These IDs form URL anchors and must remain stable once published.</p>
+<h2 id="character-encoding">Character Encoding<a class="headerlink" href="#character-encoding" title="Permalink">&para;</a></h2>
+<p>Use UTF-8 encoding for all new files. Write non-ASCII characters as
+literal UTF-8 (e.g. &eacute; &agrave; &uuml;), not as XML entities (e.g. <code>&amp;eacute;</code>),
+unless the file already uses XML entities consistently (as some
+older German translations do).</p>
+<h1 id="readers-guide">Reader's Guide<a class="headerlink" href="#readers-guide" title="Permalink">&para;</a></h1>
+<p>When reading the Apache HTTP Server documentation:</p>
+<ul>
+<li>
+<p><em>Italic text</em> (<code>&lt;em&gt;</code>) indicates emphasis &mdash; pay special attention
+to the marked word.</p>
+</li>
+<li>
+<p><em>Slanted/colored text</em> (<code>&lt;var&gt;</code>) indicates a placeholder &mdash; replace
+it with your own value. For example, <code>&lt;var&gt;file-path&lt;/var&gt;</code> means
+you supply an actual filesystem path.</p>
+</li>
+<li>
+<p><code>Monospace text</code> (<code>&lt;code&gt;</code>) indicates a literal value &mdash; type it
+exactly as shown. This includes filenames, keywords, HTTP methods,
+and header names.</p>
+</li>
+<li>
+<p><strong>Bold text</strong> (<code>&lt;strong&gt;</code>) indicates a critical point &mdash; do not skip it.</p>
+</li>
+<li>
+<p>Linked module names (<code>&lt;module&gt;</code>) and directive names (<code>&lt;directive&gt;</code>)
+are clickable cross-references to the relevant documentation.</p>
+</li>
+<li>
+<p>Linked program names (<code>&lt;program&gt;</code>) are clickable cross-references
+to the program's manual page.</p>
+</li>
+<li>
+<p>Shaded blocks (<code>&lt;example&gt;</code>/<code>&lt;highlight&gt;</code>) contain configuration
+snippets or shell commands that you can copy and adapt.</p>
+</li>
+<li>
+<p>Callout boxes (<code>&lt;note&gt;</code>) contain supplementary information.
+Warning boxes (<code>&lt;note type="warning"&gt;</code>) indicate potential pitfalls
+or destructive actions.</p>
+</li>
+<li>
+<p>In directive syntax lines:</p>
+<ul>
+<li>UPPERCASE or lowercase-hyphenated placeholders are values you
+supply (e.g. <code>file-path</code>, <code>URL-path</code>, <code>regex</code>).</li>
+<li>Literal keywords are shown as-is (e.g. <code>On</code>, <code>Off</code>, <code>All</code>, <code>None</code>).</li>
+<li>Square brackets <code>[ ]</code> indicate optional arguments.</li>
+<li>Pipe characters <code>|</code> separate alternative choices.</li>
+<li>Ellipsis <code>...</code> indicates the argument may be repeated.</li>
+<li>Quoted arguments in examples indicate that the quotes are
+required or recommended in your configuration file.</li>
+</ul>
+</li>
+</ul>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2026 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are
+ either registered trademarks or trademarks of The Apache Software Foundation in the United States
+ and other countries.</p>
+            </div>
+        </div>
+    </body>
+</html>
