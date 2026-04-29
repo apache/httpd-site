@@ -67,7 +67,7 @@ Some of the participants are:
 
 -  [Ken Coar](http://Golux.Com/coar/) 
 
--  [Eric Cholet](http://www.logilune.com/eric/) 
+-  Eric Cholet
 
 -  [Tony Finch](http://dotat.at/) 
 

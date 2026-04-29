@@ -62,7 +62,7 @@ You can download the latest version of *libapreq* from:
 
 -  [ASF mirror](/apreq/download.cgi) 
 
--  [CPAN](http://search.cpan.org/search?mode=module&amp;query=libapreq)
+-  [CPAN](https://metacpan.org/search?q=libapreq)
 ('perl -MCPAN -e "install libapreq"')
 
 # Mailing Lists #
@@ -72,16 +72,8 @@ There are two mailing lists devoted to the development of *libapreq*.
 [apreq-dev@httpd.apache.org](mailto:apreq-dev-subscribe@httpd.apache.org) -
 discusses libapreq development
 
--  [list
-archives](http://marc.theaimsgroup.com/?l=apreq-dev&amp;r=1&amp;w=2) 
-
--  [NNTP gateway](nntp://news.gmane.org/gmane.comp.apache.apreq) 
-
 [apreq-cvs@httpd.apache.org](mailto:apreq-cvs-subscribe@httpd.apache.org) -
 cvs commit logs for httpd-apreq and httpd-apreq-2
-
--  [list
-archives](http://marc.theaimsgroup.com/?l=apreq-cvs&amp;r=1&amp;w=2) 
 
 # SVN #
 

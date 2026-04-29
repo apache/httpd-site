@@ -10,12 +10,12 @@ presented here in the order in which you should probably consult them.
 source for information about the Apache httpd. The answers to your questions
 are probably there.
 
-The [Apache HTTP Server Users List](/lists.html#http-users) , or the Usenet
-groups listed on that same page, are great places to ask questions when you
-are willing to wait a few hours, or possibly a few days, for an answer.
+The [Apache HTTP Server Users List](/lists.html#http-users) is a great
+place to ask questions when you are willing to wait a few hours, or
+possibly a few days, for an answer.
 These lists are frequented by people intimately familiar with the Apache
 httpd, who are willing to address your questions. You are strongly
-encouraged to consult the [archives](http://httpd.markmail.org/) prior to
+encouraged to consult the [archives](https://lists.apache.org/list.html?users@httpd.apache.org) prior to
 asking a question.
 
 The `#httpd` channel on the
