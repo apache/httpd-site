@@ -49,20 +49,8 @@ you can contact the list administrator at
 # Archives  {#archives}
 
 Archives are available at the [Apache Mail
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-users/) ,
-[MarkMail](http://httpd.markmail.org/) (great for searching),
-[MARC](http://marc.theaimsgroup.com/?l=apache-httpd-users) ,
-[CanSeek.ca](http://mla.canseek.ca/) , or in [raw mbox
-format](https://httpd.apache.org/mail/users/).
+Archives](https://lists.apache.org/list.html?users@httpd.apache.org).
 
-
-In addition, you can access this mailing list with the mail-to-news
-[gateway](nntp://news.gmane.org/) offered by
-[GMANE](http://news.gmane.org/index.php?match=gmane.comp.apache) [
-[gmane.comp.apache.user](nntp://news.gmane.org/gmane.comp.apache.user) ] or
-search the [usenet
-newsgroups](http://groups.google.com/groups?group=comp.infosystems.www.servers)
-for a much larger archive of Apache-related postings.
 # Guidelines  {#guidelines}
 
 Please read the following guidelines before posting to the list.
@@ -88,8 +76,7 @@ Please read the following guidelines before posting to the list.
 > send plain text so that everyone will be able to read your message.
 
 **Send English mails:** 
->  This list is an English-language mailing list. German-speaking users
->  may subscribe to our [German-language mailing list](usersdelist.html).
+>  This list is an English-language mailing list.
 
 **Don't ask FAQs:** 
 >  Be sure to read the [FAQ](http://wiki.apache.org/httpd/FAQ) and search

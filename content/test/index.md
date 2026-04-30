@@ -33,27 +33,19 @@ commit notifications
 Archives
 
 -  [dev@httpd
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-dev/) 
+Archives](https://lists.apache.org/list.html?dev@httpd.apache.org)
 
 -  [cvs@httpd
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-cvs/) 
-
--  [dev@httpd Archives (Raw)](https://httpd.apache.org/mail/dev/) 
+Archives](https://lists.apache.org/list.html?cvs@httpd.apache.org)
 
 On December 22, 2005, test-dev@httpd.apache.org was merged with
 dev@httpd.apache.org. Our old archives are still available.
 
 -  [Test-dev
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-test-dev/) 
+Archives](https://lists.apache.org/list.html?test-dev@httpd.apache.org)
 
 -  [Test-cvs
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-test-cvs/) 
-
--  [Test-dev Archives](http://marc.theaimsgroup.com/?l=apache-test-dev) 
-
--  [Test-dev Archives (Raw)](https://httpd.apache.org/mail/test-dev/) 
-
--  [Test-cvs Archives (Raw)](https://httpd.apache.org/mail/test-cvs/) 
+Archives](https://lists.apache.org/list.html?test-cvs@httpd.apache.org)
 
 # SVN access  {#SVN}
 

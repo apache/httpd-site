@@ -7,7 +7,7 @@ We encourage translations of the documentation into other languages and thank
 you in advance for your contribution. If you would like to assist in translating
 the docs, please start by reading the general [documentation project
 information](./) , and subscribing to the [documentation project mailing
-list](http://mail-archives.apache.org/mod_mbox/httpd-docs/). The documentation
+list](https://lists.apache.org/list.html?docs@httpd.apache.org). The documentation
 project participants are usually very willing to help you with any questions or
 technical difficulties that may arise during your work.
 

@@ -94,10 +94,7 @@ https://httpd.apache.org/dev/ &gt;.
 > for people actively working on development of the server code. There is
 > also a 'docs' subproject for those who are actively developing and
 > translating the documentation. If you have user/configuration questions,
-> subscribe to the [Users list](../userslist.html) or try the USENET
-> newsgroups " <news:comp.infosystems.www.servers.unix> " or "
-> <news:comp.infosystems.www.servers.ms-windows> " (as appropriate for
-> the platform you use).
+> subscribe to the [Users list](../userslist.html).
 
 # Development  {#Development}
 
@@ -169,7 +166,7 @@ individuals, is a tremendously good thing.
 Furthermore, the Apache Software Foundation is an organic entity; those who
 benefit from this software by using it, often contribute back to it by
 providing feature enhancements, bug fixes, and support for others in public
-lists and newsgroups. The effort expended by any particular individual is
+lists. The effort expended by any particular individual is
 usually fairly light, but the resulting product is made very strong. These
 kinds of communities can only happen with freely available software -- when
 someone has paid for software, they usually aren't willing to fix its bugs

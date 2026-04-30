@@ -49,7 +49,6 @@ Please read the following guidelines before posting to the list.
 
 -  [Jakarta/mod_jk/mod_webapp](http://jakarta.apache.org/site/mail.html) 
 
--  [mod_ssl](http://www.modssl.org/support/) 
 
 To subscribe, send an empty message to<code>
 **users-de-subscribe@httpd.apache.org** </code>. You will receive a
@@ -63,12 +62,5 @@ To unsubscribe, send a messages to<code>
 unsubscribe message from the same email address that you used to subscribe
 to the list.
 
-Archives are available at [ASF Mailing list archives](http://mail-archives.apache.org/mod_mbox/httpd-users-de/)
-or in [raw mbox format](https://httpd.apache.org/mail/users-de/). If you
-can contribute a mirror archive, please let us know.
-
-In addition, you can search the
-[English](http://groups.google.de/groups?q=comp.infosystems.www.servers) or
-[German](http://groups.google.de/groups?q=de.comm.infosystems.www.servers)
-usenet newsgroups for a much larger archive of Apache-related postings.
+Archives are available at the [ASF Mailing list archives](https://lists.apache.org/list.html?users-de@httpd.apache.org).
 

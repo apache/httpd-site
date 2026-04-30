@@ -65,26 +65,18 @@ notifications
 
 Archives
 
--  [dev Archives](http://mail-archives.apache.org/mod_mbox/httpd-dev/) 
+-  [dev Archives](https://lists.apache.org/list.html?dev@httpd.apache.org) 
 
--  [cvs Archives](http://mail-archives.apache.org/mod_mbox/httpd-cvs/) 
-
--  [dev Archives (Raw)](https://httpd.apache.org/mail/dev/) 
-
--  [cvs Archives (Raw)](https://httpd.apache.org/mail/cvs/) 
+-  [cvs Archives](https://lists.apache.org/list.html?cvs@httpd.apache.org) 
 
 On December 22, 2005, test-dev@httpd.apache.org was merged with
 dev@httpd.apache.org. Our old archives are still available.
 
 -  [test-dev
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-test-dev/) 
+Archives](https://lists.apache.org/list.html?test-dev@httpd.apache.org) 
 
 -  [test-cvs
-Archives](http://mail-archives.apache.org/mod_mbox/httpd-test-cvs) 
-
--  [test-dev Archives (Raw)](https://httpd.apache.org/mail/test-dev/) 
-
--  [test-cvs Archives (Raw)](https://httpd.apache.org/mail/test-cvs/) 
+Archives](https://lists.apache.org/list.html?test-cvs@httpd.apache.org) 
 
 # License  {#License}
 

@@ -47,11 +47,11 @@ list.
 
 -  [dev@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) - module
 development (
-[archives](http://mail-archives.apache.org/mod_mbox/httpd-dev/) ).
+[archives](https://lists.apache.org/list.html?dev@httpd.apache.org) ).
 
 -  [cvs@httpd.apache.org](mailto:cvs-subscribe@httpd.apache.org) - svn
 commit logs for httpd, including mod_mbox (
-[archives](http://mail-archives.apache.org/mod_mbox/httpd-cvs/) ).
+[archives](https://lists.apache.org/list.html?cvs@httpd.apache.org) ).
 
 # History #
 
