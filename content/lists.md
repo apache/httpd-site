@@ -30,7 +30,8 @@ releases and other important information about the Apache HTTP Server
 project. Messages are posted only by the project; there is no
 discussion.
 
-|---|---|
+|   | Address |
+|---|---------|
 | Subscription address: |  [announce-subscribe@httpd.apache.org](mailto:announce-subscribe@httpd.apache.org)  |
 | Unsubscription address: |  [announce-unsubscribe@httpd.apache.org](mailto:announce-unsubscribe@httpd.apache.org)  |
 | Getting help with the list: |  [announce-help@httpd.apache.org](mailto:announce-help@httpd.apache.org)  |
@@ -68,7 +69,8 @@ Configuration and support questions should be addressed to a [user support
 group](#http-users). This list is only for discussion of changes to the
 source code and related issues. Other questions are likely to be ignored.
 
-|---|---|
+|   | Address |
+|---|---------|
 | Subscription address: |  [dev-subscribe@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) ( **Not a user support list!** ) |
 | Digest subscription address: |  [dev-digest-subscribe@httpd.apache.org](mailto:dev-digest-subscribe@httpd.apache.org)  |
 | Unsubscription address: |  [dev-unsubscribe@httpd.apache.org](mailto:dev-unsubscribe@httpd.apache.org)  |
