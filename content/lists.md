@@ -30,11 +30,11 @@ releases and other important information about the Apache HTTP Server
 project. Messages are posted only by the project; there is no
 discussion.
 
-|   | Address |
-|---|---------|
-| Subscription address: |  [announce-subscribe@httpd.apache.org](mailto:announce-subscribe@httpd.apache.org)  |
-| Unsubscription address: |  [announce-unsubscribe@httpd.apache.org](mailto:announce-unsubscribe@httpd.apache.org)  |
-| Getting help with the list: |  [announce-help@httpd.apache.org](mailto:announce-help@httpd.apache.org)  |
+| Purpose | Address |
+|---------|---------|
+| Subscribe : |  [announce-subscribe@httpd.apache.org](mailto:announce-subscribe@httpd.apache.org)  |
+| Unsubscribe: |  [announce-unsubscribe@httpd.apache.org](mailto:announce-unsubscribe@httpd.apache.org)  |
+| List help: |  [announce-help@httpd.apache.org](mailto:announce-help@httpd.apache.org)  |
 | Archives: | [ASF archives](https://lists.apache.org/list.html?announce@httpd.apache.org) |
 
 # User Support and Discussion  {#http-users}
@@ -69,12 +69,12 @@ Configuration and support questions should be addressed to a [user support
 group](#http-users). This list is only for discussion of changes to the
 source code and related issues. Other questions are likely to be ignored.
 
-|   | Address |
-|---|---------|
-| Subscription address: |  [dev-subscribe@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) ( **Not a user support list!** ) |
+| Purpose | Address |
+|---------|---------|
+| Subscribe: |  [dev-subscribe@httpd.apache.org](mailto:dev-subscribe@httpd.apache.org) ( **Not a user support list!** ) |
 | Digest subscription address: |  [dev-digest-subscribe@httpd.apache.org](mailto:dev-digest-subscribe@httpd.apache.org)  |
-| Unsubscription address: |  [dev-unsubscribe@httpd.apache.org](mailto:dev-unsubscribe@httpd.apache.org)  |
-| Getting help with the list: |  [dev-help@httpd.apache.org](mailto:dev-help@httpd.apache.org) , [dev-digest-help@httpd.apache.org](mailto:dev-digest-help@httpd.apache.org)  |
+| Unsubscribe: |  [dev-unsubscribe@httpd.apache.org](mailto:dev-unsubscribe@httpd.apache.org)  |
+| List help: |  [dev-help@httpd.apache.org](mailto:dev-help@httpd.apache.org) , [dev-digest-help@httpd.apache.org](mailto:dev-digest-help@httpd.apache.org)  |
 | Searchable Archives: | [ASF browseable](https://lists.apache.org/list.html?dev@httpd.apache.org), [Mail-Archive.Com](http://www.mail-archive.com/dev%40httpd.apache.org/) |
 
 # Apache HTTP Server Bug Reports List  {#http-bugdb}
@@ -88,10 +88,11 @@ If you take ownership of bug by assigning it to yourself, please remember
 to add this mailing list to the cc: list so that the list continues to
 receive updates.
 
-|---|---|
-| Subscription address: |  [bugs-subscribe@httpd.apache.org](mailto:bugs-subscribe@httpd.apache.org)  |
-| Unsubscription addresses: |  [bugs-unsubscribe@httpd.apache.org](mailto:bugs-unsubscribe@httpd.apache.org)  |
-| Getting help with the list: |  [bugs-help@httpd.apache.org](mailto:bugs-help@httpd.apache.org)  |
+| Purpose | Address |
+|---------|---------|
+| Subscribe: |  [bugs-subscribe@httpd.apache.org](mailto:bugs-subscribe@httpd.apache.org)  |
+| Unsubscribe: |  [bugs-unsubscribe@httpd.apache.org](mailto:bugs-unsubscribe@httpd.apache.org)  |
+| List help: |  [bugs-help@httpd.apache.org](mailto:bugs-help@httpd.apache.org)  |
 | Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?bugs@httpd.apache.org) |
 
 # Source Change Reports  {#http-cvs}
@@ -101,10 +102,11 @@ of changes applied to the master Subversion repository. As changes are
 applied, Subversion log messages are sent to all subscribers. (The list
 name is an artifact of the fact that we used to use CVS.)
 
-|---|---|
-| Subscription address: |  [cvs-subscribe@httpd.apache.org](mailto:cvs-subscribe@httpd.apache.org)  |
-| Unsubscription addresses: |  [cvs-unsubscribe@httpd.apache.org](mailto:cvs-unsubscribe@httpd.apache.org)  |
-| Getting help with the list: |  [cvs-help@httpd.apache.org](mailto:cvs-help@httpd.apache.org)  |
+| Purpose | Address |
+|---------|---------|
+| Subscribe: |  [cvs-subscribe@httpd.apache.org](mailto:cvs-subscribe@httpd.apache.org)  |
+| Unsubscribe: |  [cvs-unsubscribe@httpd.apache.org](mailto:cvs-unsubscribe@httpd.apache.org)  |
+| List help: |  [cvs-help@httpd.apache.org](mailto:cvs-help@httpd.apache.org)  |
 | Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?cvs@httpd.apache.org) |
 
 # Apache HTTP Server Documentation Project  {#http-docs}
@@ -114,9 +116,10 @@ This mailing list supports the
 which coordinates improvements and translations of the server documentation.
 Subscribe here to discuss documentation changes and contribute.
 
-|---|---|
-| Subscription address: |  [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org)  |
-| Unsubscription addresses: |  [docs-unsubscribe@httpd.apache.org](mailto:docs-unsubscribe@httpd.apache.org)  |
-| Getting help with the list: |  [docs-help@httpd.apache.org](mailto:docs-help@httpd.apache.org)  |
+| Purpose | Address |
+|---------|---------|
+| Subscribe: |  [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org)  |
+| Unsubscribe: |  [docs-unsubscribe@httpd.apache.org](mailto:docs-unsubscribe@httpd.apache.org)  |
+| List help: |  [docs-help@httpd.apache.org](mailto:docs-help@httpd.apache.org)  |
 | Searchable Archives: | [ASF Archives](https://lists.apache.org/list.html?docs@httpd.apache.org) |
 
