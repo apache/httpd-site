@@ -180,6 +180,33 @@ omitted:</p>
 &lt;glossary ref="regex"&gt;regular expression&lt;/glossary&gt;
 &lt;glossary&gt;MIME-type&lt;/glossary&gt;
 </code></pre>
+<h2 id="rfc-rfc-references"><code>&lt;rfc&gt;</code> &mdash; RFC References<a class="headerlink" href="#rfc-rfc-references" title="Permalink">&para;</a></h2>
+<p>Use <code>&lt;rfc&gt;</code> to link to IETF RFCs. The element content is the RFC
+number (digits only). The rendered output is "RFC NNNN" linked to
+<code>https://www.rfc-editor.org/rfc/rfcNNNN</code>.</p>
+<pre><code>&lt;rfc&gt;7230&lt;/rfc&gt;
+&lt;rfc&gt;9110&lt;/rfc&gt;
+</code></pre>
+<p>To link to a numbered section within an RFC, use the <code>section</code>
+attribute. This appends <code>#section-N</code> to the URL:</p>
+<pre><code>&lt;rfc section="14.24"&gt;2616&lt;/rfc&gt;
+&lt;rfc section="4.4"&gt;2616&lt;/rfc&gt;
+</code></pre>
+<p>To link to a named anchor (appendix, named section heading, etc.),
+use the <code>anchor</code> attribute. This appends <code>#value</code> to the URL as-is:</p>
+<pre><code>&lt;rfc anchor="appendix-B"&gt;7231&lt;/rfc&gt;
+&lt;rfc anchor="name-upgrade"&gt;9110&lt;/rfc&gt;
+&lt;rfc anchor="name-content-encoding"&gt;9110&lt;/rfc&gt;
+</code></pre>
+<p>Do <strong>not</strong> use both <code>section</code> and <code>anchor</code> on the same element.</p>
+<p>Do <strong>not</strong> use <code>&lt;a href="..."&gt;</code> with rfc-editor.org URLs when the
+<code>&lt;rfc&gt;</code> tag can express the link. Use <code>&lt;a&gt;</code> only for:</p>
+<ul>
+<li>Non-RFC resources on rfc-editor.org (e.g. the errata page, BCP documents)</li>
+<li>IETF drafts (not yet published as RFCs)</li>
+<li>Links where the display text must differ from "RFC NNNN"
+(though restructuring the sentence is usually preferable)</li>
+</ul>
 <h1 id="directive-syntax-definitions">Directive Syntax Definitions<a class="headerlink" href="#directive-syntax-definitions" title="Permalink">&para;</a></h1>
 <h2 id="placeholder-arguments">Placeholder Arguments<a class="headerlink" href="#placeholder-arguments" title="Permalink">&para;</a></h2>
 <p>Use <code>&lt;var&gt;</code> for all user-supplied arguments in <code>&lt;syntax&gt;</code> blocks:</p>
