@@ -121,6 +121,38 @@ Use `<glossary>` for terms defined in the project glossary. Use the
     <glossary ref="regex">regular expression</glossary>
     <glossary>MIME-type</glossary>
 
+## `<rfc>` — RFC References ##
+
+Use `<rfc>` to link to IETF RFCs. The element content is the RFC
+number (digits only). The rendered output is "RFC NNNN" linked to
+`https://www.rfc-editor.org/rfc/rfcNNNN`.
+
+    <rfc>7230</rfc>
+    <rfc>9110</rfc>
+
+To link to a numbered section within an RFC, use the `section`
+attribute. This appends `#section-N` to the URL:
+
+    <rfc section="14.24">2616</rfc>
+    <rfc section="4.4">2616</rfc>
+
+To link to a named anchor (appendix, named section heading, etc.),
+use the `anchor` attribute. This appends `#value` to the URL as-is:
+
+    <rfc anchor="appendix-B">7231</rfc>
+    <rfc anchor="name-upgrade">9110</rfc>
+    <rfc anchor="name-content-encoding">9110</rfc>
+
+Do **not** use both `section` and `anchor` on the same element.
+
+Do **not** use `<a href="...">` with rfc-editor.org URLs when the
+`<rfc>` tag can express the link. Use `<a>` only for:
+
+- Non-RFC resources on rfc-editor.org (e.g. the errata page, BCP documents)
+- IETF drafts (not yet published as RFCs)
+- Links where the display text must differ from "RFC NNNN"
+  (though restructuring the sentence is usually preferable)
+
 # Directive Syntax Definitions #
 
 ## Placeholder Arguments ##
