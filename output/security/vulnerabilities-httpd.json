@@ -27011,6 +27011,11 @@
                         "lang": "en",
                         "type": "finder",
                         "value": "Pavel Kohout, Aisle Research, Aisle.com"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Arkadi Vainbrand"
                     }
                 ],
                 "descriptions": [
@@ -27051,6 +27056,14 @@
                 "providerMetadata": {
                     "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
                 },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
                 "source": {
                     "discovery": "EXTERNAL"
                 },
@@ -27062,8 +27075,13 @@
                     },
                     {
                         "lang": "eng",
-                        "time": "2026-05-04",
+                        "time": "2026-05-04T12:00:00.000Z",
                         "value": "2.4.67 released"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-05-04T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1933358"
                     }
                 ],
                 "title": "Apache HTTP Server: mod_authn_socache crash",
