@@ -3,20 +3,10 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 # Apache HTTP Request Library #
 
-*libapreq* is a shared library with associated modules for manipulating
-client request data via the Apache API. It also includes language bindings
-for Perl (Apache::Request and Apache::Cookie). Functionality includes:
+The *libapreq* library is no longer maintained or developed by the
+Apache HTTP Server project.
 
-- parsing of application/x-www-form-urlencoded data
-
-- parsing of multipart/form-data
-
-- parsing of HTTP cookies
-
-Documentation for the latest release of libapreq2 is located at
-[https://httpd.apache.org/apreq/docs/libapreq2](docs/libapreq2).
-
-# News #
+# History #
 
 **August 25, 2022** - libapreq2-2.17 was released.
 
@@ -58,32 +48,4 @@ Documentation for the latest release of libapreq2 is located at
 
 # Downloads #
 
-You can download the latest version of *libapreq* from:
-
--  [ASF mirror](/apreq/download.cgi) 
-
--  [CPAN](https://metacpan.org/search?q=libapreq)
-('perl -MCPAN -e "install libapreq"')
-
-# Mailing Lists #
-
-There are two mailing lists devoted to the development of *libapreq*.
-
-[apreq-dev@httpd.apache.org](mailto:apreq-dev-subscribe@httpd.apache.org) -
-discusses libapreq development
-
-[apreq-cvs@httpd.apache.org](mailto:apreq-cvs-subscribe@httpd.apache.org) -
-cvs commit logs for httpd-apreq and httpd-apreq-2
-
-# SVN #
-
-Development of *libapreq* can be followed through the
-[Subversion](http://subversion.apache.org/) repositories. For public access,
-you can use:
-
-    % svn checkout https://svn.apache.org/repos/asf/httpd/apreq/trunk/ httpd-apreq-2
-    % svn checkout https://svn.apache.org/repos/asf/httpd/apreq/branches/1.x/ httpd-apreq
-
-You can also browse through the SVN repositories for
-[httpd-apreq](https://svn.apache.org/viewcvs.cgi/httpd/apreq/branches/1.x/)
-and [httpd-apreq-2](https://svn.apache.org/viewcvs.cgi/httpd/apreq/trunk/).
+Historic releases of *libapreq* are available from [the Apache Archive Distribution](https://archive.apache.org/dist/httpd/libapreq/)
