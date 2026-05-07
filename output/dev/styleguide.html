@@ -89,8 +89,8 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         <div id="apcontents">
     <h1 id="apache-developers-c-language-style-guide">Apache Developers' C Language Style Guide<a class="headerlink" href="#apache-developers-c-language-style-guide" title="Permalink">&para;</a></h1>
 <p><strong>Compiled by Paul Sutton <a href="mailto:paul@awe.com">paul@awe.com</a></strong>. Based on
-a vote taken in November, 1996.<br/>Further refinements voted upon in
-July 1997.</p>
+a vote taken in November, 1996.
+Further refinements voted upon in July 1997.</p>
 <h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permalink">&para;</a></h1>
 <p>[This bit could state that code should be laid out to be clear to someone
 else familiar with Apache. Functions should be short and easily understood.
@@ -119,7 +119,7 @@ level as the <code>switch</code> line.</li>
 <li>Operators in expressions should be surrounded by a single space before and
 after, except for unary increment (++), decrement (--), and negation (!) operators.</li>
 <li>There is no whitespace between a cast and the item modified (<em>e.g.</em>,
-"<samp>(int)j</samp>" and not "<samp>(int) j</samp>").</li>
+"<code>(int)j</code>" and not "<code>(int) j</code>").</li>
 <li>If a cast is to a pointer type, there is a space between the type and
 the <code>*</code> character (<em>e.g.</em>, "<code>(char *)i</code>" instead of "<code>(char*)i</code>")</li>
 </ul>
@@ -129,16 +129,16 @@ the <code>*</code> character (<em>e.g.</em>, "<code>(char *)i</code>" instead of
 never be used. Specific indentation rules for function declarations and
 control-flow keywords are given below.</p>
 <p>Example:</p>
-<pre><code>main(int argc, char **argc)
+<pre><code class="language-c">main(int argc, char **argc)
 {
-if (argc != 0)  {
-    fprintf(stderr, "No arguments allowed\n");
-    exit(1);
-}
-exit(0);
+    if (argc != 0)  {
+        fprintf(stderr, "No arguments allowed\n");
+        exit(1);
+    }
+    exit(0);
 }
 </code></pre>
-<p><a name="long-exps">If an expression</a> (or a routine declaration or
+<p><a id="long-exps"></a>If an expression (or a routine declaration or
 invocation) would extend past column 80, the terms or arguments are wrapped
 at a convenient spot and the wrapped portion is indented under the first
 term in the expression (or the first argument to the function). Conditional
@@ -146,14 +146,14 @@ expressions should be wrapped to keep single or parenthesized terms as
 atomic as possible, and place Boolean operators at either the start
 (preferable) or end of the line.</p>
 <p>Example:</p>
-<pre><code> static const char *really_long_name(int i, int j,
-                                     const char *args, void *foo,
-                                     int k)
-
- if (cond1 &amp;&amp; (item2 || item3) &amp;&amp; (!item4)
-     &amp;&amp; (item5 || item6) &amp;&amp; item7)  {
-     do_a_thing();
- }
+<pre><code class="language-c">static const char *really_long_name(int i, int j,
+                                    const char *args, void *foo,
+                                    int k)
+</code></pre>
+<pre><code class="language-c">if (cond1 &amp;&amp; (item2 || item3) &amp;&amp; (!item4)
+    &amp;&amp; (item5 || item6) &amp;&amp; item7)  {
+    do_a_thing();
+}
 </code></pre>
 <h2 id="comments"><strong>Comments</strong><a class="headerlink" href="#comments" title="Permalink">&para;</a></h2>
 <p>Provide comments which explain the function of code where it is not clear
@@ -161,14 +161,14 @@ from the code itself. Provide rationale where necessary for particular bits
 of code.</p>
 <p>Comments should be indented to same level as the surrounding text.</p>
 <p>Example:</p>
-<pre><code>code;
+<pre><code class="language-c">code;
 /* comment */
 code;
 </code></pre>
 <h2 id="function-declaration-and-layout"><strong>Function Declaration and Layout</strong><a class="headerlink" href="#function-declaration-and-layout" title="Permalink">&para;</a></h2>
 <p>Functions are laid out as follows:</p>
 <p>Example:</p>
-<pre><code>int main(int argc, char **argv)
+<pre><code class="language-c">int main(int argc, char **argv)
 {
     code;
 }
@@ -185,14 +185,14 @@ indenting <a href="#long-exps">long declarations and invocations</a>.</strong></
 <p>Space after commas in function calls. No space between function name and
 opening bracket.</p>
 <p>Example:</p>
-<pre><code>f(a, b);
+<pre><code class="language-c">f(a, b);
 </code></pre>
 <p><strong>Also see the section on indenting <a href="#long-exps">long declarations
 and invocations</a>.</strong></p>
 <h2 id="flow-control-layout"><strong>Flow-Control Layout</strong><a class="headerlink" href="#flow-control-layout" title="Permalink">&para;</a></h2>
 <p>Flow-control statements (<code>if</code>, <code>while</code>, <code>for</code>, <em>etc.</em>) are laid out as in this</p>
 <p>Example:</p>
-<pre><code>if (expr)  {
+<pre><code class="language-c">if (expr)  {
     code;
 }
 else  {
@@ -209,14 +209,14 @@ expressions</a>.</strong></p>
 <h2 id="for-layout"><strong><code>for</code> Layout</strong><a class="headerlink" href="#for-layout" title="Permalink">&para;</a></h2>
 <p>Space after the semi-colons.</p>
 <p>Example:</p>
-<pre><code>for (a; b; c)
+<pre><code class="language-c">for (a; b; c)
 </code></pre>
 <h2 id="switch-layout"><strong><code>switch</code> Layout</strong><a class="headerlink" href="#switch-layout" title="Permalink">&para;</a></h2>
 <p><code>case</code> lines within a <code>switch()</code> are indented to same level as the switch
 statement itself. The code for each case is indented by four spaces.
 Braces are laid out as for other control-flow keywords.</p>
 <p>Example:</p>
-<pre><code>switch (x)  {
+<pre><code class="language-c">switch (x)  {
 case a:
     code;
 case b:
@@ -227,7 +227,7 @@ case b:
 <p>Space before and after assignment and other and operators. No space between
 unary operators (increment, decrement, and negation) and the lvalue.</p>
 <p>Examples:</p>
-<pre><code>a = b
+<pre><code class="language-c">a = b
 a + b
 a &lt; b
 a = -b
