@@ -4,8 +4,8 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 # Apache Developers' C Language Style Guide
 
 **Compiled by Paul Sutton [paul@awe.com](mailto:paul@awe.com)**. Based on
-a vote taken in November, 1996.<br></br>Further refinements voted upon in
-July 1997.
+a vote taken in November, 1996.
+Further refinements voted upon in July 1997.
 
 # Introduction #
 
@@ -17,7 +17,9 @@ broken if necessary to achieve a clearer layout]
 
 This style can be generated with the following arguments to GNU indent:
 
-    -i4 -npsl -di0 -br -nce -d0 -cli0 -npcs -nfc1 -nut
+```
+-i4 -npsl -di0 -br -nce -d0 -cli0 -npcs -nfc1 -nut
+```
 
 # The Guidelines #
 
@@ -37,8 +39,8 @@ argument lists and the semi-colons in for statements.
 level as the `switch` line.
 - Operators in expressions should be surrounded by a single space before and
 after, except for unary increment (++), decrement (--), and negation (!) operators.
-- There is no whitespace between a cast and the item modified (<EM>e.g.</EM>,
-"<samp>(int)j</samp>" and not "<samp>(int) j</samp>").
+- There is no whitespace between a cast and the item modified (*e.g.*,
+"`(int)j`" and not "`(int) j`").
 - If a cast is to a pointer type, there is a space between the type and
 the `*` character (*e.g.*, "`(char *)i`" instead of "`(char*)i`")
 
@@ -52,16 +54,18 @@ control-flow keywords are given below.
 
 Example:
 
-    main(int argc, char **argc)
-    {
-	if (argc != 0)  {
-	    fprintf(stderr, "No arguments allowed\n");
-	    exit(1);
-	}
-	exit(0);
+```c
+main(int argc, char **argc)
+{
+    if (argc != 0)  {
+        fprintf(stderr, "No arguments allowed\n");
+        exit(1);
     }
+    exit(0);
+}
+```
 
-<A NAME="long-exps">If an expression</A> (or a routine declaration or
+<a id="long-exps"></a>If an expression (or a routine declaration or
 invocation) would extend past column 80, the terms or arguments are wrapped
 at a convenient spot and the wrapped portion is indented under the first
 term in the expression (or the first argument to the function). Conditional
@@ -71,14 +75,18 @@ atomic as possible, and place Boolean operators at either the start
 
 Example:
 
-     static const char *really_long_name(int i, int j,
-                                         const char *args, void *foo,
-                                         int k)
+```c
+static const char *really_long_name(int i, int j,
+                                    const char *args, void *foo,
+                                    int k)
+```
 
-     if (cond1 && (item2 || item3) && (!item4)
-         && (item5 || item6) && item7)  {
-         do_a_thing();
-     }
+```c
+if (cond1 && (item2 || item3) && (!item4)
+    && (item5 || item6) && item7)  {
+    do_a_thing();
+}
+```
 
 
 ## **Comments** 
@@ -91,9 +99,11 @@ Comments should be indented to same level as the surrounding text.
 
 Example:
 
-    code;
-    /* comment */
-    code;
+```c
+code;
+/* comment */
+code;
+```
 
 
 ## **Function Declaration and Layout** 
@@ -102,10 +112,12 @@ Functions are laid out as follows:
 
 Example:
 
-    int main(int argc, char **argv)
-    {
-        code;
-    }
+```c
+int main(int argc, char **argv)
+{
+    code;
+}
+```
 
 The return type is placed on the same line as the function. Arguments (if
 any) are given in ANSI style. If no arguments, declare function as `void`.
@@ -114,7 +126,7 @@ comma separating each argument. The opening brace is placed on the line
 after the definition, indented to line up with the start of the return type
 text. The code is indented with four spaces, and the closing brace is
 indented to line up with the opening brace. **Also see the section on
-indenting <A HREF="#long-exps">long declarations and invocations</A>.** 
+indenting [long declarations and invocations](#long-exps).** 
 
 ## **Function Calls** 
 
@@ -123,10 +135,12 @@ opening bracket.
 
 Example:
 
-    f(a, b);
+```c
+f(a, b);
+```
 
-**Also see the section on indenting <A HREF="#long-exps">long declarations
-and invocations</A>.** 
+**Also see the section on indenting [long declarations
+and invocations](#long-exps).** 
 
 ## **Flow-Control Layout** 
 
@@ -134,20 +148,22 @@ Flow-control statements (`if`, `while`, `for`, *etc.*) are laid out as in this
 
 Example:
 
-    if (expr)  {
-        code;
-    }
-    else  {
-        code;
-    }
+```c
+if (expr)  {
+    code;
+}
+else  {
+    code;
+}
+```
 
 There is a space between the keyword and the opening bracket. Opening brace
 placed on same line as the flow keyword. The code itself is indented by four
 spaces. The closing brace is indented to line up with the opening brace. If
 an `else` clause is used, the `else` keyword is placed on the line following
 the closing brace and is indented to line up with the corresponding `if`.
-**Also see the section on indenting <A HREF="#long-exps">long
-expressions</A>.** 
+**Also see the section on indenting [long
+expressions](#long-exps).** 
 
 ## **`for` Layout** 
 
@@ -155,7 +171,9 @@ Space after the semi-colons.
 
 Example:
 
-    for (a; b; c)
+```c
+for (a; b; c)
+```
  
 
 ## **`switch` Layout**
@@ -166,12 +184,14 @@ Braces are laid out as for other control-flow keywords.
 
 Example:
 
-    switch (x)  {
-    case a:
-        code;
-    case b:
-        code;
-    }
+```c
+switch (x)  {
+case a:
+    code;
+case b:
+    code;
+}
+```
 
 
 ## **Expressions** 
@@ -181,12 +201,14 @@ unary operators (increment, decrement, and negation) and the lvalue.
 
 Examples:
 
-    a = b
-    a + b
-    a < b
-    a = -b
-    a = !b
-    ++a
+```c
+a = b
+a + b
+a < b
+a = -b
+a = !b
+++a
+```
  
 
 ## **Capitalisation of Enums** 
