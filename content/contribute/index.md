@@ -16,7 +16,7 @@ The source is also [mirrored on Github](https://github.com/apache/httpd)
 
 The documentation source is in each version's source tree, under <samp>docs/manual/</samp>
 
-Website source is at: <samp>https://svn.apache.org/repos/asf/httpd/site/trunk/content</samp>
+Website source is at: <samp>https://github.com/apache/httpd-site</samp>
 
 # How
 
