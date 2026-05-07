@@ -1,12 +1,18 @@
+# See https://github.com/apache/infrastructure-asfyaml for .asf.yaml docs
+
 github:
   features:
     # Enable issue management
     issues: true
+  enabled_merge_buttons:
+    squash: true
+    merge: false
+    rebase: true
 
 notifications:
   commits: cvs@httpd.apache.org
-  issues: dev@httpd.apache.org
-  pullrequests: dev@httpd.apache.org
+  issues: bugs@httpd.apache.org
+  pullrequests: cvs@httpd.apache.org
 
 pelican:
   notify: dev@httpd.apache.org
