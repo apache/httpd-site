@@ -104,32 +104,30 @@ might need to verify your documentation changes.</p>
 <h1 id="creating-a-patch">Creating a patch<a class="headerlink" href="#creating-a-patch" title="Permalink">&para;</a></h1>
 <p>Once you have a checkout, creating a patch takes four steps.</p>
 <ol>
-<li></li>
-</ol>
+<li>
 <p>Update your checkout, to be sure that you have the latest changes in the
 repository, in case someone else has changed something since the last time
 you worked on the docs:</p>
 <div class="example"><pre>
-svn update
-</pre></div>
-<ol>
-<li></li>
-</ol>
+ svn update
+ </pre></div>
+</li>
+<li>
 <p>Edit the file that you wish to modify. Make the desired changes, and then
 save your changes. Documentation files are in the <code>/docs/manual</code> subdirectory
 of your checkout.</p>
-<ol>
-<li></li>
-</ol>
+</li>
+<li>
 <p>At the command line, type the following to create a patch file:</p>
 <div class="example"><pre>
-svn diff &gt; patch.txt
-</pre></div>
-<ol>
-<li></li>
-</ol>
+ svn diff &gt; patch.txt
+ </pre></div>
+</li>
+<li>
 <p>Send email to the <code>docs@httpd.apache.org</code> mailing list and attach
 <code>patch.txt</code>.</p>
+</li>
+</ol>
 <p>If you have more than one changed file, you can supply the file name on the
 <code>svn diff</code> command line, in order to just record the changes in one file.</p>
 <div class="example"><pre>
