@@ -4,7 +4,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 # What is the Apache HTTP Server Project?  {#What}
 
 The Apache HTTP Server Project is a collaborative software development
-effort aimed at creating a robust, commercial-grade, featureful, and
+effort aimed at creating a robust, commercial-grade, feature-rich, and
 freely-available source code implementation of an HTTP (Web) server. The
 project is jointly managed by a group of volunteers located around the
 world, using the Internet and the Web to communicate, plan, and develop the
@@ -68,9 +68,8 @@ documentation (by David Robinson), and the addition of many features in the
 form of our standard modules, Apache 1.0 was released on December 1, 1995.
 
 Less than a year after the group was formed, the Apache server passed
-NCSA's httpd as the #1 server on the Internet and according to the [survey
-by Netcraft](http://www.netcraft.com/survey/) , it retains that position
-today.
+NCSA's httpd as the #1 server on the Internet, according to the
+Netcraft Web Server Survey (1996).
 
 In 1999, members of the Apache Group formed the [Apache Software
 Foundation](http://www.apache.org/) to provide organizational, legal, and
@@ -98,7 +97,7 @@ https://httpd.apache.org/dev/ &gt;.
 
 # Development  {#Development}
 
-There is a core group of contributors, formed initially of the project
+There is a core group of contributors, initially comprising the project
 founders, and augmented from time to time by other outstanding
 contributors. There are 'committers', who are granted access to the source
 code control repositories to help maintain the project or docs, and the
@@ -150,7 +149,7 @@ which individuals and institutions can build reliable systems, both for
 experimental purposes and for mission-critical purposes. We believe that
 the tools of online publishing should be in the hands of everyone, and that
 software companies should make their money by providing value-added
-services such as specialized modules and support, amongst other things. We
+services such as specialized modules and support, among other things. We
 realize that it is often seen as an economic advantage for one company to
 "own" a market - in the software industry, that means to control tightly a
 particular conduit such that all others must pay for its use. This is
@@ -164,7 +163,7 @@ application programming interfaces, available free to all companies and
 individuals, is a tremendously good thing.
 
 Furthermore, the Apache Software Foundation is an organic entity; those who
-benefit from this software by using it, often contribute back to it by
+benefit from this software by using it often contribute back to it by
 providing feature enhancements, bug fixes, and support for others in public
 lists. The effort expended by any particular individual is
 usually fairly light, but the resulting product is made very strong. These
@@ -183,8 +182,8 @@ happy when some commercial software companies completely drop their own
 HTTP server development plans and use Apache as a base, with the proper
 attributions as described in the
 [LICENSE](http://www.apache.org/licenses/). That is to say, the Apache HTTP
-Sever only comes from the Apache Software Foundation, but many vendors ship
-their own product "based on the Apache  {Project}". There is no "{Vendor}
-Apache  {Product}", this is an abuse of the Apache Software Foundation's
+Server only comes from the Apache Software Foundation, but many vendors ship
+their own product "based on the Apache {Project}". There is no "{Vendor}
+Apache {Product}", this is an abuse of the Apache Software Foundation's
 marks.
 
