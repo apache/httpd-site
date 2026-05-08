@@ -85,61 +85,74 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         </div>
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
-    <h1 id="bug-reporting">Bug Reporting<a class="headerlink" href="#bug-reporting" title="Permalink">&para;</a></h1>
+    <h1 id="issue-tracking">Issue Tracking<a class="headerlink" href="#issue-tracking" title="Permalink">&para;</a></h1>
 <p><strong>Reports of security issues should <em>not</em> be made here. Please see the <a href="security_report.html">security report page</a>
-if you have concerns or think you have discovered a security hole in the Apache Web server software.</strong>
-If you have identified a bug in the Apache HTTP Server, please fill out a problem report form and submit it.
-Before you do that, though, <font color="red">make <strong>sure</strong> you have done <strong>all</strong> of the following:</font></p>
+if you have concerns or think you have discovered a security hole in the Apache HTTP server software.</strong></p>
+<p>If you have identified a bug in the Apache HTTP Server, before you fill out a problem report form, <font color="red">make <strong>sure</strong> you have done <strong>all</strong> of the following:</font></p>
 <ol>
 <li>
-<p>Verified that the bug exists in <a href="/download.cgi">the most recent version</a> of Apache.</p>
+<p>Verified that the issue affects <a href="/download.cgi">the most recent version of Apache httpd</a>.</p>
 </li>
 <li>
-<p>Followed the instructions in the <code>INSTALL</code> file correctly</p>
+<p>Followed the instructions in the <code>INSTALL</code> file correctly.</p>
 </li>
 <li>
-<p>Tried compiling with only the distributed set of modules and with no other patches (so that we can make sure it's an Apache bug and not a bug in a module or patch provided by someone else). It is frustrating to take time and effort to track down a problem only to figure out that it is caused by a broken third party module.</p>
+<p>Tried compiling with only the distributed set of modules and with no other patches (so that we can make sure it's an httpd bug and not a bug in a module or patch provided by someone else). It is frustrating to take time and effort to track down a problem only to figure out that it is caused by a broken third party module.</p>
 </li>
 <li>
 <p>Looked at the error log. Please include any related messages in your report, or state that there are none.</p>
 </li>
 <li>
-<p>Checked the <a href="http://wiki.apache.org/httpd/FAQ">FAQ</a>.</p>
+<p>Checked the <a href="https://cwiki.apache.org/confluence/display/HTTPD/FAQ">FAQ</a>.</p>
 </li>
 <li>
-<p>Searched the <a href="http://bz.apache.org/bugzilla/">bug report</a> database. When you are doing this, you should be sure to search closed problem reports in addition to open ones. The search form on the main bugzilla page by default applies only to open reports; to search all bug reports, begin the search with the keyword "ALL". For example, the following search will find all reported proxy bugs in Apache 2.4: "ALL httpd-2.4 mod_proxy". Some helpful queries:</p>
+<p>Searched <a href="https://bz.apache.org/bugzilla/">the issue report database</a>. When you are doing this, you should be sure to search closed problem reports in addition to open ones. The search form on the main Bugzilla page by default applies only to open reports; to search all bug reports, begin the search with the keyword "ALL". For example, the following search will find all reported proxy bugs in Apache httpd 2.4: "ALL httpd-2.4 mod_proxy". Some helpful queries:</p>
 <ul>
 <li>
 <p><a href="https://bz.apache.org/bugzilla/buglist.cgi?chfield=resolution&amp;chfieldfrom=-60d&amp;chfieldto=Now&amp;product=Apache%20httpd-2&amp;resolution=FIXED">All bugs fixed in the last 60 days</a></p>
 </li>
 <li>
-<p><a href="http://bz.apache.org/bugzilla/buglist.cgi?product=Apache+httpd-2&amp;long_desc=duplicate+of+this+bug.&amp;long_desc_type=allwordssubstr&amp;chfieldfrom=-30d&amp;chfieldto=Now&amp;">Frequently reported bugs</a> (bugs with duplicates changed in the last 30 days)</p>
+<p><a href="https://bz.apache.org/bugzilla/buglist.cgi?product=Apache+httpd-2&amp;long_desc=duplicate+of+this+bug.&amp;long_desc_type=allwordssubstr&amp;chfieldfrom=-30d&amp;chfieldto=Now&amp;">Frequently reported bugs</a> (bugs with duplicates changed in the last 30 days)</p>
 </li>
 <li>
-<p><a href="http://bz.apache.org/bugzilla/buglist.cgi?chfieldfrom=-10d&amp;chfieldto=Now&amp;product=Apache+httpd-2">All bugs changed in the last 10 days</a></p>
+<p><a href="https://bz.apache.org/bugzilla/buglist.cgi?chfieldfrom=-10d&amp;chfieldto=Now&amp;product=Apache+httpd-2">All tickets changed in the last 10 days</a></p>
 </li>
 </ul>
 </li>
 </ol>
-<p>Unless you are sure that you have found a bug in the Apache HTTP Server, we strongly recommend that you try the
-<a href="userslist.html">Apache HTTP Server Users List</a> before using the bug database. If you don't receive a response
-within a few days, then please submit it to the Apache bug database. If it's a known issue, you'll probably get
-a faster response from the mailing list and you will help keep developer time free for improving Apache. Most
-bug reports submitted are actually user configuration problems that could be easily fixed by asking on the mailing list.</p>
-<p>Do <strong>not</strong> post to the mailing list <strong>and</strong> submit a bug report at the same time. This wastes everyone's time.
-Post to the mailing list and wait a few days before submitting a bug report.</p>
-<p>If you have done all of the preceding, then please select the button below and fill out the form.
-We will respond to it as soon as we can.</p>
+<p>If you are unsure whether you have found a bug in the Apache HTTP Server, we strongly recommend that you consult the
+<a href="userslist.html">Apache HTTP Server Users List</a> before filing a ticket. If you don't receive a response
+within a few days, then please submit it to the relevant issue tracking system. If it's a known issue, you'll probably get a faster response from the mailing list and you will help keep developer time free for improving Apache httpd.
+Most bug reports submitted are actually user configuration problems that could be easily fixed by asking on the mailing list.</p>
+<p>Do <strong>not</strong> post to the mailing list <strong>and</strong> submit a bug report at the same time. Post to the mailing list first, and wait a few days before submitting a bug report.</p>
+<p><strong>Do NOT send configuration questions!</strong></p>
+<p><strong>If you're tracing spam or you're here because one of your favorite websites now says 'It Worked! Apache is installed!' -- then contact the mail originator or the website's owner directly, because they're just using our software and we have nothing to do with them. Don't waste your time, or ours, by telling us about it.</strong></p>
+<p>If you have done all of the preceding, then please select the appropriate issue tracking system, fill out the form and submit it:</p>
 <ul>
-<li>
-<p><strong>Do NOT send configuration questions or requests for help debugging CGI!</strong></p>
-</li>
-<li>
-<p><strong>If you're tracing spam or you're here because one of your favourite Web sites now says 'It Worked! Apache is installed!' -- then contact the mail originator or the Web site's Webmaster directly, because they're just using our software and we have nothing to do with them. Don't waste your time, or ours, by telling us about it.</strong></p>
-</li>
+<li>For the software and most documentation issues, use <a href="https://bz.apache.org/bugzilla/">ASF Bugzilla</a>. The appropriate Bugzilla project for Apache HTTPD is "Apache httpd-2".</li>
+<li>For the website pages such as this one which are not part of the distributed documentation (<code>docs/</code>), use <a href="https://github.com/apache/httpd-site/issues">the <code>httpd-site</code> GitHub issue tracker</a>.</li>
 </ul>
-<p>Use the <a href="http://bz.apache.org/bugzilla/">Apache Bug Database</a> to submit bug reports. The appropriate
-Bugzilla project for Apache HTTPD is "Apache httpd-2".</p>
+<p>We will respond to it as soon as we can.</p>
+<table class="table">
+<thead>
+<tr>
+<th>Issue Type</th>
+<th>Where to Report</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Code / software bugs</td>
+<td><a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache+httpd-2">ASF Bugzilla &mdash; Apache httpd-2</a></td>
+</tr>
+<tr>
+<td>Documentation bugs</td>
+<td><a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache+httpd-2&amp;component=Documentation">ASF Bugzilla &mdash; Documentation</a></td>
+</tr>
+<tr>
+<td>Website issues</td>
+<td><a href="https://github.com/apache/httpd-site/issues">httpd-site GitHub Issues</a></td>
+</tr></tbody></table>
 
             <!-- FOOTER -->
             <div id="footer">
