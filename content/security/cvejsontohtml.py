@@ -10,6 +10,10 @@ parser = OptionParser()
 parser.add_option("-v","--version",help="major version to filter on",dest="filterversion")
 parser.add_option("-e","--extratext",help="extra text to add to description",dest="extratext")
 parser.add_option("-i","--inputdirectory",help="directory of json files",dest="directory")
+parser.add_option("-d","--debug",help="enable debug output to stderr",dest="debug",action="store_true",default=False)
+
+# To debug without getting flooded, put 1 working and 1 broken JSON file in tmp/ and pass --debug -i tmp
+
 (options,args) = parser.parse_args()
 
 re_fixedin = re.compile('(released in )?(?P<released>\\d\\.\\d\\.\\d+(-\\S+)?)( released)?');
@@ -25,6 +29,8 @@ DEFAULT_CVE_DATA_VERSION = "4.0"  # Default (old) CVE data version
 
 for x in os.listdir(options.directory or "./"):
     if x.endswith(".json"):
+        if options.debug:
+            print(f"Processing: {x}", file=sys.stderr)
         try:
             fd = open(options.directory+x)
             cve = json.load(fd)
@@ -32,6 +38,8 @@ for x in os.listdir(options.directory or "./"):
             cves.append(cve)
         except:
             print ("Ignoring due to error parsing: "+x)
+            if options.debug:
+                print(f"Skipped {x}: parse error", file=sys.stderr)
             continue
 
 # Filter on version and store by release(s) that fixed it
@@ -49,6 +57,11 @@ for cve in cves:
     else:
         print(f"unknown data version {data_version} in cve {cve['_filename']}", file=sys.stderr)
         sys.exit(1)
+    
+    if options.debug:
+        print(f"Filtering: {cve['id']} from {cve['_filename']}", file=sys.stderr)
+    
+    matched = False
     for time in timearray:
         timed = time["value"]
         matcher = re_fixedin.match(timed);
@@ -57,6 +70,10 @@ for cve in cves:
             if (not fixedin in entries):
                 entries[fixedin] = []
             entries[fixedin].append(cve)
+            matched = True
+    
+    if options.debug and not matched:
+        print(f"Skipped {cve['id']}: no matching version for filter '{filterversion}'", file=sys.stderr)
 
 # We want to sort on reverse number fixed, where our versions are dotted numbers, except some special cases
 # like never-fixed, or -dev fixed which should always appear first
