@@ -26,30 +26,26 @@ might need to verify your documentation changes.
 
 Once you have a checkout, creating a patch takes four steps.
 
-1. 
-Update your checkout, to be sure that you have the latest changes in the
-repository, in case someone else has changed something since the last time
-you worked on the docs:
+1. Update your checkout, to be sure that you have the latest changes in the
+   repository, in case someone else has changed something since the last time
+   you worked on the docs:
 
-<div class="example"><pre>
-svn update
-</pre></div>
+    <div class="example"><pre>
+    svn update
+    </pre></div>
 
-1. 
-Edit the file that you wish to modify. Make the desired changes, and then
-save your changes. Documentation files are in the `/docs/manual` subdirectory
-of your checkout.
+2. Edit the file that you wish to modify. Make the desired changes, and then
+   save your changes. Documentation files are in the `/docs/manual` subdirectory
+   of your checkout.
 
-1. 
-At the command line, type the following to create a patch file:
+3. At the command line, type the following to create a patch file:
 
-<div class="example"><pre>
-svn diff &gt; patch.txt
-</pre></div>
+    <div class="example"><pre>
+    svn diff &gt; patch.txt
+    </pre></div>
 
-1. 
-Send email to the `docs@httpd.apache.org` mailing list and attach
-`patch.txt`.
+4. Send email to the `docs@httpd.apache.org` mailing list and attach
+   `patch.txt`.
 
 If you have more than one changed file, you can supply the file name on the
 `svn diff` command line, in order to just record the changes in one file.
