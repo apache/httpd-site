@@ -128,6 +128,15 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value"> through 2.4.66</td></tr>
 </table></dd>
+<dt><h3 id="CVE-2026-29168">low: <name name="CVE-2026-29168">Apache HTTP Server: mod_md unrestricted OCSP response</name>
+(<a href="https://www.cve.org/CVERecord?id=CVE-2026-29168">CVE-2026-29168</a>)</h3></dt>
+<dd><p>Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's&nbsp; mod_md via OCSP response data.</p><p></p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
+<p>Acknowledgements: finder: Pavel Kohout, Aisle Research, Aisle.com</p>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2026-03-02</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by r1933352</td><td class="cve-value">2026-05-04</td></tr>
+<tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.30 through 2.4.66</td></tr>
+</table></dd>
 <dt><h3 id="CVE-2026-29169">low: <name name="CVE-2026-29169">mod_dav_lock indirect lock crash</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2026-29169">CVE-2026-29169</a>)</h3></dt>
 <dd><p>A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.</p><p></p><p>The only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes this issue, or remove mod_dav_lock.</p>
