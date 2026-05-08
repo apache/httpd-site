@@ -78,10 +78,11 @@ send email to
 [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org)
 and follow the instructions in the response you receive.
 
-The archives of this mailing list may be found at
-[lists.apache.org](https://lists.apache.org/list.html?docs@httpd.apache.org) ,
-if you want to have a preview of how we do things, and who the main
-characters are.
+If you're not subscribed, messages may be moderated through if they are
+appropriate to the list.
+
+You may also view the list, as well as past archives, at
+[lists.apache.org](https://lists.apache.org/list.html?docs@httpd.apache.org).
 
 # Translations  {#translate}
 
