@@ -128,31 +128,25 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value"> through 2.4.66</td></tr>
 </table></dd>
-<dt><h3 id="CVE-2026-29168">low: <name name="CVE-2026-29168">Apache HTTP Server: mod_md unrestricted OCSP response</name>
-(<a href="https://www.cve.org/CVERecord?id=CVE-2026-29168">CVE-2026-29168</a>)</h3></dt>
-<dd><p>Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's&nbsp; mod_md via OCSP response data.</p><p></p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
-<p>Acknowledgements: finder: Pavel Kohout, Aisle Research, Aisle.com</p>
-<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2026-03-02</td></tr>
-<tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
-<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.30 through 2.4.66</td></tr>
-</table></dd>
-<dt><h3 id="CVE-2026-29169">low: <name name="CVE-2026-29169">Apache HTTP Server: mod_dav_lock indirect lock crash</name>
+<dt><h3 id="CVE-2026-29169">low: <name name="CVE-2026-29169">mod_dav_lock indirect lock crash</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2026-29169">CVE-2026-29169</a>)</h3></dt>
 <dd><p>A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.</p><p></p><p>The only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes this issue, or remove mod_dav_lock.</p>
 <p>Acknowledgements: finder: Pavel Kohout, Aisle Research, Aisle.com</p>
 <table class="table"><tr><td class="cve-header">Report received</td><td class="cve-value">2026-03-04</td></tr>
 <tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by r1933354</td><td class="cve-value">2026-05-04</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value"> through 2.4.66</td></tr>
 </table></dd>
-<dt><h3 id="CVE-2026-33006">moderate: <name name="CVE-2026-33006">Apache HTTP Server: mod_auth_digest timing attack</name>
+<dt><h3 id="CVE-2026-33006">moderate: <name name="CVE-2026-33006">mod_auth_digest timing attack</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2026-33006">CVE-2026-33006</a>)</h3></dt>
 <dd><p>A timing attack against mod_auth_digest in Apache HTTP Server 2.4.66 allows a bypass of Digest authentication by a remote attacker.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes this issue.</p>
 <p>Acknowledgements: finder: Nitescu Lucian</p>
 <table class="table"><tr><td class="cve-header">Report received</td><td class="cve-value">2026-03-09</td></tr>
 <tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by r1933356</td><td class="cve-value">2026-05-04</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value"> through 2.4.66</td></tr>
 </table></dd>
-<dt><h3 id="CVE-2026-33007">low: <name name="CVE-2026-33007">Apache HTTP Server: mod_authn_socache crash</name>
+<dt><h3 id="CVE-2026-33007">low: <name name="CVE-2026-33007">mod_authn_socache crash</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2026-33007">CVE-2026-33007</a>)</h3></dt>
 <dd><p>A NULL pointer dereference in the mod_authn_socache in Apache HTTP Server 2.4.66 and earlier allows an unauthenticated remote user to crash a child process in a caching forward proxy configuration.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes this issue.</p>
 <p>Acknowledgements:</p>
@@ -165,7 +159,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <tr><td class="cve-header">fixed in 2.4.x by r1933358</td><td class="cve-value">2026-05-04</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">2.4.0 through 2.4.66</td></tr>
 </table></dd>
-<dt><h3 id="CVE-2026-33523">low: <name name="CVE-2026-33523">Apache HTTP Server: multiple modules: HTTP response splitting forwarding malicious status line</name>
+<dt><h3 id="CVE-2026-33523">low: <name name="CVE-2026-33523">multiple modules: HTTP response splitting forwarding malicious status line</name>
 (<a href="https://www.cve.org/CVERecord?id=CVE-2026-33523">CVE-2026-33523</a>)</h3></dt>
 <dd><p>HTTP response splitting vulnerability in multiple Apache HTTP Server modules with untrusted or compromised backend servers.</p><p></p><p>This issue affects Apache HTTP Server: from through 2.4.66.</p><p></p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>
 <p>Acknowledgements:</p>
@@ -176,6 +170,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 </ul>
 <table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2026-03-05</td></tr>
 <tr><td class="cve-header">Update 2.4.67 released</td><td class="cve-value">2026-05-04</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by r1933360</td><td class="cve-value">2026-05-04</td></tr>
 <tr><td class="cve-header">Affects</td><td class="cve-value">2.4.0 through 2.4.66</td></tr>
 </table></dd>
 <dt><h3 id="CVE-2026-33857">low: <name name="CVE-2026-33857">Apache HTTP Server: Off-by-one OOB reads in AJP getter functions</name>

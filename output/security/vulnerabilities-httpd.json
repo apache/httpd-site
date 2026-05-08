@@ -2446,7 +2446,7 @@
                                 "value": "<p>Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's&nbsp; mod_md via OCSP response data.</p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>"
                             }
                         ],
-                        "value": "Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's\u00a0 mod_md via OCSP response data.\n\nThis issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes the issue."
+                        "value": "Allocation of Resources Without Limits or Throttling vulnerability in Apache HTTP Server's  mod_md via OCSP response data.\n\nThis issue affects Apache HTTP Server: from 2.4.30 through 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes the issue."
                     }
                 ],
                 "metrics": [
@@ -2474,6 +2474,14 @@
                 "providerMetadata": {
                     "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
                 },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
                 "source": {
                     "discovery": "UNKNOWN"
                 },
@@ -2484,12 +2492,12 @@
                         "value": "reported"
                     },
                     {
-                        "lang": "eng",
-                        "time": "2026-05-04",
-                        "value": "2.4.67 released"
+                        "lang": "en",
+                        "time": "2026-05-04T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1933352"
                     }
                 ],
-                "title": "Apache HTTP Server: mod_md unrestricted OCSP response",
+                "title": "mod_md unrestricted OCSP response",
                 "x_generator": {
                     "engine": "Vulnogram 0.2.0"
                 }
@@ -2502,7 +2510,15 @@
             "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
-        "dataVersion": "5.1"
+        "dataVersion": "5.1",
+        "CNA_private": {
+            "emailed": null,
+            "projecturl": null,
+            "owner": "httpd",
+            "state": "RESERVED",
+            "todo": [],
+            "type": "unsure"
+        }
     },
     {
         "containers": {
@@ -13419,12 +13435,25 @@
                         "lang": "eng",
                         "time": "2026-05-04",
                         "value": "2.4.67 released"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-05-04T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1933356"
                     }
                 ],
-                "title": "Apache HTTP Server: mod_auth_digest timing attack",
+                "title": "mod_auth_digest timing attack",
                 "x_generator": {
                     "engine": "Vulnogram 0.2.0"
-                }
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ]
             }
         },
         "cveMetadata": {
@@ -13434,7 +13463,15 @@
             "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
-        "dataVersion": "5.1"
+        "dataVersion": "5.1",
+        "CNA_private": {
+            "emailed": null,
+            "projecturl": null,
+            "owner": "httpd",
+            "state": "RESERVED",
+            "todo": [],
+            "type": "unsure"
+        }
     },
     {
         "data_type": "CVE",
@@ -13631,7 +13668,7 @@
                             {
                                 "base64": false,
                                 "type": "text/html",
-                                "value": "A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.<br><br>The only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.<br><br>Users are recommended to upgrade to version 2.4.66, which fixes this issue, or remove mod_dav_lock.<br>"
+                                "value": "A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.<br><br>The only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.<br><br>Users are recommended to upgrade to version 2.4.67, which fixes this issue, or remove mod_dav_lock.<br>"
                             }
                         ],
                         "value": "A NULL pointer dereference in mod_dav_lock in Apache HTTP Server 2.4.66 and earlier may allow an attacker to crash the server with a malicious request.mod_dav_lock is not used internally by mod_dav or mod_dav_fs.\n\nThe only known use-case for mod_dav_lock was mod_dav_svn from Apache Subversion earlier than version 1.2.0.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes this issue, or remove mod_dav_lock."
@@ -13675,12 +13712,25 @@
                         "lang": "eng",
                         "time": "2026-05-04",
                         "value": "2.4.67 released"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-05-04T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1933354"
                     }
                 ],
-                "title": "Apache HTTP Server: mod_dav_lock indirect lock crash",
+                "title": "mod_dav_lock indirect lock crash",
                 "x_generator": {
                     "engine": "Vulnogram 0.2.0"
-                }
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ]
             }
         },
         "cveMetadata": {
@@ -13690,7 +13740,15 @@
             "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
-        "dataVersion": "5.1"
+        "dataVersion": "5.1",
+        "CNA_private": {
+            "emailed": null,
+            "projecturl": null,
+            "owner": "httpd",
+            "state": "RESERVED",
+            "todo": [],
+            "type": "unsure"
+        }
     },
     {
         "data_type": "CVE",
@@ -25112,12 +25170,25 @@
                         "lang": "eng",
                         "time": "2026-05-04",
                         "value": "2.4.67 released"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-05-04T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1933360"
                     }
                 ],
-                "title": "Apache HTTP Server: multiple modules: HTTP response splitting forwarding malicious status line",
+                "title": "multiple modules: HTTP response splitting forwarding malicious status line",
                 "x_generator": {
                     "engine": "Vulnogram 0.2.0"
-                }
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ]
             }
         },
         "cveMetadata": {
@@ -25127,7 +25198,15 @@
             "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
-        "dataVersion": "5.1"
+        "dataVersion": "5.1",
+        "CNA_private": {
+            "emailed": null,
+            "projecturl": null,
+            "owner": "httpd",
+            "state": "RESERVED",
+            "todo": [],
+            "type": "unsure"
+        }
     },
     {
         "data_type": "CVE",
@@ -27056,14 +27135,6 @@
                 "providerMetadata": {
                     "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
                 },
-                "references": [
-                    {
-                        "tags": [
-                            "vendor-advisory"
-                        ],
-                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
-                    }
-                ],
                 "source": {
                     "discovery": "EXTERNAL"
                 },
@@ -27075,7 +27146,7 @@
                     },
                     {
                         "lang": "eng",
-                        "time": "2026-05-04T12:00:00.000Z",
+                        "time": "2026-05-04",
                         "value": "2.4.67 released"
                     },
                     {
@@ -27084,10 +27155,18 @@
                         "value": "fixed in 2.4.x by r1933358"
                     }
                 ],
-                "title": "Apache HTTP Server: mod_authn_socache crash",
+                "title": "mod_authn_socache crash",
                 "x_generator": {
                     "engine": "Vulnogram 0.2.0"
-                }
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ]
             }
         },
         "cveMetadata": {
@@ -27097,7 +27176,15 @@
             "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
-        "dataVersion": "5.1"
+        "dataVersion": "5.1",
+        "CNA_private": {
+            "emailed": null,
+            "projecturl": null,
+            "owner": "httpd",
+            "state": "RESERVED",
+            "todo": [],
+            "type": "unsure"
+        }
     },
     {
         "containers": {
