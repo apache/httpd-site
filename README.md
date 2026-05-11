@@ -5,7 +5,6 @@ This is the source for the [Apache HTTP Server Project website](https://httpd.ap
 ## Contributing
 
 - **Submit changes**: Open a pull request against this repository at <https://github.com/apache/httpd-site>.
-- **Report issues**: File an issue on the same GitHub repository.
 - **Discuss changes**: Use the docs mailing list at `docs@httpd.apache.org`. You can subscribe by sending a message to `docs-subscribe@httpd.apache.org`.
 
 ## Building and testing

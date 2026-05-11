@@ -2,8 +2,7 @@
 
 github:
   features:
-    # Enable issue management
-    issues: true
+    issues: false
   enabled_merge_buttons:
     squash: true
     merge: false
