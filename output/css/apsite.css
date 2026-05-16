@@ -1144,7 +1144,8 @@ p.figure dfn {
 
 /* Responsive logo */
 #site-logo {
-    max-width: 100%;
+    max-width: 100% !important;
+    width: auto !important;
     height: auto;
 }
 
@@ -1185,6 +1186,27 @@ p.figure dfn {
 
 /* Mobile breakpoint */
 @media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
+    div#page-header img {
+        width: 100% !important;
+        max-width: 800px;
+        height: auto !important;
+        margin: 0 auto;
+    }
+
+    div#page-header p.apache {
+        padding: 5px 10px;
+        text-align: center;
+    }
+
+    div#page-header a.badge {
+        float: none;
+        margin: 5px auto;
+    }
+
     #menu-toggle {
         display: block;
     }
