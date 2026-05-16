@@ -1,15 +1,16 @@
 Title: Welcome!
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# The Number One HTTP Server On The Internet
-The Apache HTTP Server Project is an effort to develop and maintain an
-open-source HTTP server for modern operating systems including UNIX and
-Windows. The goal of this project is to provide a secure, efficient and
-extensible server that provides HTTP services in sync with the current HTTP
-standards.
+# Apache HTTP Server
+A fast, reliable, and extensible open-source web server for modern
+operating systems. Apache httpd powers everything from personal sites to
+mission-critical production infrastructure with:
 
-The Apache HTTP Server ("httpd") was launched in 1995 and it has been the most popular web server on the Internet since
-April 1996. It has celebrated its 25th birthday as a project in February 2020.
+- **Flexible configuration** — .htaccess per-directory config, virtual hosts, dynamic module loading
+- **Security** — TLS/SSL, authentication modules, fine-grained access control
+- **Performance** — event MPM, HTTP/2, content caching, reverse proxy
+- **Extensibility** — 100+ modules for rewriting, proxying, load balancing, scripting, and more
+- **Portability** — runs on Linux, Windows, macOS, and most Unix-like systems
 
 The Apache HTTP Server is a project of [The Apache Software
 Foundation](https://www.apache.org/).
@@ -31,19 +32,12 @@ Apache HTTP Server version 2.<span>4</span>.43 or newer is required in order to 
 2.4](https://downloads.apache.org/httpd/CHANGES_2.4) | [New Features in httpd
 2.4](docs/trunk/new_features_2_4.html)  {.centered}
 
-# Apache httpd 2.2 End-of-Life <span>2018-01-01</span>
-As previously announced, the Apache HTTP Server Project has discontinued
-all development and patch review of the 2.2.x series of releases.
+# Apache httpd 2.2 End-of-Life
+Apache httpd 2.2 is end-of-life. The final release was 2.2.34 (July 2017).
+No further patches, bug fixes, or security updates will be provided.
+Users should upgrade to 2.4.x.
 
-The Apache HTTP Server Project had long committed to provide maintenance
-releases of the 2.2.x flavor through June of 2017. The final release 2.2.34
-was published in July 2017, and no further evaluation of bug reports or
-security risks will be considered or published for 2.2.x releases.
-
-# Want to try out the Apache HTTP Server?
-Great! We have updated our [download page](/download.cgi) in an effort to
-better utilize our mirrors. We hope that by making it easier to use our mirrors, we will be able to provide a better download experience.
-
-Please ensure that you [verify](/download.cgi#verify) your downloads using
-PGP or MD5 signatures.
+# Download
+Get the latest release from the [download page](/download.cgi).
+Please [verify](/download.cgi#verify) your downloads.
 
