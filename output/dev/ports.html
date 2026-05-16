@@ -1,0 +1,87 @@
+<HTML><HEAD>
+<TITLE>Version testing of Apache 1.1</TITLE>
+</HEAD><BODY>
+
+<H1>Version testing of Apache 1.1</H1>
+
+This page is to keep track of which platforms 1.1 has been explicitly compiled on.
+We have no testing formalism yet, this is just so we know that all platforms we 
+claim to support are actually supported.
+
+<P>
+
+<BLOCKQUOTE><STRONG>mod_auth_msql can be excluded from the "all distribution modules
+compile" list since most people do not have MSQL on their systems.
+Likewise, mod_dld is also excluded from this list.  Perhaps the
+"Configuration" file should mention which platforms DLD support exists
+on.</STRONG></BLOCKQUOTE>
+
+<P>
+
+
+<TABLE border=1>
+<TR><TH>Platform	<TH>Core modules compile	<TH>All distribution modules compile		<TH>Compiled by	<TH>Notes/Warnings</TR>
+<TR><TD>AIX	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Apollo Domain/OS	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>A/UX	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>BSDI 1.1	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>BSDI 2.x	<TD>Yes	<TD>Yes	<TD>Brian B.	<TD>mod_proxy warning (no error)	</TR>
+<TR><TD>DEC OSF/1	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>DG/UX 5.x	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>FreeBSD	<TD>Yes	<TD>Yes	<TD>Chuck Murcko	<TD>mod_proxy warning (no error)	</TR>
+<TR><TD>HPUX 9.x	<TD>Yes	<TD>Yes (except msql, dld, db)	<TD>Alexei	<TD>Warnings:<BR>mod_proxy.c:2694: warning: passing arg 2 of `select' from incompatible pointer type
+	</TR>
+<TR><TD>HPUX 10.x	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Irix 5.x, gcc	<TD>Yes	<TD>Yes	<TD>Chuck Murcko	<TD>http_main.c: In function `sig_term':
+http_main.c:904: warning: implicit declaration of function `killpg'<BR>
+http_main.c: In function `standalone_main':
+http_main.c:1404: warning: implicit declaration of function `bzero'<BR>
+mod_auth.c: In function `authenticate_basic_user':
+mod_auth.c:180: warning: implicit declaration of function `crypt'<BR>
+mod_proxy.c: In function `connect_handler':
+mod_proxy.c:2687: warning: implicit declaration of function `bzero'<BR>
+no mod_auth_db
+</TR>
+<TR><TD>Irix 5.x, SGI cc	<TD>Yes	<TD>Yes	<TD>Mark Cox	<TD>Warnings: http_bprintf.c, line 86: Long double not supported; double assumed.	</TR>
+<TR><TD>Irix 6.x, gcc	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Irix 6.x, SGI cc	<TD>Yes	<TD>Yes	<TD>Brian Behlendorf	<TD>Same as 5.x, SGI cc, though: "ld: WARNING 84: /usr/lib/libsun.a is not used for resolving any symbol"	</TR>
+<TR><TD>Linux 1.x	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>LynxOS	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>NetBSD	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>NeXT 3.x	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>NeXT 4.x	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>OS/2	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>QNX	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>SCO ODT 3	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>SCO 5	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Sequent	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Solaris 2.4, gcc	<TD>Yes	<TD>Yes	<TD>Chuck Murcko	<TD>util.c: In function `get_local_host':
+util.c:1090: warning: implicit declaration of function `gethostname'<BR>
+mod_auth.c: In function `authenticate_basic_user':
+mod_auth.c:180: warning: implicit declaration of function `crypt'<BR>
+mod_auth_dbm.c: In function `dbm_authenticate_basic_user':
+mod_auth_dbm.c:170: warning: implicit declaration of function `crypt'<BR>
+mod_cookies.c: In function `make_cookie':
+mod_cookies.c:133: warning: implicit declaration of function `gettimeofday'<BR>
+mod_proxy.c: In function `cache_check':
+mod_proxy.c:1663: warning: empty body in an else-statement
+<BR>no mod_auth_db	</TR>
+<TR><TD>Solaris 2.4, Sun cc	<TD>Yes	<TD>Yes	<TD>Chuck Murcko	<TD>"http_main.c", line 1565: warning: Function has no return statement : main<BR>
+"util.c", line 1090: warning: implicitly declaring function to return int: gethostname()<BR>
+"mod_auth.c", line 180: warning: implicitly declaring function to return int: crypt()<BR>
+"mod_auth_dbm.c", line 170: warning: implicitly declaring function to return int: crypt()<BR>
+"mod_cookies.c", line 133: warning: implicitly declaring function to return int:gettimeofday()<BR>
+"mod_proxy.c", line 756: warning: semantics of "&lt;" change in ANSI C; use explicit cast<BR>
+"mod_proxy.c", line 1649: warning: semantics of "&lt;" change in ANSI C; use explicit cast<BR>
+"mod_proxy.c", line 2658: warning: statement not reached
+<BR>no mod_auth_db	</TR>
+<TR><TD>Solaris 2.5, gcc	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Solaris 2.5, Sun cc	<TD>Yes	<TD>Yes (except msql, dld, db)	<TD>Alexei	<TD>Warnings: http_main, util, mod_auth, mod_auth_dbm, mod_cookies, mod_proxy
+	</TR>
+<TR><TD>Sunos 4.1.x	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>Ultrix	<TD>	<TD>	<TD>	<TD>	</TR>
+<TR><TD>UnixWare 2.x, cc	<TD>	<TD>	<TD>	<TD>	</TR>
+
+</TABLE>
+</BODY>
+</HTML>

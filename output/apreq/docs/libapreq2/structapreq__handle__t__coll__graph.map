@@ -1,0 +1,8 @@
+<map id="apreq_handle_t" name="apreq_handle_t">
+<area shape="rect" id="node1" title=" " alt="" coords="77,288,199,315"/>
+<area shape="rect" id="node2" href="$structapreq__module__t.html" title="Vtable describing the necessary module functions." alt="" coords="75,199,201,225"/>
+<area shape="rect" id="node3" href="$structapreq__cookie__t.html" title="Cookie type, supporting both Netscape and RFC cookie specifications." alt="" coords="5,95,127,121"/>
+<area shape="rect" id="node4" href="$structapreq__value__t.html" title="libapreq&#39;s pre&#45;extensible string type" alt="" coords="9,5,123,32"/>
+<area shape="rect" id="node5" href="$structapreq__param__t.html" title=" " alt="" coords="151,95,271,121"/>
+<area shape="rect" id="node6" href="/home/tititou36/Dev/svn_httpd_apreq-2/docs/apu.tag$structapr__bucket__brigade.html" title=" " alt="" coords="147,5,297,32"/>
+</map>

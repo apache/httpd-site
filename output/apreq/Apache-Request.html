@@ -1,0 +1,380 @@
+<HTML>
+<HEAD>
+<TITLE>Apache::Request - Methods for dealing with client request data</TITLE>
+<LINK REV="made" HREF="mailto:hackers@FreeBSD.org">
+</HEAD>
+
+<BODY>
+
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#NAME">NAME</A>
+	<LI><A HREF="#SYNOPSIS">SYNOPSIS</A>
+	<LI><A HREF="#DESCRIPTION">DESCRIPTION</A>
+	<LI><A HREF="#Apache_Request_METHODS">Apache::Request METHODS</A>
+	<UL>
+
+		<LI><A HREF="#new">new</A>
+		<LI><A HREF="#instance">instance</A>
+		<LI><A HREF="#parse">parse</A>
+		<LI><A HREF="#param">param</A>
+		<LI><A HREF="#parms">parms</A>
+		<LI><A HREF="#upload">upload</A>
+	</UL>
+
+	<LI><A HREF="#Apache_Upload_METHODS">Apache::Upload METHODS</A>
+	<UL>
+
+		<LI><A HREF="#name">name</A>
+		<LI><A HREF="#filename">filename</A>
+		<LI><A HREF="#fh">fh</A>
+		<LI><A HREF="#size">size</A>
+		<LI><A HREF="#info">info</A>
+		<LI><A HREF="#type">type</A>
+		<LI><A HREF="#next">next</A>
+		<LI><A HREF="#tempname">tempname</A>
+		<LI><A HREF="#link">link</A>
+	</UL>
+
+	<LI><A HREF="#SEE_ALSO">SEE ALSO</A>
+	<LI><A HREF="#CREDITS">CREDITS</A>
+	<LI><A HREF="#AUTHOR">AUTHOR</A>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="NAME">NAME</A></H1>
+<P>
+Apache::Request - Methods for dealing with client request data
+
+<P>
+<HR>
+<H1><A NAME="SYNOPSIS">SYNOPSIS</A></H1>
+<P>
+<PRE>    use Apache::Request ();
+    my $apr = Apache::Request-&gt;new($r);
+</PRE>
+<P>
+<HR>
+<H1><A NAME="DESCRIPTION">DESCRIPTION</A></H1>
+<P>
+<EM>Apache::Request</EM> is a subclass of the <EM>Apache</EM> class, which adds methods for parsing <STRONG>GET</STRONG> requests and <STRONG>POST</STRONG> requests where <EM>Content-type</EM>
+is one of <EM>application/x-www-form-urlencoded</EM> or 
+<EM>multipart/form-data</EM>. See the <CODE>libapreq(3)</CODE> manpage for more details.
+
+<P>
+<HR>
+<H1><A NAME="Apache_Request_METHODS">Apache::Request METHODS</A></H1>
+<P>
+The interface is designed to mimic CGI.pm 's routines for parsing query
+parameters. The main differences are 
+
+<UL>
+<LI><STRONG><A NAME="item_Apache">Apache::Request::new takes an Apache object as (second) argument.</A></STRONG>
+<LI><STRONG><A NAME="item_The">The query parameters are stored as Apache::Table objects,
+and are therefore parsed using case-insensitive keys.</A></STRONG>
+<LI><STRONG><A NAME="item__attr_gt_val_type_arguments_a">-attr =gt $val -type arguments are not supported.</A></STRONG>
+<LI><STRONG><A NAME="item_The">The query string is always parsed, even for POST requests.</A></STRONG>
+</UL>
+<H2><A NAME="new">new</A></H2>
+<P>
+Create a new <EM>Apache::Request</EM> object with an <EM>Apache</EM> request_rec object:
+
+<P>
+<PRE>    my $apr = Apache::Request-&gt;new($r);
+</PRE>
+<P>
+All methods from the <EM>Apache</EM> class are inherited.
+
+<P>
+The following attributes are optional:
+
+<DL>
+<DT><STRONG><A NAME="item_POST_MAX">POST_MAX</A></STRONG><DD>
+<P>
+Limit the size of POST data (in bytes).  <EM>Apache::Request::parse</EM> will return an error code if the size is exceeded:
+
+<P>
+<PRE> my $apr = Apache::Request-&gt;new($r, POST_MAX =&gt; 1024);
+ my $status = $apr-&gt;parse;
+</PRE>
+<P>
+<PRE> if ($status) {
+     my $errmsg = $apr-&gt;notes(&quot;error-notes&quot;);
+     ...
+     return $status;
+ }
+</PRE>
+<DT><STRONG><A NAME="item_DISABLE_UPLOADS">DISABLE_UPLOADS</A></STRONG><DD>
+<P>
+Disable file uploads.  <EM>Apache::Request::parse</EM> will return an error code if a file upload is attempted:
+
+<P>
+<PRE> my $apr = Apache::Request-&gt;new($r, DISABLE_UPLOADS =&gt; 1);
+ my $status = $apr-&gt;parse;
+</PRE>
+<P>
+<PRE> if ($status) {
+     my $errmsg = $apr-&gt;notes(&quot;error-notes&quot;);
+     ...
+     return $status;
+ }
+</PRE>
+<DT><STRONG><A NAME="item_TEMP_DIR">TEMP_DIR</A></STRONG><DD>
+<P>
+Sets the directory where upload files are spooled. On a *nix-like that
+supports <CODE>link(2),</CODE> the TEMP_DIR should be located on the same
+file system as the final destination file:
+
+<P>
+<PRE> my $apr = Apache::Request-&gt;new($r, TEMP_DIR =&gt; &quot;/home/httpd/tmp&quot;);
+ my $upload = $apr-&gt;upload('file');
+ $upload-&gt;link(&quot;/home/user/myfile&quot;) || warn &quot;link failed: $!&quot;;
+</PRE>
+<DT><STRONG><A NAME="item_HOOK_DATA">HOOK_DATA</A></STRONG><DD>
+<P>
+Extra configuration info passed to an upload hook. See the description for
+the next item, <EM>UPLOAD_HOOK</EM>.
+
+<DT><STRONG><A NAME="item_UPLOAD_HOOK">UPLOAD_HOOK</A></STRONG><DD>
+<P>
+Sets up a callback to run whenever file upload data is read. This can be
+used to provide an upload progress meter during file uploads. Apache will
+automatically continue writing the original data to $upload-&gt;fh after
+the hook exits.
+
+<P>
+<PRE> my $transparent_hook = sub {
+   my ($upload, $buf, $len, $hook_data) = @_;
+   warn &quot;$hook_data: got $len bytes for &quot; . $upload-&gt;name;
+ };
+</PRE>
+<P>
+<PRE> my $apr = Apache::Request-&gt;new($r, 
+                                HOOK_DATA =&gt; &quot;Note&quot;,
+                                UPLOAD_HOOK =&gt; $transparent_hook,
+                               );
+ $apr-&gt;parse;
+</PRE>
+
+<H2><A NAME="instance">instance</A></H2>
+<P>
+The <CODE>instance()</CODE> class method allows Apache::Request to be a
+singleton. This means that whenever you call Apache::Request-&gt;instance()
+within a single request you always get the same Apache::Request object
+back. This solves the problem with creating the Apache::Request object
+twice within the same request - the symptoms being that the second
+Apache::Request object will not contain the form parameters because they
+have already been read and parsed.
+
+<P>
+<PRE>  my $apr = Apache::Request-&gt;instance($r, DISABLE_UPLOADS =&gt; 1);
+</PRE>
+<P>
+Note that <CODE>instance()</CODE> call will take the same parameters as the above call to <CODE>new()</CODE>, however the parameters will only have an effect the first time <CODE>instance()</CODE> is called within a single request. Extra parameters will be ignored on
+subsequent calls to <CODE>instance()</CODE> within the same request.
+
+<P>
+Subrequests receive a new Apache::Request object when they call
+<CODE>instance()</CODE> - the parent request's Apache::Request object is
+not copied into the subrequest.
+
+<P>
+Also note that it is unwise to use the <CODE>parse()</CODE> method when using
+<CODE>instance()</CODE> because you may end up trying to call it twice, and detecting errors where
+there are none.
+
+<H2><A NAME="parse">parse</A></H2>
+<P>
+The <EM>parse</EM> method does the actual work of parsing the request. It is called for you by
+the accessor methods, so it is not required but can be useful to provide a
+more user-friendly message should an error occur: my <CODE>$r</CODE> =
+shift; my <CODE>$apr</CODE> = Apache::Request-&gt;new($r); my
+<CODE>$status</CODE> = $apr-&gt;parse; unless ($status == OK) {
+$apr-&gt;custom_response($status, $apr-&gt;notes(``error-notes'')); return
+$status; } 
+
+<H2><A NAME="param">param</A></H2>
+<P>
+Get or set request parameters (using case-insensitive keys) by mimicing the
+OO interface of <CODE>CGI::param</CODE>. Unlike the CGI.pm version, Apache::Request's param method is <EM>very</EM> fast- it's now quicker than even mod_perl's native Apache-&gt;args method.
+However, CGI.pm's
+<CODE>-attr =&amp;gt; $val</CODE> type arguments are not supported.
+
+<P>
+<PRE>    # similar to CGI.pm
+</PRE>
+<P>
+<PRE>    my $value = $apr-&gt;param('foo');
+    my @values = $apr-&gt;param('foo');
+    my @params = $apr-&gt;param;
+</PRE>
+<P>
+<PRE>    # the following differ slightly from CGI.pm
+</PRE>
+<P>
+<PRE>    # assigns multiple values to 'foo'
+    $apr-&gt;param('foo' =&gt; [qw(one two three)]);
+</PRE>
+<P>
+<PRE>    # returns ref to underlying apache table object
+    my $table = $apr-&gt;param; # identical to $apr-&gt;parms - see below
+</PRE>
+<H2><A NAME="parms">parms</A></H2>
+<P>
+Get or set the underlying apache parameter table of the <EM>Apache::Request</EM>
+object. When invoked without arguments, <CODE>parms</CODE> returns a reference to an <EM>Apache::Table</EM> object that is tied to the Apache::Request object's parameter table. If
+called with an Apache::Table reference as as argument, the Apache::Request
+object's parameter table is replaced by the argument's table.
+
+<P>
+<PRE>   # $apache_table references an Apache::Table object
+   $apr-&gt;parms($apache_table); # sets $apr's parameter table
+</PRE>
+<P>
+<PRE>   # returns ref to Apache::Table object provided by $apache_table
+   my $table = $apr-&gt;parms;
+</PRE>
+<H2><A NAME="upload">upload</A></H2>
+<P>
+Returns a single <EM>Apache::Upload</EM> object in a scalar context or all <EM>Apache::Upload</EM> objects in a list context: 
+
+<P>
+<PRE>    my $upload = $apr-&gt;upload;
+    my $fh = $upload-&gt;fh;
+    my $lines = 0; 
+    while(&lt;$fh&gt;) { 
+        ++$lines; 
+        ...
+    } 
+</PRE>
+<P>
+An optional name parameter can be passed to return the <EM>Apache::Upload</EM>
+object associated with the given name:
+
+<P>
+<PRE>    my $upload = $apr-&gt;upload($name);
+</PRE>
+
+<P>
+<HR>
+<H1><A NAME="Apache_Upload_METHODS">Apache::Upload METHODS</A></H1>
+<H2><A NAME="name">name</A></H2>
+<P>
+The name of the filefield parameter:
+
+<P>
+<PRE>    my $name = $upload-&gt;name;
+</PRE>
+<H2><A NAME="filename">filename</A></H2>
+<P>
+The filename of the uploaded file:
+
+<P>
+<PRE>    my $filename = $upload-&gt;filename;
+</PRE>
+<H2><A NAME="fh">fh</A></H2>
+<P>
+The filehandle pointing to the uploaded file:
+
+<P>
+<PRE>    my $fh = $upload-&gt;fh;
+    while (&lt;$fh&gt;) {
+        ...
+    }
+</PRE>
+<H2><A NAME="size">size</A></H2>
+<P>
+The size of the file in bytes:
+
+<P>
+<PRE>    my $size = $upload-&gt;size;
+</PRE>
+<H2><A NAME="info">info</A></H2>
+<P>
+The additional header information for the uploaded file. Returns a hash
+reference tied to the <EM>Apache::Table</EM> class. An optional <EM>key</EM> argument can be passed to return the value of a given header rather than a
+hash reference. Examples:
+
+<P>
+<PRE>    my $info = $upload-&gt;info;
+    while (my($key, $val) = each %$info) {
+        ...
+    }
+</PRE>
+<P>
+<PRE>    my $val = $upload-&gt;info(&quot;Content-type&quot;);
+</PRE>
+<H2><A NAME="type">type</A></H2>
+<P>
+Returns the <EM>Content-Type</EM> for the given <EM>Apache::Upload</EM> object:
+
+<P>
+<PRE>    my $type = $upload-&gt;type;
+    #same as
+    my $type = $upload-&gt;info(&quot;Content-Type&quot;);
+</PRE>
+<H2><A NAME="next">next</A></H2>
+<P>
+Upload objects are implemented as a linked list by libapreq; the
+<EM>next</EM> method provides an alternative to using the <EM>Apache::Request</EM>
+
+<EM>upload</EM> method in a list context:
+
+<P>
+<PRE>    for (my $upload = $apr-&gt;upload; $upload; $upload = $upload-&gt;next) {
+        ...
+    }
+</PRE>
+<P>
+<PRE>    #functionally the same as:
+</PRE>
+<P>
+<PRE>    for my $upload ($apr-&gt;upload) {
+        ...
+    }
+</PRE>
+<H2><A NAME="tempname">tempname</A></H2>
+<P>
+Provides the name of the spool file. This method is reserved for debugging
+purposes, and is possibly subject to change in a future version of
+Apache::Request.
+
+<H2><A NAME="link">link</A></H2>
+<P>
+To avoid recopying the spool file on a *nix-like system,
+<EM>link</EM> will create a hard link to it:
+
+<P>
+<PRE>  my $upload = $apr-&gt;upload('file');
+  $upload-&gt;link(&quot;/path/to/newfile&quot;) or
+      die sprintf &quot;link from '%s' failed: $!&quot;, $upload-&gt;tempname;
+</PRE>
+<P>
+Typically the new name must lie on the same file system as the spool file.
+Check your system's <CODE>link(2)</CODE> manpage for details.
+
+
+<P>
+<HR>
+<H1><A NAME="SEE_ALSO">SEE ALSO</A></H1>
+<P>
+<CODE>libapreq(3),</CODE> Apache::Table(3)
+
+<P>
+<HR>
+<H1><A NAME="CREDITS">CREDITS</A></H1>
+<P>
+This interface is based on the original pure Perl version by Lincoln Stein.
+
+<P>
+<HR>
+<H1><A NAME="AUTHOR">AUTHOR</A></H1>
+<P>
+Doug MacEachern, updated for v1.0 by Joe Schaefer
+</BODY>
+
+</HTML>
