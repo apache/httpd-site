@@ -56,15 +56,19 @@ span.transnote, span.phonetic {
     color: #888;
 }
 
-/* sidebar position: left */
-div#apmenu {
-    position: absolute;
-    top: 5.5em;
-    left: 1em;
-    margin-left: 0;
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Layout: flexbox wrapper + sidebar + content
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+#site-wrapper {
+    display: flex;
     margin-top: 40px;
-    padding: 4px;
+    padding: 0 1em;
+}
+
+div#apmenu {
     width: 13.5em;
+    flex-shrink: 0;
+    padding: 4px;
     background-color: #fff;
     color: inherit;
 }
@@ -74,13 +78,9 @@ div#apmenu {
     font-size: 13px;
 }
 
-/* contents for apsite */
 div#apcontents {
-    position: absolute;
-    top: 5.5em;
-    left: 14em;
-    right: 1em;
-    margin-top: 40px;
+    flex: 1;
+    min-width: 0;
     padding: 4px;
     background-color: #fff;
     color: inherit;
@@ -1137,3 +1137,87 @@ p.figure dfn {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
  * -> The End <-
  * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * Responsive / Mobile
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Responsive logo */
+#site-logo {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Page header */
+#page-header {
+    position: relative;
+}
+
+/* Mobile menu toggle - hidden on desktop */
+#menu-toggle {
+    display: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #557697;
+    color: #fff;
+    border: none;
+    font-size: 24px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#menu-toggle:hover {
+    background: #405871;
+}
+
+/* Tablet breakpoint */
+@media (max-width: 900px) {
+    #site-wrapper {
+        padding: 0 0.5em;
+    }
+
+    div#apmenu {
+        width: 11em;
+    }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+    #menu-toggle {
+        display: block;
+    }
+
+    #site-wrapper {
+        flex-direction: column;
+        padding: 0 0.5em;
+        margin-top: 10px;
+    }
+
+    div#apmenu {
+        width: 100%;
+        display: none;
+        order: -1;
+    }
+
+    div#apmenu.open {
+        display: block;
+    }
+
+    div#apcontents {
+        padding: 4px 0;
+    }
+
+    /* Prevent tables from overflowing */
+    #apcontents table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Prevent images from overflowing */
+    #apcontents img {
+        max-width: 100%;
+        height: auto;
+    }
+}
