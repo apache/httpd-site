@@ -3,6 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
         <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
         <title>Verifying Apache HTTP Server Releases - The Apache HTTP Server Project</title>
@@ -20,12 +21,14 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
             <p class="menu">&nbsp;</p>
             <p class="apache">&nbsp;</p>
             <a href="/">
-            <img alt="" width="800" height="72"  src="/images/httpd_logo_wide_new.png" />
+            <img alt="Apache HTTP Server" src="/images/httpd_logo_wide_new.png" id="site-logo" />
             </a>
             <a class="badge" href="https://www.apache.org/foundation/contributing.html">
                 <img src="https://www.apache.org/images/SupportApache-small.png">
             </a>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
         </div>
+        <div id="site-wrapper">
         <div id="apmenu">
 	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
 	  <p style="margin-top: -10px;">
@@ -244,5 +247,17 @@ fa53c95631febb08a9de41fd2864cfff815cf62d9306723ab0d4b8d7aa1638f0 *httpd-2.4.34.t
  and other countries.</p>
             </div>
         </div>
+        </div><!-- /#site-wrapper -->
+        <script>
+        (function() {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('apmenu');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function() {
+                    menu.classList.toggle('open');
+                });
+            }
+        })();
+        </script>
     </body>
 </html>
