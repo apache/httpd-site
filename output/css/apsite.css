@@ -1190,11 +1190,16 @@ p.figure dfn {
         padding: 0;
     }
 
-    div#page-header img {
+    div#page-header img#site-logo {
         width: 100% !important;
         max-width: 800px;
         height: auto !important;
         margin: 0 auto;
+    }
+
+    div#page-header a.badge img {
+        width: 95px;
+        height: 95px;
     }
 
     div#page-header p.apache {
