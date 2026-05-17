@@ -38,8 +38,6 @@ you can use :
 
 -  [Installation instructions](install.html) 
 
-- More documentation coming soon!
-
 # Mailing Lists #
 
 Discussions on `mod_smtpd` take place on the main HTTPd development mailing
