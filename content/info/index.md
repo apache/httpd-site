@@ -20,10 +20,6 @@ software.
 # Apache HTTP Server Books  {#books}
 
 list of books written about the Apache HTTP Server can be found on
-[www.apachebookstore.com](http://www.apachebookstore.com/) 
+[www.apachebookstore.com](http://www.apachebookstore.com/)
 
-# How to mirror  {#mirror}
-
-A [description](http://www.apache.org/info/how-to-mirror.html) of how to
-setup your site as an Apache mirror.
 

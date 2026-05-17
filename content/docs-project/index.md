@@ -105,8 +105,8 @@ Online Documentation: [Version 2.0](../docs/2.0/) | [Version
 [Wiki](http://wiki.apache.org/httpd/) 
 
 Downloadable documentation in Microsoft Help (CHM) format is available from
-our [distribution
-mirrors](http://www.apache.org/dyn/mirrors/mirrors.cgi/httpd/docs/).
+the [distribution
+directory](https://downloads.apache.org/httpd/docs/).
 
 # Participants #
 
