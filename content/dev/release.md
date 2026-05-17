@@ -165,12 +165,12 @@ transformations are up to date.
 testing and votes on this candidate. Send this to dev@httpd.apache.org.
 
 1. When the vote has concluded, the tarballs and signatures can be moved
-to the release distribution mirror.
+to the release distribution area.
 
 1. Add the new version and the new modules, if any, in bugzilla (or ask infra to do so).
 
-1. After a 24 to 48 hour delay for the mirrors to replicate the data, the
-release can be announced with any pending security announcements as well.
+1. Once the release files are available on downloads.apache.org, the
+release can be announced along with any pending security announcements.
 
 1. local checkout: increment the patch number for work on the next release.
 
@@ -211,8 +211,8 @@ The automated workflow is:
     # https://dist.apache.org/repos/dist/release/httpd
     # this will use the version without any rc1 suffix
     ../tools/release/r3-push-release-tars.sh
-    # wait for them to reach the mirrors
-    
+    # wait for CDN propagation
+
     # add CVE related information and prepare changes to the
     # dist release, website, pmc repository and local checkout
     # all these changes are local only
@@ -301,9 +301,8 @@ It should be ensured that the release and any new module are also added to Bugzi
 a mail to dev@httpd.apache.org requesting the same. The request is picked
 up there by one of the project members with Bugzilla administrator
 permissions and the release is added to Bugzilla.
-Approximately 24 to 48 hours after the files have been moved, a public
-announcement can be made. We wait this period so that the mirrors can
-receive the new release before the announcement. An email can then be sent
+Once the release files are available on downloads.apache.org, a public
+announcement can be made. An email can then be sent
 to the announcements lists (announce@apache.org, announce@httpd.apache.org)
 from your apache.org email address. Drafts of the announcement are usually
 posted on the development list before sending the announcement to let the

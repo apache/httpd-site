@@ -7,12 +7,9 @@ All official releases of code distributed by the Apache HTTP Server Project
 are signed by the release manager for the release. PGP signatures and SHA
 hashes are available along with the distribution.
 
-You should download the PGP signatures and SHA hashes directly from the
-Apache Software Foundation rather than our mirrors. This is to help ensure
-the integrity of the signature files. However, you are encouraged to
-download the releases from our mirrors. (Our download page points you at
-the mirrors for the release and the official site for the signatures, so
-this happens automatically for you.)
+You should download the PGP signatures and SHA hashes directly from
+<https://downloads.apache.org/httpd/> to help ensure the integrity of
+the signature files.
 
 # Checking Signatures  {#Checking}
 
