@@ -18,7 +18,7 @@ svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x
 httpd-2.4.x
 ` 
 
-To check out the current development version (as of this writing, 2.5.x),
+To check out the current development version (trunk),
 use:
 
 > `
