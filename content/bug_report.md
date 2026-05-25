@@ -47,4 +47,5 @@ We will respond to it as soon as we can.
 |------------|-----------------|
 | Code / software bugs | [ASF Bugzilla — Apache httpd-2](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache+httpd-2) |
 | Documentation bugs | [ASF Bugzilla — Documentation](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache+httpd-2&component=Documentation) |
-| Website issues | [httpd-site GitHub Issues](https://github.com/apache/httpd-site/issues) |
+| Website issues | [File as Documentation](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache+httpd-2&component=Documentation) |
+
