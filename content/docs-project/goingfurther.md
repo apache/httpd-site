@@ -1,102 +1,92 @@
-Title: Translations - Documentation Project
+Title: Maintaining Translations
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Introduction #
+# Maintaining Translations
 
-In order to work more efficiently with your translations and keep them
-up-to-date, it's recommended that
-you download the svn repository into your computer, so you can regularly check what
-english files have been updated since your last visit/change, and transfer these
-changes to your existing translated files. Also, in this manner, you will be
-able to build locally the doc (transform it to HTML files) in order to see how
-your changes look like.
+Once you've started translating, the ongoing work is keeping your
+translations up to date as the English source evolves. This page
+describes a practical workflow for tracking changes and updating your
+translated files.
 
-Doc manual is divided in branches:
+## The Basic Idea
 
-- <b>trunk:</b> It's the development branch; in other words, 2.4 branch plus new
-  features, changes; you allways must begin to translate files in this branch,
-  then port your work to other branches.
-- <b>2.4:</b> It's the current stable branch, recommended for a prod server
+The English documentation changes over time — bugs get fixed, features
+get documented, examples get improved. As a translator, you need to:
 
-Good to see [what has already been
-translated](http://home.apache.org/~takashi/translation-status/test.html#2.4) and
-whether it's up to date or not.
+1. Detect which English files have changed since you last translated
+2. See what specifically changed
+3. Apply the equivalent changes to your translated files
+4. Verify your work builds correctly
 
-# Downloading svn repository #
+## Recommended Workflow
 
-In order to work properly, you have to download the `doc` tree (svn repository) onto
-your computer:
+### Set Up Your Working Environment
 
-- Create a directory called <b>"httpd-doc"</b> on your computer : `mkdir
-  httpd-doc`
-- cd to this directory: `cd httpd-doc`
-- Download svn repository:
-	- `svn co https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs
-	  httpd-trunk`
-	- `svn co
-	  https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs
-	  httpd-2.4`</br>
-    
-  **Note:** SVN is a powerful program; see more [here](svn.html) and of course
-  "`svn --help`" or "`man svn`" if you work in a Unix-like environment.	  
+Check out both active branches:
 
-# New translations #
+    svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs httpd-trunk
+    svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs httpd-2.4
 
-Translate documents that are not yet translated as shown in [Translations
-document](translations.html).
+### Track Changes with SVN
 
-# Maintaining your translations #
+The simplest way to see what's changed since a known revision is
+`svn diff` between revisions. If you noted that you last synchronized
+your translation at revision 1900000, you can see all changes since then:
 
-There are several ways to do that.
-Here is the method I use since several years; its probably not the best, but it
-will help you to get started.
+    svn log -r 1900000:HEAD docs/manual/mod/mod_rewrite.xml
+    svn diff -r 1900000:HEAD docs/manual/mod/mod_rewrite.xml
 
-- cd to your repository root <b>"httpd-doc"</b>
+**Tip:** Note the current revision number each time you finish updating
+a translation. Add it as a comment at the top of your translated file:
 
-- Create a directory called <b>"working"</b> (it will be used later): `mkdir
-  working`
+    <!-- English Revision: 1912345 -->
 
-- Create a directory called <b>"sav"</b> (reference directory for updates detection -
-  see below): `mkdir sav`
-- Copy svn repository you downloaded above in <b>"sav"</b> directory:
-	- `cp -a httpd-trunk sav`
-	- `cp -a httpd-2.4 sav`
+This makes it easy to check what's changed next time:
 
-- Once you have finished to work on a file, say <b>file.xml.fr</b>, save it to
-  corresponding directory in sav tree, along with its english version
-  <b>file.xml</b>;
-  you'll understand why in a next step.
-- Say a week later, you wish to see if doc gurus have made some changes: cd to
-  your repository root <b>"httpd-doc"</b> which contains the different branches.
-  
-- Copy [this script](modifs-detection) in <b>"httpd-doc"</b> directory and launch it
-  from there.
-Modifications will be displayed for each branch.
+    svn diff -r 1912345:HEAD docs/manual/mod/mod_rewrite.xml
 
-- Suppose modifications for 2.4 branch contains this line:<br />
+### Update Your Translation
 
-	<b>U manual/bind.xml</b><br/>
+With the diff output showing what changed in the English source, apply
+the equivalent changes to your translated file. Focus on:
 
-	That means manual/bind.xml file has been modified since your last visit.
-In order to check these modifications, you have to compare the last version of
-manual/bind.xml with the one you have saved above into the <b>"sav"</b> directory
-during your last working session; for
-this purpose, you can use the diff command this way:<br />
+- New paragraphs or sections that need translating
+- Changed examples or directive descriptions
+- Removed content that should also be removed from your translation
+- Corrected technical information
 
-	`diff sav/httpd-2.4/manual/bind.xml httpd-2.4/manual/bind.xml > working/diff-bind`
+### Verify Your Work
 
-- `working/diff-bind` file covers now all modifications you have to transfer after
-  translation to your own bind.xml.ll (ll-> Local Language), say bind.xml.fr for a (good) example.
+Build the docs to confirm your XML is valid and the output looks right:
 
-- When you're finished, don't forget to save your work  (new versions of
-  bind.xml and bind.xml.fr in the appropriate <b>"sav"</b> subdirectory).
+    cd docs/manual/build
+    ./build.sh validate-xml
+    ./build.sh <your-language-code>
 
-- In order to check how your modifications look like, you have to build the docs
-  to generate HTML files from xml ones (see [this document](docsformat.html)).
+Open the generated HTML in a browser to review the final result.
 
-- Once you're satisfied with your work, submit a patch to [https://bz.apache.org/bugzilla/](https://bz.apache.org/bugzilla/)
+### Submit Your Updates
 
+Send your updated files as a patch:
 
-# Questions #
+    svn diff > translation-update.patch
 
-Feel free to send your questions to docs@httpd.apache.org
+Email the patch to `docs@httpd.apache.org`, or attach it to a
+[Bugzilla ticket](https://bz.apache.org/bugzilla/).
+
+## Staying in Sync
+
+A few habits that make maintenance easier:
+
+- **Update regularly** — small, frequent updates are much easier than
+  catching up after months of changes.
+- **Watch the commits list** — subscribe to the svn commits to see
+  documentation changes as they happen.
+- **Coordinate with other translators** — if there are multiple people
+  working on your language, divide the work and communicate via the
+  mailing list.
+
+## Questions?
+
+If you get stuck or have questions about maintaining translations, reach
+out to `docs@httpd.apache.org`. We're happy to help.

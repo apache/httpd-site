@@ -1,11 +1,18 @@
-Title: Documentation - Contributors
+Title: Contributors
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Documentation - Contributors
+# Contributors
 
-The Apache HTTP Server documentation is the product of the work of many,
-many people. The following people have at one time or another contributed
-to the Apache HTTP Server documentation. Thanks to all of them!
+The Apache HTTP Server documentation is the product of many people's
+work over more than two decades. The following individuals have
+contributed to the documentation at one time or another. We're grateful
+to every one of them.
+
+This is a historical record — not a closed list. New contributors are
+always welcome, and we'd love to add your name here. See the
+[contribution guide](contribute.html) to get started.
+
+## Documentation Contributors
 
 - aaron : Aaron Bannert
 - akosut : Alexei Kosut
@@ -96,8 +103,9 @@ to the Apache HTTP Server documentation. Thanks to all of them!
 - wsanchez : Wilfredo Sanchez
 - yoshiki : Yoshiki Hayashi
 
-The localized custom error messages in the 2.x version of the Apache HTTP
-Server were contributed by
+## Localized Error Messages
+
+The custom error messages in the 2.x releases were contributed by:
 
 - Ricardo Leite (Brazilian)
 - Marcel Kolaja (Czech)
@@ -113,4 +121,3 @@ Server were contributed by
 - Karla Quintero (Spanish)
 - Thomas Sjögren (Swedish)
 - Emre Sokullu (Turkish)
-

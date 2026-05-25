@@ -1,107 +1,107 @@
-Title: Translations - Documentation Project
+Title: Translating the Documentation
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Welcome ! #
+# Translating the Documentation
 
-We encourage translations of the documentation into other languages and thank
-you in advance for your contribution. If you would like to assist in translating
-the docs, please start by reading the general [documentation project
-information](./) , and subscribing to the [documentation project mailing
-list](https://lists.apache.org/list.html?docs@httpd.apache.org). The documentation
-project participants are usually very willing to help you with any questions or
-technical difficulties that may arise during your work.
+Thank you for considering a translation contribution! Translations make
+the Apache HTTP Server documentation accessible to millions of
+non-English-speaking administrators worldwide.
 
-# Getting Started #
+Before you begin, please:
 
-To get started translating whole or part(s) of the doc and keep it up to date,
-you'll need to do the following.
+1. Read the general [documentation project information](./).
+2. Subscribe to the
+   [docs mailing list](mailto:docs-subscribe@httpd.apache.org).
+3. Introduce yourself — let us know which language you'll be working in.
+   There may already be a team for your language who can help coordinate.
 
-- Join the docs mailing list by sending a message to
-  [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org).
+## Getting Started
 
-- Send a message to the list above to say that you wish to get involved in
-  translating the doc into your language. Maybe there's already in place a
-  translation team for your language that will help you in your work.
+### 1. Set Up Your SVN Checkout
 
-- Let's suppose you look at https://httpd.apache.org/docs/trunk/configuring.html
-  and see that there's no version of this page in your language.
+Check out the documentation source:
 
-- Get english version of the source file [here](https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/manual/configuring.xml)
-  Note that you must download the .xml file, not the .html one.
+    svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs httpd-trunk-docs
 
-- Make a copy of that file with the two-letter file extension representing your
-  language. For example, for a Spanish translation, you'd copy `configuring.xml`
-  to `configuring.xml.es`. You are now ready to start well said translation :
+Start your translations in **trunk**. Changes can be backported to the
+2.4.x branch afterward.
 
-	- If your language contains accented and/or multi-bytes characters, set
-	  your text editor encoding to "UTF-8" , and check that the first line
-	  of the file is:<br />
-	  <?xml version="1.0" encoding="UTF-8" ?>
-	- In the header, replace the string "$LastChangedRevision:" by the
-	  string "English Revision:"
-	- Make sure you put your name at the top of the file if you are
-	  translating or reviewing the documentation like this:<br />
-	  &lt;!-- French translation : &lt;translator name&gt; --&gt;<br />
-	  &lt;!-- Reviewed by : &lt;reviewer name&gt; --&gt;
-	- Translate all textual portions of the document, leaving directives,
-	  examples, and other literal code portions unchanged.
-	- What has to be translated ? All text parts between &lt;p&gt; and
-	  &lt;/p&gt;, &lt;title&gt; and &lt;/title&gt;, &lt;description&gt; and
-	  &lt;/description&gt;, &lt;name&gt; and &lt;/name&gt;,
-	  &lt;compatibility&gt; and &lt;/compatibility&gt;, &lt;note&gt; and
-	  &lt;/note&gt;, &lt;li&gt; and &lt;/li&gt;, &lt;dd&gt; and &lt;/dd&gt;.
-  - We strongly encourage xml file to fit within <b>80</b> console width, so
-    it is easy for any maintainer to review the files. Exceptions do happen for
-    complex xml tags and unspaced languages such as Chinese and Japanese.
+### 2. Choose a File to Translate
 
-- Send your results - either complete files, or the output of `svn diff` to the
-  docs mailing list, in order someone can commit it to the repository.  Eventually,
-  you can do this step yourself.
+Check the [translation status](avail_translations.html) to see what's
+already been translated and what's needed.
 
-# Going further ! #
+Pick an untranslated file — for example, suppose you want to translate
+`configuring.xml` into Spanish.
 
-If you wish to go further in translating of the doc, in other words maintaining
-your translations and keep them up-to-date, read [this
-document](goingfurther.html).
+### 3. Create Your Translation File
 
+Copy the English source file, adding your two-letter language code as
+a file extension:
 
+    cp configuring.xml configuring.xml.es
 
+### 4. Translate
 
+Open the new file in your editor and:
 
+- **Set encoding to UTF-8.** Ensure the first line reads:
+  `<?xml version="1.0" encoding="UTF-8" ?>`
 
+- **Mark the English revision.** Replace `$LastChangedRevision:` with
+  `English Revision:` followed by the current revision number. This
+  helps future maintainers know when your translation was last synced.
 
-# Related Information #
+- **Add translator credits** at the top of the file:
 
-Please note the following documents. They give you further information which may
-be helpful.
+      <!-- Spanish translation: Your Name -->
+      <!-- Reviewed by: Reviewer Name -->
 
-- The [Documentation Format and
-  Transformation](https://httpd.apache.org/docs-project/docsformat.html) page
-  gives some information about the transformation from xml to html.
-  Translations of documentation for Apache version 2.0 and higher should be sent
-  as xml file. Committers will take care of generating and committing the
-  corresponding html file.
+- **Translate the text content.** Translate text within: `<p>`,
+  `<title>`, `<description>`, `<name>`, `<compatibility>`, `<note>`,
+  `<li>`, `<dd>`, and similar elements.
 
-# Review Standards #
+- **Leave code unchanged.** Directives, configuration examples, and
+  other literal code stay in English.
 
-Because English is the main development language of the Apache HTTP Server, it
-is difficult for the developers to check the quality of documentation submitted
-in other languages. Therefore, we require that all translated documentation be
-reviewed by another fluent speaker of the relevant language, before it can be
-accepted. Each commit message should list the reviewer. If the translator is not
-the same as the committer, the translator should also be named in the commit
-message.
+- **Keep lines within 80 characters** where practical, so reviewers can
+  read the files easily. (Exceptions for complex XML tags and languages
+  without word spacing, like Chinese and Japanese.)
 
-We also encourage you to place the name of the translator in a comment at the
-top of the file, like this:
+### 5. Submit Your Translation
 
-  &lt;!-- ===================================================== Translated by:
-   Nilgün Belma Bugüner &lt;nilgun belgeler.org&gt; Reviewed by: Orhan Berent
-  &lt;berent belgeler.org&gt;
-  ========================================================== --&gt;
- 
-The build system keeps track of the svn revision number of the equivalent
-English version, so that future translators have an idea of where they need to
-start.
+Send your completed file (or a patch) to `docs@httpd.apache.org`. A
+committer will review it and add it to the repository. Over time, you
+may gain commit access yourself.
 
+## Keeping Translations Current
 
+Once your initial translation is committed, you'll want to keep it up to
+date as the English source evolves. See
+[Maintaining Translations](goingfurther.html) for a practical workflow.
+
+## Review Standards
+
+Because the development team can't easily verify non-English content, we
+require that all translations be reviewed by another fluent speaker of
+the language before acceptance. Each commit message should name both the
+translator and the reviewer.
+
+We encourage you to place credits in a comment at the top of the file:
+
+    <!-- =============================================
+         Translated by: Your Name <email>
+         Reviewed by: Reviewer Name <email>
+         ============================================= -->
+
+The build system tracks the SVN revision of the equivalent English
+version, so future translators know where to start updating.
+
+## Related Information
+
+- [Documentation Format](docsformat.html) — the XML format and how to
+  build HTML from it
+- [Translation Status](avail_translations.html) — what's been
+  translated and what's needed
+- [Maintaining Translations](goingfurther.html) — keeping your work
+  up to date
