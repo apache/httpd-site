@@ -73,11 +73,6 @@ You can browse current and past messages at
 If you're not subscribed, your messages may still be moderated through
 if they're on-topic.
 
-## IRC {#irc}
-
-You can find us in **#httpd** on [irc.libera.chat](https://libera.chat/).
-It's a good place for quick questions or to say hello.
-
 ## Translate the Documentation {#translate}
 
 The documentation is available in several languages, but many
