@@ -1,65 +1,94 @@
-Title: Documentation Project: Subversion
+Title: SVN Workflow
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Documentation Project: Subversion #
+# SVN Workflow
 
-The documentation of the Apache HTTP Server is in the same Subversion
-revision control repository as the code. If you wish to work on the
-documentation, you can check out the entire source code repository, or just
-the documentation.
+The Apache HTTP Server documentation lives in the same Subversion (SVN)
+repository as the server source code. This page walks you through
+checking out the docs and submitting patches.
 
-To check out the entire repository, you'll do the following:
+If you're new to SVN, don't worry — the commands below are all you need
+to get started.
+
+## Checking Out the Repository
+
+There are two active branches:
+
+- **trunk** — the development branch (next release)
+- **2.4.x** — the current stable release
+
+To check out both:
 
     svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
     svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
 
-By checking out both trunk and 2.4, you'll be able to submit patches
-against both the development version, and the current latest released
-version.
+We recommend checking out both so you can submit patches against either
+branch. Most documentation patches should target **trunk** first, then
+be backported to 2.4.x if applicable.
 
-To check out just the documentation portion of the repository, append '
-`/docs` ' to the end of the checkout URLs shown above. This will give you a
-much smaller checkout, but perhaps you'll lack some of the resources you
-might need to verify your documentation changes.
+### Docs-Only Checkout
 
-# Creating a patch #
+If you only want the documentation (smaller download), append `/docs`
+to the checkout URLs:
 
-Once you have a checkout, creating a patch takes four steps.
+    svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs httpd-trunk-docs
+    svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs httpd-2.4-docs
 
-1. Update your checkout, to be sure that you have the latest changes in the
-   repository, in case someone else has changed something since the last time
-   you worked on the docs:
+This gives you a lighter checkout, though you won't have the full source
+tree for context.
 
-    <div class="example"><pre>
+## Creating a Patch
+
+Once you have a checkout, the process is:
+
+### 1. Update Your Checkout
+
+Always pull the latest changes before you start editing:
+
     svn update
-    </pre></div>
 
-2. Edit the file that you wish to modify. Make the desired changes, and then
-   save your changes. Documentation files are in the `/docs/manual` subdirectory
-   of your checkout.
+### 2. Edit the Documentation
 
-3. At the command line, type the following to create a patch file:
+Documentation files are in the `docs/manual/` subdirectory. Find the
+file you want to change, make your edits, and save.
 
-    <div class="example"><pre>
-    svn diff &gt; patch.txt
-    </pre></div>
+### 3. Generate a Patch
 
-4. Send email to the `docs@httpd.apache.org` mailing list and attach
-   `patch.txt`.
+Create a unified diff of your changes:
 
-If you have more than one changed file, you can supply the file name on the
-`svn diff` command line, in order to just record the changes in one file.
+    svn diff > my-changes.patch
 
-<div class="example"><pre>
-svn diff mod_rewrite.xml &gt; mod_rewrite_patch.txt
-</pre></div>
+To generate a patch for just one file:
 
-# See Also #
+    svn diff docs/manual/mod/mod_rewrite.xml > mod_rewrite_fix.patch
 
-See also the document on [documentation format and
-transformation](docsformat.html) for details about verifying that your
-changes are compliant with our documentation format and standards. In your
-email message, indicate what branch of the code the patch is against
-(trunk, 2.4, 2.2, etc.) what file(s) are affected, and what change you are
-making. If it's in reference to a specific bug ticket, mention that, too.
+### 4. Submit the Patch
 
+Send your patch to `docs@httpd.apache.org` with:
+
+- The patch file attached
+- Which branch it's against (trunk, 2.4.x)
+- A brief description of what you changed and why
+- A reference to the Bugzilla ticket, if there is one
+
+Alternatively, attach the patch directly to a
+[Bugzilla ticket](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&component=Documentation).
+
+## Tips
+
+- **Name your patches descriptively** — `fix-proxy-example.patch` is
+  more helpful than `patch.txt`.
+- **Keep patches focused** — one logical change per patch is easier to
+  review.
+- **Check your XML** — run the validation targets before submitting
+  (see [documentation format](docsformat.html)).
+- **Don't worry about being perfect** — we're happy to work with you
+  on revisions.
+
+## See Also
+
+- [Documentation Format and Build](docsformat.html) — how to validate
+  and build the docs locally
+- [Style Guide](style-guide.html) — markup and prose conventions
+- [Tools for Contributors](tools.html) — recommended editors and
+  utilities
