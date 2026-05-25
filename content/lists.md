@@ -12,16 +12,15 @@ List archives are available in [the Apache
 Mail Archives](https://lists.apache.org/list.html?dev@httpd.apache.org).
 
 -  [Apache Server Announcements](#http-announce) 
-
 -  [User Support and Discussion](#http-users) 
-
 -  [Apache HTTP Server Development Main Discussion List](#http-dev) 
-
 -  [Apache HTTP Server Bug Reports List](#http-bugdb) 
-
 -  [Source Change Reports](#http-cvs) 
-
 -  [Apache HTTP Server Documentation Project](#http-docs) 
+
+**If you are not subscribed to one of these lists, your messages will go
+into moderation before being approved for the list. This is a spam
+prevention measure.**
 
 # Apache Server Announcements  {#http-announce}
 
