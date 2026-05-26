@@ -1,0 +1,195 @@
+<HTML>
+<HEAD>
+<TITLE>Apache::Cookie - HTTP Cookies Class</TITLE>
+<LINK REV="made" HREF="mailto:hackers@FreeBSD.org">
+</HEAD>
+
+<BODY>
+
+<!-- INDEX BEGIN -->
+
+<UL>
+
+	<LI><A HREF="#NAME">NAME</A>
+	<LI><A HREF="#SYNOPSIS">SYNOPSIS</A>
+	<LI><A HREF="#DESCRIPTION">DESCRIPTION</A>
+	<LI><A HREF="#METHODS">METHODS</A>
+	<UL>
+
+		<LI><A HREF="#new">new</A>
+		<LI><A HREF="#bake">bake</A>
+		<LI><A HREF="#parse">parse</A>
+		<LI><A HREF="#fetch">fetch</A>
+		<LI><A HREF="#as_string">as_string</A>
+		<LI><A HREF="#name">name</A>
+		<LI><A HREF="#value">value</A>
+		<LI><A HREF="#domain">domain</A>
+		<LI><A HREF="#path">path</A>
+		<LI><A HREF="#expires">expires</A>
+		<LI><A HREF="#secure">secure</A>
+	</UL>
+
+	<LI><A HREF="#BUGS">BUGS</A>
+	<LI><A HREF="#SEE_ALSO">SEE ALSO</A>
+	<LI><A HREF="#AUTHOR">AUTHOR</A>
+</UL>
+<!-- INDEX END -->
+
+<HR>
+<P>
+<H1><A NAME="NAME">NAME</A></H1>
+<P>
+Apache::Cookie - HTTP Cookies Class
+
+<P>
+<HR>
+<H1><A NAME="SYNOPSIS">SYNOPSIS</A></H1>
+<P>
+<PRE>    use Apache::Cookie ();
+    my $r = Apache-&gt;request;
+    my $cookie = Apache::Cookie-&gt;new($r, ...);
+</PRE>
+<P>
+<HR>
+<H1><A NAME="DESCRIPTION">DESCRIPTION</A></H1>
+<P>
+The Apache::Cookie module is a Perl interface to the cookie routines in <EM>libapreq</EM>. The interface is based on Lincoln Stein's CGI::Cookie module.
+
+<P>
+<HR>
+<H1><A NAME="METHODS">METHODS</A></H1>
+<P>
+<EM>Apache::Cookie</EM> does not export any symbols to the caller's namespace. Except for the
+request object passed to <CODE>Apache::Cookie::new</CODE>, the OO interface is identical to <EM>CGI::Cookie</EM>. Please consult the <A HREF="/CGI/Cookie.html">CGI::Cookie</A>
+documentation for more details.
+
+<H2><A NAME="new">new</A></H2>
+<P>
+Just like CGI::Cookie::new, but requires an <EM>Apache</EM> request object:
+
+<P>
+<PRE>        my $cookie = Apache::Cookie-&gt;new($r,
+                             -name    =&gt;  'foo', 
+                             -value   =&gt;  'bar', 
+                             -expires =&gt;  '+3M', 
+                             -domain  =&gt;  '.capricorn.com', 
+                             -path    =&gt;  '/cgi-bin/database',
+                             -secure  =&gt;  1 
+                            ); 
+</PRE>
+<H2><A NAME="bake">bake</A></H2>
+<P>
+Put cookie in the oven to bake. (Add a <EM>Set-Cookie</EM> header to the outgoing headers table.) 
+
+<P>
+<PRE>    $cookie-&gt;bake;
+</PRE>
+<H2><A NAME="parse">parse</A></H2>
+<P>
+This method parses the given string if present, otherwise, the incoming 
+<EM>Cookie</EM> header:
+
+<P>
+<PRE>    my $cookies = $cookie-&gt;parse; #hash ref
+</PRE>
+<P>
+<PRE>    my %cookies = $cookie-&gt;parse;
+</PRE>
+<P>
+<PRE>    my %cookies = $cookie-&gt;parse($cookie_string);
+</PRE>
+<H2><A NAME="fetch">fetch</A></H2>
+<P>
+Fetch and parse the incoming <EM>Cookie</EM> header:
+
+<P>
+<PRE>    my $cookies = Apache::Cookie-&gt;fetch; #hash ref
+</PRE>
+<P>
+<PRE>    my %cookies = Apache::Cookie-&gt;fetch;
+</PRE>
+<H2><A NAME="as_string">as_string</A></H2>
+<P>
+Format the cookie object as a string:
+
+<P>
+<PRE> #same as $cookie-&gt;bake
+ $r-&gt;err_headers_out-&gt;add(&quot;Set-Cookie&quot; =&gt; $cookie-&gt;as_string);
+</PRE>
+<H2><A NAME="name">name</A></H2>
+<P>
+Get or set the name of the cookie:
+
+<P>
+<PRE> my $name = $cookie-&gt;name;
+</PRE>
+<P>
+<PRE> $cookie-&gt;name(&quot;Foo&quot;);
+</PRE>
+<H2><A NAME="value">value</A></H2>
+<P>
+Get or set the values of the cookie:
+
+<P>
+<PRE> my $value = $cookie-&gt;value;
+ my @values = $cookie-&gt;value;
+</PRE>
+<P>
+<PRE> $cookie-&gt;value(&quot;string&quot;);
+ $cookie-&gt;value(\@array);
+</PRE>
+<H2><A NAME="domain">domain</A></H2>
+<P>
+Get or set the domain for the cookie:
+
+<P>
+<PRE> my $domain = $cookie-&gt;domain;
+ $cookie-&gt;domain(&quot;.cp.net&quot;);
+</PRE>
+<H2><A NAME="path">path</A></H2>
+<P>
+Get or set the path for the cookie:
+
+<P>
+<PRE> my $path = $cookie-&gt;path;
+ $cookie-&gt;path(&quot;/&quot;);
+</PRE>
+<H2><A NAME="expires">expires</A></H2>
+<P>
+Get or set the expire time for the cookie:
+
+<P>
+<PRE> my $expires = $cookie-&gt;expires;
+ $cookie-&gt;expires(&quot;+3h&quot;);
+</PRE>
+<H2><A NAME="secure">secure</A></H2>
+<P>
+Get or set the secure flag for the cookie:
+
+<P>
+<PRE> my $secure = $cookie-&gt;secure;
+ $cookie-&gt;secure(1);
+</PRE>
+
+<P>
+<HR>
+<H1><A NAME="BUGS">BUGS</A></H1>
+<DL>
+<DT><STRONG><A NAME="item_RFC">RFC 2964-5 are not fully implemented.</A></STRONG><DD>
+<DT><STRONG><A NAME="item_value">value should also accept a hash ref as argument.</A></STRONG><DD>
+<DT><STRONG><A NAME="item_Reportedly">Reportedly does not run (linking problem?) on Apple's OSX</A></STRONG><DD>
+</DL>
+<P>
+<HR>
+<H1><A NAME="SEE_ALSO">SEE ALSO</A></H1>
+<P>
+<CODE>Apache(3),</CODE> Apache::Request(3), CGI::Cookie(3)
+
+<P>
+<HR>
+<H1><A NAME="AUTHOR">AUTHOR</A></H1>
+<P>
+Doug MacEachern, updated for v1.0 by Joe Schaefer
+</BODY>
+
+</HTML>

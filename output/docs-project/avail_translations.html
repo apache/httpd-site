@@ -1,0 +1,2269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
+        <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
+        <title>Translation Status - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="Apache HTTP Server" src="/images/httpd_logo_wide_new.png" id="site-logo" />
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png">
+            </a>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+        </div>
+        <div id="site-wrapper">
+        <div id="apmenu">
+	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous"><a href="/info/">Miscellaneous</a><a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	    <li><a href="https://www.apache.org/foundation/policies/privacy.html">Privacy</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="translation-status">Translation Status<a class="headerlink" href="#translation-status" title="Permalink">&para;</a></h1>
+<p>The table below shows which module documentation files have been
+translated into each language. There's plenty of room to help &mdash; if you
+see gaps in a language you speak, we'd welcome your contribution.</p>
+<p>To get started translating, see the <a href="translations.html">translation guide</a>.
+To learn about keeping translations up to date, see
+<a href="goingfurther.html">Maintaining Translations</a>.</p>
+<p>If you can provide translations into any of these languages (or any
+others not yet listed), please let us know on
+<a href="mailto:docs-subscribe@httpd.apache.org">docs@httpd.apache.org</a>.</p>
+<!--
+HOW TO REGENERATE THIS TABLE:
+
+The table below is generated by build/list_translations.py in the
+httpd 2.4 docs source tree. To produce a fresh version:
+
+    cd ~/devel/apache/httpd/httpd-2.4/docs/manual
+    python3 build/list_translations.py > /tmp/table.md
+
+Then paste the contents of /tmp/table.md below, replacing everything
+from the first "| Document |" line to the end of the file.
+-->
+<table class="table">
+<thead>
+<tr>
+<th>Document</th>
+<th align="center">German</th>
+<th align="center">Spanish</th>
+<th align="center">French</th>
+<th align="center">Japanese</th>
+<th align="center">Korean</th>
+<th align="center">Turkish</th>
+<th align="center">Simplified Chinese</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bind.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>caching.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>configuring.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>content-negotiation.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>custom-error.xml</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>dns-caveats.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>dso.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>env.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>expr.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>filter.xml</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>getting-started.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>glossary.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>handler.xml</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>index.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>install.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>invoking.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>license.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>logs.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/allmodules.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>mod/core.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/directive-dict.xml</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/directives.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>mod/event.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/index.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>mod/mod_access_compat.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_actions.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_alias.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_allowmethods.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_asis.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_auth_basic.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_auth_digest.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_auth_form.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authn_anon.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authn_core.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authn_dbd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authn_dbm.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authn_file.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authn_socache.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authnz_fcgi.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authnz_ldap.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_core.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_dbd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_dbm.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_groupfile.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_host.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_owner.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_authz_user.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_autoindex.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_brotli.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_buffer.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_cache.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_cache_disk.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_cache_socache.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_cern_meta.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_cgi.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_cgid.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_charset_lite.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_data.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dav.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dav_fs.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dav_lock.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dbd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_deflate.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dialup.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dir.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_dumpio.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_echo.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_env.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_example_hooks.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_expires.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_ext_filter.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_file_cache.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_filter.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_headers.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_heartbeat.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_heartmonitor.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_http2.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_ident.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_imagemap.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_include.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_info.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_isapi.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_lbmethod_bybusyness.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_lbmethod_byrequests.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_lbmethod_bytraffic.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_lbmethod_heartbeat.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_ldap.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_log_config.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_log_debug.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_log_forensic.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_logio.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_lua.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_macro.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_md.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_mime.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_mime_magic.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_negotiation.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_nw_ssl.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_privileges.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_ajp.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_balancer.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_connect.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_express.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_fcgi.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_fdpass.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_ftp.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_hcheck.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_html.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_http.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_http2.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_scgi.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_uwsgi.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_proxy_wstunnel.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_ratelimit.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_reflector.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_remoteip.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_reqtimeout.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_request.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_rewrite.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_sed.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_session.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_session_cookie.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_session_crypto.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_session_dbd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_setenvif.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_slotmem_plain.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_slotmem_shm.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_so.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_socache_dbm.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_socache_dc.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_socache_memcache.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_socache_redis.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_socache_shmcb.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_speling.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_ssl.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_status.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_substitute.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_suexec.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_systemd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_unique_id.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_unixd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_userdir.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_usertrack.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_version.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_vhost_alias.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_watchdog.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mod_xml2enc.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/module-dict.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mpm_common.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mpm_netware.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mpm_winnt.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/mpmt_os2.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/overrides.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/prefork.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mod/quickreference.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>mod/worker.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>mpm.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>new_features_2_0.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>new_features_2_2.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>new_features_2_4.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/ab.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/apachectl.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/apxs.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/configure.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/dbmmanage.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/fcgistarter.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/htcacheclean.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/htdbm.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/htdigest.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/htpasswd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/httpd.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/httxt2dbm.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/index.xml</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>programs/log_server_status.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/logresolve.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/other.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/rotatelogs.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/split-logfile.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>programs/suexec.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/access.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/advanced.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/avoid.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/flags.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/htaccess.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/index.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>rewrite/intro.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/proxy.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/remapping.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/rewritemap.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/tech.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>rewrite/vhosts.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>sections.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>server-wide.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>sitemap.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>socache.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>ssl/index.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>ssl/ssl_compat.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>ssl/ssl_faq.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>ssl/ssl_howto.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>ssl/ssl_intro.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>stopping.xml</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>suexec.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>upgrading.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>urlmapping.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>vhosts/details.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>vhosts/examples.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>vhosts/fd-limits.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>vhosts/index.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+</tr>
+<tr>
+<td>vhosts/ip-based.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>vhosts/mass.xml</td>
+<td align="center">-</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr>
+<tr>
+<td>vhosts/name-based.xml</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">✔</td>
+<td align="center">-</td>
+</tr></tbody></table>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2026 The Apache Software Foundation.<br />
+		Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are
+ either registered trademarks or trademarks of The Apache Software Foundation in the United States
+ and other countries.</p>
+            </div>
+        </div>
+        </div><!-- /#site-wrapper -->
+        <script>
+        (function() {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('apmenu');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function() {
+                    menu.classList.toggle('open');
+                });
+            }
+        })();
+        </script>
+    </body>
+</html>
