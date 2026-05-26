@@ -21,9 +21,6 @@ Stable Release - Latest Version:
 
 -  [2.4.67](#apache24) (released 2026-05-04)
 
-If you are downloading the Win32 distribution, please read these [important
-notes]([preferred]httpd/binaries/win32/README.html).
-
 # Apache HTTP Server 2.4.67 (httpd): 2.4.67 is the latest available version <span>2026-05-04</span>  {#apache24}
 
 The Apache HTTP Server Project is pleased to
