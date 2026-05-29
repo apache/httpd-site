@@ -17,9 +17,4 @@ The [Apache development section](../dev/) includes information for Apache
 developers and folks interested in testing development releases of Apache
 software.
 
-# Apache HTTP Server Books  {#books}
-
-list of books written about the Apache HTTP Server can be found on
-[www.apachebookstore.com](http://www.apachebookstore.com/)
-
 
