@@ -81,6 +81,13 @@ correct, and the generated HTML:
 
 ><code>./build.sh validate-xml<br></br>./build.sh validate-xhtml</code>
 
+The `validate-xhtml` target uses the W3C Nu HTML Checker. If you don't
+already have it, download `vnu.jar` into the `build/` directory:
+
+><code>curl -L -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar</code>
+
+See [https://github.com/validator/validator](https://github.com/validator/validator) for details.
+
 # Special Files #
 
 When adding a new module, the transformation process tries to generate an
