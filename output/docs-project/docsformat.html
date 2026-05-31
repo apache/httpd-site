@@ -1,8 +1,7 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet" />
         <meta name="author" content="Documentation Group" /><meta name="email" content="docs@httpd.apache.org" />
@@ -30,7 +29,7 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         </div>
         <div id="site-wrapper">
         <div id="apmenu">
-	  <script type="text/javascript" src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <script src="https://www.apachecon.com/event-images/snippet.js"></script>
 	  <p style="margin-top: -10px;">
 	    <!-- Apachecon! -->
 	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
@@ -152,6 +151,12 @@ correct, and the generated HTML:</p>
 <blockquote>
 <p><code>./build.sh validate-xml<br/>./build.sh validate-xhtml</code></p>
 </blockquote>
+<p>The <code>validate-xhtml</code> target uses the W3C Nu HTML Checker. If you don't
+already have it, download <code>vnu.jar</code> into the <code>build/</code> directory:</p>
+<blockquote>
+<p><code>curl -L -o vnu.jar <a href="https://github.com/validator/validator/releases/download/latest/vnu.jar">https://github.com/validator/validator/releases/download/latest/vnu.jar</a></code></p>
+</blockquote>
+<p>See <a href="https://github.com/validator/validator">https://github.com/validator/validator</a> for details.</p>
 <h1 id="special-files">Special Files<a class="headerlink" href="#special-files" title="Permalink">&para;</a></h1>
 <p>When adding a new module, the transformation process tries to generate an
 appropriate entry within <code>mod/allmodules.xml</code> and to create an accompanying
