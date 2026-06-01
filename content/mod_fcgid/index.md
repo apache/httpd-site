@@ -17,8 +17,7 @@ pleased to announce the release of version 2.3.9 of mod_fcgid, a FastCGI
 implementation for Apache HTTP Server versions 2.0, 2.2, and 2.4.  This
 version of mod_fcgid is a security release.
 
-You can get the source from [your local
-mirror](/download.cgi#mod_fcgid) 
+You can get the source from [the archive](https://archive.apache.org/dist/httpd/mod_fcgid/) 
 
 Development of mod_fcgid can be followed through the
 [Subversion](http://subversion.apache.org/) repositories. For public access

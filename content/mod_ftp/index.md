@@ -12,7 +12,7 @@ plus mod_dav_fs).
 # Get It! #
 
 `mod_ftp` 0.9.6 is released as beta, and you can get the source from
-[your local mirror](https://httpd.apache.org/download.cgi#mod_ftp).
+[the archive](https://archive.apache.org/dist/httpd/mod_ftp/).
 
 Development of mod_ftp can be followed through the
 [Subversion](http://subversion.apache.org/) repositories. For public access
