@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
         <meta name="author" content="Documentation Group"><meta name="email" content="docs@httpd.apache.org">
-        <title>Documentation Project: Subversion - The Apache HTTP Server Project</title>
+        <title>SVN Workflow - The Apache HTTP Server Project</title>
 	<style>
 .headerlink {
   visibility: hidden;
@@ -87,61 +87,78 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         </div>
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
-    <h1 id="documentation-project-subversion">Documentation Project: Subversion<a class="headerlink" href="#documentation-project-subversion" title="Permalink">&para;</a></h1>
-<p>The documentation of the Apache HTTP Server is in the same Subversion
-revision control repository as the code. If you wish to work on the
-documentation, you can check out the entire source code repository, or just
-the documentation.</p>
-<p>To check out the entire repository, you'll do the following:</p>
+    <h1 id="svn-workflow">SVN Workflow<a class="headerlink" href="#svn-workflow" title="Permalink">&para;</a></h1>
+<p>The Apache HTTP Server documentation lives in the same Subversion (SVN)
+repository as the server source code. This page walks you through
+checking out the docs and submitting patches.</p>
+<p>If you're new to SVN, don't worry &mdash; the commands below are all you need
+to get started.</p>
+<h2 id="checking-out-the-repository">Checking Out the Repository<a class="headerlink" href="#checking-out-the-repository" title="Permalink">&para;</a></h2>
+<p>There are two active branches:</p>
+<ul>
+<li><strong>trunk</strong> &mdash; the development branch (next release)</li>
+<li><strong>2.4.x</strong> &mdash; the current stable release</li>
+</ul>
+<p>To check out both:</p>
 <pre><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
 svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
 </code></pre>
-<p>By checking out both trunk and 2.4, you'll be able to submit patches
-against both the development version, and the current latest released
-version.</p>
-<p>To check out just the documentation portion of the repository, append '
-<code>/docs</code> ' to the end of the checkout URLs shown above. This will give you a
-much smaller checkout, but perhaps you'll lack some of the resources you
-might need to verify your documentation changes.</p>
-<h1 id="creating-a-patch">Creating a patch<a class="headerlink" href="#creating-a-patch" title="Permalink">&para;</a></h1>
-<p>Once you have a checkout, creating a patch takes four steps.</p>
-<ol>
-<li>
-<p>Update your checkout, to be sure that you have the latest changes in the
-repository, in case someone else has changed something since the last time
-you worked on the docs:</p>
-<div class="example"><pre>
- svn update
- </pre></div>
-</li>
-<li>
-<p>Edit the file that you wish to modify. Make the desired changes, and then
-save your changes. Documentation files are in the <code>/docs/manual</code> subdirectory
-of your checkout.</p>
-</li>
-<li>
-<p>At the command line, type the following to create a patch file:</p>
-<div class="example"><pre>
- svn diff &gt; patch.txt
- </pre></div>
-</li>
-<li>
-<p>Send email to the <code>docs@httpd.apache.org</code> mailing list and attach
-<code>patch.txt</code>.</p>
-</li>
-</ol>
-<p>If you have more than one changed file, you can supply the file name on the
-<code>svn diff</code> command line, in order to just record the changes in one file.</p>
-<div class="example"><pre>
-svn diff mod_rewrite.xml &gt; mod_rewrite_patch.txt
-</pre></div>
-<h1 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permalink">&para;</a></h1>
-<p>See also the document on <a href="docsformat.html">documentation format and
-transformation</a> for details about verifying that your
-changes are compliant with our documentation format and standards. In your
-email message, indicate what branch of the code the patch is against
-(trunk, 2.4, 2.2, etc.) what file(s) are affected, and what change you are
-making. If it's in reference to a specific bug ticket, mention that, too.</p>
+<p>We recommend checking out both so you can submit patches against either
+branch. Most documentation patches should target <strong>trunk</strong> first, then
+be backported to 2.4.x if applicable.</p>
+<h3 id="docs-only-checkout">Docs-Only Checkout<a class="headerlink" href="#docs-only-checkout" title="Permalink">&para;</a></h3>
+<p>If you only want the documentation (smaller download), append <code>/docs</code>
+to the checkout URLs:</p>
+<pre><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs httpd-trunk-docs
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs httpd-2.4-docs
+</code></pre>
+<p>This gives you a lighter checkout, though you won't have the full source
+tree for context.</p>
+<h2 id="creating-a-patch">Creating a Patch<a class="headerlink" href="#creating-a-patch" title="Permalink">&para;</a></h2>
+<p>Once you have a checkout, the process is:</p>
+<h3 id="1-update-your-checkout">1. Update Your Checkout<a class="headerlink" href="#1-update-your-checkout" title="Permalink">&para;</a></h3>
+<p>Always pull the latest changes before you start editing:</p>
+<pre><code>svn update
+</code></pre>
+<h3 id="2-edit-the-documentation">2. Edit the Documentation<a class="headerlink" href="#2-edit-the-documentation" title="Permalink">&para;</a></h3>
+<p>Documentation files are in the <code>docs/manual/</code> subdirectory. Find the
+file you want to change, make your edits, and save.</p>
+<h3 id="3-generate-a-patch">3. Generate a Patch<a class="headerlink" href="#3-generate-a-patch" title="Permalink">&para;</a></h3>
+<p>Create a unified diff of your changes:</p>
+<pre><code>svn diff &gt; my-changes.patch
+</code></pre>
+<p>To generate a patch for just one file:</p>
+<pre><code>svn diff docs/manual/mod/mod_rewrite.xml &gt; mod_rewrite_fix.patch
+</code></pre>
+<h3 id="4-submit-the-patch">4. Submit the Patch<a class="headerlink" href="#4-submit-the-patch" title="Permalink">&para;</a></h3>
+<p>Send your patch to <code>docs@httpd.apache.org</code> with:</p>
+<ul>
+<li>The patch file attached</li>
+<li>Which branch it's against (trunk, 2.4.x)</li>
+<li>A brief description of what you changed and why</li>
+<li>A reference to the Bugzilla ticket, if there is one</li>
+</ul>
+<p>Alternatively, attach the patch directly to a
+<a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&amp;component=Documentation">Bugzilla ticket</a>.</p>
+<h2 id="tips">Tips<a class="headerlink" href="#tips" title="Permalink">&para;</a></h2>
+<ul>
+<li><strong>Name your patches descriptively</strong> &mdash; <code>fix-proxy-example.patch</code> is
+more helpful than <code>patch.txt</code>.</li>
+<li><strong>Keep patches focused</strong> &mdash; one logical change per patch is easier to
+review.</li>
+<li><strong>Check your XML</strong> &mdash; run the validation targets before submitting
+(see <a href="docsformat.html">documentation format</a>).</li>
+<li><strong>Don't worry about being perfect</strong> &mdash; we're happy to work with you
+on revisions.</li>
+</ul>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permalink">&para;</a></h2>
+<ul>
+<li><a href="docsformat.html">Documentation Format and Build</a> &mdash; how to validate
+and build the docs locally</li>
+<li><a href="style-guide.html">Style Guide</a> &mdash; markup and prose conventions</li>
+<li><a href="tools.html">Tools for Contributors</a> &mdash; recommended editors and
+utilities</li>
+</ul>
 
             <!-- FOOTER -->
             <div id="footer">

@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
         <meta name="author" content="Documentation Group"><meta name="email" content="docs@httpd.apache.org">
-        <title>Contributing to the Apache HTTP Server Documentation - The Apache HTTP Server Project</title>
+        <title>Contributing to the Documentation - The Apache HTTP Server Project</title>
 	<style>
 .headerlink {
   visibility: hidden;
@@ -88,157 +88,86 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
     <h1 id="contributing-to-the-apache-http-server-documentation">Contributing to the Apache HTTP Server Documentation<a class="headerlink" href="#contributing-to-the-apache-http-server-documentation" title="Permalink">&para;</a></h1>
-<p>The Documentation Project is an effort to maintain and improve the quality
-of the documentation included with the Apache HTTP Server. Participation is
-open to anyone willing to write documentation, edit for spelling, grammer
-or readability, or <a href="translations.html">translate</a> documentation into
-another language. Some knowledge of the Apache HTTP Server is helpful, but
-not required. No programming knowledge is required, so this is a great way
-for non-programmers to contribute to the success of the Apache HTTP Server
-project, and to have their work read by millions of Apache users.</p>
-<p>This is <strong>not</strong> a mailing list where users should ask questions on how to
-configure Apache. The <a href="../userslist.html">Users List</a> is available for that
-purpose.</p>
-<h1 id="how-to-get-involved">How to get Involved<a class="headerlink" href="#how-to-get-involved" title="Permalink">&para;</a></h1>
-<p>There are several ways that you can contribute to the documentation effort.
-You can:</p>
+<p>We'd love your help improving the Apache HTTP Server documentation. You
+don't need to be a programmer &mdash; if you can spot a confusing sentence, fix
+a typo, or explain something more clearly, you're already making a
+difference. Your work will be read by millions of httpd users worldwide.</p>
+<p>This page is about <em>contributing to the docs</em>, not about configuring
+httpd. For configuration help, see the
+<a href="../userslist.html">Users mailing list</a>.</p>
+<h2 id="ways-to-contribute">Ways to Contribute<a class="headerlink" href="#ways-to-contribute" title="Permalink">&para;</a></h2>
+<p>There's something for every skill level:</p>
+<h3 id="quick-wins-no-svn-needed">Quick Wins (no SVN needed)<a class="headerlink" href="#quick-wins-no-svn-needed" title="Permalink">&para;</a></h3>
 <ul>
-<li>
-<p><a href="mailto:docs-subscribe@httpd.apache.org">Subscribe to the docs@httpd.apache.org mailing
-list</a> and tell us something that
-could be improved.</p>
-</li>
-<li>
-<p>Join #httpd on irc.libera.chat and tell us there.</p>
-</li>
-<li>
-<p>Submit a ticket to the <a href="../bug_report.html">bug database</a>.</p>
-</li>
-<li>
-<p>Check out the documentation from svn ( <a href="svn.html">instructions here</a> ),
-and send us a patch.</p>
-</li>
+<li><strong>Report a problem</strong> &mdash; <a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&amp;component=Documentation">Open a Bugzilla
+ticket</a>
+describing what's wrong or confusing.</li>
+<li><strong>Suggest an improvement</strong> &mdash; Send a note to the
+<a href="mailto:docs-subscribe@httpd.apache.org">docs mailing list</a> with your
+idea.</li>
+<li><strong>Join the conversation</strong> &mdash; Subscribe to <code>docs@httpd.apache.org</code> and
+weigh in on ongoing discussions.</li>
 </ul>
-<p>There are lots of ways to contribute to the documentation project,
-including fixing typos and spelling mistakes, translating the documentation
-into other languages, writing tutorials to help new users, or just
-expressing your opinion about suggested changes.</p>
-<p>For information on our use of XML in the documentation, see our
-<a href="docsformat.html">Documentation Format and Transformation</a> page. For
-markup conventions and prose style, see the <a href="style-guide.html">Documentation Style
-Guide</a>.</p>
-<p>If you need inspiration for something to work on, look at our
-<a href="https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/STATUS">STATUS</a>
-file for a list of things that we think need doing, and pick something that
-you think you can do. Patches against trunk are greatly appreciated, but
-contributions in any format are helpful.</p>
-<h1 id="translation-projects">Translation Projects<a class="headerlink" href="#translation-projects" title="Permalink">&para;</a></h1>
-<p>Information about translating the documentation into other languages is
-available at the <a href="translations.html">translations page</a>.</p>
-<h1 id="participants">Participants<a class="headerlink" href="#participants" title="Permalink">&para;</a></h1>
-<p>Some of the participants are:</p>
+<h3 id="fix-and-improve-svn-patch-workflow">Fix and Improve (SVN patch workflow)<a class="headerlink" href="#fix-and-improve-svn-patch-workflow" title="Permalink">&para;</a></h3>
 <ul>
-<li>
-<p><a href="http://www.codefaktor.de/">Erik Abele</a></p>
-</li>
-<li>
-<p><a href="http://rkbloom.net/rbb/">Ryan Bloom</a></p>
-</li>
-<li>
-<p><a href="http://www.rcbowen.com/">Rich Bowen</a></p>
-</li>
-<li>
-<p>Vincent Bray</p>
-</li>
-<li>
-<p><a href="http://Golux.Com/coar/">Ken Coar</a></p>
-</li>
-<li>
-<p>Eric Cholet</p>
-</li>
-<li>
-<p><a href="http://dotat.at/">Tony Finch</a></p>
-</li>
-<li>
-<p>Yoshiki Hayashi</p>
-</li>
-<li>
-<p><a href="http://www.kess-net.de/">Astrid Ke&szlig;ler</a></p>
-</li>
-<li>
-<p><a href="http://geeklog.lucid.net.au/">Jason Lingohr</a></p>
-</li>
-<li>
-<p>Andr&eacute; L. Malo</p>
-</li>
-<li>
-<p><a href="http://www.reppep.com/%7Epepper/">Chris Pepper</a></p>
-</li>
-<li>
-<p>Dan Poirier</p>
-</li>
-<li>
-<p><a href="http://www.nerdchic.net/">Noirin Plunkett</a></p>
-</li>
-<li>
-<p>William A. Rowe, Jr.</p>
-</li>
-<li>
-<p><a href="http://slive.ca/">Joshua Slive</a></p>
-</li>
-<li>
-<p><a href="http://blog.pc-tony.com/">Tony Stevenson</a></p>
-</li>
-<li>
-<p><a href="http://www.toftum.org/">Mads Toftum</a></p>
-</li>
+<li>Fix typos, broken examples, or unclear explanations.</li>
+<li>Add missing configuration examples.</li>
+<li>Update outdated information.</li>
+<li>Improve the documentation for a module you know well.</li>
 </ul>
-<p>The localized custom error messages in the 2.x version of the Apache HTTP
-Server were contributed by</p>
+<p>For these, you'll check out the docs from SVN, make your changes, and
+send us a patch. See our <a href="svn.html">SVN workflow guide</a> for step-by-step
+instructions &mdash; it's straightforward even if you haven't used SVN before.</p>
+<h3 id="larger-contributions">Larger Contributions<a class="headerlink" href="#larger-contributions" title="Permalink">&para;</a></h3>
 <ul>
-<li>
-<p>Ricardo Leite (Brazilian)</p>
-</li>
-<li>
-<p>Marcel Kolaja (Czech)</p>
-</li>
-<li>
-<p>Peter Van Biesen (Dutch)</p>
-</li>
-<li>
-<p>Lars Eilebrecht (English and German)</p>
-</li>
-<li>
-<p>Cecile de Crecy (French)</p>
-</li>
-<li>
-<p>Luigi Rosa (Italian)</p>
-</li>
-<li>
-<p>Noirin Plunkett (Irish)</p>
-</li>
-<li>
-<p>Jaeho Shin (Korean)</p>
-</li>
-<li>
-<p>Tomasz Kepczynski (Polish)</p>
-</li>
-<li>
-<p>Andrei Besleaga (Romanian)</p>
-</li>
-<li>
-<p>Nikola Smolenski (Serbian)</p>
-</li>
-<li>
-<p>Karla Quintero (Spanish)</p>
-</li>
-<li>
-<p>Thomas Sj&ouml;gren (Swedish)</p>
-</li>
-<li>
-<p>Emre Sokullu (Turkish)</p>
-</li>
+<li>Write a new how-to or tutorial.</li>
+<li>Document a module that's missing coverage.</li>
+<li>Translate documentation into another language (see the
+<a href="translations.html">translation guide</a>).</li>
 </ul>
+<p>For anything substantial, we recommend introducing yourself on the
+mailing list first. That way you can get feedback on your approach
+before investing a lot of time.</p>
+<h2 id="getting-set-up">Getting Set Up<a class="headerlink" href="#getting-set-up" title="Permalink">&para;</a></h2>
+<ol>
+<li><strong>Subscribe to the mailing list</strong> &mdash; Send email to
+<a href="mailto:docs-subscribe@httpd.apache.org">docs-subscribe@httpd.apache.org</a>.</li>
+<li><strong>Check out the source</strong> &mdash; Follow our <a href="svn.html">SVN instructions</a>.</li>
+<li><strong>Learn the format</strong> &mdash; Read about the
+<a href="docsformat.html">documentation XML format</a> and the
+<a href="style-guide.html">style guide</a>.</li>
+<li><strong>Set up your tools</strong> &mdash; See <a href="tools.html">Tools for Contributors</a> for
+editor and workflow recommendations.</li>
+</ol>
+<h2 id="submitting-your-work">Submitting Your Work<a class="headerlink" href="#submitting-your-work" title="Permalink">&para;</a></h2>
+<p>The standard workflow is:</p>
+<ol>
+<li>Make your changes in your SVN checkout.</li>
+<li>Run <code>svn diff &gt; my-changes.patch</code> to create a patch file.</li>
+<li>Send the patch to <code>docs@httpd.apache.org</code>, or attach it to a
+<a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&amp;component=Documentation">Bugzilla ticket</a>.</li>
+<li>Include a brief description of what you changed and why.</li>
+</ol>
+<p>Don't worry about getting everything perfect on the first try. We review
+all contributions and are happy to help you iterate.</p>
+<h2 id="communication-channels">Communication Channels<a class="headerlink" href="#communication-channels" title="Permalink">&para;</a></h2>
+<ul>
+<li><strong>Mailing list:</strong> <code>docs@httpd.apache.org</code>
+(<a href="mailto:docs-subscribe@httpd.apache.org">subscribe</a> |
+<a href="https://lists.apache.org/list.html?docs@httpd.apache.org">archives</a>)</li>
+<li><strong>IRC:</strong> #httpd on <a href="https://libera.chat/">irc.libera.chat</a></li>
+<li><strong>Bug tracker:</strong>
+<a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&amp;component=Documentation">Bugzilla</a></li>
+</ul>
+<h2 id="the-xml-format">The XML Format<a class="headerlink" href="#the-xml-format" title="Permalink">&para;</a></h2>
+<p>The documentation is written in a custom XML format, transformed to HTML
+via XSLT. If you're not familiar with XML, don't let that stop you &mdash; it's
+quite readable, and the community will help you with markup questions.
+See the <a href="docsformat.html">documentation format</a> page for details, and
+the <a href="style-guide.html">style guide</a> for markup conventions.</p>
+<h2 id="translation-projects">Translation Projects<a class="headerlink" href="#translation-projects" title="Permalink">&para;</a></h2>
+<p>If you'd like to translate the documentation into another language, see
+the <a href="translations.html">translations page</a> for how to get started.</p>
 
             <!-- FOOTER -->
             <div id="footer">

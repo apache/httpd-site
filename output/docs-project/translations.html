@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
         <meta name="author" content="Documentation Group"><meta name="email" content="docs@httpd.apache.org">
-        <title>Translations - Documentation Project - The Apache HTTP Server Project</title>
+        <title>Translating the Documentation - The Apache HTTP Server Project</title>
 	<style>
 .headerlink {
   visibility: hidden;
@@ -87,101 +87,98 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         </div>
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
-    <h1 id="welcome">Welcome !<a class="headerlink" href="#welcome" title="Permalink">&para;</a></h1>
-<p>We encourage translations of the documentation into other languages and thank
-you in advance for your contribution. If you would like to assist in translating
-the docs, please start by reading the general <a href="./">documentation project
-information</a> , and subscribing to the <a href="https://lists.apache.org/list.html?docs@httpd.apache.org">documentation project mailing
-list</a>. The documentation
-project participants are usually very willing to help you with any questions or
-technical difficulties that may arise during your work.</p>
-<h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permalink">&para;</a></h1>
-<p>To get started translating whole or part(s) of the doc and keep it up to date,
-you'll need to do the following.</p>
+    <h1 id="translating-the-documentation">Translating the Documentation<a class="headerlink" href="#translating-the-documentation" title="Permalink">&para;</a></h1>
+<p>Thank you for considering a translation contribution! Translations make
+the Apache HTTP Server documentation accessible to millions of
+non-English-speaking administrators worldwide.</p>
+<p>Before you begin, please:</p>
+<ol>
+<li>Read the general <a href="./">documentation project information</a>.</li>
+<li>Subscribe to the
+<a href="mailto:docs-subscribe@httpd.apache.org">docs mailing list</a>.</li>
+<li>Introduce yourself &mdash; let us know which language you'll be working in.
+There may already be a team for your language who can help coordinate.</li>
+</ol>
+<h2 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permalink">&para;</a></h2>
+<h3 id="1-set-up-your-svn-checkout">1. Set Up Your SVN Checkout<a class="headerlink" href="#1-set-up-your-svn-checkout" title="Permalink">&para;</a></h3>
+<p>Check out the documentation source:</p>
+<pre><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs httpd-trunk-docs
+</code></pre>
+<p>Start your translations in <strong>trunk</strong>. Changes can be backported to the
+2.4.x branch afterward.</p>
+<h3 id="2-choose-a-file-to-translate">2. Choose a File to Translate<a class="headerlink" href="#2-choose-a-file-to-translate" title="Permalink">&para;</a></h3>
+<p>Check the <a href="avail_translations.html">translation status</a> to see what's
+already been translated and what's needed.</p>
+<p>Pick an untranslated file &mdash; for example, suppose you want to translate
+<code>configuring.xml</code> into Spanish.</p>
+<h3 id="3-create-your-translation-file">3. Create Your Translation File<a class="headerlink" href="#3-create-your-translation-file" title="Permalink">&para;</a></h3>
+<p>Copy the English source file, adding your two-letter language code as
+a file extension:</p>
+<pre><code>cp configuring.xml configuring.xml.es
+</code></pre>
+<h3 id="4-translate">4. Translate<a class="headerlink" href="#4-translate" title="Permalink">&para;</a></h3>
+<p>Open the new file in your editor and:</p>
 <ul>
 <li>
-<p>Join the docs mailing list by sending a message to
-<a href="mailto:docs-subscribe@httpd.apache.org">docs-subscribe@httpd.apache.org</a>.</p>
+<p><strong>Set encoding to UTF-8.</strong> Ensure the first line reads:
+<code>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</code></p>
 </li>
 <li>
-<p>Send a message to the list above to say that you wish to get involved in
-translating the doc into your language. Maybe there's already in place a
-translation team for your language that will help you in your work.</p>
+<p><strong>Mark the English revision.</strong> Replace <code>$LastChangedRevision:</code> with
+<code>English Revision:</code> followed by the current revision number. This
+helps future maintainers know when your translation was last synced.</p>
 </li>
 <li>
-<p>Let's suppose you look at <a href="https://httpd.apache.org/docs/trunk/configuring.html">https://httpd.apache.org/docs/trunk/configuring.html</a>
-and see that there's no version of this page in your language.</p>
+<p><strong>Add translator credits</strong> at the top of the file:</p>
+<pre><code>&lt;!-- Spanish translation: Your Name --&gt;
+&lt;!-- Reviewed by: Reviewer Name --&gt;
+</code></pre>
 </li>
 <li>
-<p>Get english version of the source file <a href="https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/manual/configuring.xml">here</a>
-Note that you must download the .xml file, not the .html one.</p>
+<p><strong>Translate the text content.</strong> Translate text within: <code>&lt;p&gt;</code>,
+<code>&lt;title&gt;</code>, <code>&lt;description&gt;</code>, <code>&lt;name&gt;</code>, <code>&lt;compatibility&gt;</code>, <code>&lt;note&gt;</code>,
+<code>&lt;li&gt;</code>, <code>&lt;dd&gt;</code>, and similar elements.</p>
 </li>
 <li>
-<p>Make a copy of that file with the two-letter file extension representing your
-language. For example, for a Spanish translation, you'd copy <code>configuring.xml</code>
-to <code>configuring.xml.es</code>. You are now ready to start well said translation :</p>
+<p><strong>Leave code unchanged.</strong> Directives, configuration examples, and
+other literal code stay in English.</p>
+</li>
+<li>
+<p><strong>Keep lines within 80 characters</strong> where practical, so reviewers can
+read the files easily. (Exceptions for complex XML tags and languages
+without word spacing, like Chinese and Japanese.)</p>
+</li>
+</ul>
+<h3 id="5-submit-your-translation">5. Submit Your Translation<a class="headerlink" href="#5-submit-your-translation" title="Permalink">&para;</a></h3>
+<p>Send your completed file (or a patch) to <code>docs@httpd.apache.org</code>. A
+committer will review it and add it to the repository. Over time, you
+may gain commit access yourself.</p>
+<h2 id="keeping-translations-current">Keeping Translations Current<a class="headerlink" href="#keeping-translations-current" title="Permalink">&para;</a></h2>
+<p>Once your initial translation is committed, you'll want to keep it up to
+date as the English source evolves. See
+<a href="goingfurther.html">Maintaining Translations</a> for a practical workflow.</p>
+<h2 id="review-standards">Review Standards<a class="headerlink" href="#review-standards" title="Permalink">&para;</a></h2>
+<p>Because the development team can't easily verify non-English content, we
+require that all translations be reviewed by another fluent speaker of
+the language before acceptance. Each commit message should name both the
+translator and the reviewer.</p>
+<p>We encourage you to place credits in a comment at the top of the file:</p>
+<pre><code>&lt;!-- =============================================
+     Translated by: Your Name &lt;email&gt;
+     Reviewed by: Reviewer Name &lt;email&gt;
+     ============================================= --&gt;
+</code></pre>
+<p>The build system tracks the SVN revision of the equivalent English
+version, so future translators know where to start updating.</p>
+<h2 id="related-information">Related Information<a class="headerlink" href="#related-information" title="Permalink">&para;</a></h2>
 <ul>
-<li>If your language contains accented and/or multi-bytes characters, set
-your text editor encoding to "UTF-8" , and check that the first line
-of the file is:<br/>
-<?xml version="1.0" encoding="UTF-8" ?>
-</li>
-<li>In the header, replace the string "$LastChangedRevision:" by the
-string "English Revision:"</li>
-<li>Make sure you put your name at the top of the file if you are
-translating or reviewing the documentation like this:<br/>
-&lt;!-- French translation : &lt;translator name&gt; --&gt;<br/>
-&lt;!-- Reviewed by : &lt;reviewer name&gt; --&gt;</li>
-<li>Translate all textual portions of the document, leaving directives,
-examples, and other literal code portions unchanged.</li>
-<li>What has to be translated ? All text parts between &lt;p&gt; and
-&lt;/p&gt;, &lt;title&gt; and &lt;/title&gt;, &lt;description&gt; and
-&lt;/description&gt;, &lt;name&gt; and &lt;/name&gt;,
-&lt;compatibility&gt; and &lt;/compatibility&gt;, &lt;note&gt; and
-&lt;/note&gt;, &lt;li&gt; and &lt;/li&gt;, &lt;dd&gt; and &lt;/dd&gt;.</li>
-<li>We strongly encourage xml file to fit within <b>80</b> console width, so
-it is easy for any maintainer to review the files. Exceptions do happen for
-complex xml tags and unspaced languages such as Chinese and Japanese.</li>
+<li><a href="docsformat.html">Documentation Format</a> &mdash; the XML format and how to
+build HTML from it</li>
+<li><a href="avail_translations.html">Translation Status</a> &mdash; what's been
+translated and what's needed</li>
+<li><a href="goingfurther.html">Maintaining Translations</a> &mdash; keeping your work
+up to date</li>
 </ul>
-</li>
-<li>
-<p>Send your results - either complete files, or the output of <code>svn diff</code> to the
-docs mailing list, in order someone can commit it to the repository.  Eventually,
-you can do this step yourself.</p>
-</li>
-</ul>
-<h1 id="going-further">Going further !<a class="headerlink" href="#going-further" title="Permalink">&para;</a></h1>
-<p>If you wish to go further in translating of the doc, in other words maintaining
-your translations and keep them up-to-date, read <a href="goingfurther.html">this
-document</a>.</p>
-<h1 id="related-information">Related Information<a class="headerlink" href="#related-information" title="Permalink">&para;</a></h1>
-<p>Please note the following documents. They give you further information which may
-be helpful.</p>
-<ul>
-<li>The <a href="https://httpd.apache.org/docs-project/docsformat.html">Documentation Format and
-Transformation</a> page
-gives some information about the transformation from xml to html.
-Translations of documentation for Apache version 2.0 and higher should be sent
-as xml file. Committers will take care of generating and committing the
-corresponding html file.</li>
-</ul>
-<h1 id="review-standards">Review Standards<a class="headerlink" href="#review-standards" title="Permalink">&para;</a></h1>
-<p>Because English is the main development language of the Apache HTTP Server, it
-is difficult for the developers to check the quality of documentation submitted
-in other languages. Therefore, we require that all translated documentation be
-reviewed by another fluent speaker of the relevant language, before it can be
-accepted. Each commit message should list the reviewer. If the translator is not
-the same as the committer, the translator should also be named in the commit
-message.</p>
-<p>We also encourage you to place the name of the translator in a comment at the
-top of the file, like this:</p>
-<p>&lt;!-- ===================================================== Translated by:
-Nilg&uuml;n Belma Bug&uuml;ner &lt;nilgun belgeler.org&gt; Reviewed by: Orhan Berent
-&lt;berent belgeler.org&gt;
-========================================================== --&gt;</p>
-<p>The build system keeps track of the svn revision number of the equivalent
-English version, so that future translators have an idea of where they need to
-start.</p>
 
             <!-- FOOTER -->
             <div id="footer">

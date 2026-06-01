@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
         <meta name="author" content="Documentation Group"><meta name="email" content="docs@httpd.apache.org">
-        <title>Module Format and Transformation - The Apache HTTP Server Project</title>
+        <title>Documentation Format and Build - The Apache HTTP Server Project</title>
 	<style>
 .headerlink {
   visibility: hidden;
@@ -87,119 +87,128 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         </div>
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
-    <h1 id="module-format-and-transformation">Module Format and Transformation<a class="headerlink" href="#module-format-and-transformation" title="Permalink">&para;</a></h1>
-<p>This document describes the format of the Apache HTTP Server documentation
-xml source files and the technique used to transform them to html.</p>
-<h1 id="format">Format<a class="headerlink" href="#format" title="Permalink">&para;</a></h1>
-<p>A DTD is located in the <a href="https://httpd.apache.org/docs/current/style/">style
-directory</a> of the manual. An
-example of the format with extensive comments is also available in
-<a href="mod_template.txt">mod_template.txt</a>. (Ordinarily, the file extension
-will be <code>xml</code>. It is changed here to make online viewing simpler.)</p>
-<p>For detailed conventions on which markup elements to use and when, see the
+    <h1 id="documentation-format-and-build">Documentation Format and Build<a class="headerlink" href="#documentation-format-and-build" title="Permalink">&para;</a></h1>
+<p>This page describes the XML format used for the Apache HTTP Server
+documentation and how to transform it into HTML for review.</p>
+<h2 id="format-overview">Format Overview<a class="headerlink" href="#format-overview" title="Permalink">&para;</a></h2>
+<p>The documentation is written in a custom XML format with its own DTD.
+The DTD is in the
+<a href="https://httpd.apache.org/docs/current/style/">style directory</a> of the
+manual. For detailed markup conventions, see the
 <a href="style-guide.html">Documentation Style Guide</a>.</p>
-<p>Various formatting syntax can be used such as:</p>
-<table border="1" class="table">
-<tr><th>Keyword</th><th>Purpose</th></tr>
-<tr><td>&lt;example&gt; ... &lt;/example&gt;</td><td>Format an example as monospaced font</td></tr>
-<tr><td>&lt;highlight language="config"&gt; ... &lt;/highlight&gt;</td>
-<td>A configuration example, syntax highlighted. Can also use language="perl", "lua", or "C"</td></tr>
-</table>
-<h1 id="transformation">Transformation<a class="headerlink" href="#transformation" title="Permalink">&para;</a></h1>
-<p>The easiest way to view the transformed docs is to simply open the xml file
-directly in a recent verions of MSIE, Netscape, or Mozilla. (MSIE 6 seems
-to work consistently. The Gecko/Mozilla based browsers, however, do not
-incorporate the referenced DTDs, so they have problems with documents
-containing character entities). These browsers will read the xsl file and
-perform the transformation for you automatically, so that you can see what
-the final output will look like. This means that you can work on the docs
-and check your work without any special transformation setup.</p>
-<p>For the final presentation, it is still necessary to transform to html to
-accomodate older browsers. Although any standards-compliant xslt engine
-should do, changing engines can lead to massive diffs on the transformed
-files. Therefore, we have chosen a single recommended transformation system
-based on Xalan+Xerces Java and Ant. These are all Apache projects
-distributed under the Apache license.</p>
-<p>The only prerequisite for the transformation is a Java 8 or greater JVM.
-Assuming you already have
-<a href="https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs/">httpd/httpd/branches/2.4.x/docs/</a>
-(or the equivalent from another branch) checked out from SVN, here is what
-you need to do to build: (If you need instructions on setting up SVN, see
-<a href="http://www.apache.org/dev/version-control.html">this page</a>.)</p>
-<blockquote>
-<p><code>$ cd docs/manual<br/>$ svn co
-<a href="https://svn.apache.org/repos/asf/httpd/docs-build/trunk">https://svn.apache.org/repos/asf/httpd/docs-build/trunk</a> build<br/>$ cd
-build<br/>$./build.sh all</code></p>
-</blockquote>
-<p>If you are running under win32, the <code>build.sh</code> script will work if cygwin is
-installed. Alternatively, on Win32, you should be able to run the
-<code>build.bat</code> script.</p>
-<p>If you don't want to get the build files from SVN, you can download a
-pkzipped version of the current build tools from our <a href="http://www.apache.org/dyn/closer.lua/httpd/docs/">distribution
-directory</a>.</p>
-<p>The default target builds only the english-language docs. To build other
-docs, you should specify the language-code (ja, de, etc) as an argument, or
-use the <code>all</code> target. To find the available languages, please see our
-<a href="translations.html">translations page</a>.</p>
-<p>You can get an overview of all possible build targets by typing:</p>
-<blockquote>
-<p><code>./build.sh -projecthelp</code></p>
-</blockquote>
-<h1 id="validating-changes">Validating changes<a class="headerlink" href="#validating-changes" title="Permalink">&para;</a></h1>
-<p>Before submitting or committing changes, you should check that the XML is
-correct, and the generated HTML:</p>
-<blockquote>
-<p><code>./build.sh validate-xml<br/>./build.sh validate-xhtml</code></p>
-</blockquote>
+<h3 id="common-markup-elements">Common Markup Elements<a class="headerlink" href="#common-markup-elements" title="Permalink">&para;</a></h3>
+<table class="table">
+<thead>
+<tr>
+<th>Element</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;example&gt; ... &lt;/example&gt;</code></td>
+<td>Wraps a code example block</td>
+</tr>
+<tr>
+<td><code>&lt;highlight language="config"&gt; ... &lt;/highlight&gt;</code></td>
+<td>Configuration example with syntax highlighting</td>
+</tr>
+<tr>
+<td><code>&lt;highlight language="perl"&gt; ... &lt;/highlight&gt;</code></td>
+<td>Perl code with highlighting</td>
+</tr>
+<tr>
+<td><code>&lt;highlight language="lua"&gt; ... &lt;/highlight&gt;</code></td>
+<td>Lua code with highlighting</td>
+</tr>
+<tr>
+<td><code>&lt;highlight language="C"&gt; ... &lt;/highlight&gt;</code></td>
+<td>C code with highlighting</td>
+</tr>
+<tr>
+<td><code>&lt;directive module="..."&gt;Name&lt;/directive&gt;</code></td>
+<td>Cross-reference to a directive</td>
+</tr>
+<tr>
+<td><code>&lt;module&gt;mod_name&lt;/module&gt;</code></td>
+<td>Cross-reference to a module</td>
+</tr>
+<tr>
+<td><code>&lt;program&gt;name&lt;/program&gt;</code></td>
+<td>Cross-reference to an httpd program</td>
+</tr>
+<tr>
+<td><code>&lt;var&gt;placeholder&lt;/var&gt;</code></td>
+<td>User-supplied value</td>
+</tr>
+<tr>
+<td><code>&lt;note&gt; ... &lt;/note&gt;</code></td>
+<td>Informational callout</td>
+</tr>
+<tr>
+<td><code>&lt;note type="warning"&gt; ... &lt;/note&gt;</code></td>
+<td>Warning callout</td>
+</tr></tbody></table>
+<p>The full format is best learned by reading existing documentation files.
+Start with a simple page and the patterns will become clear quickly.</p>
+<h2 id="viewing-your-changes">Viewing Your Changes<a class="headerlink" href="#viewing-your-changes" title="Permalink">&para;</a></h2>
+<p>Modern browsers can render the XML files directly by applying the
+referenced XSLT stylesheet. Simply open the <code>.xml</code> file in your browser
+to see a reasonable approximation of the final output. This lets you
+check your work without any build setup.</p>
+<p>For the authoritative rendering, use the Ant build system described
+below.</p>
+<h2 id="building-the-documentation">Building the Documentation<a class="headerlink" href="#building-the-documentation" title="Permalink">&para;</a></h2>
+<p>The official build uses Xalan + Xerces (Java) via Apache Ant. This
+ensures consistent HTML output across all contributors.</p>
+<h3 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink">&para;</a></h3>
+<ul>
+<li>Java 8 or later (JRE or JDK)</li>
+<li>An SVN checkout of the docs (see <a href="svn.html">SVN workflow</a>)</li>
+</ul>
+<h3 id="build-steps">Build Steps<a class="headerlink" href="#build-steps" title="Permalink">&para;</a></h3>
+<p>From your checkout:</p>
+<pre><code>cd docs/manual
+svn co https://svn.apache.org/repos/asf/httpd/docs-build/trunk build
+cd build
+./build.sh all
+</code></pre>
+<p>The <code>all</code> target builds documentation for all available languages. To
+build only English:</p>
+<pre><code>./build.sh
+</code></pre>
+<p>To build a specific language (e.g., French):</p>
+<pre><code>./build.sh fr
+</code></pre>
+<h3 id="available-build-targets">Available Build Targets<a class="headerlink" href="#available-build-targets" title="Permalink">&para;</a></h3>
+<p>To see all available targets:</p>
+<pre><code>./build.sh -projecthelp
+</code></pre>
+<h2 id="validation">Validating Your Changes<a class="headerlink" href="#validation" title="Permalink">&para;</a></h2>
 <p>The <code>validate-xhtml</code> target uses the W3C Nu HTML Checker. If you don't
 already have it, download <code>vnu.jar</code> into the <code>build/</code> directory:</p>
-<blockquote>
-<p><code>curl -L -o vnu.jar <a href="https://github.com/validator/validator/releases/download/latest/vnu.jar">https://github.com/validator/validator/releases/download/latest/vnu.jar</a></code></p>
-</blockquote>
+<pre><code>curl -L -o vnu.jar https://github.com/validator/validator/releases/download/latest/vnu.jar
+</code></pre>
 <p>See <a href="https://github.com/validator/validator">https://github.com/validator/validator</a> for details.</p>
-<h1 id="special-files">Special Files<a class="headerlink" href="#special-files" title="Permalink">&para;</a></h1>
-<p>When adding a new module, the transformation process tries to generate an
-appropriate entry within <code>mod/allmodules.xml</code> and to create an accompanying
-metafile ( <code>newfilename.xml.meta</code> ). Since these tasks are written in
-<a href="http://www.perl.org/">perl</a> , you'll need a working perl installation for
-this. If not, you should take these steps manually, or just leave a note on
-the project mailing list so that someone else can do it.</p>
-<h1 id="generating-a-pdf-version">Generating a PDF version<a class="headerlink" href="#generating-a-pdf-version" title="Permalink">&para;</a></h1>
-<p>The PDF version of the docs is generated by transforming the xml files to
-LaTeX using the "latex-en" Ant target. The XSLT style files for the
-transformation are under <code>style/latex/</code>. Once you have the <code>.tex</code>
-equivalent of each <code>.xml</code> file, you can use <code>pdflatex</code> to convert this into
-a pdf file. Recommended versions of pdflatex can be obtained as part of
-TeTeX (unix) or MikTeX (win32), but any version of TeX should be fine, as
-long as it is sufficiently complete and modern. To generate the PDF, you
-should process the <code>sitemap.tex</code> file, which contains the main LaTeX
-document code and will include all the other files. The outputed PDF will
-then be called <code>sitemap.pdf</code> , which you can rename how you choose.</p>
-<p>Some notes about the XML to LaTeX conversion are necessary. Although HTML
-and LaTeX have many similarities, there are enough differences between the
-two to make targetting both outputs a difficult task. In particular, the
-methods for handling tables are very different. To aid in the conversion to
-LaTeX of tables designed for HTML, a <code>&amp;lt;columnspec&amp;gt;</code> section should be
-added to each table. Inside the <code>&amp;lt;columnspec&amp;gt;</code> , place a <code>&amp;lt;column width=".xx"/&amp;gt;</code> for each column in the table, where <code>xx</code> is the
-percentage of the line-width devoted to that column. This will assist in
-the conversion of basic tables. More complex stuff (like spanning rows or
-columns) is not currently convertible.</p>
-<p>Further, <code>pdflatex</code> cannot incorporate GIF files in a generated PDF, so any
-graphics must be available in PNG format.</p>
-<p>There are various other restrictive assumptions embedded in the XSLT that
-work for the current docs, but may need to be modified in the future. For
-example, the code that transforms HTML-style links to LaTeX
-cross-references will only work within the main directory and one level of
-subdirectory. Also, <code>&amp;lt;pre&amp;gt;</code> sections rarely work well in LaTeX
-because of differences in escaping and formatting rules in <code>verbatim</code>
-sections.</p>
-<p>Finally, there are various differences in escaping rules between XML/HTML
-and LaTeX. Some characters need to be backslash-escaped in LaTeX, and all
-XML entitites (&amp;whatever;) must be converted to LaTeX equivalents. This
-is currently handled for a limited set of characters using a big, ugly
-search-replace in the XSLT. This may need to be modified in the future,
-especially to handle translations. Pre-processing with a perl script and a
-substitution table may be a better solution.</p>
+<p>Before submitting a patch, validate your XML and the generated HTML:</p>
+<pre><code>./build.sh validate-xml
+./build.sh validate-xhtml
+</code></pre>
+<p>These checks will catch malformed XML, broken cross-references, and
+invalid HTML output. Please run them before sending patches &mdash; it saves
+everyone time.</p>
+<h2 id="special-files">Special Files<a class="headerlink" href="#special-files" title="Permalink">&para;</a></h2>
+<p>When adding a new module, the build process generates entries in
+<code>mod/allmodules.xml</code> and creates accompanying metafiles. This step
+requires a working Perl installation. If you don't have Perl available,
+just note this in your patch submission and someone on the team will
+handle it.</p>
+<h2 id="see-also">See Also<a class="headerlink" href="#see-also" title="Permalink">&para;</a></h2>
+<ul>
+<li><a href="style-guide.html">Style Guide</a> &mdash; markup conventions and prose style</li>
+<li><a href="svn.html">SVN Workflow</a> &mdash; checking out and submitting patches</li>
+<li><a href="tools.html">Tools for Contributors</a> &mdash; editors and validation tools</li>
+</ul>
 
             <!-- FOOTER -->
             <div id="footer">

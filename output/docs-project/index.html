@@ -87,101 +87,76 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
         </div>
         <!-- RIGHT SIDE INFORMATION -->
         <div id="apcontents">
-    <h1 id="documentation-project">Documentation Project<a class="headerlink" href="#documentation-project" title="Permalink">&para;</a></h1>
-<p>The documentation of the Apache HTTP Server is a collaborative effort, made
-possible by the participation of the entire HTTP Server community. We'd
-love to have your help too.</p>
+    <h1 id="apache-http-server-documentation-project">Apache HTTP Server Documentation Project<a class="headerlink" href="#apache-http-server-documentation-project" title="Permalink">&para;</a></h1>
+<p>The Apache HTTP Server documentation is written and maintained by
+volunteers like you. Whether you're fixing a typo, improving an example,
+translating a page, or writing something entirely new &mdash; we'd love your
+help.</p>
+<p>You don't need to be a programmer. You don't need to be an httpd expert.
+If you can read the docs and spot something that could be clearer, you're
+already qualified to contribute.</p>
+<h2 id="quick-links">Quick Links<a class="headerlink" href="#quick-links" title="Permalink">&para;</a></h2>
 <ul>
-<li>
-<p><a href="#report">I want to report a problem</a></p>
-</li>
-<li>
-<p><a href="#suggestion">I'd like to make a suggestion</a></p>
-</li>
-<li>
-<p><a href="#svn">I know how to use svn and want to checkout the latest manual</a></p>
-</li>
-<li>
-<p><a href="#build">I'd like to build the manual from local source</a></p>
-</li>
-<li>
-<p><a href="#style">I want to follow the documentation style conventions</a></p>
-</li>
-<li>
-<p><a href="#ml">I'd like to join the docs team mailing list</a></p>
-</li>
-<li>
-<p><a href="#translate">I want to help translate the documentation</a></p>
-</li>
-<li>
-<p><a href="#docs">Actually, I was just looking for the docs</a></p>
-</li>
+<li><a href="#report">Report a problem</a></li>
+<li><a href="#suggestion">Make a suggestion</a></li>
+<li><a href="#contribute">Contribute to the docs</a></li>
+<li><a href="#translate">Translate the documentation</a></li>
+<li><a href="#docs">Find the docs</a></li>
+<li><a href="#ml">Join the mailing list</a></li>
+<li><a href="#irc">Chat with us on IRC</a></li>
 </ul>
-<h1 id="report">Reporting a problem<a class="headerlink" href="#report" title="Permalink">&para;</a></h1>
-<p>The best way to report a problem with the documentation is to make a comment
-on the docs page in question, or to <a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&amp;component=Documentation">open a
-ticket</a>.
-Select 'Documentation' as the component. Have a look at the <a href="http://s.apache.org/httpd-doc-bugs">list of open
-documentation bugs</a> to see if it's
-already covered. We try to keep that list very short.</p>
-<h1 id="suggestion">Making a suggestion<a class="headerlink" href="#suggestion" title="Permalink">&para;</a></h1>
-<p>If you have a suggestion of something that we could do better, or even want
-to write a new or replacement document, there are a number of ways to go
-about it.</p>
-<p>The best way is probably to <a href="#ml">join the mailing list</a> and strike up a
-conversation. We always love to have new people on the project.</p>
-<p>Or, you can <a href="#report">open a ticket</a> , as discussed above. We are very
-interested in your suggestions, and any way that you think we can improve
-the documentation. We look forward to hearing from you.</p>
-<p>The 2.2, 2.4 and trunk documentation also have a comment feature, where
-you can quickly add a comment about the documentation. To access this,
-click the "Comments" link on a page or simply scroll down to the bottom.</p>
-<h1 id="svn">SVN information<a class="headerlink" href="#svn" title="Permalink">&para;</a></h1>
-<p>Our documentation is kept in svn, along with the source code, and the
-actual changes are all made there. If you intend to be a long-term
-contributor to the documentation, the best thing to do is to get an svn
-checkout and submit patches. We've got a <a href="svn.html">document that gives you all of
-the necessary details</a>.</p>
-<h1 id="build">Building the docs<a class="headerlink" href="#build" title="Permalink">&para;</a></h1>
-<p>Once you have a checkout from SVN, you need to also check out the
-docs-build directory and run the relevant build scripts to produce all of the
-relevant transformations.  Please see <a href="docsformat.html">docs build</a> for
-more information.</p>
-<h1 id="style">Style Guide<a class="headerlink" href="#style" title="Permalink">&para;</a></h1>
-<p>When writing or editing documentation, please follow the conventions in our
-<a href="style-guide.html">Documentation Style Guide</a>. It covers inline markup,
-directive syntax definitions, prose style, and formatting standards.</p>
-<h1 id="ml">The docs mailing list<a class="headerlink" href="#ml" title="Permalink">&para;</a></h1>
-<p>The discussion surrounding the documentation project happens on the
-<code>docs@httpd.apache.org</code> mailing list. To subscribe to this mailing list,
-send email to
+<h2 id="report">Report a Problem<a class="headerlink" href="#report" title="Permalink">&para;</a></h2>
+<p>Found something wrong? The best way to report it is to <a href="https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&amp;component=Documentation">open a
+Bugzilla ticket</a>
+with "Documentation" selected as the component.</p>
+<p>You can also check the <a href="http://s.apache.org/httpd-doc-bugs">list of open documentation
+bugs</a> to see if it's already known.</p>
+<h2 id="suggestion">Make a Suggestion<a class="headerlink" href="#suggestion" title="Permalink">&para;</a></h2>
+<p>Have an idea for how we could explain something better? Want to propose
+a new how-to or tutorial?</p>
+<p>The best approach is to <a href="#ml">join the mailing list</a> and start a
+conversation. You can also <a href="#report">open a Bugzilla ticket</a> with your
+suggestion. Either way, we're glad to hear from you.</p>
+<h2 id="contribute">Contribute<a class="headerlink" href="#contribute" title="Permalink">&para;</a></h2>
+<p>Ready to dive in? Our <a href="contribute.html">contribution guide</a> walks you
+through the different ways to help &mdash; from quick fixes to substantial new
+content. The workflow uses SVN and patches, and we have a
+<a href="svn.html">step-by-step SVN guide</a> to get you started.</p>
+<p>New to the XML format we use? That's fine &mdash; take a look at the
+<a href="docsformat.html">documentation format</a> page, and don't hesitate to ask
+questions on the mailing list. We're happy to help you get oriented.</p>
+<p>See also: <a href="tools.html">Tools for Contributors</a> for editor and workflow
+recommendations.</p>
+<h2 id="style">Style Guide<a class="headerlink" href="#style" title="Permalink">&para;</a></h2>
+<p>When writing or editing documentation, please follow the conventions in
+our <a href="style-guide.html">Documentation Style Guide</a>. It covers markup,
+prose style, and formatting standards.</p>
+<h2 id="ml">The Mailing List<a class="headerlink" href="#ml" title="Permalink">&para;</a></h2>
+<p>All discussion about the docs project happens on
+<code>docs@httpd.apache.org</code>. To subscribe, send email to
 <a href="mailto:docs-subscribe@httpd.apache.org">docs-subscribe@httpd.apache.org</a>
-and follow the instructions in the response you receive.</p>
-<p>If you're not subscribed, messages may be moderated through if they are
-appropriate to the list.</p>
-<p>You may also view the list, as well as past archives, at
+and follow the instructions in the reply.</p>
+<p>You can browse current and past messages at
 <a href="https://lists.apache.org/list.html?docs@httpd.apache.org">lists.apache.org</a>.</p>
-<h1 id="translate">Translations<a class="headerlink" href="#translate" title="Permalink">&para;</a></h1>
-<p>The documentation is available in several different languages. Some of
-these translations are out of date, and some important languages are
-missing. If you are fluent in a non-English language, and would like to
-provide a translation of all or part of the documentation, there's <a href="translations.html">another
-document</a> about how to get started on that. Before you
-get started, please <a href="#ml">join the mailing list</a> , introduce yourself, and
-let us know what you're working on. In that way, other translators can
-coordinate with you in this effort.</p>
-<h1 id="docs">Where are the docs?<a class="headerlink" href="#docs" title="Permalink">&para;</a></h1>
-<p>Documentation is available for several different versions of the server:</p>
-<p>Online Documentation: <a href="../docs/2.0/">Version 2.0</a> | <a href="../docs/2.2/">Version
-2.2</a> | <a href="../docs/2.4/">Version 2.4</a> | <a href="../docs/trunk/">Version 2.5
-(Development branch)</a> |
-<a href="http://wiki.apache.org/httpd/">Wiki</a></p>
-<p>Downloadable documentation in Microsoft Help (CHM) format is available from
-the <a href="https://downloads.apache.org/httpd/docs/">distribution
-directory</a>.</p>
-<h1 id="participants">Participants<a class="headerlink" href="#participants" title="Permalink">&para;</a></h1>
-<p>The Apache HTTP Server documentation is the product of the work of many,
-many people. We've listed them <a href="contributors.html">over here</a>.</p>
+<p>If you're not subscribed, your messages may still be moderated through
+if they're on-topic.</p>
+<h2 id="translate">Translate the Documentation<a class="headerlink" href="#translate" title="Permalink">&para;</a></h2>
+<p>The documentation is available in several languages, but many
+translations are incomplete or out of date. If you're fluent in a
+non-English language, we'd welcome your help. See our
+<a href="translations.html">translation guide</a> to get started, and check the
+<a href="avail_translations.html">translation status</a> to see what's needed.</p>
+<p>Please <a href="#ml">introduce yourself on the mailing list</a> before you begin so
+other translators can coordinate with you.</p>
+<h2 id="docs">Where Are the Docs?<a class="headerlink" href="#docs" title="Permalink">&para;</a></h2>
+<ul>
+<li><a href="../docs/2.4/">Version 2.4</a> (current stable release)</li>
+<li><a href="../docs/trunk/">Trunk / Development</a> (next version in progress)</li>
+</ul>
+<h2 id="contributors">Contributors<a class="headerlink" href="#contributors" title="Permalink">&para;</a></h2>
+<p>The Apache HTTP Server documentation is the product of many people's
+work over many years. See the <a href="contributors.html">contributors page</a>
+for the full list &mdash; and we hope to add your name there soon.</p>
 
             <!-- FOOTER -->
             <div id="footer">
