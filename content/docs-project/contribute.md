@@ -1,126 +1,96 @@
-Title: Contributing to the Apache HTTP Server Documentation
+Title: Contributing to the Documentation
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Contributing to the Apache HTTP Server Documentation #
+# Contributing to the Apache HTTP Server Documentation
 
-The Documentation Project is an effort to maintain and improve the quality
-of the documentation included with the Apache HTTP Server. Participation is
-open to anyone willing to write documentation, edit for spelling, grammer
-or readability, or [translate](translations.html) documentation into
-another language. Some knowledge of the Apache HTTP Server is helpful, but
-not required. No programming knowledge is required, so this is a great way
-for non-programmers to contribute to the success of the Apache HTTP Server
-project, and to have their work read by millions of Apache users.
+We'd love your help improving the Apache HTTP Server documentation. You
+don't need to be a programmer — if you can spot a confusing sentence, fix
+a typo, or explain something more clearly, you're already making a
+difference. Your work will be read by millions of httpd users worldwide.
 
-This is **not** a mailing list where users should ask questions on how to
-configure Apache. The [Users List](../userslist.html) is available for that
-purpose.
+This page is about *contributing to the docs*, not about configuring
+httpd. For configuration help, see the
+[Users mailing list](../userslist.html).
 
-# How to get Involved #
+## Ways to Contribute
 
-There are several ways that you can contribute to the documentation effort.
-You can:
+There's something for every skill level:
 
--  [Subscribe to the docs@httpd.apache.org mailing
-list](mailto:docs-subscribe@httpd.apache.org) and tell us something that
-could be improved.
+### Quick Wins (no SVN needed)
 
-- Join #httpd on irc.libera.chat and tell us there.
+- **Report a problem** — [Open a Bugzilla
+  ticket](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&component=Documentation)
+  describing what's wrong or confusing.
+- **Suggest an improvement** — Send a note to the
+  [docs mailing list](mailto:docs-subscribe@httpd.apache.org) with your
+  idea.
+- **Join the conversation** — Subscribe to `docs@httpd.apache.org` and
+  weigh in on ongoing discussions.
 
-- Submit a ticket to the [bug database](../bug_report.html).
+### Fix and Improve (SVN patch workflow)
 
-- Check out the documentation from svn ( [instructions here](svn.html) ),
-and send us a patch.
+- Fix typos, broken examples, or unclear explanations.
+- Add missing configuration examples.
+- Update outdated information.
+- Improve the documentation for a module you know well.
 
-There are lots of ways to contribute to the documentation project,
-including fixing typos and spelling mistakes, translating the documentation
-into other languages, writing tutorials to help new users, or just
-expressing your opinion about suggested changes.
+For these, you'll check out the docs from SVN, make your changes, and
+send us a patch. See our [SVN workflow guide](svn.html) for step-by-step
+instructions — it's straightforward even if you haven't used SVN before.
 
-For information on our use of XML in the documentation, see our
-[Documentation Format and Transformation](docsformat.html) page. For
-markup conventions and prose style, see the [Documentation Style
-Guide](style-guide.html).
+### Larger Contributions
 
-If you need inspiration for something to work on, look at our
-[STATUS](https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs/STATUS)
-file for a list of things that we think need doing, and pick something that
-you think you can do. Patches against trunk are greatly appreciated, but
-contributions in any format are helpful.
+- Write a new how-to or tutorial.
+- Document a module that's missing coverage.
+- Translate documentation into another language (see the
+  [translation guide](translations.html)).
 
-# Translation Projects #
+For anything substantial, we recommend introducing yourself on the
+mailing list first. That way you can get feedback on your approach
+before investing a lot of time.
 
-Information about translating the documentation into other languages is
-available at the [translations page](translations.html).
+## Getting Set Up
 
-# Participants #
+1. **Subscribe to the mailing list** — Send email to
+   [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org).
+2. **Check out the source** — Follow our [SVN instructions](svn.html).
+3. **Learn the format** — Read about the
+   [documentation XML format](docsformat.html) and the
+   [style guide](style-guide.html).
+4. **Set up your tools** — See [Tools for Contributors](tools.html) for
+   editor and workflow recommendations.
 
-Some of the participants are:
+## Submitting Your Work
 
--  [Erik Abele](http://www.codefaktor.de/) 
+The standard workflow is:
 
--  [Ryan Bloom](http://rkbloom.net/rbb/) 
+1. Make your changes in your SVN checkout.
+2. Run `svn diff > my-changes.patch` to create a patch file.
+3. Send the patch to `docs@httpd.apache.org`, or attach it to a
+   [Bugzilla ticket](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&component=Documentation).
+4. Include a brief description of what you changed and why.
 
--  [Rich Bowen](http://www.rcbowen.com/) 
+Don't worry about getting everything perfect on the first try. We review
+all contributions and are happy to help you iterate.
 
-- Vincent Bray
+## Communication Channels
 
--  [Ken Coar](http://Golux.Com/coar/) 
+- **Mailing list:** `docs@httpd.apache.org`
+  ([subscribe](mailto:docs-subscribe@httpd.apache.org) |
+  [archives](https://lists.apache.org/list.html?docs@httpd.apache.org))
+- **IRC:** #httpd on [irc.libera.chat](https://libera.chat/)
+- **Bug tracker:**
+  [Bugzilla](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&component=Documentation)
 
--  Eric Cholet
+## The XML Format
 
--  [Tony Finch](http://dotat.at/) 
+The documentation is written in a custom XML format, transformed to HTML
+via XSLT. If you're not familiar with XML, don't let that stop you — it's
+quite readable, and the community will help you with markup questions.
+See the [documentation format](docsformat.html) page for details, and
+the [style guide](style-guide.html) for markup conventions.
 
-- Yoshiki Hayashi
+## Translation Projects
 
--  [Astrid Ke&#223;ler](http://www.kess-net.de/) 
-
--  [Jason Lingohr](http://geeklog.lucid.net.au/) 
-
-- Andr&#233; L. Malo
-
--  [Chris Pepper](http://www.reppep.com/~pepper/) 
-
-- Dan Poirier
-
--  [Noirin Plunkett](http://www.nerdchic.net/) 
-
-- William A. Rowe, Jr.
-
--  [Joshua Slive](http://slive.ca/) 
-
--  [Tony Stevenson](http://blog.pc-tony.com/) 
-
--  [Mads Toftum](http://www.toftum.org/) 
-
-The localized custom error messages in the 2.x version of the Apache HTTP
-Server were contributed by
-
-- Ricardo Leite (Brazilian)
-
-- Marcel Kolaja (Czech)
-
-- Peter Van Biesen (Dutch)
-
-- Lars Eilebrecht (English and German)
-
-- Cecile de Crecy (French)
-
-- Luigi Rosa (Italian)
-
-- Noirin Plunkett (Irish)
-
-- Jaeho Shin (Korean)
-
-- Tomasz Kepczynski (Polish)
-
-- Andrei Besleaga (Romanian)
-
-- Nikola Smolenski (Serbian)
-
-- Karla Quintero (Spanish)
-
-- Thomas Sj&#246;gren (Swedish)
-
-- Emre Sokullu (Turkish)
-
+If you'd like to translate the documentation into another language, see
+the [translations page](translations.html) for how to get started.

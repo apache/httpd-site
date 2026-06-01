@@ -1,115 +1,96 @@
 Title: Documentation Project
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Documentation Project #
+# Apache HTTP Server Documentation Project
 
-The documentation of the Apache HTTP Server is a collaborative effort, made
-possible by the participation of the entire HTTP Server community. We'd
-love to have your help too.
+The Apache HTTP Server documentation is written and maintained by
+volunteers like you. Whether you're fixing a typo, improving an example,
+translating a page, or writing something entirely new — we'd love your
+help.
 
--  [I want to report a problem](#report) 
+You don't need to be a programmer. You don't need to be an httpd expert.
+If you can read the docs and spot something that could be clearer, you're
+already qualified to contribute.
 
--  [I'd like to make a suggestion](#suggestion) 
+## Quick Links
 
--  [I know how to use svn and want to checkout the latest manual](#svn) 
+- [Report a problem](#report)
+- [Make a suggestion](#suggestion)
+- [Contribute to the docs](#contribute)
+- [Translate the documentation](#translate)
+- [Find the docs](#docs)
+- [Join the mailing list](#ml)
+- [Chat with us on IRC](#irc)
 
--  [I'd like to build the manual from local source](#build) 
+## Report a Problem {#report}
 
--  [I want to follow the documentation style conventions](#style) 
+Found something wrong? The best way to report it is to [open a
+Bugzilla ticket](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&component=Documentation)
+with "Documentation" selected as the component.
 
--  [I'd like to join the docs team mailing list](#ml) 
+You can also check the [list of open documentation
+bugs](http://s.apache.org/httpd-doc-bugs) to see if it's already known.
 
--  [I want to help translate the documentation](#translate) 
+## Make a Suggestion {#suggestion}
 
--  [Actually, I was just looking for the docs](#docs) 
+Have an idea for how we could explain something better? Want to propose
+a new how-to or tutorial?
 
-# Reporting a problem  {#report}
+The best approach is to [join the mailing list](#ml) and start a
+conversation. You can also [open a Bugzilla ticket](#report) with your
+suggestion. Either way, we're glad to hear from you.
 
-The best way to report a problem with the documentation is to make a comment
-on the docs page in question, or to [open a
-ticket](https://bz.apache.org/bugzilla/enter_bug.cgi?product=Apache%20httpd-2&component=Documentation).
-Select 'Documentation' as the component. Have a look at the [list of open
-documentation bugs](http://s.apache.org/httpd-doc-bugs) to see if it's
-already covered. We try to keep that list very short.
+## Contribute {#contribute}
 
-# Making a suggestion  {#suggestion}
+Ready to dive in? Our [contribution guide](contribute.html) walks you
+through the different ways to help — from quick fixes to substantial new
+content. The workflow uses SVN and patches, and we have a
+[step-by-step SVN guide](svn.html) to get you started.
 
-If you have a suggestion of something that we could do better, or even want
-to write a new or replacement document, there are a number of ways to go
-about it.
+New to the XML format we use? That's fine — take a look at the
+[documentation format](docsformat.html) page, and don't hesitate to ask
+questions on the mailing list. We're happy to help you get oriented.
 
-The best way is probably to [join the mailing list](#ml) and strike up a
-conversation. We always love to have new people on the project.
+See also: [Tools for Contributors](tools.html) for editor and workflow
+recommendations.
 
-Or, you can [open a ticket](#report) , as discussed above. We are very
-interested in your suggestions, and any way that you think we can improve
-the documentation. We look forward to hearing from you.
+## Style Guide {#style}
 
-The 2.2, 2.4 and trunk documentation also have a comment feature, where 
-you can quickly add a comment about the documentation. To access this, 
-click the "Comments" link on a page or simply scroll down to the bottom. 
+When writing or editing documentation, please follow the conventions in
+our [Documentation Style Guide](style-guide.html). It covers markup,
+prose style, and formatting standards.
 
-# SVN information  {#svn}
+## The Mailing List {#ml}
 
-Our documentation is kept in svn, along with the source code, and the
-actual changes are all made there. If you intend to be a long-term
-contributor to the documentation, the best thing to do is to get an svn
-checkout and submit patches. We've got a [document that gives you all of
-the necessary details](svn.html).
-
-# Building the docs  {#build}
-
-Once you have a checkout from SVN, you need to also check out the
-docs-build directory and run the relevant build scripts to produce all of the
-relevant transformations.  Please see [docs build](docsformat.html) for
-more information.
-
-# Style Guide  {#style}
-
-When writing or editing documentation, please follow the conventions in our
-[Documentation Style Guide](style-guide.html). It covers inline markup,
-directive syntax definitions, prose style, and formatting standards.
-
-# The docs mailing list  {#ml}
-
-The discussion surrounding the documentation project happens on the
-`docs@httpd.apache.org` mailing list. To subscribe to this mailing list,
-send email to
+All discussion about the docs project happens on
+`docs@httpd.apache.org`. To subscribe, send email to
 [docs-subscribe@httpd.apache.org](mailto:docs-subscribe@httpd.apache.org)
-and follow the instructions in the response you receive.
+and follow the instructions in the reply.
 
-If you're not subscribed, messages may be moderated through if they are
-appropriate to the list.
-
-You may also view the list, as well as past archives, at
+You can browse current and past messages at
 [lists.apache.org](https://lists.apache.org/list.html?docs@httpd.apache.org).
 
-# Translations  {#translate}
+If you're not subscribed, your messages may still be moderated through
+if they're on-topic.
 
-The documentation is available in several different languages. Some of
-these translations are out of date, and some important languages are
-missing. If you are fluent in a non-English language, and would like to
-provide a translation of all or part of the documentation, there's [another
-document](translations.html) about how to get started on that. Before you
-get started, please [join the mailing list](#ml) , introduce yourself, and
-let us know what you're working on. In that way, other translators can
-coordinate with you in this effort.
+## Translate the Documentation {#translate}
 
-# Where are the docs?  {#docs}
+The documentation is available in several languages, but many
+translations are incomplete or out of date. If you're fluent in a
+non-English language, we'd welcome your help. See our
+[translation guide](translations.html) to get started, and check the
+[translation status](avail_translations.html) to see what's needed.
 
-Documentation is available for several different versions of the server:
+Please [introduce yourself on the mailing list](#ml) before you begin so
+other translators can coordinate with you.
 
-Online Documentation: [Version 2.0](../docs/2.0/) | [Version
-2.2](../docs/2.2/) | [Version 2.4](../docs/2.4/) | [Version 2.5
-(Development branch)](../docs/trunk/) |
-[Wiki](http://wiki.apache.org/httpd/) 
+## Where Are the Docs? {#docs}
 
-Downloadable documentation in Microsoft Help (CHM) format is available from
-the [distribution
-directory](https://downloads.apache.org/httpd/docs/).
+- [Version 2.4](../docs/2.4/) (current stable release)
+- [Trunk / Development](../docs/trunk/) (next version in progress)
 
-# Participants #
+## Contributors
 
-The Apache HTTP Server documentation is the product of the work of many,
-many people. We've listed them [over here](contributors.html).
-
+The Apache HTTP Server documentation is the product of many people's
+work over many years. See the [contributors page](contributors.html)
+for the full list — and we hope to add your name there soon.
