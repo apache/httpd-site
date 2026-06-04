@@ -24364,109 +24364,131 @@
         }
     },
     {
+        "cveMetadata": {
+            "cveId": "CVE-2026-34032",
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "CNA_private": {
+            "emailed": "yes",
+            "projecturl": "https://httpd.apache.org/",
+            "owner": "httpd",
+            "userslist": "users@httpd.apache.org",
+            "state": "PUBLIC",
+            "todo": [],
+            "type": "unsure"
+        },
         "containers": {
             "cna": {
-                "affected": [
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "title": "mod_proxy_ajp: Heap Buffer Over-Read Due to Missing Null-Termination Check (ajp_msg_get_string)",
+                "problemTypes": [
                     {
-                        "defaultStatus": "unaffected",
-                        "product": "Apache HTTP Server",
-                        "vendor": "Apache Software Foundation",
-                        "versions": [
+                        "descriptions": [
                             {
-                                "lessThanOrEqual": "2.4.66",
-                                "status": "affected",
-                                "version": "0",
-                                "versionType": "semver"
+                                "description": "CWE-170 Improper Null Termination",
+                                "lang": "en",
+                                "cweId": "CWE-170",
+                                "type": "CWE"
+                            }
+                        ]
+                    },
+                    {
+                        "descriptions": [
+                            {
+                                "description": "CWE-125 Out-of-bounds Read",
+                                "lang": "en",
+                                "cweId": "CWE-125",
+                                "type": "CWE"
                             }
                         ]
                     }
                 ],
-                "credits": [
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "affected": [
                     {
-                        "lang": "en",
-                        "type": "finder",
-                        "value": "Tianshuo Han (<hantianshuo233@gmail.com>)"
-                    },
-                    {
-                        "lang": "en",
-                        "type": "finder",
-                        "value": "J\u00e9r\u00f4me Djouder"
+                        "vendor": "Apache Software Foundation",
+                        "product": "Apache HTTP Server",
+                        "versions": [
+                            {
+                                "status": "affected",
+                                "version": "0",
+                                "lessThanOrEqual": "2.4.66",
+                                "versionType": "semver"
+                            }
+                        ],
+                        "defaultStatus": "unaffected"
                     }
                 ],
                 "descriptions": [
                     {
+                        "value": "Improper Null Termination, Out-of-bounds Read vulnerability in Apache HTTP Server.\n\nThis issue affects Apache HTTP Server: through 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes the issue.",
                         "lang": "en",
                         "supportingMedia": [
                             {
-                                "base64": false,
                                 "type": "text/html",
+                                "base64": false,
                                 "value": "<p>Improper Null Termination, Out-of-bounds Read vulnerability in Apache HTTP Server.</p><p>This issue affects Apache HTTP Server: through 2.4.66.</p><p>Users are recommended to upgrade to version 2.4.67, which fixes the issue.</p>"
                             }
-                        ],
-                        "value": "Improper Null Termination, Out-of-bounds Read vulnerability in Apache HTTP Server.\n\nThis issue affects Apache HTTP Server: through 2.4.66.\n\nUsers are recommended to upgrade to version 2.4.67, which fixes the issue."
+                        ]
+                    }
+                ],
+                "references": [
+                    {
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html",
+                        "tags": [
+                            "vendor-advisory"
+                        ]
                     }
                 ],
                 "metrics": [
                     {
                         "other": {
+                            "type": "Textual description of severity",
                             "content": {
                                 "text": "low"
-                            },
-                            "type": "Textual description of severity"
+                            }
                         }
                     }
                 ],
-                "problemTypes": [
-                    {
-                        "descriptions": [
-                            {
-                                "cweId": "CWE-170",
-                                "description": "CWE-170 Improper Null Termination",
-                                "lang": "en",
-                                "type": "CWE"
-                            }
-                        ]
-                    },
-                    {
-                        "descriptions": [
-                            {
-                                "cweId": "CWE-125",
-                                "description": "CWE-125 Out-of-bounds Read",
-                                "lang": "en",
-                                "type": "CWE"
-                            }
-                        ]
-                    }
-                ],
-                "providerMetadata": {
-                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
-                },
-                "source": {
-                    "discovery": "UNKNOWN"
-                },
                 "timeline": [
                     {
-                        "lang": "en",
                         "time": "2026-03-01T02:27:00.000Z",
+                        "lang": "en",
                         "value": "Report received"
                     },
                     {
-                        "lang": "eng",
-                        "time": "2026-05-04",
-                        "value": "2.4.67 released"
+                        "time": "2026-05-04T12:00:00.000Z",
+                        "lang": "en",
+                        "value": "fixed in 2.4.x by r1933343"
                     }
                 ],
-                "title": "Apache HTTP Server: mod_proxy_ajp: Heap Buffer Over-Read Due to Missing Null-Termination Check (ajp_msg_get_string)",
+                "credits": [
+                    {
+                        "lang": "en",
+                        "value": "Tianshuo Han (<hantianshuo233@gmail.com>)",
+                        "type": "finder"
+                    },
+                    {
+                        "lang": "en",
+                        "value": "J\u00e9r\u00f4me Djouder",
+                        "type": "finder"
+                    },
+                    {
+                        "lang": "en",
+                        "value": "Sajeeb Lohani working with TrendAI Zero Day Initiative",
+                        "type": "finder"
+                    }
+                ],
                 "x_generator": {
                     "engine": "Vulnogram 0.2.0"
                 }
             }
-        },
-        "cveMetadata": {
-            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
-            "cveId": "CVE-2026-34032",
-            "serial": 1,
-            "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
         "dataVersion": "5.1"
