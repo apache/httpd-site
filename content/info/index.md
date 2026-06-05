@@ -1,10 +1,11 @@
 Title: Apache HTTP Server Miscellaneous Information
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Project Library  {#library}
+# Relevant Standards  {#standards}
 
-The [Project Library](../library/) contains links to various documents and
-resources relevant to the Apache Web server.
+The [Relevant Standards](https://httpd.apache.org/docs/current/misc/relevant_standards.html)
+page in the httpd documentation lists the RFCs and specifications that
+the Apache HTTP Server implements.
 
 # Cross Site Scripting security problem  {#css-security}
 
