@@ -15,11 +15,11 @@ mission-critical production infrastructure with:
 The Apache HTTP Server is a project of [The Apache Software
 Foundation](https://www.apache.org/).
 
-# Apache httpd 2.4.67 Released <span>2026-05-04</span>
+# Apache httpd 2.4.68 Released <span>2026-06-08</span>
 The Apache Software Foundation and the Apache HTTP Server Project are
 pleased to
 [announce](https://downloads.apache.org/httpd/Announcement2.4.html) the
-release of version 2.4.67 of the Apache HTTP Server ("httpd").
+release of version 2.4.68 of the Apache HTTP Server ("httpd").
 
 This latest release from the 2.4.x stable branch represents the best available
 version of Apache HTTP Server.
@@ -28,7 +28,7 @@ version of Apache HTTP Server.
 Apache HTTP Server version 2.<span>4</span>.43 or newer is required in order to operate a TLS 1.3 web server with OpenSSL 1.1.1.
 
 [Download](download.cgi#apache24) | [ChangeLog for
-2.4.67](https://downloads.apache.org/httpd/CHANGES_2.4.67) | [Complete ChangeLog for
+2.4.68](https://downloads.apache.org/httpd/CHANGES_2.4.68) | [Complete ChangeLog for
 2.4](https://downloads.apache.org/httpd/CHANGES_2.4) | [New Features in httpd
 2.4](docs/trunk/new_features_2_4.html)  {.centered}
 
