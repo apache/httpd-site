@@ -7,167 +7,109 @@ All official releases of code distributed by the Apache HTTP Server Project
 are signed by the release manager for the release. PGP signatures and SHA
 hashes are available along with the distribution.
 
-You should download the PGP signatures and SHA hashes directly from
-<https://downloads.apache.org/httpd/> to help ensure the integrity of
-the signature files.
+Validating a download involves two separate processes:
 
-# Checking Signatures  {#Checking}
+1. **[Verifying the integrity of the file](#Hashes)** — using a SHA hash
+   to confirm the file was not corrupted or tampered with during download.
+2. **[Verifying the source of the file](#Checking)** — using a PGP
+   signature to confirm it was actually released by a trusted Apache
+   committer.
 
-The following example details how signature interaction works. In this
-example, you are already assumed to have downloaded `httpd-2.4.18.tar.gz`
-(the release) and `httpd-2.4.18.tar.gz.asc` (the detached signature).
+These are independent checks. For strongest assurance, do both.
 
-This example uses [The GNU Privacy Guard](http://www.gnupg.org/). Any
-[OpenPGP](http://www.openpgp.org/) -compliant program should work
+# Verifying the PGP Signature  {#Checking}
+
+**Goal:** Confirm that the file you downloaded was actually signed by an
+Apache release manager, and has not been modified since.
+
+The following example uses [The GNU Privacy Guard](http://www.gnupg.org/).
+Any [OpenPGP](http://www.openpgp.org/)-compliant program should work
 successfully.
 
-First, we will check the detached signature ( `httpd-2.4.18.tar.gz.asc` )
-against our release ( `httpd-2.4.18.tar.gz` ).
+This example assumes you've already downloaded `httpd-2.4.68.tar.gz`
+(the release) and `httpd-2.4.68.tar.gz.asc` (the detached PGP signature).
 
-    % gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
-    gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
-    gpg: Can't check signature: public key not found
+First, check the detached signature against the release:
 
-We don't have the release manager's public key ( `791485A8` ) in our local
-system. You now need to retrieve the public key from a key server. One
-popular server is `pgpkeys.mit.edu` (which has a [web
-interface](http://pgp.mit.edu/) ). The public key servers are linked
-together, so you should be able to connect to any key server. You can
-also obtain the keys of the httpd release managers at
-<https://downloads.apache.org/httpd/KEYS>.
+    % gpg --verify httpd-2.4.68.tar.gz.asc httpd-2.4.68.tar.gz
+    gpg: Signature made Fri Jun  5 08:53:02 2026 EDT
+    gpg:                using RSA key 65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA
+    gpg: Can't check signature: No public key
 
-    % gpg --keyserver pgpkeys.mit.edu --recv-key 791485A8
-    gpg: requesting key 791485A8 from HKP keyserver pgpkeys.mit.edu
-    gpg: trustdb created
-    gpg: key 791485A8: public key "Jim Jagielski <jim@apache.org>" imported
-    gpg: key 791485A8: public key "Jim Jagielski <jim@apache.org>" imported
-    gpg: Total number processed: 2
-    gpg:               imported: 2  (RSA: 2)
+The "Can't check signature" output means that you don't have the release
+manager's public key (`65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA`) in your
+local system. You need to import it.
 
-In this example, you have now received two public keys for entities known
-as 'Jim Jagielski &lt;jim@apache.org&gt;' However, you have no way of
-verifying whether these keys were created by the person known as Jim
-Jagielski whose email address is claimed.  In fact, one of them is
-an imposter.  This doesn't mean that PGP is broken, just that you need to
-look at the full 40-character key fingerprint rather than the vulnerable
-8-character ID.
+The recommended way is to download the KEYS file maintained by the Apache
+HTTP Server project, which contains the public keys of all release managers:
 
-Anyway, let's try to verify the release signature again:
+    % wget https://downloads.apache.org/httpd/KEYS
+    % gpg --import KEYS
+    gpg: key 8B3A601F08C975E5: public key "Jim Jagielski <jim@apache.org>" imported
+    gpg: key 193F180AB55D9977: public key "William A. Rowe, Jr. <wrowe@rowe-clan.net>" imported
+    gpg: key 4C042818311A3DE5: public key "Ruediger Pluem <rpluem@apache.org>" imported
+    ...
+    gpg: key 82781DE46D5954FA: public key "Eric Covener <covener@apache.org>" imported
+    gpg: key EC99EE267EB5F61A: public key "Yann Ylavic <ylavic@apache.org>" imported
+    gpg: key 5A4B10AE43B56A27: public key "Joe Orton (Release Signing Key) <jorton@apache.org>" imported
+    gpg: key 19B033D1760C227B: public key "Christophe JAILLET <christophe.jaillet@wanadoo.fr>" imported
+    gpg: key D377C9E7D1944C66: public key "Stefan Eissing (icing) <stefan@eissing.org>" imported
+    gpg: Total number processed: 69
+    gpg:               imported: 41
 
-    % gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
-    gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
-    gpg: Good signature from "Jim Jagielski <jim@apache.org>"
-    gpg:		     aka "Jim Jagielski <jim@jimjag.com>"
-    gpg:             aka "Jim Jagielski <jim@jaguNET.com>"
-    gpg:             aka "Jim Jagielski <jimjag@gmail.com>"
-    gpg: checking the trustdb
-    gpg: no ultimately trusted keys found
+This imports the public keys of all current and past httpd release managers
+into your local keyring.
+
+Now let's verify the release signature again:
+
+    % gpg --verify httpd-2.4.68.tar.gz.asc httpd-2.4.68.tar.gz
+    gpg: Signature made Fri Jun  5 08:53:02 2026 EDT
+    gpg:                using RSA key 65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA
+    gpg: Good signature from "Eric Covener <covener@apache.org>" [unknown]
+    gpg:                 aka "Eric Covener <ecovener@us.ibm.com>" [unknown]
     gpg: WARNING: This key is not certified with a trusted signature!
-    gpg:	      There is no indication that the signature belongs to the
-    owner.
-    Fingerprint: A93D 62EC C3C8 EA12 DB22  0EC9 34EA 76E6 7914 85A8
+    gpg:          There is no indication that the signature belongs to the owner.
+    Primary key fingerprint: 65B2 D44F E74B D5E3 DE3A  C3F0 8278 1DE4 6D59 54FA
 
-At this point, the signature is good, but we don't trust this key. A good
-signature means that the file has not been tampered. However, due to the
-nature of public key cryptography, you need to additionally verify that key
-A93D62ECC3C8EA12DB220EC934EA76E6791485A8 was created by the **real**
-Jim Jagielski.
+This output confirms that the signature on the file is valid. The
+WARNING indicates that you have not established a trust relationship with
+this key in your local GPG configuration. Since you obtained the key from
+a trusted source (downloads.apache.org over HTTPS), you can be confident that
+the key is genuine.
 
-Any attacker can create a public key and upload it to the public key
-servers. They can then create a malicious release signed by this fake key.
-Then, if you tried to verify the signature of this corrupt release, it
-would succeed because the key was not the 'real' key. Therefore, you need
-to validate the authenticity of this key.
+If you'd like to understand the PGP trust model, the "web of trust," and
+how you would establish such a trust relationship with this key, please
+see the GNU Privacy Handbook: 
+[Validating other keys on your public keyring](https://www.gnupg.org/gph/en/manual/x332.html).
 
-# Validating Authenticity of a Key  {#Validating}
+# Verifying the Hash  {#Hashes}
 
-The crucial step to validation is to confirm the key fingerprint of the
-public key.  We saw the fingerprint when we verified the download: it's
-A93D 62EC C3C8 EA12 DB22  0EC9 34EA 76E6 7914 85A8
+**Goal:** Confirm the file was not corrupted or truncated during download.
+This is independent of PGP — it does not prove who released the file, only
+that what you received matches what was published.
 
-There are two ways to validate Jim's fingerprint.  The really secure way
-(described below) is using the PGP "Web of Trust", which will give
-you a cryptographically-strong chain of trust to Jim's key.
-However, if you are new to PGP, this takes some time and effort.
-A shortcut to a reasonable level of security is to check Jim's
-fingerprint (always using https, not http) against the database
-maintained by the Apache foundation of Apache developers' fingerprints
-at <https://downloads.apache.org/httpd/KEYS>.
-Note that this shortcut fails catastrophically if the Apache website is
-ever compromised, or if an imposter breaks HTTPS security by obtaining
-a fake certificate and impersonates the site.  Be sure to keep an eye
-on the techie press for news stories of any such event!
+Download the source and the corresponding hash file. For example, to verify
+the 2.4.68 release, you should end up
+with two files:
 
-A good start to validating a key is by face-to-face communication with
-multiple government-issued photo identification confirmations. However,
-each person is free to have their own standards for determining the
-authenticity of a key. Some people are satisfied by reading the key
-signature over a telephone (voice verification). For more information on
-determining what level of trust works best for you, please read the GNU
-Privacy Handbook section on [Validating other keys on your public
-keyring](http://www.gnupg.org/gph/en/manual.html#AEN335).
+  * `httpd-2.4.68.tar.gz` (source)
+  * `httpd-2.4.68.tar.gz.sha256` (SHA256 hash)
 
-Most of the Apache HTTP Server developers have attempted to sign each
-others' keys (usually with face-to-face validation). Therefore, in order to
-enter the web of trust, you should only need to validate one person in our
-web of trust. (Hint: all of our developers' keys are in the KEYS file.)
+SHA512 hashes (`.sha512`) are also available and may be used the same way.
 
-For example, the following people have signed the public key for Jim Jagielski. 
-If you verify any key on this list, you will have a trust path to
-the 791485A8 key. If you verify a key that verifies one of the signatories
-for 791485A8, then you will have a trust path. (So on, and so on.)
+On most Unix systems, verification is a single command:
 
-    % gpg --list-sigs 
-    pub   4096R/791485A8 2010-11-04
-    uid                  Jim Jagielski (Release Signing Key) <jim@apache.org>
-    sig          88C3A5A5 2010-11-07  Philippe M. Chiasson (Home) <gozer@ectoplasm.org>
-    sig          4E24517C 2011-11-10  Hyrum K. Wright (Personal) <hyrum@hyrumwright.org>
-    sig          C4FC9A65 2011-11-10  Bernd Bohmann <bommel@apache.org>
-    sig          1F27E622 2015-04-16  Konstantin I Boudnik (Cos) <cos@boudnik.org>
-    sig          08C975E5 2010-11-04  Jim Jagielski <jim@apache.org>
-    sig 2        F2EFD0F0 2011-11-14  Christopher David Schultz (Christopher David Schultz) <chris@christopherschultz.net>
-    sig 3        311A3DE5 2010-11-10  Ruediger Pluem <rpluem@apache.org>
-    sig          64A6A0BA 2013-02-27  Steven J. Hathaway (Apache PGP) <shathaway@apache.org>
-    sig          00A1234F 2015-04-15  Andre Arcilla <arcilla@apache.org>
-    sig          9A59B973 2015-04-21  Stefan Sperling <stsp@stsp.name>
-    sig          F51BB88A 2010-11-04  Sander Temme <sander@temme.net>
-    ...more signatures redacted...
+    % shasum -a 256 -c httpd-2.4.68.tar.gz.sha256
+    httpd-2.4.68.tar.gz: OK
 
-Since the developers are usually quite busy, you may not immediately find
-success in someone who is willing to meet face-to-face (they may not even
-respond to your emails because they are so busy!). If you do not have a
-developer nearby or have trouble locating a suitable person, please send an
-email to the address of the key you are attempting to verify. They may be
-able to find someone who will be willing to validate their key or arrange
-alternate mechanisms for validation.
+This checks that the SHA256 hash contained in the `.sha256` file matches
+the hash calculated from your downloaded file. A result of `OK` means they
+match.
 
-Once you have entered the web of trust, you should see the following upon
-verifying the signature of a release.
+Alternatively, you can calculate the hash yourself and compare manually:
 
-    % gpg --verify httpd-2.4.18.tar.gz.asc httpd-2.4.18.tar.gz
-    gpg: Signature made Tue Dec  8 21:32:07 2015 CET using RSA key ID 791485A8
-    gpg: Good signature from "Jim Jagielski (Release Signing Key) <jim@apache.org>"
-    gpg:                 aka "Jim Jagielski <jim@jimjag.com>"
-    gpg:                 aka "Jim Jagielski <jim@jaguNET.com>"
-    gpg:                 aka "Jim Jagielski <jimjag@gmail.com>"
+    % openssl sha256 -r httpd-2.4.68.tar.gz
+    fa53c95631febb08a9de41fd2864cfff815cf62d9306723ab0d4b8d7aa1638f0 *httpd-2.4.68.tar.gz
 
-In order to check the integrity of the downloaded file, you need to download the source and the related SHA256
-hash. For example, assuming a preference for tar.bz, to verify the 2.4.34 release you should end up with two files on disk:
-  
-  * httpd-2.4.34.tar.bz2 (source)
-  * httpd-2.4.34.tar.bz2.sha256 (SHA256 hash)
-
-On most Unix systems then it is only a matter of executing: 
-
-    % shasum -a 256 -c httpd-2.4.34.tar.bz2.sha256
-    httpd-2.4.34.tar.bz2: OK
-
-Behind the scenes, the command checks that the SHA hash contained in httpd-2.4.34.tar.bz2.sha256 matches the one
-calculated for the file httpd-2.4.34.tar.bz2. The correct result should be a 'OK' displayed.
-
-Another way to calculate the SHA256 has for a file is to use openssl:
-
-    % openssl sha256 -r httpd-2.4.34.tar.bz2
-    fa53c95631febb08a9de41fd2864cfff815cf62d9306723ab0d4b8d7aa1638f0 *httpd-2.4.34.tar.bz2
-
-And then verify that the content of httpd-2.4.34.tar.bz2.sha256 matches the above result.
+Then verify that the content of `httpd-2.4.68.tar.gz.sha256` matches the
+output above.
