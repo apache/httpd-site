@@ -41,7 +41,7 @@ Users should upgrade to 2.4.x.
 
 Get Apache HTTP source code from the [download page](/download.cgi) and
 consult the [installation
-guide](https://httpd.apache.org/docs/2.4/install.html) for
+guide](https://httpd.apache.org/docs/current/install.html) for
 platform-specific instructions on building and configuring your server.
 Don't forget to [verify](/download.cgi#verify) your downloads.
 
