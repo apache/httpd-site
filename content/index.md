@@ -37,7 +37,11 @@ Apache httpd 2.2 is end-of-life. The final release was 2.2.34 (July 2017).
 No further patches, bug fixes, or security updates will be provided.
 Users should upgrade to 2.4.x.
 
-# Download
-Get the latest release from the [download page](/download.cgi).
-Please [verify](/download.cgi#verify) your downloads.
+# Download and Install
+
+Get Apache HTTP source code from the [download page](/download.cgi) and
+consult the [installation
+guide](https://httpd.apache.org/docs/2.4/install.html) for
+platform-specific instructions on building and configuring your server.
+Don't forget to [verify](/download.cgi#verify) your downloads.
 
