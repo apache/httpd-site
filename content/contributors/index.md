@@ -407,11 +407,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Location:** Menlo Park, CA  
 
 **Name:** Aram W. Mirzadeh {#mirzadeh}  
-**URL:**  
-**Organization:**  
-**Occupation:**  
-**Location:**  
-
 **Comment:** To err is human, to really screw up you need a computer.  
 **OS Expertise:** Linux &amp; SCO  
 
@@ -438,7 +433,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Contributions:** Apache 1.3, 2.0 and APR for NetWare  
 
 **Name:** Victor J. Orlikowski {#orlikowski}  
-**URL:**  
 **Organization:** IBM  
 **Occupation:** DSO wrangling, BSF rustling, cat herding  
 **Location:** Durham, NC USA  
@@ -492,9 +486,7 @@ Schrenk, Matthew Gray, and John Heidemann.
 
 **Name:** Paul Richards {#richards}  
 **Organization:** Bluebird Computer Systems. FreeBSD core team member.  
-**Occupation:**  
 **Location:** UK  
-**Comments:**  
 **OS Expertise:** FreeBSD  
 
 **Name:** William A. Rowe, Jr. (a.k.a. wrowe, OtherBill) {#wrowe}  
@@ -515,17 +507,14 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Contribution:** Documentation, Japanese translation and bug fixes  
 
 **Name:** David Robinson {#robinson}  
-**URL:**  
 **Organization:** University of Cambridge  
 **Occupation:** Astronomer  
 **Location:** Cambridge, UK  
-**Comments:**  
 
 **Name:** Cliff Skolnick {#skolnick}  
 **Organization:** steam.com  
 **Occupation:** Network/Unix Consultant  
 **Location:** San Francisco, CA, USA  
-**Comments:**  
 **OS Expertise:** Solaris, *BSD  
 
 **Name:** Marc Slemko {#slemko}  
@@ -588,7 +577,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Organization:** Tribal Knowledge Group  
 **Occupation:** Independent Consultant  
 **Location:** Alta, WY, USA  
-**Comments:**  
 **OS Expertise:** UNIX  
 
 **Name:** Robert Thau {#thau}  
