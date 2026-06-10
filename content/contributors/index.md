@@ -184,7 +184,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Contributions:** Various patches, bug fixes, and DBM code alterations bringing Apache in line with what we were using on www.telescope.org. Cookie module. Server Status module. Editor of [Apache Week](http://www.apacheweek.com/)  
 
 **Name:** Chris Darroch {#chrisd}  
-
 **Organization:** Pearson Education Core Technology Group  
 **Occupation:** System Architect  
 **Location:** British Columbia, Canada  
@@ -440,7 +439,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 
 **Name:** Victor J. Orlikowski {#orlikowski}  
 **URL:**  
-
 **Organization:** IBM  
 **Occupation:** DSO wrangling, BSF rustling, cat herding  
 **Location:** Durham, NC USA  
@@ -506,7 +504,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Contributions:** Bashing on the Win32 Apache kernel for fun and profit.  
 
 **Name:** Wilfredo Sánchez {#wsanchez}  
-
 **Organization:** Independent  
 **Occupation:** Software Engineer  
 **Location:** San Jose, CA, USA  
@@ -552,7 +549,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 
 ![[photo]](../images/stein.jpg "")  
 **Name:** Greg Stein {#stein}  
-
 **Occupation:** Non-employed Open Source Developer  
 **Location:** Palo Alto, CA, USA  
 **OS Expertise:** Linux  
@@ -589,7 +585,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Contributions:** Long time Apache convert (fixed a bug in version 0.5.2). Actually likes documentation and commenting source. Contributions include some content negotiation stuff, various bug fixes and testing, mod_headers, multiple log files, options +/-. Edited [Apache Week](http://www.apacheweek.com/) until 1999.  
 
 **Name:** Randy Terbush {#terbush}  
-
 **Organization:** Tribal Knowledge Group  
 **Occupation:** Independent Consultant  
 **Location:** Alta, WY, USA  
@@ -597,7 +592,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 **OS Expertise:** UNIX  
 
 **Name:** Robert Thau {#thau}  
-
 **Organization:** MIT Artificial Intelligence Lab  
 **Occupation:** grad student &amp; random hacker  
 **Location:** Boston, Mass., USA  
