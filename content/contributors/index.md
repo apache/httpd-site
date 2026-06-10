@@ -11,7 +11,7 @@ individuals in the Apache HTTP Server Project.
 | **[Erik Abele](#erikabele)** | Mostly documentation, various tweaks here and there |
 | **[Aaron Bannert](#aaron)** | Some MPM work, recent APR contributions, "that API guy". |
 | **[Brian Behlendorf](#behlendorf)** | Various, focusing on infrastructure for development. |
-| **[Rich Bowen](#rbowen)** | Documentation, Concom. |
+| **[Rich Bowen](#rbowen)** | Documentation |
 | **[Ken Coar](#coar)** | HTML pedant, FAQ editor, UI perfectionist, bugdb script hacker |
 | **[Eric Covener](#covener)** | Bug fixes, LDAP, Documentation, IRC and ML support |
 | **[Davi Arnaut](#darnaut)** | Bug fixes and others things |
