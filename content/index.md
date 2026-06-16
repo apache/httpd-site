@@ -8,7 +8,7 @@ mission-critical production infrastructure with:
 
 - **Flexible configuration** — [.htaccess](/docs/current/howto/htaccess.html) per-directory config, [virtual hosts](/docs/current/vhosts/), [dynamic module loading](/docs/current/dso.html)
 - **Security** — [TLS/SSL](/docs/current/ssl/), [authentication modules](/docs/current/howto/auth.html), [fine-grained access control](/docs/current/howto/access.html)
-- **Performance** — [event MPM](/docs/current/mod/event.html), [HTTP/2](/docs/current/howto/http2.html), [content caching](/docs/current/caching.html), [reverse proxy](/docs/current/howto/reverse_proxy.html)
+- **Performance** — [Multi-processing (MPMs)](/docs/current/mpm.html), [HTTP/2](/docs/current/howto/http2.html), [content caching](/docs/current/caching.html), [reverse proxy](/docs/current/howto/reverse_proxy.html)
 - **Extensibility** — 100+ modules for [rewriting](/docs/current/rewrite/), [proxying](/docs/current/mod/mod_proxy.html), [load balancing](/docs/current/mod/mod_proxy_balancer.html), scripting, and more
 - **Portability** — runs on Linux, Windows, macOS, and most Unix-like systems
 
