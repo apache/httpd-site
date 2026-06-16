@@ -296,7 +296,6 @@ Schrenk, Matthew Gray, and John Heidemann.
 
 **Name:** Jim Jagielski {#jagielski}  
 **URL:** [http://www.jaguNET.com/jim.html](http://www.jaguNET.com/jim.html)  
-
 **Organization:** [jaguNET Access Services, LLC](http://www.jaguNET.com/)  
 **Occupation:** ISP and Web Hosting/Design firm  
 **Location:** Forest Hill, Maryland, USA  
@@ -388,7 +387,7 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Contributions:** Documentation, some modules, hacks here and there, code cleanups and bug shaking.  
 
 ![[photo]](../images/kess.gif "")  
-**Name:** Astrid Malo {#kess} (a.k.a. Kess)  
+**Name:** Astrid Malo (a.k.a. Kess) {#kess}  
 **URL:** [http://www.kess-net.de/](http://www.kess-net.de/)  
 **Occupation:** Software Developer  
 **Location:** Saarbrücken, Germany  
