@@ -14,6 +14,10 @@ list](/lists.html#http-announce)
 
 # Reporting New Security Problems with the Apache HTTP Server  {#reporting}
 
+Please see our [Security
+Policy](https://github.com/apache/httpd/blob/trunk/SECURITY.md) for details
+of what is considered a security vulnerability in Apache httpd.
+
 The Apache Software Foundation takes a very active stance in eliminating
 security problems and denial of service attacks against the Apache HTTP
 server.
