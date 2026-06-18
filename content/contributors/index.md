@@ -1,7 +1,7 @@
 Title: Apache Contributors
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-# Current Apache HTTP Server Project Members {#Welcome}
+# Apache HTTP Server Project Members {#Welcome}
 
 This page exists to recognize the efforts and contributions of the core
 individuals in the Apache HTTP Server Project.
