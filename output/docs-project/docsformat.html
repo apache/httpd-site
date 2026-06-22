@@ -94,63 +94,10 @@ documentation and how to transform it into HTML for review.</p>
 <p>The documentation is written in a custom XML format with its own DTD.
 The DTD is in the
 <a href="https://httpd.apache.org/docs/current/style/">style directory</a> of the
-manual. For detailed markup conventions, see the
+manual.</p>
+<p>For markup conventions, element usage, prose style rules, and
+typographic guidelines, see the
 <a href="style-guide.html">Documentation Style Guide</a>.</p>
-<h3 id="common-markup-elements">Common Markup Elements<a class="headerlink" href="#common-markup-elements" title="Permalink">&para;</a></h3>
-<table class="table">
-<thead>
-<tr>
-<th>Element</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>&lt;example&gt; ... &lt;/example&gt;</code></td>
-<td>Wraps a code example block</td>
-</tr>
-<tr>
-<td><code>&lt;highlight language="config"&gt; ... &lt;/highlight&gt;</code></td>
-<td>Configuration example with syntax highlighting</td>
-</tr>
-<tr>
-<td><code>&lt;highlight language="perl"&gt; ... &lt;/highlight&gt;</code></td>
-<td>Perl code with highlighting</td>
-</tr>
-<tr>
-<td><code>&lt;highlight language="lua"&gt; ... &lt;/highlight&gt;</code></td>
-<td>Lua code with highlighting</td>
-</tr>
-<tr>
-<td><code>&lt;highlight language="C"&gt; ... &lt;/highlight&gt;</code></td>
-<td>C code with highlighting</td>
-</tr>
-<tr>
-<td><code>&lt;directive module="..."&gt;Name&lt;/directive&gt;</code></td>
-<td>Cross-reference to a directive</td>
-</tr>
-<tr>
-<td><code>&lt;module&gt;mod_name&lt;/module&gt;</code></td>
-<td>Cross-reference to a module</td>
-</tr>
-<tr>
-<td><code>&lt;program&gt;name&lt;/program&gt;</code></td>
-<td>Cross-reference to an httpd program</td>
-</tr>
-<tr>
-<td><code>&lt;var&gt;placeholder&lt;/var&gt;</code></td>
-<td>User-supplied value</td>
-</tr>
-<tr>
-<td><code>&lt;note&gt; ... &lt;/note&gt;</code></td>
-<td>Informational callout</td>
-</tr>
-<tr>
-<td><code>&lt;note type="warning"&gt; ... &lt;/note&gt;</code></td>
-<td>Warning callout</td>
-</tr></tbody></table>
-<p>The full format is best learned by reading existing documentation files.
-Start with a simple page and the patterns will become clear quickly.</p>
 <h2 id="viewing-your-changes">Viewing Your Changes<a class="headerlink" href="#viewing-your-changes" title="Permalink">&para;</a></h2>
 <p>Modern browsers can render the XML files directly by applying the
 referenced XSLT stylesheet. Simply open the <code>.xml</code> file in your browser
