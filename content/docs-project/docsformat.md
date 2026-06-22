@@ -11,27 +11,11 @@ documentation and how to transform it into HTML for review.
 The documentation is written in a custom XML format with its own DTD.
 The DTD is in the
 [style directory](https://httpd.apache.org/docs/current/style/) of the
-manual. For detailed markup conventions, see the
+manual.
+
+For markup conventions, element usage, prose style rules, and
+typographic guidelines, see the
 [Documentation Style Guide](style-guide.html).
-
-### Common Markup Elements
-
-| Element | Purpose |
-|---------|---------|
-| `<example> ... </example>` | Wraps a code example block |
-| `<highlight language="config"> ... </highlight>` | Configuration example with syntax highlighting |
-| `<highlight language="perl"> ... </highlight>` | Perl code with highlighting |
-| `<highlight language="lua"> ... </highlight>` | Lua code with highlighting |
-| `<highlight language="C"> ... </highlight>` | C code with highlighting |
-| `<directive module="...">Name</directive>` | Cross-reference to a directive |
-| `<module>mod_name</module>` | Cross-reference to a module |
-| `<program>name</program>` | Cross-reference to an httpd program |
-| `<var>placeholder</var>` | User-supplied value |
-| `<note> ... </note>` | Informational callout |
-| `<note type="warning"> ... </note>` | Warning callout |
-
-The full format is best learned by reading existing documentation files.
-Start with a simple page and the patterns will become clear quickly.
 
 ## Viewing Your Changes
 

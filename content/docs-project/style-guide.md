@@ -225,7 +225,7 @@ Use `<example>` with a nested `<highlight language="...">` block:
     </highlight>
     </example>
 
-Valid language values: `config` (most common), `lua`, `c`, `perl`, `sh`, `html`.
+Valid language values: `config` (most common), `sh`, `python`, `lua`, `c`, `perl`, `html`.
 
 Do **not** use bare `<example>` with `<br />` for line breaks. This is a
 legacy pattern. Convert to `<highlight>` when editing such files.
