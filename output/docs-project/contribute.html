@@ -95,6 +95,16 @@ difference. Your work will be read by millions of httpd users worldwide.</p>
 <p>This page is about <em>contributing to the docs</em>, not about configuring
 httpd. For configuration help, see the
 <a href="../userslist.html">Users mailing list</a>.</p>
+<h2 id="before-you-start">Before You Start<a class="headerlink" href="#before-you-start" title="Permalink">&para;</a></h2>
+<ul>
+<li><strong>No ICLA or ASF account is needed</strong> to submit documentation patches.
+Anyone can contribute.</li>
+<li><strong>The GitHub mirror</strong> (github.com/apache/httpd) is read-only &mdash; do NOT
+open pull requests there. They won't be reviewed. Patches go through
+SVN and the mailing list.</li>
+<li><strong>Patches sent to the mailing list</strong> are typically reviewed within a
+few days.</li>
+</ul>
 <h2 id="ways-to-contribute">Ways to Contribute<a class="headerlink" href="#ways-to-contribute" title="Permalink">&para;</a></h2>
 <p>There's something for every skill level:</p>
 <h3 id="quick-wins-no-svn-needed">Quick Wins (no SVN needed)<a class="headerlink" href="#quick-wins-no-svn-needed" title="Permalink">&para;</a></h3>
@@ -108,6 +118,14 @@ idea.</li>
 <li><strong>Join the conversation</strong> &mdash; Subscribe to <code>docs@httpd.apache.org</code> and
 weigh in on ongoing discussions.</li>
 </ul>
+<h3 id="fast-path-for-small-fixes">Fast Path for Small Fixes<a class="headerlink" href="#fast-path-for-small-fixes" title="Permalink">&para;</a></h3>
+<p>You don't need SVN to report a problem or suggest a fix. For typos or
+small corrections, just describe the fix in an email to
+<code>docs@httpd.apache.org</code>, or open a Bugzilla ticket with the corrected
+text. A committer will apply it for you.</p>
+<p>For anything more than a sentence or two, the SVN patch workflow
+(described below) is preferred &mdash; it gives reviewers the full context of
+your change.</p>
 <h3 id="fix-and-improve-svn-patch-workflow">Fix and Improve (SVN patch workflow)<a class="headerlink" href="#fix-and-improve-svn-patch-workflow" title="Permalink">&para;</a></h3>
 <ul>
 <li>Fix typos, broken examples, or unclear explanations.</li>

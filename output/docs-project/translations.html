@@ -153,10 +153,6 @@ without word spacing, like Chinese and Japanese.)</p>
 <p>Send your completed file (or a patch) to <code>docs@httpd.apache.org</code>. A
 committer will review it and add it to the repository. Over time, you
 may gain commit access yourself.</p>
-<h2 id="keeping-translations-current">Keeping Translations Current<a class="headerlink" href="#keeping-translations-current" title="Permalink">&para;</a></h2>
-<p>Once your initial translation is committed, you'll want to keep it up to
-date as the English source evolves. See
-<a href="goingfurther.html">Maintaining Translations</a> for a practical workflow.</p>
 <h2 id="review-standards">Review Standards<a class="headerlink" href="#review-standards" title="Permalink">&para;</a></h2>
 <p>Because the development team can't easily verify non-English content, we
 require that all translations be reviewed by another fluent speaker of
@@ -170,14 +166,80 @@ translator and the reviewer.</p>
 </code></pre>
 <p>The build system tracks the SVN revision of the equivalent English
 version, so future translators know where to start updating.</p>
+<h2 id="maintaining">Maintaining Translations<a class="headerlink" href="#maintaining" title="Permalink">&para;</a></h2>
+<p>Once your initial translation is committed, the ongoing work is keeping
+it up to date as the English source evolves. Here's a practical workflow
+for tracking changes and updating your translated files.</p>
+<h3 id="the-basic-idea">The Basic Idea<a class="headerlink" href="#the-basic-idea" title="Permalink">&para;</a></h3>
+<p>The English documentation changes over time &mdash; bugs get fixed, features
+get documented, examples get improved. As a translator, you need to:</p>
+<ol>
+<li>Detect which English files have changed since you last translated</li>
+<li>See what specifically changed</li>
+<li>Apply the equivalent changes to your translated files</li>
+<li>Verify your work builds correctly</li>
+</ol>
+<h3 id="set-up-your-working-environment">Set Up Your Working Environment<a class="headerlink" href="#set-up-your-working-environment" title="Permalink">&para;</a></h3>
+<p>Check out both active branches:</p>
+<pre><code>svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk/docs httpd-trunk
+svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x/docs httpd-2.4
+</code></pre>
+<h3 id="track-changes-with-svn">Track Changes with SVN<a class="headerlink" href="#track-changes-with-svn" title="Permalink">&para;</a></h3>
+<p>The simplest way to see what's changed since a known revision is
+<code>svn diff</code> between revisions. If you noted that you last synchronized
+your translation at revision 1900000, you can see all changes since then:</p>
+<pre><code>svn log -r 1900000:HEAD docs/manual/mod/mod_rewrite.xml
+svn diff -r 1900000:HEAD docs/manual/mod/mod_rewrite.xml
+</code></pre>
+<p><strong>Tip:</strong> Note the current revision number each time you finish updating
+a translation. Add it as a comment at the top of your translated file:</p>
+<pre><code>&lt;!-- English Revision: 1912345 --&gt;
+</code></pre>
+<p>This makes it easy to check what's changed next time:</p>
+<pre><code>svn diff -r 1912345:HEAD docs/manual/mod/mod_rewrite.xml
+</code></pre>
+<h3 id="update-your-translation">Update Your Translation<a class="headerlink" href="#update-your-translation" title="Permalink">&para;</a></h3>
+<p>With the diff output showing what changed in the English source, apply
+the equivalent changes to your translated file. Focus on:</p>
+<ul>
+<li>New paragraphs or sections that need translating</li>
+<li>Changed examples or directive descriptions</li>
+<li>Removed content that should also be removed from your translation</li>
+<li>Corrected technical information</li>
+</ul>
+<h3 id="verify-your-work">Verify Your Work<a class="headerlink" href="#verify-your-work" title="Permalink">&para;</a></h3>
+<p>Build the docs to confirm your XML is valid and the output looks right:</p>
+<pre><code>cd docs/manual/build
+./build.sh validate-xml
+./build.sh &lt;your-language-code&gt;
+</code></pre>
+<p>Open the generated HTML in a browser to review the final result.</p>
+<h3 id="submit-your-updates">Submit Your Updates<a class="headerlink" href="#submit-your-updates" title="Permalink">&para;</a></h3>
+<p>Send your updated files as a patch:</p>
+<pre><code>svn diff &gt; translation-update.patch
+</code></pre>
+<p>Email the patch to <code>docs@httpd.apache.org</code>, or attach it to a
+<a href="https://bz.apache.org/bugzilla/">Bugzilla ticket</a>.</p>
+<h3 id="staying-in-sync">Staying in Sync<a class="headerlink" href="#staying-in-sync" title="Permalink">&para;</a></h3>
+<p>A few habits that make maintenance easier:</p>
+<ul>
+<li><strong>Update regularly</strong> &mdash; small, frequent updates are much easier than
+catching up after months of changes.</li>
+<li><strong>Watch the commits list</strong> &mdash; subscribe to the svn commits to see
+documentation changes as they happen.</li>
+<li><strong>Coordinate with other translators</strong> &mdash; if there are multiple people
+working on your language, divide the work and communicate via the
+mailing list.</li>
+</ul>
+<h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permalink">&para;</a></h2>
+<p>If you get stuck or have questions about translating or maintaining
+translations, reach out to <code>docs@httpd.apache.org</code>. We're happy to help.</p>
 <h2 id="related-information">Related Information<a class="headerlink" href="#related-information" title="Permalink">&para;</a></h2>
 <ul>
 <li><a href="docsformat.html">Documentation Format</a> &mdash; the XML format and how to
 build HTML from it</li>
 <li><a href="avail_translations.html">Translation Status</a> &mdash; what's been
 translated and what's needed</li>
-<li><a href="goingfurther.html">Maintaining Translations</a> &mdash; keeping your work
-up to date</li>
 </ul>
 
             <!-- FOOTER -->
