@@ -9,7 +9,7 @@ see gaps in a language you speak, we'd welcome your contribution.
 
 To get started translating, see the [translation guide](translations.html).
 To learn about keeping translations up to date, see
-[Maintaining Translations](goingfurther.html).
+[Maintaining Translations](translations.html#maintaining).
 
 If you can provide translations into any of these languages (or any
 others not yet listed), please let us know on

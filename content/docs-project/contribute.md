@@ -12,6 +12,16 @@ This page is about *contributing to the docs*, not about configuring
 httpd. For configuration help, see the
 [Users mailing list](../userslist.html).
 
+## Before You Start
+
+- **No ICLA or ASF account is needed** to submit documentation patches.
+  Anyone can contribute.
+- **The GitHub mirror** (github.com/apache/httpd) is read-only — do NOT
+  open pull requests there. They won't be reviewed. Patches go through
+  SVN and the mailing list.
+- **Patches sent to the mailing list** are typically reviewed within a
+  few days.
+
 ## Ways to Contribute
 
 There's something for every skill level:
@@ -26,6 +36,17 @@ There's something for every skill level:
   idea.
 - **Join the conversation** — Subscribe to `docs@httpd.apache.org` and
   weigh in on ongoing discussions.
+
+### Fast Path for Small Fixes
+
+You don't need SVN to report a problem or suggest a fix. For typos or
+small corrections, just describe the fix in an email to
+`docs@httpd.apache.org`, or open a Bugzilla ticket with the corrected
+text. A committer will apply it for you.
+
+For anything more than a sentence or two, the SVN patch workflow
+(described below) is preferred — it gives reviewers the full context of
+your change.
 
 ### Fix and Improve (SVN patch workflow)
 
