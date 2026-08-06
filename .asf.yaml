@@ -8,6 +8,19 @@ github:
     merge: false
     rebase: true
 
+  rulesets:
+    - name: "Default Branch Protection"
+      type: branch
+      branches:
+        includes:
+          - "~DEFAULT_BRANCH"
+          - "release/*"
+          - "rel/*"
+        excludes: []
+      bypass_teams:
+        - root
+      restrict_deletion: true
+      restrict_force_push: true
 notifications:
   commits: cvs@httpd.apache.org
   issues: bugs@httpd.apache.org
@@ -21,9 +34,9 @@ pelican:
   whoami: main
 
 staging:
-  profile: ~
+  profile:
   whoami: asf-site
   autostage: preview/*
-  
+
 publish:
   whoami: asf-site
