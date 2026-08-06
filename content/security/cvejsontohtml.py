@@ -11,6 +11,7 @@ parser.add_option("-v","--version",help="major version to filter on",dest="filte
 parser.add_option("-e","--extratext",help="extra text to add to description",dest="extratext")
 parser.add_option("-i","--inputdirectory",help="directory of json files",dest="directory")
 parser.add_option("-d","--debug",help="enable debug output to stderr",dest="debug",action="store_true",default=False)
+parser.add_option("-l","--impactlink",help="URL for impact levels page",dest="impactlink",default="/security/impact_levels.html")
 
 # To debug without getting flooded, put 1 working and 1 broken JSON file in tmp/ and pass --debug -i tmp
 
@@ -175,7 +176,7 @@ print ("Title: "+productname+" "+filterversion+" vulnerabilities")
 print ("asf_headings: False")
 print ("")
 print ("<h1>"+productname+" "+filterversion+" vulnerabilities</h1>")
-print ("<p>This page lists all security vulnerabilities fixed in released versions of "+productname+" "+filterversion+". Each vulnerability is given a security <a href=\"/security/impact_levels.html\">impact rating</a> by the Apache security team - please note that this rating may well vary from platform to platform.  We also list the versions the flaw is known to affect, and where a flaw has not been verified list the version with a question mark.</p>")
+print ("<p>This page lists all security vulnerabilities fixed in released versions of "+productname+" "+filterversion+". Each vulnerability is given a security <a href=\""+options.impactlink+"\">impact rating</a> by the Apache security team - please note that this rating may well vary from platform to platform.  We also list the versions the flaw is known to affect, and where a flaw has not been verified list the version with a question mark.</p>")
 print ("<p>Please note that if a vulnerability is shown below as being fixed in a \"-dev\" release then this means that a fix has been applied to the development source tree and will be part of an upcoming full release.</p>")
 print ("<p>Please send comments or corrections for these vulnerabilities to the <a href=\"/security_report.html\">Security Team</a>.</p> <br/>")
 
