@@ -72,7 +72,7 @@ Enable email obfuscation.
     MboxAntispam On|Off
 
 This directive tells `mod_mbox` to enable a content-destructive email
-obfuscation, thus avoiding spam to mailing list users. For exemple,
+obfuscation, thus avoiding spam to mailing list users. For example,
 `localpart@localdomain.com` will be converted to
 `localp...@localdomain.com`.
 

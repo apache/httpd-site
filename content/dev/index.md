@@ -52,7 +52,7 @@ API
 
 # Historical Documents #
 
-- An extremely obselete draft of the [project plan](project-plan.html) 
+- An extremely obsolete draft of the [project plan](project-plan.html) 
 
 - notes on [the 1.3 API](API.html) 
 

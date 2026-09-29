@@ -134,7 +134,7 @@ parties, they should "roll" a candidate tarball for potential release.
 
 The process is largely automated through shell scripts. The exact commands
 needed to perform a release are captured inside, so consider reading the
-scripts and comments within for a complete understandig of the process.
+scripts and comments within for a complete understanding of the process.
 
 Key points the automation handles:
 
@@ -201,7 +201,7 @@ The automated workflow is:
     # declare the vote by sending the mail to the dev list
     # wait for the results on this
 
-    # Should the vote fail, cancel the release candiate with
+    # Should the vote fail, cancel the release candidate with
     ../tools/release/reset-candidate.sh
 
     # Start again, use 'rc2', 'rc3'...
@@ -322,7 +322,7 @@ extra steps [here](https://www.apache.org/security/committers.html) are followed
 
 Additionally you need to update add vulnerability json files to ( `httpd/site/trunk/content/security/json/` )
 with details of all the security fixes.  Once committed this will automatically generate the relevant
-security pages.  This information can also be used to help generate the annoucement emails.  Make sure
+security pages.  This information can also be used to help generate the announcement emails.  Make sure
 to use CMS to publish these page updates.
 
 You may wish to stage the json file in the private SECURITY repo prior to the release to allow

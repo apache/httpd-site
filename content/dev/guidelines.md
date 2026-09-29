@@ -172,7 +172,7 @@ each issue in the release plan.
 
 After a new release is built, colloquially termed a tarball, it must
 be tested before being released to the public. Majority approval is
-required before the tarball can be publically released.
+required before the tarball can be publicly released.
 
 ### Showstoppers
 

@@ -6,7 +6,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 Documentation is available for current, development, and historical
 versions of Apache httpd. Downloadable zip files of the documentation,
 for your offline use, are available in various languages on our
-[distribution siite](https://downloads.apache.org/httpd/docs/).
+[distribution site](https://downloads.apache.org/httpd/docs/).
 
 -  [Version 2.4](2.4/) ([Current](current/))
 

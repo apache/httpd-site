@@ -74,7 +74,7 @@ source code and related issues. Other questions are likely to be ignored.
 | Digest subscription address: |  [dev-digest-subscribe@httpd.apache.org](mailto:dev-digest-subscribe@httpd.apache.org)  |
 | Unsubscribe: |  [dev-unsubscribe@httpd.apache.org](mailto:dev-unsubscribe@httpd.apache.org)  |
 | List help: |  [dev-help@httpd.apache.org](mailto:dev-help@httpd.apache.org) , [dev-digest-help@httpd.apache.org](mailto:dev-digest-help@httpd.apache.org)  |
-| Searchable Archives: | [ASF browseable](https://lists.apache.org/list.html?dev@httpd.apache.org), [Mail-Archive.Com](http://www.mail-archive.com/dev%40httpd.apache.org/) |
+| Searchable Archives: | [ASF browsable](https://lists.apache.org/list.html?dev@httpd.apache.org), [Mail-Archive.Com](http://www.mail-archive.com/dev%40httpd.apache.org/) |
 
 # Apache HTTP Server Bug Reports List  {#http-bugdb}
 

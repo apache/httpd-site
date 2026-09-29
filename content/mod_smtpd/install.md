@@ -9,7 +9,7 @@ archives repository and complete Apache's configuration.
 
 `mod_smtpd` has, of course, some requirements :
 
-- Apache HTTPd &gt;= 2.2 ( `mod_smtpd` has been tested succesfully with
+- Apache HTTPd &gt;= 2.2 ( `mod_smtpd` has been tested successfully with
 Apache 2.2.0 and 2.3.0-dev)
 
 - APR and APR-Util &gt;= 0.9
