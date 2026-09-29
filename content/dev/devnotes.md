@@ -106,7 +106,7 @@ The website **used** to be hosted at https://svn.apache.org/repos/asf/httpd/site
 
 It is **now** hosted on GitHub at https://github.com/apache/httpd-site/.
 
-The website pages use the Markdown syntax and when a change is commited in this repository,
+The website pages use the Markdown syntax and when a change is committed in this repository,
 the corresponding HTML files are automatically generated and copied on https://httpd.apache.org/.
 
 ## httpd-dist ##
@@ -155,9 +155,9 @@ An example revision that closes a pull request is <https://svn.apache.org/viewvc
 [GitHub Actions](https://github.com/apache/httpd/actions) CI services are used.
 
 This service allows us to automatically build httpd on different processors, OS,
-with different gcc vesions, with different library versions and with different
+with different gcc versions, with different library versions and with different
 configurations.
-On successul built, our [Perl test framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/)
+On a successful build, our [Perl test framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/)
 is also automatically executed.
 
 All this is executed for each commit.
