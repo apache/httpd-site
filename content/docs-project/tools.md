@@ -67,9 +67,17 @@ build for everyone.
 
 ## Viewing Your Changes
 
-- **Browser XSLT** — modern browsers (Firefox, Chrome, Safari) can
-  render the XML files directly by applying the XSLT stylesheet. Just
-  open the `.xml` file in your browser for a quick preview.
+- **Browser XSLT** — Firefox, Chrome, and Safari can render the XML files
+  directly by applying the XSLT stylesheet, so you can open the `.xml`
+  file in your browser for a quick preview. This is going away, however:
+  Chrome removes XSLT in version 158 (November 17, 2026), and Firefox and
+  Safari have announced plans to remove it as well. See the [Chrome for
+  Developers
+  article](https://developer.chrome.com/docs/web-platform/deprecating-xslt)
+  and the [feature tracking
+  entry](https://chromestatus.com/feature/4709671889534976). This affects
+  browser preview only; the documentation build still uses XSLT and is
+  unaffected.
 - **The Ant build** — for the authoritative rendering, build the HTML:
 
       cd docs/manual/build
@@ -135,7 +143,7 @@ content or checking cross-references.
 | Editing XML | VS Code + XML extension, Emacs nxml-mode, or Vim |
 | Version control | Command-line svn |
 | Validating XML | `./build.sh validate-xml` or xmllint |
-| Previewing output | Open .xml in browser, or full Ant build |
+| Previewing output | Full Ant build (browser XSLT preview ends with Chrome 158) |
 | Comparing changes | svn diff, Meld, or vimdiff |
 | Testing regex | regex101.com (PCRE2 mode) |
 | Querying docs | Apache httpd docs MCP server |

@@ -24,6 +24,16 @@ referenced XSLT stylesheet. Simply open the `.xml` file in your browser
 to see a reasonable approximation of the final output. This lets you
 check your work without any build setup.
 
+This is going away, however: Chrome removes XSLT in version 158
+(November 17, 2026), and Firefox and Safari have announced plans to
+remove it as well. See the [Chrome for
+Developers
+article](https://developer.chrome.com/docs/web-platform/deprecating-xslt)
+and the [feature tracking
+entry](https://chromestatus.com/feature/4709671889534976). This affects
+browser preview only; the documentation build still uses XSLT and is
+unaffected.
+
 For the authoritative rendering, use the Ant build system described
 below.
 
