@@ -103,6 +103,15 @@ typographic guidelines, see the
 referenced XSLT stylesheet. Simply open the <code>.xml</code> file in your browser
 to see a reasonable approximation of the final output. This lets you
 check your work without any build setup.</p>
+<p>This is going away, however: Chrome removes XSLT in version 158
+(November 17, 2026), and Firefox and Safari have announced plans to
+remove it as well. See the <a href="https://developer.chrome.com/docs/web-platform/deprecating-xslt">Chrome for
+Developers
+article</a>
+and the <a href="https://chromestatus.com/feature/4709671889534976">feature tracking
+entry</a>. This affects
+browser preview only; the documentation build still uses XSLT and is
+unaffected.</p>
 <p>For the authoritative rendering, use the Ant build system described
 below.</p>
 <h2 id="building-the-documentation">Building the Documentation<a class="headerlink" href="#building-the-documentation" title="Permalink">&para;</a></h2>

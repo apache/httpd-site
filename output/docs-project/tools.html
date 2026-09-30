@@ -149,9 +149,17 @@ pre-installed on Linux).</p>
 <h2 id="viewing-your-changes">Viewing Your Changes<a class="headerlink" href="#viewing-your-changes" title="Permalink">&para;</a></h2>
 <ul>
 <li>
-<p><strong>Browser XSLT</strong> &mdash; modern browsers (Firefox, Chrome, Safari) can
-render the XML files directly by applying the XSLT stylesheet. Just
-open the <code>.xml</code> file in your browser for a quick preview.</p>
+<p><strong>Browser XSLT</strong> &mdash; Firefox, Chrome, and Safari can render the XML files
+directly by applying the XSLT stylesheet, so you can open the <code>.xml</code>
+file in your browser for a quick preview. This is going away, however:
+Chrome removes XSLT in version 158 (November 17, 2026), and Firefox and
+Safari have announced plans to remove it as well. See the <a href="https://developer.chrome.com/docs/web-platform/deprecating-xslt">Chrome for
+Developers
+article</a>
+and the <a href="https://chromestatus.com/feature/4709671889534976">feature tracking
+entry</a>. This affects
+browser preview only; the documentation build still uses XSLT and is
+unaffected.</p>
 </li>
 <li>
 <p><strong>The Ant build</strong> &mdash; for the authoritative rendering, build the HTML:</p>
@@ -228,7 +236,7 @@ content or checking cross-references.</p>
 </tr>
 <tr>
 <td>Previewing output</td>
-<td>Open .xml in browser, or full Ant build</td>
+<td>Full Ant build (browser XSLT preview ends with Chrome 158)</td>
 </tr>
 <tr>
 <td>Comparing changes</td>
