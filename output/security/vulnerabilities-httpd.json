@@ -2168,6 +2168,127 @@
         }
     },
     {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Nebula Security (@nebusecurity)"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Use After Free vulnerability in Apache HTTP Server's mod_rewrite when using lookahead (%{LA-U:HTTP:...})</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Use After Free vulnerability in Apache HTTP Server's mod_rewrite when using lookahead (%{LA-U:HTTP:...})\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-416",
+                                "description": "CWE-416 Use After Free",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-05-25T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938660"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_rewrite use-after-free via %{LA-U:HTTP:...}",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-56154",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -2410,6 +2531,121 @@
                 "value": "2.4.49 released"
             }
         ]
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "lokerxx"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache HTTP Server's mod_session_cookie module.</p><p>&nbsp;  <br>When SessionCookieRemove changes across internal redirects, the session cookie may still be passed to a backend server.<br><br></p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Exposure of Sensitive Information to an Unauthorized Actor vulnerability in Apache HTTP Server's mod_session_cookie module.\n\n\u00a0  \nWhen SessionCookieRemove changes across internal redirects, the session cookie may still be passed to a backend server.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-200",
+                                "description": "CWE-200 Exposure of Sensitive Information to an Unauthorized Actor",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-05-15T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938656"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_session: Session cookie not removed during internal redirect",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-47360",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "containers": {
@@ -5893,6 +6129,135 @@
         }
     },
     {
+        "CNA_private": {
+            "owner": "httpd",
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "users@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Calif.io in collaboration with Anthropic"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "AISLE in partnership with Red Hat"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Integer overflow in mod_dav_fs in Apache HTTP Server through 2.4.68 allows an authenticated WebDAV client with write access to crash worker processes and persistently corrupt a directory's property database via PROPPATCH requests declaring many XML namespaces."
+                            }
+                        ],
+                        "value": "Integer overflow in mod_dav_fs in Apache HTTP Server through 2.4.68 allows an authenticated WebDAV client with write access to crash worker processes and persistently corrupt a directory's property database via PROPPATCH requests declaring many XML namespaces."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-190",
+                                "description": "CWE-190 Integer overflow or wraparound",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-07-28T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938682"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_dav_fs namespace overflow",
+                "x_generator": {
+                    "engine": "Vulnogram 1.0.3"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-93546",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
         "containers": {
             "cna": {
                 "affected": [
@@ -6332,6 +6697,261 @@
                 ]
             }
         }
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "kimchunbok"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "l1nx1n"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Juthawong Naisanguansee"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Charles Vosburgh"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Mike Read"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Ryoma Nishioka"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Improper Privilege Management vulnerability in Apache HTTP Server's mod_ssl via SSLRequire and file-related expressions.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Improper Privilege Management vulnerability in Apache HTTP Server's mod_ssl via SSLRequire and file-related expressions.\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-269",
+                                "description": "CWE-269 Improper Privilege Management",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-28T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938672"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_ssl SSLRequire allows .htaccess ap_expr file-function",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-59797",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.30",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Qing Xu"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') response smuggling vulnerability in Apache HTTP Server via mod_proxy_uwsgi and a crafted uwsgi response with Transfer-Encoding.</p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling') response smuggling vulnerability in Apache HTTP Server via mod_proxy_uwsgi and a crafted uwsgi response with Transfer-Encoding.\n\nThis issue affects Apache HTTP Server: from 2.4.30 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-444",
+                                "description": "CWE-444 Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-07-14T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938691"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_proxy_uwsgi Transfer-Encoding response smuggling",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-63718",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -8189,6 +8809,141 @@
                 ]
             }
         }
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "4ra1n, pyn3rd and unam4"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Charles Vosburgh"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "sungbyeongchan"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Daradigu / RELAUNCH DEPT."
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Improper validation of FTP PASV reply address in mod_proxy_ftp in Apache Software Foundation Apache HTTP Server through 2.4.68 on all platforms allows, in forward proxy configurations, an untrusted FTP server to cause the proxy to open a data connection to an arbitrary third-party host via a crafted PASV response.<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue."
+                            }
+                        ],
+                        "value": "Improper validation of FTP PASV reply address in mod_proxy_ftp in Apache Software Foundation Apache HTTP Server through 2.4.68 on all platforms allows, in forward proxy configurations, an untrusted FTP server to cause the proxy to open a data connection to an arbitrary third-party host via a crafted PASV response.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-284",
+                                "description": "CWE-284 Improper Access Control",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-07-07T16:26:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938674"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_proxy_ftp PASV address handling",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-63045",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -10423,6 +11178,126 @@
         },
         "dataType": "CVE_RECORD",
         "dataVersion": "5.0"
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Hyojae Lee"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Stack-based buffer overflow in mod_vhost_alias in Apache Software Foundation Apache HTTP Server through 2.4.68 on all platforms allows a remote client to cause a denial of service or potentially execute arbitrary code via an HTTP request with a Host header exceeding 8192 bytes when VirtualDocumentRoot uses a hostname format specifier and LimitRequestFieldSize is raised above the default.<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue."
+                            }
+                        ],
+                        "value": "Stack-based buffer overflow in mod_vhost_alias in Apache Software Foundation Apache HTTP Server through 2.4.68 on all platforms allows a remote client to cause a denial of service or potentially execute arbitrary code via an HTTP request with a Host header exceeding 8192 bytes when VirtualDocumentRoot uses a hostname format specifier and LimitRequestFieldSize is raised above the default.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-121",
+                                "description": "CWE-121 Stack-based Buffer Overflow",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-17T23:29:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938676"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_vhost_alias stack overflow",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-63292",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -12870,6 +13745,132 @@
         }
     },
     {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "lokerxx"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Missing authentication checks in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause a denial of service (forced re-authentication) via forged Authorization headers when Digest authentication is enabled with AuthDigestNcCheck .<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue."
+                            }
+                        ],
+                        "value": "Missing authentication checks in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause a denial of service (forced re-authentication) via forged Authorization headers when Digest authentication is enabled with AuthDigestNcCheck .\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-306",
+                                "description": "CWE-306 Missing authentication for critical function",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-05-14T12:20:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1937721"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_auth_digest reauthentication attack",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-48005",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -14369,6 +15370,151 @@
                 ]
             }
         }
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhang San"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Ankit Prateek (OffByQuant)"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "SeungHyun Cho of KISA"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "4ra1n, pyn3rd and unam4"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Ryoma Nishioka"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Keita Sode"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>NULL Pointer Dereference vulnerability in Apache HTTP Servers mod_heartmonitor over unicast listener.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "NULL Pointer Dereference vulnerability in Apache HTTP Servers mod_heartmonitor over unicast listener.\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-476",
+                                "description": "CWE-476 NULL Pointer Dereference",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-05-07T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938654"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_heartmonitor denial of service",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-46729",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -16661,6 +17807,240 @@
         }
     },
     {
+        "CNA_private": {
+            "owner": "httpd",
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "announce@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Vlatko Kosturjak, Marlink Cyber"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Path equivalence: '/./' (single dot directory) vulnerability in Apache HTTP Server's mod_userdir module when configured with&nbsp;absolute non-wildcard UserDir directive (the 2nd form in&nbsp;https://httpd.apache.org/docs/2.4/mod/mod_userdir.html#userdir)</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p>"
+                            }
+                        ],
+                        "value": "Path equivalence: '/./' (single dot directory) vulnerability in Apache HTTP Server's mod_userdir module when configured with\u00a0absolute non-wildcard UserDir directive (the 2nd form in\u00a0https://httpd.apache.org/docs/2.4/mod/mod_userdir.html#userdir)\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-55",
+                                "description": "CWE-55 Path equivalence: '/./' (single dot directory)",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-08-14T15:36:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938680"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_userdir information disclosure",
+                "x_generator": {
+                    "engine": "Vulnogram 1.0.3"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-79768",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.0"
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhenpeng (Leo) Lin at depthfirst"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "A memory calculation bug in mod_dav in Apache httpd 2.4.67 and earlier allows an attacker with permission to create WebDAV locks to crash server child processes.<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue<br>"
+                            }
+                        ],
+                        "value": "A memory calculation bug in mod_dav in Apache httpd 2.4.67 and earlier allows an attacker with permission to create WebDAV locks to crash server child processes.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue"
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-789",
+                                "description": "CWE-789 Memory Allocation with Excessive Size Value",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "EXTERNAL"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-04-27T17:33:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938652"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_dav shared lock overflow",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-42528",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -17403,6 +18783,126 @@
                     "engine": "Vulnogram 0.2.0"
                 }
             }
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Bartlomiej Dmitruk at striga.ai"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Masumi Tanaka"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Out-of-bounds Write vulnerability in Apache HTTP Server's mod_charset_lite.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.<br></p>"
+                            }
+                        ],
+                        "value": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_charset_lite.\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-787",
+                                "description": "CWE-787 Out-of-bounds Write",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-09T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938658"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_charset_lite: Heap overflow in finish_partial_char",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-56153",
+            "serial": 1,
+            "state": "PUBLISHED"
         },
         "dataType": "CVE_RECORD",
         "dataVersion": "5.1"
@@ -18589,6 +20089,126 @@
                 "value": "2.4.49 released"
             }
         ]
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Darren Carreras (DarrenC)"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Use after free in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause authentication state corruption via concurrent Digest authentication requests when AuthDigestNcCheck is enabled or AuthDigestNonceLifetime is set to 0.<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue."
+                            }
+                        ],
+                        "value": "Use after free in mod_auth_digest in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an unauthenticated remote client to cause authentication state corruption via concurrent Digest authentication requests when AuthDigestNcCheck is enabled or AuthDigestNonceLifetime is set to 0.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-416",
+                                "description": "CWE-416 Use After Free",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-07-18T23:22:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1937721"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_auth_digest DoS attack",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-73637",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -20127,6 +21747,124 @@
         },
         "dataType": "CVE_RECORD",
         "dataVersion": "5.0"
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Lucian Nitescu"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p>"
+                            }
+                        ],
+                        "value": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-787",
+                                "description": "CWE-787 Out-of-bounds Write",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "url": "https://"
+                    },
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-14T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938661"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_proxy_html: crash in dump_content",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-56449",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -24850,6 +26588,126 @@
         ]
     },
     {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.6.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Lucian Nitescu"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Zhen Kong"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "A NULL pointer dereference in mod_xml2enc in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an untrusted backend server to cause a denial of service via a proxied response with a charset whose conversion partially succeeds then fails.<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue."
+                            }
+                        ],
+                        "value": "A NULL pointer dereference in mod_xml2enc in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows an untrusted backend server to cause a denial of service via a proxied response with a charset whose conversion partially succeeds then fails.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-476",
+                                "description": "CWE-476 NULL Pointer Dereference",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-14T16:08:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938678"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_xml2enc crash on charset conversion failure",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-63686",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -29159,6 +31017,127 @@
         "dataVersion": "5.1"
     },
     {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "users@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.60",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Feliks Penconek"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Deployment of wrong handler vulnerability in Apache HTTP Server allows the target of some internal redirects from CGI programs to also be treated as CGI and executed. The target must already be in a directory enabled for CGI and have no other extension understood by mod_mime.</p><p>This issue affects Apache HTTP Server: from 2.4.60 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Deployment of wrong handler vulnerability in Apache HTTP Server allows the target of some internal redirects from CGI programs to also be treated as CGI and executed. The target must already be in a directory enabled for CGI and have no other extension understood by mod_mime.\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.60 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-430",
+                                "description": "CWE-430 Deployment of wrong handler",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-04-03T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938650"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "limited RCE for some internal redirects to non-CGI files in CGI directories",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-42356",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
         "containers": {
             "cna": {
                 "affected": [
@@ -32567,6 +34546,137 @@
         }
     },
     {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Lucian Nitescu"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Simon Kappel"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Gianluca Danesin, Altervista"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Use After Free vulnerability in Apache HTTP Server's mod_http2&nbsp;<span>via shared session-&gt;bbtmp re-entrancy</span></p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Use After Free vulnerability in Apache HTTP Server's mod_http2\u00a0via shared session->bbtmp re-entrancy\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-416",
+                                "description": "CWE-416 Use After Free",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-15T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938665"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_http2 use-after-free / wild write via shared session->bbtmp re-entrancy",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-57941",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
+    },
+    {
         "data_type": "CVE",
         "data_format": "MITRE",
         "data_version": "4.0",
@@ -34258,6 +36368,126 @@
                 ]
             }
         }
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Dhiraj Mishra"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Feng Ning (innora.ai / Innora Security Research)"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p>Out-of-bounds Write vulnerability in Apache HTTP Server on Windows while processing paths with 8.3 names that may grow when expanded.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p><p><br></p>"
+                            }
+                        ],
+                        "value": "Out-of-bounds Write vulnerability in Apache HTTP Server on Windows while processing paths with 8.3 names that may grow when expanded.\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "moderate"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-787",
+                                "description": "CWE-787 Out-of-bounds Write",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-05-06T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938670"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "Out-of-Bounds Write in ap_directory_walk() Canonical-Name Rewrite on CASE_BLIND_FILESYSTEM",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-59685",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -36818,6 +39048,121 @@
         },
         "dataType": "CVE_RECORD",
         "dataVersion": "5.0"
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "Hyojae Lee"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "Authentication bypass by capture-replay in mod_auth_digest in Apache Software Foundation Apache HTTP Server 2.4.x on all platforms allows a man-in-the-middle (MITM) attacker to replay captured digest authentication credentials via crafted requests that trigger garbage collection of the client's shared memory entry when AuthDigestNonceLifetime is set to 0.<br><br>Users are recommended to upgrade to version 2.4.69, which fixes this issue."
+                            }
+                        ],
+                        "value": "Authentication bypass by capture-replay in mod_auth_digest in Apache Software Foundation Apache HTTP Server 2.4.x on all platforms allows a man-in-the-middle (MITM) attacker to replay captured digest authentication credentials via crafted requests that trigger garbage collection of the client's shared memory entry when AuthDigestNonceLifetime is set to 0.\n\nUsers are recommended to upgrade to version 2.4.69, which fixes this issue."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        }
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-294",
+                                "description": "CWE-294 Authentication Bypass by Capture-replay",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-08T01:36:00.000Z",
+                        "value": "Report received"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1937721"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_auth_digest one-time-nonce replay attack",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-73636",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     },
     {
         "data_type": "CVE",
@@ -42834,5 +45179,131 @@
                 ]
             }
         }
+    },
+    {
+        "CNA_private": {
+            "emailed": null,
+            "owner": "httpd",
+            "projecturl": null,
+            "state": "DRAFT",
+            "todo": [],
+            "type": "unsure",
+            "userslist": "dev@httpd.apache.org"
+        },
+        "containers": {
+            "cna": {
+                "affected": [
+                    {
+                        "defaultStatus": "unaffected",
+                        "product": "Apache HTTP Server",
+                        "vendor": "Apache Software Foundation",
+                        "versions": [
+                            {
+                                "lessThanOrEqual": "2.4.68",
+                                "status": "affected",
+                                "version": "2.4.0",
+                                "versionType": "semver"
+                            }
+                        ]
+                    }
+                ],
+                "credits": [
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "\uc774\uc9c0\uc6c5 (kimchunbok)"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "sungbyeongchan"
+                    }
+                ],
+                "descriptions": [
+                    {
+                        "lang": "en",
+                        "supportingMedia": [
+                            {
+                                "base64": false,
+                                "type": "text/html",
+                                "value": "<p><span>Internal state files accessible to external parties in mod_dav_fs in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows a remote client to read WebDAV dead properties of resources it cannot author via a GET request for the .DAV state directory</span></p><p><span>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</span></p><p><br></p>"
+                            }
+                        ],
+                        "value": "Internal state files accessible to external parties in mod_dav_fs in Apache Software Foundation Apache HTTP Server before 2.4.69 on all platforms allows a remote client to read WebDAV dead properties of resources it cannot author via a GET request for the .DAV state directory\n\n\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                    }
+                ],
+                "metrics": [
+                    {
+                        "other": {
+                            "content": {
+                                "text": "low"
+                            },
+                            "type": "Textual description of severity"
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
+                    }
+                ],
+                "problemTypes": [
+                    {
+                        "descriptions": [
+                            {
+                                "cweId": "CWE-552",
+                                "description": "CWE-552 Files or directories accessible to external parties",
+                                "lang": "en",
+                                "type": "CWE"
+                            }
+                        ]
+                    }
+                ],
+                "providerMetadata": {
+                    "orgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09"
+                },
+                "references": [
+                    {
+                        "tags": [
+                            "vendor-advisory"
+                        ],
+                        "url": "https://httpd.apache.org/security/vulnerabilities_24.html"
+                    }
+                ],
+                "source": {
+                    "discovery": "UNKNOWN"
+                },
+                "timeline": [
+                    {
+                        "lang": "en",
+                        "time": "2026-06-24T12:00:00.000Z",
+                        "value": "reported"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "fixed in 2.4.x by r1938668"
+                    },
+                    {
+                        "lang": "eng",
+                        "time": "2026-10-01T12:00:00.000Z",
+                        "value": "2.4.69 released"
+                    }
+                ],
+                "title": "mod_dav_fs property database read access",
+                "x_generator": {
+                    "engine": "Vulnogram 0.2.0"
+                }
+            }
+        },
+        "cveMetadata": {
+            "assignerOrgId": "f0158376-9dc2-43b6-827c-5f631a4d8d09",
+            "cveId": "CVE-2026-58415",
+            "serial": 1,
+            "state": "PUBLISHED"
+        },
+        "dataType": "CVE_RECORD",
+        "dataVersion": "5.1"
     }
 ]
