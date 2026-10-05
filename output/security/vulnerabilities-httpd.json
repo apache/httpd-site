@@ -21750,10 +21750,10 @@
     },
     {
         "CNA_private": {
-            "emailed": null,
+            "emailed": "yes",
             "owner": "httpd",
-            "projecturl": null,
-            "state": "DRAFT",
+            "projecturl": "https://httpd.apache.org/",
+            "state": "PUBLIC",
             "todo": [],
             "type": "unsure",
             "userslist": "dev@httpd.apache.org"
@@ -21767,9 +21767,8 @@
                         "vendor": "Apache Software Foundation",
                         "versions": [
                             {
-                                "lessThanOrEqual": "2.4.68",
                                 "status": "affected",
-                                "version": "2.4.0",
+                                "version": "2.4.68",
                                 "versionType": "semver"
                             }
                         ]
@@ -21789,10 +21788,10 @@
                             {
                                 "base64": false,
                                 "type": "text/html",
-                                "value": "<p>Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.</p><p>This issue affects Apache HTTP Server: from 2.4.0 through 2.4.68.</p>"
+                                "value": "<p>Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.</p><p>This issue affects Apache HTTP Server version 2.4.68.</p>"
                             }
                         ],
-                        "value": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.\n\nThis issue affects Apache HTTP Server: from 2.4.0 through 2.4.68."
+                        "value": "Out-of-bounds Write vulnerability in Apache HTTP Server's mod_proxy_html with crafted HTTP response bodies.\n\n\n\nThis issue affects Apache HTTP Server version 2.4.68."
                     }
                 ],
                 "metrics": [
@@ -21802,7 +21801,13 @@
                                 "text": "low"
                             },
                             "type": "Textual description of severity"
-                        }
+                        },
+                        "scenarios": [
+                            {
+                                "lang": "en",
+                                "value": "GENERAL"
+                            }
+                        ]
                     }
                 ],
                 "problemTypes": [
@@ -21822,9 +21827,6 @@
                 },
                 "references": [
                     {
-                        "url": "https://"
-                    },
-                    {
                         "tags": [
                             "vendor-advisory"
                         ],
@@ -21832,7 +21834,7 @@
                     }
                 ],
                 "source": {
-                    "discovery": "UNKNOWN"
+                    "discovery": "EXTERNAL"
                 },
                 "timeline": [
                     {
