@@ -150,23 +150,30 @@ pull request number which will be prominent in the interface.
 
 An example revision that closes a pull request is <https://svn.apache.org/viewvc?view=revision&revision=1780308>
 
+## SVN workflow
+
+Some scripts that help work with some mixed SVN and git workflows are available in
+the github/ directory of the httpd  dev-tools repo which can be checked out via:
+`svn co https://svn.apache.org/repos/asf/httpd/dev-tools/trunk/ httpd-dev-tools`
+
 # Continuous integration (CI) #
 
 [GitHub Actions](https://github.com/apache/httpd/actions) CI services are used.
 
 This service allows us to automatically build httpd on different processors, OS,
 with different gcc versions, with different library versions and with different
-configurations.
-On a successful build, our [Perl test framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/)
+configurations.  CI runs for pull requests from committers only.
+
+On a successful build, in-tree testa and the legacy 
+[Perl test framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/)
 is also automatically executed.
 
-All this is executed for each commit.
-
-The goal is to spot early new build issues and regression.
+All this is executed for each commit.  The goal is to spot early new build issues and regression.
 
 Should a committer want to commit something, without triggering the whole process
 (doc change or STATUS update for example), he can add the magic "[skip ci]"
 keyword as part of the commit message.
+
 
 
 Here are the [latest built results](https://github.com/apache/httpd/actions).
