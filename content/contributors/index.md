@@ -11,6 +11,7 @@ individuals in the Apache HTTP Server Project.
 | **[Erik Abele](#erikabele)** | Mostly documentation, various tweaks here and there |
 | **[Aaron Bannert](#aaron)** | Some MPM work, recent APR contributions, "that API guy". |
 | **[Brian Behlendorf](#behlendorf)** | Various, focusing on infrastructure for development. |
+| **[Arturo Bernal](#abernal)** | Bug fixes, protocol compliance and general maintenance |
 | **[Rich Bowen](#rbowen)** | Documentation |
 | **[Ken Coar](#coar)** | HTML pedant, FAQ editor, UI perfectionist, bugdb script hacker |
 | **[Eric Covener](#covener)** | Bug fixes, LDAP, Documentation, IRC and ML support |
@@ -139,6 +140,11 @@ Schrenk, Matthew Gray, and John Heidemann.
 **Comments:** Infrastructure, baby!  
 **OS Expertise:** FreeBSD  
 **Contributions:** Various, focusing on assisting the development process itself.  
+
+**Name:** Arturo Bernal {#abernal}  
+**Occupation:** Software Engineer / Technical Lead  
+**Location:** Belgium  
+**Contributions:** Bug fixes, protocol compliance and general maintenance.  
 
 **Name:** Ryan Bloom {#bloom}  
 **Organization:** Independent  
