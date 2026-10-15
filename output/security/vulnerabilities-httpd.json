@@ -31025,10 +31025,10 @@
     },
     {
         "CNA_private": {
-            "emailed": null,
+            "emailed": "yes",
             "owner": "httpd",
-            "projecturl": null,
-            "state": "DRAFT",
+            "projecturl": "https://httpd.apache.org/",
+            "state": "PUBLIC",
             "todo": [],
             "type": "unsure",
             "userslist": "users@httpd.apache.org"
@@ -31055,6 +31055,11 @@
                         "lang": "en",
                         "type": "finder",
                         "value": "Feliks Penconek"
+                    },
+                    {
+                        "lang": "en",
+                        "type": "finder",
+                        "value": "hexb1n, Yang Song, and JiaSheng He of 360 Vulnerability Research Institute, working with 360 TuLongFeng"
                     }
                 ],
                 "descriptions": [
