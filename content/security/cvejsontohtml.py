@@ -186,10 +186,13 @@ if not options.nopreamble:
         print ("<p>"+options.extratext+"</p><br/>")
 
 for sectioncves in sections:
-    print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]+"</h1><dl>\n")
+    count = len(sectioncves["cves"])
+    print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]
+           +" <span class=\"cve-count\">"+str(count)+" CVE"+("s" if count != 1 else "")+"</span></h1><dl class=\"cve-list\">\n")
     for e in sectioncves["cves"]:
         html = "<dt><h3 id=\""+e['cveid']+"\">"+e['impact']+": <name name=\""+e['cveid']+"\">"+saxutils.escape(e['title'])+"</name>\n";
-        html += "(<a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a>)</h3></dt>\n";
+        html += "(<a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a>)"
+        html += "<a class=\"headerlink\" href=\"#"+e['cveid']+"\" title=\"Permanent link\">&para;</a></h3></dt>\n";
         desc = saxutils.escape(e['desc'])
         desc = re.sub(r'\n','</p><p>', desc)
         html += "<dd><p>"+desc+"</p>\n"
