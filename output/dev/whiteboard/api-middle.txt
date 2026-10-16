@@ -1,0 +1,104 @@
+Subject: 2.0: Thoughts on the Module API/Middle End
+Date: Tue, 04 Aug 1998 00:00:41 -0400
+From: Simon Spero <ses@tipper.oit.unc.edu>
+Reply-To: new-httpd@apache.org
+To: new-httpd@hyperreal.org
+
+I've been meaning to post some thoughts about the design of the module API ,
+but I've been sick and busy, so I thought I'd just throws some ideas up for
+people to rip to shreds.Sorry if a lot of this is incoherent.  I'd like to
+blame it all on voice recognition, but it's really my fault
+
+First of all, some stuff that should be non-controversial.
+
+1.  The current API is too HTTP specific, and too procedural in nature.  It
+is ill-defined, and inflexible when it comes to adding extra functions.  It
+is very hard to predict how modules from different developers will interact
+with each other, or two used to modules providing the same type of service
+at the same time (for example, using two different authentication modules to
+get user information from two different places).
+
+2.
+
+Back-end vs. middle-end, objects vs. names.
+
+ this may be controversial, I like to think of the things that are managed
+by the back end of the server as being objects; these objects may have
+state, provided by a filesystem or a database, and can be accessed by
+invoking many different methods.  The implementation of these methods could
+potentially come from code provided by many different modules; it is the job
+of the middle end to work out which methods go with which object. Methods
+can be grouped together to form interfaces (like in Java or CORBA).
+
+Use different types of Interfaces.
+
+Each type of activity should be defined by a different interface; it should
+be possible to implement several different interfaces in the same module; it
+should also be possible to only implement part of an interface, with the
+remaining implementations coming from different sources.
+
+Use Late binding.
+
+Interfaces should be flexible and  late bound; module should only provide a
+single symbol, which would be a standard function identifying the methods
+and interfaces provided by this module. This identification the should be
+done using strings instead of locations within structs to avoid problems
+caused by adding methods to an interface.
+
+Provide fast method invocation
+
+Method indications should be fast; on the order of a jump to a function
+pointer, instead of a linear search.  It should be possible to use this
+invocation method to provide basic services to other modules (for example,
+then might be a database interface). It should be possible to take modules
+which use a carefully limited set of system services, and automatically load
+them into the kernel, or access them from a kernel module.
+
+Object VTABLES can be pieced together at run time.
+
+The process of constructing an object might  start with name resolution;
+For example, a database based implementation of a meta- information
+interface might be bound to /.  A filesystem based implementation of the
+name resolution interface could then be bound to /files. Control of  the
+name resolution processing would then be passed in to that implementation of
+the  name resolution interface, which would do further construction of the
+object, including handling tasks like content-negotiation.  This can be
+combined with other mechanisms for locating appropriate implementations to
+use with this object.
+
+VTABLES should be mostly pre-computed.
+
+ the important thing is that it should be possible to statically evaluate as
+much of the resolution process as possible to build cached vtables for the
+common-path. This could be done through a method in the name resolution
+interface which would return a list of  tuples of name prefixes and
+vtables. It should be possible to quickly combine vtables for cases where
+dynamic processing is necessary. This might involve links rather than
+copying.
+
+Method Combination Should Be Predicatable And Controllable.
+
+It should be possible to control how methods are combined.  This might
+involve e.g. making a pointer to the next function to call available to the
+invokes method, in the style of LISP or Dylan; or trying all methods until
+one succeeds, all succeed, etc. .  The main constraint is that it should be
+easy to see what sort of method combination is being used without having to
+read every single piece of code involved.
+
+Object/VTABLE  Construction Should Be Customisable
+
+The process of name resolution and method combination must be customizable
+as an interface; this allows for other types of object, in particular front
+end protocol stacks, to be implemented using the same mechanisms.
+
+-------
+Misc.
+
+All access to objects should be  mediated by a cache (the core of the
+middle-end).
+
+There should be certain types of stereotyped interfaces e.g. for objects
+that behave like files.  This allows caches to be smarter.
+
+Once in object has been resolved, it should have an object ID which can be
+used in internal caching.

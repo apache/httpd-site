@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
+        <meta name="author" content="Documentation Group"><meta name="email" content="docs@httpd.apache.org">
+        <title>Verifying Apache HTTP Server Releases - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="Apache HTTP Server" src="/images/httpd_logo_wide_new.png" id="site-logo">
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png" alt="Support Apache">
+            </a>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+        </div>
+        <div id="site-wrapper">
+        <div id="apmenu">
+	  <script src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	    <li><a href="https://www.apache.org/foundation/policies/privacy.html">Privacy</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="verifying-apache-http-server-releases">Verifying Apache HTTP Server Releases<a class="headerlink" href="#verifying-apache-http-server-releases" title="Permalink">&para;</a></h1>
+<p>All official releases of code distributed by the Apache HTTP Server Project
+are signed by the release manager for the release. PGP signatures and SHA
+hashes are available along with the distribution.</p>
+<p>Validating a download involves two separate processes:</p>
+<ol>
+<li><strong><a href="#Hashes">Verifying the integrity of the file</a></strong> &mdash; using a SHA hash
+to confirm the file was not corrupted or tampered with during download.</li>
+<li><strong><a href="#Checking">Verifying the source of the file</a></strong> &mdash; using a PGP
+signature to confirm it was actually released by a trusted Apache
+committer.</li>
+</ol>
+<p>These are independent checks. For strongest assurance, do both.</p>
+<h1 id="Checking">Verifying the PGP Signature<a class="headerlink" href="#Checking" title="Permalink">&para;</a></h1>
+<p><strong>Goal:</strong> Confirm that the file you downloaded was actually signed by an
+Apache release manager, and has not been modified since.</p>
+<p>The following example uses <a href="http://www.gnupg.org/">The GNU Privacy Guard</a>.
+Any <a href="http://www.openpgp.org/">OpenPGP</a>-compliant program should work
+successfully.</p>
+<p>This example assumes you've already downloaded <code>httpd-2.4.68.tar.gz</code>
+(the release) and <code>httpd-2.4.68.tar.gz.asc</code> (the detached PGP signature).</p>
+<p>First, check the detached signature against the release:</p>
+<pre><code>% gpg --verify httpd-2.4.68.tar.gz.asc httpd-2.4.68.tar.gz
+gpg: Signature made Fri Jun  5 08:53:02 2026 EDT
+gpg:                using RSA key 65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA
+gpg: Can't check signature: No public key
+</code></pre>
+<p>The "Can't check signature" output means that you don't have the release
+manager's public key (<code>65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA</code>) in your
+local system. You need to import it.</p>
+<p>The recommended way is to download the KEYS file maintained by the Apache
+HTTP Server project, which contains the public keys of all release managers:</p>
+<pre><code>% wget https://downloads.apache.org/httpd/KEYS
+% gpg --import KEYS
+gpg: key 8B3A601F08C975E5: public key "Jim Jagielski &lt;jim@apache.org&gt;" imported
+gpg: key 193F180AB55D9977: public key "William A. Rowe, Jr. &lt;wrowe@rowe-clan.net&gt;" imported
+gpg: key 4C042818311A3DE5: public key "Ruediger Pluem &lt;rpluem@apache.org&gt;" imported
+...
+gpg: key 82781DE46D5954FA: public key "Eric Covener &lt;covener@apache.org&gt;" imported
+gpg: key EC99EE267EB5F61A: public key "Yann Ylavic &lt;ylavic@apache.org&gt;" imported
+gpg: key 5A4B10AE43B56A27: public key "Joe Orton (Release Signing Key) &lt;jorton@apache.org&gt;" imported
+gpg: key 19B033D1760C227B: public key "Christophe JAILLET &lt;christophe.jaillet@wanadoo.fr&gt;" imported
+gpg: key D377C9E7D1944C66: public key "Stefan Eissing (icing) &lt;stefan@eissing.org&gt;" imported
+gpg: Total number processed: 69
+gpg:               imported: 41
+</code></pre>
+<p>This imports the public keys of all current and past httpd release managers
+into your local keyring.</p>
+<p>Now let's verify the release signature again:</p>
+<pre><code>% gpg --verify httpd-2.4.68.tar.gz.asc httpd-2.4.68.tar.gz
+gpg: Signature made Fri Jun  5 08:53:02 2026 EDT
+gpg:                using RSA key 65B2D44FE74BD5E3DE3AC3F082781DE46D5954FA
+gpg: Good signature from "Eric Covener &lt;covener@apache.org&gt;" [unknown]
+gpg:                 aka "Eric Covener &lt;ecovener@us.ibm.com&gt;" [unknown]
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the owner.
+Primary key fingerprint: 65B2 D44F E74B D5E3 DE3A  C3F0 8278 1DE4 6D59 54FA
+</code></pre>
+<p>This output confirms that the signature on the file is valid. The
+WARNING indicates that you have not established a trust relationship with
+this key in your local GPG configuration. Since you obtained the key from
+a trusted source (downloads.apache.org over HTTPS), you can be confident that
+the key is genuine.</p>
+<p>If you'd like to understand the PGP trust model, the "web of trust," and
+how you would establish such a trust relationship with this key, please
+see the GNU Privacy Handbook:
+<a href="https://www.gnupg.org/gph/en/manual/x332.html">Validating other keys on your public keyring</a>.</p>
+<h1 id="Hashes">Verifying the Hash<a class="headerlink" href="#Hashes" title="Permalink">&para;</a></h1>
+<p><strong>Goal:</strong> Confirm the file was not corrupted or truncated during download.
+This is independent of PGP &mdash; it does not prove who released the file, only
+that what you received matches what was published.</p>
+<p>Download the source and the corresponding hash file. For example, to verify
+the 2.4.68 release, you should end up
+with two files:</p>
+<ul>
+<li><code>httpd-2.4.68.tar.gz</code> (source)</li>
+<li><code>httpd-2.4.68.tar.gz.sha256</code> (SHA256 hash)</li>
+</ul>
+<p>SHA512 hashes (<code>.sha512</code>) are also available and may be used the same way.</p>
+<p>On most Unix systems, verification is a single command:</p>
+<pre><code>% shasum -a 256 -c httpd-2.4.68.tar.gz.sha256
+httpd-2.4.68.tar.gz: OK
+</code></pre>
+<p>This checks that the SHA256 hash contained in the <code>.sha256</code> file matches
+the hash calculated from your downloaded file. A result of <code>OK</code> means they
+match.</p>
+<p>Alternatively, you can calculate the hash yourself and compare manually:</p>
+<pre><code>% openssl sha256 -r httpd-2.4.68.tar.gz
+fa53c95631febb08a9de41fd2864cfff815cf62d9306723ab0d4b8d7aa1638f0 *httpd-2.4.68.tar.gz
+</code></pre>
+<p>Then verify that the content of <code>httpd-2.4.68.tar.gz.sha256</code> matches the
+output above.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2026 The Apache Software Foundation.<br>
+		Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are
+ either registered trademarks or trademarks of The Apache Software Foundation in the United States
+ and other countries.</p>
+            </div>
+        </div>
+        </div><!-- /#site-wrapper -->
+        <script>
+        (function() {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('apmenu');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function() {
+                    menu.classList.toggle('open');
+                });
+            }
+        })();
+        </script>
+    </body>
+</html>

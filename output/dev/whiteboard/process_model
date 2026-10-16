@@ -1,0 +1,23 @@
+See Dean's full proposal in process-model.html
+
+----
+
+There is a decent discussion of Win NT completion ports at:
+
+http://premium.microsoft.com/msdn/library/techart/html/servrapp.htm
+
+and a so-so discussion of Win32 multithreading performance at: 
+
+http://premium.microsoft.com/msdn/library/techart/html/threadli.htm
+
+The latter can be a bit trivial (eg. IO bounds tasks generally work better
+when concurrently executed in multiple threads, CPU bound tasks work best
+when serialized.  duh.) but has some useful stuff in.
+
+It appears that the best way for static content on NT is to use
+TransmitFile, completion ports, plus a cache of file handles.  Win32
+doesn't support all of that, but that isn't a big deal.
+
+Completion ports appear to be able to map into async IO (ie. aio_* 
+stuff) on Unix fine, however from what I understand some systems don't
+implement AIO for sockets.

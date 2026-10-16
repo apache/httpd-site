@@ -1,0 +1,52 @@
+
+For Immediate Release
+Contact: The Apache Group - apache@apache.org
+
+      APACHE GROUP ANNOUNCES THE WORLD'S MOST POPULAR WEBSERVER
+
+INTERNET - April 3, 1996 - The Apache Group today announced that their
+popular webserver, Apache, was found by the Netcraft Web Server Survey
+to be the most popular server on the Internet. The latest Netcraft
+survey found that Apache and its derivatives claimed a 29% marketshare
+as of April 1st, making it more used than any other webserver on the
+market. The NCSA server, which had previously held the number one
+position, now holds a 26% share of webservers surveyed.
+
+
+Speaking of Apache's competition in the packed World Wide Web server
+arena, Apache Group developer Alexei Kosut remarked, "While
+commercial servers are limited by profit margins and corporate
+politics, a free server like Apache is limited only by the
+imagination." In fact, the Apache Group is working furiously on a new
+version of their server, which Kosut promises will have "more new
+features than you can shake a stick at."
+
+Sameer Parekh, President of Community ConneXion, Inc., commented on
+the Apache server's suitability for high-security applications, "Time
+and time again security incidents on the Internet have shown the
+importance of having source code available for the deployment of
+secure Internet and Intranet applications. Apache is an excellent
+example of the kind of product which is suitable for high security
+applications, since the source is provided with the product allowing
+full scrutiny of its implementation."
+
+Apache is now being backed by full commercial support by a number of
+companies.  Mark Cox, Technical Director of UK Web Ltd., commented
+"Sometimes organisations are hesitant to use unsupported software, but
+with commercial support they can have the peace of mind they require."
+
+"The Netcraft Web Server Survey has become a huge exercise in network
+exploration" said Mike Prettejohn, director of Netcraft, a British
+internet services company, "we are learning a great deal". The April
+Netcraft Survey found more than one hundred fifty thousand servers on
+the Internet, and the full survey results can be reached at
+http://www.netcraft.co.uk/Survey/.
+
+The Apache Group is a collection of volunteers dedicated to the
+development of a high-quality webserver for deployment throughout the
+World-Wide-Web. The Apache Group prides itself on the available
+source, open development environment, and fast bugfix turnaround.
+Information, documentation, binaries, and source for Apache is
+available from the Apache Server's main web site, at
+http://www.apache.org/
+
