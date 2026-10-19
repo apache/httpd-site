@@ -191,10 +191,27 @@ if not options.nopreamble:
     if (options.extratext):
         print ("<p>"+options.extratext+"</p><br/>")
 
+    # The page covers many releases, so give readers a jump list.
+    print ("\n<nav class=\"cve-index\" aria-label=\"Releases on this page\">")
+    print ("<h2>Releases</h2>")
+    print ("<ul>")
+    for s in sections:
+        n = len(s["cves"])
+        print ("<li><a href=\"#"+s["fixed"]+"\">"+s["fixed"]+"</a> <span class=\"cve-index-count\">"
+               +str(n)+" CVE"+("s" if n != 1 else "")+"</span></li>")
+    print ("</ul>")
+    print ("</nav>\n")
+
 for sectioncves in sections:
     count = len(sectioncves["cves"])
+    sevcount = {}
+    for e in sectioncves["cves"]:
+        sevcount[e['impact']] = sevcount.get(e['impact'], 0) + 1
+    sevparts = [str(sevcount[k])+" "+k for k in ("critical", "important", "moderate", "low") if sevcount.get(k)]
+    sevparts += [str(sevcount[k])+" "+k for k in sorted(sevcount) if k not in ("critical", "important", "moderate", "low")]
+    sevsummary = (" &middot; " + ", ".join(sevparts)) if sevparts else ""
     print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]
-           +" <span class=\"cve-count\">"+str(count)+" CVE"+("s" if count != 1 else "")+"</span></h1><dl class=\"cve-list\">\n")
+           +" <span class=\"cve-count\">"+str(count)+" CVE"+("s" if count != 1 else "")+sevsummary+"</span></h1><dl class=\"cve-list\">\n")
     for e in sectioncves["cves"]:
         html = "<dt><h3 id=\""+e['cveid']+"\"><a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a> ("+e['impact']+"): <name name=\""+e['cveid']+"\">"+saxutils.escape(e['title'])+"</name>\n";
         html += "<a class=\"headerlink\" href=\"#"+e['cveid']+"\" title=\"Permanent link\">&para;</a></h3></dt>\n";
@@ -217,5 +234,6 @@ for sectioncves in sections:
         html+= "</table></dd>"
         print (html)
     print ("</dl></br/>")
+    print ("<p class=\"cve-backtop\"><a href=\"#apcontents\">&#8593; Back to top</a></p>")
 
 
