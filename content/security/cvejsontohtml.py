@@ -28,6 +28,9 @@ filterversion = options.filterversion or ""
 cves = []
 entries = {}
 DEFAULT_CVE_DATA_VERSION = "4.0"  # Default (old) CVE data version
+# Sort order for CVEs within a release: most severe first. Anything else (e.g. "n/a")
+# sorts last.
+IMPACT_ORDER = {"critical": 0, "important": 1, "moderate": 2, "low": 3}
 
 for x in os.listdir(options.directory or "./"):
     if x.endswith(".json"):
@@ -88,7 +91,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
     fixedv = k.split(",")[0]
 
     sectioncves = []
-    for cve in sorted(v, key=lambda s: [int(u) if u.isdigit() else u for u in s["id"].split('-')]):
+    for cve in v:
         e = {}
         e['cveid'] = cve["id"]
         data_version = cve.get("dataVersion", DEFAULT_CVE_DATA_VERSION)
@@ -168,6 +171,9 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
                     timed = "Update "+timed
                 e['timetable'].append([timed,time["time"]])
             sectioncves.append(e)
+    # Within a release, sort by impact (most severe first), then by CVE id.
+    sectioncves.sort(key=lambda e: (IMPACT_ORDER.get(e['impact'].lower(), 9),
+                                    [int(u) if u.isdigit() else u for u in e['cveid'].split('-')]))
     sections.append({"cves":sectioncves,"fixed":fixedv,"product":productname})
 
 # Everything is sorted and pretty, this should be some python template thing
@@ -190,8 +196,7 @@ for sectioncves in sections:
     print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]
            +" <span class=\"cve-count\">"+str(count)+" CVE"+("s" if count != 1 else "")+"</span></h1><dl class=\"cve-list\">\n")
     for e in sectioncves["cves"]:
-        html = "<dt><h3 id=\""+e['cveid']+"\">"+e['impact']+": <name name=\""+e['cveid']+"\">"+saxutils.escape(e['title'])+"</name>\n";
-        html += "(<a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a>)"
+        html = "<dt><h3 id=\""+e['cveid']+"\"><a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a> ("+e['impact']+"): <name name=\""+e['cveid']+"\">"+saxutils.escape(e['title'])+"</name>\n";
         html += "<a class=\"headerlink\" href=\"#"+e['cveid']+"\" title=\"Permanent link\">&para;</a></h3></dt>\n";
         desc = saxutils.escape(e['desc'])
         desc = re.sub(r'\n','</p><p>', desc)
