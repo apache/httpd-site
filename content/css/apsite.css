@@ -250,7 +250,6 @@ div#quickview code.directive a:active {
     font-weight: bold;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    overflow: hidden;   /* keep the floated count/severity summary inside the bar */
 }
 
 h1 span { display: block; float: right; text-align: right }
@@ -747,22 +746,12 @@ dl.cve-list dd table {
     margin-left: 0;           /* the site default 15px would otherwise double up */
 }
 
-/* per-release total, floated into the release <h1> */
-#apcontents h1 span.cve-count {
-    float: right;
-    font-size: 13px;
-    font-weight: normal;
-    opacity: .85;
-}
-
-/* on narrow screens the count/severity summary no longer fits beside the title */
-@media (max-width: 700px) {
-    #apcontents h1 span.cve-count {
-        float: none;
-        display: block;
-        text-align: left;
-        margin-top: 0.15em;
-    }
+/* per-release date, total and severity breakdown, just under the release <h1>
+ * (emphasis by position and weight only, not colour) */
+p.cve-summary {
+    margin: 0.4em 0 0.6em 0.3em;
+    color: #036;              /* same as h3 */
+    font-size: 15px;
 }
 
 /* hover permalink on each CVE heading (visibility comes from base.html) */
@@ -773,36 +762,32 @@ dl.cve-list .headerlink {
     text-decoration: none;
 }
 
-/* release index at the top of the page (it spans many screens) */
+/* release index at the top of the page: recent releases inline, the rest collapsed */
 nav.cve-index {
-    border: 1px solid #dddddd;
-    background-color: #f7f9fb;
     margin: 0 0 1.5em 0;
-    padding: 0.6em 0.9em;
-    font-size: 13px;
 }
 
-nav.cve-index h2 {
-    margin: 0 0 0.5em 0;
-    padding: 0;
-    font-size: 14px;
+nav.cve-index p.cve-recent {
+    margin: 0 0 0.3em 0;
+}
+
+nav.cve-index summary {
+    cursor: pointer;
+    color: #036;
 }
 
 nav.cve-index ul {
     list-style: none;
-    margin: 0;
+    margin: 0.4em 0 0 0;
     padding: 0;
     column-count: 3;
     column-gap: 1.5em;
+    font-size: 13px;
 }
 
 nav.cve-index li {
     margin: 0 0 0.3em 0;
     break-inside: avoid;
-}
-
-nav.cve-index .cve-index-count {
-    color: #557697;
 }
 
 @media (max-width: 700px) {

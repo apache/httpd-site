@@ -1,3 +1,5 @@
+import collections
+import datetime
 import json
 import os
 import re
@@ -27,10 +29,34 @@ def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
 filterversion = options.filterversion or ""
 cves = []
 entries = {}
+releasedates = {}  # release -> [(date, cveid)] from each CVE's "x.y.z released" timeline entry
 DEFAULT_CVE_DATA_VERSION = "4.0"  # Default (old) CVE data version
 # Sort order for CVEs within a release: most severe first. Anything else (e.g. "n/a")
 # sorts last.
 IMPACT_ORDER = {"critical": 0, "important": 1, "moderate": 2, "low": 3}
+# How many releases to list in the "Recent releases" line before the full index.
+RECENT_RELEASES = 5
+
+def release_date(fixedv, dated):
+    """The release date most of its CVEs agree on; warn about any that disagree.
+    Returns None for -dev / never-released versions or when no date is known."""
+    if "-" in fixedv or not dated:
+        return None
+    counts = collections.Counter(d for d, _ in dated)
+    best = max(sorted(counts), key=lambda d: counts[d])
+    odd = [cveid + "=" + d for d, cveid in dated if d != best]
+    if odd:
+        print("warning: release "+fixedv+" dated "+best+" by most CVEs, but "+", ".join(sorted(odd)), file=sys.stderr)
+    return best
+
+def month_year(date):
+    try:
+        return datetime.date.fromisoformat(date).strftime("%b %Y")
+    except ValueError:
+        return date
+
+def plural_cves(n):
+    return str(n)+" CVE"+("s" if n != 1 else "")
 
 for x in os.listdir(options.directory or "./"):
     if x.endswith(".json"):
@@ -74,7 +100,9 @@ for cve in cves:
             fixedin = matcher.group('released')
             if (not fixedin in entries):
                 entries[fixedin] = []
+                releasedates[fixedin] = []
             entries[fixedin].append(cve)
+            releasedates[fixedin].append((time["time"].split('T')[0], cve["id"]))
             matched = True
     
     if options.debug and not matched:
@@ -174,7 +202,8 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
     # Within a release, sort by impact (most severe first), then by CVE id.
     sectioncves.sort(key=lambda e: (IMPACT_ORDER.get(e['impact'].lower(), 9),
                                     [int(u) if u.isdigit() else u for u in e['cveid'].split('-')]))
-    sections.append({"cves":sectioncves,"fixed":fixedv,"product":productname})
+    sections.append({"cves":sectioncves,"fixed":fixedv,"product":productname,
+                     "date":release_date(fixedv, releasedates.get(k, []))})
 
 # Everything is sorted and pretty, this should be some python template thing
 
@@ -191,15 +220,22 @@ if not options.nopreamble:
     if (options.extratext):
         print ("<p>"+options.extratext+"</p><br/>")
 
-    # The page covers many releases, so give readers a jump list.
-    print ("\n<nav class=\"cve-index\" aria-label=\"Releases on this page\">")
-    print ("<h2>Releases</h2>")
-    print ("<ul>")
-    for s in sections:
+    # The page covers many releases, so give readers a jump list: the most
+    # recent few inline, the rest behind a collapsed <details>.
+    def index_entry(s):
         n = len(s["cves"])
-        print ("<li><a href=\"#"+s["fixed"]+"\">"+s["fixed"]+"</a> <span class=\"cve-index-count\">"
-               +str(n)+" CVE"+("s" if n != 1 else "")+"</span></li>")
-    print ("</ul>")
+        when = month_year(s["date"])+", " if s["date"] else ""
+        return "<a href=\"#"+s["fixed"]+"\">"+s["fixed"]+"</a> ("+when+plural_cves(n)+")"
+    print ("\n<nav class=\"cve-index\" aria-label=\"Releases on this page\">")
+    print ("<p class=\"cve-recent\">Recent releases: "
+           +" &middot; ".join(index_entry(s) for s in sections[:RECENT_RELEASES])+"</p>")
+    if len(sections) > RECENT_RELEASES:
+        print ("<details><summary>All "+str(len(sections))+" releases</summary>")
+        print ("<ul>")
+        for s in sections:
+            print ("<li>"+index_entry(s)+"</li>")
+        print ("</ul>")
+        print ("</details>")
     print ("</nav>\n")
 
 for sectioncves in sections:
@@ -207,11 +243,17 @@ for sectioncves in sections:
     sevcount = {}
     for e in sectioncves["cves"]:
         sevcount[e['impact']] = sevcount.get(e['impact'], 0) + 1
-    sevparts = [str(sevcount[k])+" "+k for k in ("critical", "important", "moderate", "low") if sevcount.get(k)]
-    sevparts += [str(sevcount[k])+" "+k for k in sorted(sevcount) if k not in ("critical", "important", "moderate", "low")]
-    sevsummary = (" &middot; " + ", ".join(sevparts)) if sevparts else ""
-    print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]
-           +" <span class=\"cve-count\">"+str(count)+" CVE"+("s" if count != 1 else "")+sevsummary+"</span></h1><dl class=\"cve-list\">\n")
+    sevparts = ["<strong>"+str(sevcount[k])+"</strong> "+k for k in ("critical", "important", "moderate", "low") if sevcount.get(k)]
+    sevparts += ["<strong>"+str(sevcount[k])+"</strong> "+k for k in sorted(sevcount) if k not in ("critical", "important", "moderate", "low")]
+    summary = ""
+    if sectioncves["date"]:
+        summary += "Released <time datetime=\""+sectioncves["date"]+"\">"+sectioncves["date"]+"</time> &middot; "
+    summary += "<strong>"+plural_cves(count)+"</strong>"
+    if sevparts:
+        summary += ": "+", ".join(sevparts)
+    print ("\n<h1 id=\""+sectioncves["fixed"]+"\">Fixed in "+sectioncves["product"]+" "+sectioncves["fixed"]+"</h1>")
+    print ("<p class=\"cve-summary\">"+summary+"</p>")
+    print ("<dl class=\"cve-list\">\n")
     for e in sectioncves["cves"]:
         html = "<dt><h3 id=\""+e['cveid']+"\"><a href=\"https://www.cve.org/CVERecord?id="+e['cveid']+"\">"+e['cveid']+"</a> ("+e['impact']+"): <name name=\""+e['cveid']+"\">"+saxutils.escape(e['title'])+"</name>\n";
         html += "<a class=\"headerlink\" href=\"#"+e['cveid']+"\" title=\"Permanent link\">&para;</a></h3></dt>\n";
