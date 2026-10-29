@@ -1,0 +1,99 @@
+<HTML><HEAD>
+<TITLE>Apache Bugs List / To Do List / Wish List</TITLE>
+</HEAD><BODY>
+
+<H2>Apache Bugs List / To Do List / Wish List</H2>
+
+<hr>
+<p><strong>THIS LIST IS COMPLETELY AND UTTERLY OUT OF DATE.  But nobody
+ever gets around to cleaning it up... because we've got an entirely
+different method of tracking these things.  The real todo lists are
+in STATUS messages regularly posted to the new-httpd mailing list,
+and available in the STATUS file in the root of each development
+tree (1.2, 1.3, and 2.0).  The todo also includes various bugs in
+the <a href="http://bugs.apache.org/">bug database</a>.</strong>
+<p><hr>
+
+<strong>You've been warned!</strong><p>
+
+<STRONG>BUGS</STRONG>
+
+<UL> 
+
+<LI>Fix -f command lines to take paths correctly.  I know this is a
+bugwards compatibility with NCSA, but I don't like it and think we
+should change it. - beb
+
+<LI>AddDescription, and other mod_dir cleanups - beb
+
+</UL>
+
+<STRONG>To Do List</STRONG>
+
+<UL>
+
+<LI>Protocol Abstraction - so that SSL, SHTTP, and PCT can be plugged
+in as modules, and distributed separately without needing to patch
+core Apache code.  Also hopefully HTTP-NG. - beb
+
+<LI>authentication API, to make authentication type and database type orthogonal - beb
+
+<LI>More tolerant config-file parsing - beb
+
+<LI>Formalized internal error-logging system, like sendmail/syslogd
+interaction - beb
+
+</UL>
+
+<STRONG>Wish List</STRONG>
+
+<UL>
+
+<LI>Scripted installation process, i.e. one that asks questions about
+the site and generates the conf files appropriately - beb
+
+<LI>Enable logging of all "POST"ed data - for commercial-database-like
+backups and replay ability.  - beb
+
+<LI>Configurable Error Reporting
+  <UL>
+  <LI>Separate logs for stderr and server error messages
+  </UL>
+
+<LI>Dynamic Package builder - so that people can download binaries
+with exactly the options and packages they want. - beb
+
+<LI>Implementation of the "LINK" Method  - beb
+
+<LI>Data store abstraction API?  So we're not always presuming we sit on top of a filesystem. - beb
+
+<LI>Port to BeBox - beb
+
+<LI>give an "Option", like "IncludesNoExec", except allow for CGI includes,
+not CMD includes.  -beb, and others
+
+</UL>
+
+<H2>Documentation needed on:</H2>
+
+<UL>
+<LI>Standards for Modules  - beb
+<LI>CGI Extensions - beb
+<LI>Setting up logging and logfile analysis system - beb
+<LI>DBM documentation: explain about having username/group in same file - mjc
+<LI>MSQL documentation -dv
+<LI>Policy - what it takes for a module to move from contrib to the regular distribution. - aw
+</UL>
+
+<HR>
+
+Last Modified <!--#echo var="LAST_MODIFIED" -->
+<UL>
+<LI>beb - Brian Behlendorf, brian@organic.com
+<LI>ak - Alexei Kosut, akosut@nueva.pvt.k12.ca.us
+<LI>mjc - Mark J Cox, mark@awe.com
+<LI>aw - Andrew Wilson, andrew@tees.elsevier.co.uk
+<LI>cm - Chuck Murcko, chuck@telebase.com
+<LI>dv - Dirk.vanGulik, Dirk.vanGulik@jrc.it
+<LI>pcs - Paul Sutton, paul@awe.com
+</UL>

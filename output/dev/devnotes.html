@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/css/apsite.css" rel="stylesheet" media="all" type="text/css" title="Main stylesheet">
+        <meta name="author" content="Documentation Group"><meta name="email" content="docs@httpd.apache.org">
+        <title>Apache Development Notes - The Apache HTTP Server Project</title>
+	<style>
+.headerlink {
+  visibility: hidden;
+}
+h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover > .headerlink, h5:hover > .headerlink, h6:hover > .headerlink, li:hover > .headerlink {
+  visibility: visible
+}
+	</style>
+    </head>
+    <body>
+        <div id="page-header">
+            <p class="menu">&nbsp;</p>
+            <p class="apache">&nbsp;</p>
+            <a href="/">
+            <img alt="Apache HTTP Server" src="/images/httpd_logo_wide_new.png" id="site-logo">
+            </a>
+            <a class="badge" href="https://www.apache.org/foundation/contributing.html">
+                <img src="https://www.apache.org/images/SupportApache-small.png" alt="Support Apache">
+            </a>
+            <button id="menu-toggle" aria-label="Toggle navigation menu">&#9776;</button>
+        </div>
+        <div id="site-wrapper">
+        <div id="apmenu">
+	  <script src="https://www.apachecon.com/event-images/snippet.js"></script>
+	  <p style="margin-top: -10px;">
+	    <!-- Apachecon! -->
+	    <a class="acevent" data-format="wide" data-mode="light" data-width="160"></a>
+	  </p>
+	  <h1 id="essentials">Essentials<a class="headerlink" href="#essentials" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/download.cgi">Download!</a></li>
+	    <li><a href="/ABOUT_APACHE.html">About</a></li>
+	    <li><a href="https://www.apache.org/licenses/">License</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/FAQ">FAQ</a></li>
+	    <li><a href="/security_report.html">Security Reports</a></li>
+	  </ul>
+	  <h1 id="source-repositories">Source Repositories<a class="headerlink" href="#source-repositories" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/dev/devnotes.html">General Information</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/trunk/">Trunk</a></li>
+	    <li><a href="https://svn.apache.org/viewvc/httpd/httpd/branches/2.4.x/">2.4</a></li>
+	  </ul>
+	  <h1 id="documentation"><a href="/docs/">Documentation</a><a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs/2.4/">Version 2.4</a></li>
+	    <li><a href="/docs/trunk/">Trunk (dev)</a></li>
+	    <li><a href="https://wiki.apache.org/httpd/">Wiki</a></li>
+	  </ul>
+	  <h1 id="get-involved"><a href="/contribute/">Get Involved</a><a class="headerlink" href="#get-involved" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/lists.html">Mailing Lists</a></li>
+	    <li><a href="/bug_report.html">Bug Reports</a></li>
+	    <li><a href="/dev/">Developer Info</a></li>
+	    <li><a href="/support.html">User Support</a></li>
+	  </ul>
+	  <h1 id="subprojects">Subprojects<a class="headerlink" href="#subprojects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/docs-project/">Docs</a></li>
+	    <li><a href="/test/">Test</a></li>
+	    <li><a href="/test/flood/">Flood</a></li>
+	    <li><a href="/modules">Modules</a></li>
+	    <li><a href="/mod_fcgid/">mod_fcgid</a></li>
+	  </ul>
+	  <h1 id="related-projects">Related Projects<a class="headerlink" href="#related-projects" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="https://trafficserver.apache.org/">Apache Traffic Server</a></li>
+	    <li><a href="https://trafficcontrol.apache.org/">Apache Traffic Control</a></li>
+	    <li><a href="https://tomcat.apache.org/">Tomcat</a></li>
+	    <li><a href="https://apr.apache.org/">APR</a></li>
+	    <li><a href="https://perl.apache.org/">mod_perl</a></li>
+	  </ul>
+	  <h1 id="miscellaneous">Miscellaneous<a class="headerlink" href="#miscellaneous" title="Permanent link">&para;</a></h1>
+	  <ul>
+	    <li><a href="/contributors/">Contributors</a></li>
+	    <li><a href="https://www.apache.org/foundation/thanks.html">Thanks!</a></li>
+	    <li><a href="https://www.apache.org/foundation/sponsorship.html">Sponsorship</a></li>
+	    <li><a href="https://www.apache.org/foundation/policies/privacy.html">Privacy</a></li>
+	  </ul>
+        </div>
+        <!-- RIGHT SIDE INFORMATION -->
+        <div id="apcontents">
+    <h1 id="apache-development-notes">Apache Development Notes<a class="headerlink" href="#apache-development-notes" title="Permalink">&para;</a></h1>
+<p>This page gives some basic background on how the Apache HTTP Server
+source is maintained and how changes get made.</p>
+<h1 id="overview">Overview<a class="headerlink" href="#overview" title="Permalink">&para;</a></h1>
+<p>The Apache HTTP Server source code is hosted in git at
+<a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a>. The repository used to live in
+Subversion, and the old SVN tree is no longer used for new work.</p>
+<p>There are two active branches, both in the same repository:</p>
+<ul>
+<li><samp>trunk</samp> is the development branch (2.5, slated for a 2.6
+release).</li>
+<li><samp>2.4.x</samp> is the current stable branch.</li>
+</ul>
+<h1 id="committer-setup">Committer Setup<a class="headerlink" href="#committer-setup" title="Permalink">&para;</a></h1>
+<p>Committers need to do the following once before they can push to the
+repository.</p>
+<ol>
+<li>
+<p>Create an SSH key, if you do not already have one:</p>
+<pre><code> % ssh-keygen -t ed25519 -C "you@example.org"
+ % ssh-add ~/.ssh/id_ed25519
+</code></pre>
+</li>
+<li>
+<p>Add the key to your GitHub account. On GitHub, open your profile, then
+Settings, then SSH and GPG keys, and click New SSH key. Give the key a
+name and paste the contents of <samp>~/.ssh/id_ed25519.pub</samp> into
+the Key field.</p>
+</li>
+<li>
+<p>Link your GitHub account to your ASF account. The steps are described
+on the <a href="https://infra.apache.org/apache-github.html">Apache GitHub</a> page,
+which takes you to <a href="https://gitbox.apache.org/boxer/">GitBox</a>. Follow the
+instructions there.</p>
+</li>
+<li>
+<p>Wait for an email saying that you have been added to the "Apache
+Committers" team. You can push to the repository once that arrives.</p>
+</li>
+</ol>
+<p>Non-committers do not need any of this. Fork
+<a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a> on GitHub instead, and use your fork's
+URL in place of the one below.</p>
+<h1 id="getting-the-source">Getting the Source<a class="headerlink" href="#getting-the-source" title="Permalink">&para;</a></h1>
+<p>Committers should clone using the SSH URL,
+<samp><a href="mailto:git@github.com">git@github.com</a>:apache/httpd.git</samp>. If you only want to read the
+code, <samp><a href="https://github.com/apache/httpd.git">https://github.com/apache/httpd.git</a></samp> works without any
+setup.</p>
+<p>Since <samp>trunk</samp> and <samp>2.4.x</samp> live in one repository,
+there are a few ways to work on both. Pick whichever suits you.</p>
+<h2 id="two-clones">Two clones<a class="headerlink" href="#two-clones" title="Permalink">&para;</a></h2>
+<p>This is the closest to the old SVN layout, with one directory per branch:</p>
+<pre><code>% git clone git@github.com:apache/httpd.git httpd-trunk
+% git clone -b 2.4.x git@github.com:apache/httpd.git httpd-2.4.x
+</code></pre>
+<p>The <samp>-b 2.4.x</samp> option picks the branch to check out. Each
+directory then behaves like its own SVN checkout.</p>
+<h2 id="one-clone-switching-branches">One clone, switching branches<a class="headerlink" href="#one-clone-switching-branches" title="Permalink">&para;</a></h2>
+<p>Keep a single directory and change which branch it shows:</p>
+<pre><code>% git clone git@github.com:apache/httpd.git httpd
+% cd httpd
+% git switch 2.4.x
+% git switch trunk
+</code></pre>
+<p>Commit or stash any changes before you switch, or git will refuse to
+switch (or carry the changes with you).</p>
+<h2 id="worktrees">Worktrees<a class="headerlink" href="#worktrees" title="Permalink">&para;</a></h2>
+<p>A worktree gives you a second directory for another branch, sharing one
+clone:</p>
+<pre><code>% git clone git@github.com:apache/httpd.git httpd-trunk
+% cd httpd-trunk
+% git worktree add ../httpd-2.4.x 2.4.x
+</code></pre>
+<p>This looks like the two clones layout, but both directories share the
+same history, so a commit made in one is visible in the other straight
+away.</p>
+<h1 id="making-changes">Making Changes<a class="headerlink" href="#making-changes" title="Permalink">&para;</a></h1>
+<p>All changes go through pull requests on GitHub, for both
+<samp>trunk</samp> and <samp>2.4.x</samp>. A change that is needed on both
+branches gets one pull request for each.</p>
+<p>Please follow the Apache style, as described in the
+<a href="styleguide.html">style guide</a>. Larger changes or new features are worth
+raising on the <a href="https://httpd.apache.org/lists.html#http-dev">developers list</a>
+before you spend a lot of time on them.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permalink">&para;</a></h2>
+<p>Say you have updated <samp>docs/manual/bind.xml.fr</samp> and the change is
+needed on both branches. Using the two clones layout:</p>
+<ol>
+<li>
+<p>Bring trunk up to date and create a branch for the change:</p>
+<pre><code> % cd httpd-trunk
+ % git switch trunk
+ % git pull
+ % git switch -c bind-fr-update
+</code></pre>
+</li>
+<li>
+<p>Edit the file, then commit it:</p>
+<pre><code> % git add docs/manual/bind.xml.fr
+ % git commit -m "Update French translation of bind.xml"
+</code></pre>
+</li>
+<li>
+<p>Push the branch to GitHub:</p>
+<pre><code> % git push origin bind-fr-update
+</code></pre>
+<p>The output includes a link to create a pull request. Open it, check that
+the base branch is <samp>trunk</samp>, and create the pull request. You
+can also start one from the
+<a href="https://github.com/apache/httpd/pulls">pull requests</a> page.</p>
+</li>
+<li>
+<p>Do the same in the 2.4.x directory, with a branch of its own:</p>
+<pre><code> % cd ../httpd-2.4.x
+ % git switch 2.4.x
+ % git pull
+ % git switch -c bind-fr-update-2.4
+</code></pre>
+<p>Either make the same edit by hand and commit it as above, or copy the
+trunk commit across with <samp>git cherry-pick</samp>:</p>
+<pre><code> % git fetch origin bind-fr-update
+ % git cherry-pick FETCH_HEAD
+</code></pre>
+<p>If the file differs between the branches, the cherry-pick may stop with
+a conflict. Run <samp>git cherry-pick --abort</samp> and make the edit by
+hand instead.</p>
+</li>
+<li>
+<p>Push the 2.4.x branch and open a second pull request, this time with
+<samp>2.4.x</samp> as the base branch:</p>
+<pre><code> % git push origin bind-fr-update-2.4
+</code></pre>
+</li>
+<li>
+<p>Once the pull requests have been merged, tidy up:</p>
+<pre><code> % git switch 2.4.x
+ % git pull
+ % git branch -D bind-fr-update-2.4
+ % git push origin --delete bind-fr-update-2.4
+</code></pre>
+<p>and the same for <samp>bind-fr-update</samp> in the trunk directory.</p>
+</li>
+</ol>
+<p>With a single clone, run all of the steps in the same directory and use
+<samp>git switch</samp> to move between branches. The cherry-pick step
+becomes <samp>git cherry-pick bind-fr-update</samp>, as the trunk commit is
+already in your clone. The same goes for worktrees, where you just change
+directory instead of switching.</p>
+<p>Non-committers push to their fork instead of <samp>origin</samp>, and open
+the pull request from there.</p>
+<p>If a reviewer asks for changes, commit them to the same branch and push
+again. The pull request updates automatically.</p>
+<h1 id="review-and-backports">Review and Backports<a class="headerlink" href="#review-and-backports" title="Permalink">&para;</a></h1>
+<p>The review-then-commit and commit-then-review rules that applied under SVN
+still apply. The <a href="guidelines.html">project guidelines</a> describe them in
+detail.</p>
+<p>Voting on backports in the STATUS file has been replaced by pull request
+reviews. To propose a backport to the stable branch, open a pull request
+against <samp>2.4.x</samp>. The approvals that used to be recorded as votes
+in STATUS are now given as reviews on that pull request.</p>
+<p><strong>Not yet decided:</strong> how commit-then-review changes, such as documentation
+and translation updates on trunk, work with pull requests. For example,
+whether committers can merge their own pull request without a review. Until
+this is settled, ask on the
+<a href="https://httpd.apache.org/lists.html#http-dev">developers list</a> if you are
+unsure.</p>
+<h1 id="other-repositories">Other Repositories<a class="headerlink" href="#other-repositories" title="Permalink">&para;</a></h1>
+<p>A few other repositories are used by the project.</p>
+<h2 id="httpd-site">httpd-site<a class="headerlink" href="#httpd-site" title="Permalink">&para;</a></h2>
+<p>The website is hosted on GitHub at <a href="https://github.com/apache/httpd-site/">https://github.com/apache/httpd-site/</a>.</p>
+<p>The pages use Markdown syntax. When a change is committed to this
+repository, the corresponding HTML files are generated automatically and
+published to <a href="https://httpd.apache.org/">https://httpd.apache.org/</a>.</p>
+<h2 id="httpd-tests">httpd-tests<a class="headerlink" href="#httpd-tests" title="Permalink">&para;</a></h2>
+<p>The Perl test framework is hosted on GitHub at
+<a href="https://github.com/apache/httpd-tests">https://github.com/apache/httpd-tests</a>.</p>
+<h2 id="dev-tools">dev-tools<a class="headerlink" href="#dev-tools" title="Permalink">&para;</a></h2>
+<p>Release scripts and other developer tools are still kept in SVN and can be
+checked out with:</p>
+<pre><code>% svn checkout https://svn.apache.org/repos/asf/httpd/dev-tools/trunk/ httpd-dev-tools
+</code></pre>
+<p>The scripts used to roll a release are in the <samp>release/</samp>
+directory. The policies and procedures for rolling a release are covered in
+the <a href="release.html">release guidelines</a>.</p>
+<h2 id="release-distribution">Release distribution<a class="headerlink" href="#release-distribution" title="Permalink">&para;</a></h2>
+<p>Release candidates are staged in <a href="https://dist.apache.org/repos/dist/dev/httpd/">https://dist.apache.org/repos/dist/dev/httpd/</a>
+and final releases are published from
+<a href="https://dist.apache.org/repos/dist/release/httpd/">https://dist.apache.org/repos/dist/release/httpd/</a>, which is mirrored to
+<a href="https://downloads.apache.org/httpd/">https://downloads.apache.org/httpd/</a>. Both are SVN repositories, as with all
+ASF release areas.</p>
+<h2 id="docs-build">docs-build<a class="headerlink" href="#docs-build" title="Permalink">&para;</a></h2>
+<p>The tools used to build the manual from the XML sources are still kept in
+SVN at <samp><a href="https://svn.apache.org/repos/asf/httpd/docs-build/trunk">https://svn.apache.org/repos/asf/httpd/docs-build/trunk</a></samp>.</p>
+<p><strong>Building the documentation from a git checkout is currently broken.</strong>
+This is being worked on with ASF Infrastructure in
+<a href="https://issues.apache.org/jira/browse/INFRA-28588">INFRA-28588</a>. Updated
+instructions will be added here once it is resolved.</p>
+<h1 id="continuous-integration-ci">Continuous integration (CI)<a class="headerlink" href="#continuous-integration-ci" title="Permalink">&para;</a></h1>
+<p><a href="https://github.com/apache/httpd/actions">GitHub Actions</a> is used for CI.</p>
+<p>It builds httpd on different processors and operating systems, with
+different compiler and library versions, and with different
+configurations.</p>
+<p>On a successful build, the in-tree tests and the
+<a href="https://github.com/apache/httpd-tests">Perl test framework</a> are run as
+well.</p>
+<p>This runs for pull requests and for each commit. The goal is to spot new
+build issues and regressions early.</p>
+<p>If you want to commit something without triggering the whole process (a
+documentation change, for example), add the magic "[skip ci]" keyword to
+the commit message.</p>
+<p>Here are the <a href="https://github.com/apache/httpd/actions">latest build results</a>.</p>
+
+            <!-- FOOTER -->
+            <div id="footer">
+	      <p>Copyright &copy; 1997-2026 The Apache Software Foundation.<br>
+		Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are
+ either registered trademarks or trademarks of The Apache Software Foundation in the United States
+ and other countries.</p>
+            </div>
+        </div>
+        </div><!-- /#site-wrapper -->
+        <script>
+        (function() {
+            var toggle = document.getElementById('menu-toggle');
+            var menu = document.getElementById('apmenu');
+            if (toggle && menu) {
+                toggle.addEventListener('click', function() {
+                    menu.classList.toggle('open');
+                });
+            }
+        })();
+        </script>
+    </body>
+</html>
