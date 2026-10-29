@@ -30,18 +30,18 @@ can also be found on [Apache Development Notes](devnotes.html).
 
 # Source Repository Information #
 
--  [Apache Development Notes](devnotes.html) about using SVN and
+-  [Apache Development Notes](devnotes.html) about using git and
 maintaining the Apache site
 
-- A web-based view of the [SVN
-history](https://svn.apache.org/viewvc/httpd/) of the httpd development
-effort
+- A web-based view of the [commit
+history](https://github.com/apache/httpd/commits/trunk) of the httpd
+development effort
 
 # Release Instructions #
 
 -  [Release guidelines](release.html) 
 
--  [Tools](https://svn.apache.org/repos/asf/httpd/site/trunk/tools) to
+-  [Tools](https://svn.apache.org/repos/asf/httpd/dev-tools/trunk/release/) to
 roll/release tarballs
 
 -  [Verifying Apache HTTP Server releases](verification.html) 

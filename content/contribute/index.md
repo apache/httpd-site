@@ -5,12 +5,10 @@ Just the facts… where and how to contribute.
 
 # Where
 
-The software’s source code is in svn at:
+The software’s source code is in git at <samp>https://github.com/apache/httpd</samp>:
 
- * Trunk: <samp>https://svn.apache.org/repos/asf/httpd/httpd/trunk</samp>
- * 2.4 (stable): <samp>https://svn.apache.org/repos/asf/httpd/httpd/2.4.x</samp>
-
-The source is also [mirrored on GitHub](https://github.com/apache/httpd).
+ * Trunk: the <samp>trunk</samp> branch
+ * 2.4 (stable): the <samp>2.4.x</samp> branch
 
 (Further details in [Developer Info](../dev/))
 
@@ -21,19 +19,21 @@ Website source is at: <samp>https://github.com/apache/httpd-site</samp>
 
 # How
 
-Patches may be submitted by mailing output of <samp>svn diff</samp> to
-the [dev@httpd](https://lists.apache.org/list.html?dev@httpd.apache.org)
-mailing list, or via a pull request at the above GitHub repo.
+Changes are submitted as pull requests against the <samp>trunk</samp> or
+<samp>2.4.x</samp> branch of the GitHub repository above. This includes
+changes to the documentation.
 
-Documentation patches may be sent to
-[the `docs` mailing list](https://httpd.apache.org/lists.html#http-docs).
+Questions and larger proposals can be raised on the
+[dev@httpd](https://lists.apache.org/list.html?dev@httpd.apache.org)
+mailing list, or on [the `docs` mailing list](https://httpd.apache.org/lists.html#http-docs)
+for documentation.
 
-(Further details about how to generate an svn diff are in the
+(Further details about how to prepare a pull request are in the
 [devnotes](../dev/devnotes.html))
 
 # What
 
 Places to find good things to work on include:
 
-* The [STATUS file](https://svn.apache.org/repos/asf/httpd/httpd/trunk/STATUS)
+* [Open pull requests](https://github.com/apache/httpd/pulls) that need review or testing
 * [Issue trackers](../bug_report.html)
