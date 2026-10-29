@@ -3,177 +3,139 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 # Apache Development Notes
 
-This page is intended to provide some basic background about development
-nits and the maintenance of the developer site.
+This page gives some basic background on how the Apache HTTP Server
+source is maintained and how changes get made.
 
 # Overview #
 
-The Apache HTTP Server Project uses
-[Subversion](https://subversion.apache.org/) for hosting its source code.
+The Apache HTTP Server source code is hosted in git at
+<https://github.com/apache/httpd>. The repository used to live in
+Subversion, and the old SVN tree is no longer used for new work.
 
-To check out the 2.4.x branch:
+There are two active branches:
 
-> `
-svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x
-httpd-2.4.x
-` 
+* <samp>trunk</samp> is the development branch (2.5, slated for a 2.6
+  release).
+* <samp>2.4.x</samp> is the current stable branch.
 
-To check out the current development version (trunk),
-use:
+To get a copy of the source:
 
-> `
-svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
-` 
+    % git clone https://github.com/apache/httpd.git
+    % cd httpd
 
-Committers should check out via https instead of http (so that they can
-commit their changes). For more info about Subversion, please read [the ASF
-version control FAQ](https://www.apache.org/dev/version-control.html).
+This gives you <samp>trunk</samp>. To work on the stable branch instead:
+
+    % git switch 2.4.x
 
 The developers continue to seek to maintain module compatibility between
 2.4.1 and future 2.4 releases for administrators and end users.
 
-# Maintaining the Sources #
+# Making Changes #
 
-Almost all files relating to Apache, both the actual sources and the files
-that aren't part of the distribution, are now maintained in an
-[SVN](https://subversion.apache.org/) repository. Here is the way in which
-changes are applied:
+All changes go through pull requests on GitHub, for both
+<samp>trunk</samp> and <samp>2.4.x</samp>.
 
-1. Developer checks out a copy of the files on which they want to work (in
-   this case, the trunk), into a private working directory
-   called <samp>httpd-trunk</samp>:
+1. Fork <https://github.com/apache/httpd> on GitHub and clone your fork.
 
-   <samp>% svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk
-   httpd-trunk</samp>
+1. Create a branch for your change from the branch you are targeting:
 
-   This step only needs to be performed once (unless the private working
-   directory is tainted or deleted). Committers should use a URL prefix
-   of <samp>https</samp> on the checkout, to save themselves headaches later.
+        % git switch -c my-fix trunk
 
-1. Developer keeps their working directory synchronised with changes made to
-   the repository:
+1. Make your changes and check that they build and pass the tests. Please
+   follow the Apache style, as described in the [style guide](styleguide.html).
 
-   <samp>% svn update httpd-trunk</samp>
+1. Commit, push the branch to your fork, and open a pull request against
+   <samp>trunk</samp> or <samp>2.4.x</samp> in the
+   [httpd repository](https://github.com/apache/httpd/pulls).
 
-   This should probably be done daily or even more frequently during periods
-   of high activity.
+Keep your branch up to date with the upstream branch while the pull request
+is open, as reviewers may ask for changes before it can be merged.
 
-1. Developer makes changes to their working copies, makes sure they work, and
-   generates a patch so others can apply the changes to test them:
+Larger changes or new features are worth raising on the
+[developers list](https://httpd.apache.org/lists.html#http-dev) before you
+spend a lot of time on them.
 
-   <samp>% svn diff httpd-trunk/modules/http/mod_mime.c &gt;
-   /tmp/foo</samp>
+# Review and Backports #
 
-   The <samp>/tmp/foo</samp> file is mailed to the [developers
-   list](https://httpd.apache.org/lists.html#http-dev) so they can consider the
-   value/validity of the patch. It is worth making sure your code follows the
-   Apache style, as described in the [style guide](styleguide.html).
+The review-then-commit and commit-then-review rules that applied under SVN
+still apply. The [project guidelines](guidelines.html) describe them in
+detail.
 
-1. Once other developers have agreed that the change is a Good Thing, the
-   developer checks the changes into the repository:
+Voting on backports in the STATUS file has been replaced by pull request
+reviews. To propose a backport to the stable branch, open a pull request
+against <samp>2.4.x</samp>. The approvals that used to be recorded as votes
+in STATUS are now given as reviews on that pull request.
 
-   <samp>% svn commit httpd-trunk/modules/http/mod_mime.c</samp>
+# Committer Access #
 
-# SVN Subtrees #
+Committers need to link their ASF and GitHub accounts before they can push
+to or merge in the repository. This is done through the ASF
+[GitBox account linking](https://gitbox.apache.org/setup/) page, which also
+requires two-factor authentication to be enabled on your GitHub account.
 
-There are several different branches under the <samp>httpd</samp> subtree in
-the Apache SVN repository that pertain to the different releases. The top
-level can be perused with the [SVN
-ViewCVS](https://svn.apache.org/viewcvs.cgi/) pages. The main subtrees
-pertaining to the <samp>httpd</samp> server source are:
+# Other Repositories #
 
-## httpd-2.4 ##
-
-To create a directory tree containing the 2.4 sources, and call
-it <samp>httpd-2.4</samp>, change your current directory to the *parent* of
-the tree and then check the 2.4 sources out as follows:
-
-    % cd /usr/local/apache
-    % svn checkout https://svn.apache.org/repos/asf/httpd/httpd/branches/2.4.x httpd-2.4
-
-## httpd-2.5 ##
-
-If you want to check out the bleeding edge of development, the httpd-2.5
-development tree (slated for a release 2.6), and call
-it <samp>httpd-trunk</samp>, checkout as follows:
-
-    % cd /usr/local/apache
-    % svn checkout https://svn.apache.org/repos/asf/httpd/httpd/trunk httpd-trunk
+A few other repositories are used by the project.
 
 ## httpd-site ##
 
-The website **used** to be hosted at https://svn.apache.org/repos/asf/httpd/site/.
+The website is hosted on GitHub at <https://github.com/apache/httpd-site/>.
 
-It is **now** hosted on GitHub at https://github.com/apache/httpd-site/.
+The pages use Markdown syntax. When a change is committed to this
+repository, the corresponding HTML files are generated automatically and
+published to <https://httpd.apache.org/>.
 
-The website pages use the Markdown syntax and when a change is committed in this repository,
-the corresponding HTML files are automatically generated and copied on https://httpd.apache.org/.
+## httpd-tests ##
 
-## httpd-dist ##
+The Perl test framework is hosted on GitHub at
+<https://github.com/apache/httpd-tests>.
 
-Like the <samp>httpd-site</samp> subtree, this one is used to maintain the
-files that comprise a website - in this
-case, <samp>https://downloads.apache.org/httpd/</samp>. Also like the previous
-subtree, the directory on the server is a checked-out working copy of this
-subtree. However, since this is a distribution directory, we only have the
-surrounding documentation and control files checked into this subtree --
-the actual tarballs are simply copied to www.apache.org.
+## dev-tools ##
 
-The SVN URL
-is <samp>https://svn.apache.org/repos/asf/httpd/httpd/dist</samp>.
+Release scripts and other developer tools are still kept in SVN and can be
+checked out with:
 
-Committers will generally deal with this subtree when "rolling" a release.
-This is a series of steps taken to create a complete new release of the
-Apache httpd software. Amongst other things, the key to this subtree is
-the <samp>tools/</samp> directory, which contains
-the <samp>release.sh</samp> shell script. More information on the policies
-and procedures relating to rolling releases can be found on the [Release
-Guidelines](release.html) page.
+    % svn checkout https://svn.apache.org/repos/asf/httpd/dev-tools/trunk/ httpd-dev-tools
 
-# Setting Up Remote SVN #
+The scripts used to roll a release are in the <samp>release/</samp>
+directory. The policies and procedures for rolling a release are covered in
+the [release guidelines](release.html).
 
-A brief overview of getting started with SVN committer access can be found
-[here](https://www.apache.org/dev/version-control.html#https-svn). One key
-change to note is that SSH is not used anymore for committer access, due to
-the functional differences with SVN.
+## Release distribution ##
 
-# Working with git / GitHub #
+Release candidates are staged in <https://dist.apache.org/repos/dist/dev/httpd/>
+and final releases are published from
+<https://dist.apache.org/repos/dist/release/httpd/>, which is mirrored to
+<https://downloads.apache.org/httpd/>. Both are SVN repositories, as with all
+ASF release areas.
 
-Our project is read-only mirrored by GitHub, and users contributors
-occasionally open pull requests there.  We cannot directly accept/close
-pull requests, but we can comment/review and then commit the patches. The
-commit message can contain the phrase "this closes #X" where X is the 
-pull request number which will be prominent in the interface.
+## docs-build ##
 
-  - <https://github.com/apache/httpd>
-  - <https://github.com/apache/httpd/pulls>
+The tools used to build the manual from the XML sources are still kept in
+SVN at <samp>https://svn.apache.org/repos/asf/httpd/docs-build/trunk</samp>.
 
-An example revision that closes a pull request is <https://svn.apache.org/viewvc?view=revision&revision=1780308>
-
-## SVN workflow
-
-Some scripts that help work with some mixed SVN and git workflows are available in
-the github/ directory of the httpd  dev-tools repo which can be checked out via:
-`svn co https://svn.apache.org/repos/asf/httpd/dev-tools/trunk/ httpd-dev-tools`
+**Building the documentation from a git checkout is currently broken.**
+This is being worked on with ASF Infrastructure in
+[INFRA-28588](https://issues.apache.org/jira/browse/INFRA-28588). Updated
+instructions will be added here once it is resolved.
 
 # Continuous integration (CI) #
 
-[GitHub Actions](https://github.com/apache/httpd/actions) CI services are used.
+[GitHub Actions](https://github.com/apache/httpd/actions) is used for CI.
 
-This service allows us to automatically build httpd on different processors, OS,
-with different gcc versions, with different library versions and with different
-configurations.  CI runs for pull requests from committers only.
+It builds httpd on different processors and operating systems, with
+different compiler and library versions, and with different
+configurations.
 
-On a successful build, in-tree testa and the legacy 
-[Perl test framework](https://svn.apache.org/viewvc/httpd/test/framework/trunk/)
-is also automatically executed.
+On a successful build, the in-tree tests and the
+[Perl test framework](https://github.com/apache/httpd-tests) are run as
+well.
 
-All this is executed for each commit.  The goal is to spot early new build issues and regression.
+This runs for pull requests and for each commit. The goal is to spot new
+build issues and regressions early.
 
-Should a committer want to commit something, without triggering the whole process
-(doc change or STATUS update for example), he can add the magic "[skip ci]"
-keyword as part of the commit message.
+If you want to commit something without triggering the whole process (a
+documentation change, for example), add the magic "[skip ci]" keyword to
+the commit message.
 
-
-
-Here are the [latest built results](https://github.com/apache/httpd/actions).
+Here are the [latest build results](https://github.com/apache/httpd/actions).
