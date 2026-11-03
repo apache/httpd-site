@@ -2,7 +2,7 @@ site:
   name: Apache HTTP Server Project
   description: The official website of the Apache HTTP Server Project
   domain: httpd.apache.org
-  logo: images/httpd_logo_wide_new.png
+  logo: images/httpd_logo_wide.png
   repository: https://github.com/apache/httpd-site/blob/main/content/
   trademarks: Apache HTTP Server, Apache, the Apache logo and the Apache HTTP Server logo are either registered trademarks or trademarks of The Apache Software Foundation in the United States and other countries.
 
