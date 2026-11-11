@@ -20,6 +20,7 @@ parser.add_option("-n","--nopreamble",help="skip the page header/preamble output
 
 (options,args) = parser.parse_args()
 
+re_reported_paren = re.compile(r'\(([^()]*)\)\s*$')
 re_fixedin = re.compile('(released in )?(?P<released>\\d\\.\\d\\.\\d+(-\\S+)?)( released)?');
 
 def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
@@ -48,6 +49,12 @@ def release_date(fixedv, dated):
     if odd:
         print("warning: release "+fixedv+" dated "+best+" by most CVEs, but "+", ".join(sorted(odd)), file=sys.stderr)
     return best
+
+def reported_label(timed):
+    """Map a "reported" timeline entry to its display label, keeping any
+    trailing parenthetical, e.g. "reported (Google)" -> "Reported to security team (Google)"."""
+    m = re_reported_paren.search(timed)
+    return "Reported to security team" + (" (" + m.group(1).strip() + ")" if m else "")
 
 def month_year(date):
     try:
@@ -158,7 +165,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             for time in cve["containers"]["cna"].get("timeline", []):  # Timeline may not be present in the JSON!
                 timed = time["value"]
                 if ("reported" in timed):
-                    timed = "Reported to security team"
+                    timed = reported_label(timed)
                 elif ("public" in timed):
                     timed = "Issue public"
                 elif ("release" in timed):
@@ -192,7 +199,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             for time in cve.get("timeline", []):
                 timed = time["value"]
                 if ("reported" in timed):
-                    timed = "Reported to security team"
+                    timed = reported_label(timed)
                 elif ("public" in timed):
                     timed = "Issue public"
                 elif ("release" in timed):
