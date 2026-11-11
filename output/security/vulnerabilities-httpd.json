@@ -17682,7 +17682,12 @@
                     {
                         "lang": "en",
                         "time": "2026-10-26T12:00:00.000Z",
-                        "value": "reported"
+                        "value": "reported (Anthropic)"
+                    },
+                    {
+                        "lang": "en",
+                        "time": "2026-11-03T12:00:00.000Z",
+                        "value": "reported (Google)"
                     },
                     {
                         "lang": "en",
