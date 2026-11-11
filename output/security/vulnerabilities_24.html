@@ -93,9 +93,10 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 <p>Please send comments or corrections for these vulnerabilities to the <a href="/security_report.html">Security Team</a>.</p> <br/>
 <p><em>The initial GA release, Apache httpd 2.4.1, includes fixes for all vulnerabilities which have been resolved in Apache httpd 2.2.22 and all older releases.  Consult the <a href="vulnerabilities_22.html">Apache httpd 2.2 vulnerabilities list</a> for more information.</em></p><br/>
 <nav aria-label="Releases on this page" class="cve-index">
-<p class="cve-recent">Recent releases: <a href="#2.4.69">2.4.69</a> (Oct 2026, 20 CVEs) &middot; <a href="#2.4.68">2.4.68</a> (Jun 2026, 13 CVEs) &middot; <a href="#2.4.67">2.4.67</a> (May 2026, 11 CVEs) &middot; <a href="#2.4.66">2.4.66</a> (Dec 2025, 5 CVEs) &middot; <a href="#2.4.65">2.4.65</a> (Jul 2025, 1 CVE)</p>
-<details><summary>All 43 releases</summary>
+<p class="cve-recent">Recent releases: <a href="#2.4.71">2.4.71</a> (Nov 2026, 3 CVEs) &middot; <a href="#2.4.69">2.4.69</a> (Oct 2026, 20 CVEs) &middot; <a href="#2.4.68">2.4.68</a> (Jun 2026, 13 CVEs) &middot; <a href="#2.4.67">2.4.67</a> (May 2026, 11 CVEs) &middot; <a href="#2.4.66">2.4.66</a> (Dec 2025, 5 CVEs)</p>
+<details><summary>All 44 releases</summary>
 <ul>
+<li><a href="#2.4.71">2.4.71</a> (Nov 2026, 3 CVEs)</li>
 <li><a href="#2.4.69">2.4.69</a> (Oct 2026, 20 CVEs)</li>
 <li><a href="#2.4.68">2.4.68</a> (Jun 2026, 13 CVEs)</li>
 <li><a href="#2.4.67">2.4.67</a> (May 2026, 11 CVEs)</li>
@@ -142,6 +143,54 @@ h1:hover > .headerlink, h2:hover > .headerlink, h3:hover > .headerlink, h4:hover
 </ul>
 </details>
 </nav>
+<h1 id="2.4.71">Fixed in Apache HTTP Server 2.4.71</h1>
+<p class="cve-summary">Released <time datetime="2026-11-11">2026-11-11</time> &middot; <strong>3 CVEs</strong>: <strong>1</strong> critical, <strong>1</strong> important, <strong>1</strong> low</p>
+<dl class="cve-list">
+<dt><h3 id="CVE-2026-119618"><a href="https://www.cve.org/CVERecord?id=CVE-2026-119618">CVE-2026-119618</a> (critical): <name name="CVE-2026-119618">mod_http2: heap corruption and RCE in assign_headers</name>
+<a class="headerlink" href="#CVE-2026-119618" title="Permanent link">&para;</a></h3></dt>
+<dd><p>Concurrent Execution using Shared Resource with Improper Synchronization vulnerability in Apache HTTP Server's mod_http2 in assign_headers() can lead to RCE.</p><p></p><p>This issue affects Apache HTTP Server: from 2.4.55 through 2.4.70.</p><p>Affected releases of mod_h2 from GitHub: from 2.0.8 through 2.0.42.</p>
+<p>Acknowledgements:</p>
+<ul>
+<li>finder: Anthropic's OSS Scanner, as vulnerability ANT-2026-MAPKT6MZ</li>
+<li>finder: Anthony Weems and Simon Scannell of the Google Cloud Vulnerability Research</li>
+</ul>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2026-10-26</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by 824beab9b9424d6cfb29595248fdbf6c3dddeab1</td><td class="cve-value">2026-11-11</td></tr>
+<tr><td class="cve-header">Update 2.4.71 released</td><td class="cve-value">2026-11-11</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.55 through 2.4.70</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2026-106023"><a href="https://www.cve.org/CVERecord?id=CVE-2026-106023">CVE-2026-106023</a> (important): <name name="CVE-2026-106023">mod_md NULL pointer dereference leads to child process crash</name>
+<a class="headerlink" href="#CVE-2026-106023" title="Permanent link">&para;</a></h3></dt>
+<dd><p>NULL pointer dereference vulnerability in Apache HTTP Server's mod_md during HTTP request processing.</p><p></p><p></p><p></p><p>This issue affects Apache HTTP Server: from 2.4.30 through 2.4.70.</p>
+<p>Acknowledgements:</p>
+<ul>
+<li>finder: hexb1n, Yang Song, and JiaSheng He of 360 Vulnerability Research Institute, working with 360 TuLongFeng.</li>
+<li>finder: Lucian Nitescu</li>
+<li>finder: Bartlomiej Dmitruk at striga.ai</li>
+</ul>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2026-09-29</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by 1b47e95c61fb9cf9b864f352c1d3bef7a2467606</td><td class="cve-value">2026-11-11</td></tr>
+<tr><td class="cve-header">Update 2.4.71 released</td><td class="cve-value">2026-11-11</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.30 through 2.4.70</td></tr>
+</table></dd>
+<dt><h3 id="CVE-2026-109163"><a href="https://www.cve.org/CVERecord?id=CVE-2026-109163">CVE-2026-109163</a> (low): <name name="CVE-2026-109163">mod_vhost_alias 1 byte stack buffer overwrite (after CVE-2026-63292)</name>
+<a class="headerlink" href="#CVE-2026-109163" title="Permanent link">&para;</a></h3></dt>
+<dd><p>Stack-based buffer overflow vulnerability in Apache HTTP Server's mod_vhost_alias (after&nbsp;CVE-2026-63292)</p><p></p><p></p><p></p><p>This issue affects Apache HTTP Server: 2.4.69 and 2.4.70.</p>
+<p>Acknowledgements:</p>
+<ul>
+<li>finder: Gustavo Aiello</li>
+<li>finder: Charles Vosburgh (the-vibe-dev)</li>
+<li>finder: Wojciech Tatarski (CloudLinux / TuxCare)</li>
+<li>finder: Oz Kaiser (@tatikoma)</li>
+<li>finder: Daisuke Hatakeyama (SYZD Research)</li>
+</ul>
+<table class="table"><tr><td class="cve-header">Reported to security team</td><td class="cve-value">2026-10-05</td></tr>
+<tr><td class="cve-header">fixed in 2.4.x by 5566851a064993eec4b2c6cb185882f627501aa6</td><td class="cve-value">2026-11-11</td></tr>
+<tr><td class="cve-header">Update 2.4.71 released</td><td class="cve-value">2026-11-11</td></tr>
+<tr><td class="cve-header">Affects</td><td class="cve-value">2.4.69 through 2.4.70</td></tr>
+</table></dd>
+</dl>
+<p class="cve-backtop"><a href="#apcontents">&uarr; Back to top</a></p>
 <h1 id="2.4.69">Fixed in Apache HTTP Server 2.4.69</h1>
 <p class="cve-summary">Released <time datetime="2026-10-01">2026-10-01</time> &middot; <strong>20 CVEs</strong>: <strong>5</strong> moderate, <strong>15</strong> low</p>
 <dl class="cve-list">
