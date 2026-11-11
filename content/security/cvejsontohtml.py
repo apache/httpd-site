@@ -14,13 +14,17 @@ parser.add_option("-e","--extratext",help="extra text to add to description",des
 parser.add_option("-i","--inputdirectory",help="directory of json files",dest="directory")
 parser.add_option("-d","--debug",help="enable debug output to stderr",dest="debug",action="store_true",default=False)
 parser.add_option("-l","--impactlink",help="URL for impact levels page",dest="impactlink",default="/security/impact_levels.html")
+parser.add_option("-g","--githubrepo",help="GitHub repository for commit links (default: apache/httpd)",dest="githubrepo",default="apache/httpd")
 parser.add_option("-n","--nopreamble",help="skip the page header/preamble output",dest="nopreamble",action="store_true",default=False)
 
 # To debug without getting flooded, put 1 working and 1 broken JSON file in tmp/ and pass --debug -i tmp
 
 (options,args) = parser.parse_args()
+GITHUB_COMMIT_URL = "https://github.com/"+options.githubrepo.strip("/")+"/commit/"
 
 re_reported_paren = re.compile(r'\(([^()]*)\)\s*$')
+# "fixed in 2.4.x by <git hash>" timeline entries; the hash is linked to the GitHub commit.
+re_fixedby_hash = re.compile(r'^(fixed in 2\.4\.x by )([0-9a-f]{7,40})$')
 re_fixedin = re.compile('(released in )?(?P<released>\\d\\.\\d\\.\\d+(-\\S+)?)( released)?');
 
 def natural_sort_key(s, _nsre=re.compile('([0-9]+)')):
@@ -55,6 +59,20 @@ def reported_label(timed):
     trailing parenthetical, e.g. "reported (Google)" -> "Reported to security team (Google)"."""
     m = re_reported_paren.search(timed)
     return "Reported to security team" + (" (" + m.group(1).strip() + ")" if m else "")
+
+def timeline_label(timed):
+    """Map a timeline entry's text to its display label (HTML)."""
+    if "reported" in timed:
+        return reported_label(timed)
+    if "public" in timed:
+        return "Issue public"
+    if "release" in timed:
+        return "Update "+timed
+    m = re_fixedby_hash.match(timed.strip())
+    if m:
+        # Display the abbreviated 7-character hash, as GitHub does.
+        return m.group(1)+"<a href=\""+GITHUB_COMMIT_URL+m.group(2)+"\"><code>"+m.group(2)[:7]+"</code></a>"
+    return timed
 
 def month_year(date):
     try:
@@ -163,13 +181,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             e['affects'] = ", ".join(affects)
             e['timetable'] = [];
             for time in cve["containers"]["cna"].get("timeline", []):  # Timeline may not be present in the JSON!
-                timed = time["value"]
-                if ("reported" in timed):
-                    timed = reported_label(timed)
-                elif ("public" in timed):
-                    timed = "Issue public"
-                elif ("release" in timed):
-                    timed = "Update "+timed
+                timed = timeline_label(time["value"])
                 e['timetable'].append([timed,time["time"].split('T')[0]])
             sectioncves.append(e)            
         else:
@@ -197,13 +209,7 @@ for k,v in sorted(entries.items(), key=lambda s: [int(u) if u.isdigit() else 999
             e['affects'] = ", ".join(affects)
             e['timetable'] = [];
             for time in cve.get("timeline", []):
-                timed = time["value"]
-                if ("reported" in timed):
-                    timed = reported_label(timed)
-                elif ("public" in timed):
-                    timed = "Issue public"
-                elif ("release" in timed):
-                    timed = "Update "+timed
+                timed = timeline_label(time["value"])
                 e['timetable'].append([timed,time["time"]])
             sectioncves.append(e)
     # Within a release, sort by impact (most severe first), then by CVE id.
