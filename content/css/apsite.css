@@ -700,7 +700,7 @@ table.cve {
 
 td.cve-value {
     border: 1px solid #dddddd;
-    padding: 1px;
+    padding: 2px 6px;
 }
 
 td.cve-header {
@@ -709,7 +709,7 @@ td.cve-header {
     /* Shrink column width to fit text. */
     width: 1px;
     white-space: nowrap;
-    padding: 1px 5px 1px 1px;
+    padding: 2px 6px;
 }
 
 /* CVE list: number each CVE within its release, like an ordered list */
