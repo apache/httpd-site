@@ -94,48 +94,151 @@ source is maintained and how changes get made.</p>
 <p>The Apache HTTP Server source code is hosted in git at
 <a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a>. The repository used to live in
 Subversion, and the old SVN tree is no longer used for new work.</p>
-<p>There are two active branches:</p>
+<p>There are two active branches, both in the same repository:</p>
 <ul>
 <li><samp>trunk</samp> is the development branch (2.5, slated for a 2.6
 release).</li>
 <li><samp>2.4.x</samp> is the current stable branch.</li>
 </ul>
-<p>To get a copy of the source:</p>
-<pre><code>% git clone https://github.com/apache/httpd.git
-% cd httpd
-</code></pre>
-<p>This gives you <samp>trunk</samp>. To work on the stable branch instead:</p>
-<pre><code>% git switch 2.4.x
-</code></pre>
-<p>The developers continue to seek to maintain module compatibility between
-2.4.1 and future 2.4 releases for administrators and end users.</p>
-<h1 id="making-changes">Making Changes<a class="headerlink" href="#making-changes" title="Permalink">&para;</a></h1>
-<p>All changes go through pull requests on GitHub, for both
-<samp>trunk</samp> and <samp>2.4.x</samp>.</p>
+<h1 id="committer-setup">Committer Setup<a class="headerlink" href="#committer-setup" title="Permalink">&para;</a></h1>
+<p>Committers need to do the following once before they can push to the
+repository.</p>
 <ol>
 <li>
-<p>Fork <a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a> on GitHub and clone your fork.</p>
-</li>
-<li>
-<p>Create a branch for your change from the branch you are targeting:</p>
-<pre><code> % git switch -c my-fix trunk
+<p>Create an SSH key, if you do not already have one:</p>
+<pre><code> % ssh-keygen -t ed25519 -C "you@example.org"
+ % ssh-add ~/.ssh/id_ed25519
 </code></pre>
 </li>
 <li>
-<p>Make your changes and check that they build and pass the tests. Please
-follow the Apache style, as described in the <a href="styleguide.html">style guide</a>.</p>
+<p>Add the key to your GitHub account. On GitHub, open your profile, then
+Settings, then SSH and GPG keys, and click New SSH key. Give the key a
+name and paste the contents of <samp>~/.ssh/id_ed25519.pub</samp> into
+the Key field.</p>
 </li>
 <li>
-<p>Commit, push the branch to your fork, and open a pull request against
-<samp>trunk</samp> or <samp>2.4.x</samp> in the
-<a href="https://github.com/apache/httpd/pulls">httpd repository</a>.</p>
+<p>Link your GitHub account to your ASF account. The steps are described
+on the <a href="https://infra.apache.org/apache-github.html">Apache GitHub</a> page,
+which takes you to <a href="https://gitbox.apache.org/boxer/">GitBox</a>. Follow the
+instructions there.</p>
+</li>
+<li>
+<p>Wait for an email saying that you have been added to the "Apache
+Committers" team. You can push to the repository once that arrives.</p>
 </li>
 </ol>
-<p>Keep your branch up to date with the upstream branch while the pull request
-is open, as reviewers may ask for changes before it can be merged.</p>
-<p>Larger changes or new features are worth raising on the
-<a href="https://httpd.apache.org/lists.html#http-dev">developers list</a> before you
-spend a lot of time on them.</p>
+<p>Non-committers do not need any of this. Fork
+<a href="https://github.com/apache/httpd">https://github.com/apache/httpd</a> on GitHub instead, and use your fork's
+URL in place of the one below.</p>
+<h1 id="getting-the-source">Getting the Source<a class="headerlink" href="#getting-the-source" title="Permalink">&para;</a></h1>
+<p>Committers should clone using the SSH URL,
+<samp><a href="mailto:git@github.com">git@github.com</a>:apache/httpd.git</samp>. If you only want to read the
+code, <samp><a href="https://github.com/apache/httpd.git">https://github.com/apache/httpd.git</a></samp> works without any
+setup.</p>
+<p>Since <samp>trunk</samp> and <samp>2.4.x</samp> live in one repository,
+there are a few ways to work on both. Pick whichever suits you.</p>
+<h2 id="two-clones">Two clones<a class="headerlink" href="#two-clones" title="Permalink">&para;</a></h2>
+<p>This is the closest to the old SVN layout, with one directory per branch:</p>
+<pre><code>% git clone git@github.com:apache/httpd.git httpd-trunk
+% git clone -b 2.4.x git@github.com:apache/httpd.git httpd-2.4.x
+</code></pre>
+<p>The <samp>-b 2.4.x</samp> option picks the branch to check out. Each
+directory then behaves like its own SVN checkout.</p>
+<h2 id="one-clone-switching-branches">One clone, switching branches<a class="headerlink" href="#one-clone-switching-branches" title="Permalink">&para;</a></h2>
+<p>Keep a single directory and change which branch it shows:</p>
+<pre><code>% git clone git@github.com:apache/httpd.git httpd
+% cd httpd
+% git switch 2.4.x
+% git switch trunk
+</code></pre>
+<p>Commit or stash any changes before you switch, or git will refuse to
+switch (or carry the changes with you).</p>
+<h2 id="worktrees">Worktrees<a class="headerlink" href="#worktrees" title="Permalink">&para;</a></h2>
+<p>A worktree gives you a second directory for another branch, sharing one
+clone:</p>
+<pre><code>% git clone git@github.com:apache/httpd.git httpd-trunk
+% cd httpd-trunk
+% git worktree add ../httpd-2.4.x 2.4.x
+</code></pre>
+<p>This looks like the two clones layout, but both directories share the
+same history, so a commit made in one is visible in the other straight
+away.</p>
+<h1 id="making-changes">Making Changes<a class="headerlink" href="#making-changes" title="Permalink">&para;</a></h1>
+<p>All changes go through pull requests on GitHub, for both
+<samp>trunk</samp> and <samp>2.4.x</samp>. A change that is needed on both
+branches gets one pull request for each.</p>
+<p>Please follow the Apache style, as described in the
+<a href="styleguide.html">style guide</a>. Larger changes or new features are worth
+raising on the <a href="https://httpd.apache.org/lists.html#http-dev">developers list</a>
+before you spend a lot of time on them.</p>
+<h2 id="example">Example<a class="headerlink" href="#example" title="Permalink">&para;</a></h2>
+<p>Say you have updated <samp>docs/manual/bind.xml.fr</samp> and the change is
+needed on both branches. Using the two clones layout:</p>
+<ol>
+<li>
+<p>Bring trunk up to date and create a branch for the change:</p>
+<pre><code> % cd httpd-trunk
+ % git switch trunk
+ % git pull
+ % git switch -c bind-fr-update
+</code></pre>
+</li>
+<li>
+<p>Edit the file, then commit it:</p>
+<pre><code> % git add docs/manual/bind.xml.fr
+ % git commit -m "Update French translation of bind.xml"
+</code></pre>
+</li>
+<li>
+<p>Push the branch to GitHub:</p>
+<pre><code> % git push origin bind-fr-update
+</code></pre>
+<p>The output includes a link to create a pull request. Open it, check that
+the base branch is <samp>trunk</samp>, and create the pull request. You
+can also start one from the
+<a href="https://github.com/apache/httpd/pulls">pull requests</a> page.</p>
+</li>
+<li>
+<p>Do the same in the 2.4.x directory, with a branch of its own:</p>
+<pre><code> % cd ../httpd-2.4.x
+ % git switch 2.4.x
+ % git pull
+ % git switch -c bind-fr-update-2.4
+</code></pre>
+<p>Either make the same edit by hand and commit it as above, or copy the
+trunk commit across with <samp>git cherry-pick</samp>:</p>
+<pre><code> % git fetch origin bind-fr-update
+ % git cherry-pick FETCH_HEAD
+</code></pre>
+<p>If the file differs between the branches, the cherry-pick may stop with
+a conflict. Run <samp>git cherry-pick --abort</samp> and make the edit by
+hand instead.</p>
+</li>
+<li>
+<p>Push the 2.4.x branch and open a second pull request, this time with
+<samp>2.4.x</samp> as the base branch:</p>
+<pre><code> % git push origin bind-fr-update-2.4
+</code></pre>
+</li>
+<li>
+<p>Once the pull requests have been merged, tidy up:</p>
+<pre><code> % git switch 2.4.x
+ % git pull
+ % git branch -D bind-fr-update-2.4
+ % git push origin --delete bind-fr-update-2.4
+</code></pre>
+<p>and the same for <samp>bind-fr-update</samp> in the trunk directory.</p>
+</li>
+</ol>
+<p>With a single clone, run all of the steps in the same directory and use
+<samp>git switch</samp> to move between branches. The cherry-pick step
+becomes <samp>git cherry-pick bind-fr-update</samp>, as the trunk commit is
+already in your clone. The same goes for worktrees, where you just change
+directory instead of switching.</p>
+<p>Non-committers push to their fork instead of <samp>origin</samp>, and open
+the pull request from there.</p>
+<p>If a reviewer asks for changes, commit them to the same branch and push
+again. The pull request updates automatically.</p>
 <h1 id="review-and-backports">Review and Backports<a class="headerlink" href="#review-and-backports" title="Permalink">&para;</a></h1>
 <p>The review-then-commit and commit-then-review rules that applied under SVN
 still apply. The <a href="guidelines.html">project guidelines</a> describe them in
@@ -144,11 +247,12 @@ detail.</p>
 reviews. To propose a backport to the stable branch, open a pull request
 against <samp>2.4.x</samp>. The approvals that used to be recorded as votes
 in STATUS are now given as reviews on that pull request.</p>
-<h1 id="committer-access">Committer Access<a class="headerlink" href="#committer-access" title="Permalink">&para;</a></h1>
-<p>Committers need to link their ASF and GitHub accounts before they can push
-to or merge in the repository. This is done through the ASF
-<a href="https://gitbox.apache.org/setup/">GitBox account linking</a> page, which also
-requires two-factor authentication to be enabled on your GitHub account.</p>
+<p><strong>Not yet decided:</strong> how commit-then-review changes, such as documentation
+and translation updates on trunk, work with pull requests. For example,
+whether committers can merge their own pull request without a review. Until
+this is settled, ask on the
+<a href="https://httpd.apache.org/lists.html#http-dev">developers list</a> if you are
+unsure.</p>
 <h1 id="other-repositories">Other Repositories<a class="headerlink" href="#other-repositories" title="Permalink">&para;</a></h1>
 <p>A few other repositories are used by the project.</p>
 <h2 id="httpd-site">httpd-site<a class="headerlink" href="#httpd-site" title="Permalink">&para;</a></h2>
